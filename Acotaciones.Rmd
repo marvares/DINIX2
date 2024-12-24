@@ -33,6 +33,7 @@ glimpse(INDI30)
 ```{r CHECKING}
 unique(INDI30$Grainsmad)
 unique(INDI30$Grainspad)
+unique(INDI30$Insant3a)
 # Cargar ggplot2
 library(ggplot2)
 
