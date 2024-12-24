@@ -1,0 +1,739 @@
+---
+title: "Informe Estandarización Perú Escala DINI"
+author: "Martín Vargas Estrada"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+## Introducción
+
+Algunas notas básicas sobre el instrumento, la variable a medir, y las variables demográficas.
+
+## Describiendo la muestra
+
+Pasaremos a describir y graficar las principales variables demográficas que caracterizan a la muestra:
+
+```{r prep, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+# Activamos los programas que necesitaremo
+library(tidyverse)
+library(readr)
+library(dplyr)
+library(readxl)
+library(openxlsx)
+library(lubridate)
+# Limpiamos todo: 
+rm(list = ls())
+# Generamos funciones
+# Función para generar tablas de frecuencias comme il faut
+tf <- function(df, variable) {
+  resultado <- df %>%
+    group_by({{ variable }}) %>%
+    summarize(
+      n = n(),
+      porcentaje = round(n / nrow(df) * 100, 2)
+    ) %>%
+    arrange({{ variable }}) %>%
+    mutate(
+      n_acum = cumsum(n),
+      porcentaje_acum = cumsum(porcentaje)
+    ) %>% 
+    return(resultado)
+  # Cambiamos el nombre de las columnas de la tabla de frecuencias
+  colnames(resultado) <- c(colnames(resultado)[1], "N", "%", "N Acum.", "% Acum.")
+  # Personalizamos el caption con el nombre de la variable
+  caption_personalizado <- paste("Tabla de Frecuencias de", quo_name(enquo(variable)))
+  # Embellecemos la tabla
+  library(knitr)
+  # Aplicamos kable con el caption personalizado
+  print(kable(resultado, caption = caption_personalizado, align = 'lrrrr', booktabs = T))
+}
+
+# Jalamos la data
+INDI_DATA_01 <- read_csv("INDI_DATA_01.csv")
+# View(INDI_DATA_01)
+# Extraemos solo los puntajes de la data
+INDI0 <- INDI_DATA_01[, c(1,(44:145))]
+
+# Transformaremos todos los puntajes 7 y 8 a NA, excepto en la columna 1 (el ID)
+INDI0 <- INDI0 %>%
+  mutate(across(-1, ~ifelse(.x %in% c(7, 8), NA, .x)))
+# View(INDI0)
+
+# Cambiamos las columnas de nombre
+colnames(INDI0) <- c("Código", "C1N3", 	"C2N3", 	"C3N3", 	"C4N3", 	"C5N3", 	"C6N3", 	"C7N3", 	"C8N3", 	"C9N3", 	"C10N3", 	"C11N3", 	"C12N3", 	"C13N3", 	"C14N3", 	"C15N3", 	"C16N3", 	"C17N3", 	"C18N3", 	"C19N3", 	"C20N3", 	"C21N3", 	"C22N3", 	"C23N3", 	"M1N3", 	"M2N3", 	"M3N3", 	"M4N3", 	"M5N3", 	"M6N3", 	"M7N3", 	"M8N3", 	"S1N3", 	"S2N3", 	"S3N3", 	"S4N3", 	"S5N3", 	"S6N3", 	"S7N3", 	"S8N3", 	"S9N3", 	"S10N3", 	"S11N3", 	"S12N3", 	"S13N3", 	"D1N3", 	"D2N3", 	"D3N3", 	"D4N3", 	"D5N3", 	"D6N3", 	"C1N45", 	"C2N45", 	"C3N45", 	"C4N45", 	"C5N45", 	"C6N45", 	"C7N45", 	"C8N45", 	"C9N45", 	"C10N45", 	"C11N45", 	"C12N45", 	"C13N45", 	"C14N45", 	"C15N45", 	"C16N45", 	"C17N45", 	"C18N45", 	"C19N45", 	"C20N45", 	"C21N45", 	"C22N45", 	"C23N45", 	"C24N45", 	"C25N45", 	"C26N45", 	"M1N45", 	"M2N45", 	"M3N45", 	"M4N45", 	"M5N45", 	"M6N45", 	"S1N45", 	"S2N45", 	"S3N45", 	"S4N45", 	"S5N45", 	"S6N45", 	"S7N45", 	"S8N45", 	"S9N45", 	"S10N45", 	"S11N45", 	"S12N45", 	"S13N45", 	"S14N45", 	"D1N45", 	"D2N45", 	"D3N45", 	"D4N45", 	"D5N45", 	"D6N45")
+
+# Aparentemente, la estructura del instrumento consiste en 04 subescalas: C, M, S y D. Cada subescala fue aplicada a dos grupos diferentes: uno llamado "3" (¿tres años?), y otro "45" (¿cuatro a cinco años?). Asumiendo que esto es así, calcularé puntajes para cada subescala en cada uno de los dos subgrupos, y luego calcularé un puntaje general para cada subgrupo etário. 
+
+# Calculamos C3T, que será el puntaje total para cada participante de los ítems C1N3 a C23N3
+INDI0$C3T <- rowSums(INDI0[,2:24])
+# Calculamos M3T, que será el puntaje total para cada participante de los ítems M1N3 a M8N3
+INDI0$M3T <- rowSums(INDI0[,25:32])
+# Calculamos S3T, que será el puntaje total para cada participante de los ítems S1N3 a S13N3
+INDI0$S3T <- rowSums(INDI0[,33:45])
+# Calculamos D3T, que será el puntaje total para cada participante de los ítems D1N3 a D6N3
+INDI0$D3T <- rowSums(INDI0[,46:51])
+
+
+# Calculamos C45T, que será el puntaje total para cada participante de los ítems C1N45 a C26N45
+INDI0$C45T <- rowSums(INDI0[,52:77])
+# Calculamos M45T, que será el puntaje total para cada participante de los ítems M1N45 a M6N45
+INDI0$M45T <- rowSums(INDI0[,78:83])
+# Calculamos S45T, que será el puntaje total para cada participante de los ítems S1N45 a S14N45
+INDI0$S45T <- rowSums(INDI0[,84:97])
+# Calculamos D45T, que será el puntaje total para cada participante de los ítems D1N45 a D6N45
+INDI0$D45T <- rowSums(INDI0[,98:103])
+
+# Ahora generemos subtotales por gruupo (3 y 45), aunque no tengamos una idea de si tiene sentido o no (just out of curiosity)
+# Para el grupo 3, lo llamaremos DINI3T
+INDI0$DINI3T <- rowSums(INDI0[,104:107])
+
+# Para el grupo 45, lo llamaremos DINI45T
+INDI0$DINI45T <- rowSums(INDI0[,108:111])
+
+# Ahora juntemos toda la data calculada con la data demográfica para generar algunos gráficos que nos permitan explorar las tendencias principales de la data
+
+# Extraemos la data de las tres primeras columnas de la data original
+
+DDEMO01 <- INDI_DATA_01 [, c(1:3)]
+# Activamos la paquetería correspondiente
+library(dplyr)
+library(lubridate)
+# Calculando la diferencia en días
+DDEMO01 <- DDEMO01 %>%
+  mutate(DIDI = Fechfinal - Fechin)
+# Fusionamos el cuadro que realmente nos es útil para los datos demográfiicos
+
+DDEMO02 <- full_join(DDEMO01, select(INDI_DATA_01, Código, Codmod,Regnat, Area, Nivmod, Gest, Reg, Quintil, Grainsmad, Grainspad, VSS,	VSSdesper,	VSSttomed,	VSSpatolo,	VSSnegl,	VSSmud,	VSSconsus,	VSSdesemp,	VSSfamprilib,	VSSotro,	VSSning,	RTT,	RTTasipsi,	RTTasipsiq,	RTTasiped,	RTTasipsim,	RTTasifon,	RTTdifdiag,	RTTdisc,	RTTnin,	Insant3a,	Fecnac,	Niivel), by = "Código")
+
+# Calculamos la edad de cada participante al momento de iniciar la evaluación
+DDEMO02 <- DDEMO02 %>%
+  mutate(AGE_D = interval(Fecnac, Fechin) %/% days(1)) %>%
+  mutate(AGE_Y = AGE_D / 365.25)
+# Redondeamos la edad en años a dos dígitos
+DDEMO02$AGE_Y <- round(DDEMO02$AGE_Y, digits = 2)
+
+# Ya que tenemos la data de demográficos lista, fusionamos los demográficos con los datos numéricos.
+INDI01 <- full_join(DDEMO02, INDI0, by = "Código")
+
+# Convertirmos las variables categóricas a factor:
+library(dplyr)
+INDIGO_1 <- INDI01 %>%
+  mutate(Codmod = as.factor(Codmod),
+         Regnat = as.factor(Regnat),
+         Area = as.factor(Area),
+         Nivmod = as.factor(Nivmod),
+         Gest = as.factor(Gest),
+         Reg  = as.factor(Reg),
+         Quintil  = as.factor(Quintil),
+         Grainsmad = as.factor(Grainsmad),
+         Grainspad = as.factor(Grainspad))
+# Visualizamos la data
+
+# Convertimos todo el rango debido de columnas en variables factor, de forma más directa y rápida
+INDIGO_1 <- INDIGO_1 %>%
+  mutate(across(c(14:34), as.factor))
+View(INDIGO_1)
+
+
+```
+
+
+### Zona
+
+La amplia mayoría de los participantes (casi el 50%) proviene de la Costa peruana, seguida de los participantes provenientes de la región amazónica (algo más del 25%) y de la región andina (algo menos del 25%).
+
+```{r RegNat, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+# Tabla de Frecuencias para Región Natural
+# Crear la tabla de frecuencias completa
+tf_Regnat <- INDIGO_1 %>%
+  group_by(Regnat) %>%
+  summarize(
+    n = n(),
+    porcentaje = round(n / nrow(INDIGO_1) * 100, 2)
+  ) %>%
+  arrange(Regnat) %>%  # Ordenar por grupo
+  mutate(
+    n_acum = cumsum(n),
+    porcentaje_acum = cumsum(porcentaje)
+  )
+
+# Cambiamos el nombre de las columnas de la tabla de frecuencias
+  colnames(tf_Regnat) <- c("Zona", "N", "%", "N Acum.", "% Acum.")
+
+# Visualizar la tabla
+# View(tf_Regnat)
+# Embellecemos la tabla
+library(knitr)
+# Crear una tabla formateada
+kable(tf_Regnat, caption = "Tabla de Frecuencias Zona", align = 'r', booktabs = T)
+
+# Gráfico Porcentual
+# Calcular los porcentajes
+datos_porcentajes_Regnat <- INDIGO_1 %>%
+  count(Regnat) %>%
+  mutate(porcentaje = n / sum(n) * 100)
+# View(datos_porcentajes_Regnat)
+datos_porcentajes_Regnat$porcentaje <- round(datos_porcentajes_Regnat$porcentaje, 2)
+# Crear el gráfico de barras con porcentajes
+library(RColorBrewer)
+ggplot(datos_porcentajes_Regnat, aes(x = Regnat, y = porcentaje, fill  = Regnat)) +
+  geom_col( width = 0.75) +
+  labs(x = "Zona", y = "Porcentaje") +
+  geom_text(aes(label=paste0(porcentaje, " %")), vjust = 1.2) +
+  scale_fill_brewer(palette = "Dark2")+
+  labs(title = "Participantes según Zona",
+       caption = "Fuente: Datos internos. Elaboración propia") +
+  theme(legend.position = "none")
+```
+
+### Área
+
+La amplia mayoría de participantes (tres de cada cuatro) proviene de áreas urbanas.
+
+```{r area, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+# Tabla de Frecuencias para Área
+# Crear la tabla de frecuencias completa
+tf_Area <- INDIGO_1 %>%
+  group_by(Area) %>%
+  summarize(
+    n = n(),
+    porcentaje = round(n / nrow(INDIGO_1) * 100, 2)
+  ) %>%
+  arrange(Area) %>%  # Ordenar por grupo
+  mutate(
+    n_acum = cumsum(n),
+    porcentaje_acum = cumsum(porcentaje)
+  )
+
+# Cambiamos el nombre de las columnas de la tabla de frecuencias
+colnames(tf_Area) <- c("Área", "N", "%", "N Acum.", "% Acum.")
+
+# Visualizar la tabla
+# View(tf_Area)
+# Embellecemos la tabla
+library(knitr)
+# Crear una tabla formateada
+kable(tf_Area, caption = "Tabla de Frecuencias Área", align = 'r', booktabs = T)
+
+# Gráfico Porcentual
+## Calcular los porcentajes
+
+### Creamos la tabla previa
+datos_porcentajes_Area <- INDIGO_1 %>%
+  count(Area) %>%
+  mutate(porcentaje = n / sum(n) * 100)
+# View(datos_porcentajes_Area)
+datos_porcentajes_Area$porcentaje <- round(datos_porcentajes_Area$porcentaje, 2)
+# Crear el gráfico de barras con porcentajes
+library(RColorBrewer)
+ggplot(datos_porcentajes_Area, aes((x = reorder(Area, -porcentaje)), y = porcentaje, fill  = Area)) +
+  geom_col( width = 0.5) +
+  labs(x = "Área", y = "Porcentaje") +
+  geom_text(aes(label=paste0(porcentaje, " %")), vjust = 1.2) +
+  scale_fill_brewer(palette = "Dark2")+
+  labs(title = "Participantes según Área",
+       caption = "Fuente: Datos internos. Elaboración propia") +
+  theme(legend.position = "none")
+```
+
+### Modalidad de Educación Inicial
+
+Más del 80% de los participantes provienen de la modalidad Inicial - Jardín, mientras que más de 15% proviene de Cunas Jardín. El resto (una fracción apenas superior al 1%) provenía de programas no escolarizados.
+
+```{r NivMod, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+# Tabla de Frecuencias para Área
+## Reordenar el factor
+INDIGO_1$Nivmod <- factor(INDIGO_1$Nivmod, levels = c("Inicial - Jardín", "Inicial - Cuna-jardín", "Inicial - Programa no escolarizado"))
+
+# Cambiando los nombres
+levels(INDIGO_1$Nivmod) <- c("Jardín", "Cuna Jardín", "No Escolarizado")
+# Crear la tabla de frecuencias completa
+tf_Nivmod <- INDIGO_1 %>%
+  group_by(Nivmod) %>%
+  summarize(
+    n = n(),
+    porcentaje = round(n / nrow(INDIGO_1) * 100, 2)
+  ) %>%
+  arrange(Nivmod) %>%  # Ordenar por grupo
+  mutate(
+    n_acum = cumsum(n),
+    porcentaje_acum = cumsum(porcentaje)
+  )
+
+# Cambiamos el nombre de las columnas de la tabla de frecuencias
+colnames(tf_Nivmod) <- c("Modalidad", "N", "%", "N Acum.", "% Acum.")
+
+# Visualizar la tabla
+# View(tf_Nivmod)
+# Embellecemos la tabla
+library(knitr)
+# Crear una tabla formateada
+kable(tf_Nivmod, caption = "Tabla de Frecuencias Modalidad", align = 'r', booktabs = T)
+
+# Gráfico Porcentual
+## Calcular los porcentajes
+
+### Creamos la tabla previa
+datos_porcentajes_Nivmod <- INDIGO_1 %>%
+  count(Nivmod) %>%
+  mutate(porcentaje = n / sum(n) * 100)
+# View(datos_porcentajes_Nivmod)
+datos_porcentajes_Nivmod$porcentaje <- round(datos_porcentajes_Nivmod$porcentaje, 2)
+# Crear el gráfico de barras con porcentajes
+library(RColorBrewer)
+ggplot(datos_porcentajes_Nivmod, aes((x = reorder(Nivmod, -porcentaje)), y = porcentaje, fill  = Nivmod)) +
+  geom_col( width = 0.5) +
+  labs(x = "Modalidad", y = "Porcentaje") +
+  geom_text(aes(label=paste0(porcentaje, " %")), vjust = 1.2) +
+  scale_fill_brewer(palette = "Dark2")+
+  labs(title = "Participantes según Modalidad",
+       caption = "Fuente: Datos internos. Elaboración propia") +
+  theme(legend.position = "none")
+```
+
+### Gestión
+
+Los participantes, en su amplia mayoría (casi el 90%), provienen de instituciones educativas de gestión pública.
+
+```{r Gest, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+# Tabla de Frecuencias
+## Reordenar el factor
+# INDIGO_1$Nivmod <- factor(INDIGO_1$Nivmod, levels = c("Inicial - Jardín", "Inicial - Cuna-jardín", "Inicial - Programa no escolarizado"))
+# 
+# # Cambiando los nombres
+# levels(INDIGO_1$Nivmod) <- c("Jardín", "Cuna Jardín", "No Escolarizado")
+# Crear la tabla de frecuencias completa
+tf_Gest <- INDIGO_1 %>%
+  group_by(Gest) %>%
+  summarize(
+    n = n(),
+    porcentaje = round(n / nrow(INDIGO_1) * 100, 2)
+  ) %>%
+  arrange(Gest) %>%  # Ordenar por grupo
+  mutate(
+    n_acum = cumsum(n),
+    porcentaje_acum = cumsum(porcentaje)
+  )
+
+# Cambiamos el nombre de las columnas de la tabla de frecuencias
+colnames(tf_Gest) <- c("Gestión", "N", "%", "N Acum.", "% Acum.")
+
+# Visualizar la tabla
+# View(tf_Gest)
+# Embellecemos la tabla
+library(knitr)
+# Crear una tabla formateada
+kable(tf_Gest, caption = "Tabla de Frecuencias Gestión", align = 'r', booktabs = T)
+
+# Gráfico Porcentual
+## Calcular los porcentajes
+
+### Creamos la tabla previa
+datos_porcentajes_Gest <- INDIGO_1 %>%
+  count(Gest) %>%
+  mutate(porcentaje = n / sum(n) * 100)
+# View(datos_porcentajes_Gest)
+datos_porcentajes_Gest$porcentaje <- round(datos_porcentajes_Gest$porcentaje, 2)
+# Crear el gráfico de barras con porcentajes
+library(RColorBrewer)
+ggplot(datos_porcentajes_Gest, aes((x = reorder(Gest, -porcentaje)), y = porcentaje, fill  = Gest)) +
+  geom_col( width = 0.5) +
+  labs(x = "Gestión", y = "Porcentaje") +
+  geom_text(aes(label=paste0(porcentaje, " %")), vjust = 1.2) +
+  scale_fill_brewer(palette = "Dark2")+
+  labs(title = "Participantes según Gestión",
+       caption = "Fuente: Datos internos. Elaboración propia") +
+  theme(legend.position = "none")
+```
+
+### Región
+
+Más de un tercio de los participantes pertenece a la Región Piura. Alrededor de un cuarto pertenecen a la Región Lima, y lo mismo puede decirse de la Región Cusco. Loreto constituye la región con menor número de participantes (menos del 20%).
+
+
+
+
+```{r Reg, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+# Tabla de Frecuencias
+## Reordenar el factor
+# INDIGO_1$Nivmod <- factor(INDIGO_1$Nivmod, levels = c("Inicial - Jardín", "Inicial - Cuna-jardín", "Inicial - Programa no escolarizado"))
+# 
+# # Cambiando los nombres
+# levels(INDIGO_1$Nivmod) <- c("Jardín", "Cuna Jardín", "No Escolarizado")
+# Crear la tabla de frecuencias completa
+tf_Reg <- INDIGO_1 %>%
+  group_by(Reg) %>%
+  summarize(
+    n = n(),
+    porcentaje = round(n / nrow(INDIGO_1) * 100, 2)
+  ) %>%
+  arrange(Reg) %>%  # Ordenar por grupo
+  mutate(
+    n_acum = cumsum(n),
+    porcentaje_acum = cumsum(porcentaje)
+  )
+
+# Cambiamos el nombre de las columnas de la tabla de frecuencias
+colnames(tf_Reg) <- c("Región", "N", "%", "N Acum.", "% Acum.")
+
+# Visualizar la tabla
+# View(tf_Reg)
+# Embellecemos la tabla
+library(knitr)
+# Crear una tabla formateada
+kable(tf_Reg, caption = "Tabla de Frecuencias Región", align = 'r', booktabs = T)
+
+# Gráfico Porcentual
+## Calcular los porcentajes
+
+### Creamos la tabla previa
+datos_porcentajes_Reg <- INDIGO_1 %>%
+  count(Reg) %>%
+  mutate(porcentaje = n / sum(n) * 100)
+# View(datos_porcentajes_Reg)
+datos_porcentajes_Reg$porcentaje <- round(datos_porcentajes_Reg$porcentaje, 2)
+# Crear el gráfico de barras con porcentajes
+library(RColorBrewer)
+ggplot(datos_porcentajes_Reg, aes((x = reorder(Reg, -porcentaje)), y = porcentaje, fill  = Reg)) +
+  geom_col( width = 0.5) +
+  labs(x = "Región", y = "Porcentaje") +
+  geom_text(aes(label=paste0(porcentaje, " %")), vjust = 1.2) +
+  scale_fill_brewer(palette = "Dark2")+
+  labs(title = "Participantes según Región",
+       caption = "Fuente: Datos internos. Elaboración propia") +
+  theme(legend.position = "none")
+```
+
+### Quintil
+
+Hay una tendencia ligeramente creciente en la distribución de quintiles. Más del 60% de los participantes pertenece al quintil 4 o 5. 
+
+```{r Quin, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+
+# Crear la tabla de frecuencias completa
+tf_Quintil <- INDIGO_1 %>%
+  group_by(Quintil) %>%
+  summarize(
+    n = n(),
+    porcentaje = round(n / nrow(INDIGO_1) * 100, 2)
+  ) %>%
+  arrange(Quintil) %>%  # Ordenar por grupo
+  mutate(
+    n_acum = cumsum(n),
+    porcentaje_acum = cumsum(porcentaje)
+  )
+
+# Cambiamos el nombre de las columnas de la tabla de frecuencias
+colnames(tf_Quintil) <- c("Quintil", "N", "%", "N Acum.", "% Acum.")
+
+# Visualizar la tabla
+# View(tf_Quintil)
+# Embellecemos la tabla
+library(knitr)
+# Crear una tabla formateada
+kable(tf_Quintil, caption = "Tabla de Frecuencias Quintil", align = 'r', booktabs = T)
+
+# Gráfico Porcentual
+## Calcular los porcentajes
+
+### Creamos la tabla previa
+datos_porcentajes_Quintil <- INDIGO_1 %>%
+  count(Quintil) %>%
+  mutate(porcentaje = n / sum(n) * 100)
+# View(datos_porcentajes_Quintil)
+datos_porcentajes_Quintil$porcentaje <- round(datos_porcentajes_Quintil$porcentaje, 2)
+# Crear el gráfico de barras con porcentajes
+library(RColorBrewer)
+ggplot(datos_porcentajes_Quintil, aes(x = Quintil, y = porcentaje, fill  = Quintil)) +
+  geom_col( width = 0.5) +
+  labs(x = "Quintil", y = "Porcentaje") +
+  geom_text(aes(label=paste0(porcentaje, " %")), vjust = 1.2) +
+  scale_fill_brewer(palette = "Dark2")+
+  labs(title = "Participantes según Quintil",
+       caption = "Fuente: Datos internos. Elaboración propia") +
+  theme(legend.position = "none")
+```
+
+### Grado de Instrucción de la Madre
+
+Los participantes ...
+
+```{r GriM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+# Tabla de Frecuencias
+## Establecer cuáles son los valores para el factor
+# GIM <- levels(INDIGO_1$Grainsmad)
+# GIM <- as.data.frame(GIM) # Los guardo como df
+# write.xlsx(GIM, "GIM.xlsx") # Los exporto a Excel
+# Acortar los niveles y reasignarlos a la variable
+levels(INDIGO_1$Grainsmad) <- c("Inic.",	"Ning.",	"Postg.",	"Prim. Com.",	"Prim. Inc.",	"Sec. Com.",	"Sec. Inc.",	"Sup. Téc. Com.",	"Sup. Téc. Inc.",	"Sup. Uni. Com.",	"Sup. Uni. Inc.")
+## Reordenar el factor
+INDIGO_1$Grainsmad <- factor(INDIGO_1$Grainsmad, levels = c("Ning.",	"Inic.",	"Prim. Inc.",	"Prim. Com.",	"Sec. Inc.",	"Sec. Com.",	"Sup. Téc. Inc.",	"Sup. Téc. Com.",	"Sup. Uni. Inc.",	"Sup. Uni. Com.",	"Postg."))
+## Generar la tabla por fin
+# Crear la tabla de frecuencias completa
+tf_m <- INDIGO_1 %>%
+  group_by(Grainsmad) %>%
+  summarize(
+    n = n(),
+    porcentaje = round(n / nrow(INDIGO_1) * 100, 2)
+  ) %>%
+  arrange(Grainsmad) %>%  # Ordenar por grupo
+  mutate(
+    n_acum = cumsum(n),
+    porcentaje_acum = cumsum(porcentaje)
+  )
+# Cambiamos el nombre de las columnas de la tabla de frecuencias
+colnames(tf_m) <- c("Grado de Instruc. Madre", "N", "%", "N Acum.", "% Acum.")
+
+# Visualizar la tabla
+# View(tf_Quintil)
+# Embellecemos la tabla
+library(knitr)
+# Crear una tabla formateada
+kable(tf_m, caption = "Tabla de Frecuencias Grado de Inst. Madre", align = 'r', booktabs = T)
+
+# Gráfico Porcentual
+## Calcular los porcentajes
+
+### Creamos la tabla previa
+datos_porcentajes_Grainsmad <- INDIGO_1 %>%
+  count(Grainsmad) %>%
+  mutate(porcentaje = n / sum(n) * 100)
+# View(datos_porcentajes_Grainsmad)
+datos_porcentajes_Grainsmad$porcentaje <- round(datos_porcentajes_Grainsmad$porcentaje, 2)
+# Crear el gráfico de barras con porcentajes
+library(RColorBrewer)
+ggplot(datos_porcentajes_Grainsmad, aes(x = Grainsmad, y = porcentaje, fill  = Grainsmad)) +
+  geom_col( width = 0.5) +
+  labs(x = "Grado de Instruc. Madre", y = "Porcentaje") +
+  geom_text(aes(label=paste0(porcentaje, " %")), vjust = -0.20, size=2.5) +
+  scale_fill_brewer(palette = "Set3")+
+  coord_flip()+
+  labs(title = "Participantes según Grado de Instruc. Madre",
+       caption = "Fuente: Datos internos. Elaboración propia") +
+  theme(legend.position = "none")
+```
+
+### Grado de Instrucción del Padre
+
+Los participantes ...
+
+```{r GriP, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+# Tabla de Frecuencias
+## Establecer cuáles son los valores para el factor
+# GIP <- levels(INDIGO_1$Grainspad)
+# GIP <- as.data.frame(GIP) # Los guardo como df
+# write.xlsx(GIM, "GIP.xlsx") # Los exporto a Excel
+# Acortar los niveles y reasignarlos a la variable
+levels(INDIGO_1$Grainspad) <- c("Inic.",	"Ning.",	"Postg.",	"Prim. Com.",	"Prim. Inc.",	"Sec. Com.",	"Sec. Inc.",	"Sup. Téc. Com.",	"Sup. Téc. Inc.",	"Sup. Uni. Com.",	"Sup. Uni. Inc.")
+## Reordenar el factor
+INDIGO_1$Grainspad <- factor(INDIGO_1$Grainspad, levels = c("Ning.",	"Inic.",	"Prim. Inc.",	"Prim. Com.",	"Sec. Inc.",	"Sec. Com.",	"Sup. Téc. Inc.",	"Sup. Téc. Com.",	"Sup. Uni. Inc.",	"Sup. Uni. Com.",	"Postg."))
+## Generar la tabla por fin
+# Crear la tabla de frecuencias completa
+tf_m <- INDIGO_1 %>%
+  group_by(Grainspad) %>%
+  summarize(
+    n = n(),
+    porcentaje = round(n / nrow(INDIGO_1) * 100, 2)
+  ) %>%
+  arrange(Grainspad) %>%  # Ordenar por grupo
+  mutate(
+    n_acum = cumsum(n),
+    porcentaje_acum = cumsum(porcentaje)
+  )
+# Cambiamos el nombre de las columnas de la tabla de frecuencias
+colnames(tf_m) <- c("Grado de Instruc. Padre", "N", "%", "N Acum.", "% Acum.")
+
+# Visualizar la tabla
+# View(tf_Quintil)
+# Embellecemos la tabla
+library(knitr)
+# Crear una tabla formateada
+kable(tf_m, caption = "Tabla de Frecuencias Grado de Inst. Padre", align = 'r', booktabs = T)
+
+# Gráfico Porcentual
+## Calcular los porcentajes
+
+### Creamos la tabla previa
+datos_porcentajes_Grainspad <- INDIGO_1 %>%
+  count(Grainspad) %>%
+  mutate(porcentaje = n / sum(n) * 100)
+# View(datos_porcentajes_Grainspad)
+datos_porcentajes_Grainspad$porcentaje <- round(datos_porcentajes_Grainspad$porcentaje, 2)
+# Crear el gráfico de barras con porcentajes
+library(RColorBrewer)
+ggplot(datos_porcentajes_Grainspad, aes(x = Grainspad, y = porcentaje, fill  = Grainspad)) +
+  geom_col( width = 0.5) +
+  labs(x = "Grado de Instruc. Padre", y = "Porcentaje") +
+  geom_text(aes(label=paste0(porcentaje, " %")), vjust = -0.20, size=2.5) +
+  scale_fill_brewer(palette = "Set3")+
+  coord_flip()+
+  labs(title = "Participantes según Grado de Instruc. Padre",
+       caption = "Fuente: Datos internos. Elaboración propia") +
+  theme(legend.position = "none")
+```
+
+
+### VSS
+
+Los participantes ...
+
+```{r VSS, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+# Tabla de Frecuencias
+## Establecer cuáles son los valores para el factor
+# GIP <- levels(INDIGO_1$Grainspad)
+# GIP <- as.data.frame(GIP) # Los guardo como df
+# write.xlsx(GIM, "GIP.xlsx") # Los exporto a Excel
+# Acortar los niveles y reasignarlos a la variable
+t.VSS <- tf(INDIGO_1, VSS)
+
+# Gráfico Porcentual
+## Calcular los porcentajes
+
+### Creamos la tabla previa
+datos_porcentajes_VSS <- INDIGO_1 %>%
+  count(VSS) %>%
+  mutate(porcentaje = n / sum(n) * 100)
+# View(datos_porcentajes_VSS)
+datos_porcentajes_VSS$porcentaje <- round(datos_porcentajes_VSS$porcentaje, 2)
+# Crear el gráfico de barras con porcentajes
+library(RColorBrewer)
+ggplot(datos_porcentajes_VSS, aes(x = VSS, y = porcentaje, fill  = VSS)) +
+  geom_col( width = 0.5) +
+  labs(x = "VSS", y = "Porcentaje") +
+  geom_text(aes(label=paste0(porcentaje, " %")), vjust = -0.20, size=2.5) +
+  scale_fill_brewer(palette = "Set2")+
+  labs(title = "Participantes según VSS",
+       caption = "Fuente: Datos internos. Elaboración propia") +
+  theme(legend.position = "none")
+```
+
+
+### VSSdesper
+
+Los participantes ...
+
+```{r VSSdesper, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+# Tabla de Frecuencias
+## Establecer cuáles son los valores para el factor
+# GIP <- levels(INDIGO_1$Grainspad)
+# GIP <- as.data.frame(GIP) # Los guardo como df
+# write.xlsx(GIM, "GIP.xlsx") # Los exporto a Excel
+# Acortar los niveles y reasignarlos a la variable
+t.VSSdesper <- tf(INDIGO_1, VSSdesper)
+
+# Gráfico Porcentual
+## Calcular los porcentajes
+
+### Creamos la tabla previa
+datos_porcentajes_VSSdesper <- INDIGO_1 %>%
+  count(VSSdesper) %>%
+  mutate(porcentaje = n / sum(n) * 100)
+# View(datos_porcentajes_VSSdesper)
+datos_porcentajes_VSSdesper$porcentaje <- round(datos_porcentajes_VSSdesper$porcentaje, 2)
+# Crear el gráfico de barras con porcentajes
+library(RColorBrewer)
+ggplot(datos_porcentajes_VSSdesper, aes(x = VSSdesper, y = porcentaje, fill  = VSSdesper)) +
+  geom_col( width = 0.5) +
+  labs(x = "VSSdesper", y = "Porcentaje") +
+  geom_text(aes(label=paste0(porcentaje, " %")), vjust = -0.20, size=2.5) +
+  scale_fill_brewer(palette = "Set2")+
+  labs(title = "Participantes según VSSdesper",
+       caption = "Fuente: Datos internos. Elaboración propia") +
+  theme(legend.position = "none")
+
+
+```
+
+# Calculando Baremos
+
+## Base de Cálculo
+
+Se tomará a todos los participantes que han respondido al set de ítems correspondientes a los niveles 3 y 4-5.
+
+```{r Base, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+#Calculamos las frecuencias de los grupos según Nivel
+t.Nivel <- tf(INDIGO_1, Niivel)
+#Verificamos estructura del DF
+# variables <- colnames(INDIGO_1)
+# # Escribir los nombres de las columnas en un archivo de texto
+# write.table(variables, file = "variables.csv", row.names = FALSE, col.names = FALSE)
+```
+
+Se excluye del análisis todos los casos en los que el participante tiene al menos un ítem faltante ("NA").
+
+## Grupo 3
+
+He aquí algunas estadísticas básicas para este grupo, a nivel de Escalas y Subescalas.
+
+```{r G3, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+# str(INDIGO_1)
+INDIGO_C3 <- (INDIGO_1) %>% 
+  filter(!is.na(C3T)) %>% 
+  select(C1N3_T:C23N3_T)
+
+INDIGO_M3 <- (INDIGO_1) %>% 
+  filter(!is.na(M3T)) %>% 
+  select(M1N3_T:M8N3_T)
+# Definir la función para calcular indicadores estadísticos descriptivos
+# Cargar la librería necesaria
+library(knitr)
+
+# Definir la función para calcular indicadores estadísticos descriptivos
+TED <- function(df) {
+  # Crear un data frame para almacenar los resultados
+  resultados <- data.frame(
+    Variable = character(),
+    Mediana = numeric(),
+    Media = numeric(),
+    `Desviación Estándar` = numeric(),
+    `Número de Casos` = integer(),
+    stringsAsFactors = FALSE
+  )
+  
+  # Iterar sobre cada columna del dataframe
+  for (nombre_columna in colnames(df)) {
+    # Calcular la mediana, media, desviación estándar y número de casos
+    mediana <- round(median(df[[nombre_columna]]), 2)
+    media <- round(mean(df[[nombre_columna]]), 2)
+    desviacion_estandar <- round(sd(df[[nombre_columna]]), 2)
+    numero_casos <- length(df[[nombre_columna]])
+    
+    # Agregar los resultados al data frame
+    resultados <- rbind(resultados, data.frame(
+      Variable = nombre_columna,
+      Mediana = mediana,
+      Media = media,
+      `Desviación Estándar` = desviacion_estandar,
+      `Número de Casos` = numero_casos
+    ))
+  }
+  
+  return(kable(resultados, format = "markdown"))
+}
+
+
+
+# Llamar a la función y mostrar los resultados
+TED_C3 <- TED(INDIGO_C3)
+print(TED_C3)
+
+
+TED_M3 <- TED(INDIGO_M3)
+print(TED_M3)
+
+
+
+```
+
+

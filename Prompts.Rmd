@@ -1,0 +1,157 @@
+---
+title: "Prompts"
+author: "Martín Vargas Estrada"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+En el contexto del lenguaje de programación estadística R, 
+## Spearman
+
+Necesito que generes una función que evalúe la correlación Spearman entre una serie de variables numéricas, por un lado, y una única variable numérica, por el otro. Llamemos "X" a las variables numéricas múltiples, y "Y" a la única variable contra la cual se va a evaluar la asociación o correlación. Por ejemplo, las variables "X" podrían ser Puntaje en el curso de Matemática(M), Puntaje en el curso de Lenguaje(L), y Puntaje en el curso de Idiomas(I). La variable "Y" podría ser: Coeficiente Intelectual(CI). Entonces las correlaciones a calcular serían: M y CI; L y CI, I y CI. 
+
+La idea es que los parámetros sean: 
+
+1. Dataframe
+2. Variables "X" (una o más)
+3. Variable "Y" (solo una)
+
+El resultado debería ser una tabla de doble entrada con los nombres de las variables "X" en las filas, y tres columnas. La primera debe llamarse "Índice", y contendrá el valor del índice rho; la segunda "Magnitud", y contendrá el valor según lo que indico más abajo; la tercera columna debe llamarse "Significación" y debe contener el nivel de significancia estadística (según lo usual: ***,  **, *, NS).
+
+Para la magnitud, básate en lo siguiente (valores absolutos): 
+
+1. Si 0 ≥ rho > 0.1 La magnitud es nula
+2. Si 0.1 ≥ rho > 0.2 La magnitud es muy débil
+3. Si 0.2 ≥ rho > 0.3 La magnitud es débil
+4. Si 0.3 ≥ rho > 0.5 La magnitud es moderada
+5. Si 0.5 ≥ rho > 0.7 La magnitud es fuerte
+6. Si 0.7 ≥ rho > 1.0 La magnitud es muy fuerte
+
+Para el sentido, básate en lo siguiente: 
+a. Si rho > 0, la asociación es directa
+b. Si rho < 0, la asociación es inversa
+
+Luego de la tabla, deberás generar un primer párrafo que enumere las correlaciones que hayan sido estadísticamente significativas, así como las que no lo han sido. Ejemplo: "La siguiente correlación resultó no ser estadísticamente significativa: Puntaje en el curso de Matemática y CI. Por otro lado, las siguientes sí resultaron ser estadísticamente significativas: Puntaje en el curso de Lenguaje y CI; y Puntaje en el curso de Idiomas y CI. 
+
+Luego, debes escribir sendos párrafos con la interpretación de cada índice rho que sea estadísticamente significativo. Asimismo, debes tomar en cuenta el signo del índice rho (positivo o negativo). Cada párrafo deberá enunciar la interpretación de cada una de las correlaciones a partir de la magnitud y el sentido. Por ejemplo, asumamos que la correlación entre Puntaje en el curso de Lenguaje y CI es 0.41, y la la correlación entre Puntaje en el curso de Idiomas y CI es -0.23. Entonces en este caso la interpretación sería: "A continuación pasaremos a analizar el detalle de las correlaciones estadísticamente significativas. La asociación entre Puntaje en el curso de Lenguaje y CI es moderada y directa; esto implica que a mayor puntaje en el curso de Lenguaje, la persona suele tener mayores puntajes en CI. Mientras que la asociación entre Puntaje en el curso de Idiomas  y CI es débil e inversa; esto implica que a mayor puntaje en el curso de Idiomas, la persona suele tener mayores pountajes de CI. "
+
+Asume que el data frame solo contendrá valores numéricos sin NAs. 
+
+Me puedes hacer todas las preguntas que consideres necesarias para dar tu mejor resultado.
+
+## Respuestas
+
+1. Puedes referirte a las variables usando el número de columnas, por ejemplo, las variables X podrían ser c(2:5), mientras que la variable Y podría ser c(6).
+2. La tabla debe estar en formato Flextable compatible con Ms Word. Imprímerlo directamente, no hay necesidad de guardarlo como objeto.
+3. Sí, puedes asumir los valores estándar de significancia (p < 0.001 = "", p < 0.01 = "", p < 0.05 = "", p ≥ 0.05 = "NS")
+4. Sí, es necesario incluir ejemplos detallados para cada asociación estadísticamente significativa, tal como expliqué en el ejemplo.
+
+### Spearman v2
+
+En la función "corre_anal", definida según lo siguiente:
+
+# Función para calcular y analizar las correlaciones de Spearman con formato Markdown ajustado
+corre_anal <- function(data, variables_X, variable_Y) {
+  resultados <- data.frame(Variable_X = character(), Rho = numeric(), Magnitud = character(), 
+                           Significacion = character(), stringsAsFactors = FALSE)
+  
+  # Iterar sobre las variables X
+  for (var in variables_X) {
+    test <- cor.test(data[[var]], data[[variable_Y]], method = "spearman")
+    rho <- test$estimate
+    p_value <- test$p.value
+    
+    # Determinar la magnitud de rho
+    magnitud <- ifelse(abs(rho) > 0.7, "Muy fuerte",
+                       ifelse(abs(rho) > 0.5, "Fuerte",
+                              ifelse(abs(rho) > 0.3, "Moderada",
+                                     ifelse(abs(rho) > 0.2, "Débil",
+                                            ifelse(abs(rho) > 0.1, "Muy débil", "Nula")))))
+    
+    # Determinar la significación estadística
+    significacion <- ifelse(p_value < 0.001, "***",
+                            ifelse(p_value < 0.01, "**",
+                                   ifelse(p_value < 0.05, "*", "NS")))
+    
+    # Agregar los resultados a la tabla
+    resultados <- rbind(resultados, data.frame(
+      Variable_X = colnames(data)[var],
+      Rho = round(rho, 2),  # Redondear a dos decimales
+      Magnitud = magnitud,
+      Significacion = significacion
+    ))
+  }
+  
+  # Crear la tabla en formato Markdown
+  markdown_tabla <- paste0(
+    "| Variable X        | Índice Rho | Magnitud     | Significación |\n",
+    "|-------------------|------------|--------------|---------------|\n"
+  )
+  for (i in 1:nrow(resultados)) {
+    fila <- resultados[i, ]
+    # Alinear Rho a la derecha añadiendo espacios si es necesario
+    rho_formateado <- sprintf("%6.2f", fila$Rho)
+    markdown_tabla <- paste0(markdown_tabla,
+                             "| ", fila$Variable_X, 
+                             " | ", rho_formateado, 
+                             " | ", fila$Magnitud, 
+                             " | ", fila$Significacion, "         |\n")
+  }
+  
+  # Generar interpretaciones textuales
+  significativas <- resultados[resultados$Significacion != "NS", ]
+  no_significativas <- resultados[resultados$Significacion == "NS", ]
+  
+  texto <- ""
+  if (nrow(no_significativas) > 0) {
+    texto <- paste(texto, "La(s) siguiente(s) correlación(es) no fueron estadísticamente significativas:")
+    texto <- paste(texto, paste(no_significativas$Variable_X, collapse = ", "), ".")
+  }
+  
+  if (nrow(significativas) > 0) {
+    texto <- paste(texto, "Por otro lado, las siguientes correlaciones sí resultaron estadísticamente significativas:")
+    texto <- paste(texto, paste(significativas$Variable_X, collapse = ", "), ".")
+    
+    texto <- paste(texto, "\n\nA continuación, pasaremos a analizar el detalle de las correlaciones estadísticamente significativas.\n")
+    for (i in 1:nrow(significativas)) {
+      detalle <- significativas[i, ]
+      signo <- ifelse(detalle$Rho > 0, "directa", "inversa")
+      interpretacion <- paste0(
+        "La asociación entre ", detalle$Variable_X, " y ", colnames(data)[variable_Y],
+        " es ", detalle$Magnitud, " y ", signo, 
+        "; esto implica que a mayor puntaje en ", detalle$Variable_X, 
+        ", la persona suele tener ", ifelse(signo == "directa", "mayores", "menores"),
+        " puntajes en ", colnames(data)[variable_Y], ".\n"
+      )
+      texto <- paste(texto, interpretacion)
+    }
+  }
+  
+  # Imprimir la tabla en formato Markdown y las interpretaciones
+  cat(markdown_tabla, "\n")
+  cat(texto, "\n")
+}
+
+Necesito que hagas los siguientes ajustes: cuando la magnitud del índice rho sea nula, auqnue sea estadísticamente significativa:
+
+- Añade la frase siguiente justo después de mencionar las correlaciones no estadísticamente significativas: "Por otro lado, la(s) siguiente(s) correlaciones, si bien técnicamente significativa(s), son de magnitud tan pequeño que no indican ninguna asociación en la práctica: {menciona el nombre de la(s) variable(s) independiente(s) del caso, separadas por comas}", 
+- No la incluya esas correlaciones en los subsiguientes párrafos de interpretación. 
+
+Asimismo, la división en párrafos para la interpretación de cada índice rho ha dado resultado. Mejórala intercalando puntos aparte y añadiendo una viñeta o bullet point al principio de cada interpretación.
+
+Me puedes hacer todas las preguntas que consideres necesarias para dar tu mejor resultado.
+
+## Prompt para Dunn Test
+
+Crea una función que ejecute un Dunn Test. Los parámetros deben ser el dataframe, y las variables de datos y grupo, identificadas con el número de columna.
+
+El output o salida debe llevar como título "Análisis Dunn de las diferencias estadísticamente significativas" y debe ser una matriz de doble entrada, donde las filas deben ser la(s) variables de datos, y las columnas deben ser como sigue: 
+
+1. La primera columna debe llamarse "Significación" y debe contener el nivel de significancia estadística del p-valor (según lo usual: ***,  **, *, NS)
+2. La segunda columna debe llamarse "Diferencia Real Probable", y debe contener los valores "Sí" (si el p-valor es menor a 0.05) o "No" si el p-valor es igual o mayor a 0.05.
+
+Me puedes hacer todas las preguntas que consideres necesarias para dar tu mejor resultado.

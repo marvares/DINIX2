@@ -1,0 +1,125 @@
+---
+title: "Documento de Alcance Análisis Psicométrico Escala DINI"
+author: "Martín Vargas Estrada"
+date: "`r Sys.Date()`"
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 4
+header-includes:
+   - \renewcommand{\contentsname}{Índice}
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newpage
+
+## Líneas Directrices del Proyecto
+
+### Antecedentes
+
+El Inventario de Desarrollo Infantil (INDI) fue baremizado para su uso en la población peruana durante este año 2024. Su finalidad es la evaluación de niños durante el proceso crítico de tránsito de la Educación Inicial a la Educación Primaria, en cuanto  las dimensiones cognitiva, motora, socioemocional y motivacional (también denominada Disposición para el Aprendizaje).
+
+El INDI tiene por lo tanto una estructura multidimensional. Fue creado por la Universidad de La República del Uruguay, y se viene usando ampliamente en dicho país para dos tipos de población, los niños pertenecientes a niveles preescolares 3 y 4-5.
+
+Para el caso de los estándares peruanos, la muestra fue extraída en cuatro ciudades, dos pertenecientes a la Región Costa (Lima y Piura); una a la Región Sierra (Cusco); y una a la Región Selva (Loreto).
+
+Estructuralmente hablando, el instrumento está compuesto por ítems tipo Lickert de seis puntos, los cuales evalúan la presencia de conductas específicas en los participantes (niños en etapa preescolar).
+
+Como insumos para el trabajo de análisis psicométrico, se cuenta con:
+
+1. Data depurada de los participantes, Grupo de Nivel 3
+2. Data depurada de los participantes, Grupo de Nivel 4-5
+3. Informe de Baremización, muestra de nivel 4-5
+
+
+### Propuesta
+
+La finalidad del presente proyecto es generar *insights* con base estadística destinados a optimizar la aplicación,  mantenimiento e interpretación del instrumento DINI en muestras de la población infantil peruana.
+
+La estrategia analítica propuesta se define en dos enfoques: 
+
+1. **Enfoque Interno**: Mejoras Posibles en el Proceso de Estandarización, análisis interno del instrumento y sus características psicométricas.
+
+2. **Enfoque Externo**: Implicancias Poblacionales de los Estándares obtenidos para el Instrumento.
+
+El primer enfoque apunta a las aplicaciones futuras del instrumento en el Perú, y el segundo a lo que los resultados en sí nos dicen acerca de la población a la que se apunta a evaluar con el instrumento.
+
+#### Enfoque Interno
+
+La meta es responder, entre otros hallazgos posibles:
+
+1.1. *Implicancias para la Validez del Instrumento*: ¿Cuál es el comportamiento psicométrico de los puntajes de la Escala? ¿la estructura factorial del instrumento se mantiene? ¿Qué significan las posibles diferencias en la estructura factorial obtenida a partir de la muestra peruana en relación a la estructura factorial obtenida de la muestra uruguaya original?
+
+1.2. *Insights Internos a partir de los Resultados de Estandarización*: ¿cuáles son las relaciones entre las variables demográficas recolectadas y los resultados de la Escala? ¿Existen variables predictivas o mediadoras que incidan en la variable que se pretende medir mediante la Escala?
+
+#### Enfoque Externo
+
+2.1. ¿Existen patrones de respuesta / desempeño en la muestra? De existir, ¿qué podemos inferir acerca de la población meta a partir de los resultados? 
+
+2.2. ¿Qué implicancias existen a nivel poblacional a partir de las relaciones encontradas? ¿El uso del instrumento debería tener en consideración ciertas diferencias demográficas en cuanto a su aplicación e interpretación?
+
+## Plan Analítico
+
+A fin de resolver estas preguntas, así como otras que vayan surgiendo de forma inductiva a partir del análisis, se prevé la siguiente relación de análisis (esta es una lista no exhaustiva ni predeterminada):
+
+### Análisis de Enfoque Interno
+
+1. Análisis Descriptivo:
+
+* Análisis de Normalidad de la escala y subescalas DINI: la finalidad es determinar si, como teóricamente se espera, la distribución de los puntajes está normalmente distribuida, así como las consecuencias operacionales y teóricas de la normalidad/no normalidad de los datos.
+
+2. Análisis Escalar
+
+    2.1. Análisis Factorial: Para determinar el nivel en que el constructo sigue los patrones teóricos previstos.
+
+3. Análisis de Outliers: A fin de determinar la existencia de valores atípicos o extremos, la viabilidad de suprimirlos o no, y cuáles serían las consecuencias estadísticas de ello.
+
+4. Evaluación de Transformaciones a los puntajes: La finalidad es determinar si mediante algún tipo de transformación matemática, es posible establecer una distribución normalizada que nos permita utilizar herramientas paramétricas. 
+
+5. Análisis de Ítems: La meta es establecer qué ítems no llegan a  discriminar adecuadamente entre los participantes. En este punto se volverá a recalcular los niveles de confiabilidad de la escala, a fin de determinar cuál es el impacto diferencial de los ítems sobre ésta.
+
+
+    
+### Análisis de Enfoque Externo
+
+1. Análisis de Clústeres o Conglomerados: En este análisis, la finalidad es establecer si existen características comunes que tienden a identificar a determinados grupos de participantes. Por poner un ejemplo, "existe un grupo A que son los participantes de menor puntaje, tienden a provenir de la ciudad X, los padres tienden a tener bajo nivel educativo, y a ser más jóvenes".
+
+2. Análisis de Asociaciones:
+
+    2.1. Diferencias en desempeño en función de subgrupos muestrales: a partir del análsis de diferencias grupales definidas a partir de características demográficas, como nivel de instrucción, región, etc.
+
+    2.2. Asociaciones entre variables demográficas y puntajes DINI: análisis correlacional bivariado entre variables demográficas numéricas (básicamente en edad en meses).
+
+3. Análisis de Regresión:
+
+    3.1. Análisis de Regresión robusta entre las variables demográficas y los puntajes de la escala: El objetivo es establecer cuáles de las variables incluidas en el proceso nos permiten predecir los puntajes en la escala.
+
+4. Análisis de Moderación y Mediación:
+
+    4.1. Análisis de Variables moderadoras entre el principal predictor y los puntajes de la Escala: La finalidad es establecer si la relación entre la principal variable predictora (según los resultados anteriores) y los puntajes en la escala es afectada por alguna otra variable.
+
+    4.2. Análisis de Variables mediadoras entre el principal predictor y los puntajes de la Escala: La finalidad es establecer si la relación entre la principal variable predictora (según los resultados anteriores) y los puntajes en la escala necesariamente se produce a través de alguna otra variable.
+
+## Productos Entregables
+
+1. Informe de Análisis Psicométrico: Conteniendo los resultados resumidos e interpretación de todos los análisis aquí mencionados.
+2. Anexo de Resultados Estadísticos: Conteniendo las resultados brutos de todos los análisis ejecutados. 
+3. Asesoría en eventual presentación de resultados
+
+## Cronograma
+
+1. Análisis Descriptivo/Escalar : 10/01/2025
+2. Análisis de Outliers/Transformaciones & Análisis de Ítems : 17/01/2025
+3. Análisis de Asociaciones: 24/01/2025
+4. Análisis de Regresión: 31/01/2025
+5. Análisis de Moderación / Mediación: 07/02/2025
+6. Análisis de Clústeres: 14/02/2025
+
+En cada fecha señalada se hará entrega por vía digital de los productos mencionados. 
+
+La estrategia de entrega será incremental; es decir, en cada fecha se entregará el avance con el análisis correspondiente más los análisis previos, hasta completar todo el Informe. 
+

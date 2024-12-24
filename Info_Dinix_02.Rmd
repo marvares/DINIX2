@@ -1,0 +1,841 @@
+---
+title: "Informe Estandarización Perú Escala DINI"
+author: "Martín Vargas Estrada"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: 
+    toc: true
+    toc_depth: 4
+header-includes:
+   - \renewcommand{\contentsname}{Índice}
+---
+
+\newpage
+
+# Introducción
+
+
+Informe de Exploración Psicométrica de los puntajes de la prueba DINI obtenidas con muestra de Perú, grupos Nivel 3, y  Niveles 4-5 años. 
+
+# Análisis Descriptivo Nivel 3
+
+Pasaremos a describir y graficar las principales variables demográficas que caracterizan a la muestra:
+
+```{r SetUp, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+
+library(haven)
+rm(list = ls()) 
+# Carga el archivo .sav
+INDI30 <- read_sav("INDI3.sav")
+INDI45 <- read_sav("INDI45.sav")
+# View(INDI30)
+
+# Generamos funciones
+# Función para generar tablas de frecuencias comme il faut
+tf <- function(df, variable) {
+  resultado <- df %>%
+    group_by({{ variable }}) %>%
+    summarize(
+      n = n(),
+      porcentaje = round(n / nrow(df) * 100, 2)
+    ) %>%
+    arrange({{ variable }}) %>%
+    mutate(
+      n_acum = cumsum(n),
+      porcentaje_acum = cumsum(porcentaje)
+    ) %>% 
+    return(resultado)
+  # Cambiamos el nombre de las columnas de la tabla de frecuencias
+  colnames(resultado) <- c(colnames(resultado)[1], "N", "%", "N Acum.", "% Acum.")
+  # Personalizamos el caption con el nombre de la variable
+  caption_personalizado <- paste("Tabla de Frecuencias de", quo_name(enquo(variable)))
+  # Embellecemos la tabla
+  library(knitr)
+  # Aplicamos kable con el caption personalizado
+  print(kable(resultado, caption = caption_personalizado, align = 'lrrrr', booktabs = T))
+}
+```
+
+1. Fecha de Inicio
+1. Edad en meses
+1. Cuatrimestre de nacimiento
+1. Grupo de Codmod
+1. Región Natural
+1. Área
+1. Nivel Modalidad
+1. Gestión
+1. Departamento
+1. Distrito
+1. Quintil de Pobreza
+1. Incidencia / No Incidencia (VSS)
+1. Incidencia Perinatal
+1. Inc. Tratamiento Médico
+1. Inc. Patología
+1. Inc. Negligencia
+1. Inc. Mudanza
+1. Inc. Consumo
+1. Inc. Desempleo
+1. Inc. Familiar
+1. Inc. Otros
+1. Tratamiento Técnico
+1. Tratamiento Psicológico
+1. Tratamiento Psiquiátrico
+1. Tratamiento Pedagógico
+1. Tratamiento Psicomotriz
+1. Tratamiento Fonoaudiológico
+1. Tratamiento Dificultades Diagnosticadas
+1. Tratamiento Discapacidad
+1. Tratamiento Ninguno
+1. Instrucción Previa al Nivel 3
+1. Nivel
+
+
+## Fechas de Evaluación
+
+A continuación veamos la distribución según las fechas de evaluación:
+
+```{r 30_Dem_QDOB, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+# Clasificamos los casos según el cuatrimestre de nacimiento
+
+# Definición de la función
+library(dplyr)
+en_cuatro <- function(dataframe, columna_fechas) {
+  # Convertir la columna de fechas de character a Date
+  dataframe[[columna_fechas]] <- as.Date(dataframe[[columna_fechas]], format = "%m/%d/%Y")
+  
+  # Crear la nueva variable QDOB inmediatamente después de la columna de fechas
+  columna_pos <- which(names(dataframe) == columna_fechas) # Obtener la posición de la columna de fechas
+  dataframe <- dataframe %>%
+    mutate(QDOB = cut(
+      as.numeric(format(.data[[columna_fechas]], "%m")),  # Extraer el mes
+      breaks = c(0, 3, 6, 9, 12),                        # Definir los límites de los cuatrimestres
+      labels = c("1 (Ene-Mar)", "2 (Abr-Jun)", "3 (Jul-Sep)", "4 (Oct-Dic)"), # Etiquetas para los cuatrimestres
+      include.lowest = TRUE                              # Incluir el límite inferior (enero)
+    )) %>%
+    relocate(QDOB, .after = all_of(columna_fechas))      # Mover QDOB justo después de la columna de fechas
+  
+  # Convertir la nueva variable a factor (opcional, ya hecho en cut)
+  dataframe$QDOB <- as.factor(dataframe$QDOB)
+  
+  return(dataframe)
+}
+
+# Uso de la función
+INDI30 <- en_cuatro(INDI30, "Fecnac")
+
+# Verificar resultados
+# head(INDI30)
+
+
+
+
+
+```
+
+
+
+```{r 30_Dem_FechAp, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+library(tidyverse)
+library(readr)
+library(dplyr)
+library(readxl)
+library(openxlsx)
+library(lubridate)
+
+INDI30 <- INDI30 %>%
+  mutate(across(c(02:05), as.factor))
+
+INDI30 <- INDI30 %>%
+  mutate(across(c(07:11), as.factor))
+
+INDI30 <- INDI30 %>%
+  mutate(across(c(22:42), as.factor))
+
+t.Fechin <- tf(INDI30, Fechin)
+
+#Definiendo función grafiporc
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+
+grafiporc <- function(variable, data, 
+                                 titulo = "Distribución porcentual", 
+                                 etiqueta_x = "Categorías", 
+                                 etiqueta_y = "Porcentaje", 
+                                 pie_de_pagina = "Fuente: Datos internos", 
+                                 paleta_colores = "Dark2") {
+  # Validar que la variable es un factor
+  if (!is.factor(data[[deparse(substitute(variable))]])) {
+    stop("La variable debe ser de tipo factor. Por favor, conviértela antes de usar esta función.")
+  }
+  
+  # Calcular los porcentajes
+  datos_porcentajes <- data %>%
+    count({{ variable }}) %>%
+    mutate(porcentaje = n / sum(n) * 100)
+  
+  # Redondear los porcentajes
+  datos_porcentajes$porcentaje <- round(datos_porcentajes$porcentaje, 2)
+  
+  # Crear el gráfico de barras con porcentajes
+  ggplot(datos_porcentajes, aes(x = {{ variable }}, y = porcentaje, fill = {{ variable }})) +
+    geom_col(width = 0.75) +
+    geom_text(aes(label = paste0(porcentaje, " %")), vjust = 1.2) +
+    scale_fill_brewer(palette = paleta_colores) +
+    labs(
+      title = titulo,
+      x = etiqueta_x,
+      y = etiqueta_y,
+      caption = pie_de_pagina
+    ) +
+    theme_gray() +
+    theme(legend.position = "none")
+}
+
+# Ejemplo de aplicación básica:
+# Supongamos que tu dataframe se llama INDI45 y tu variable es Fechin
+# Ejemplo aplicación personalizada
+grafiporc(
+  variable = Fechin, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes según Fecha de Evaluación", 
+  etiqueta_x = "Fecha de Evaluación", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"
+)
+```
+
+
+
+## Edad en Meses
+
+A continuación, la información acerca de la edad en meses del participante
+
+```{r 30_Dem_Age_Mo, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+t.agemo <- tf(INDI30, EDADMES)
+# Definir la función para calcular indicadores estadísticos descriptivos
+TED <- function(df) {
+  # Crear un data frame para almacenar los resultados
+  resultados <- data.frame(
+    Variable = character(),
+    Mediana = numeric(),
+    Media = numeric(),
+    `Desviación Estándar` = numeric(),
+    `Número de Casos` = integer(),
+    stringsAsFactors = FALSE
+  )
+  
+  # Iterar sobre cada columna del dataframe
+  for (nombre_columna in colnames(df)) {
+    # Calcular la mediana, media, desviación estándar y número de casos
+    mediana <- round(median(df[[nombre_columna]]), 2)
+    media <- round(mean(df[[nombre_columna]]), 2)
+    desviacion_estandar <- round(sd(df[[nombre_columna]]), 2)
+    numero_casos <- length(df[[nombre_columna]])
+    
+    # Agregar los resultados al data frame
+    resultados <- rbind(resultados, data.frame(
+      Variable = nombre_columna,
+      Mediana = mediana,
+      Media = media,
+      `Desviación Estándar` = desviacion_estandar,
+      `Número de Casos` = numero_casos
+    ))
+  }
+  
+  return(kable(resultados, format = "markdown"))
+}
+
+
+
+# Llamar a la función y mostrar los resultados
+AGEMO <- INDI30 %>% 
+  select(EDADMES) %>% 
+  as.data.frame()
+
+TED_agemo <- TED(AGEMO)
+print(TED_agemo)
+
+```
+A continuación el histograma de la Edad en meses:
+
+
+```{r 30_AgeMo_Hist,  echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+
+chiste <- function(data) {
+  # Lista de paletas para colorear los histogramas
+  paletas <- c(
+    "Blues", "BuGn", "BuPu", "GnBu", "Greens", "Greys", 
+    "Oranges", "OrRd", "PuBu", "PuBuGn", "PuRd", "Purples", 
+    "RdPu", "Reds", "YlGn", "YlGnBu", "YlOrBr", "YlOrRd"
+  )
+  
+  # Convertir paletas en colores hexadecimales
+  colores_paletas <- lapply(paletas, function(p) brewer.pal(9, p))
+  
+  # Iterar sobre cada columna del dataframe
+  for (i in seq_along(data)) {
+    variable <- data[[i]]
+    nombre_variable <- colnames(data)[i]
+    
+    # Seleccionar la paleta correspondiente (cíclico)
+    colores <- colores_paletas[[(i - 1) %% length(colores_paletas) + 1]]
+    
+    # Calcular media y desviación estándar
+    media_var <- mean(variable)
+    sd_var <- sd(variable)
+    
+    # Crear el histograma con ggplot2
+    histograma <- ggplot(data = data.frame(variable), aes(x = variable)) +
+      geom_histogram(aes(y = ..density..), 
+                     bins = 30, 
+                     fill = colores[5],  # Color central de la paleta
+                     color = "black") +
+      stat_function(fun = dnorm, 
+                    args = list(mean = media_var, sd = sd_var), 
+                    color = "red", size = 1) +
+      geom_vline(aes(xintercept = media_var), 
+                 color = "blue", linetype = "dashed", size = 1) +
+      ggtitle(paste("Histograma de", nombre_variable)) +
+      theme_minimal() +
+      labs(x = nombre_variable, y = "Densidad")
+    
+    # Mostrar el gráfico
+    print(histograma)
+  }
+}
+# Creando Histo Especial
+
+chiste(AGEMO)
+```
+
+## Cuatrimestre de Nacimiento
+
+A continuación, la información acerca de la edad en meses del participante. Esta variable fue creada a partir de los datos de fecha de nacimiento de los participantes. El propósito es llegar a establecer, posteriormente, si existe relación entre el cuatrimestre de nacimiento del participante y el nivel de desempeño en la Escala DINI (relaciones similares han sido encontradas en estudios previos para otros instrumentos y mediciones de logro académico).
+
+```{r 30_QDOB, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+# tABLA DE fRECUENCIAS
+
+t.QDOB <- tf(INDI30, QDOB)
+
+# Gráfico Porcentual
+
+grafiporc(
+  variable = QDOB, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes según Cuatrimestre de Nacimiento", 
+  etiqueta_x = "Cuatrimestre de nac.", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"
+)
+```
+
+## Grupo CodMod
+
+
+A continuación, la información acerca de CodMod
+
+```{r 30_CodMod, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+t.Codmod <- tf(INDI30, Codmod)
+
+```
+
+## Región Natural
+
+
+A continuación, la información acerca de la Región Natural
+
+```{r 30_RegNat, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+# Re-etiquetar los valores de la columna "Categoria"
+INDI30 <- INDI30 %>%
+  mutate(Regnat = recode(Regnat,
+                            "1" = "Costa",
+                            "2" = "Sierra",
+                            "3" = "Selva"))
+# Generamos tabla de frecuencias
+t.Regnat <- tf(INDI30, Regnat)
+# Generamos el gráfico
+grafiporc(
+  variable = Regnat, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes según Región Natural", 
+  etiqueta_x = "Región", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"  
+)
+
+```
+
+
+## Área
+
+A continuación, la información acerca del Área
+
+```{r 30_Area, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+# Re-etiquetar los valores de la columna "Categoria"
+INDI30 <- INDI30 %>%
+  mutate(Area = recode(Area,
+                            "1" = "Urbana",
+                            "2" = "Rural"))
+# Generamos tabla de frecuencias
+t.Area <- tf(INDI30, Area)
+# Generamos el gráfico
+grafiporc(
+  variable = Area, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes según Área", 
+  etiqueta_x = "Área", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"  
+)
+
+```
+
+
+## Nivel de Modalidad
+
+A continuación, la información acerca del Nivel de Modalidad
+
+```{r 30_NivMod, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+# Generamos tabla de frecuencias
+t.NivMod <- tf(INDI30, Nivmod)
+
+# Generamos el gráfico
+grafiporc(
+  variable = Nivmod, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes según Nivel de Modalidad", 
+  etiqueta_x = "Nivel", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"  
+)
+```
+
+## Gestión
+
+A continuación, la información acerca de la Gestión (Pública o Privada) de la institución edicativa.
+
+```{r 30_Gest, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+INDI30 <- INDI30 %>%
+  mutate(Gest = recode(Gest,
+                            "1" = "Pública",
+                            "2" = "Privada"))
+# Generamos tabla de frecuencias
+t.Gest <- tf(INDI30, Gest)
+
+# Generamos el gráfico
+grafiporc(
+  variable = Gest, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes según Gestión", 
+  etiqueta_x = "Gestión", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"  
+)
+```
+
+## Departamento
+
+A continuación, la información acerca del Departamento en donde vive el participante.
+
+```{r 30_Depa, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+INDI30$Reg <- as.factor(INDI30$Reg)
+
+t.Depa <- tf(INDI30, Reg)
+
+# Generamos el gráfico
+grafiporc(
+  variable = Reg, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes según Departamento", 
+  etiqueta_x = "Departamento", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"  
+)
+```
+
+
+## Quintil de Pobreza
+
+A continuación, la información acerca del Departamento en donde vive el participante.
+
+```{r 30_Quintus, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+INDI30$Quintil <- as.factor(INDI30$Quintil)
+
+t.Quin <- tf(INDI30, Quintil)
+
+# Generamos el gráfico
+grafiporc(
+  variable = Quintil, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes según Quintil de Pobreza", 
+  etiqueta_x = "Quintil", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"  
+)
+```
+
+
+
+## Incidencia / No Incidencia (VSS)
+
+A continuación, la información acerca de la Incidencia / No Incidencia.
+
+```{r 30_VSS, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+INDI30 <- INDI30 %>%
+  mutate(VSS = recode(VSS,
+                            "0" = "Ninguna",
+                            "1" = "Al Menos Una"))
+t.VSS <- tf(INDI30, VSS)
+
+# Generamos el gráfico
+grafiporc(
+  variable = VSS, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes según Existencia de Incidencia", 
+  etiqueta_x = "Incidencia?", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"  
+)
+```
+
+
+## Incidencia Perinatal (VSSdesper)
+
+A continuación, la información acerca de la Incidencia Perinatal.
+
+```{r 30_VSSdesper, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+INDI30 <- INDI30 %>%
+  mutate(VSSdesper = recode(VSSdesper,
+                            "0" = "Ninguna",
+                            "1" = "Al Menos Una"))
+t.VSSdesper <- tf(INDI30, VSSdesper)
+
+# Generamos el gráfico
+grafiporc(
+  variable = VSSdesper, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes con Inc. Perinatal", 
+  etiqueta_x = "Inc. Perinatal?", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"  
+)
+```
+
+
+## Incidencia Tratamiento Médico (VSSttomed)
+
+A continuación, la información acerca de la Incidencia por Tratamiento Médico.
+
+```{r 30_VSSttomed, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+INDI30 <- INDI30 %>%
+  mutate(VSSttomed = recode(VSSttomed,
+                            "0" = "Ninguna",
+                            "1" = "Al Menos Una"))
+t.VSSttomed <- tf(INDI30, VSSttomed)
+
+# Generamos el gráfico
+grafiporc(
+  variable = VSSttomed, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes con Inc. de Tratamiento Médico", 
+  etiqueta_x = "Inc. Tto. Médico?", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"  
+)
+```
+
+
+
+
+
+
+
+
+
+## Incidencia por Patología (VSSpatolo)
+
+A continuación, la información acerca de la Incidencia por Patología.
+
+```{r 30_VSSpatolo, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+INDI30 <- INDI30 %>%
+  mutate(VSSpatolo = recode(VSSpatolo,
+                            "0" = "Ninguna",
+                            "1" = "Al Menos Una"))
+t.VSSpatolo <- tf(INDI30, VSSpatolo)
+
+# Generamos el gráfico
+grafiporc(
+  variable = VSSpatolo, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes con Inc. por Patología", 
+  etiqueta_x = "Inc. Patología?", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"  
+)
+```
+
+
+## Incidencia por Negligencia (VSSnegl)
+
+A continuación, la información acerca de la Incidencia por Negligencia
+
+```{r 30_VSSnegl, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+INDI30 <- INDI30 %>%
+  mutate(VSSnegl = recode(VSSnegl,
+                            "0" = "Ninguna",
+                            "1" = "Al Menos Una"))
+t.VSSnegl <- tf(INDI30, VSSnegl)
+
+# Generamos el gráfico
+grafiporc(
+  variable = VSSnegl, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes con Inc. por Negligencia", 
+  etiqueta_x = "Inc. Negligencia?", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"  
+)
+```
+
+## Incidencia por Mudanza (VSSmud)
+
+A continuación, la información acerca de la Incidencia por Mudanza
+
+
+```{r 30_VSSmud, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+INDI30 <- INDI30 %>%
+  mutate(VSSmud = recode(VSSmud,
+                            "0" = "Ninguna",
+                            "1" = "Al Menos Una"))
+t.VSSmud <- tf(INDI30, VSSmud)
+
+# Generamos el gráfico
+grafiporc(
+  variable = VSSmud, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes con Inc. por Mudanza", 
+  etiqueta_x = "Inc. Mudanza?", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"  
+)
+```
+
+
+
+## Incidencia por Consumo (VSSconsus)
+
+A continuación, la información acerca de la Incidencia por Consumo:
+
+
+```{r 30_VSSconsus, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+INDI30 <- INDI30 %>%
+  mutate(VSSconsus = recode(VSSconsus,
+                            "0" = "Ninguna",
+                            "1" = "Al Menos Una"))
+t.VSSconsus <- tf(INDI30, VSSconsus)
+
+# Generamos el gráfico
+grafiporc(
+  variable = VSSconsus, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes con Inc. por Consumo", 
+  etiqueta_x = "Inc. Consumo?", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"  
+)
+```
+
+
+
+## Incidencia por Desempleo (VSSdesemp)
+
+A continuación, la información acerca de la Incidencia por Desempleo:
+
+
+```{r 30_VSSdesemp, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+INDI30 <- INDI30 %>%
+  mutate(VSSdesemp = recode(VSSdesemp,
+                            "0" = "Ninguna",
+                            "1" = "Al Menos Una"))
+t.VSSdesemp <- tf(INDI30, VSSdesemp)
+
+# Generamos el gráfico
+grafiporc(
+  variable = VSSdesemp, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes con Inc. por Desempleo", 
+  etiqueta_x = "Inc. Desempleo?", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"  
+)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Incidencia Familiar (VSSfamprilib)
+
+A continuación, la información acerca de la Incidencia Familiar:
+
+
+```{r 30_VSSfamprilib, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+INDI30 <- INDI30 %>%
+  mutate(VSSfamprilib = recode(VSSfamprilib,
+                            "0" = "Ninguna",
+                            "1" = "Al Menos Una"))
+t.VSSfamprilib <- tf(INDI30, VSSfamprilib)
+
+# Generamos el gráfico
+grafiporc(
+  variable = VSSfamprilib, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes con Inc. por Desempleo", 
+  etiqueta_x = "Inc. Desempleo?", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"  
+)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Incidencia Otros (VSSotro)
+
+A continuación, la información acerca de la Incidencia Otros:
+
+
+```{r 30_VSSotro, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+INDI30 <- INDI30 %>%
+  mutate(VSSotro = recode(VSSotro,
+                            "0" = "Ninguna",
+                            "1" = "Al Menos Una"))
+t.VSSotro <- tf(INDI30, VSSotro)
+
+# Generamos el gráfico
+grafiporc(
+  variable = VSSotro, 
+  data = INDI30, 
+  titulo = "Distribución Porcentual de Participantes con Otras Incidencias", 
+  etiqueta_x = "Inc. Otros?", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Grupo 3", 
+  paleta_colores = "Dark2"  
+)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

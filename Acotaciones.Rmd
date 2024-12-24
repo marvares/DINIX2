@@ -1,0 +1,69 @@
+---
+title: "RAM Book"
+author: "Martín Vargas Estrada"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Estructura
+
+
+```{r cars}
+library(tidyverse)
+glimpse(INDI30)
+```
+
+## Pgtas
+
+* Los niveles son grupos etarios?
+* Qué es Codmod?
+* Qué es "Área"?
+* Qué es "Nivmod"?
+* Qué es "Gestión"?
+* Revisar todos los flags VSS en adelante
+* Qué sentido tiene el flag VSSning ("Ninguna Incidencia"?)
+* Qué es "Nivel"? Nivel de qué?
+* NO HAY DATOS DE NIVEL EDUCATIVO PARENTAL EN GRUPO 3
+
+
+```{r CHECKING}
+unique(INDI30$Grainsmad)
+unique(INDI30$Grainspad)
+# Cargar ggplot2
+library(ggplot2)
+
+# Crear un dataset de ejemplo
+data <- data.frame(
+  categoria = c("A", "B", "C", "D"),
+  valores = c(10, 15, 7, 12)
+)
+
+# Crear el gráfico base
+grafico_base <- ggplot(data, aes(x = categoria, y = valores)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(title = "Ejemplo de temas en ggplot2", x = "Categoría", y = "Valores")
+
+# Aplicar cada tema disponible
+temas <- list(
+  theme_gray(),       # Tema por defecto
+  theme_bw(),         # Blanco y negro
+  theme_linedraw(),   # Simple y limpio
+  theme_light(),      # Fondo claro con cuadrículas
+  theme_dark(),       # Fondo oscuro
+  theme_minimal(),    # Minimalista
+  theme_classic(),    # Estilo clásico
+  theme_void()        # Sin cuadrículas ni ejes
+)
+
+# Dibujar gráficos con diferentes temas
+for (i in seq_along(temas)) {
+  print(grafico_base + temas[[i]] + ggtitle(paste("Tema:", deparse(substitute(temas[[i]])))))
+}
+
+unique(INDI30$Area)
+```
+

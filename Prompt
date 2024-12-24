@@ -1,0 +1,20 @@
+Necesito que generes una función que evalúe la correlación Spearman entre una serie de variables numéricas, por un lado, y una única variable numérica, por el otro. Llamemos "X" a las variables numéricas múltiples, y "Y" a la única variable contra la cual se va a evaluar la asociación o correlación. Por ejemplo, las variables "X" podrían ser Puntaje en el curso de Matemática(M), Puntaje en el curso de Lenguaje(L), y Puntaje en el curso de Idiomas(I). La variable "Y" podría ser: Coeficiente Intelectual(CI). Entonces las correlaciones a calcular serían: M y CI; L y CI, I y CI. 
+
+La idea es que los parámetros sean: 
+
+1. Dataframe
+2. Variables "X" (una o más)
+3. Variable "Y" (solo una)
+
+El resultado debería ser una tabla de doble entrada con los nombres de las variables "X" en las filas, y cuatro columnas. La primera debe llamar "Índice" y contendrá el valor del índice rho; la segunda "Magnitud", y contendrá el valor según lo que indico más abajo; la tercera columna debe llamarse "Significación" y debe contener el nivel de significancia estadística (según lo usual: ***,  **, *, NS).
+
+Para la magnitud, básate en lo siguiente: 
+
+1. Si 0 ≥ rho > 0.1 Nula
+2. Si 0.1 ≥ rho > 0.2 Muy débil
+3. Si 0.2 ≥ rho > 0.3 Débil
+4. Si 0.3 ≥ rho > 0.5 Moderada
+5. Si 0.5 ≥ rho > 0.7 Fuerte
+6. Si 0.7 ≥ rho > 1.0 Muy fuerte
+
+Luego de la tabla, deberás generar sendos párrafos con la interpretación de cada índice rho. Cada párrafo deberá enunciar la interpretación de cada una de las correlaciones. 

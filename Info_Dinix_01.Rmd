@@ -1,0 +1,641 @@
+---
+title: "Informe Estandarización Perú Escala DINI 4-5 años"
+author: "Martín Vargas Estrada"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+# Introducción
+
+
+Informe de Exploración Psicométrica de los puntajes de la prueba DINI obtenidas con muestra de Perú, grupo etario de 4 a 5 años. 
+
+## Descripción de la muestra
+
+Pasaremos a describir y graficar las principales variables demográficas que caracterizan a la muestra:
+
+```{r SetUp, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+
+library(haven)
+
+# Carga el archivo .sav
+INDI30 <- read_sav("INDI3.sav")
+INDI45 <- read_sav("INDI45.sav")
+# View(INDI45)
+
+# Generamos funciones
+# Función para generar tablas de frecuencias comme il faut
+tf <- function(df, variable) {
+  resultado <- df %>%
+    group_by({{ variable }}) %>%
+    summarize(
+      n = n(),
+      porcentaje = round(n / nrow(df) * 100, 2)
+    ) %>%
+    arrange({{ variable }}) %>%
+    mutate(
+      n_acum = cumsum(n),
+      porcentaje_acum = cumsum(porcentaje)
+    ) %>% 
+    return(resultado)
+  # Cambiamos el nombre de las columnas de la tabla de frecuencias
+  colnames(resultado) <- c(colnames(resultado)[1], "N", "%", "N Acum.", "% Acum.")
+  # Personalizamos el caption con el nombre de la variable
+  caption_personalizado <- paste("Tabla de Frecuencias de", quo_name(enquo(variable)))
+  # Embellecemos la tabla
+  library(knitr)
+  # Aplicamos kable con el caption personalizado
+  print(kable(resultado, caption = caption_personalizado, align = 'lrrrr', booktabs = T))
+}
+```
+
+### Fechas
+
+A continuación 
+
+```{r 45_Dem_FechAp, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+library(tidyverse)
+library(readr)
+library(dplyr)
+library(readxl)
+library(openxlsx)
+library(lubridate)
+
+INDI45 <- INDI45 %>%
+  mutate(DIDI = Fechfinal - Fechin)
+
+INDI45 <- INDI45 %>%
+  mutate(across(c(06:13), as.factor))
+
+INDI45 <- INDI45 %>%
+  mutate(Fechin = as.factor(Fechin))
+
+t.Fechin <- tf(INDI45, Fechin)
+
+#Definiendo función grafiporc
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+
+graficar_porcentajes <- function(variable, data, 
+                                 titulo = "Distribución porcentual", 
+                                 etiqueta_x = "Categorías", 
+                                 etiqueta_y = "Porcentaje", 
+                                 pie_de_pagina = "Fuente: Datos internos. Elaboración propia", 
+                                 paleta_colores = "Dark2") {
+  # Validar que la variable es un factor
+  if (!is.factor(data[[deparse(substitute(variable))]])) {
+    stop("La variable debe ser de tipo factor. Por favor, conviértela antes de usar esta función.")
+  }
+  
+  # Calcular los porcentajes
+  datos_porcentajes <- data %>%
+    count({{ variable }}) %>%
+    mutate(porcentaje = n / sum(n) * 100)
+  
+  # Redondear los porcentajes
+  datos_porcentajes$porcentaje <- round(datos_porcentajes$porcentaje, 2)
+  
+  # Crear el gráfico de barras con porcentajes
+  ggplot(datos_porcentajes, aes(x = {{ variable }}, y = porcentaje, fill = {{ variable }})) +
+    geom_col(width = 0.75) +
+    geom_text(aes(label = paste0(porcentaje, " %")), vjust = 1.2) +
+    scale_fill_brewer(palette = paleta_colores) +
+    labs(
+      title = titulo,
+      x = etiqueta_x,
+      y = etiqueta_y,
+      caption = pie_de_pagina
+    ) +
+    theme_minimal() +
+    theme(legend.position = "none")
+}
+
+# Ejemplo de aplicación básica:
+# Supongamos que tu dataframe se llama INDI45 y tu variable es Fechin
+# Ejemplo aplicación personalizada
+graficar_porcentajes(
+  variable = Fechin, 
+  data = INDI45, 
+  titulo = "Distribución Porcentual de Participantes según Fecha de Evaluación", 
+  etiqueta_x = "Fecha de Evaluación", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Análisis propio", 
+  paleta_colores = "Dark2"
+)
+```
+
+
+#### Fechas de Evaluación y su Impacto en los Puntajes INDI
+
+Pasaremos a hacer un análisis exhaustivo de la relación entre las fechas evaluación  y los puntajes de la escala:
+
+```{r 45_fechin_kw, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE,  results = 'asis'}
+
+library(dplyr)
+library(kableExtra)
+# definimos la función kuwa
+library(flextable)
+
+kuwa <- function(data, rango_var_num, col_factor) {
+  # Verificar que la variable factor sea de tipo factor
+  if (!is.factor(data[[col_factor]])) {
+    stop("La columna especificada como factor debe ser de tipo factor.")
+  }
+  
+  # Extraer nombres de las columnas numéricas
+  nombres_var <- colnames(data)[rango_var_num]
+  
+  # Inicializar lista de resultados
+  resultados <- data.frame(Variable = character(),
+                           P_Valor = numeric(),
+                           Significancia = character(),
+                           stringsAsFactors = FALSE)
+  
+  # Iterar sobre las columnas numéricas
+  for (col in nombres_var) {
+    tryCatch({
+      # Realizar la prueba Kruskal-Wallis
+      test <- kruskal.test(data[[col]] ~ data[[col_factor]])
+      p_valor <- test$p.value
+      
+      # Determinar la significancia
+      significancia <- ifelse(p_valor < 0.001, "***",
+                              ifelse(p_valor < 0.01, "**",
+                                     ifelse(p_valor < 0.05, "*", "ns")))
+      
+      # Agregar resultados al dataframe
+      resultados <- rbind(resultados, data.frame(Variable = col,
+                                                 P_Valor = round(p_valor, 2),
+                                                 Significancia = significancia))
+    }, error = function(e) {
+      warning(paste("Hubo un problema con la variable:", col, "-", e$message))
+    })
+  }
+  
+  # Crear tabla con flextable
+  tabla <- flextable(resultados)
+  tabla <- theme_vanilla(tabla) # Estilo predeterminado
+  tabla <- autofit(tabla)       # Ajustar automáticamente el tamaño de las columnas
+  
+  return(tabla)
+}
+
+# Ejemplo de uso
+# kw.fechin <- kuwa(data = INDI45, rango_var_num = 95:104, col_factor = 2)
+# kw.fechin
+
+
+# Aplicando
+
+kw.fechin <- kuwa(data = INDI45, rango_var_num = 95:104, col_factor = 2)
+
+kw.fechin
+
+```
+Podemos apreciar que en todos los casos, la fecha de evaluación incide en los niveles de los puntajes. Luego tendremos que verificar si lo que en realidad sucede ---como sospecho--- es que hay una variable encubierta que explica estas diferencias radicales de puntaje.
+
+Necesitamos explorar en qué grupos radica la diferencia.
+
+```{r 45_fechin_dundun, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE,  results = 'asis'}
+library(dunn.test)
+
+# Función actualizada
+# Instalar y cargar el paquete necesario
+if (!requireNamespace("dunn.test", quietly = TRUE)) {
+  install.packages("dunn.test")
+}
+library(dunn.test)
+
+# Función actualizada
+dundun <- function(dataframe, columna_datos, columna_grupo) {
+  # Extraer las variables de datos y grupo
+  datos <- dataframe[[columna_datos]]
+  grupo <- dataframe[[columna_grupo]]
+  
+  # Nombre de la variable numérica
+  nombre_variable <- colnames(dataframe)[columna_datos]
+  
+  # Verificar que las columnas seleccionadas sean válidas
+  if (!is.numeric(datos)) {
+    stop("La columna de datos debe ser numérica.")
+  }
+  if (!is.factor(grupo) && !is.character(grupo)) {
+    stop("La columna de grupo debe ser categórica (factor o texto).")
+  }
+  
+  # Convertir la columna de grupo a factor si no lo es
+  grupo <- as.factor(grupo)
+  
+  # Ejecutar el test de Dunn con ajuste Bonferroni
+  resultado_dunn <- dunn.test(x = datos, g = grupo, method = "bonferroni", kw = FALSE, table = FALSE)
+
+  # Extraer comparaciones y p-valores ajustados
+  comparaciones <- resultado_dunn$comparisons
+  p_valores_ajustados <- resultado_dunn$P.adjusted
+  
+  # Clasificar el nivel de significancia
+  significacion <- ifelse(p_valores_ajustados < 0.001, "***",
+                  ifelse(p_valores_ajustados < 0.01, "**",
+                  ifelse(p_valores_ajustados < 0.05, "*", "NS")))
+  
+  # Determinar si hay diferencias reales probables
+  diferencia_real <- ifelse(p_valores_ajustados < 0.05, "Sí", "No")
+  
+  # Crear el data frame final (sin el p-valor ajustado)
+  resultado_final <- data.frame(
+    Variable = nombre_variable,
+    Comparacion = comparaciones,
+    Significacion = significacion,
+    Diferencia_Real_Probable = diferencia_real,
+    stringsAsFactors = FALSE
+  )
+  
+  # Generar el gráfico de boxplot
+  cat("\n### Boxplots de la distribución de datos por grupo ###\n")
+  boxplot(datos ~ grupo,
+          main = paste("Distribución de", nombre_variable, "por grupo"),
+          xlab = "Grupo",
+          ylab = nombre_variable,
+          col = rainbow(length(levels(grupo))),
+          border = "black")
+  
+  # Mostrar la tabla con formato Markdown
+  cat("\n### Análisis Dunn de las diferencias estadísticamente significativas ###\n\n")
+  print(knitr::kable(resultado_final, format = "markdown"))
+}
+
+
+
+
+
+
+# Fin de la función
+
+
+dundun (dataframe = INDI45, columna_datos = 95, columna_grupo = 2)
+
+dundun (dataframe = INDI45, columna_datos = 96, columna_grupo = 2)
+
+dundun (dataframe = INDI45, columna_datos = 97, columna_grupo = 2)
+
+dundun (dataframe = INDI45, columna_datos = 98, columna_grupo = 2)
+
+dundun (dataframe = INDI45, columna_datos = 99, columna_grupo = 2)
+
+dundun (dataframe = INDI45, columna_datos = 100, columna_grupo = 2)
+
+
+```
+
+
+Pasemos ahora a examinar otras variables grupales en su incidencia en los puntajes del instrumento. 
+
+### Edad en Meses
+
+```{r 45_Dem_Age_Mo, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+t.agemo <- tf(INDI45, EDADMES)
+# Definir la función para calcular indicadores estadísticos descriptivos
+TED <- function(df) {
+  # Crear un data frame para almacenar los resultados
+  resultados <- data.frame(
+    Variable = character(),
+    Mediana = numeric(),
+    Media = numeric(),
+    `Desviación Estándar` = numeric(),
+    `Número de Casos` = integer(),
+    stringsAsFactors = FALSE
+  )
+  
+  # Iterar sobre cada columna del dataframe
+  for (nombre_columna in colnames(df)) {
+    # Calcular la mediana, media, desviación estándar y número de casos
+    mediana <- round(median(df[[nombre_columna]]), 2)
+    media <- round(mean(df[[nombre_columna]]), 2)
+    desviacion_estandar <- round(sd(df[[nombre_columna]]), 2)
+    numero_casos <- length(df[[nombre_columna]])
+    
+    # Agregar los resultados al data frame
+    resultados <- rbind(resultados, data.frame(
+      Variable = nombre_columna,
+      Mediana = mediana,
+      Media = media,
+      `Desviación Estándar` = desviacion_estandar,
+      `Número de Casos` = numero_casos
+    ))
+  }
+  
+  return(kable(resultados, format = "markdown"))
+}
+
+
+
+# Llamar a la función y mostrar los resultados
+AGEMO <- INDI45 %>% 
+  select(EDADMES) %>% 
+  as.data.frame()
+
+TED_agemo <- TED(AGEMO)
+print(TED_agemo)
+
+```
+A continuación el histograma de la Edad en meses:
+
+```{r 45_AgeMo_Hist,  echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+
+chiste <- function(data) {
+  # Lista de paletas para colorear los histogramas
+  paletas <- c(
+    "Blues", "BuGn", "BuPu", "GnBu", "Greens", "Greys", 
+    "Oranges", "OrRd", "PuBu", "PuBuGn", "PuRd", "Purples", 
+    "RdPu", "Reds", "YlGn", "YlGnBu", "YlOrBr", "YlOrRd"
+  )
+  
+  # Convertir paletas en colores hexadecimales
+  colores_paletas <- lapply(paletas, function(p) brewer.pal(9, p))
+  
+  # Iterar sobre cada columna del dataframe
+  for (i in seq_along(data)) {
+    variable <- data[[i]]
+    nombre_variable <- colnames(data)[i]
+    
+    # Seleccionar la paleta correspondiente (cíclico)
+    colores <- colores_paletas[[(i - 1) %% length(colores_paletas) + 1]]
+    
+    # Calcular media y desviación estándar
+    media_var <- mean(variable)
+    sd_var <- sd(variable)
+    
+    # Crear el histograma con ggplot2
+    histograma <- ggplot(data = data.frame(variable), aes(x = variable)) +
+      geom_histogram(aes(y = ..density..), 
+                     bins = 30, 
+                     fill = colores[5],  # Color central de la paleta
+                     color = "black") +
+      stat_function(fun = dnorm, 
+                    args = list(mean = media_var, sd = sd_var), 
+                    color = "red", size = 1) +
+      geom_vline(aes(xintercept = media_var), 
+                 color = "blue", linetype = "dashed", size = 1) +
+      ggtitle(paste("Histograma de", nombre_variable)) +
+      theme_minimal() +
+      labs(x = nombre_variable, y = "Densidad")
+    
+    # Mostrar el gráfico
+    print(histograma)
+  }
+}
+# Creando Histo Especial
+
+chiste(AGEMO)
+```
+
+Ahora evaluaremos la normalidad de la variable Edad en Meses:
+
+```{r 45_AgeMo_Norm, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+# Usamos la función Norma
+# Instalar el paquete nortest si no está instalado
+if (!requireNamespace("nortest", quietly = TRUE)) {
+  install.packages("nortest")
+}
+
+# Librerías necesarias
+library(dplyr)
+library(nortest)  # Para Anderson-Darling
+library(tseries)  # Para Jarque-Bera
+library(knitr)    # Para kable
+
+Norma <- function(data) {
+  # Función para calcular el nivel de significancia y formatear el resultado
+  interpretar_resultado <- function(p) {
+    if (is.na(p)) return("NA")
+    nivel_significancia <- ifelse(p <= 0.001, "***",
+                                  ifelse(p <= 0.01, "**",
+                                         ifelse(p <= 0.05, "*", "NS")))
+    interpretacion <- ifelse(p > 0.05, "Se puede asumir normalidad", "No se puede asumir normalidad")
+    paste0("p = ", sprintf("%.2f", p), " ", nivel_significancia, " (", interpretacion, ")")
+  }
+  
+  # Lista para almacenar resultados
+  resultados <- list()
+  
+  # Iterar sobre cada columna del dataframe
+  for (var in colnames(data)) {
+    variable <- data[[var]]
+    
+    # Calcular los p-valores
+    shapiro_p <- ifelse(length(variable) > 2, shapiro.test(variable)$p.value, NA)
+    # ks_p <- ifelse(length(variable) > 1, ks.test(variable, "pnorm", mean(variable), sd(variable))$p.value, NA)
+    ks_p <- ifelse(length(variable) > 1, nortest::lillie.test(variable)$p.value, NA)
+    
+    # ad_p <- ifelse(length(variable) > 1, ad.test(variable)$p.value, NA)
+    
+    # Interpretar y formatear los resultados
+    shapiro_resultado <- interpretar_resultado(shapiro_p)
+    ks_resultado <- interpretar_resultado(ks_p)
+    # ad_resultado <- interpretar_resultado(ad_p)
+    
+    # Agregar resultados formateados a la lista
+    resultados[[var]] <- c(
+      Shapiro_Wilk = shapiro_resultado,
+      Lilliefors_KS = ks_resultado
+      # Anderson_Darling = ad_resultado
+    )
+  }
+  
+  # Convertir la lista en un dataframe
+  resultados_df <- as.data.frame(do.call(rbind, resultados), stringsAsFactors = FALSE)
+  rownames(resultados_df) <- colnames(data)
+  
+  # Personalizar la salida con kable
+  resultados_df %>%
+    kable(format = "markdown", align = "rll", caption = "Resultados de los tests de normalidad (S-W, Lilliefors K-S)")
+}
+
+
+# Ejemplo de uso con un dataframe "df"
+Norma(AGEMO)
+
+
+```
+
+Como vemos, la edad no está normalmente distribuida, lo cual no necesariamente era esperable por lo que no tiene mucha relevancia.
+
+#### Relación entre Edad y Puntajes DINI
+
+Pasamos a evluar la relación entre la Edad en meses del participante y el puntaje DINI:
+
+```{r 45_AGEMOvsDINI, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+
+```
+
+
+### Codmod
+
+Para la modalidad, tenemos los siguientes resultados:
+
+```{r 45_Codmod, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+t.Codmod <- tf(INDI45, Codmod)
+
+
+```
+
+Vamos a explorar si la modalidad impacta en los puntajes de la escala.
+
+```{r 45_kw_Codmod, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE,  results = 'asis'}
+kw.Codmod <- kuwa(data = INDI45, rango_var_num = 95:104, col_factor = 6)
+
+kw.Codmod
+
+```
+
+En efecto, vemos que el impacto de la modalidad es estadísticamente significativo.
+
+Necesitamos explorar en qué grupos radica la diferencia.
+
+### Región Natural
+
+Exploremos ahora la variable Región Natural (Costa, Sierra, Selva). 
+```{r 45_RegNat_Frec, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+# Recodificamos los valores de la variable 
+
+INDI45$Región <- recode(INDI45$Regnat, 
+                   `1` = "Costa", 
+                   `2` = "Sierra", 
+                   `3` = "Selva")
+# Generamos la tabla de frecuencias
+t.Región <- tf(INDI45,Región)
+#Generamos el gráfico Porcentual
+graficar_porcentajes(
+  variable = Región, 
+  data = INDI45, 
+  titulo = "Distribución Porcentual de Participantes según Región",   etiqueta_x = "Región", 
+  etiqueta_y = "Porcentaje de Participantes", 
+  pie_de_pagina = "Fuente: Análisis propio", 
+  paleta_colores = "Set1"
+)
+```
+
+# Análisis de Correlaciones
+
+Como las variables sumatorias de la Escala DINI no están normalmente distribuidas, se realizará la evaluación de la asociación con las variables demográficas numéricas mediante el índico rho de Spearman, que es un instrumento estadístico que no asume normalidad.
+
+## Edad y Puntajes Sumatorios de la Escala
+
+```{r corre_anal_45, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+# Función para calcular e interpretar correlaciones Spearman
+# Instalar paquetes necesarios si no están instalados
+if (!requireNamespace("flextable", quietly = TRUE)) install.packages("flextable")
+
+# Función ajustada para calcular y analizar correlaciones de Spearman con formato Markdown
+corre_anal <- function(data, variables_X, variable_Y) {
+  resultados <- data.frame(Variable_X = character(), Rho = numeric(), Magnitud = character(), 
+                           Significacion = character(), stringsAsFactors = FALSE)
+  
+  # Iterar sobre las variables X
+  for (var in variables_X) {
+    test <- cor.test(data[[var]], data[[variable_Y]], method = "spearman")
+    rho <- test$estimate
+    p_value <- test$p.value
+    
+    # Determinar la magnitud de rho
+    magnitud <- ifelse(abs(rho) > 0.7, "Muy fuerte",
+                       ifelse(abs(rho) > 0.5, "Fuerte",
+                              ifelse(abs(rho) > 0.3, "Moderada",
+                                     ifelse(abs(rho) > 0.2, "Débil",
+                                            ifelse(abs(rho) > 0.1, "Muy débil", "Nula")))))
+    
+    # Determinar la significación estadística
+    significacion <- ifelse(p_value < 0.001, "***",
+                            ifelse(p_value < 0.01, "**",
+                                   ifelse(p_value < 0.05, "*", "NS")))
+    
+    # Agregar los resultados a la tabla
+    resultados <- rbind(resultados, data.frame(
+      Variable_X = colnames(data)[var],
+      Rho = round(rho, 2),  # Redondear a dos decimales
+      Magnitud = magnitud,
+      Significacion = significacion
+    ))
+  }
+  
+  # Crear la tabla en formato Markdown
+  markdown_tabla <- paste0(
+    "| Variable X        | Índice Rho | Magnitud     | Significación |\n",
+    "|-------------------|------------|--------------|---------------|\n"
+  )
+  for (i in 1:nrow(resultados)) {
+    fila <- resultados[i, ]
+    # Alinear Rho a la derecha añadiendo espacios si es necesario
+    rho_formateado <- sprintf("%6.2f", fila$Rho)
+    markdown_tabla <- paste0(markdown_tabla,
+                             "| ", fila$Variable_X, 
+                             " | ", rho_formateado, 
+                             " | ", fila$Magnitud, 
+                             " | ", fila$Significacion, "         |\n")
+  }
+  
+  # Generar interpretaciones textuales
+  no_significativas <- resultados[resultados$Significacion == "NS", ]
+  significativas <- resultados[resultados$Significacion != "NS" & resultados$Magnitud != "Nula", ]
+  significativas_nulas <- resultados[resultados$Significacion != "NS" & resultados$Magnitud == "Nula", ]
+  
+  texto <- ""
+  
+  # Correlaciones no significativas
+  if (nrow(no_significativas) > 0) {
+    texto <- paste(texto, "La(s) siguiente(s) correlación(es) no fueron estadísticamente significativas:")
+    texto <- paste(texto, paste(no_significativas$Variable_X, collapse = ", "), ".\n")
+  }
+  
+  # Correlaciones significativas pero con magnitud nula
+  if (nrow(significativas_nulas) > 0) {
+    texto <- paste(texto, "Por otro lado, la(s) siguiente(s) correlación(es), si bien técnicamente significativa(s), son de magnitud tan pequeña que no indican ninguna asociación en la práctica:")
+    texto <- paste(texto, paste(significativas_nulas$Variable_X, collapse = ", "), ".\n")
+  }
+  
+  # Correlaciones significativas con interpretación
+  if (nrow(significativas) > 0) {
+    texto <- paste(texto, "En contraste, las siguientes correlaciones sí resultaron estadísticamente significativas:")
+    texto <- paste(texto, paste(significativas$Variable_X, collapse = ", "), ".\n\n")
+    
+    texto <- paste(texto, "A continuación, pasaremos a analizar el detalle de las correlaciones estadísticamente significativas.\n")
+    for (i in 1:nrow(significativas)) {
+      detalle <- significativas[i, ]
+      signo <- ifelse(detalle$Rho > 0, "directa", "inversa")
+      interpretacion <- paste0(
+        "- La asociación entre ", detalle$Variable_X, " y ", colnames(data)[variable_Y],
+        " es ", detalle$Magnitud, " y ", signo, 
+        ". Esto implica que a mayor puntaje en ", detalle$Variable_X, 
+        ", la persona suele tener ", ifelse(signo == "directa", "mayores", "menores"),
+        " puntajes en ", colnames(data)[variable_Y], ".\n"
+      )
+      texto <- paste(texto, interpretacion, "\n")
+    }
+  }
+  
+  # Imprimir la tabla en formato Markdown y las interpretaciones
+  cat(markdown_tabla, "\n")
+  cat(texto, "\n")
+}
+
+# Probar la función con el conjunto de datos ficticio
+corre_anal(INDI45, variables_X = 95:104, variable_Y = 5)
+```
+
