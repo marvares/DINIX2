@@ -1342,14 +1342,443 @@ grafiporc(
 ```
 
 
+# Análisis Escalar Nivel 3
+
+
+En esta sección pasaremos a analizar la escala DINI en su aplicación al grupo de Nivel 3. 
+
+## Estructura de Subescalas
+
+1. La subescala "C" está compuesta por los ítems C1 a C23 (23 ítems)
+1. La subescala "M" está compuesta por los ítems M1 a M08 (08 ítems)
+1. La subescala "S" está compuesta por los ítems S1 a S13 (13 ítems)
+1. La subescala "D" está compuesta por los ítems D1 a D06 (06 ítems)
+
+
+
+Iniciaremos con el análisis de normalidad de las subescalas. 
+
+## Análisis de Normalidad Escala DINI
+
+### Estadísticos Descriptivos 
+
+```{r 30_TED_SUBESCALAS, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+
+
+# Definir la función para calcular indicadores estadísticos descriptivos
+TED <- function(df) {
+  # Crear un data frame para almacenar los resultados
+  resultados <- data.frame(
+    Variable = character(),
+    `Número de Casos` = integer(),
+    Mediana = numeric(),
+    Media = numeric(),
+    `Desviación Estándar` = numeric(),
+    stringsAsFactors = FALSE
+  )
+  
+  # Iterar sobre cada columna del dataframe
+  for (nombre_columna in colnames(df)) {
+    # Calcular la mediana, media, desviación estándar y número de casos
+    numero_casos <- length(df[[nombre_columna]])
+    mediana <- round(median(df[[nombre_columna]]), 2)
+    media <- round(mean(df[[nombre_columna]]), 2)
+    desviacion_estandar <- round(sd(df[[nombre_columna]]), 2)
+    
+    # Agregar los resultados al data frame
+    resultados <- rbind(resultados, data.frame(
+      Variable = nombre_columna,
+      `Número de Casos` = numero_casos,
+      Mediana = mediana,
+      Media = media,
+      `Desviación Estándar` = desviacion_estandar
+    ))
+  }
+  
+  # Retornar el dataframe en formato de tabla
+  return(kable(resultados, format = "markdown"))
+}
+
+
+# Generar el DF solo con los valores de las subescalas
+
+ayudin <- function(dataframe, columnas) {
+  # Verificar que las columnas seleccionadas sean numéricas
+  if (!all(sapply(columnas, function(col) is.numeric(dataframe[[col]])))) {
+    stop("Todas las columnas seleccionadas deben ser numéricas.")
+  }
+  
+  # Filtrar el dataframe eliminando filas con NA en las columnas seleccionadas
+  dataframe_limpio <- dataframe[complete.cases(dataframe[, columnas]), columnas]
+  
+  # Devolver el dataframe limpio
+  return(dataframe_limpio)
+}
+
+# Ejemplo de uso:
+# df_limpio <- limpiar_dataframe(dataframe = mi_dataframe, columnas = c(2, 4, 6))
+
+
+# Llamar a la función y mostrar los resultados
+# pre_TED_C3 <- ayudin(dataframe = INDI30, columnas = c(94:103))
+LIMPION <- ayudin(dataframe = INDI30, columnas = c(44:103))
+
+subes <- LIMPION %>% 
+  select(CLEN_sum:D_sum)
+
+TED_C3 <- TED(subes)
+print(TED_C3)
+
+```
+### Histogramas
+
+Veamos el histograma de cada variable:
+
+```{r 30_Histos, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+
+
+chiste <- function(data) {
+  # Lista de paletas para colorear los histogramas
+  paletas <- c(
+    "Blues", "BuGn", "BuPu", "GnBu", "Greens", "Greys", 
+    "Oranges", "OrRd", "PuBu", "PuBuGn", "PuRd", "Purples", 
+    "RdPu", "Reds", "YlGn", "YlGnBu", "YlOrBr", "YlOrRd"
+  )
+  
+  # Convertir paletas en colores hexadecimales
+  colores_paletas <- lapply(paletas, function(p) brewer.pal(9, p))
+  
+  # Iterar sobre cada columna del dataframe
+  for (i in seq_along(data)) {
+    variable <- data[[i]]
+    nombre_variable <- colnames(data)[i]
+    
+    # Seleccionar la paleta correspondiente (cíclico)
+    colores <- colores_paletas[[(i - 1) %% length(colores_paletas) + 1]]
+    
+    # Calcular media y desviación estándar
+    media_var <- mean(variable)
+    sd_var <- sd(variable)
+    
+    # Crear el histograma con ggplot2
+    histograma <- ggplot(data = data.frame(variable), aes(x = variable)) +
+      geom_histogram(aes(y = ..density..), 
+                     bins = 30, 
+                     fill = colores[5],  # Color central de la paleta
+                     color = "black") +
+      stat_function(fun = dnorm, 
+                    args = list(mean = media_var, sd = sd_var), 
+                    color = "red", size = 1) +
+      geom_vline(aes(xintercept = media_var), 
+                 color = "blue", linetype = "dashed", size = 1) +
+      ggtitle(paste("Histograma de", nombre_variable)) +
+      theme_gray() +
+      labs(x = nombre_variable, y = "Densidad")
+    
+    # Mostrar el gráfico
+    print(histograma)
+  }
+}
+
+# Aplicando la función
+# pre_TED_C3 <- as.data.frame(pre_TED_C3)
+chiste(subes)
+```
+
+### Normalidad 
+
+Empezaremos por hacer una comparación gráfica de la distribución de las subescalas y la distribución normal hipotética.
+
+```{r 30_QQ, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+# Función para generar los gráficos QQ
+
+dont_mess_with_my_qq <- function(data, columnas, nombres_escalas) {
+  # Validaciones iniciales
+  if (length(columnas) != length(nombres_escalas)) {
+    stop("El número de columnas debe coincidir con el número de nombres de escalas.")
+  }
+  
+  # Cargar ggplot2 si no está disponible
+  if (!requireNamespace("ggplot2", quietly = TRUE)) {
+    install.packages("ggplot2")
+  }
+  library(ggplot2)
+  
+  # Crear gráficos para cada escala
+  for (i in seq_along(columnas)) {
+    col_index <- columnas[i]
+    escala_nombre <- nombres_escalas[i]
+    
+    # Validar si la columna existe
+    if (col_index > ncol(data) || col_index < 1) {
+      stop(paste("La columna", col_index, "no existe en el dataframe."))
+    }
+    
+    # Extraer la columna
+    col_data <- data[[col_index]]
+    
+    # Generar el gráfico Q-Q y almacenarlo en una variable
+    plot <- ggplot(data.frame(valores = col_data), aes(sample = valores)) +
+      stat_qq() +
+      stat_qq_line(color = "blue", linetype = "dashed") +
+      labs(
+        title = paste("Gráfico Q-Q de la ", escala_nombre),
+        x = "Cuantiles teóricos",
+        y = "Cuantiles muestrales"
+      ) +
+      theme_minimal()
+    
+    # Mostrar el gráfico
+    print(plot)
+  }
+}
+
+
+
+
+# Usamos la función
+
+dont_mess_with_my_qq (
+  subes,
+  columnas = 8:10,
+  nombres_escalas= c("Escala Cognitiva", "Escala Socioemocional", "Escala Disposicional")
+  )
+```
+
+
+
+Pasemos a calcular los estadísticos de normalidad correspondientes a las subescalas DINI:
+
+```{r 30_Norma, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+# Librerías necesarias
+library(dplyr)
+library(nortest)  # Para K-S Lilliefors
+library(knitr)    # Para kable
+
+Norma <- function(data) {
+  # Función para calcular el nivel de significancia y formatear el resultado
+  interpretar_resultado <- function(p) {
+    if (is.na(p)) return("NA")
+    nivel_significancia <- ifelse(p <= 0.001, "***",
+                                  ifelse(p <= 0.01, "**",
+                                         ifelse(p <= 0.05, "*", "NS")))
+    interpretacion <- ifelse(p > 0.05, "Se puede asumir normalidad", "No se puede asumir normalidad")
+    paste0("p = ", sprintf("%.2f", p), " ", nivel_significancia, " (", interpretacion, ")")
+  }
+  
+  # Lista para almacenar resultados
+  resultados <- list()
+  
+  # Iterar sobre cada columna del dataframe
+  for (var in colnames(data)) {
+    variable <- data[[var]]
+    
+    # Calcular los p-valores
+    shapiro_p <- ifelse(length(variable) > 2, shapiro.test(variable)$p.value, NA)
+    # ks_p <- ifelse(length(variable) > 1, ks.test(variable, "pnorm", mean(variable), sd(variable))$p.value, NA)
+    ks_p <- ifelse(length(variable) > 1, nortest::lillie.test(variable)$p.value, NA)
+    
+    # ad_p <- ifelse(length(variable) > 1, ad.test(variable)$p.value, NA)
+    
+    # Interpretar y formatear los resultados
+    shapiro_resultado <- interpretar_resultado(shapiro_p)
+    ks_resultado <- interpretar_resultado(ks_p)
+    # ad_resultado <- interpretar_resultado(ad_p)
+    
+    # Agregar resultados formateados a la lista
+    resultados[[var]] <- c(
+      Shapiro_Wilk = shapiro_resultado,
+      Lilliefors_KS = ks_resultado
+      # Anderson_Darling = ad_resultado
+    )
+  }
+  
+  # Convertir la lista en un dataframe
+  resultados_df <- as.data.frame(do.call(rbind, resultados), stringsAsFactors = FALSE)
+  rownames(resultados_df) <- colnames(data)
+  
+  # Personalizar la salida con kable
+  resultados_df %>%
+    kable(format = "markdown", align = "rll", caption = "Resultados de los tests de normalidad (S-W, Lilliefors K-S)")
+}
+
+# Ejemplo de uso con un dataframe "df"
+Norma(subes)
+
+# Añado y uso función para geerar diagramas de caja
+
+library(RColorBrewer)
+
+
+encaja <- function(dataframe, columnas, titulo = "Boxplots de las Variables", paleta = "Dark2") {
+  # Validar si la paleta existe en RColorBrewer
+  if (!paleta %in% rownames(brewer.pal.info)) {
+    stop("La paleta especificada no existe en RColorBrewer. Por favor, elige una paleta válida.")
+  }
+  
+  # Seleccionar las columnas numéricas especificadas
+  datos <- dataframe[, columnas]
+  
+  # Verificar si todas las columnas seleccionadas son numéricas
+  if (!all(sapply(datos, is.numeric))) {
+    stop("Todas las columnas seleccionadas deben ser numéricas.")
+  }
+  
+  # Obtener los colores de la paleta
+  colores <- brewer.pal(min(length(columnas), brewer.pal.info[paleta, "maxcolors"]), paleta)
+  
+  # Calcular el espacio necesario para las etiquetas largas
+  max_length <- max(nchar(colnames(datos)))
+  margen_izquierdo <- max(5, max_length * 0.8) # Ajuste dinámico del margen izquierdo
+  
+  # Ajustar el margen de la gráfica
+  par(mar = c(5, margen_izquierdo, 4, 2)) # c(bottom, left, top, right)
+  
+  # Crear el gráfico de boxplots
+  boxplot(
+    datos,
+    horizontal = TRUE,       # Boxplots horizontales
+    col = colores,           # Colores asignados desde la paleta
+    main = titulo,           # Título del gráfico
+    las = 1,                 # Rotar las etiquetas para legibilidad
+    xlab = "Valores",        # Etiqueta del eje X
+    names = colnames(datos)  # Nombres de las variables como etiquetas
+  )
+}
 
 
 
 
 
+# Ejemplo de uso:
+encaja(dataframe = subes, columnas = 01:07, titulo = "Distribución de las Subescalas DINI", paleta = "Set3")
 
 
+```
 
+
+### Confiabilidad
+
+Pasemos ahora a calcular los índices de confiabilidad alpha de Cronbach para las subescalas DINI.
+
+```{r 30_alpha, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+# Vamos a generar los dfs para el cálculo de confiabilidad
+# Jalamaos los paquetes necesarios
+library(psych)
+library(knitr)
+# Creamos df para escala C
+Escala_C <- LIMPION %>% 
+  select(C1:C23) %>% 
+  na.omit()
+
+# Creamos df para escala M
+Escala_M <- LIMPION %>% 
+  select(M1:M8) %>% 
+  na.omit()
+
+# Creamos df para escala S
+Escala_S <- LIMPION %>% 
+  select(S1:S13) %>% 
+  na.omit()
+
+# Creamos df para escala D
+Escala_D <- LIMPION %>% 
+  select(D1:D6) %>% 
+  na.omit()
+
+alfalfa <- function(dataframe, nombre_escala) {
+  # Calcular el índice alpha estándar
+  alpha_res <- alpha(dataframe)
+  std_alpha <- round(alpha_res$total[1, "std.alpha"], 2)  # Redondear std.alpha a 2 decimales
+  
+  # Inicializar variables para los resultados
+  items_a_excluir <- c()
+  
+  # Calcular alpha al excluir cada ítem
+  for (item in colnames(dataframe)) {
+    # Calcular alpha sin el ítem actual
+    alpha_sin_item <- alpha(dataframe[, !(colnames(dataframe) %in% item)])
+    std_alpha_sin_item <- round(alpha_sin_item$total[1, "std.alpha"], 2)  # Redondear std.alpha a 2 decimales
+    alpha_diff <- std_alpha_sin_item - std_alpha
+    
+    # Evaluar si el alpha mejora más de 0.05
+    if (alpha_diff >= 0.05) {
+      items_a_excluir <- c(items_a_excluir, item)
+    }
+  }
+  
+  # Preparar los valores finales para la tabla
+  cantidad_items <- length(items_a_excluir)
+  if (cantidad_items == 0) {
+    items_a_excluir <- "no hay ítems cuya exclusión incremente alpha en más de 0.05 puntos"
+  }
+  
+  # Crear la tabla de resultados
+  tabla_resultados <- data.frame(
+    `Std.Alpha` = std_alpha,
+    `Cantidad Items Prescindibles` = ifelse(cantidad_items == 0, 0, cantidad_items),
+    `Items` = paste(items_a_excluir, collapse = ", ")
+  )
+  
+  # Mostrar la tabla con título usando kable
+  kable(tabla_resultados, 
+        caption = paste("Confiabilidad de la", nombre_escala))
+}
+
+alfabeta <- function(dataframe, nombre_escala) {
+  # Calcular el índice alpha estándar con check.keys = TRUE, suprimiendo advertencias y mensajes
+  alpha_res <- suppressWarnings(suppressMessages(alpha(dataframe, check.keys = TRUE)))
+  std_alpha <- round(alpha_res$total[1, "std.alpha"], 2)  # Redondear std.alpha a 2 decimales
+
+  # Inicializar variables para los resultados
+  items_a_excluir <- c()
+
+  # Calcular alpha al excluir cada ítem
+  for (item in colnames(dataframe)) {
+    # Calcular alpha sin el ítem actual, con check.keys = TRUE
+    alpha_sin_item <- suppressWarnings(suppressMessages(alpha(dataframe[, !(colnames(dataframe) %in% item)], check.keys = TRUE)))
+    std_alpha_sin_item <- round(alpha_sin_item$total[1, "std.alpha"], 2)  # Redondear std.alpha a 2 decimales
+    alpha_diff <- std_alpha_sin_item - std_alpha
+
+    # Evaluar si el alpha mejora más de 0.05
+    if (alpha_diff >= 0.05) {
+      items_a_excluir <- c(items_a_excluir, item)
+    }
+  }
+
+  # Preparar los valores finales para la tabla
+  cantidad_items <- length(items_a_excluir)
+  if (cantidad_items == 0) {
+    items_a_excluir <- "No hay ítems cuya exclusión incremente alpha en más de 0.05 puntos"
+  }
+
+  # Crear la tabla de resultados
+  tabla_resultados <- data.frame(
+    `Std.Alpha` = std_alpha,
+    `Cantidad Items Prescindibles` = ifelse(cantidad_items == 0, 0, cantidad_items),
+    `Items` = paste(items_a_excluir, collapse = ", ")
+  )
+
+  # Mostrar la tabla con título usando kable
+  kable(tabla_resultados,
+        caption = paste("Confiabilidad de la", nombre_escala))
+}
+
+alfalfa(Escala_C, "Escala C")
+alfalfa(Escala_M, "Escala M")
+alfabeta (Escala_S, "Escala S")
+alfalfa(Escala_D, "Escala D")
+
+
+```
+
+
+De los índices obtenidos podemos establecer que las subescalas DINI muestran una gran confiabilidad; es decir, miden de forma consistente, sin que exista ítems que vayan en detrimento de la confiabilidad general. Por el contrario, todos los reactivos ostentan consistencia con los demás. 
 
 
 

@@ -155,3 +155,43 @@ El output o salida debe llevar como título "Análisis Dunn de las diferencias e
 2. La segunda columna debe llamarse "Diferencia Real Probable", y debe contener los valores "Sí" (si el p-valor es menor a 0.05) o "No" si el p-valor es igual o mayor a 0.05.
 
 Me puedes hacer todas las preguntas que consideres necesarias para dar tu mejor resultado.
+
+## Prompt para seleccionar data numérica destinada a una TED
+
+En el contexto del lenguaje de programación estadística R, necesito que me generes una función que me permita:
+
+1. Seleccionar una serie de variables numéricas a partir de un dataframe
+1. Filtrar todos los casos de "NA" que aparezcan (eliminarlos) para cualesquiera de las variables.
+1. Los prompts deben ser: 
+  * El nombre del dataframe
+  * Las columnas en donde están las variables (identificadas por el número de columna)
+
+Me puedes hacer todas las preguntas que consideres necesarias para dar tu mejor resultado.
+
+## Prompt para boxplot
+
+Necesito que crees una función que genere gráficos boxplot orientados en formato horizontal ("echados"). La función debe ser capaz de generar boxplots uno debajo del otro a fin de comparar las distribuciones de las variables. Cada boxplot deberá estar coloreado según la paleta RColorBrewer que yo escoja, siendo el valor de paleta por defecto "Dark2".
+
+Los prompts para la función deben ser: 
+
+* El nombre del dataframe
+* El rango de columnas numéricas a graficar.
+
+Me puedes hacer todas las preguntas que consideres necesarias para dar tu mejor resultado.
+
+Etiquetas de los ejes:
+
+    ¿Prefieres que las etiquetas de cada boxplot sean los nombres de las columnas seleccionadas? Sí
+    ¿Quieres personalizar el título del gráfico o las etiquetas de los ejes, o dejo valores por defecto (e.g., "Boxplots de las Variables")? Añade un prompt que me permita definir cuál será el título
+
+Personalización del diseño:
+
+    ¿Debería ajustarse automáticamente el tamaño de la figura en función del número de variables seleccionadas? Sí
+    ¿Necesitas incluir una leyenda o alguna información adicional en el gráfico? No
+
+Paleta de colores:
+
+    La paleta predeterminada será "Dark2". ¿Quieres que la función valide si la paleta especificada existe en RColorBrewer y genere un mensaje de error si no es válida? No
+    
+## Para análisis de confiabilidad
+
