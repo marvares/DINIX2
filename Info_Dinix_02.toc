@@ -1,0 +1,41 @@
+\contentsline {section}{Introducción}{3}{section*.2}%
+\contentsline {section}{Análisis Descriptivo Nivel 3}{3}{section*.3}%
+\contentsline {subsection}{Fechas de Evaluación}{3}{section*.4}%
+\contentsline {subsection}{Edad en Meses}{4}{section*.5}%
+\contentsline {subsection}{Cuatrimestre de Nacimiento}{5}{section*.6}%
+\contentsline {subsection}{Código Modular}{6}{section*.7}%
+\contentsline {subsection}{Región Natural}{7}{section*.8}%
+\contentsline {subsection}{Área}{8}{section*.9}%
+\contentsline {subsection}{Nivel Modalidad}{9}{section*.10}%
+\contentsline {subsection}{Gestión}{10}{section*.11}%
+\contentsline {subsection}{Departamento}{11}{section*.12}%
+\contentsline {subsection}{Quintil de Pobreza}{12}{section*.13}%
+\contentsline {subsection}{Incidencia / No Incidencia (VSS)}{13}{section*.14}%
+\contentsline {subsection}{Incidencia Perinatal (VSSdesper)}{14}{section*.15}%
+\contentsline {subsection}{Incidencia Tratamiento Médico (VSSttomed)}{15}{section*.16}%
+\contentsline {subsection}{Incidencia por Patología (VSSpatolo)}{16}{section*.17}%
+\contentsline {subsection}{Incidencia por Negligencia (VSSnegl)}{17}{section*.18}%
+\contentsline {subsection}{Incidencia por Mudanza (VSSmud)}{18}{section*.19}%
+\contentsline {subsection}{Incidencia por Consumo (VSSconsus)}{19}{section*.20}%
+\contentsline {subsection}{Incidencia por Desempleo (VSSdesemp)}{20}{section*.21}%
+\contentsline {subsection}{Incidencia Familiar (VSSfamprilib)}{21}{section*.22}%
+\contentsline {subsection}{Incidencia Otros (VSSotro)}{22}{section*.23}%
+\contentsline {subsection}{Tratamiento Técnico (RTT)}{23}{section*.24}%
+\contentsline {subsection}{Tratamiento Psicológico (RTTasipsi)}{24}{section*.25}%
+\contentsline {subsection}{Tratamiento Psiquiátrico (RTTasipsiq)}{25}{section*.26}%
+\contentsline {subsection}{Tratamiento Pedagógico (RTTasiped)}{26}{section*.27}%
+\contentsline {subsection}{Tratamiento Psicomotriz (RTTasipsim)}{27}{section*.28}%
+\contentsline {subsection}{Tratamiento Fonoaudiológico (RTTasifon)}{28}{section*.29}%
+\contentsline {subsection}{Tratamiento por Dificultades Diagnosticadas (RTTdifdiag)}{29}{section*.30}%
+\contentsline {subsection}{Tratamiento por Discapacidad (RTTdisc)}{30}{section*.31}%
+\contentsline {subsection}{Ningún Tratamiento (RTTnin)}{31}{section*.32}%
+\contentsline {subsection}{Instrucción Previa al Nivel 3 (Insant3a)}{32}{section*.33}%
+\contentsline {section}{Análisis Escalar Nivel 3}{33}{section*.34}%
+\contentsline {subsection}{Estructura de Subescalas}{33}{section*.35}%
+\contentsline {subsection}{Análisis de Normalidad Escala DINI}{33}{section*.36}%
+\contentsline {subsubsection}{Estadísticos Descriptivos}{33}{section*.37}%
+\contentsline {subsubsection}{Histogramas}{34}{section*.38}%
+\contentsline {subsubsection}{Normalidad}{39}{section*.39}%
+\contentsline {subsubsection}{Confiabilidad}{42}{section*.40}%
+\contentsline {subsubsection}{Análisis Factorial}{43}{section*.41}%
+\contentsline {subsubsection}{Resumen de Índices de Bondad de Ajuste para el AFC de la Escala DINI}{43}{section*.42}%

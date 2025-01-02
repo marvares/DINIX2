@@ -211,3 +211,63 @@ Me puedes hacer todas las preguntas que consideres necesarias para dar tu mejor 
 2. Sí
 3. Sí, quiero los resultados estandarizados.
 
+## Results for CFA
+
+
+Necesito que tomes esta función:
+
+AFC <- function(data, factors, indicators, result_object_name) {
+  # Verificar que la longitud de `factors` coincida con la longitud de `indicators`
+  if (length(factors) != length(indicators)) {
+    stop("El número de factores debe coincidir con el número de listas de indicadores.")
+  }
+  
+  # Generar la sintaxis del modelo automáticamente
+  modelo <- ""
+  for (i in seq_along(factors)) {
+    factor_name <- factors[i]
+    column_indices <- indicators[[i]]
+    
+    # Convertir los índices a nombres de las columnas
+    variable_names <- colnames(data)[column_indices]
+    variables <- paste(variable_names, collapse = " + ")
+    modelo <- paste0(modelo, factor_name, " =~ ", variables, "\n")
+  }
+  
+  # Ajustar el modelo usando lavaan::cfa()
+  ajuste <- cfa(modelo, data = data)
+  
+  # Mostrar un resumen de resultados con índices de ajuste y resultados estandarizados
+  summary(ajuste, fit.measures = TRUE, standardized = TRUE)
+  
+  # Guardar el objeto con los resultados en el entorno global
+  assign(result_object_name, ajuste, envir = .GlobalEnv)
+  
+  # Retornar el objeto de ajuste
+  return(ajuste)
+}
+
+Y la modifiques para añadir un aergumento adicional, llamado "Nombre de la escala", el cual será una cadena de texto que yo definiré con la estructura: c("Nombre de la escala"). 
+
+Además, ahora el resultado final de la función ahora deberá ser una tabla titulada **Resumen de Índices de Bondad de Ajuste para el AFC de la {Nombre de la Escala}**, en rMarkdown formateable con kable, según lo siguiente:
+
+| **Índice**   |**Índice Obtenido**| **Nivel Obtenido**|
+|--------------|-------------------|-------------------|
+| RMSEA        |  (valor)          | (evaluación)      |
+| CFI          |  (valor)          | (evaluación)      |
+| TLI/NNFI     |  (valor)          | (evaluación)      |
+| SRMR         |  (valor)          | (evaluación)      |
+| GFI          |  (valor)          | (evaluación)      |
+
+
+Para definir qué poner en la columna "Nivel Obtenido", usa la tabla siguiente como guía:
+
+| **Índice**   | **Nivel Excelente**       | **Nivel Aceptable**    |
+|--------------|---------------------------|------------------------|
+| RMSEA        | ≤ 0.05                    | 0.05–0.08              |
+| CFI          | ≥ 0.95                    | ≥ 0.90                 |
+| TLI/NNFI     | ≥ 0.95                    | ≥ 0.90                 |
+| SRMR         | ≤ 0.08                    | ≤ 0.10                 |
+| GFI          | ≥ 0.95                    | ≥ 0.90                 |
+
+Me puedes hacer todas las preguntas que consideres necesarias para dar tu mejor resultado.

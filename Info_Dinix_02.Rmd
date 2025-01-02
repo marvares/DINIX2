@@ -3,16 +3,16 @@ title: "Informe Estandarización Perú Escala DINI"
 author: "Martín Vargas Estrada"
 date: "`r Sys.time()`"
 output:
+  pdf_document:
+    toc: true
+    toc_depth: 4
+  word_document:
+    toc: true
+    toc_depth: '4'
   html_document:
     toc: true
     toc_depth: '4'
     df_print: paged
-  word_document:
-    toc: true
-    toc_depth: '4'
-  pdf_document:
-    toc: true
-    toc_depth: 4
 header-includes: \renewcommand{\contentsname}{Índice} \renewcommand{\tablename}{Tabla}
 ---
 \newpage
@@ -1797,61 +1797,103 @@ library(lavaan)
 # Definir función que permitirá ejecutar AFC vía lavaan
 
 library(lavaan)
+library(knitr)
 
-ejecutar_afc <- function(data, factors, indicators, result_object_name) {
+AFC <- function(data, factors, indicators, result_object_name, scale_name) {
   # Verificar que la longitud de `factors` coincida con la longitud de `indicators`
   if (length(factors) != length(indicators)) {
     stop("El número de factores debe coincidir con el número de listas de indicadores.")
   }
-  
+
   # Generar la sintaxis del modelo automáticamente
   modelo <- ""
   for (i in seq_along(factors)) {
     factor_name <- factors[i]
     column_indices <- indicators[[i]]
-    
+
     # Convertir los índices a nombres de las columnas
     variable_names <- colnames(data)[column_indices]
     variables <- paste(variable_names, collapse = " + ")
     modelo <- paste0(modelo, factor_name, " =~ ", variables, "\n")
   }
-  
+
   # Ajustar el modelo usando lavaan::cfa()
   ajuste <- cfa(modelo, data = data)
-  
-  # Mostrar un resumen de resultados con índices de ajuste y resultados estandarizados
-  summary(ajuste, fit.measures = TRUE, standardized = TRUE)
-  
+
+  # Obtener índices de ajuste relevantes
+  fit_indices <- fitmeasures(ajuste, c("rmsea", "cfi", "tli", "srmr", "gfi"))
+
+  # Función auxiliar para evaluar el nivel obtenido
+  evaluar_indice <- function(indice, valor) {
+    case_when(
+      indice == "rmsea" & valor <= 0.05 ~ "Excelente",
+      indice == "rmsea" & valor <= 0.08 ~ "Aceptable",
+      indice == "cfi" & valor >= 0.95 ~ "Excelente",
+      indice == "cfi" & valor >= 0.90 ~ "Aceptable",
+      indice == "tli" & valor >= 0.95 ~ "Excelente",
+      indice == "tli" & valor >= 0.90 ~ "Aceptable",
+      indice == "srmr" & valor <= 0.08 ~ "Excelente",
+      indice == "srmr" & valor <= 0.10 ~ "Aceptable",
+      indice == "gfi" & valor >= 0.95 ~ "Excelente",
+      indice == "gfi" & valor >= 0.90 ~ "Aceptable",
+      TRUE ~ "Deficiente"
+    )
+  }
+
+  # Crear tabla con resultados
+  resultados_tabla <- data.frame(
+    "Índice" = c("RMSEA", "CFI", "TLI/NNFI", "SRMR", "GFI"),
+    "Índice Obtenido" = c(fit_indices["rmsea"], 
+                          fit_indices["cfi"], 
+                          fit_indices["tli"], 
+                          fit_indices["srmr"], 
+                          fit_indices["gfi"]),
+    "Nivel Obtenido" = c(
+      evaluar_indice("rmsea", fit_indices["rmsea"]),
+      evaluar_indice("cfi", fit_indices["cfi"]),
+      evaluar_indice("tli", fit_indices["tli"]),
+      evaluar_indice("srmr", fit_indices["srmr"]),
+      evaluar_indice("gfi", fit_indices["gfi"])
+    )
+  )
+
   # Guardar el objeto con los resultados en el entorno global
   assign(result_object_name, ajuste, envir = .GlobalEnv)
-  
-  # Retornar el objeto de ajuste
-  return(ajuste)
+
+  # Mostrar título y tabla formateada
+  cat("\n### Resumen de Índices de Bondad de Ajuste para el AFC de la", scale_name, "\n\n")
+  print(kable(resultados_tabla, align = "c", caption = paste("Resumen de Índices de Bondad de Ajuste para el AFC de la", scale_name)))
 }
+
+
 
 
 # Ejecuto función
 
 # Definición de argumentos
 
+
 factores <- c("Cognitivo", "Motor", "Socioemocional", "Disposicional")
-items  <- list(c(1:23), c(24:31), c(32:44), c(45:50))
+items <- list(c(1:23), c(24:31), c(32:44), c(45:50))
 result_object_name <- "afc30_01"
+escala <- "Escala DINI"
+
 
 # Llamar a la función
-resultado <- ejecutar_afc (
+resultado <- AFC (
   data = LIMPION, 
   factors = factores, 
   indicators = items, 
-  result_object_name = "afc30_01"
+  result_object_name = "afc30_01",
+  scale_name = escala
   )
 
 # print(afc30_01)
 # 
 # fitmeasures(afc30_01)
-
-summary(afc30_01, fit.measures = TRUE, standardized = TRUE)
-
+# 
+# summary(afc30_01, fit.measures = TRUE, standardized = TRUE)
+# 
 library(semPlot)
 semPaths(afc30_01, "std", whatLabels = "std", layout = "tree")
 
