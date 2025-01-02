@@ -1780,8 +1780,15 @@ alfalfa(Escala_D, "Escala D")
 
 De los índices obtenidos podemos establecer que las subescalas DINI muestran una gran confiabilidad; es decir, miden de forma consistente, sin que exista ítems que vayan en detrimento de la confiabilidad general. Por el contrario, todos los reactivos ostentan consistencia con los demás. 
 
+### Análisis Factorial
 
+Para entender  
 
+En el contexto de uso del análisis psicométrico de una escala, el objetivo usual del procedimiento estadístico llamado "Análisis Factorial" es la reducción de ítems, es decir, la creación de una versión que contenga menos ítems que la cantidad original pero que, a su vez, mantenga una estructura muy similar.
+
+Debido a que estamos analizando una escala ya construida y validada en su población original (Uruguay), nuestra tarea en este punto es establecer si la estructura factorial del instrumento se reproduce razonablemente bien en nuestra muestra proveniente de la población peruana. 
+
+A fin de determinar esto, procederemos a realñizar
 
 
 
