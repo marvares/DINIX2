@@ -3,15 +3,17 @@ title: "Informe Estandarización Perú Escala DINI"
 author: "Martín Vargas Estrada"
 date: "`r Sys.time()`"
 output:
-  pdf_document:
+  html_document:
     toc: true
-    toc_depth: 4
+    toc_depth: '4'
+    df_print: paged
   word_document:
     toc: true
     toc_depth: '4'
-header-includes:
-  \renewcommand{\contentsname}{Índice}
-  \renewcommand{\tablename}{Tabla}  # Cambia el prefijo de tablas
+  pdf_document:
+    toc: true
+    toc_depth: 4
+header-includes: \renewcommand{\contentsname}{Índice} \renewcommand{\tablename}{Tabla}
 ---
 \newpage
 
@@ -1782,13 +1784,79 @@ De los índices obtenidos podemos establecer que las subescalas DINI muestran un
 
 ### Análisis Factorial
 
-Para entender  
+Pasaremos a evaluar la validez de la Escala DINI en su aplicación a la muestra peruana 2024.
 
-En el contexto de uso del análisis psicométrico de una escala, el objetivo usual del procedimiento estadístico llamado "Análisis Factorial" es la reducción de ítems, es decir, la creación de una versión que contenga menos ítems que la cantidad original pero que, a su vez, mantenga una estructura muy similar.
+En el contexto de uso del análisis psicométrico de esta escala, el objetivo es corroborar que la estructura de las variables a evaluar se ha mantenido constante en esta aplicación. 
 
 Debido a que estamos analizando una escala ya construida y validada en su población original (Uruguay), nuestra tarea en este punto es establecer si la estructura factorial del instrumento se reproduce razonablemente bien en nuestra muestra proveniente de la población peruana. 
 
-A fin de determinar esto, procederemos a realñizar
+A fin de determinar esto, procederemos a realizar la variante llamada Análisis Factorial Confirmatorio (AFC).
+
+```{r 30_AFC, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+library(lavaan)
+# Definir función que permitirá ejecutar AFC vía lavaan
+
+library(lavaan)
+
+ejecutar_afc <- function(data, factors, indicators, result_object_name) {
+  # Verificar que la longitud de `factors` coincida con la longitud de `indicators`
+  if (length(factors) != length(indicators)) {
+    stop("El número de factores debe coincidir con el número de listas de indicadores.")
+  }
+  
+  # Generar la sintaxis del modelo automáticamente
+  modelo <- ""
+  for (i in seq_along(factors)) {
+    factor_name <- factors[i]
+    column_indices <- indicators[[i]]
+    
+    # Convertir los índices a nombres de las columnas
+    variable_names <- colnames(data)[column_indices]
+    variables <- paste(variable_names, collapse = " + ")
+    modelo <- paste0(modelo, factor_name, " =~ ", variables, "\n")
+  }
+  
+  # Ajustar el modelo usando lavaan::cfa()
+  ajuste <- cfa(modelo, data = data)
+  
+  # Mostrar un resumen de resultados con índices de ajuste y resultados estandarizados
+  summary(ajuste, fit.measures = TRUE, standardized = TRUE)
+  
+  # Guardar el objeto con los resultados en el entorno global
+  assign(result_object_name, ajuste, envir = .GlobalEnv)
+  
+  # Retornar el objeto de ajuste
+  return(ajuste)
+}
+
+
+# Ejecuto función
+
+# Definición de argumentos
+
+factores <- c("Cognitivo", "Motor", "Socioemocional", "Disposicional")
+items  <- list(c(1:23), c(24:31), c(32:44), c(45:50))
+result_object_name <- "afc30_01"
+
+# Llamar a la función
+resultado <- ejecutar_afc (
+  data = LIMPION, 
+  factors = factores, 
+  indicators = items, 
+  result_object_name = "afc30_01"
+  )
+
+# print(afc30_01)
+# 
+# fitmeasures(afc30_01)
+
+summary(afc30_01, fit.measures = TRUE, standardized = TRUE)
+
+library(semPlot)
+semPaths(afc30_01, "std", whatLabels = "std", layout = "tree")
+
+
+```
 
 
 

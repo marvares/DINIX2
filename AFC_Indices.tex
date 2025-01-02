@@ -1,0 +1,283 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Indices de Bondad de de Ajuste CFA},
+  pdfauthor={MVE},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Indices de Bondad de de Ajuste CFA}
+\author{MVE}
+\date{2025-01-02}
+
+\begin{document}
+\maketitle
+
+\subsection{Indices}\label{indices}
+
+En el análisis factorial confirmatorio (AFC), especialmente en las
+ciencias sociales, se utilizan comúnmente varios índices de bondad de
+ajuste para evaluar si el modelo propuesto se ajusta adecuadamente a los
+datos. A continuación, te detallo los índices más usados y los niveles
+considerados satisfactorios según los estándares académicos:
+
+\subsubsection{\texorpdfstring{\textbf{Índices de Bondad de Ajuste
+Comunes}}{Índices de Bondad de Ajuste Comunes}}\label{uxedndices-de-bondad-de-ajuste-comunes}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Chi-Cuadrado (\(\chi^2\))}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Evalúa la discrepancia entre la matriz de covarianza observada y la
+    estimada por el modelo.
+  \item
+    \textbf{Interpretación}:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Un valor de \(\chi^2\) pequeño y un p-valor \textgreater{} 0.05
+      indican buen ajuste.
+    \item
+      \textbf{Problema}: Es muy sensible al tamaño de muestra; con
+      muestras grandes, casi siempre será significativo.
+    \end{itemize}
+  \item
+    \textbf{Uso en práctica}: Se combina con otros índices.
+  \end{itemize}
+\item
+  \textbf{Root Mean Square Error of Approximation (RMSEA)}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Mide cuánto se ajusta el modelo a la población en lugar de solo a
+    los datos de la muestra.
+  \item
+    \textbf{Valores de referencia}:
+
+    \begin{itemize}
+    \item
+      ≤ 0.05: Ajuste excelente.
+    \item
+      0.05--0.08: Ajuste aceptable.
+    \item
+      \begin{quote}
+      0.10: Mal ajuste.
+      \end{quote}
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{Comparative Fit Index (CFI)}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Compara el modelo propuesto con un modelo base (independencia o sin
+    correlaciones entre las variables).
+  \item
+    \textbf{Valores de referencia}:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      ≥ 0.95: Ajuste excelente.
+    \item
+      ≥ 0.90: Ajuste aceptable.
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{Tucker-Lewis Index (TLI)} o \textbf{Non-Normed Fit Index
+  (NNFI)}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Similar al CFI pero penaliza modelos más complejos.
+  \item
+    \textbf{Valores de referencia}:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      ≥ 0.95: Ajuste excelente.
+    \item
+      ≥ 0.90: Ajuste aceptable.
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{Standardized Root Mean Square Residual (SRMR)}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Mide la discrepancia promedio entre las correlaciones observadas y
+    las estimadas.
+  \item
+    \textbf{Valores de referencia}:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      ≤ 0.08: Ajuste excelente.
+    \item
+      ≤ 0.10: Ajuste aceptable.
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{Goodness-of-Fit Index (GFI)}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Evalúa la proporción de varianza-covarianza explicada por el modelo.
+  \item
+    \textbf{Valores de referencia}:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      ≥ 0.95: Ajuste excelente.
+    \item
+      ≥ 0.90: Ajuste aceptable.
+    \end{itemize}
+  \item
+    \textbf{Nota}: Este índice ha caído en desuso por críticas
+    metodológicas.
+  \end{itemize}
+\end{enumerate}
+
+\subsubsection{\texorpdfstring{\textbf{Resumen de Niveles de Ajuste
+Satisfactorios}}{Resumen de Niveles de Ajuste Satisfactorios}}\label{resumen-de-niveles-de-ajuste-satisfactorios}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2121}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4091}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3788}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Índice}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Nivel Excelente}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Nivel Aceptable}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\chi^2\) (p-value) & \textgreater{} 0.05 (no significativo) & No
+relevante con muestras grandes \\
+RMSEA & ≤ 0.05 & 0.05--0.08 \\
+CFI & ≥ 0.95 & ≥ 0.90 \\
+TLI/NNFI & ≥ 0.95 & ≥ 0.90 \\
+SRMR & ≤ 0.08 & ≤ 0.10 \\
+GFI & ≥ 0.95 & ≥ 0.90 \\
+\end{longtable}
+
+\subsubsection{Recomendaciones en Ciencias
+Sociales}\label{recomendaciones-en-ciencias-sociales}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{RMSEA y CFI} son los índices más aceptados y reportados en
+  publicaciones académicas.
+\item
+  El \textbf{SRMR} complementa bien al RMSEA y al CFI porque evalúa las
+  discrepancias en las correlaciones.
+\item
+  Los investigadores suelen reportar múltiples índices para ofrecer una
+  visión más completa del ajuste del modelo.
+\end{itemize}
+
+\subsubsection{Cálculo en R (Ejemplo)}\label{cuxe1lculo-en-r-ejemplo}
+
+Usando lavaan:
+
+library(lavaan)
+
+\paragraph{Ajustar el modelo}\label{ajustar-el-modelo}
+
+ajuste \textless- cfa(modelo, data = datos)
+
+\paragraph{Índices de ajuste}\label{uxedndices-de-ajuste}
+
+fitmeasures(ajuste, c(``rmsea'', ``cfi'', ``tli'', ``srmr'', ``gfi''))
+
+\end{document}

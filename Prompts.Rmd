@@ -193,5 +193,21 @@ Paleta de colores:
 
     La paleta predeterminada será "Dark2". ¿Quieres que la función valide si la paleta especificada existe en RColorBrewer y genere un mensaje de error si no es válida? No
     
-## Para análisis de confiabilidad
+## Para AFC
+
+Necesito generar una función que me permita ejecutar un análisis factorial confirmatorio (en adelante "AFC") usando el paquete lavaan, según lo siguiente:
+
+* Los argumentos deben ser: el nombre del dataframe, el nombre de cada factor, los indicadores para cada factor y el nombre del objeto R que contendrá los resultados. 
+* El dataframe no contendrá valores perdidos y estará compuesto exclusivamente por variables numéricos en columnas. De eso me encargo yo.
+* El argumento "nombre de factor" estará compuesto por un vector compuesto por cadenas de caracteres. Por ejemplo: c("Factor1", "Factor 2", "Factor 3")
+* El argumento "indicadores de cada factor" estará compuesto por un vector para cada factor, el cual contendrá el número que identifica a las columnas que componen el factor. El vector contendrá los números que identifican a las variables. Por ejemplo, para el factor 1 se denotaría por c(1:10); para el factor 2 se denotaría c(11:20), etc.
+* El argumento "nombre del objeto R que contendrá los resultados" estará definido como una cadena de caracteres que yo definiré cada vez.
+
+Me puedes hacer todas las preguntas que consideres necesarias para dar tu mejor resultado.
+
+### Responses
+
+1. Sí
+2. Sí
+3. Sí, quiero los resultados estandarizados.
 

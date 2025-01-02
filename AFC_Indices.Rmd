@@ -1,0 +1,97 @@
+---
+title: "Indices de Bondad de de Ajuste CFA"
+author: "MVE"
+date: "2025-01-02"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Indices
+
+En el análisis factorial confirmatorio (AFC), especialmente en las ciencias sociales, se utilizan comúnmente varios índices de bondad de ajuste para evaluar si el modelo propuesto se ajusta adecuadamente a los datos. A continuación, te detallo los índices más usados y los niveles considerados satisfactorios según los estándares académicos:
+
+
+
+### **Índices de Bondad de Ajuste Comunes**
+
+1. **Chi-Cuadrado (\( \chi^2 \))**:
+   - Evalúa la discrepancia entre la matriz de covarianza observada y la estimada por el modelo.
+   - **Interpretación**:
+     - Un valor de \( \chi^2 \) pequeño y un p-valor > 0.05 indican buen ajuste.
+     - **Problema**: Es muy sensible al tamaño de muestra; con muestras grandes, casi siempre será significativo.
+   - **Uso en práctica**: Se combina con otros índices.
+
+2. **Root Mean Square Error of Approximation (RMSEA)**:
+   - Mide cuánto se ajusta el modelo a la población en lugar de solo a los datos de la muestra.
+   - **Valores de referencia**:
+     - ≤ 0.05: Ajuste excelente.
+     - 0.05–0.08: Ajuste aceptable.
+     - > 0.10: Mal ajuste.
+
+3. **Comparative Fit Index (CFI)**:
+   - Compara el modelo propuesto con un modelo base (independencia o sin correlaciones entre las variables).
+   - **Valores de referencia**:
+     - ≥ 0.95: Ajuste excelente.
+     - ≥ 0.90: Ajuste aceptable.
+
+4. **Tucker-Lewis Index (TLI)** o **Non-Normed Fit Index (NNFI)**:
+   - Similar al CFI pero penaliza modelos más complejos.
+   - **Valores de referencia**:
+     - ≥ 0.95: Ajuste excelente.
+     - ≥ 0.90: Ajuste aceptable.
+
+5. **Standardized Root Mean Square Residual (SRMR)**:
+   - Mide la discrepancia promedio entre las correlaciones observadas y las estimadas.
+   - **Valores de referencia**:
+     - ≤ 0.08: Ajuste excelente.
+     - ≤ 0.10: Ajuste aceptable.
+
+6. **Goodness-of-Fit Index (GFI)**:
+   - Evalúa la proporción de varianza-covarianza explicada por el modelo.
+   - **Valores de referencia**:
+     - ≥ 0.95: Ajuste excelente.
+     - ≥ 0.90: Ajuste aceptable.
+   - **Nota**: Este índice ha caído en desuso por críticas metodológicas.
+
+
+
+### **Resumen de Niveles de Ajuste Satisfactorios**
+
+| **Índice**   | **Nivel Excelente**       | **Nivel Aceptable**     |
+|--------------|---------------------------|-------------------------|
+| \( \chi^2 \) (p-value) | > 0.05 (no significativo) | No relevante con muestras grandes |
+| RMSEA        | ≤ 0.05                    | 0.05–0.08              |
+| CFI          | ≥ 0.95                    | ≥ 0.90                 |
+| TLI/NNFI     | ≥ 0.95                    | ≥ 0.90                 |
+| SRMR         | ≤ 0.08                    | ≤ 0.10                 |
+| GFI          | ≥ 0.95                    | ≥ 0.90                 |
+
+
+
+### Recomendaciones en Ciencias Sociales
+
+- **RMSEA y CFI** son los índices más aceptados y reportados en publicaciones académicas.
+- El **SRMR** complementa bien al RMSEA y al CFI porque evalúa las discrepancias en las correlaciones.
+- Los investigadores suelen reportar múltiples índices para ofrecer una visión más completa del ajuste del modelo.
+
+
+
+### Cálculo en R (Ejemplo)
+Usando lavaan:
+
+library(lavaan)
+
+#### Ajustar el modelo
+ajuste <- cfa(modelo, data = datos)
+
+#### Índices de ajuste
+fitmeasures(ajuste, c("rmsea", "cfi", "tli", "srmr", "gfi"))
+
+
+
+
