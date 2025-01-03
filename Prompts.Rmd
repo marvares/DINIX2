@@ -271,3 +271,168 @@ Para definir qué poner en la columna "Nivel Obtenido", usa la tabla siguiente c
 | GFI          | ≥ 0.95                    | ≥ 0.90                 |
 
 Me puedes hacer todas las preguntas que consideres necesarias para dar tu mejor resultado.
+
+### CFA p3
+
+En la función siguiente:
+
+AFC <- function(data, factors, indicators, result_object_name, scale_name) {
+  # Verificar que la longitud de `factors` coincida con la longitud de `indicators`
+  if (length(factors) != length(indicators)) {
+    stop("El número de factores debe coincidir con el número de listas de indicadores.")
+  }
+
+  # Generar la sintaxis del modelo automáticamente
+  modelo <- ""
+  for (i in seq_along(factors)) {
+    factor_name <- factors[i]
+    column_indices <- indicators[[i]]
+
+    # Convertir los índices a nombres de las columnas
+    variable_names <- colnames(data)[column_indices]
+    variables <- paste(variable_names, collapse = " + ")
+    modelo <- paste0(modelo, factor_name, " =~ ", variables, "\n")
+  }
+
+  # Ajustar el modelo usando lavaan::cfa()
+  ajuste <- cfa(modelo, data = data)
+
+  # Obtener índices de ajuste relevantes
+  fit_indices <- fitmeasures(ajuste, c("rmsea", "cfi", "tli", "srmr", "gfi"))
+
+  # Función auxiliar para evaluar el nivel obtenido
+  evaluar_indice <- function(indice, valor) {
+    case_when(
+      indice == "rmsea" & valor <= 0.05 ~ "Excelente",
+      indice == "rmsea" & valor <= 0.08 ~ "Aceptable",
+      indice == "cfi" & valor >= 0.95 ~ "Excelente",
+      indice == "cfi" & valor >= 0.90 ~ "Aceptable",
+      indice == "tli" & valor >= 0.95 ~ "Excelente",
+      indice == "tli" & valor >= 0.90 ~ "Aceptable",
+      indice == "srmr" & valor <= 0.08 ~ "Excelente",
+      indice == "srmr" & valor <= 0.10 ~ "Aceptable",
+      indice == "gfi" & valor >= 0.95 ~ "Excelente",
+      indice == "gfi" & valor >= 0.90 ~ "Aceptable",
+      TRUE ~ "Deficiente"
+    )
+  }
+
+  # Crear tabla con resultados
+  resultados_tabla <- data.frame(
+    "Índice" = c("RMSEA", "CFI", "TLI/NNFI", "SRMR", "GFI"),
+    "Índice Obtenido" = c(fit_indices["rmsea"], 
+                          fit_indices["cfi"], 
+                          fit_indices["tli"], 
+                          fit_indices["srmr"], 
+                          fit_indices["gfi"]),
+    "Nivel Obtenido" = c(
+      evaluar_indice("rmsea", fit_indices["rmsea"]),
+      evaluar_indice("cfi", fit_indices["cfi"]),
+      evaluar_indice("tli", fit_indices["tli"]),
+      evaluar_indice("srmr", fit_indices["srmr"]),
+      evaluar_indice("gfi", fit_indices["gfi"])
+    )
+  )
+
+  # Guardar el objeto con los resultados en el entorno global
+  assign(result_object_name, ajuste, envir = .GlobalEnv)
+
+  # Mostrar título y tabla formateada
+  cat("\n### Resumen de Índices de Bondad de Ajuste para el AFC de la", scale_name, "\n\n")
+  print(kable(resultados_tabla, align = "c", caption = paste("Resumen de Índices de Bondad de Ajuste para el AFC de la", scale_name)))
+}
+
+La tabla final resultante contiene una columna inicial en la que se repiten los nombres de los índices de ajuste. ¿Puedes reformular la función para que esa columna inicial no se muestre?
+
+
+
+### CFA p4
+
+A partir de la función siguiente:
+
+AFC <- function(data, factors, indicators, result_object_name, scale_name) {
+  # Verificar que la longitud de `factors` coincida con la longitud de `indicators`
+  if (length(factors) != length(indicators)) {
+    stop("El número de factores debe coincidir con el número de listas de indicadores.")
+  }
+
+  # Generar la sintaxis del modelo automáticamente
+  modelo <- ""
+  for (i in seq_along(factors)) {
+    factor_name <- factors[i]
+    column_indices <- indicators[[i]]
+
+    # Convertir los índices a nombres de las columnas
+    variable_names <- colnames(data)[column_indices]
+    variables <- paste(variable_names, collapse = " + ")
+    modelo <- paste0(modelo, factor_name, " =~ ", variables, "\n")
+  }
+
+  # Ajustar el modelo usando lavaan::cfa()
+  ajuste <- cfa(modelo, data = data)
+
+  # Obtener índices de ajuste relevantes
+  fit_indices <- fitmeasures(ajuste, c("rmsea", "cfi", "tli", "srmr", "gfi"))
+
+  # Función auxiliar para evaluar el nivel obtenido
+  evaluar_indice <- function(indice, valor) {
+    case_when(
+      indice == "rmsea" & valor <= 0.05 ~ "Excelente",
+      indice == "rmsea" & valor <= 0.08 ~ "Aceptable",
+      indice == "cfi" & valor >= 0.95 ~ "Excelente",
+      indice == "cfi" & valor >= 0.90 ~ "Aceptable",
+      indice == "tli" & valor >= 0.95 ~ "Excelente",
+      indice == "tli" & valor >= 0.90 ~ "Aceptable",
+      indice == "srmr" & valor <= 0.08 ~ "Excelente",
+      indice == "srmr" & valor <= 0.10 ~ "Aceptable",
+      indice == "gfi" & valor >= 0.95 ~ "Excelente",
+      indice == "gfi" & valor >= 0.90 ~ "Aceptable",
+      TRUE ~ "Deficiente"
+    )
+  }
+
+  # Crear tabla con resultados (sin la columna con nombres de índices)
+  resultados_tabla <- data.frame(
+    "Índice Obtenido" = c(fit_indices["rmsea"], 
+                          fit_indices["cfi"], 
+                          fit_indices["tli"], 
+                          fit_indices["srmr"], 
+                          fit_indices["gfi"]),
+    "Nivel Obtenido" = c(
+      evaluar_indice("rmsea", fit_indices["rmsea"]),
+      evaluar_indice("cfi", fit_indices["cfi"]),
+      evaluar_indice("tli", fit_indices["tli"]),
+      evaluar_indice("srmr", fit_indices["srmr"]),
+      evaluar_indice("gfi", fit_indices["gfi"])
+    )
+  )
+
+  # Cambiar nombres de las filas para usar como identificadores
+  rownames(resultados_tabla) <- c("RMSEA", "CFI", "TLI/NNFI", "SRMR", "GFI")
+
+  # Guardar el objeto con los resultados en el entorno global
+  assign(result_object_name, ajuste, envir = .GlobalEnv)
+
+  # Mostrar título y tabla formateada
+  cat("\n### Resumen de Índices de Bondad de Ajuste para el AFC de la", scale_name, "\n\n")
+  print(kable(resultados_tabla, align = "c", 
+              caption = paste("Resumen de Índices de Bondad de Ajuste para el AFC de la", scale_name)))
+}
+
+Añade al resultado de la función una matriz de residuales estandarizados. La tabla adicional de la que hablo deberá llevar por título "Matriz de Residuales estandarizados Escala #", donde el nombre de la escala provendrá del argumento "scale_name" de la función. Rebautiza la función como "AFC2". La tabla adicional deberá ser editable con kable.
+
+Hazme las preguntas que consideres necesarias para darme el mejor resultado posible.
+
+
+1. 
+* Limítate a resaltar únicamente los residuales significativos.
+* ¿La tabla debe incluir formateos específicos, como colores para valores altos o bajos? Sí, negritas para valores altos, y cursiva para valores bajos.
+2.
+* ¿Quieres que la matriz se imprima directamente con kable, o la incluyo como parte de un objeto de salida que puedas inspeccionar y guardar? Imprímelo directamente con kable
+* ¿Debe la matriz de residuales ser devuelta como parte de una lista junto con los índices de ajuste y el modelo ajustado? No
+3. 
+* Actualmente el modelo ajustado se guarda en el entorno global con assign. ¿Quieres mantener este comportamiento o prefieres que la función devuelva una lista con todos los elementos (modelo, índices y matriz de residuales)? Mejor guádalo como una lista tal como describes.
+4. 
+* Si la escala tiene muchos ítems, la matriz de residuales puede volverse grande. ¿Debo limitar la visualización en pantalla a ciertos ítems clave o dejarla completa? Limita la visualización en pantalla a ciertos ítems clave
+5. 
+* ¿Debo recalcular los índices de ajuste después de inspeccionar los residuales (por ejemplo, si planeas modificar el modelo según los residuales)? No

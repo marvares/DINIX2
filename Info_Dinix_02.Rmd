@@ -1782,7 +1782,7 @@ alfalfa(Escala_D, "Escala D")
 
 De los índices obtenidos podemos establecer que las subescalas DINI muestran una gran confiabilidad; es decir, miden de forma consistente, sin que exista ítems que vayan en detrimento de la confiabilidad general. Por el contrario, todos los reactivos ostentan consistencia con los demás. 
 
-### Análisis Factorial
+## Análisis Factorial
 
 Pasaremos a evaluar la validez de la Escala DINI en su aplicación a la muestra peruana 2024.
 
@@ -1840,9 +1840,8 @@ AFC <- function(data, factors, indicators, result_object_name, scale_name) {
     )
   }
 
-  # Crear tabla con resultados
+  # Crear tabla con resultados (sin la columna con nombres de índices)
   resultados_tabla <- data.frame(
-    "Índice" = c("RMSEA", "CFI", "TLI/NNFI", "SRMR", "GFI"),
     "Índice Obtenido" = c(fit_indices["rmsea"], 
                           fit_indices["cfi"], 
                           fit_indices["tli"], 
@@ -1857,13 +1856,18 @@ AFC <- function(data, factors, indicators, result_object_name, scale_name) {
     )
   )
 
+  # Cambiar nombres de las filas para usar como identificadores
+  rownames(resultados_tabla) <- c("RMSEA", "CFI", "TLI/NNFI", "SRMR", "GFI")
+
   # Guardar el objeto con los resultados en el entorno global
   assign(result_object_name, ajuste, envir = .GlobalEnv)
 
   # Mostrar título y tabla formateada
   cat("\n### Resumen de Índices de Bondad de Ajuste para el AFC de la", scale_name, "\n\n")
-  print(kable(resultados_tabla, align = "c", caption = paste("Resumen de Índices de Bondad de Ajuste para el AFC de la", scale_name)))
+  print(kable(resultados_tabla, align = "c", 
+              caption = paste("Resumen de Índices de Bondad de Ajuste para el AFC de la", scale_name)))
 }
+
 
 
 
@@ -1900,5 +1904,20 @@ semPaths(afc30_01, "std", whatLabels = "std", layout = "tree")
 
 ```
 
+Estos resultados indican que la estructura factorial, tal como se asumió en principio, ***no*** se reproduce de la misma forma en la muestra peruana. Las ramificaciones de esto no deben exagerarse pero tampoco deberían tomarse a la ligera. Estos resultados implican que la forma en que la Escala funciona en el Perú no es exactamente igual a la prevista por los constructores de la Escala original.
+
+Las razones pueden tener múltiples orígenes. 
+
+Primeramente, según podemos verificar al nivel de estadísticas descriptivas, existen grandes diferencias en cuanto al puntaje de las subescalas DINI dependiendo de la submuestra geográfica. Esto genera un área de análisis para más adelante dentro del proyecto (lo cual ya está previsto como parte del documento de alcance), a saber: ¿cómo impactan variables como el departamento o la región natural a que pertenece el participante sobre su rendimiento DINI?
+
+En segundo lugar, podría especularse que existe una diferencia cultural a nivel nacional entre las poblaciones del Uruguay y el Perú, que podría explicar por qué la estructura factorial no funciona igual en los distintos países. 
+
+En tercer lugar, también puede explorarse la posibilidad de que aspectos metodológicos (secuencia y modalidad de aplicación) en cada localidad hayan sido suficientemente significativas como para llegar a impactar en el resultado de la escala. 
+
+Nos encargaremos de la primera conjetura mencionada en etapas posteriores del análisis (ya previstas dentro del documento de alcance). Respecto de la segunda conjetura, tendría que hacerse un analisis comparativo con los estudios de validación generados en el Uruguay, lo que implicaría el acceso a la data de validación y por lo tanto queda fuera del alcance del actual proyecto.
+
+Respecto de la tercera conjetura, esta tendría que ser evaluada por las personas encargadas de la supervisión y coordinación de la etapa de aplicación y recolección de la data.
+
+Por último, se recomienda ahondar en el análisis factorial confirmatorio, usando herramientas que permiten detectar exactamente en qué ítems de la escala se concentran las mayores diferencias entre el modelo original y la estructura peruana, así como la posibilidad de realizar un análisis factorial exploratorio que nos permita determinar cuáles son los factores latentes que explican mejor los datos peruanos.
 
 

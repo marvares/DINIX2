@@ -38,4 +38,4 @@
 \contentsline {subsubsection}{Normalidad}{39}{section*.39}%
 \contentsline {subsubsection}{Confiabilidad}{42}{section*.40}%
 \contentsline {subsubsection}{Análisis Factorial}{43}{section*.41}%
-\contentsline {subsubsection}{Resumen de Índices de Bondad de Ajuste para el AFC de la Escala DINI}{43}{section*.42}%
+\contentsline {paragraph}{Resumen de Índices de Bondad de Ajuste para el AFC de la Escala DINI}{43}{section*.42}%
