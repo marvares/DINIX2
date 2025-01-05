@@ -1,5 +1,6 @@
 ---
 title: "Informe Estandarización Perú Escala DINI"
+subtitle: "Muestra Nivel 3"
 author: "Martín Vargas Estrada"
 date: "`r Sys.time()`"
 output:
@@ -20,7 +21,7 @@ header-includes: \renewcommand{\contentsname}{Índice} \renewcommand{\tablename}
 # Introducción
 
 
-Informe de Exploración Psicométrica de los puntajes de la prueba DINI obtenidas con muestra de Perú, grupos Nivel 3, y  Niveles 4-5 años. 
+Informe de Exploración Psicométrica de los puntajes de la prueba DINI obtenidas con muestra de Perú, grupo Nivel 3. 
 
 # Análisis Descriptivo Nivel 3
 
@@ -38,7 +39,6 @@ library(haven)
 rm(list = ls()) 
 # Carga el archivo .sav
 INDI30 <- read_sav("INDI3.sav")
-INDI45 <- read_sav("INDI45.sav")
 # View(INDI30)
 
 # Generamos funciones
