@@ -183,7 +183,7 @@ INDI45 <- en_cuatro(INDI45, "Fecnac")
 
 ```
 
-Los datos para el grupo de niveles 4-5 indica que en los meses de abril y agosto 2024 los subgrupos muestrales fueron relativamente homogéneos en tamaño. Sin embargo, entre mayo y junio los subgrupos fueron bastante disparejos, con el grupo de mayo siendo el más pequeño (apenas algo más del 18%), mientras que el grupo de junio fue el más numeroso (casi el tercio de los participantes fue evaluado en  ese mes).
+
 
 ```{r 45_Dem_FechAp, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
 library(tidyverse)
@@ -351,9 +351,6 @@ TED_agemo <- TED(AGEMO)
 print(TED_agemo)
 
 ```
-
-El promedio de edad fue de 24.68 meses, siendo la desviación estándar 7.32; debe tomarse en cuenta que este valor fue calculado en base al 100% de los casos en los que se contaba con la información (incluye casos "NA").
-
 A continuación el histograma de la Edad en meses:
 
 
@@ -433,7 +430,6 @@ grafiporc(
   paleta_colores = "Dark2"
 )
 ```
-Según comprobamos, la distribución de cuatrimestres es bastante pareja en la muestra. 
 
 ## Código Modular
 
@@ -473,7 +469,7 @@ grafiporco(
 )
 
 ```
-Existe un gran desbalance en la distribución porcentual de los integrantes según la región natural, sin embargo, esto es esperable ya que realmente refleja aproximadamente la distribución poblacional. 
+
 
 ## Área
 
@@ -499,7 +495,7 @@ grafiporco(
 )
 
 ```
-Lo mismo que en el caso de las regiones naturales, la desproporción entre casos provenientes del área urbana y los provenientes del área rural no hace sino representar la realidad demográfica del país.
+
 
 ## Nivel Modalidad
 
@@ -1425,11 +1421,10 @@ ayudin <- function(dataframe, columnas) {
 # Ejemplo de uso:
 # df_limpio <- limpiar_dataframe(dataframe = mi_dataframe, columnas = c(2, 4, 6))
 
-# Ejemplo: Convertir columnas de la 3 a la 6 en un dataframe a numéricas
-INDI45[ , 43:104] <- lapply(INDI45[ , 43:104], as.numeric)
 
 # Llamar a la función y mostrar los resultados
-LIMPION <- ayudin(dataframe = INDI45, columnas = c(43:105))
+# pre_TED_C3 <- ayudin(dataframe = INDI45, columnas = c(94:103))
+LIMPION <- ayudin(dataframe = INDI45, columnas = c(44:105))
 
 subes <- LIMPION %>% 
   select(CLENSUM:DSUM)
@@ -1779,7 +1774,7 @@ alfabeta <- function(dataframe, nombre_escala) {
 alfalfa(Escala_C, "Escala C")
 alfalfa(Escala_M, "Escala M")
 alfabeta (Escala_S, "Escala S")
-alfabeta (Escala_D, "Escala D")
+alfalfa(Escala_D, "Escala D")
 
 
 ```
@@ -1883,7 +1878,7 @@ AFC <- function(data, factors, indicators, result_object_name, scale_name) {
 
 
 factores <- c("Cognitivo", "Motor", "Socioemocional", "Disposicional")
-items <- list(c(1:26), c(27:32), c(33:46), c(47:52))
+items <- list(c(1:23), c(24:31), c(32:44), c(45:50))
 result_object_name <- "afc30_01"
 escala <- "Escala DINI"
 
@@ -1925,4 +1920,178 @@ Respecto de la tercera conjetura, esta tendría que ser evaluada por las persona
 
 Por último, se recomienda ahondar en el análisis factorial confirmatorio, usando herramientas que permiten detectar exactamente en qué ítems de la escala se concentran las mayores diferencias entre el modelo original y la estructura peruana, así como la posibilidad de realizar un análisis factorial exploratorio que nos permita determinar cuáles son los factores latentes que explican mejor los datos peruanos.
 
+# Análisis de Ítems: Outliers y Transformaciones de Escala
+
+## Análisis de Outliers
+
+```{r 45_Outliers, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+# Definición de la función
+library(knitr)
+# cREAR DF
+
+PRELIMPIO <- ayudin(dataframe = INDI45, columnas = c(1, 44:105)) # Extraigo solo valores no NA y numéricos del df original
+INDI45_REDUX <- INDI45 %>% select(Codigo, Regnat, Departamento) # Extraigo los campos categóricos que me interesan del df original
+# Realizar el left join
+LIMPIO <- left_join(PRELIMPIO, INDI45_REDUX, by = "Codigo")
+
+
+# Función para identificar casos con valores atípicos (outliers) en columnas específicas
+items_intensos <- function(data, rango_columnas, columna_contexto, multiplicador_IQR = 1.5) {
+  # Verificar que las columnas estén en el rango
+  columnas_seleccionadas <- names(data)[rango_columnas]
+  
+  # Identificar columnas no numéricas
+  columnas_no_numericas <- columnas_seleccionadas[!sapply(data[, rango_columnas, drop = FALSE], is.numeric)]
+  
+  # Excluir las columnas no numéricas y avisar
+  columnas_a_evaluar <- setdiff(columnas_seleccionadas, columnas_no_numericas)
+  if (length(columnas_no_numericas) > 0) {
+    cat("Las siguientes columnas no son numéricas y serán excluidas del análisis:\n")
+    print(columnas_no_numericas)
+  }
+  
+  # Inicializar una tabla consolidada
+  resultados_outliers <- data.frame(
+    Ítem = character(),
+    Caso = integer(),
+    Valor_Outlier = numeric(),
+    Región = character()
+  )
+  
+  # Aplicar la detección de outliers para cada columna numérica
+  for (columna in columnas_a_evaluar) {
+    # Obtener los datos de la columna
+    valores <- data[[columna]]
+    
+    # Calcular los cuartiles y los límites del IQR
+    Q1 <- quantile(valores, 0.25, na.rm = TRUE)
+    Q3 <- quantile(valores, 0.75, na.rm = TRUE)
+    IQR <- Q3 - Q1
+    limite_inferior <- Q1 - multiplicador_IQR * IQR
+    limite_superior <- Q3 + multiplicador_IQR * IQR
+    
+    # Identificar las filas con outliers
+    filas_outliers <- which(valores < limite_inferior | valores > limite_superior)
+    
+    # Crear un data frame con los resultados para esta columna
+    if (length(filas_outliers) > 0) {
+      resultados <- data.frame(
+        Columna = columna,
+        Fila = filas_outliers,
+        Valor_Outlier = valores[filas_outliers],
+        Contexto = data[[columna_contexto]][filas_outliers]
+      )
+      
+      # Consolidar los resultados
+      resultados_outliers <- rbind(resultados_outliers, resultados)
+    }
+  }
+  
+  # Generar una tabla en Markdown
+  if (nrow(resultados_outliers) > 0) {
+    cat("### Tabla consolidada de casos con valores atípicos\n")
+    kable(resultados_outliers, format = "markdown", row.names = FALSE)
+  } else {
+    cat("No se detectaron valores atípicos en las columnas evaluadas.\n")
+  }
+}
+
+
+# EJEMPLO
+# Ejecutar la función para encontrar casos con valores atípicos
+items_intensos(
+  data = LIMPIO,           # Data frame con los datos
+  rango_columnas = 34:47,     # Rango de columnas numéricas a evaluar (columnas 2 a 4)
+  columna_contexto = "Regnat",  # Columna adicional para incluir en la salida (contexto)
+  multiplicador_IQR = 3   # Multiplicador del IQR (por defecto 1.5)
+)
+
+
+```
+Para resumir, podemos ofrecer las tablas siguientes:
+
+```{r 45_Outliers_Resumen}
+library(dplyr)
+library(knitr)
+# Función para resumir outliers
+items_intensos_resumen <- function(data, rango_columnas, columna_contexto, multiplicador_IQR = 1.5) {
+  # Verificar que las columnas estén en el rango
+  columnas_seleccionadas <- names(data)[rango_columnas]
+  
+  # Identificar columnas no numéricas
+  columnas_no_numericas <- columnas_seleccionadas[!sapply(data[, rango_columnas, drop = FALSE], is.numeric)]
+  
+  # Excluir las columnas no numéricas y avisar
+  columnas_a_evaluar <- setdiff(columnas_seleccionadas, columnas_no_numericas)
+  if (length(columnas_no_numericas) > 0) {
+    cat("Las siguientes columnas no son numéricas y serán excluidas del análisis:\n")
+    print(columnas_no_numericas)
+  }
+  
+  # Inicializar un data frame para registrar los outliers
+  registros_outliers <- data.frame(
+    Columna = character(),
+    Valor_Outlier = numeric(),
+    Contexto = character()
+  )
+  
+  # Aplicar la detección de outliers para cada columna numérica
+  for (columna in columnas_a_evaluar) {
+    # Obtener los datos de la columna
+    valores <- data[[columna]]
+    
+    # Calcular los cuartiles y los límites del IQR
+    Q1 <- quantile(valores, 0.25, na.rm = TRUE)
+    Q3 <- quantile(valores, 0.75, na.rm = TRUE)
+    IQR <- Q3 - Q1
+    limite_inferior <- Q1 - multiplicador_IQR * IQR
+    limite_superior <- Q3 + multiplicador_IQR * IQR
+    
+    # Identificar los valores atípicos
+    filas_outliers <- which(valores < limite_inferior | valores > limite_superior)
+    
+    # Registrar los casos de outliers
+    if (length(filas_outliers) > 0) {
+      registros <- data.frame(
+        Columna = columna,
+        Valor_Outlier = valores[filas_outliers],
+        Contexto = data[[columna_contexto]][filas_outliers]
+      )
+      
+      registros_outliers <- rbind(registros_outliers, registros)
+    }
+  }
+  
+  # Generar la matriz de doble entrada
+  if (nrow(registros_outliers) > 0) {
+    matriz_doble_entrada <- registros_outliers %>%
+      group_by(Columna, Valor_Outlier) %>%
+      summarise(Frecuencia = n(), .groups = "drop")
+    
+    # Generar la tabla de frecuencias del campo Contexto
+    tabla_frecuencias <- registros_outliers %>%
+      count(Contexto, sort = TRUE, name = "Frecuencia")
+    
+    # Imprimir la matriz de doble entrada con kable
+    cat("### Matriz de doble entrada\n")
+    kable(matriz_doble_entrada, format = "markdown", row.names = FALSE)
+    
+    # Imprimir la tabla de frecuencias con kable
+    cat("\n### Tabla de frecuencias descendentes\n")
+    kable(tabla_frecuencias, format = "markdown", row.names = FALSE)
+  } else {
+    cat("No se detectaron valores atípicos en las columnas evaluadas.\n")
+  }
+}
+# Llamando a la función:
+
+items_intensos_resumen(
+  data = LIMPIO,           # Data frame con los datos
+  rango_columnas = 34:47,     # Rango de columnas numéricas a evaluar (columnas 2 a 4)
+  columna_contexto = "Regnat",  # Columna adicional para incluir en la salida (contexto)
+  multiplicador_IQR = 3   # Multiplicador del IQR (por defecto 1.5)
+)
+
+```
 

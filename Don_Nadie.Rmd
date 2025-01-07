@@ -1,0 +1,14 @@
+---
+title: "Don Nadie"
+author: "MVE"
+date: "2025-01-06"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Una Inverosímil Secuencia de Eventos
+
+Parpadeo. Unz luz cegadora me inunda y parece a punto de freírme las córneas. 

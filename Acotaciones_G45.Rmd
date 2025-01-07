@@ -2,69 +2,87 @@
 title: "RAM Book"
 author: "Martín Vargas Estrada"
 date: "`r Sys.Date()`"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ## Estructura
 
 
-```{r cars}
+```{r cars, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
 library(tidyverse)
-glimpse(INDI45)
-```
-
-## Pgtas
-
-* Los niveles son grupos etarios?
-* Qué es Codmod?
-* Qué es "Área"?
-* Qué es "Nivmod"?
-* Qué es "Gestión"?
-* Revisar todos los flags VSS en adelante
-* Qué sentido tiene el flag VSSning ("Ninguna Incidencia"?)
-* Qué es "Nivel"? Nivel de qué?
-* NO HAY DATOS DE NIVEL EDUCATIVO PARENTAL EN GRUPO 3
-
-
-```{r CHECKING}
-unique(INDI30$Grainsmad)
-unique(INDI30$Grainspad)
-unique(INDI30$Insant3a)
-# Cargar ggplot2
-library(ggplot2)
-
-# Crear un dataset de ejemplo
-data <- data.frame(
-  categoria = c("A", "B", "C", "D"),
-  valores = c(10, 15, 7, 12)
-)
-
-# Crear el gráfico base
-grafico_base <- ggplot(data, aes(x = categoria, y = valores)) +
-  geom_bar(stat = "identity", fill = "skyblue") +
-  labs(title = "Ejemplo de temas en ggplot2", x = "Categoría", y = "Valores")
-
-# Aplicar cada tema disponible
-temas <- list(
-  theme_gray(),       # Tema por defecto
-  theme_bw(),         # Blanco y negro
-  theme_linedraw(),   # Simple y limpio
-  theme_light(),      # Fondo claro con cuadrículas
-  theme_dark(),       # Fondo oscuro
-  theme_minimal(),    # Minimalista
-  theme_classic(),    # Estilo clásico
-  theme_void()        # Sin cuadrículas ni ejes
-)
-
-# Dibujar gráficos con diferentes temas
-for (i in seq_along(temas)) {
-  print(grafico_base + temas[[i]] + ggtitle(paste("Tema:", deparse(substitute(temas[[i]])))))
+library(haven)
+INDI45 <- read_sav("INDI45.sav")
+# glimpse(INDI45)
+ayudin <- function(dataframe, columnas) {
+  # Verificar que las columnas seleccionadas sean numéricas
+  if (!all(sapply(columnas, function(col) is.numeric(dataframe[[col]])))) {
+    stop("Todas las columnas seleccionadas deben ser numéricas.")
+  }
+  
+  # Filtrar el dataframe eliminando filas con NA en las columnas seleccionadas
+  dataframe_limpio <- dataframe[complete.cases(dataframe[, columnas]), columnas]
+  
+  # Devolver el dataframe limpio
+  return(dataframe_limpio)
 }
 
-unique(INDI30$Area)
+# Ejemplo de uso:
+# df_limpio <- limpiar_dataframe(dataframe = mi_dataframe, columnas = c(2, 4, 6))
+
+
+# Llamar a la función y mostrar los resultados
+LIMPION <- ayudin(dataframe = INDI45, columnas = c(44:105))
+```
+
+
+
+```{r CHECKING, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+# Carga el archivo .sav
+
+# Función para generar un listado detallado de las variables de un df
+# Supongamos que 'df' es tu dataframe
+ojeada <- function(df) {
+  data.frame(
+    No._Col = seq_along(names(df)),
+    Nombre_Var = names(df),
+    Tipo_Var = sapply(df, function(x) paste(class(x), collapse = ", ")),
+    Contenido = sapply(df, function(x) {
+      if (is.factor(x)) {
+        # Para factores, muestra los niveles
+        paste(levels(x)[head(as.integer(x), 3)], collapse = ", ")
+      } else if (is.list(x)) {
+        # Para listas, indica el tipo y la longitud
+        paste("List of", length(x))
+      } else {
+        # Para otros tipos, muestra los primeros 3 valores
+        paste(head(x, 3), collapse = ", ")
+      }
+    }),
+    stringsAsFactors = FALSE
+  )
+}
+
+
+
+# Ejemplo de uso:
+# Reemplaza 'mtcars' por tu dataframe
+# variable_info <- get_variable_info(mtcars)
+# print(variable_info)
+
+
+# Ejemplo de uso:
+# Reemplaza 'mtcars' por tu dataframe
+variable_info <- ojeada(INDI45)
+# print(variable_info)
+library(knitr) # Para usar kable
+
+# Formato con kable
+kable(variable_info, format = "markdown")
 ```
 
