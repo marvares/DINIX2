@@ -1424,7 +1424,7 @@ ayudin <- function(dataframe, columnas) {
 
 # Llamar a la función y mostrar los resultados
 # pre_TED_C3 <- ayudin(dataframe = INDI45, columnas = c(94:103))
-LIMPION <- ayudin(dataframe = INDI45, columnas = c(43:104))
+LIMPION <- ayudin(dataframe = INDI45, columnas = c(44:105))
 
 subes <- LIMPION %>% 
   select(CLENSUM:DSUM)
