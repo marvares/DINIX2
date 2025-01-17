@@ -1,0 +1,120 @@
+---
+title: "Índice de Discriminación de Ítems"
+author: "ChatGRT"
+date: "2025-01-16"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+¡Por supuesto! Aquí te guiaré paso a paso para calcular el **índice de discriminación** en R. Este proceso incluye organizar los datos, dividir a los estudiantes en grupos (por ejemplo, alto y bajo desempeño) y calcular el índice para cada ítem.
+
+---
+
+### **1. Carga tus datos en R**
+Primero, asegúrate de que tienes tus datos organizados. Necesitas:
+- Una columna con el **puntaje total** de cada estudiante (o sumatoria de los ítems).
+- Varias columnas para las respuestas de los ítems (uno por ítem).
+
+Supongamos que tienes un archivo llamado `datos.csv` con el siguiente formato:
+
+| ID   | Total | Ítem1 | Ítem2 | Ítem3 | Ítem4 |
+|------|-------|-------|-------|-------|-------|
+| 1    | 15    | 1     | 1     | 0     | 1     |
+| 2    | 20    | 1     | 1     | 1     | 1     |
+| 3    | 8     | 0     | 1     | 0     | 0     |
+
+Carga los datos en R:
+
+```R
+# Cargar datos desde un archivo CSV
+datos <- read.csv("datos.csv")
+
+# Visualizar los datos
+head(datos)
+```
+
+---
+
+### **2. Divide a los estudiantes en grupos**
+El índice de discriminación compara el desempeño en cada ítem entre los **grupos de alto y bajo desempeño**. Una estrategia común es tomar el 27% superior y el 27% inferior según el puntaje total.
+
+```R
+# Ordenar los datos según el puntaje total
+datos <- datos[order(datos$Total, decreasing = TRUE), ]
+
+# Definir el tamaño de los grupos (27% superior e inferior)
+n <- nrow(datos) # Número total de estudiantes
+grupo <- round(0.27 * n)
+
+# Dividir los grupos
+grupo_alto <- datos[1:grupo, ]    # 27% superior
+grupo_bajo <- datos[(n-grupo+1):n, ] # 27% inferior
+```
+
+---
+
+### **3. Calcular el índice de discriminación para cada ítem**
+Ahora, calcula el índice de discriminación para cada ítem. Esto se hace restando el **porcentaje de estudiantes que responden correctamente** (o alcanzan un nivel alto en el ítem) en el grupo bajo del porcentaje en el grupo alto.
+
+```R
+# Identificar las columnas de los ítems
+items <- names(datos)[3:ncol(datos)] # Suponiendo que los ítems están en la 3ª columna en adelante
+
+# Calcular el índice de discriminación para cada ítem
+discriminacion <- sapply(items, function(item) {
+  # Porcentaje de respuestas correctas en grupo alto
+  p_alto <- mean(grupo_alto[[item]])
+  
+  # Porcentaje de respuestas correctas en grupo bajo
+  p_bajo <- mean(grupo_bajo[[item]])
+  
+  # Índice de discriminación
+  p_alto - p_bajo
+})
+
+# Mostrar los índices de discriminación
+discriminacion
+```
+
+---
+
+### **4. Interpretar los resultados**
+El resultado será algo como esto:
+
+```
+Ítem1   Ítem2   Ítem3   Ítem4 
+  0.75    0.50    0.30    0.05 
+```
+
+#### Interpretación:
+- Los valores altos (cercanos a 1 o -1) indican que los ítems discriminan bien entre los grupos de alto y bajo desempeño.
+- Valores cercanos a 0 sugieren que los ítems no discriminan bien.
+- Valores negativos indican que los alumnos de bajo desempeño tienen mayor probabilidad de responder correctamente, lo que podría señalar un problema con el ítem.
+
+---
+
+### **5. Opcional: Graficar los resultados**
+Si quieres visualizar los índices de discriminación, puedes crear un gráfico de barras:
+
+```R
+# Crear un gráfico de barras
+barplot(discriminacion, 
+        main = "Índice de Discriminación de los Ítems",
+        xlab = "Ítems", 
+        ylab = "Índice de Discriminación",
+        col = "skyblue", 
+        ylim = c(-1, 1))
+```
+
+---
+
+### **Resumen**
+En este análisis:
+1. Dividimos la muestra en **27% superior** y **27% inferior** según el puntaje total.
+2. Calculamos el porcentaje de respuestas correctas en cada grupo para cada ítem.
+3. Restamos \(p_{\text{alto}} - p_{\text{bajo}}\) para obtener el índice de discriminación.
+
+Si tienes dudas o quieres agregar más pasos, como limpiar datos o transformar respuestas, ¡házmelo saber! 😊

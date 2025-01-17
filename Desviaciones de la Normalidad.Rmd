@@ -1,0 +1,48 @@
+---
+title: "Desviaciones de la Normalidad"
+author: "Perplexity"
+date: "2025-01-16"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Para precisar las diferencias entre desviaciones moderadas y severas de la normalidad, es importante considerar varios aspectos cuantitativos y cualitativos:
+
+## Desviaciones moderadas de la normalidad
+
+Una desviación moderada de la normalidad generalmente implica:
+
+1. Asimetría: Valores de asimetría entre -1 y -0.5 o entre 0.5 y 1.
+2. Curtosis: Valores de curtosis entre -1 y -2 o entre 1 y 2.
+3. Test de normalidad: Los p-valores en pruebas como Shapiro-Wilk o Kolmogorov-Smirnov están cerca pero por debajo del nivel de significancia (por ejemplo, entre 0.01 y 0.05).
+4. Gráficos Q-Q: Los puntos se desvían ligeramente de la línea diagonal, pero siguen un patrón general cercano a ella.
+5. Regla empírica: Aproximadamente 60-65% de los datos caen dentro de una desviación estándar de la media, 90-94% dentro de dos desviaciones estándar, y 97-99% dentro de tres desviaciones estándar[1].
+
+## Desviaciones severas de la normalidad
+
+Una desviación severa de la normalidad se caracteriza por:
+
+1. Asimetría: Valores de asimetría menores a -1 o mayores a 1.
+2. Curtosis: Valores de curtosis menores a -2 o mayores a 2.
+3. Test de normalidad: Los p-valores en pruebas de normalidad son muy bajos (por ejemplo, < 0.01).
+4. Gráficos Q-Q: Los puntos se desvían significativamente de la línea diagonal, formando patrones claramente no lineales.
+5. Regla empírica: Menos del 60% de los datos caen dentro de una desviación estándar de la media, menos del 90% dentro de dos desviaciones estándar, y menos del 97% dentro de tres desviaciones estándar[1].
+
+## Consideraciones adicionales
+
+- Presencia de valores atípicos: Una cantidad significativa de valores atípicos (más del 5% de los datos) puede indicar una desviación severa[3].
+- Multimodalidad: La presencia de múltiples picos en la distribución sugiere una desviación severa de la normalidad[4].
+- Tamaño de la muestra: En muestras grandes (n > 1000), incluso desviaciones pequeñas pueden resultar estadísticamente significativas en pruebas de normalidad, por lo que es importante combinar estas pruebas con inspección visual y otras métricas[2].
+
+Es importante notar que estos criterios no son absolutos y pueden variar según el contexto del estudio y el campo de aplicación. La interpretación de la severidad de la desviación debe considerar también el impacto práctico en el análisis específico que se está realizando.
+
+Citations:
+[1] https://fastercapital.com/es/tema/tipos-de-desviaci%C3%B3n-est%C3%A1ndar.html
+[2] https://www.jmp.com/es_ar/statistics-knowledge-portal/measures-of-central-tendency-and-variability/normal-distribution.html
+[3] https://www.jmp.com/es_mx/statistics-knowledge-portal/measures-of-central-tendency-and-variability/standard-deviation.html
+[4] https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal_sesgada
+[5] https://www.youtube.com/watch?v=bfzejk_yGtg
+[6] https://www.datacamp.com/es/tutorial/gaussian-distribution

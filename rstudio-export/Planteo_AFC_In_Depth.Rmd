@@ -1,0 +1,91 @@
+
+title: "R Notebook"
+output: html_notebook
+
+
+Cuando un Análisis Factorial Confirmatorio (CFA) muestra un pobre ajuste, el objetivo es identificar los ítems problemáticos que podrían estar afectando la bondad de ajuste. En R, puedes utilizar varias estrategias para diagnosticar y mejorar tu modelo. A continuación, te detallo algunos pasos clave para detectar qué ítems modificar o eliminar:
+
+
+### **1. Examina las cargas factoriales**
+- Revisa las **cargas factoriales** de cada ítem en su factor. Los ítems con cargas bajas (< 0.4, como regla general) suelen ser poco representativos del factor al que pertenecen y podrían estar afectando el ajuste del modelo.
+  
+**Cómo hacerlo en R**:  
+Si usaste el paquete `lavaan`, puedes examinar las cargas factoriales con:
+```R
+summary(modelo, standardized = TRUE)
+```
+Busca ítems con cargas factoriales bajas y evalúa si podrían ser candidatos para eliminar o revisar.
+
+
+
+### **2. Revisa las correlaciones residuales (Matriz de residuos estandarizados)**
+- Las **correlaciones residuales** grandes (valores absolutos > 0.1 o 0.2) entre pares de ítems indican que esos ítems tienen varianza compartida no explicada por el modelo. Esto puede deberse a:
+  - Redundancia entre ítems.
+  - Errores correlacionados.
+
+**Cómo hacerlo en R**:  
+Puedes obtener la matriz de residuos estandarizados con:
+```R
+resid(modelo, type = "standardized")
+```
+Busca valores altos en la matriz de residuos estandarizados. Si encuentras correlaciones residuales grandes entre dos ítems, evalúa si:
+- Los ítems son redundantes (preguntan lo mismo).
+- Es necesario permitir correlacionar sus errores en el modelo.
+
+
+
+### **3. Usa índices de modificación**
+- Los **índices de modificación (MI)** sugieren cambios específicos en el modelo para mejorar el ajuste, como permitir correlaciones entre errores o mover ítems a otro factor.
+  
+**Cómo hacerlo en R**:  
+Con el paquete `lavaan`, puedes calcular los índices de modificación así:
+```R
+modindices(modelo)
+```
+Revisa los índices de modificación más altos (MI > 10 o 15 como referencia). Estos te dirán:
+- Si algún ítem debería tener su error correlacionado con otro.
+- Si un ítem podría cargar en un factor distinto al especificado.
+
+⚠️ **Precaución:** No apliques todas las sugerencias de los índices de modificación sin justificación teórica. Evalúa cuidadosamente cada cambio.
+
+
+
+### **4. Examina los valores de "R-squared" de los ítems**
+- Los valores de **R²** te muestran qué tan bien el modelo explica la varianza de cada ítem. Ítems con valores bajos de R² podrían no estar contribuyendo adecuadamente al modelo.
+  
+**Cómo hacerlo en R**:
+```R
+inspect(modelo, what = "r2")
+```
+Considera eliminar ítems con R² bajos (< 0.2 o 0.3) si son débiles para su factor.
+
+
+
+### **5. Evalúa la unidimensionalidad**
+- Si estás evaluando una escala de un solo factor, asegúrate de que los ítems realmente midan lo mismo. Usa el **Análisis Factorial Exploratorio (AFE)** para verificar la estructura subyacente antes de ajustar un CFA.
+
+**Cómo hacerlo en R**:
+Usa el paquete `psych` para realizar un AFE:
+```R
+library(psych)
+fa.parallel(tus_datos)  # Determina el número de factores
+fa(tus_datos, nfactors = 1)  # Extrae un factor
+```
+Esto te ayudará a identificar ítems que no cargan en el factor esperado.
+
+
+
+### **6. Itera el modelo**
+- Elimina uno o varios ítems problemáticos y vuelve a ajustar el modelo.
+- Revisa los cambios en los indicadores de bondad de ajuste (CFI, TLI, RMSEA, SRMR). Un ajuste progresivo es clave.
+
+
+
+### **Resumen de pasos en R**
+1. Examina las cargas factoriales: elimina ítems con cargas bajas.
+2. Revisa las correlaciones residuales y permite correlaciones de errores justificadas.
+3. Usa los índices de modificación para identificar ajustes sugeridos.
+4. Revisa los valores de R² para detectar ítems con baja explicación.
+5. Verifica la estructura factorial con un AFE si es necesario.
+
+Si necesitas ayuda con el código o interpretación, ¡puedes compartir más detalles y te ayudaré! 😊
