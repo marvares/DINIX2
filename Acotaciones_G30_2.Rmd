@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```{r cars, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
 library(tidyverse)
 library(haven)
-INDI45 <- read_sav("INDI45.sav")
+INDI30 <- read_sav("INDI3.sav")
 # glimpse(INDI45)
 ayudin <- function(dataframe, columnas) {
   # Verificar que las columnas seleccionadas sean numéricas
@@ -37,7 +37,7 @@ ayudin <- function(dataframe, columnas) {
 
 
 # Llamar a la función y mostrar los resultados
-LIMPION <- ayudin(dataframe = INDI45, columnas = c(44:105))
+LIMPION <- ayudin(dataframe = INDI30, columnas = c(44:105))
 ```
 
 

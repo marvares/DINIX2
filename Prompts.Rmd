@@ -1613,3 +1613,86 @@ Puedes hacerme todas las preguntas que consideres necesarias para darme tu mejor
 ## Análisis de Ítems 
 
 Tengo una escala diseñada para evaluar el desempeño escolar de alumnos de educación inicial. Necesito determinar qué tan bien discriminan los ítems que la componen en relación a los alumnos buenos y malos. ¿Qué tipo de análisis me recomiendas?
+
+
+* Usando dplyr, y a partir de este ejemplo:
+
+library(dplyr)
+
+# Mover la columna `item_final` a la posición 3
+datos <- datos %>%
+  relocate(item_final, .before = col3)
+  
+Dame el código para reordenar múltiples columnas dentro de un solo comando
+
+
+
+## Discri
+
+Estoy tratando de calcular el índice de Discriminación mediante el siguiente código (el cual está adaptado de un ejemplo que me diste tú anteriormente):
+
+# Discriminante Escala C
+# Categorizamos a los participantes en grupo superior e inferior (27% each)
+# Ordenar los datos según el puntaje total
+DISCRIC <- DISCRI[order(DISCRI$CSUM, decreasing = TRUE), ]
+
+# Definir el tamaño de los grupos (27% superior e inferior)
+n <- nrow(DISCRIC) # Número total de estudiantes
+grupo <- round(0.27 * n)
+
+# Dividir los grupos
+C_alto <- DISCRIC[1:grupo, ]    # 27% superior
+C_bajo <- DISCRIC[(n-grupo+1):n, ] # 27% inferior
+# Identificar las columnas de los ítems
+C_items <- names(DISCRIC)[2:27] # Suponiendo que los ítems están en la 3ª columna en adelante
+# Calcular el índice de discriminación para cada ítem
+C_Discri <- sapply(C_items, function(item) {
+  # Porcentaje de respuestas correctas en grupo alto
+  p_alto <- mean(C_alto[[item]])
+  
+  # Porcentaje de respuestas correctas en grupo bajo
+  p_bajo <- mean(C_bajo[[item]])
+  
+  # Índice de discriminación
+  p_alto - p_bajo
+})
+
+El problema es que mostrar el índice de discriminación "C_Discri", el resultado en todos los casos es mayor a 1. ¿Qué está pasando y cómo lo corrijo?
+
+
+
+El siguiente código:
+
+# Discriminante Escala C
+# Categorizamos a los participantes en grupo superior e inferior (27% each)
+# Ordenar los datos según el puntaje total
+DISCRIC <- DISCRI[order(DISCRI$CSUM, decreasing = TRUE), ]
+
+# Definir el tamaño de los grupos (27% superior e inferior)
+n <- nrow(DISCRIC) # Número total de estudiantes
+grupo <- round(0.27 * n)
+
+# Dividir los grupos
+C_alto <- DISCRIC[1:grupo, ]    # 27% superior
+C_bajo <- DISCRIC[(n-grupo+1):n, ] # 27% inferior
+# Identificar las columnas de los ítems
+C_items <- names(DISCRIC)[2:27] # Suponiendo que los ítems están en la 2ª columna en adelante
+# Transformar las respuestas en dicotómicas (1 = alta, 0 = baja)
+DISCRIC[C_items] <- lapply(DISCRIC[C_items], function(x) ifelse(x >= 4, 1, 0))
+
+# Recalcula el índice de discriminación con las respuestas dicotómicas
+C_Discri <- sapply(C_items, function(item) {
+  # Proporción de respuestas altas en el grupo alto
+  p_alto <- mean(C_alto[[item]])
+  
+  # Proporción de respuestas altas en el grupo bajo
+  p_bajo <- mean(C_bajo[[item]])
+  
+  # Índice de discriminación
+  p_alto - p_bajo
+})
+
+# Mostrar los índices de discriminación
+print(C_Discri)
+
+Me sigue arrojando exactamente los mismos resultados que con los valores originales de los ítems. ¿Como lo corrijo?

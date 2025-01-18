@@ -1,6 +1,6 @@
 ---
 title: "Informe Estandarización Perú Escala INDI, Parte 2: Análisis de Ítems"
-subtitle: "Muestra Nivel 4-5"
+subtitle: "Muestra Nivel 3"
 author: "Martín Vargas Estrada"
 date: "`r Sys.time()`"
 output:
@@ -21,19 +21,19 @@ header-includes: \renewcommand{\contentsname}{Índice} \renewcommand{\tablename}
 # Introducción
 
 
-Informe de Exploración Psicométrica de los ìtems de la prueba INDI obtenidas con muestra de Perú, Niveles 4-5. 
+Informe de Exploración Psicométrica de los ìtems de la prueba INDI obtenidas con muestra de Perú, Nivel 3. 
 
 # Profundización Análisis Factorial Confirmatorio (AFC)
 
 Como se detalla en secciones previas, el FC del modelo resultó con bajo ajuste en la mayoría de índices; por lo tanto de pasará a profundizar en el análisis a fin de obtener el detalle de los ítems cuya modificación (o incluso supresión) podría generar una mejora en el ajuste del modelo.
 
-```{r 45_P2_AFC_Indepth, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+```{r 30_P2_AFC_Indepth, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
 
 library(tidyverse)
 library(haven)
 rm(list = ls()) 
 # Carga el archivo .sav
-INDI45 <- read_sav("INDI45.sav")
+INDI30 <- read_sav("INDI3.sav")
 
 # Generar el DF solo con los valores de las subescalas
 
@@ -53,10 +53,10 @@ ayudin <- function(dataframe, columnas) {
 
 
 # Convertir columnas de la 3 a la 6 en un dataframe a numéricas
-INDI45[ , 43:104] <- lapply(INDI45[ , 43:104], as.numeric)
+INDI30[ , 43:102] <- lapply(INDI30[ , 43:102], as.numeric)
 
 # Llamar a la función y mostrar los resultados
-LIMPION <- ayudin(dataframe = INDI45, columnas = c(43:105))
+LIMPION <- ayudin(dataframe = INDI30, columnas = c(43:102))
 
 # Definir función que permitirá ejecutar AFC vía lavaan
 
@@ -142,7 +142,7 @@ AFC <- function(data, factors, indicators, result_object_name, scale_name) {
 
 
 factores <- c("Cognitivo", "Motor", "Socioemocional", "Disposicional")
-items <- list(c(1:26), c(27:32), c(33:46), c(47:52))
+items <- list(c(1:23), c(24:31), c(32:44), c(45:50))
 result_object_name <- "afc30_01"
 escala <- "Escala INDI"
 
@@ -195,18 +195,18 @@ Ahora bien, sabedores de lo anterior, pasemos a señalar los conclusiones más s
 
 1. Los ítems que componen la subescala "C" muestran cargas factoriales altas, lo cual indica que son estadísticamente válidos.
 1. Los ítems de la subescala "M" también muestran cargas factoriales altas, lo cual indica que son estadísticamente válidos.
-1. Los ítems de la subescala "S" tienen resultados variopintos. Para empezar, los ítems S1, S2, S7, S8 y S9 se comportan como ítems directos (a mayor puntaje en el ítem, mayor valor o presencia de la variable a medir), mientras que los ítems S3, S4, S5, S6, S10, S11, S12, S13 y S14 se comportan como ítems inversos. Todos los ítems directos muestran cargas factoriales aceptables, pero entre los ítems inversos S3, S4, S10, S11 parecen buenos candidatos para la supresión o, en todo caso, la modificación con vistas a su mejoramiento. 
-1. Entre los ítems de la subescala "D", casi todos ostentan buenas cargas factoriales (siendo todos ítems directos). La excepción la constituye el ítem D3, el cual no solo es inverso (lo cual, como tenemos dicho, no es necesariamente un problema), sino que exhive una carga factorial muy baja de -.128; esto significa que apenas el 1.6% de su variabilidad es explicada por el factor que estamos mdiendo. 
+1. Los ítems de la subescala "S" tienen resultados variopintos. Para empezar, los ítems S1, S2, S7, S8 y S9 se comportan como ítems directos (a mayor puntaje en el ítem, mayor valor o presencia de la variable a medir), mientras que los ítems S3, S4, S5, S6, S10, S11, S12, y S13 se comportan como ítems inversos. Todos los ítems directos muestran cargas factoriales aceptables, pero en especial los ítems inversos S3 y S11 parecen buenos candidatos para la supresión, mientras que S4, S5, S6, S10, S12, y S13 requerirían al menos la modificación con vistas a su mejoramiento. 
+1. Entre los ítems de la subescala "D", casi todos ostentan buenas cargas factoriales (siendo además todos ítems directos).
 
 
-Ya desde el punto de vista concpetual, podemos pasar a analizar el *contenido* de los ítems en cuestión. En especial, nos centraremos en los ítems "problemáticos". 
+Ya desde el punto de vista conceptual, podemos pasar a analizar el *contenido* de los ítems en cuestión. En especial, nos centraremos en los ítems "problemáticos". 
 
-```{r 45_P2_Escalas_Descritas, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+```{r 30_P2_Escalas_Descritas, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
 
 
 
 library(readxl)
-infovar <- read_excel("infovar.xlsx")
+infovar <- read_excel("infovar30.xlsx")
 
 colnames(infovar) <- c("Contenido")
 
@@ -245,15 +245,15 @@ Podemos apreciar ahora que:
 
 * Los ítems de la subescala "C" tienen validez aparente: su contenido parece relacionado con el factor a medir.
 * Los ítems de la subescala "M" tienen validez aparente: su contenido parece relacionado con el factor a medir.
-* Los ítems inversos de la subescala "S" parecen efectivamente medir la variable latente en sentido opuesto, por lo que es plenamente justificado que tengan cargas factoriales negativas. Dicho esto, la mayoría de ítems inversos muestran también cargas factoriales relativamente bajas. En especial, S3 ("Evita relacionarse con otros en diferentes situaciones"); S4 ("Muestra aprensión y/o excesiva preocupación ante sucesos futuros"); S10 ("Se muestra tímido y/o no comparte sus experiencias con el grupo"); y S11 ("Tiene un aspecto triste, cansado y/o preocupado"). El resto de ítems inversos, si bien se ubican en valores iguales o ligeramente por encima de 0.4 en valor absoluto, ciertamente  evidencian una carga factorial menor a las sus contrapartes directas. Las razones de esta relativa ineficiencia de los ítems inversos de la subescala "S" puede deberse o bien a aspectos de contenido (los ítems no son adecuadamente interpretados o quizás haya un efecto cultural/lingüístico), o a aspectos metodológicos (puede que haya existido un efecto debido a la secuencia de administración).
-* Los ítems de la subescala "D" parecen reflejar apropiadamente la dimensión a evaluar. Aun así, el ítem D3 ("Necesita que lo motiven para la realización de las actividades") también evidencia una carga factorial bastante débil. Si se recuerda, también en los resultados de la confiabilidad encontramos que la confiabilidad aumentaría con su supresión. 
+* Los ítems inversos de la subescala "S" parecen efectivamente medir la variable latente en sentido opuesto, por lo que es plenamente justificado que tengan cargas factoriales negativas. En ese sentido, evidencian validez aparente. Dicho esto, la mayoría de ítems inversos muestran también cargas factoriales relativamente bajas. En especial, S3 ("Evita relacionarse con otros en diferentes situaciones"); S10 ("Se muestra tímido y/o no comparte sus experiencias con el grupo"); y S11 ("Tiene un aspecto triste, cansado y/o preocupado"). El resto de ítems inversos, si bien se ubican en valores iguales o ligeramente por encima de 0.4 en valor absoluto, ciertamente  evidencian una carga factorial menor a las sus contrapartes directas. Las razones de esta relativa ineficiencia de los ítems inversos de la subescala "S" puede deberse o bien a aspectos de contenido (los ítems no son adecuadamente interpretados o quizás haya un efecto cultural/lingüístico), o a aspectos metodológicos (puede que haya existido un efecto debido a la secuencia de administración).
+* Los ítems de la subescala "D" parecen reflejar apropiadamente la dimensión a evaluar.  
 
 
 # Análisis de Ítems: Outliers y Transformaciones de Escala
 
 ## Análisis de Outliers
 
-```{r 45_P2_Outliers, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+```{r 30_P2_Outliers, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
 
 knitr::opts_chunk$set(
 	echo = FALSE,
@@ -262,23 +262,23 @@ knitr::opts_chunk$set(
 	)
 knitr::opts_current$get('Tabla')
 
-
+INDI30$Codigo <- as.numeric(INDI30$Codigo)  
 library(dplyr)
-INDI45_CATEGO <- INDI45 %>% 
+INDI30_CATEGO <- INDI30 %>% 
   dplyr::select(Codigo, Regnat, Reg)
 
 # Extraigo los campos categóricos que me interesan del df original
 # Transformo los valores correspondientes a factor
 # Cambiar la variable "Regnat" a factor y reetiquetar sus valores
-INDI45_CATEGO$Regnat <- factor(INDI45_CATEGO$Regnat, 
+INDI30_CATEGO$Regnat <- factor(INDI30_CATEGO$Regnat, 
                             levels = c("1", "2", "3"),  # Valores originales
                             labels = c("Costa", "Sierra", "Selva"))  # Nuevas etiquetas
 # Cambiar la variable "Regnat" a factor y reetiquetar sus valores
-INDI45_CATEGO$Reg <- factor(INDI45_CATEGO$Reg)  # Nuevas etiquetas
-  
-PRELIMPIO <- ayudin(dataframe = INDI45, columnas = c(1, 43:105)) # Extraigo solo valores no NA y numéricos del df original
+INDI30_CATEGO$Reg <- factor(INDI30_CATEGO$Reg)  # Nuevas etiquetas
+ 
+PRELIMPIO <- ayudin(dataframe = INDI30, columnas = c(1, 43:102)) # Extraigo solo valores no NA y numéricos del df original
 # Realizar el left join
-LIMPIO <- left_join(PRELIMPIO, INDI45_CATEGO, by = "Codigo")
+LIMPIO <- left_join(PRELIMPIO, INDI30_CATEGO, by = "Codigo")
 
 
 # Función para identificar casos con valores atípicos (outliers) en columnas específicas
@@ -347,7 +347,7 @@ items_intensos <- function(data, rango_columnas, columna_contexto, multiplicador
 # Ejecutar la función para encontrar casos con valores atípicos
 items_intensos(
   data = LIMPIO,           # Data frame con los datos
-  rango_columnas = 2:53,     # Rango de columnas numéricas a evaluar (columnas 2 a 4)
+  rango_columnas = 2:51,     # Rango de columnas numéricas a evaluar (columnas 2 a 4)
   columna_contexto = "Regnat",  # Columna adicional para incluir en la salida (contexto)
   multiplicador_IQR = 3   # Multiplicador del IQR (por defecto 1.5)
 )
@@ -356,7 +356,7 @@ items_intensos(
 ```
 Para resumir, podemos ofrecer las tablas siguientes, que resumen qué items muestran valores atípicos y cuántos casos hay, así como la frecuencia de valores atípicos según las categorías de Región (Costa, Sierra o Selva), y Departamento:
 
-```{r 45_Outliers_Resumen, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+```{r 30_Outliers_Resumen, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
 
 # Función para resumir outliers
 library(dplyr)
@@ -430,7 +430,7 @@ items_intensos_resumen <- function(data, rango_columnas, columna_contexto, multi
 
 items_intensos_resumen(
   data = LIMPIO,           # Data frame con los datos
-  rango_columnas = 2:53,     # Rango de columnas numéricas a evaluar (columnas 2 a 4)
+  rango_columnas = 2:51,     # Rango de columnas numéricas a evaluar (columnas 2 a 4)
   columna_contexto = "Regnat",  # Columna adicional para incluir en la salida (contexto)
   multiplicador_IQR = 3   # Multiplicador del IQR (por defecto 1.5)
 )
@@ -495,20 +495,20 @@ items_intensos_catego <- function(data, rango_columnas, columna_contexto, multip
 
 items_intensos_catego (
   data = LIMPIO,           # Data frame con los datos
-  rango_columnas = 2:53,     # Rango de columnas numéricas a evaluar (columnas 2 a 4)
+  rango_columnas = 2:51,     # Rango de columnas numéricas a evaluar (columnas 2 a 4)
   columna_contexto = "Reg",  # Columna adicional para incluir en la salida (contexto)
   multiplicador_IQR = 3   # Multiplicador del IQR (por defecto 1.5)
 )
 
 ```
 
-Las conclusiones apuntan a que la única escala que contiene valores extremos en la escala S, en especial los ítems S6, S12 y S14. Hay que señalar que los parámetros elegidos para definir "valor extremo" (tres veces el rango intercuartílico, en lugar del nivel usual de rango y medio) son extremos en verdad; la distribución de los puntajes es bastante dispersa.
+Las conclusiones apuntan a que la única escala que contiene valores extremos en la escala S, en especial los ítems S6 y S12. Hay que señalar que los parámetros elegidos para definir "valor extremo" (tres veces el rango intercuartílico, en lugar del nivel usual de rango y medio) son extremos en verdad; la distribución de los puntajes es bastante dispersa.
 
 Una vez más, esto apunta en una dirección bastante clara: los subgrupos son tan distintos entre sí que incluirlos todos dentro de la misma "muestra general" hace que la variabilidad se eleve bastante y la aparición de outliers se haga más probable.
 
+Finalmente, el total de los casos con valores extremos (51 casos) no llega a sobrepasar el 5% del total de la muestra, por lo que se considera que no valdría la pena tomar otras medidas de gestión de valores extremos, lo cual llevaría necesariamente al recálculo de todos los índices.
 
-
-```{r 45_P2_Resumen_Binarios, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE, results='asis'}
+```{r 30_P2_Resumen_Binarios, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE, results='asis'}
 
 # Cargar librerías necesarias
 library(dplyr)
@@ -569,7 +569,7 @@ anal_di <- function(data,
 
 
 
-anal_di(data = INDI45, 
+anal_di(data = INDI30, 
         rango_indices = c(22:30), 
         titulo_tabla = "Resumen de Incidencias", 
         titulo_grafico = "Porcentajes de Incidencia", 
@@ -577,14 +577,14 @@ anal_di(data = INDI45,
         paleta_colores = "Greens")
 
 
-anal_di(data = INDI45, 
+anal_di(data = INDI30, 
         rango_indices = c(33:39), 
         titulo_tabla = "Resumen de Tratamientos", 
         titulo_grafico = "Porcentajes de Tratamiento", 
         color_contorno = "black", 
         paleta_colores = "Blues")
 
-# resumen_binario(INDI45, columnas = c(22:30), equivalencias = c("1","0"),
+# resumen_binario(INDI30, columnas = c(22:30), equivalencias = c("1","0"),
 #                             titulo_grafico = "Distribución de Respuestas 'Sí'",
 #                             etiqueta_x = "Respuestas Sí",
 #                             etiqueta_y = "Porcentaje",
@@ -592,7 +592,7 @@ anal_di(data = INDI45,
 #                             paleta_colores = "Oranges",
 #                             color_borde = "black")
 # 
-# resumen_binario(INDI45, columnas = c(33:39), equivalencias = c("1","0"),
+# resumen_binario(INDI30, columnas = c(33:39), equivalencias = c("1","0"),
 #                             titulo_grafico = "Distribución de Respuestas 'Sí'",
 #                             etiqueta_x = "Respuestas Sí",
 #                             etiqueta_y = "Porcentaje",
@@ -602,7 +602,7 @@ anal_di(data = INDI45,
 
 ```
 
-Finalmente, el total de los casos con valores extremos (72 casos) no llega a sobrepasar el 5% del total de la muestra, por lo que se considera que no valdría la pena tomar otras medidas de gestión de valores extremos, lo cual llevaría necesariamente al recálculo de todos los índices.
+
 
 # Transformaciones de las Escalas
 
@@ -612,7 +612,7 @@ Ejecutaremos dos transformaciones: logarítmica y Box-Cox. Se eligió esas dos p
 
 ## Transformación Logarítmica
 
-```{r 45_P2_Transformaciones_Log, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+```{r 30_P2_Transformaciones_Log, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
 library(nortest) # Para el test de Lilliefors
 library(car)     # Para la transformación Box-Cox
 library(knitr)   # Para salida tabular bonitamente
@@ -695,7 +695,7 @@ log_transform_norma <- function(data) {
 
 # PULCRO <- LIMPIO %>% 
 #   select(CSUM:DSUM)
-PULCRO <- LIMPIO[, c(60:62)]
+PULCRO <- LIMPIO[, c(59:61)]
 # Ejecutar la función
 log_transform_norma(PULCRO)
 
@@ -713,7 +713,7 @@ Pasemos ahora a verificar los resultados de la transformación Box-Cox.
 A continuación, mostramos los resultados de la transformación Box-Cox. 
 
 
-```{r 45_P2_Transformaciones_BoxCox, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+```{r 30_P2_Transformaciones_BoxCox, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
 # Función para aplicar la transformación Box-Cox y evaluar normalidad
 # Cargar librerías necesarias
 library(MASS)       # Para la transformación Box-Cox
@@ -802,7 +802,7 @@ box_norma <- function(data) {
 }
 
 
-PULCRO <- LIMPIO[, c(60:62)]
+PULCRO <- LIMPIO[, c(59:61)]
 # Ejecutar la función
 # Aplicar la transformación Box-Cox
 box_norma(PULCRO)
@@ -826,45 +826,45 @@ En esta sección pasaremos a analizar la calidad de los ítems de la escala INDI
 
 Cabe mencionar que se recalculó los puntajes sumatorios en vista de que existen ítems inversos.
 
-```{r 45_P2_Inversión_Items, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE, results='asis'}
+```{r 30_P2_Inversión_Items, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE, results='asis'}
 # LIMPIO es nuestro df de punto de partida para este propósito.  
 
 # Recreamos las variables sumatorias:
 
-LIMPIO$B_CSUM <- rowSums(LIMPIO[, 2:27])
-LIMPIO$B_MSUM <- rowSums(LIMPIO[, 28:33])
+# LIMPIO$B_CSUM <- rowSums(LIMPIO[, 2:27])
+# LIMPIO$B_MSUM <- rowSums(LIMPIO[, 28:33])
 
 # Crear nuevas columnas para los ítems invertidos
 # unique(LIMPIO$S3)
-LIMPIO$D3_i <- 6 + 1 - LIMPIO$D3
+# LIMPIO$D3_i <- 6 + 1 - LIMPIO$D3
 
 # Mover la columna `item_final` a la posición 3
 # Items inversos en S: S3, S4, S5, S6, S10, S11, S12, S13, S14
-LIMPIO$S3_i <- 6 + 1 - LIMPIO$S3
-LIMPIO$S4_i <- 6 + 1 - LIMPIO$S4
-LIMPIO$S5_i <- 6 + 1 - LIMPIO$S5
-LIMPIO$S6_i <- 6 + 1 - LIMPIO$S6
-LIMPIO$S10_i <- 6 + 1 - LIMPIO$S10
-LIMPIO$S11_i <- 6 + 1 - LIMPIO$S11
-LIMPIO$S12_i <- 6 + 1 - LIMPIO$S12
-LIMPIO$S13_i <- 6 + 1 - LIMPIO$S13
-LIMPIO$S14_i <- 6 + 1 - LIMPIO$S14
+LIMPIO$S3_i <- 6 + 1 - LIMPIO$S3 #ok
+LIMPIO$S4_i <- 6 + 1 - LIMPIO$S4 #ok
+LIMPIO$S5_i <- 6 + 1 - LIMPIO$S5 #ok
+LIMPIO$S6_i <- 6 + 1 - LIMPIO$S6 #ok
+LIMPIO$S10_i <- 6 + 1 - LIMPIO$S10 #ok
+LIMPIO$S11_i <- 6 + 1 - LIMPIO$S11 #ok
+LIMPIO$S12_i <- 6 + 1 - LIMPIO$S12 #ok
+LIMPIO$S13_i <- 6 + 1 - LIMPIO$S13 #ok
+
 
 # LIMPIO <- LIMPIO %>%
 #   relocate(D3_i, .before = D4)
-LIMPIO$B_DSUM <- rowSums(LIMPIO[, c(48:49, 51:53, 69)])
+# LIMPIO$B_DSUM <- rowSums(LIMPIO[, c(48:49, 51:53, 69)])
 # LIMPIO <- LIMPIO %>%
 #   relocate(S3_i, .before = S4)
 # LIMPIO <- LIMPIO %>%
 #   relocate(S4_i, .before = S5)
-LIMPIO$SSUM <- rowSums(LIMPIO[, c(34:47)]) # Escala S Sumatoria, tal cual
-LIMPIO$B_SSUM <- rowSums(LIMPIO[, c(34:35, 40:42, 70:78)]) # Escala S Sumatoria, con los ítems inversos
+LIMPIO$SSUM <- rowSums(LIMPIO[, c(34:45)]) # Escala S Sumatoria, tal cual
+LIMPIO$B_SSUM <- rowSums(LIMPIO[, c(34:35, 64:67, 68:71)]) # Escala S Sumatoria, con los ítems inversos
 
 
 # Comparar si las dos columnas son idénticas
-identical(LIMPIO$CSUM, LIMPIO$B_CSUM) # Deberían ser iguales, y lo son
-identical(LIMPIO$MSUM, LIMPIO$B_MSUM) # Deberían ser iguales, y lo son
-identical(LIMPIO$DSUM, LIMPIO$B_DSUM) # Deberían ser iguales, y lo son. Esto significa que al hacer el cálculo parece que sí tomaron en cuenta el ítem inverso D3
+# identical(LIMPIO$CSUM, LIMPIO$B_CSUM) # Deberían ser iguales, y lo son
+# identical(LIMPIO$MSUM, LIMPIO$B_MSUM) # Deberían ser iguales, y lo son
+# identical(LIMPIO$DSUM, LIMPIO$B_DSUM) # Deberían ser iguales, y lo son. Esto significa que al hacer el cálculo parece que sí tomaron en cuenta el ítem inverso D3
 identical(LIMPIO$SSUM, LIMPIO$B_SSUM) # No son iguales, deberían serlo. Esto significa que al hacer el cálculo parece que no generaron una escala sumatoria porque estaban conscientes de que había muchos ítems inversos?
 
 # Detectar filas donde col1 y col2 son diferentes
@@ -881,25 +881,27 @@ Luego se calculó el Índice de Discriminación de los ítems.
 
 
 
-```{r 45_P2_Discriminante, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+```{r 30_P2_Discriminante, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
 
 # Vamos a generar un DF con la data necesaria
 # Excluir columnas por índice
-DISCRI <- LIMPIO [, -c(36:39,43:47,50, 54:60, 64:68, 79:80)]  # Excluir las columnas que corresponden a los ítems inversos.
+DISCRI <- LIMPIO [, -c(35:38,42:45, 52:58, 62:63, 72)]  # Excluir las columnas que corresponden a los ítems inversos.
 
 # Reordenamos las columnas
+# DISCRI <- DISCRI %>%
+#   relocate(D3_i, .before = D4)
 DISCRI <- DISCRI %>%
-  relocate(D3_i, .before = D4)
+  relocate(c(47:50), .before = c(35))
 DISCRI <- DISCRI %>%
-  relocate(DSUM, .after = last_col())
+  relocate(c(51:54), .before = c(42))
 DISCRI <- DISCRI %>%
-  relocate(MSUM, .before = B_SSUM)
-DISCRI <- DISCRI %>%
-  relocate(CSUM, .before = MSUM)
-DISCRI <- DISCRI %>%
-  relocate(c(45:48), .before = c(36))
-DISCRI <- DISCRI %>%
-  relocate(c(49:53), .before = c(43))
+  relocate(D_sum, .after = last_col())
+# DISCRI <- DISCRI %>%
+#   relocate(MSUM, .before = B_SSUM)
+# DISCRI <- DISCRI %>%
+#   relocate(CSUM, .before = MSUM)
+
+
 # Generamos función para calcular Discriminante
 
 Trump <- function(nombre_escala, df_final, df_inicial, prefijo, rango_columnas) {
@@ -907,7 +909,7 @@ Trump <- function(nombre_escala, df_final, df_inicial, prefijo, rango_columnas) 
   library(dplyr)
   
   # Ordenar los datos según el puntaje total
-  df_final <- df_inicial[order(df_inicial$CSUM, decreasing = TRUE), ]
+  df_final <- df_inicial[order(df_inicial$C_sum, decreasing = TRUE), ]
   
   # Definir el tamaño de los grupos (27% superior e inferior)
   n <- nrow(df_final)
@@ -972,10 +974,10 @@ Trump <- function(nombre_escala, df_final, df_inicial, prefijo, rango_columnas) 
 
 
 # Selecciono los nombres para la tabla:
-infovar_C <- infovar[1:26, ]
-infovar_M <- infovar[27:32, ]
-infovar_S <- infovar[33:46, ]
-infovar_D <- infovar[47:52, ]
+infovar_C <- infovar[1:23, ]
+infovar_M <- infovar[24:31, ]
+infovar_S <- infovar[32:44, ]
+infovar_D <- infovar[45:50, ]
 # # Llamar a la función
 # Tab_Discri_M <- Trump(
 #   nombre_escala = "Escala M",
@@ -1005,7 +1007,7 @@ infovar_D <- infovar[47:52, ]
 ```
 ## Conclusiones Escala C
 
-```{r 45_P2_Discriminante_C, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+```{r 30_P2_Discriminante_C, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
 # Llamar a la función
 # Llamar a la función
 tabla <- Trump(
@@ -1013,7 +1015,7 @@ tabla <- Trump(
   df_final = DISCRIC, 
   df_inicial = DISCRI, 
   prefijo = "C",
-  rango_columnas = 2:27  # Columnas de los ítems
+  rango_columnas = 2:24  # Columnas de los ítems
 )
 ```
 
@@ -1022,35 +1024,35 @@ tabla <- Trump(
 
 ## Conclusiones Escala M
 
-```{r 45_P2_Discriminante_M, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+```{r 30_P2_Discriminante_M, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
 # Llamar a la función
 Tab_Discri_M <- Trump(
   nombre_escala = "Escala M",
   df_final = DISCRIM,
   df_inicial = DISCRI,
   prefijo = "M",
-  rango_columnas = 28:33  # Especificar el rango de columnas para los ítems
+  rango_columnas = 25:32  # Especificar el rango de columnas para los ítems
 )
 ```
 
 * En general, la Escala M contiene ítems con buenos niveles de discriminación.
-* Tan solo los ítems M3 y M4 tienen un nivel menor de discriminación, de todos modos está dentro de un rango más que aceptable.
+* Tan solo los ítems M1 y M3 tienen un nivel menor de discriminación, de todos modos está dentro de un rango más que aceptable.
 
 
 ## Conclusiones Escala S
 
-```{r 45_P2_Discriminante_S, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+```{r 30_P2_Discriminante_S, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
 # Llamar a la función
 Tab_Discri_S <- Trump(
   nombre_escala = "Escala S",
   df_final = DISCRIS,
   df_inicial = DISCRI,
   prefijo = "S",
-  rango_columnas = 34:47  # Especificar el rango de columnas para los ítems
+  rango_columnas = 33:45  # Especificar el rango de columnas para los ítems
 )
 ```
 
-* En general, tan solo los ítems S1, S2, S7, S8 y S9 tienen un buen nivel discriminación. El resto de ítems (todos ellos inversos) ofrecen un nivel discriminante bastante bajo, llegando al extremo de ser negativo en el caso de los ítems S3 y S4. 
+* En general, tan solo los ítems S1, S2, S7, S8 y S9 tienen un buen nivel discriminación. El resto de ítems (todos ellos inversos) ofrecen un nivel discriminante bastante bajo. 
 
 
 
@@ -1061,18 +1063,18 @@ Tab_Discri_S <- Trump(
 
 ## Conclusiones Escala D
 
-```{r 45_P2_Discriminante_D, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+```{r 30_P2_Discriminante_D, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
 # Llamar a la función
 Tab_Discri_D <- Trump(
   nombre_escala = "Escala D",
   df_final = DISCRID,
   df_inicial = DISCRI,
   prefijo = "D",
-  rango_columnas = 48:53  # Especificar el rango de columnas para los ítems
+  rango_columnas = 46:51  # Especificar el rango de columnas para los ítems
 )
 ```
 
-* En general, tan solo el ítem D3 (ítem inverso) tiene un nivel de discriminación comparativamente bajo, pero aun así se encuentra dentro de niveles aceptables. El resto de ítems ofrecen un nivel discriminante entre bueno y excelente.
+* En general, los ítems que componen la Escala D encuentra dentro de niveles aceptables. El resto de ítems ofrecen un nivel discriminante entre bueno y excelente.
 
 
 
