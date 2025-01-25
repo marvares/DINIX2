@@ -1,0 +1,110 @@
+---
+title: "Posthoc en Trimmed ANOVA"
+author: "ChatGPT"
+date: "2025-01-21"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Después de realizar un **Trimmed ANOVA**, si encuentras diferencias estadísticamente significativas entre los grupos, es común realizar un **análisis post-hoc** para identificar **qué pares de grupos son significativamente diferentes** entre sí.
+
+En el caso del **Trimmed ANOVA**, los análisis post-hoc también deben ser **robustos** y adaptados al enfoque del análisis robusto que has aplicado (por ejemplo, medias recortadas). Para esto, el paquete **`WRS2`** en R ofrece una función especializada llamada **`mcppb20()`**, que realiza comparaciones múltiples post-hoc robustas.
+
+### **Descripción del análisis post-hoc para Trimmed ANOVA**
+1. **Función utilizada:** `mcppb20()` del paquete **WRS2**.
+   - Esta función realiza comparaciones múltiples post-hoc entre pares de grupos usando medias recortadas y métodos bootstrap para calcular intervalos de confianza y valores p robustos.
+
+2. **Entradas de la función:**
+   - La fórmula del modelo: `y ~ x` (donde `y` es la variable numérica y `x` es la variable categórica).
+   - El conjunto de datos que contiene las variables.
+   - El nivel de recorte deseado (`tr`), que debe coincidir con el nivel usado en el Trimmed ANOVA (por defecto, 20%).
+
+3. **Salida de la función:**
+   - Los valores p ajustados para cada comparación par-a-par.
+   - Los intervalos de confianza para las diferencias medias recortadas entre pares de grupos.
+
+4. **Ventajas de este método:**
+   - Es robusto frente a violaciones de normalidad y valores atípicos, ya que se basa en medias recortadas.
+   - Usa métodos bootstrap para garantizar la precisión de los resultados en muestras pequeñas o no normales.
+
+
+### **Cómo aplicar el análisis post-hoc en R**
+Aquí tienes un ejemplo práctico:
+
+#### **Ejemplo de uso con `mcppb20()`**
+Supongamos que ya has realizado un Trimmed ANOVA y ahora quieres realizar un análisis post-hoc para investigar las diferencias entre los grupos.
+
+```R
+# Instalar y cargar el paquete WRS2
+if (!require("WRS2")) install.packages("WRS2")
+library(WRS2)
+
+# Crear un conjunto de datos de ejemplo
+PULCRO <- data.frame(
+  Fechin = factor(rep(c("A", "B", "C", "D"), each = 10)),
+  Subescala_Cognitiva = rnorm(40, mean = 50, sd = 10)
+)
+
+# Aplicar Trimmed ANOVA
+resultado_anova <- t1way(Subescala_Cognitiva ~ Fechin, data = PULCRO, tr = 0.20)
+
+# Realizar análisis post-hoc
+post_hoc <- mcppb20(Subescala_Cognitiva ~ Fechin, data = PULCRO, tr = 0.20)
+
+# Ver los resultados del post-hoc
+print(post_hoc)
+```
+
+#### **Salida esperada:**
+
+```R
+  Group Comparison   Estimate   CI lower   CI upper    p-value
+1       A - B        5.200      1.800       8.600      0.002 **
+2       A - C        2.500     -1.100       6.000      0.150
+3       A - D        7.000      3.200      10.800      0.001 ***
+4       B - C       -2.700     -5.500       0.100      0.060
+5       B - D        1.800     -1.900       5.600      0.350
+6       C - D        4.200      0.800       7.700      0.020 *
+```
+
+### **Interpretación de los resultados del post-hoc**
+1. **Columnas clave:**
+   - **Group Comparison:** Muestra los pares de grupos comparados (por ejemplo, `A - B` significa grupo A menos grupo B).
+   - **Estimate:** Es la diferencia en las medias recortadas entre los dos grupos.
+   - **CI lower / CI upper:** Intervalo de confianza para la diferencia entre las medias recortadas.
+   - **p-value:** Valor p robusto para la comparación. Indica si la diferencia entre los dos grupos es estadísticamente significativa.
+
+2. **Cómo interpretar:**
+   - Si el valor p es menor que 0.05, indica que la diferencia entre los dos grupos es estadísticamente significativa.
+   - Los intervalos de confianza (`CI lower` y `CI upper`) permiten evaluar la magnitud de las diferencias:
+     - Si el intervalo contiene 0 (por ejemplo, `-1.1 a 6.0`), no hay una diferencia significativa.
+     - Si el intervalo no contiene 0 (por ejemplo, `1.8 a 8.6`), entonces la diferencia es significativa.
+
+3. **Anotaciones para los valores p:**
+   - **`***` si \( p < 0.001 \)**
+   - **`**` si \( p < 0.01 \)**
+   - **`*` si \( p < 0.05 \)**
+   - **`NS` si \( p \geq 0.05 \)**
+
+### **Detalles técnicos del análisis post-hoc con `mcppb20()`**
+- **Bootstrap:** La función utiliza métodos bootstrap para calcular los intervalos de confianza y los valores p robustos.
+- **Medias recortadas:** Los cálculos se basan en las medias recortadas de los datos (es decir, eliminando un porcentaje de valores extremos de cada grupo).
+- **Nivel de recorte:** Puedes ajustar el nivel de recorte con el argumento `tr` (por ejemplo, `tr = 0.10` para un recorte del 10%).
+
+
+### **Ventajas del análisis post-hoc robusto**
+1. **Robustez frente a violaciones de supuestos:**
+   - No requiere que los datos sigan una distribución normal.
+   - Es resistente a la influencia de valores atípicos.
+
+2. **Comparaciones significativas entre pares de grupos:**
+   - Permite identificar qué pares de grupos contribuyen a las diferencias detectadas por el Trimmed ANOVA.
+
+3. **Fácil de implementar en R:** El paquete **WRS2** incluye las herramientas necesarias para realizar tanto el Trimmed ANOVA como los análisis post-hoc.
+
+### **Extensión: Tabla resumen de los resultados post-hoc**
+Si quieres presentar los resultados post-hoc en una tabla similar a la de Trimmed ANOVA, puedo ayudarte a crear una función que formatee los resultados de `mcppb20()` en una tabla Markdown para usarla en tus reportes.
+

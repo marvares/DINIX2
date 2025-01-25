@@ -1,0 +1,1178 @@
+---
+title: "Informe Estandarización Perú Escala INDI, Parte 3: Análisis de Asociaciones"
+subtitle: "Muestra Nivel 4-5"
+author: "Martín Vargas Estrada"
+date: "`r Sys.time()`"
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 4
+  word_document:
+    toc: true
+    toc_depth: '4'
+  html_document:
+    toc: true
+    toc_depth: '4'
+    df_print: paged
+header-includes: \renewcommand{\contentsname}{Índice} \renewcommand{\tablename}{Tabla}
+---
+\newpage
+
+# Introducción
+
+
+Informe de Exploración Psicométrica de los ìtems de la prueba INDI obtenidas con muestra de Perú, Niveles 4-5. 
+
+```{r 45_P3_DATAFRAME, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+library(tidyverse)
+library(haven)
+rm(list = ls()) 
+# Carga el archivo .sav
+INDI45 <- read_sav("INDI45.sav")
+
+```
+
+
+# Análisis de Asociaciones entre el valor de las Escalas  y las Variables Demográficas
+
+## Fecha de Evaluación y Escalas INDI
+
+Tenemos cuatro fechas de evaluación de participantes, correspondientes a los meses de abril, mayo, junio y agosto 2024.
+
+```{r 45_P3_FECHIN, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+# DFs Numérico
+# Función para extraer la data numérica sin NA's de un df
+
+ayudin <- function(dataframe, columnas) {
+  # Verificar que las columnas seleccionadas sean numéricas
+  if (!all(sapply(columnas, function(col) is.numeric(dataframe[[col]])))) {
+    stop("Todas las columnas seleccionadas deben ser numéricas.")
+  }
+  
+  # Filtrar el dataframe eliminando filas con NA en las columnas seleccionadas
+  dataframe_limpio <- dataframe[complete.cases(dataframe[, columnas]), columnas]
+  
+  # Devolver el dataframe limpio
+  return(dataframe_limpio)
+}
+
+# Not necessarily, but oftentimes one should transform all relevant columns to numeric in order for the function to work properly. So this is how to do just that:
+
+
+# Llamar a la función y mostrar los resultados
+LIMPIO <- ayudin(dataframe = INDI45, columnas = c(1, 102:104))
+
+# DF Categorial
+
+# 1. Extraigo los campos categóricos que me interesan del df original
+
+INDI45$Fechin <- factor(INDI45$Fechin) 
+library(dplyr)
+INDI45_FECHIN <- INDI45 %>% 
+  dplyr::select(Codigo, Fechin)
+
+PULCRO <- left_join(LIMPIO, INDI45_FECHIN,  by = "Codigo")
+PULCRO <- PULCRO %>%
+  relocate(Fechin, .before = CSUM) # Este será el df que usaré para esta asociación en específico
+# La pregunta es: ¿añado la columna de sumatoria de la escala S? Por el momento no lo haré, ya que los autores no lo hicieron para esta muestra. Puede que haya algunas razones, además de la pobre performance de varios ítems de esa subescala, para no crear un índice sumatorio. Puede que el constructo no lo requiera.
+# Supongamos que tienes un dataframe llamado df
+# Let's beautify these figures
+library(forcats)
+# Recodificar niveles
+PULCRO$Fechin <- fct_recode(PULCRO$Fechin,
+                        "Abr." = "2024-04-29",
+                        "May." = "2024-05-20",
+                        "Jun." = "2024-06-17",
+                        "Ago." = "2024-08-12")
+
+colnames(PULCRO) <- c("Código", "Fecha_Eval", "Escala_Cog.", "Escala_Mot.", "Escala_Dis.")
+
+# En este caso vamos a aplicar un análisis ANOVA, que suele ser el apropiado cuando tenemos que medir la asociación entre una variable categórica y una variabler numérica. El ANOVA robusto basado en medias recortadas (Trimmed Means ANOVA) es una excelente opción para situaciones en las que los datos no cumplen con los supuestos de normalidad o están influenciados por valores atípicos.
+
+# Instalar el paquete 
+# install.packages("WRS2")
+
+# Cargar el paquete
+# library(WRS2)
+# # Aplicar el ANOVA robusto basado en medias recortadas
+# fechin.csum <- t1way(PULCRO$CSUM ~ PULCRO$Fechin, data = PULCRO)
+# 
+# # Mostrar los resultados
+# print(fechin.csum)
+
+# Procederé a generar una función para evaluar el Trimmed ANOVA y dar los resultados en una tabla:
+
+# Cargar los paquetes necesarios
+if (!require("WRS2")) install.packages("WRS2")
+if (!require("dplyr")) install.packages("dplyr")
+if (!require("knitr")) install.packages("knitr")
+
+# Definir la función corregida
+trimmed_anova <- function(df, cat_var, num_vars, trim_level = 0.20) {
+  # 1. Verificar que la variable categórica esté en formato factor
+  if (!is.factor(df[[cat_var]])) {
+    stop("La variable categórica debe estar en formato factor. Usa factor() para convertirla.")
+  }
+  
+  # 2. Verificar que las variables numéricas estén en formato numérico
+  num_var_names <- names(df)[num_vars]
+  non_numeric_vars <- num_var_names[!sapply(df[num_vars], is.numeric)]
+  
+  if (length(non_numeric_vars) > 0) {
+    stop(paste("Las siguientes variables no son numéricas:", paste(non_numeric_vars, collapse = ", ")))
+  }
+  
+  # 3. Crear un dataframe vacío para almacenar los resultados
+  resultados <- data.frame(
+    Variable = character(),
+    P_valor = character(),
+    Efecto = numeric(),
+    Interpretación = character(),
+    stringsAsFactors = FALSE
+  )
+  
+  # 4. Loop a través de cada variable numérica y aplicar Trimmed ANOVA
+  for (var_name in num_var_names) {
+    # Aplicar Trimmed ANOVA
+    formula <- as.formula(paste(var_name, "~", cat_var))
+    anova_result <- t1way(formula, data = df, tr = trim_level)
+    
+    # Extraer valores relevantes
+    p_value <- anova_result$p.value
+    effect_size <- anova_result$effsize
+    
+    # Anotaciones para el valor p
+    p_label <- ifelse(p_value < 0.001, "***",
+               ifelse(p_value < 0.01, "**",
+               ifelse(p_value < 0.05, "*", "NS")))
+    
+    # Interpretación del tamaño del efecto
+    interpretacion <- ifelse(effect_size >= 0.14, "Efecto muy grande",
+                      ifelse(effect_size >= 0.06, "Efecto mediano",
+                      ifelse(effect_size >= 0.01, "Efecto pequeño", "Ninguno")))
+    
+    # Crear una nueva fila con los resultados
+    nueva_fila <- data.frame(
+      Variable = var_name,
+      P_valor = paste0(formatC(p_value, format = "f", digits = 3), " ", p_label),
+      Efecto = round(effect_size, 2),
+      Interpretación = interpretacion,
+      stringsAsFactors = FALSE
+    )
+    
+    # Agregar la fila al dataframe de resultados
+    resultados <- rbind(resultados, nueva_fila)
+  }
+  
+  # 5. Crear el título dinámico
+  titulo <- paste(
+    "Resultados del Análisis de Asociación entre", 
+    cat_var, 
+    "y", 
+    paste(num_var_names, collapse = ", ")
+  )
+  
+  # 6. Retornar la tabla con el título y los resultados en formato Markdown
+  cat("###", titulo, "\n\n") # Imprimir el título como encabezado
+  return(knitr::kable(resultados, format = "markdown", align = "lccc"))
+}
+
+
+
+# Usar la función trimmed_anova
+fechin.anal <- trimmed_anova(
+  df = PULCRO,             # Tu dataframe
+  cat_var = "Fecha_Eval",      # Variable categórica en formato factor
+  num_vars = c(3:5),    # Índices de las variables numéricas
+  trim_level = 0.10        # Nivel de recorte (opcional, por defecto 0.20)
+)
+
+# Mostrar el resultado
+print(fechin.anal)
+
+```
+
+Estos resultados nos indican que los grupos evaluados en las cuatro fechas de recolección difieren de forma estadísticamente significativa entre sí. A continuación, pasaremos a profundizar en el análisis, a fin de determinar cuáles son los grupos que realmente difieren.
+
+Empezaremos analizando el detalle de las diferencias grupales para el caso de la Escala Cognitiva.  
+  
+### Análisis Posthoc: Escala Cognitiva según Fechas de Evaluación
+
+Como vemos en el gráfico siguiente, incluso a nivel visual puede constatarse la existencia de diferencias notables en el desempeño de los participantes en la Escala Cognitiva. 
+
+```{r 45_P3_FECHIN_posthoc_CSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+# Definir la función para crear el gráfico de barras
+# Instalar y cargar los paquetes necesarios (si no están instalados)
+library(ggplot2)
+library(RColorBrewer)
+
+# Definir la función para crear el gráfico de barras
+grafico_promedio <- function(data, var_numerica, var_categorica, 
+                             color_contorno = "black", 
+                             paleta_colores = "Set3", 
+                             nuevo_nombre_categoria = var_categorica) {
+  
+  # Calcular el promedio de la variable numérica por la variable categórica
+  resumen <- aggregate(data[[var_numerica]], by = list(data[[var_categorica]]), FUN = mean)
+  colnames(resumen) <- c(nuevo_nombre_categoria, "Promedio")
+  
+  # Crear el gráfico de barras
+  ggplot(resumen, aes_string(x = nuevo_nombre_categoria, y = "Promedio")) +
+    geom_bar(stat = "identity", fill = brewer.pal(n = length(unique(data[[var_categorica]])), name = paleta_colores), 
+             color = color_contorno) +
+    geom_text(aes(label = round(Promedio, 2)), vjust = -0.5) +
+    labs(title = paste("Promedio de", var_numerica, "por", nuevo_nombre_categoria),
+         x = nuevo_nombre_categoria,
+         y = paste("Promedio de", var_numerica)) +
+    theme_gray()
+}
+
+# Ejemplo de uso
+# Suponiendo que 'df' es tu dataframe y contiene las columnas 'calificaciones' y 'escuela'
+# grafico_promedio(df, "calificaciones", "escuela", color_contorno = "blue", paleta_colores = "Set1", nuevo_nombre_categoria = "Escuelas")
+
+ph_CSUM_FECHIN <- grafico_promedio(PULCRO, "Escala_Cog.", "Fecha_Eval", color_contorno = "black", paleta_colores = "Blues", nuevo_nombre_categoria = "Fecha_Evaluación")
+cat("\n\n")
+print(ph_CSUM_FECHIN)
+
+ph.csum <- c("| Grupo 1 | Grupo 2 | Dif. Est. Rec. |   p Valor   |              Interpretación              |
+|:-------:|:-------:|--------------:|------:|:-----------------------------------------|
+| Abr.    | May.    | -12.34        | <.001 | Dif. Estadísticamente significativa      |
+| Abr.    | Jun.    | -9.94         | <.001 | Dif. Estadísticamente significativa      |
+| Abr.    | Ago.    | -30.46        | <.001 | Dif. Estadísticamente significativa      |
+| May.    | Jun.    | 2.41          | 0.172 | Sin Dif. Estadísticamente significativa  |
+| May.    | Ago.    | -18.12        | <.001 | Dif. Estadísticamente significativa      |
+| Jun.    | Ago.    | -20.53        | <.001 | Dif. Estadísticamente significativa      |")
+
+# Retornar la tabla con el título y los resultados en formato Markdown
+  cat("Resultados Análisis Posthoc Escala Cog.", "\n\n") # Imprimir el título como encabezado
+  cat(ph.csum)
+```
+
+La Tabla anterior nos indica que, ya al nivel de la Escala Cognitiva, prácticamente todos los grupos participantes muestran diferencias estadísticamente significativas, con la excepción de los grupos evaluados en Mayo y Junio, entre los cuales parece no haber diferencia estadísticamente significativa.
+
+### Análisis Posthoc: Escala Motora según Fechas de Evaluación
+
+Como en el caso anterior, gráficamente también es posible detectar a simple vista grandes diferencias grupales en la Escala Motora.  
+
+```{r 45_P3_FECHIN_posthoc_MSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+# Definir la función para crear el gráfico de barras
+# Instalar y cargar los paquetes necesarios (si no están instalados)
+library(ggplot2)
+library(RColorBrewer)
+
+# Definir la función para crear el gráfico de barras
+grafico_promedio <- function(data, var_numerica, var_categorica, 
+                             color_contorno = "black", 
+                             paleta_colores = "Set3", 
+                             nuevo_nombre_categoria = var_categorica) {
+  
+  # Calcular el promedio de la variable numérica por la variable categórica
+  resumen <- aggregate(data[[var_numerica]], by = list(data[[var_categorica]]), FUN = mean)
+  colnames(resumen) <- c(nuevo_nombre_categoria, "Promedio")
+  
+  # Crear el gráfico de barras
+  ggplot(resumen, aes_string(x = nuevo_nombre_categoria, y = "Promedio")) +
+    geom_bar(stat = "identity", fill = brewer.pal(n = length(unique(data[[var_categorica]])), name = paleta_colores), 
+             color = color_contorno) +
+    geom_text(aes(label = round(Promedio, 2)), vjust = -0.5) +
+    labs(title = paste("Promedio de", var_numerica, "por", nuevo_nombre_categoria),
+         x = nuevo_nombre_categoria,
+         y = paste("Promedio de", var_numerica)) +
+    theme_gray()
+}
+
+# Ejemplo de uso
+# Suponiendo que 'df' es tu dataframe y contiene las columnas 'calificaciones' y 'escuela'
+# grafico_promedio(df, "calificaciones", "escuela", color_contorno = "blue", paleta_colores = "Set1", nuevo_nombre_categoria = "Escuelas")
+
+ph_MSUM_FECHIN <- grafico_promedio(PULCRO, "Escala_Mot.", "Fecha_Eval", color_contorno = "black", paleta_colores = "Greens", nuevo_nombre_categoria = "Fecha_Evaluación")
+cat("\n\n")
+print(ph_MSUM_FECHIN)
+
+ph.msum <- c("| Grupo 1 | Grupo 2 | Dif. Est. Rec. | p Valor |            Interpretación            |
+|---------|---------|:-------------:|:-------:|:------------------------------------:|
+| Abr.    | May.    | -4.22         |   <.001 | Dif. Estadísticamente significativa  |
+| Abr.    | Jun.    | -2.68         |   <.001 | Dif. Estadísticamente significativa  |
+| Abr.    | Ago.    | -5.54         |   <.001 | Dif. Estadísticamente significativa  |
+| May.    | Jun.    | 1.55          |   <.001 | Dif. Estadísticamente significativa  |
+| May.    | Ago.    | -1.32         |   <.001 | Dif. Estadísticamente significativa  |
+| Jun.    | Ago.    | -2.86         |   <.001 | Dif. Estadísticamente significativa  |")
+
+# Retornar la tabla con el título y los resultados en formato Markdown
+  cat("Resultados Análisis Posthoc Escala Mot.", "\n\n") # Imprimir el título como encabezado
+  cat(ph.msum)
+```
+Si bien cabe señalar que el patrón de diferencias es muy similar, en esta escala todas las diferencias son estadísticamente significativas. 
+
+
+### Análisis Posthoc: Escala Disposicional según Fechas de Evaluación
+
+En esta sección pasamos a analizar cuáles de las diferencias intergrupales son estadísticamente significativas.
+
+```{r 45_P3_FECHIN_posthoc_DSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+# Definir la función para crear el gráfico de barras
+# Instalar y cargar los paquetes necesarios (si no están instalados)
+library(ggplot2)
+library(RColorBrewer)
+
+
+ph_DSUM_FECHIN <- grafico_promedio(PULCRO, "Escala_Dis.", "Fecha_Eval", color_contorno = "black", paleta_colores = "Oranges", nuevo_nombre_categoria = "Fecha_Evaluación")
+cat("\n\n")
+print(ph_DSUM_FECHIN)
+
+ph.dsum <- c("| Grupo 1 | Grupo 2 | Dif. Est. Rec. | p Valor |              Interpretación              |
+|---------|---------|:--------------:|:-------:|:----------------------------------------:|
+| Abr.    | May.    | -3.8547        |   <.001 | Dif. Estadísticamente significativa      |
+| Abr.    | Jun.    | -2.9754        |   <.001 | Dif. Estadísticamente significativa      |
+| Abr.    | Ago.    | -3.8914        |   <.001 | Dif. Estadísticamente significativa      |
+| May.    | Jun.    | 0.8793         |   0.012 | Sin Dif. Estadísticamente significativa  |
+| May.    | Ago.    | -0.0366        |   0.915 | Sin Dif. Estadísticamente significativa  |
+| Jun.    | Ago.    | -0.9160        |   0.007 | Sin Dif. Estadísticamente significativa  |")
+
+# Retornar la tabla con el título y los resultados en formato Markdown
+  cat("Resultados Análisis Posthoc Escala Dis.", "\n\n") # Imprimir el título como encabezado
+  cat(ph.dsum)
+```
+
+En esta ocasión, podemos ver que claramente es el grupo evaluado en Abril el que evidencia puntajes más bajos que el resto de los grupos, mientras que estos forman un grupo comparativamente homogéneo. 
+
+\newpage
+
+## Cuatrimestre de Nacimiento y Escalas INDI
+
+```{r 45_P3_QDOB, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+
+# Clasificamos los casos según el cuatrimestre de nacimiento
+
+# Definición de la función
+library(dplyr)
+en_cuatro <- function(dataframe, columna_fechas) {
+  # Convertir la columna de fechas de character a Date
+  dataframe[[columna_fechas]] <- as.Date(dataframe[[columna_fechas]], format = "%m/%d/%Y")
+  
+  # Crear la nueva variable QDOB inmediatamente después de la columna de fechas
+  columna_pos <- which(names(dataframe) == columna_fechas) # Obtener la posición de la columna de fechas
+  dataframe <- dataframe %>%
+    mutate(QDOB = cut(
+      as.numeric(format(.data[[columna_fechas]], "%m")),  # Extraer el mes
+      breaks = c(0, 3, 6, 9, 12),                        # Definir los límites de los cuatrimestres
+      labels = c("1 (Ene-Mar)", "2 (Abr-Jun)", "3 (Jul-Sep)", "4 (Oct-Dic)"), # Etiquetas para los cuatrimestres
+      include.lowest = TRUE                              # Incluir el límite inferior (enero)
+    )) %>%
+    relocate(QDOB, .after = all_of(columna_fechas))      # Mover QDOB justo después de la columna de fechas
+  
+  # Convertir la nueva variable a factor (opcional, ya hecho en cut)
+  dataframe$QDOB <- as.factor(dataframe$QDOB)
+  
+  return(dataframe)
+}
+
+# Uso de la función
+INDI45 <- en_cuatro(INDI45, "Fecnac")
+
+# 1. Extraigo los campos categóricos que me interesan del df original
+library(dplyr)
+INDI45_QDOB <- INDI45 %>% 
+  dplyr::select(Codigo, QDOB)
+
+PULCRO <- left_join(LIMPIO, INDI45_QDOB,  by = "Codigo")
+PULCRO <- PULCRO %>%
+  relocate(QDOB, .before = CSUM)
+colnames(PULCRO) <- c("Código", "Cuatrimestre", "Escala_Cog.", "Escala_Mot.", "Escala_Dis.")
+# Ahora evalúo la asociación entre Cuiatrimestre y las escalas... chanchachachán!!!
+# Usar la función trimmed_anova
+encuatro.anal <- trimmed_anova(
+  df = PULCRO,             # Tu dataframe
+  cat_var = "Cuatrimestre",      # Variable categórica en formato factor
+  num_vars = c(3:5),    # Índices de las variables numéricas
+  trim_level = 0.10        # Nivel de recorte (opcional, por defecto 0.20)
+)
+
+# Mostrar el resultado
+print(encuatro.anal)
+# write_csv(PULCRO, "PULCRO_ENCUATRO.CSV")
+```
+
+Vemos que en este caso, en los tres puntajes existe una diferencia estadísticamente significativa según el cuatrimestre de nacimiento del participante.
+
+Pasemos a analizar, para cada Escala, en qué grupos se encuentra esas diferencias. 
+
+### Análisis Posthoc: Escala Cognitiva según Cuatrimestre de Nacimiento
+
+Tratemos ahora de determinar cuáles de las posibles diferencias intergrupales son estadísticamente significativas.
+
+```{r 45_P3_CUATRIMESTRE_posthoc_CSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+ph_CSUM_QDOB <- grafico_promedio(PULCRO, "Escala_Cog.", "Cuatrimestre", color_contorno = "black", paleta_colores = "Blues", nuevo_nombre_categoria = "Cuatrimestre_Nac")
+cat("\n\n")
+print(ph_CSUM_QDOB)
+
+ph.csum.qdob <- c("| Grupo 1     | Grupo 2     | Dif. Est. Rec. | p Valor |            Interpretación            |
+|-------------|-------------|---------------:|--------:|:------------------------------------:|
+| 1 (Ene-Mar) | 2 (Abr-Jun) |         -13.37 |   <.001 | Dif. Estadísticamente significativa  |
+| 1 (Ene-Mar) | 3 (Jul-Sep) |          -7.56 |   <.001 | Dif. Estadísticamente significativa  |
+| 1 (Ene-Mar) | 4 (Oct-Dic) |          -3.23 |   0.047 | Dif. Estadísticamente significativa  |
+| 2 (Abr-Jun) | 3 (Jul-Sep) |           5.80 |   0.003 | Dif. Estadísticamente significativa  |
+| 2 (Abr-Jun) | 4 (Oct-Dic) |          10.13 |   <.001 | Dif. Estadísticamente significativa  |
+| 3 (Jul-Sep) | 4 (Oct-Dic) |           4.33 |   0.021 | Dif. Estadísticamente significativa  |")
+
+# Retornar la tabla con el título y los resultados en formato Markdown
+  cat("Resultados Análisis Posthoc Escala Cog.", "\n\n") # Imprimir el título como encabezado
+  cat(ph.csum.qdob)
+```
+
+### Análisis Posthoc: Escala Motora según Cuatrimestre de Nacimiento
+
+
+Pasemos a analizar las diferencias grupales en esta escala.
+
+```{r 45_P3_CUATRIMESTRE_posthoc_MSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+ph_MSUM_QDOB <- grafico_promedio(PULCRO, "Escala_Mot.", "Cuatrimestre", color_contorno = "black", paleta_colores = "Greens", nuevo_nombre_categoria = "Cuatrimestre_Nac")
+cat("\n\n")
+print(ph_MSUM_QDOB)
+
+ph.msum.qdob <- c("| Grupo 1     | Grupo 2     | Dif. Est. Rec. | p Valor | Interpretación                           |
+|-------------|-------------|---------------:|--------:|------------------------------------------|
+| 1 (Ene-Mar) | 2 (Abr-Jun) |         -2.955 |   <.001 | Dif. Estadísticamente significativa      |
+| 1 (Ene-Mar) | 3 (Jul-Sep) |         -1.862 |   <.001 | Dif. Estadísticamente significativa      |
+| 1 (Ene-Mar) | 4 (Oct-Dic) |         -0.570 |   0.121 | Sin Dif. Estadísticamente significativa  |
+| 2 (Abr-Jun) | 3 (Jul-Sep) |          1.094 |   0.006 | Dif. Estadísticamente significativa      |
+| 2 (Abr-Jun) | 4 (Oct-Dic) |          2.385 |   <.001 | Dif. Estadísticamente significativa      |
+| 3 (Jul-Sep) | 4 (Oct-Dic) |          1.292 |   0.001 | Dif. Estadísticamente significativa      |")
+
+# Retornar la tabla con el título y los resultados en formato Markdown
+  cat("Resultados Análisis Posthoc Escala Mot.", "\n\n") # Imprimir el título como encabezado
+  cat(ph.msum.qdob)
+```
+
+
+### Análisis Posthoc: Escala Disposicional según Cuatrimestre de Nacimiento
+
+Pasemos a analizar las diferencias grupales en esta escala.
+
+```{r 45_P3_CUATRIMESTRE_posthoc_DSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+ph_DSUM_QDOB <- grafico_promedio(PULCRO, "Escala_Dis.", "Cuatrimestre", color_contorno = "black", paleta_colores = "Oranges", nuevo_nombre_categoria = "Cuatrimestre_Nac")
+cat("\n\n")
+print(ph_DSUM_QDOB)
+
+ph.dsum.qdob <- c("|   Grupo 1   |   Grupo 2   | Dif. Est. Rec. | p Valor | Interpretación                           |
+|:-----------:|:-----------:|---------------:|--------:|------------------------------------------|
+| 1 (Ene-Mar) | 2 (Abr-Jun) |         -2.422 |   <.001 | Dif. Estadísticamente significativa      |
+| 1 (Ene-Mar) | 3 (Jul-Sep) |         -1.420 |   <.001 | Dif. Estadísticamente significativa      |
+| 1 (Ene-Mar) | 4 (Oct-Dic) |         -0.605 |   0.059 | Sin Dif. Estadísticamente significativa  |
+| 2 (Abr-Jun) | 3 (Jul-Sep) |          1.002 |   0.005 | Dif. Estadísticamente significativa      |
+| 2 (Abr-Jun) | 4 (Oct-Dic) |          1.817 |   <.001 | Dif. Estadísticamente significativa      |
+| 3 (Jul-Sep) | 4 (Oct-Dic) |          0.815 |   0.027 | Dif. Estadísticamente significativa      |")
+
+# Retornar la tabla con el título y los resultados en formato Markdown
+  cat("Resultados Análisis Posthoc Escala Dis.", "\n\n") # Imprimir el título como encabezado
+  cat(ph.dsum.qdob)
+```
+
+El patrón que emerge de estas comparaciones grupales indica que los participantes nacidos en el segundo cuatrimestre del año (Abril a Junio) suelen tener mejores puntuaciones que los niños nacidos durante los tres primeros meses del año. Esta diferencia es estadísticamente significativa, es decir, podemos descartar que se trate de un simple "casualidad" o peculiaridad de los datos. 
+
+Ya desde el punto de vista interpretativo, ¿qué puede significar este dato? Es probable que el factor madurativo interactúe con el apoyo que los padres brindan al niño: los niños nacidos en el primer cuatrimestre del año serían ligeramente mayores que los niños nacidos en meses ulteriores. Los padres asumirían que los niños ligeramente mayores serían más maduros y, por lo tanto, no tendrían tanta necesidad de su intervención y apoyo. Por el contrario, los niños nacidos en meses posteriores serían percibidos por los padres como menos maduros y, por ende, recibirían mayor apoyo e involucramiento, lo cual resultaría en mejores resultados en instrumentos de evaluación como el INDI.
+
+Sin embargo, el analista considera que aún es necesario ahondar más en estos resultados; por ejemplo, habría que realizar un control o segmentamiento por año de nacimiento, Nivel, etc. 
+\newpage
+
+## Edad en Meses y Escalas INDI
+
+Estrechamente ligada a la variable anterior, la edad medida en meses, al ser una variable numérica, puede ser correlacionada directamente con el desempeño en las Escalas del INDI. 
+
+```{r 45_P3_EDADMES_ESCALAS, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+library(dplyr)
+library(knitr)
+
+# Definimos la función
+correlacion_spearman <- function(data, variable_principal, otras_variables) {
+  
+  # Extraer el nombre de la variable principal desde df$Variable
+  nombre_principal <- deparse(substitute(variable_principal)) %>%
+    gsub(".*\\$", "", .) # Extrae solo el nombre después de '$'
+  
+  # Crear una lista para almacenar los resultados
+  resultados <- lapply(otras_variables, function(i) {
+    # Extraer el nombre de las otras variables
+    variable_otras <- names(data)[i]
+    
+    # Calcular la correlación de Spearman
+    cor_test <- cor.test(variable_principal, data[[variable_otras]], method = "spearman")
+    coef <- cor_test$estimate
+    p_value <- cor_test$p.value
+    
+    # Determinar magnitud de la correlación
+    if (p_value > 0.05) {
+      magnitud <- "NS"
+      interpretacion <- "Ninguna asociación estadísticamente significativa"
+      coef_label <- paste0(round(coef, 2), " NS")
+    } else {
+      if (abs(coef) < 0.10) {
+        magnitud <- "Trivial"
+        interpretacion <- "Asociación trivial"
+      } else if (abs(coef) < 0.30) {
+        magnitud <- "Débil"
+        interpretacion <- ifelse(coef > 0, "Asociación directa", "Asociación inversa")
+      } else if (abs(coef) < 0.50) {
+        magnitud <- "Moderada"
+        interpretacion <- ifelse(coef > 0, "Asociación directa", "Asociación inversa")
+      } else {
+        magnitud <- "Fuerte"
+        interpretacion <- ifelse(coef > 0, "Asociación directa", "Asociación inversa")
+      }
+      # Agregar significancia estadística
+      if (p_value <= 0.001) {
+        coef_label <- paste0(round(coef, 2), " ***")
+      } else if (p_value <= 0.01) {
+        coef_label <- paste0(round(coef, 2), " **")
+      } else {
+        coef_label <- paste0(round(coef, 2), " *")
+      }
+      interpretacion <- paste(interpretacion, "y estadísticamente significativa")
+    }
+    
+    # Crear un dataframe de salida
+    tibble(
+      Correlación = paste(nombre_principal, "-", variable_otras),
+      `Coef. Spearman` = coef_label,
+      Magnitud = magnitud,
+      Interpretación = interpretacion
+    )
+  })
+  
+  # Unir los resultados en una tabla y formatearlos con knitr::kable
+  resultados <- bind_rows(resultados)
+  resultados_kable <- kable(resultados, format = "markdown", align = "clll")
+  return(resultados_kable)
+}
+
+# Preparo la data
+INDI45_AGE <- INDI45 %>% 
+  dplyr::select(Codigo, EDADMES)
+PULCRO <- left_join(LIMPIO, INDI45_AGE,  by = "Codigo")
+PULCRO <- PULCRO %>%
+  relocate(EDADMES, .before = CSUM)
+colnames(PULCRO) <- c("Codigo", "Edad", "Esc_Cog", "Esc_Mot", "Esc_Dis")
+# Llamar la función
+corr.age.INDI <- correlacion_spearman(PULCRO, PULCRO$Edad, c(3:5))
+print(corr.age.INDI)
+
+```
+Estos resultados nos indican que la edad es una variable importante y que, como era de esperar, influye significativamente sobre el desempeño del INDI. La asociación detectada es directa en todos los casos; es decir, a mayor edad los resultados en el INDI mejoran. Esto es especialmente cierto en el caso de las escalas Cognitiva y Motriz; algo menos respecto de la escala disposicional.
+
+\newpage
+
+## Región y Escalas INDI
+
+En esta sección pasaremos a analizar qué diferencias puede hallarse en cuanto a las regionales naturales en las que los participantes fueron evaluados, y su impacto en los puntajes INDI.
+
+```{r 45_P3_Regnat_ESCALAS, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+# Recodificar niveles
+INDI45$Regnat <- as.factor(INDI45$Regnat)
+INDI45$Regnat <- fct_recode(INDI45$Regnat,
+                        "Costa" = "1",
+                        "Sierra" = "2",
+                        "Selva" = "3")
+INDI45_REGNAT <- INDI45 %>% 
+  dplyr::select(Codigo, Regnat)
+PULCRO <- left_join(LIMPIO, INDI45_REGNAT,  by = "Codigo")
+PULCRO <- PULCRO %>%
+  relocate(Regnat, .before = CSUM)
+colnames(PULCRO) <- c("Código", "Región", "Escala_Cog.", "Escala_Mot.", "Escala_Dis.")
+
+# Usar la función trimmed_anova
+region.anal <- trimmed_anova(
+  df = PULCRO,             # Tu dataframe
+  cat_var = "Región",      # Variable categórica en formato factor
+  num_vars = c(3:5),    # Índices de las variables numéricas
+  trim_level = 0.10        # Nivel de recorte (opcional, por defecto 0.20)
+)
+
+# Mostrar el resultado
+print(region.anal)
+
+```
+\newpage
+### Análisis Posthoc: Escala Cognitiva según Región
+
+Pasaremos a analizar qué impacto específico en los puntajes de la escala Cognitiva en función de la región en la que fue evaluado el participante.
+
+```{r 45_P3_Regnat_posthoc_CSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+ph_CSUM_Regnat <- grafico_promedio(PULCRO, "Escala_Cog.", "Región", color_contorno = "black", paleta_colores = "Blues", nuevo_nombre_categoria = "Región")
+cat("\n\n")
+print(ph_CSUM_Regnat)
+# write.csv(PULCRO, file = "Regnat.csv", row.names = FALSE)
+
+ph.csum.reg <- c("| Grupo 1 | Grupo 2 | Dif. Est. Rec. | p Valor | Interpretación                           |
+|---------|---------|---------------:|--------:|------------------------------------------|
+| Costa   | Selva   |          10.77 |   <.001 | Dif. Estadísticamente significativa      |
+| Costa   | Sierra  |          13.36 |   <.001 | Dif. Estadísticamente significativa      |
+| Selva   | Sierra  |           2.59 |   0.111 | Sin Dif. Estadísticamente significativa  |")
+
+# Retornar la tabla con el título y los resultados en formato Markdown
+  cat("Resultados Análisis Posthoc Escala Cog.", "\n\n") # Imprimir el título como encabezado
+  cat(ph.csum.reg)
+```
+Estos resultados nos indican que la diferencia radica básicamente entre la Región Costa y el resto del Perú. Las diferencias entre las regiones Sierra y Selva no son estadísticamente significativas, mientras que las diferencias entre Costa y cada una de los dos regiones restantes sí lo es. 
+
+El desempeño de los participantes costeños supera en promedio al de los demás participantes, y esta diferencia no es trivial ni casual, sino estadísticamente significativa.
+
+\newpage
+### Análisis Posthoc: Escala Motora según Región
+
+Pasaremos a analizar qué impacto específico en los puntajes de la escala Motora en función de la región en la que fue evaluado el participante.
+
+```{r 45_P3_Regnat_posthoc_MSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+ph_MSUM_Regnat <- grafico_promedio(PULCRO, "Escala_Mot.", "Región", color_contorno = "black", paleta_colores = "Greens", nuevo_nombre_categoria = "Región")
+cat("\n\n")
+print(ph_MSUM_Regnat)
+
+
+ph.msum.reg <- c("| Grupo 1 | Grupo 2 | Dif. Est. Rec. | p Valor | Interpretación                       |
+|---------|---------|---------------:|--------:|--------------------------------------|
+| Costa   | Selva   |           1.34 |   <.001 | Dif. Estadísticamente significativa  |
+| Costa   | Sierra  |           2.92 |   <.001 | Dif. Estadísticamente significativa  |
+| Selva   | Sierra  |           1.58 |   <.001 | Dif. Estadísticamente significativa  |")
+
+# Retornar la tabla con el título y los resultados en formato Markdown
+  cat("Resultados Análisis Posthoc Escala Mot.", "\n\n") # Imprimir el título como encabezado
+  cat(ph.msum.reg)
+```
+\newpage
+### Análisis Posthoc: Escala Disposicional según Región
+
+Pasaremos a analizar qué impacto específico en los puntajes de la escala Motora en función de la región en la que fue evaluado el participante.
+
+```{r 45_P3_Regnat_posthoc_DSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+ph_DSUM_Regnat <- grafico_promedio(PULCRO, "Escala_Dis.", "Región", color_contorno = "black", paleta_colores = "Oranges", nuevo_nombre_categoria = "Región")
+cat("\n\n")
+print(ph_DSUM_Regnat)
+
+
+ph.dsum.reg <- c("| Grupo 1 | Grupo 2 | Dif. Est. Rec. | p Valor | Interpretación                       |
+|---------|---------|---------------:|--------:|--------------------------------------|
+| Costa   | Selva   |          0.755 |   0.006 | Dif. Estadísticamente significativa  |
+| Costa   | Sierra  |          2.764 |   <.001 | Dif. Estadísticamente significativa  |
+| Selva   | Sierra  |          2.010 |   <.001 | Dif. Estadísticamente significativa  |")
+
+# Retornar la tabla con el título y los resultados en formato Markdown
+  cat("Resultados Análisis Posthoc Escala Dis.", "\n\n") # Imprimir el título como encabezado
+  cat(ph.dsum.reg)
+```
+\newpage
+## Área y Escalas INDI
+En esta sección pasaremos a analizar si existe asociación entre el área en que habita el participante (Urbana vs Rural) y el puntaje obtenido en las Escalas INDI.
+
+```{r 45_P3_Area_ESCALAS, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+# Recodificar niveles
+INDI45$Area <- as.factor(INDI45$Area)
+INDI45$Area <- fct_recode(INDI45$Area,
+                        "Urbana" = "1",
+                        "Rural" = "2")
+INDI45_AREA <- INDI45 %>% 
+  dplyr::select(Codigo, Area)
+PULCRO <- left_join(LIMPIO, INDI45_AREA,  by = "Codigo")
+PULCRO <- PULCRO %>%
+  relocate(Area, .before = CSUM)
+colnames(PULCRO) <- c("Código", "Area", "Escala_Cog.", "Escala_Mot.", "Escala_Dis.")
+
+# Usar la función trimmed_anova
+area.anal <- trimmed_anova(
+  df = PULCRO,             # Tu dataframe
+  cat_var = "Area",      # Variable categórica en formato factor
+  num_vars = c(3:5),    # Índices de las variables numéricas
+  trim_level = 0.10        # Nivel de recorte (opcional, por defecto 0.20)
+)
+
+# Mostrar el resultado
+print(area.anal)
+```
+
+Comprobamos que existe un efecto bastante claro del área sobre el puntaje obtenido en las escalas del INDI. 
+
+Pasemos ahora ver el detalle de esta asociación.
+
+\newpage
+### Análisis Posthoc: Escala Cognitiva según Área
+
+Pasaremos a analizar qué impacto específico en los puntajes de la escala Cognitiva en función del Área en la que fue evaluado el participante.
+
+```{r 45_P3_Area_posthoc_CSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+library(ggplot2)
+library(RColorBrewer)
+
+grafico_promedio2 <- function(data, var_numerica, var_categorica, 
+                             color_contorno = "black", 
+                             paleta_colores = "Set3", 
+                             nuevo_nombre_categoria = var_categorica) {
+  
+  # Calcular el promedio de la variable numérica por la variable categórica
+  resumen <- aggregate(data[[var_numerica]], by = list(data[[var_categorica]]), FUN = mean)
+  colnames(resumen) <- c(nuevo_nombre_categoria, "Promedio")
+  
+  # Crear una paleta de colores dinámica basada en el número de categorías
+  colores <- brewer.pal(n = min(length(unique(data[[var_categorica]])), brewer.pal.info[paleta_colores, "maxcolors"]), 
+                        name = paleta_colores)
+  
+  # Crear el gráfico de barras
+  ggplot(resumen, aes_string(x = nuevo_nombre_categoria, y = "Promedio", fill = nuevo_nombre_categoria)) +
+    geom_bar(stat = "identity", color = color_contorno, show.legend = FALSE) +
+    scale_fill_manual(values = colores) +
+    geom_text(aes(label = round(Promedio, 2)), vjust = -0.5) +
+    labs(title = paste("Promedio de", var_numerica, "por", nuevo_nombre_categoria),
+         x = nuevo_nombre_categoria,
+         y = paste("Promedio de", var_numerica)) +
+    theme_gray()
+}
+
+ph_CSUM_Area <- grafico_promedio2(PULCRO, "Escala_Cog.", "Area", color_contorno = "black", paleta_colores = "Blues", nuevo_nombre_categoria = "Area")
+cat("\n\n")
+print(ph_CSUM_Area)
+# write.csv(PULCRO, file = "Area.csv", row.names = FALSE)
+ph_MSUM_Area <- grafico_promedio2(PULCRO, "Escala_Mot.", "Area", color_contorno = "black", paleta_colores = "Greens", nuevo_nombre_categoria = "Area")
+cat("\n\n")
+print(ph_MSUM_Area)
+ph_DSUM_Area <- grafico_promedio2(PULCRO, "Escala_Dis.", "Area", color_contorno = "black", paleta_colores = "Oranges", nuevo_nombre_categoria = "Area")
+cat("\n\n")
+print(ph_DSUM_Area)
+
+```
+
+
+En esta ocasión, no es necesario realizar análisis posthoc, ya que se trata de una variable con solo ods categorías. 
+
+Determinamos que, en todos los casos, los participantes de la zona urbana muestran mejores puntajes que los provenientes de la zona rural. Esta diferencia es estadísticamente significativa; es decir, no se trata de un resultado trivial ni  azaroso, sino que más biej refleja una propiedad existente en la población general.
+
+\newpage
+## Modalidad (Nivmod) y Escalas INDI
+En esta sección pasaremos a analizar si existe asociación entre la modalidad de Educación Inicial del participante y el puntaje obtenido en las Escalas INDI.
+
+Dado que, como ya se vio previamente en la primera parte de este informe, existe una desproporción muy fuerte entre las categorías de esta variable (más del 84% de los casos se agrupan en la categoría "Jardín", mientras que solo algo más del 14% pertenece a la categoría "Cuna", y apenas algo más del 1% a la categoría "No Escolarizado"), se decidió suprimir la categoría menos frecuente ("No Escolarizado"), y mantener tan solo las otras dos, realizando una comparación de los promedios de puntaje pp cada grupo así definido. 
+
+
+### Modalidad (Nivmod) y Escala Cognitiva
+
+Veamos cuáles son las diferencias grupales entre los dos niveles de Modalidad restantes y el puntaje en la Escala Cognitiva:
+
+
+```{r 45_P3_Nivmod_ESCALA_C, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+# Recodificar niveles
+INDI45$Nivmod <- as.factor(INDI45$Nivmod)
+INDI45$Nivmod <- fct_recode(INDI45$Nivmod,
+                        "Jardín" = "Inicial - Jardín",
+                        "No_Esc" = "Inicial - Programa no escolarizado",
+                        "Cuna" = "Inicial - Cuna-jardín"
+                        )
+INDI45_NIVMOD <- INDI45 %>% 
+  dplyr::select(Codigo, Nivmod)
+PULCRO <- left_join(LIMPIO, INDI45_NIVMOD,  by = "Codigo")
+PULCRO <- PULCRO %>%
+  relocate(Nivmod, .before = CSUM)
+colnames(PULCRO) <- c("Código", "Modalidad", "Escala_Cog.", "Escala_Mot.", "Escala_Dis.")
+# Definimos función U de MW
+
+
+
+prueba_mann_whitney <- function(data, var_numerica, var_factor, nombre_escala) {
+  # Extraer los nombres de las variables
+  var_numerica_name <- deparse(substitute(var_numerica))
+  var_factor_name <- deparse(substitute(var_factor))
+  
+  # Verificar que la variable categórica tenga exactamente 2 niveles
+  niveles <- unique(data[[var_factor]])
+  if (length(niveles) != 2) {
+    stop("La variable factor debe tener exactamente dos niveles para realizar la prueba.")
+  }
+  
+  # Dividir los datos en los dos grupos
+  grupo1 <- data[[var_numerica]][data[[var_factor]] == niveles[1]]
+  grupo2 <- data[[var_numerica]][data[[var_factor]] == niveles[2]]
+  
+  # Ejecutar la prueba de Mann-Whitney-Wilcoxon
+  wilcox_result <- wilcox.test(grupo1, grupo2, exact = FALSE, correct = TRUE)
+  
+  # Calcular la diferencia de promedios
+  diff_promedio <- mean(grupo1) - mean(grupo2)
+  
+  # Determinar la significancia del p-valor
+  p_value <- wilcox_result$p.value
+  p_label <- if (p_value <= 0.001) {
+    paste0(round(p_value, 3), " ***")
+  } else if (p_value <= 0.01) {
+    paste0(round(p_value, 3), " **")
+  } else if (p_value <= 0.05) {
+    paste0(round(p_value, 3), " *")
+  } else {
+    paste0(round(p_value, 3), " NS")
+  }
+  
+  # Interpretación
+  interpretacion <- if (p_value <= 0.05) {
+    "Diferencia estadísticamente significativa"
+  } else {
+    "No se encontró una diferencia estadísticamente significativa"
+  }
+  
+  # Crear la tabla de resultados
+  resultados <- tibble(
+    `Grupos Analizados` = paste(niveles[1], "vs", niveles[2]),
+    `p-valor` = p_label,
+    `Dif. Prom.` = round(diff_promedio, 2),
+    Interpretación = interpretacion
+  )
+  
+  # Crear el título de la tabla
+  titulo <- paste("Análisis de Diferencias Grupales - Escala ", nombre_escala, sep = "")
+  
+  # Generar la tabla con el título
+  resultados_kable <- kable(resultados, format = "markdown", align = "c", caption = titulo)
+  return(resultados_kable)
+}
+
+
+PULQUERRIMO <- PULCRO %>% 
+  drop_na() %>% 
+  filter(Modalidad !="No_Esc")
+
+
+# Ejecutar la función
+prueba_mann_whitney(PULQUERRIMO, "Escala_Cog.", "Modalidad", nombre_escala = "Cognitiva")
+ph_CSUM_Mod <- grafico_promedio2(PULQUERRIMO, "Escala_Cog.", "Modalidad", color_contorno = "black", paleta_colores = "Blues", nuevo_nombre_categoria = "Modalidad")
+cat("\n\n")
+print(ph_CSUM_Mod)
+# prueba_mann_whitney(PULQUERRIMO, "Escala_Mot.", "Modalidad", nombre_escala = "Motora")
+# prueba_mann_whitney(PULQUERRIMO, "Escala_Dis.", "Modalidad", nombre_escala = "Disposicional")
+```
+Estos resultados nos indican que los participantes con modalidad (la amplia mayoría) evidencia un nivel de desempeño superior al los participantes pertenecientes a la modalidad "Cuna".
+
+Esta diferencia es estadísticamente significativa.
+
+\newpage
+
+### Modalidad (Nivmod) y Escala Motora
+
+Veamos cuáles son las diferencias grupales entre los dos niveles de Modalidad restantes y el puntaje en la Escala Motora:
+
+```{r 45_P3_Nivmod_ESCALA_M, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+
+# Ejecutar la función
+prueba_mann_whitney(PULQUERRIMO, "Escala_Mot.", "Modalidad", nombre_escala = "Motora")
+ph_MSUM_Mod <- grafico_promedio2(PULQUERRIMO, "Escala_Mot.", "Modalidad", color_contorno = "black", paleta_colores = "Greens", nuevo_nombre_categoria = "Modalidad")
+cat("\n\n")
+print(ph_MSUM_Mod)
+# prueba_mann_whitney(PULQUERRIMO, "Escala_Dis.", "Modalidad", nombre_escala = "Disposicional")
+```
+Como en el caso de la escala Cognitiva, también  aquí la diferencia corre a favor la modalidad de Jardín, de forma estadísticamente significativa.
+
+\newpage
+
+### Modalidad (Nivmod) y Escala Disposicional
+
+Veamos cuáles son las diferencias grupales entre los dos niveles de Modalidad restantes y el puntaje en la Escala Disposicional:
+
+```{r 45_P3_Nivmod_ESCALA_D, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+
+# Ejecutar la función
+prueba_mann_whitney(PULQUERRIMO, "Escala_Dis.", "Modalidad", nombre_escala = "Disposicional")
+ph_DSUM_Mod <- grafico_promedio2(PULQUERRIMO, "Escala_Dis.", "Modalidad", color_contorno = "black", paleta_colores = "Oranges", nuevo_nombre_categoria = "Modalidad")
+cat("\n\n")
+print(ph_DSUM_Mod)
+# prueba_mann_whitney(PULQUERRIMO, "Escala_Dis.", "Modalidad", nombre_escala = "Disposicional")
+```
+Como en el caso de la escala Cognitiva, también  aquí la diferencia corre a favor la modalidad de Jardín, de forma estadísticamente significativa.
+
+## Gestión y Escalas INDI
+
+En cuanto a la evaluación de asociación entre el tipo de Gestión (pública o privada) y los puntajes en las Escalas INDI, se decidió no realizar el análisis, ya que la cantidad de casos de Gestión Pública excede el 90%, por lo que estadísticamente no tendría mucho sentido hacer comparaciones entre grupos tan desiguales.
+
+## Departamento y Escalas INDI
+
+En donde sí tenemos grupos bastante balanceados, es en la variable Departamento. Por lo tanto, es totalmente posible realizar este análisis. 
+
+Procedamos a ver los resultados.
+
+```{r 45_P3_DEPA, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+# 1. Extraigo los campos categóricos que me interesan del df original
+library(dplyr)
+INDI45_DEPA <- INDI45 %>% 
+  dplyr::select(Codigo, Reg) 
+
+INDI45_DEPA$Reg <- as.factor(INDI45_DEPA$Reg)
+
+PULCRO <- left_join(LIMPIO, INDI45_DEPA,  by = "Codigo")
+PULCRO <- PULCRO %>%
+  relocate(Reg, .before = CSUM)
+colnames(PULCRO) <- c("Código", "Departamento", "Escala_Cog.", "Escala_Mot.", "Escala_Dis.")
+
+# Usar la función trimmed_anova
+depa.anal <- trimmed_anova(
+  df = PULCRO,             # Tu dataframe
+  cat_var = "Departamento",      # Variable categórica en formato factor
+  num_vars = c(3:5),    # Índices de las variables numéricas
+  trim_level = 0.10        # Nivel de recorte (opcional, por defecto 0.20)
+)
+
+# Mostrar el resultado
+print(depa.anal)
+# write_csv(PULCRO, "PULCRO_ENCUATRO.CSV")
+```
+
+Estos resultados nos indican que, en efecto, ecxistir un fuerte impacto del Departamento sobre el puntaje obtenido en las escalas INDI.
+
+Analicemos el detalle.
+
+
+
+### Análisis Posthoc: Departamento y Escala Cognitiva
+
+Veamos cuál es la asociación entre el Departamento y el puntaje en la Escala Cognitiva:
+
+```{r 45_P3_Depa_posthoc_CSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+ph_CSUM_Depa <- grafico_promedio(PULCRO, "Escala_Cog.", "Departamento", color_contorno = "black", paleta_colores = "Blues", nuevo_nombre_categoria = "Departamento")
+cat("\n\n")
+print(ph_CSUM_Depa)
+# write.csv(PULCRO, file = "Depa.csv", row.names = FALSE)
+
+ph.csum.depa <- c("| Grupo 1            | Grupo 2            | Dif. Est. | p Valor | Interpretación                           |
+|--------------------|--------------------|----------:|--------:|------------------------------------------|
+| Cusco              | Lima Met. |    -30.46 |   <.001 | Dif. Estadísticamente significativa      |
+| Cusco              | Loreto             |    -12.34 |   <.001 | Dif. Estadísticamente significativa      |
+| Cusco              | Piura              |     -9.94 |   <.001 | Dif. Estadísticamente significativa      |
+| Lima Met. | Loreto             |     18.12 |   <.001 | Dif. Estadísticamente significativa      |
+| Lima Met. | Piura              |     20.53 |   <.001 | Dif. Estadísticamente significativa      |
+| Loreto             | Piura              |      2.41 |   0.172 | Sin Dif. Estadísticamente significativa  |")
+
+# Retornar la tabla con el título y los resultados en formato Markdown
+  cat("Resultados Análisis Posthoc Escala Cog.", "\n\n") # Imprimir el título como encabezado
+  cat(ph.csum.depa)
+```
+
+Vemos que los participantes provenientes de Lima ostentan, en todos los casos, una superioridad de desempeño consistente, en todas las comparaciones. Por otro lado, las diferencias entre el resto de Departamento también  son estadísticamente significativas, con excepción de los grupos de Loreto y Piura. 
+
+\newpage
+
+### Análisis Posthoc: Departamento y Escala Motora
+
+Veamos cuál es la asociación entre el Departamento y el puntaje en la Escala Cognitiva:
+
+```{r 45_P3_Depa_posthoc_MSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+ph_MSUM_Depa <- grafico_promedio(PULCRO, "Escala_Mot.", "Departamento", color_contorno = "black", paleta_colores = "Greens", nuevo_nombre_categoria = "Departamento")
+cat("\n\n")
+print(ph_MSUM_Depa)
+# write.csv(PULCRO, file = "Depa.csv", row.names = FALSE)
+
+ph.msum.depa <- c("| Grupo 1   | Grupo 2   | Dif. Est. Rec. | p Valor | Interpretación                       |
+|-----------|-----------|---------------:|--------:|--------------------------------------|
+| Cusco     | Lima Met. |          -5.54 |   <.001 | Dif. Estadísticamente significativa  |
+| Cusco     | Loreto    |          -4.22 |   <.001 | Dif. Estadísticamente significativa  |
+| Cusco     | Piura     |          -2.68 |   <.001 | Dif. Estadísticamente significativa  |
+| Lima Met. | Loreto    |           1.32 |   <.001 | Dif. Estadísticamente significativa  |
+| Lima Met. | Piura     |           2.86 |   <.001 | Dif. Estadísticamente significativa  |
+| Loreto    | Piura     |           1.55 |   <.001 | Dif. Estadísticamente significativa  |")
+
+# Retornar la tabla con el título y los resultados en formato Markdown
+  cat("Resultados Análisis Posthoc Escala Mot.", "\n\n") # Imprimir el título como encabezado
+  cat(ph.msum.depa)
+```
+
+Vemos que los participantes provenientes de Lima ostentan, en todos los casos, una superioridad de desempeño consistente, en todas las comparaciones. Lo mismo pasa con las diferencias entre el resto de Departamento; todas son también estadísticamente significativas.
+
+
+\newpage
+
+### Análisis Posthoc: Departamento y Escala Disposicional
+
+Veamos cuál es la asociación entre el Departamento y el puntaje en la Escala Cognitiva:
+
+```{r 45_P3_Depa_posthoc_DSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+ph_DSUM_Depa <- grafico_promedio(PULCRO, "Escala_Dis.", "Departamento", color_contorno = "black", paleta_colores = "Oranges", nuevo_nombre_categoria = "Departamento")
+cat("\n\n")
+print(ph_DSUM_Depa)
+# write.csv(PULCRO, file = "Depa.csv", row.names = FALSE)
+
+ph.dsum.depa <- c("| Grupo 1   | Grupo 2   | Dif. Est. Rec. | p Valor | Interpretación                       |
+|-----------|-----------|---------------:|--------:|--------------------------------------|
+| Cusco     | Lima Met. |        -3.8914 |   <.001 | Dif. Estadísticamente significativa  |
+| Cusco     | Loreto    |        -3.8547 |   <.001 | Dif. Estadísticamente significativa  |
+| Cusco     | Piura     |        -2.9754 |   <.001 | Dif. Estadísticamente significativa  |
+| Lima Met. | Loreto    |         0.0366 |   0.915 | Sin Dif. Estadísticamente significativa  |
+| Lima Met. | Piura     |         0.9160 |   0.007 | Dif. Estadísticamente significativa  |
+| Loreto    | Piura     |         0.8793 |   0.012 | Dif. Estadísticamente significativa  |")
+
+# Retornar la tabla con el título y los resultados en formato Markdown
+  cat("Resultados Análisis Posthoc Escala Dis.", "\n\n") # Imprimir el título como encabezado
+  cat(ph.dsum.depa)
+```
+
+En esta Escala las diferencias no son dramáticas como en el resto; si bien también aquí los participantes limeños siguen evidenciando un desempeño superior en la amplia amyoría de casos, en comparación con los participantes loretanos la diferencia deja de ser estadísticamente significativa.
+
+
+\newpage
+
+
+## Quintil de Pobreza y Escalas INDI
+
+Esta es una de las variables de mayor interés en relación a su posible impacto sobre el desempeño en las escalas INDI. Examinemos cuál es. 
+
+```{r 45_P3_Quintil, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+# 1. Extraigo los campos categóricos que me interesan del df original
+# library(dplyr)
+# INDI45_Q <- INDI45 %>% 
+#   dplyr::select(Codigo, Quintil) 
+# 
+# INDI45_Q$Quintil <- as.factor(INDI45_Q$Quintil)
+# 
+# PULCRO <- left_join(LIMPIO, INDI45_Q,  by = "Codigo")
+# PULCRO <- PULCRO %>%
+#   relocate(Quintil, .before = CSUM)
+# colnames(PULCRO) <- c("Código", "Quintil", "Escala_Cog.", "Escala_Mot.", "Escala_Dis.")
+# 
+# # Usar la función trimmed_anova
+# quint.anal <- trimmed_anova(
+#   df = PULCRO,             # Tu dataframe
+#   cat_var = "Quintil",      # Variable categórica en formato factor
+#   num_vars = c(3:5),    # Índices de las variables numéricas
+#   trim_level = 0.10        # Nivel de recorte (opcional, por defecto 0.20)
+# )
+# 
+# # Mostrar el resultado
+# print(quint.anal)
+# # write_csv(PULCRO, "PULCRO_ENCUATRO.CSV")
+# Preparo la data
+INDI45_Q <- INDI45 %>% 
+  dplyr::select(Codigo, Quintil)
+PULCRO <- left_join(LIMPIO, INDI45_Q,  by = "Codigo")
+PULCRO <- PULCRO %>%
+  relocate(Quintil, .before = CSUM)
+colnames(PULCRO) <- c("Codigo", "Quintil", "Esc_Cog", "Esc_Mot", "Esc_Dis")
+# Llamar la función
+corr.quintil.INDI <- correlacion_spearman(PULCRO, PULCRO$Quintil, c(3:5))
+print(corr.quintil.INDI)
+```
+
+Estos resultados nos indican que, en efecto, existe un impacto del Quintil sobre el puntaje obtenido en las escalas INDI, si bien no es un impacto demasiado señalado.
+
+## Grado de Instrucción Materna y Escalas INDI
+
+En el caso del grupo de Nivel 4-5, contamos con la información del grado de instrucción de la madre del participante. 
+
+Procedamos a ver los resultados.
+
+```{r 45_P3_Grainsmad, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = 'asis'}
+# 1. Extraigo los campos categóricos que me interesan del df original
+library(dplyr)
+INDI45_GIMA <- INDI45 %>% 
+  dplyr::select(Codigo, Grainsmad) 
+
+INDI45_GIMA$Grainsmad <- as.factor(INDI45_GIMA$Grainsmad)
+# Reordenar manualmente
+INDI45_GIMA$Grainsmad <- fct_relevel(INDI45_GIMA$Grainsmad, "Ninguno", "Inicial", "Primaria incompleto", "Primaria completo", "Secundaria incompleto", "Secundaria completo","Superior técnico incompleto", "Superior técnico completo","Superior universitario incompleto","Superior universitario completo","Posgrado (maestría, doctorado)")
+PULCRO <- left_join(LIMPIO, INDI45_GIMA,  by = "Codigo")
+PULCRO <- PULCRO %>%
+  relocate(Grainsmad, .before = CSUM)
+colnames(PULCRO) <- c("Código", "Educ_Madre", "Escala_Cog.", "Escala_Mot.", "Escala_Dis.")
+
+# Usar la función trimmed_anova
+gram.anal <- trimmed_anova(
+  df = PULCRO,             # Tu dataframe
+  cat_var = "Educ_Madre",      # Variable categórica en formato factor
+  num_vars = c(3:5),    # Índices de las variables numéricas
+  trim_level = 0.10        # Nivel de recorte (opcional, por defecto 0.20)
+)
+
+# Mostrar el resultado
+print(gram.anal)
+# write_csv(PULCRO, "PULCRO_GIMA.CSV")
+```
+
+Estos resultados nos indican que, en efecto, existe un fuerte impacto del Grado de Instrucción de la Madre sobre el puntaje obtenido en las escalas INDI.
+
+Analicemos el detalle.
+
+\newpage
+
+### Análisis Posthoc: Educación Materna y Escala Cognitiva
+
+Veamos cuál es la asociación entre Educación Materna y el puntaje en la Escala Cognitiva:
+
+```{r 45_P3_GIMA_posthoc_CSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+levels(PULCRO$Educ_Madre) <- c("Ning.", "Inic.", "Pr.I", "Pr.C", "Se.I","Se.C","ST.I", "ST.C","Su.I","Su.C","Pgd.")
+ph_CSUM_GIMA <- grafico_promedio2(PULCRO, "Escala_Cog.", "Educ_Madre", color_contorno = "black", paleta_colores = "Set3", nuevo_nombre_categoria = "Educ_Madre")
+cat("\n\n")
+print(ph_CSUM_GIMA)
+# write.csv(PULCRO, file = "Depa.csv", row.names = FALSE)
+
+ph.csum.gima <- c("| Grupo 1                         | Grupo 2                           | Dif. Est. Rec. | p Valor | Interpretación                           |
+|---------------------------------|-----------------------------------|---------------:|--------:|------------------------------------------|
+| Inicial                         | Ninguno                           |         19.833 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Inicial                         | Posgrado (maestría, doctorado)    |         -2.917 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Inicial                         | Primaria completo                 |         19.665 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Inicial                         | Primaria incompleto               |         27.339 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Inicial                         | Secundaria completo               |         22.644 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Inicial                         | Secundaria incompleto             |         30.882 |   0.954 | Sin Dif. Estadísticamente significativa  |
+| Inicial                         | Superior técnico completo         |         14.720 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Inicial                         | Superior técnico incompleto       |         26.353 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Inicial                         | Superior universitario completo   |          3.076 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Inicial                         | Superior universitario incompleto |         18.486 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Ninguno                         | Posgrado (maestría, doctorado)    |        -22.750 |   0.266 | Sin Dif. Estadísticamente significativa  |
+| Ninguno                         | Primaria completo                 |         -0.169 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Ninguno                         | Primaria incompleto               |          7.506 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Ninguno                         | Secundaria completo               |          2.811 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Ninguno                         | Secundaria incompleto             |         11.048 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Ninguno                         | Superior técnico completo         |         -5.113 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Ninguno                         | Superior técnico incompleto       |          6.520 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Ninguno                         | Superior universitario completo   |        -16.758 |   0.642 | Sin Dif. Estadísticamente significativa  |
+| Ninguno                         | Superior universitario incompleto |         -1.347 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Posgrado (maestría, doctorado)  | Primaria completo                 |         22.581 |   0.006 | Dif. Estadísticamente significativa      |
+| Posgrado (maestría, doctorado)  | Primaria incompleto               |         30.256 |   <.001 | Dif. Estadísticamente significativa      |
+| Posgrado (maestría, doctorado)  | Secundaria completo               |         25.561 |   <.001 | Dif. Estadísticamente significativa      |
+| Posgrado (maestría, doctorado)  | Secundaria incompleto             |         33.798 |   <.001 | Dif. Estadísticamente significativa      |
+| Posgrado (maestría, doctorado)  | Superior técnico completo         |         17.637 |   0.066 | Sin Dif. Estadísticamente significativa  |
+| Posgrado (maestría, doctorado)  | Superior técnico incompleto       |         29.270 |   <.001 | Dif. Estadísticamente significativa      |
+| Posgrado (maestría, doctorado)  | Superior universitario completo   |          5.992 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Posgrado (maestría, doctorado)  | Superior universitario incompleto |         21.403 |   0.035 | Dif. Estadísticamente significativa      |
+| Primaria completo               | Primaria incompleto               |          7.675 |   0.583 | Sin Dif. Estadísticamente significativa  |
+| Primaria completo               | Secundaria completo               |          2.980 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Primaria completo               | Secundaria incompleto             |         11.217 |   <.001 | Dif. Estadísticamente significativa      |
+| Primaria completo               | Superior técnico completo         |         -4.944 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Primaria completo               | Superior técnico incompleto       |          6.689 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Primaria completo               | Superior universitario completo   |        -16.589 |   <.001 | Dif. Estadísticamente significativa      |
+| Primaria completo               | Superior universitario incompleto |         -1.178 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Primaria incompleto             | Secundaria completo               |         -4.695 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Primaria incompleto             | Secundaria incompleto             |          3.542 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Primaria incompleto             | Superior técnico completo         |        -12.619 |   0.003 | Dif. Estadísticamente significativa      |
+| Primaria incompleto             | Superior técnico incompleto       |         -0.986 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Primaria incompleto             | Superior universitario completo   |        -24.264 |   <.001 | Dif. Estadísticamente significativa      |
+| Primaria incompleto             | Superior universitario incompleto |         -8.853 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Secundaria completo             | Secundaria incompleto             |          8.237 |   <.001 | Dif. Estadísticamente significativa      |
+| Secundaria completo             | Superior técnico completo         |         -7.924 |   0.007 | Dif. Estadísticamente significativa      |
+| Secundaria completo             | Superior técnico incompleto       |          3.709 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Secundaria completo             | Superior universitario completo   |        -19.569 |   <.001 | Dif. Estadísticamente significativa      |
+| Secundaria completo             | Superior universitario incompleto |         -4.158 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Secundaria incompleto           | Superior técnico completo         |        -16.161 |   <.001 | Dif. Estadísticamente significativa      |
+| Secundaria incompleto           | Superior técnico incompleto       |         -4.528 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Secundaria incompleto           | Superior universitario completo   |        -27.806 |   <.001 | Dif. Estadísticamente significativa      |
+| Secundaria incompleto           | Superior universitario incompleto |        -12.395 |   0.088 | Sin Dif. Estadísticamente significativa  |
+| Superior técnico completo       | Superior técnico incompleto       |         11.633 |   0.014 | Dif. Estadísticamente significativa      |
+| Superior técnico completo       | Superior universitario completo   |        -11.645 |   <.001 | Dif. Estadísticamente significativa      |
+| Superior técnico completo       | Superior universitario incompleto |          3.766 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Superior técnico incompleto     | Superior universitario completo   |        -23.278 |   <.001 | Dif. Estadísticamente significativa      |
+| Superior técnico incompleto     | Superior universitario incompleto |         -7.867 |   0.981 | Sin Dif. Estadísticamente significativa  |
+| Superior universitario completo | Superior universitario incompleto |         15.411 |   0.012 | Dif. Estadísticamente significativa      |")
+
+# Retornar la tabla con el título y los resultados en formato Markdown
+  cat("Resultados Análisis Posthoc Escala Cog.", "\n\n") # Imprimir el título como encabezado
+  cat(ph.csum.gima)
+```
+
+Este profuso panorama puede resumirse así: las diferencias estadísticamente significativas se concentran enlos extremos educacioales. Es decir, los extremos que se ubican en los extremos de la educación formal (en especial si se compara el grupo de las madres que tienen Postgrad)
+

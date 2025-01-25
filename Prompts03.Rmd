@@ -1,0 +1,199 @@
+---
+title: "Prompts03"
+author: "Martín Vargas Estrada"
+date: "2025-01-21"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Trimmed ANOVA
+
+Apliqué el trimmed ANOVA, y estos son los resultados:
+
+Call:
+t1way(formula = PULCRO$CSUM ~ PULCRO$Fechin, data = PULCRO)
+
+Test statistic: F = 129.7451 
+Degrees of freedom 1: 3 
+Degrees of freedom 2: 656.3 
+p-value: 0 
+
+Explanatory measure of effect size: 0.46 
+Bootstrap CI: [0.41; 0.5]
+
+Según yo, el resultado indica que he comparado 4 categorías contra una variable numérica, he encontrado diferencias estadísticamente significativas y el uso de las categorías explica hasta el 46% de la variabilidad en los datos de la variable numérica. 
+
+¿Es correcta mi interpretación?
+
+### Formulación de Función para Trimmed ANOVA
+
+Ahora necesito que me generes una función de R que me permita ejecutar un  Trimmed ANOVA. Necesito que los argumentos sean:
+
+* Una única variable categórica (que debe star en formato factor; la función debe verificar esto); debo poder decir cuál es la variable mediante el nombre, en el formato df$variable.
+* Una serie de variables numéricas (que deben estar en formato numérico; la función debe verificar esto); debo poder definir cuáles son las variables numéricas en formato índice, por ejemplo c(3, 7-10).
+* El nivel de recorte que voy a requerir (para un valor de 20% por defecto). Esto lo podré indicar en formato decimal (por ejemplo, 0.10)
+
+La función debe arrojar como resultado una tabla en formato Markdown, editable con knitr kable, según la estructura siguiente (en la columna "Variable" van las variables numéricas):
+
+| Variable                | P valor   | Efecto  | Interpretación    |
+|:------------------------|:----------|:--------|:------------------|
+| Subescala Cognitiva     | 0.001 *** | 0.46    | Efecto muy grande |
+| Subescala Motora        | 0.56 NS   | Ninguno | Ningún efecto     |
+| Subescala Disposicional | 0.01 ***  | 0.02    | Efecto pequeño    |
+
+Siéntete libre de hacerme las preguntas que consideres necesarias para darme tu mejor resultado,
+
+### Función para generar en análisis posthoc de Trimmed ANOVA
+
+Sí, por favor, crea una función similar a la siguiente:
+
+trimmed_anova <- function(df, cat_var, num_vars, trim_level = 0.20) {
+  # 1. Verificar que la variable categórica esté en formato factor
+  if (!is.factor(df[[cat_var]])) {
+    stop("La variable categórica debe estar en formato factor. Usa factor() para convertirla.")
+  }
+  
+  # 2. Verificar que las variables numéricas estén en formato numérico
+  num_var_names <- names(df)[num_vars]
+  non_numeric_vars <- num_var_names[!sapply(df[num_vars], is.numeric)]
+  
+  if (length(non_numeric_vars) > 0) {
+    stop(paste("Las siguientes variables no son numéricas:", paste(non_numeric_vars, collapse = ", ")))
+  }
+  
+  # 3. Crear un dataframe vacío para almacenar los resultados
+  resultados <- data.frame(
+    Variable = character(),
+    P_valor = character(),
+    Efecto = numeric(),
+    Interpretación = character(),
+    stringsAsFactors = FALSE
+  )
+  
+  # 4. Loop a través de cada variable numérica y aplicar Trimmed ANOVA
+  for (var_name in num_var_names) {
+    # Aplicar Trimmed ANOVA
+    formula <- as.formula(paste(var_name, "~", cat_var))
+    anova_result <- t1way(formula, data = df, tr = trim_level)
+    
+    # Extraer valores relevantes
+    p_value <- anova_result$p.value
+    effect_size <- anova_result$effsize
+    
+    # Anotaciones para el valor p
+    p_label <- ifelse(p_value < 0.001, "***",
+               ifelse(p_value < 0.01, "**",
+               ifelse(p_value < 0.05, "*", "NS")))
+    
+    # Interpretación del tamaño del efecto
+    interpretacion <- ifelse(effect_size >= 0.14, "Efecto muy grande",
+                      ifelse(effect_size >= 0.06, "Efecto mediano",
+                      ifelse(effect_size >= 0.01, "Efecto pequeño", "Ninguno")))
+    
+    # Crear una nueva fila con los resultados
+    nueva_fila <- data.frame(
+      Variable = var_name,
+      P_valor = paste0(formatC(p_value, format = "f", digits = 3), " ", p_label),
+      Efecto = round(effect_size, 2),
+      Interpretación = interpretacion,
+      stringsAsFactors = FALSE
+    )
+    
+    # Agregar la fila al dataframe de resultados
+    resultados <- rbind(resultados, nueva_fila)
+  }
+  
+  # 5. Crear el título dinámico
+  titulo <- paste(
+    "Resultados del Análisis de Asociación entre", 
+    cat_var, 
+    "y", 
+    paste(num_var_names, collapse = ", ")
+  )
+  
+  # 6. Retornar la tabla con el título y los resultados en formato Markdown
+  cat("###", titulo, "\n\n") # Imprimir el título como encabezado
+  return(knitr::kable(resultados, format = "markdown", align = "lccc"))
+}
+
+Solo que esta vez la tabla final deberá contener solamente los resultados del análisis posthoc. La tabla resultante debería tener la estructura siguiente:
+
+
+| Comparación             | P valor   | Estimado| Interpretación    |
+|:------------------------|:----------|:--------|:------------------|
+| May. - Jun.             | 0.002 *** | 5.20    | Dif.Significativa |
+| Jun. - Ago.             | 0.156 NS  | 2.50    | Ninguna dif. sgva |
+
+La columna "Comparación" contendrá las categorías analizadas. La columna "P valor" el valor de p. La columna "Estimado" el Estimate del análisis. La columna "Interpretación" uno de dos descripciones: "Dif. Significativa", si p<0.05; o bien "Ninguna dif. sgva", si p> o igual a 0.05
+
+Los argumentos deberán ser (el siguiente es un ejemplo):
+
+
+  df = PULCRO,             # El nombre del dataframe
+  cat_var = "Fechin",      # Variable categórica en formato factor
+  num_vars = c(3:5),    # Índices de las variables numéricas
+  trim_level = 0.10        # Nivel de recorte (opcional, por defecto 0.20)
+
+Siéntete libre de hacerme las preguntas que consideres necesarias para darme tu mejor resultado.
+
+* ¿Qué método deseas utilizar para los análisis post hoc?  Respuesta: mcp2a() de WRS2)
+* ¿El paquete WRS2 ya está instalado y disponible para la función t1way() en tu entorno? Sí
+* 
+
+
+## Posthoc Trimmed ANOVA, segundo intento
+
+Necesito que me generes una función de R que me permita ejecutar el análisis posthoc de un Trimmed ANOVA. Necesito que los argumentos sean:
+
+* Una única variable categórica (que debe estar en formato factor; la función debe verificar esto); debo poder decir cuál es la variable mediante el nombre, en el formato df$variable.
+* Una serie de variables numéricas (que deben estar en formato numérico; la función debe verificar esto); debo poder definir cuáles son las variables numéricas en formato índice, por ejemplo c(3, 7-10).
+* El nivel de recorte que voy a requerir (para un valor de 20% por defecto). Esto lo podré indicar en formato decimal (por ejemplo, 0.10)
+
+La tabla resultante (en formato Markdown y editable con knitr kable) deberá contener solamente los resultados del análisis posthoc, y debería tener la estructura siguiente:
+
+
+| Comparación             | P valor   | psi-hat | Interpretación    |
+|:------------------------|:----------|:--------|:------------------|
+| May. - Jun.             | 0.002 *** | 5.20    | Dif.Significativa |
+| Jun. - Ago.             | 0.156 NS  | 2.50    | Ninguna dif. sgva |
+
+La columna "Comparación" contendrá las categorías analizadas. La columna "P valor" el valor de p. La columna "psi-hat" el psi-hat del análisis. La columna "Interpretación" uno de dos descripciones: "Dif. Significativa", si p<0.05; o bien "Ninguna dif. sgva", si p> o igual a 0.05
+
+Ejecuté la función según lo siguiente:
+
+posthoc_trimmed_anova(
+  data = PULCRO,
+  cat_var = "Fechin",
+  num_vars = c(3:5), # Índices de columnas numéricas
+  trim_level = 0.10
+)
+
+Y obtuve este error:
+
+Error in round(estimates, 2) : 
+  non-numeric argument to mathematical function
+
+## Gráfico
+
+En el contexto del lenguaje de programación estadística R, necesito que me generes el código para generar un gráfico de barras que represente el valor promedio de una variable numérica en los valores de una variable categórica. Es decir, por ejemplo, el promedio de calificaciones en un único examen de alumnos provenientes de distintas escuelas, donde las calificacionbes serían la variable numérica y la escuela de la que provienen la variable categórica o factor. En ese ejemplo, la función debería darme como resultado un gráfico de barras donde se represente el promedio de calificaciones por escuela (cada barra una escuela, es decir, una categoría). 
+
+La función debe usar el paquete ggplot para generar el gráfico, usar paletas de colores de RColorBrewer, y cada barra debería mostrar un texto con el valor promedio a dos decimales en la parte superior. 
+
+Los argumentos de la función deben ser:
+
+* El dataframe
+* El nombre de la variable numérica
+* El nombre de la variable categórica
+
+Siéntete libre de hacerme las preguntas que consideres necesarias para darme tu mejor resultado.
+
+
+Ahora necesito que la función que acabas de brindarme la modifiques según lo siguiente:
+
+* Agrega una línea de contorno de las barras, quiero que el color de la línea sea un argumento de la función
+* El tema del gráfico ggplot debe ser "gray"
+* Quiero que la paleta de RColorBrewer sea un argumento de la función
+* Quiero que cambies el nombre de la variable categórica para efectos del gráfico; el nuevo nombre deberá ser un argumento de la función (valor defecto: el nombre que ya tiene la variable en el dataframe)

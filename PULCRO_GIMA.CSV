@@ -1,0 +1,2241 @@
+Código,Educ_Madre,Escala_Cog.,Escala_Mot.,Escala_Dis.
+231,Secundaria completo,93,25,21
+464,Primaria incompleto,94,25,23
+466,Primaria incompleto,91,19,21
+480,Primaria completo,83,26,28
+500,Primaria incompleto,116,32,25
+504,Primaria completo,92,24,22
+532,Primaria completo,73,18,16
+957,Secundaria incompleto,90,29,34
+978,Primaria completo,78,19,20
+1039,Secundaria incompleto,85,28,31
+1158,Ninguno,53,11,17
+1180,Primaria incompleto,76,24,16
+1385,Primaria incompleto,62,17,17
+1415,Secundaria completo,66,29,27
+1457,Secundaria incompleto,62,23,15
+1458,Primaria completo,57,20,22
+2110,Superior universitario incompleto,71,21,25
+2347,Secundaria completo,50,26,19
+2511,Secundaria completo,83,22,20
+2705,"Posgrado (maestría, doctorado)",102,22,23
+2835,Superior universitario completo,121,29,36
+2836,Superior universitario completo,133,31,36
+2839,Superior universitario completo,134,32,26
+2840,Superior universitario completo,132,24,19
+2841,Superior universitario completo,100,27,20
+2842,Superior universitario completo,117,30,24
+2843,Superior universitario completo,99,30,23
+2844,Superior universitario completo,112,29,24
+2846,Superior universitario completo,131,24,23
+2848,Superior universitario completo,125,33,25
+2849,Superior universitario completo,143,35,28
+2880,Superior universitario completo,127,35,24
+2881,Superior universitario completo,109,22,25
+2882,Superior universitario completo,124,20,20
+2883,Superior universitario completo,107,24,19
+2884,Superior universitario completo,125,35,23
+2885,Superior universitario completo,119,33,23
+2889,Secundaria completo,105,29,24
+2890,Superior universitario completo,92,28,22
+2891,Superior universitario completo,138,34,30
+2892,Superior universitario completo,132,27,29
+2893,Superior universitario completo,107,28,29
+2894,Superior universitario completo,103,27,30
+2895,Superior universitario completo,146,34,31
+2896,Superior universitario completo,108,20,28
+2897,Superior universitario completo,124,32,32
+2900,Superior universitario completo,114,30,28
+2901,Superior universitario completo,82,28,29
+2902,Superior universitario completo,133,34,32
+2903,Superior universitario completo,135,31,31
+2904,Superior universitario completo,99,18,27
+2905,Superior universitario completo,144,33,31
+2906,Superior universitario completo,119,31,30
+2907,Superior universitario completo,119,30,31
+2908,Superior universitario completo,129,31,31
+2910,Superior universitario completo,121,32,24
+2911,Superior universitario completo,152,33,28
+2912,Superior universitario completo,90,31,21
+2913,Superior universitario completo,128,27,25
+2914,Superior universitario completo,134,34,23
+2915,Superior universitario completo,100,29,25
+2916,Superior universitario completo,149,32,27
+2918,Superior universitario completo,130,31,28
+2919,Superior universitario completo,117,29,18
+2920,Superior universitario completo,143,32,28
+2921,Superior universitario completo,132,28,27
+2922,Superior universitario completo,110,21,22
+2923,Superior universitario completo,133,28,20
+2924,Superior universitario completo,141,32,20
+2925,Superior universitario completo,144,31,27
+2926,Superior universitario completo,108,28,17
+2927,Superior universitario completo,147,30,24
+2928,Superior universitario completo,121,31,29
+2935,Superior universitario completo,128,30,36
+2940,Superior universitario completo,155,33,30
+2943,Superior universitario completo,136,28,22
+2946,Superior universitario completo,137,33,21
+2948,Superior universitario completo,79,26,17
+2950,Superior universitario completo,135,29,20
+2952,Superior universitario completo,118,30,18
+2955,Superior universitario completo,115,26,15
+2957,Superior universitario completo,93,23,17
+2958,Superior universitario completo,128,23,19
+2960,Superior universitario completo,129,26,29
+2961,Superior universitario completo,104,30,17
+2963,Superior universitario completo,58,17,20
+2964,Superior universitario completo,126,30,28
+2965,Superior universitario completo,85,28,24
+2966,Superior universitario completo,110,15,23
+2967,Superior universitario completo,134,32,19
+2969,Superior universitario completo,130,32,26
+2972,Superior universitario completo,143,33,24
+2973,Superior universitario completo,145,31,30
+2974,Superior universitario completo,142,33,29
+2975,Superior universitario completo,99,27,23
+2976,Superior universitario completo,145,32,31
+2977,Superior universitario completo,121,31,26
+2978,Superior universitario completo,125,27,20
+2979,Superior universitario completo,154,35,30
+2980,Superior universitario completo,88,32,23
+2981,Superior universitario completo,115,30,25
+2982,Superior universitario completo,144,32,21
+2983,Superior universitario completo,116,32,25
+2984,Superior universitario completo,112,29,19
+2985,Superior universitario completo,109,28,20
+2986,Superior universitario completo,125,30,23
+2987,Superior universitario completo,93,34,30
+2988,Superior universitario completo,85,19,18
+2989,Superior universitario completo,85,20,17
+2990,Superior universitario completo,155,36,31
+2991,Superior universitario completo,152,36,31
+3185,Superior universitario completo,129,28,36
+3208,Secundaria completo,93,30,24
+3209,Superior universitario completo,120,31,25
+3241,Secundaria completo,103,30,26
+3298,Secundaria completo,145,31,28
+3306,Secundaria completo,96,24,24
+3308,Secundaria completo,132,29,34
+3336,Secundaria completo,156,35,30
+3343,Secundaria completo,79,15,22
+3388,Secundaria completo,102,32,33
+3409,Secundaria completo,109,30,24
+3436,Superior técnico completo,125,32,29
+3454,Secundaria completo,92,30,24
+3461,Secundaria completo,73,29,24
+3519,Secundaria completo,143,32,30
+2620,"Posgrado (maestría, doctorado)",87,24,24
+2627,"Posgrado (maestría, doctorado)",134,33,33
+2630,Superior universitario completo,126,30,33
+2633,Superior universitario completo,130,32,31
+2637,Superior universitario completo,113,28,26
+2640,Superior universitario completo,129,30,34
+2645,"Posgrado (maestría, doctorado)",129,28,30
+2651,Superior universitario completo,112,27,25
+2652,Superior universitario completo,107,30,26
+2655,Superior universitario completo,121,27,31
+2669,Superior universitario completo,120,29,31
+2670,"Posgrado (maestría, doctorado)",105,26,29
+2673,Superior universitario completo,149,35,32
+2685,Superior universitario completo,101,29,26
+2686,Superior universitario completo,117,29,31
+2687,"Posgrado (maestría, doctorado)",113,23,28
+2688,Superior universitario completo,108,31,32
+2689,Superior universitario completo,121,28,29
+2690,Superior universitario completo,139,25,33
+2691,Superior universitario completo,121,28,30
+2692,Superior universitario completo,131,34,35
+2693,Superior universitario completo,96,22,28
+2694,"Posgrado (maestría, doctorado)",112,28,27
+2695,Superior universitario completo,117,30,30
+2696,Superior universitario completo,139,23,32
+2697,Superior universitario completo,88,26,23
+2700,"Posgrado (maestría, doctorado)",130,28,35
+2702,Superior universitario completo,116,26,27
+2703,Superior universitario completo,105,33,31
+2706,Superior universitario completo,107,29,32
+2708,Superior universitario completo,128,32,34
+2711,"Posgrado (maestría, doctorado)",123,25,31
+2712,"Posgrado (maestría, doctorado)",122,32,33
+2714,"Posgrado (maestría, doctorado)",136,29,33
+2715,Superior universitario completo,103,24,24
+2718,Superior universitario completo,114,31,25
+2720,Superior universitario completo,125,33,33
+2721,Superior universitario completo,83,22,19
+2724,Superior universitario completo,120,29,25
+2725,Superior universitario completo,110,31,28
+2730,Superior universitario completo,121,29,27
+2734,"Posgrado (maestría, doctorado)",114,28,29
+2735,"Posgrado (maestría, doctorado)",140,31,34
+2740,Superior universitario completo,101,21,23
+2741,Superior universitario completo,136,35,33
+2742,Superior universitario completo,111,30,27
+2744,"Posgrado (maestría, doctorado)",142,34,32
+2745,"Posgrado (maestría, doctorado)",131,28,33
+2747,Superior universitario completo,98,24,27
+2750,Superior universitario completo,132,33,36
+2752,Superior universitario completo,111,31,28
+2755,Superior universitario completo,95,23,27
+2757,"Posgrado (maestría, doctorado)",86,20,18
+2759,Superior universitario completo,76,20,18
+2764,"Posgrado (maestría, doctorado)",117,30,30
+2765,"Posgrado (maestría, doctorado)",120,32,30
+2767,"Posgrado (maestría, doctorado)",143,32,29
+2774,Superior universitario completo,115,27,32
+2775,Superior universitario completo,78,28,27
+2777,"Posgrado (maestría, doctorado)",114,29,28
+2778,"Posgrado (maestría, doctorado)",97,25,28
+2780,Superior universitario completo,120,27,30
+2783,"Posgrado (maestría, doctorado)",110,28,31
+2785,Superior universitario completo,125,25,31
+3252,Secundaria completo,107,33,25
+3258,Secundaria completo,87,30,22
+3284,Secundaria completo,93,28,23
+3290,Secundaria completo,73,24,19
+1072,Secundaria completo,146,36,34
+939,Secundaria completo,143,30,30
+940,Secundaria completo,145,31,30
+3330,Superior técnico completo,98,31,22
+3446,Secundaria completo,86,27,19
+2115,Secundaria incompleto,50,22,13
+2117,Secundaria incompleto,59,23,24
+534,Superior universitario completo,49,14,19
+540,Secundaria completo,71,23,23
+287,Superior técnico incompleto,66,23,28
+288,Superior técnico incompleto,83,25,28
+1095,Superior universitario completo,57,20,15
+217,Secundaria completo,91,27,26
+218,Superior universitario completo,69,21,17
+1094,Superior universitario completo,55,18,13
+1101,Superior técnico incompleto,55,18,19
+1104,Secundaria completo,51,18,16
+1098,Secundaria completo,55,18,13
+1096,Superior técnico incompleto,71,19,18
+1092,Superior técnico incompleto,65,21,15
+103,Secundaria completo,48,16,16
+3367,Superior universitario completo,145,36,31
+3369,Secundaria completo,130,33,32
+1099,Secundaria completo,52,18,15
+108,Superior universitario completo,40,14,13
+1103,Superior universitario completo,48,18,11
+104,Superior universitario completo,60,13,15
+1093,Secundaria completo,56,15,16
+106,Superior universitario incompleto,45,13,13
+1380,Superior universitario incompleto,98,27,25
+1381,Superior técnico completo,98,26,25
+3171,Superior técnico completo,94,28,21
+3173,Superior técnico completo,111,31,24
+1091,Superior técnico incompleto,52,17,13
+3423,Secundaria completo,123,32,28
+3427,Secundaria completo,87,27,25
+1396,Primaria incompleto,78,19,21
+1447,Secundaria completo,67,17,19
+837,Primaria completo,56,25,26
+2242,Primaria incompleto,88,24,16
+910,Secundaria incompleto,42,14,15
+911,Secundaria incompleto,39,17,19
+800,Secundaria completo,70,21,21
+801,Secundaria incompleto,75,22,21
+2198,Superior universitario completo,117,35,34
+2199,Superior universitario completo,87,30,34
+3374,Secundaria completo,75,24,21
+2282,Superior técnico completo,97,22,28
+2283,Superior técnico completo,116,27,30
+17,Secundaria completo,53,21,23
+167,Secundaria completo,80,19,20
+168,Secundaria completo,79,21,26
+1057,Superior universitario completo,90,22,23
+1058,Superior universitario completo,70,21,20
+1842,Primaria completo,117,32,28
+1066,Secundaria completo,58,16,22
+1841,Secundaria completo,116,31,28
+1837,Primaria completo,104,32,29
+2188,Secundaria completo,63,21,23
+150,Secundaria completo,83,22,23
+153,Secundaria completo,82,21,26
+152,Secundaria completo,80,21,21
+148,Secundaria completo,61,20,20
+151,Secundaria completo,71,17,18
+3162,Secundaria incompleto,119,34,32
+149,Secundaria completo,95,29,26
+847,Secundaria completo,103,33,31
+3458,Superior universitario completo,116,34,31
+1282,Secundaria completo,67,22,23
+3204,Secundaria completo,75,33,23
+1436,Secundaria completo,62,21,19
+2572,Primaria completo,124,29,28
+3401,Secundaria completo,68,26,17
+891,Primaria incompleto,78,27,24
+2353,Primaria completo,98,35,31
+1435,Secundaria completo,67,24,23
+1437,Secundaria completo,71,14,22
+1697,Superior técnico completo,90,18,19
+1438,Secundaria completo,67,25,19
+1991,Inicial,83,22,21
+1992,Secundaria completo,96,24,24
+1993,Primaria incompleto,92,22,21
+1987,Secundaria completo,71,26,26
+1986,Primaria incompleto,69,23,23
+2121,Secundaria incompleto,74,24,23
+1974,Primaria incompleto,133,36,23
+2119,Secundaria incompleto,77,27,26
+1972,Primaria incompleto,129,36,27
+2122,Secundaria incompleto,59,22,19
+2111,Secundaria incompleto,55,22,23
+2113,Secundaria completo,69,23,24
+2092,Secundaria incompleto,92,32,30
+2112,Secundaria incompleto,72,25,23
+1929,Primaria incompleto,86,22,21
+1970,Primaria incompleto,78,27,25
+1009,Primaria completo,62,19,17
+1003,Primaria incompleto,59,19,17
+1006,Secundaria incompleto,51,17,18
+999,Primaria completo,65,19,21
+1004,Secundaria incompleto,68,18,18
+1005,Primaria completo,68,22,19
+1010,Secundaria completo,69,22,21
+1000,Secundaria incompleto,54,17,14
+1012,Primaria completo,59,18,18
+1928,Secundaria incompleto,84,18,21
+1931,Secundaria completo,97,28,28
+1933,Secundaria completo,88,26,16
+2079,Primaria completo,65,21,20
+1935,Secundaria completo,92,22,25
+2075,Secundaria completo,72,23,22
+884,Secundaria completo,106,31,32
+1290,Secundaria completo,49,22,19
+1088,Secundaria completo,132,36,28
+781,Secundaria completo,92,22,24
+2142,Secundaria incompleto,76,27,21
+1849,Primaria completo,134,36,32
+1524,Secundaria completo,65,27,20
+560,Secundaria completo,67,24,21
+578,Secundaria incompleto,74,21,23
+564,Superior universitario completo,103,28,28
+577,Secundaria completo,72,21,23
+575,Secundaria completo,61,21,18
+558,Secundaria completo,53,21,16
+574,Secundaria incompleto,76,21,21
+565,Secundaria incompleto,96,24,27
+1391,Secundaria completo,96,31,24
+3441,Secundaria completo,80,28,17
+3165,Secundaria incompleto,81,30,25
+3499,Secundaria completo,105,36,24
+3170,Secundaria completo,69,22,22
+1975,Primaria incompleto,134,35,30
+1973,Primaria incompleto,122,33,26
+1071,Primaria completo,150,35,34
+2009,Primaria incompleto,81,27,21
+3431,Secundaria completo,113,30,26
+3226,Secundaria completo,109,30,19
+1176,Secundaria completo,64,22,21
+3207,Superior universitario incompleto,100,32,25
+3234,Secundaria completo,81,25,22
+3472,Secundaria completo,108,25,24
+3495,Secundaria completo,76,22,21
+3286,Superior universitario incompleto,65,15,17
+3395,Superior técnico completo,143,24,31
+2008,Primaria incompleto,78,27,21
+2091,Secundaria incompleto,85,34,29
+2107,Secundaria incompleto,73,30,24
+2093,Secundaria incompleto,105,34,30
+2101,Secundaria incompleto,69,29,18
+2089,Secundaria incompleto,89,31,29
+2094,Secundaria incompleto,79,29,29
+2096,Secundaria incompleto,93,34,31
+2106,Secundaria incompleto,58,22,18
+1990,Primaria incompleto,79,25,21
+349,Secundaria completo,68,15,20
+1167,Ninguno,69,20,23
+285,Secundaria completo,62,23,23
+541,Secundaria incompleto,69,22,20
+553,Secundaria completo,129,36,34
+546,Secundaria completo,97,30,31
+543,Secundaria completo,70,22,21
+548,Secundaria completo,106,32,31
+538,Secundaria incompleto,57,19,19
+547,Primaria completo,44,10,16
+709,Secundaria completo,111,30,32
+1404,Secundaria completo,58,25,27
+53,Secundaria completo,61,23,26
+1971,Inicial,82,27,25
+2081,Secundaria incompleto,100,27,29
+1440,Secundaria completo,63,23,19
+990,Secundaria completo,78,27,29
+2617,Superior técnico completo,106,34,31
+2360,Superior técnico completo,125,32,34
+1805,Primaria incompleto,103,25,25
+1354,Secundaria incompleto,73,21,19
+2398,Secundaria completo,124,34,33
+1394,Secundaria completo,92,29,24
+3081,Superior técnico completo,122,33,30
+1002,Secundaria incompleto,56,17,18
+81,Secundaria completo,112,36,25
+1209,Secundaria completo,99,25,25
+1113,Secundaria completo,46,15,18
+356,Secundaria incompleto,79,20,21
+2805,Secundaria completo,126,32,29
+2594,Secundaria completo,41,23,12
+1389,Superior universitario incompleto,110,27,28
+2356,Secundaria completo,71,26,23
+771,Superior técnico incompleto,93,19,22
+264,Secundaria completo,101,26,29
+826,Superior técnico incompleto,80,26,21
+954,Secundaria incompleto,86,27,30
+784,Secundaria incompleto,82,23,24
+1117,Superior técnico completo,65,17,21
+1135,Secundaria incompleto,151,33,35
+2010,Primaria completo,74,25,20
+2337,Secundaria completo,101,34,27
+289,Secundaria completo,72,24,27
+32,Superior universitario completo,116,27,28
+704,Secundaria completo,141,33,32
+1867,Secundaria completo,106,34,29
+1309,Primaria completo,124,29,33
+214,Superior universitario completo,88,26,23
+1313,Superior técnico incompleto,61,20,29
+772,Superior técnico incompleto,95,23,24
+1185,Superior técnico incompleto,92,29,25
+1531,Superior técnico completo,121,35,23
+927,Superior universitario completo,92,19,24
+1138,Primaria incompleto,124,33,29
+2512,Secundaria completo,144,33,24
+1018,Superior técnico completo,55,18,20
+960,Secundaria incompleto,102,31,28
+226,Superior universitario incompleto,74,23,22
+2563,Secundaria incompleto,63,20,19
+571,Superior universitario completo,92,27,23
+3406,Secundaria completo,78,29,17
+2514,Primaria incompleto,108,30,24
+228,Secundaria incompleto,79,21,20
+413,Primaria completo,108,28,21
+3468,Secundaria completo,95,24,26
+836,Ninguno,83,31,23
+1139,Primaria incompleto,51,28,21
+936,Secundaria completo,83,22,24
+567,Superior universitario completo,87,25,27
+989,Secundaria incompleto,96,30,29
+2554,Secundaria completo,117,30,28
+2562,Secundaria completo,136,34,33
+92,Superior universitario completo,147,36,30
+1850,Secundaria incompleto,143,36,28
+1382,Superior técnico incompleto,84,23,21
+3274,Secundaria completo,108,32,23
+2253,Superior universitario incompleto,109,31,35
+281,Secundaria completo,78,25,24
+2414,Ninguno,122,35,33
+257,Primaria completo,119,26,30
+2372,Superior técnico completo,126,34,35
+363,Secundaria completo,78,18,19
+3150,Secundaria completo,86,35,31
+983,Primaria incompleto,69,25,23
+2268,Secundaria completo,99,31,29
+982,Primaria completo,72,26,24
+2339,Secundaria completo,150,36,30
+2526,Secundaria incompleto,71,27,23
+721,Secundaria completo,115,33,28
+2605,Superior técnico completo,105,21,31
+3428,Secundaria completo,93,24,21
+1351,Secundaria completo,72,17,19
+3359,Secundaria completo,123,27,25
+2267,Secundaria completo,110,31,30
+2254,Superior universitario completo,122,36,36
+1015,Superior universitario incompleto,101,26,30
+705,Secundaria completo,128,32,32
+1306,Secundaria incompleto,108,29,33
+1350,Secundaria incompleto,97,26,27
+820,Superior técnico completo,114,32,24
+2596,Secundaria completo,63,29,18
+14,Secundaria completo,113,24,27
+1030,Superior técnico completo,92,24,23
+921,Superior técnico incompleto,114,25,25
+3259,Secundaria completo,136,35,28
+1184,Primaria completo,69,22,20
+2399,Secundaria completo,110,32,32
+1310,Secundaria completo,79,29,32
+1960,Primaria completo,112,33,29
+1806,Primaria incompleto,118,28,25
+1856,Primaria completo,115,31,26
+3163,Secundaria completo,112,34,32
+3013,Secundaria completo,140,36,32
+626,Secundaria completo,72,20,23
+2518,Secundaria completo,109,30,21
+1476,Secundaria completo,81,28,26
+3184,Secundaria completo,86,30,26
+1371,Secundaria completo,123,33,31
+3437,Superior técnico completo,109,32,25
+1179,Secundaria completo,87,18,23
+1038,Secundaria incompleto,79,22,28
+2377,Superior técnico incompleto,121,32,34
+3133,Secundaria completo,112,35,30
+3167,Secundaria completo,78,32,21
+831,Superior técnico completo,94,26,21
+391,Secundaria completo,96,22,23
+1359,Secundaria completo,112,32,30
+2391,Primaria completo,133,33,32
+1220,Primaria incompleto,72,30,21
+1365,Secundaria completo,94,29,29
+2259,Primaria completo,81,24,24
+576,Secundaria completo,76,21,23
+2358,Superior técnico completo,118,32,35
+997,Primaria incompleto,63,22,17
+1789,Secundaria completo,111,27,27
+1021,Superior técnico completo,79,25,23
+1086,Secundaria completo,98,35,21
+1480,Secundaria incompleto,87,28,26
+1750,Secundaria completo,131,36,31
+2602,"Posgrado (maestría, doctorado)",98,31,24
+1854,Secundaria completo,122,30,29
+2413,Secundaria completo,102,31,28
+834,Secundaria completo,105,32,26
+1013,Superior técnico completo,95,30,28
+1866,Secundaria completo,133,36,31
+1782,Secundaria completo,93,32,26
+1300,Secundaria completo,148,35,33
+3285,Secundaria completo,108,30,22
+2371,Superior universitario incompleto,110,32,35
+814,Secundaria completo,107,32,25
+1033,Superior universitario completo,84,25,23
+222,Superior universitario completo,98,28,30
+573,Secundaria incompleto,108,28,25
+1875,Superior técnico completo,153,36,31
+1043,Secundaria completo,100,28,30
+2609,Secundaria completo,40,26,11
+3254,Secundaria completo,91,27,22
+2266,Superior universitario completo,127,36,35
+3311,Secundaria completo,99,22,23
+2249,Secundaria completo,104,31,32
+1848,Primaria completo,147,36,30
+3342,Superior universitario completo,155,36,35
+1885,Primaria completo,116,34,27
+2397,Secundaria completo,146,35,30
+2116,Secundaria incompleto,58,23,24
+529,Primaria completo,139,36,29
+1483,Superior universitario completo,86,28,26
+3110,Ninguno,91,31,21
+229,Superior universitario completo,100,30,31
+266,Secundaria completo,65,20,22
+91,Secundaria completo,86,29,22
+223,Superior técnico completo,106,28,31
+66,Superior técnico completo,103,26,25
+1751,Secundaria completo,106,35,29
+3101,Secundaria completo,114,30,29
+263,Secundaria incompleto,70,20,27
+236,Superior técnico incompleto,68,20,24
+3449,Superior técnico completo,99,27,16
+267,Secundaria completo,108,28,31
+396,Secundaria completo,67,24,22
+2381,Superior técnico incompleto,118,31,35
+3280,Secundaria completo,102,32,22
+774,Secundaria completo,85,28,26
+3138,Secundaria completo,82,35,25
+1022,Superior técnico incompleto,83,25,23
+1781,Secundaria incompleto,82,29,22
+3339,Superior técnico completo,156,36,33
+3224,Secundaria completo,85,26,22
+3192,Secundaria incompleto,112,31,26
+2595,Secundaria completo,104,30,29
+2146,Secundaria completo,83,26,23
+269,Secundaria completo,105,29,30
+2343,Secundaria completo,71,33,29
+3361,Secundaria incompleto,116,31,27
+1246,Primaria completo,111,29,31
+3288,Secundaria completo,140,33,27
+357,Secundaria completo,80,23,19
+3301,Secundaria completo,67,16,23
+827,Superior técnico completo,93,30,24
+1249,Primaria completo,125,34,34
+1450,Secundaria incompleto,69,23,18
+297,Superior técnico incompleto,65,24,24
+3015,Secundaria completo,99,31,25
+268,Secundaria completo,110,28,31
+94,Superior universitario completo,142,33,26
+1248,Primaria completo,128,34,27
+1879,Superior universitario completo,110,34,27
+1314,Superior universitario completo,142,35,34
+2393,Secundaria completo,128,31,32
+569,Primaria incompleto,68,22,20
+3338,Superior técnico completo,156,36,29
+3373,Secundaria completo,88,29,21
+3239,Secundaria completo,155,36,34
+2395,Secundaria completo,118,35,30
+503,Primaria incompleto,96,19,24
+643,Secundaria completo,67,24,25
+934,Secundaria completo,76,23,23
+2402,Primaria completo,121,33,32
+1247,Secundaria incompleto,75,22,19
+273,Secundaria completo,111,24,24
+2600,Secundaria completo,72,28,13
+2403,Primaria completo,125,34,33
+1851,Primaria completo,139,36,31
+923,Primaria completo,60,19,17
+1434,Secundaria completo,74,24,20
+1115,Superior técnico completo,54,16,20
+1443,Superior técnico incompleto,65,18,20
+2396,Primaria completo,141,34,32
+611,Secundaria incompleto,79,28,23
+1387,Secundaria completo,77,20,19
+84,Superior técnico completo,118,32,24
+395,Secundaria completo,92,23,26
+1311,Secundaria incompleto,79,25,32
+1299,Secundaria incompleto,84,30,28
+274,Primaria completo,67,20,23
+1035,Superior universitario completo,91,24,23
+840,Secundaria completo,84,26,24
+1368,Superior universitario incompleto,88,29,23
+3231,Secundaria completo,105,30,25
+959,Primaria completo,98,30,35
+1016,Superior técnico completo,77,24,28
+225,Superior técnico completo,73,24,22
+3371,Superior universitario incompleto,144,36,31
+2366,Superior técnico incompleto,98,32,34
+3161,Secundaria incompleto,116,32,28
+980,Secundaria incompleto,98,27,29
+3249,Secundaria completo,135,29,27
+2394,Secundaria completo,154,36,33
+1876,Secundaria completo,117,34,27
+3310,Secundaria completo,94,23,24
+3130,Superior técnico incompleto,118,35,32
+835,Superior universitario completo,118,34,28
+641,Secundaria completo,69,19,20
+713,Secundaria completo,131,32,32
+1441,Secundaria completo,66,26,22
+1485,Secundaria completo,77,26,25
+2007,Primaria incompleto,74,23,20
+1888,Superior técnico completo,109,34,27
+3202,Superior técnico incompleto,130,25,31
+3106,Secundaria completo,79,26,20
+3380,Ninguno,140,35,32
+2352,Secundaria completo,100,34,29
+1007,Secundaria completo,64,17,16
+637,Secundaria completo,65,18,19
+783,Secundaria completo,71,19,22
+949,Superior técnico completo,103,30,35
+950,Superior técnico completo,99,28,30
+958,Secundaria incompleto,88,31,29
+730,Primaria incompleto,76,26,21
+2368,Superior técnico incompleto,112,32,35
+3327,Secundaria completo,88,24,24
+1527,Secundaria completo,121,35,29
+383,Secundaria completo,153,26,28
+3164,Secundaria completo,113,36,32
+2255,Secundaria completo,99,31,31
+28,Secundaria completo,99,23,25
+1858,Primaria completo,118,31,28
+1388,Secundaria completo,86,23,20
+2887,Secundaria incompleto,90,30,24
+358,Secundaria completo,79,20,19
+1361,Superior técnico completo,122,29,33
+770,Superior universitario completo,98,24,23
+1034,Superior universitario incompleto,83,24,23
+1221,Secundaria completo,92,27,24
+1230,Secundaria completo,95,25,25
+3272,Secundaria completo,121,31,26
+1961,Secundaria completo,153,36,32
+3238,Superior técnico completo,89,24,27
+1878,Primaria completo,114,34,28
+93,Superior técnico completo,113,32,26
+2341,Superior técnico completo,135,35,31
+12,Secundaria completo,108,27,27
+3235,Secundaria completo,108,32,23
+1446,Secundaria incompleto,70,22,22
+3353,Secundaria completo,138,29,31
+1308,Secundaria completo,89,26,30
+3421,Secundaria completo,94,28,21
+15,Superior universitario completo,111,26,27
+421,Primaria completo,89,31,25
+930,Superior universitario completo,98,22,22
+1517,Secundaria incompleto,118,34,29
+262,Secundaria completo,121,30,31
+2374,Superior técnico completo,131,33,35
+6,Secundaria completo,114,27,27
+1373,Secundaria incompleto,97,28,32
+1014,Superior universitario completo,63,17,20
+1353,Secundaria completo,99,24,24
+507,Primaria completo,115,29,26
+828,Superior técnico completo,105,31,24
+235,Secundaria completo,79,22,24
+3145,Secundaria completo,80,28,21
+839,Secundaria incompleto,78,25,23
+922,Superior técnico completo,55,21,17
+1011,Secundaria completo,57,18,18
+372,Secundaria completo,156,25,34
+1085,Primaria completo,124,35,26
+2590,Secundaria completo,58,29,16
+279,Primaria completo,45,22,21
+1008,Secundaria completo,80,22,22
+426,Primaria completo,95,34,20
+2355,Secundaria incompleto,104,30,30
+260,Secundaria completo,95,26,31
+2139,Secundaria incompleto,75,20,18
+286,Secundaria incompleto,63,25,25
+1514,Superior técnico completo,120,34,29
+3225,Secundaria completo,108,30,23
+723,Superior universitario incompleto,102,32,26
+1883,Secundaria completo,112,34,28
+3104,Secundaria incompleto,59,20,19
+2345,Secundaria incompleto,102,35,31
+717,Secundaria completo,99,35,28
+2361,Superior universitario completo,143,32,35
+378,Secundaria completo,147,26,28
+2525,Primaria completo,67,27,21
+3131,Secundaria incompleto,82,30,25
+1305,Secundaria incompleto,65,20,31
+261,Primaria incompleto,102,30,31
+710,Secundaria completo,129,33,34
+1377,Primaria incompleto,112,26,30
+816,Superior técnico completo,106,31,24
+1372,Secundaria incompleto,87,27,28
+3368,Secundaria incompleto,80,27,25
+612,Secundaria completo,78,25,21
+1752,Secundaria completo,136,36,31
+2118,Secundaria incompleto,77,26,23
+1451,Secundaria completo,52,23,21
+981,Superior técnico completo,98,27,29
+3264,Superior técnico completo,65,21,21
+1229,Secundaria incompleto,72,27,25
+11,Secundaria incompleto,100,24,26
+1523,Superior técnico completo,57,25,20
+3370,Secundaria completo,141,36,31
+714,Secundaria completo,121,31,33
+715,Secundaria completo,126,34,35
+869,Secundaria completo,85,30,30
+566,Superior universitario completo,88,26,24
+1913,Primaria completo,111,30,25
+373,Secundaria completo,153,25,34
+638,Secundaria completo,81,22,22
+2338,Primaria completo,67,34,28
+408,Primaria completo,88,31,21
+1886,Superior técnico completo,101,33,27
+294,Secundaria completo,69,24,27
+1959,Secundaria completo,154,35,28
+3109,Secundaria completo,72,18,19
+708,Secundaria completo,122,32,34
+1962,Secundaria incompleto,130,34,32
+2344,Secundaria completo,107,35,31
+812,Secundaria completo,97,31,26
+1456,Secundaria completo,65,23,17
+2597,Superior técnico completo,34,26,8
+1304,Ninguno,85,25,32
+296,Secundaria completo,81,24,28
+829,Superior técnico completo,62,30,24
+387,Secundaria completo,107,25,26
+362,Secundaria completo,78,18,19
+1862,Secundaria completo,112,29,31
+1519,Secundaria incompleto,67,29,21
+1376,Primaria completo,85,23,30
+2409,Primaria completo,111,29,29
+991,Secundaria incompleto,71,26,24
+3375,Secundaria completo,104,26,27
+79,Superior técnico completo,112,33,29
+1809,Superior técnico completo,106,23,25
+272,Secundaria incompleto,44,17,16
+3498,Secundaria completo,97,26,23
+1857,Primaria completo,116,33,29
+3358,Secundaria incompleto,59,18,20
+1882,Secundaria completo,114,34,27
+2362,Secundaria completo,106,32,34
+3190,Superior técnico completo,124,31,31
+3112,Ninguno,140,35,34
+1510,Secundaria incompleto,105,30,27
+811,Superior técnico completo,82,28,23
+3220,Ninguno,92,25,23
+1455,Secundaria completo,69,25,19
+382,Superior universitario completo,153,25,28
+1530,Secundaria completo,73,30,27
+1366,Secundaria completo,82,26,21
+3341,Ninguno,137,35,26
+830,Superior técnico completo,111,21,23
+3222,Superior técnico completo,112,30,30
+1250,Primaria incompleto,110,31,28
+1853,Superior técnico completo,156,36,33
+1223,Superior universitario incompleto,71,26,22
+2516,Secundaria incompleto,81,34,24
+2607,Secundaria incompleto,38,24,9
+1121,Secundaria completo,41,11,14
+1395,Secundaria completo,85,27,24
+3350,Secundaria completo,104,28,25
+424,Primaria completo,94,33,27
+926,Superior técnico completo,96,25,29
+1453,Secundaria completo,60,24,19
+2799,Secundaria completo,103,29,27
+1042,Secundaria completo,83,26,22
+3478,Secundaria completo,106,30,23
+1226,Superior técnico completo,62,26,21
+988,Primaria completo,94,27,30
+3169,Secundaria completo,105,29,22
+2248,Superior universitario completo,59,21,17
+1528,Secundaria completo,47,32,20
+2612,Secundaria completo,68,22,17
+3183,Superior técnico completo,148,35,31
+3335,Secundaria completo,129,33,27
+402,Secundaria completo,56,23,21
+374,Secundaria completo,153,26,30
+2515,Secundaria completo,115,36,24
+2251,Superior universitario completo,97,31,31
+3180,Secundaria completo,156,36,30
+2258,Primaria completo,106,31,30
+1374,Secundaria completo,123,33,32
+1748,Secundaria completo,134,35,30
+1219,Inicial,104,29,26
+1868,Primaria incompleto,136,36,30
+3325,Superior técnico completo,127,36,27
+1252,Primaria completo,96,30,21
+237,Superior técnico incompleto,58,15,18
+2558,Secundaria incompleto,86,30,22
+3415,Secundaria completo,118,31,26
+1029,Superior técnico completo,89,25,23
+3293,Secundaria completo,101,27,23
+1025,Superior técnico incompleto,83,25,25
+1877,Superior técnico completo,97,34,26
+557,Secundaria incompleto,72,17,17
+1189,Secundaria incompleto,89,30,17
+1114,Secundaria completo,44,14,12
+1808,Primaria incompleto,98,25,25
+1112,Secundaria completo,46,10,18
+68,Superior técnico completo,80,29,22
+813,Superior técnico completo,80,28,26
+3159,Primaria incompleto,89,30,30
+559,Superior técnico completo,77,25,29
+89,Superior técnico completo,130,32,26
+868,Secundaria completo,81,32,32
+3362,Secundaria incompleto,101,29,26
+1028,Superior universitario completo,90,25,20
+425,Secundaria completo,86,31,22
+1036,Superior técnico completo,94,24,23
+1319,Superior técnico incompleto,64,20,24
+2598,Secundaria completo,76,29,28
+2803,Superior universitario incompleto,131,32,30
+2610,Secundaria completo,52,29,14
+1118,Secundaria completo,48,17,16
+998,Secundaria completo,75,20,21
+2807,Secundaria completo,101,31,24
+301,Secundaria completo,65,21,27
+1087,Primaria completo,131,36,28
+1358,Secundaria completo,74,19,21
+726,Primaria completo,114,32,27
+80,Superior técnico completo,76,22,18
+699,Secundaria completo,93,30,24
+561,Secundaria completo,90,25,22
+31,Primaria completo,105,27,27
+392,Secundaria completo,96,27,23
+25,Superior universitario incompleto,110,28,27
+1442,Secundaria incompleto,61,18,21
+1369,Secundaria completo,102,33,28
+703,Superior universitario incompleto,142,34,36
+3229,Secundaria completo,63,13,19
+3417,Superior técnico completo,107,28,27
+1791,Secundaria incompleto,137,36,29
+568,Superior técnico completo,85,25,21
+903,Secundaria incompleto,108,26,23
+1370,Secundaria completo,109,32,30
+3223,Secundaria completo,108,30,23
+610,Secundaria incompleto,77,27,22
+1884,Secundaria completo,119,34,28
+833,Superior técnico completo,55,23,18
+639,Secundaria completo,73,20,21
+3012,Superior técnico completo,120,33,28
+2260,Primaria completo,113,29,28
+917,Secundaria completo,76,22,23
+386,Secundaria completo,73,22,26
+3147,Secundaria completo,102,34,30
+3148,Secundaria completo,102,34,30
+3351,Secundaria completo,99,24,18
+293,Secundaria completo,72,24,27
+1020,Superior técnico completo,77,24,23
+1515,Secundaria completo,83,31,23
+377,Secundaria completo,145,26,34
+2357,Secundaria incompleto,68,27,21
+3453,Secundaria completo,90,27,18
+220,Secundaria completo,73,24,15
+3182,Secundaria completo,85,30,27
+925,Superior universitario completo,107,27,29
+952,Superior técnico completo,97,29,32
+562,Primaria completo,62,25,19
+1236,Primaria completo,45,18,15
+1227,Secundaria completo,73,27,19
+1525,Superior técnico completo,126,34,29
+2593,Secundaria completo,57,27,16
+3303,Superior técnico completo,99,29,23
+712,Secundaria completo,135,33,32
+3176,Secundaria completo,114,35,33
+823,Superior técnico completo,65,29,20
+3194,Secundaria completo,85,26,25
+2408,Primaria completo,112,29,31
+1316,Superior universitario completo,101,29,28
+841,Secundaria completo,97,26,24
+1315,Secundaria incompleto,101,27,31
+1449,Secundaria completo,61,23,18
+2349,Secundaria completo,101,35,31
+1465,Secundaria completo,85,26,26
+3414,Secundaria completo,95,28,29
+933,Secundaria completo,85,23,24
+3105,Superior técnico incompleto,94,26,21
+371,Secundaria completo,156,26,31
+401,Secundaria completo,57,24,19
+722,Secundaria completo,129,35,29
+1178,Secundaria completo,84,26,19
+1301,Secundaria completo,63,19,24
+2574,Primaria completo,117,29,25
+918,Superior universitario completo,65,13,16
+920,Superior universitario completo,66,18,23
+2800,Superior técnico completo,126,32,30
+2517,Primaria incompleto,104,32,23
+3152,Secundaria completo,88,35,31
+3282,Secundaria completo,71,16,30
+1089,Primaria completo,114,36,26
+2380,Superior universitario incompleto,123,32,34
+381,Secundaria completo,154,26,28
+384,Secundaria completo,153,20,30
+1352,Superior técnico completo,100,28,25
+1807,Primaria incompleto,44,15,24
+2407,Primaria incompleto,98,29,30
+1518,Superior universitario completo,36,20,18
+1298,Secundaria completo,70,24,29
+3245,Secundaria completo,109,29,30
+530,Primaria incompleto,101,25,24
+232,Superior técnico completo,85,26,28
+2346,Superior técnico completo,113,36,30
+818,Superior técnico completo,73,29,20
+3199,Secundaria incompleto,105,30,26
+3227,Secundaria completo,109,26,24
+87,Superior universitario completo,60,17,17
+2611,Secundaria completo,43,24,16
+1880,Primaria completo,101,34,28
+360,Secundaria completo,77,18,19
+1181,Primaria completo,76,25,20
+8,Superior técnico completo,104,25,27
+1318,Secundaria incompleto,67,22,28
+2273,Primaria completo,80,24,18
+3297,Secundaria completo,81,21,22
+822,Superior técnico completo,116,32,26
+1861,Secundaria completo,113,28,30
+1512,Secundaria incompleto,64,29,19
+90,Superior universitario completo,144,36,32
+1860,Secundaria incompleto,104,29,25
+1312,Superior universitario completo,87,25,32
+2561,Secundaria incompleto,95,27,25
+1792,Primaria incompleto,63,22,20
+1532,Superior técnico completo,46,32,24
+400,Superior técnico completo,105,26,23
+1024,Superior técnico incompleto,84,25,24
+1137,Secundaria completo,124,32,26
+613,Secundaria incompleto,70,25,20
+932,Secundaria completo,94,21,26
+572,Superior técnico incompleto,83,23,27
+1120,Superior técnico completo,48,13,14
+78,Superior técnico completo,132,35,23
+1749,Primaria incompleto,69,31,19
+1140,Primaria incompleto,51,28,21
+3389,Secundaria completo,73,26,15
+821,Superior universitario completo,124,30,27
+1019,Superior universitario completo,90,28,27
+239,Secundaria completo,89,24,30
+3187,Secundaria completo,88,23,24
+2556,Secundaria incompleto,73,24,18
+2599,Secundaria incompleto,73,28,22
+1032,Superior universitario completo,81,24,23
+265,Secundaria completo,81,22,27
+1367,Superior técnico completo,98,27,29
+570,Superior universitario completo,89,23,33
+1182,Secundaria incompleto,73,21,18
+2591,Primaria completo,45,24,10
+67,Superior universitario completo,139,36,31
+2143,Secundaria incompleto,65,25,16
+351,Secundaria completo,94,23,21
+2555,Secundaria incompleto,55,17,17
+838,Secundaria completo,92,29,20
+1914,Primaria incompleto,106,31,24
+299,Secundaria completo,67,19,27
+779,Secundaria incompleto,89,23,24
+406,Secundaria incompleto,95,27,24
+3497,Secundaria completo,136,33,33
+2351,Secundaria completo,93,34,31
+786,Superior universitario completo,94,25,24
+2559,Secundaria completo,117,31,24
+30,Superior técnico completo,111,25,27
+1461,Primaria completo,72,20,23
+1863,Secundaria completo,117,33,27
+3383,Secundaria completo,75,24,18
+409,Primaria completo,82,31,24
+3111,Primaria incompleto,78,25,20
+776,Secundaria incompleto,68,17,21
+2379,Superior universitario completo,125,27,35
+2369,Superior universitario completo,125,32,35
+1513,Secundaria completo,35,21,16
+1467,Secundaria incompleto,75,25,24
+3322,Secundaria incompleto,86,26,23
+389,Secundaria completo,71,21,23
+953,Secundaria incompleto,78,28,30
+961,Primaria completo,82,24,31
+1001,Secundaria completo,55,17,18
+465,Secundaria completo,131,28,24
+29,Superior universitario completo,109,27,27
+1852,Primaria completo,131,33,35
+1109,Secundaria completo,49,14,17
+2557,Secundaria incompleto,114,32,29
+3482,Secundaria incompleto,125,36,31
+1390,Superior técnico completo,82,21,21
+817,Superior técnico completo,109,31,27
+3078,Secundaria incompleto,115,34,27
+2140,Secundaria completo,77,25,23
+353,Secundaria incompleto,77,21,19
+1478,Primaria completo,82,26,26
+10,Secundaria completo,83,22,24
+1780,Secundaria incompleto,100,34,29
+2806,Superior técnico completo,90,29,26
+1976,Primaria incompleto,137,36,30
+1364,Superior técnico completo,84,22,20
+3,Superior universitario completo,108,26,27
+1464,Secundaria completo,79,26,26
+1238,Primaria incompleto,77,21,14
+3160,Secundaria completo,112,34,31
+2365,Superior universitario completo,95,34,34
+3166,Secundaria completo,73,23,16
+33,Superior universitario completo,104,24,24
+556,Superior técnico completo,73,24,23
+2804,Superior técnico incompleto,126,32,28
+2138,Secundaria completo,101,28,26
+2137,Superior técnico incompleto,75,25,18
+355,Secundaria incompleto,81,19,19
+1386,Secundaria completo,72,20,20
+375,Secundaria completo,153,26,34
+706,Secundaria completo,123,31,31
+427,Secundaria completo,97,33,22
+3337,Ninguno,103,28,28
+3172,Superior técnico completo,110,26,30
+3364,Secundaria incompleto,136,33,31
+1037,Primaria completo,68,25,24
+3266,Secundaria completo,92,26,20
+3108,Secundaria completo,99,28,22
+782,Secundaria incompleto,86,22,23
+1460,Secundaria completo,35,16,21
+2601,Secundaria completo,36,25,11
+642,Superior universitario completo,63,14,20
+1136,Secundaria completo,111,32,26
+985,Secundaria incompleto,73,24,24
+227,Superior técnico completo,84,24,23
+1383,Secundaria completo,65,16,20
+711,Secundaria completo,105,31,31
+88,Superior universitario completo,102,31,24
+1228,Primaria incompleto,73,28,25
+777,Secundaria completo,87,23,24
+931,Superior universitario completo,87,22,25
+824,Superior universitario completo,108,31,24
+2257,Superior universitario completo,80,21,23
+27,Superior universitario completo,111,24,27
+2263,Secundaria completo,78,31,21
+82,Superior técnico completo,103,35,22
+825,Secundaria completo,73,29,21
+1445,Secundaria completo,77,24,22
+1855,Primaria completo,116,30,29
+354,Secundaria incompleto,80,21,19
+1017,Superior universitario completo,85,27,24
+3246,Secundaria incompleto,84,15,23
+2114,Secundaria incompleto,61,23,24
+467,Primaria incompleto,105,28,26
+919,Secundaria completo,79,23,24
+1375,Secundaria completo,100,30,32
+69,Superior universitario completo,106,31,22
+2354,Secundaria incompleto,63,28,22
+1452,Secundaria completo,54,23,22
+240,Superior universitario completo,92,26,30
+3400,Secundaria completo,75,21,14
+780,Superior universitario completo,96,19,24
+1240,Primaria completo,70,22,14
+2256,Superior universitario incompleto,80,24,23
+2376,Superior universitario incompleto,121,32,34
+3480,Secundaria completo,156,36,23
+947,Secundaria completo,110,27,28
+962,Secundaria incompleto,81,31,23
+2367,Superior técnico completo,117,32,35
+1110,Superior técnico completo,57,15,20
+1083,Primaria completo,97,35,21
+579,Secundaria completo,73,21,19
+2373,Superior técnico incompleto,119,32,35
+423,Primaria completo,93,33,27
+230,Secundaria completo,76,20,22
+300,Secundaria completo,48,20,20
+3261,Superior universitario completo,130,30,26
+1116,Superior técnico completo,55,12,18
+2265,Secundaria completo,108,31,31
+955,Secundaria completo,100,28,35
+3334,Primaria completo,130,33,27
+2410,Primaria completo,74,26,24
+1448,Secundaria completo,72,23,18
+85,Superior universitario incompleto,49,14,14
+1233,Secundaria incompleto,64,23,19
+2513,Primaria incompleto,91,29,23
+1444,Secundaria completo,76,22,21
+1355,Secundaria incompleto,76,19,21
+563,Superior técnico completo,66,21,17
+83,Superior universitario incompleto,46,17,14
+295,Secundaria completo,60,22,26
+2618,Superior técnico incompleto,92,27,33
+2521,Primaria incompleto,91,31,25
+2359,Superior universitario incompleto,96,31,25
+1439,Secundaria completo,67,25,19
+224,Secundaria completo,46,22,19
+2406,Secundaria completo,124,34,33
+352,Secundaria completo,75,15,19
+77,Superior universitario completo,144,36,30
+3124,Primaria completo,101,30,27
+3329,Secundaria completo,151,35,31
+2250,Superior universitario incompleto,83,24,30
+3236,Secundaria completo,105,32,25
+3232,Secundaria completo,80,18,21
+3394,Superior técnico completo,51,22,8
+2141,Superior técnico completo,88,27,23
+719,Superior universitario incompleto,104,33,27
+702,Superior técnico incompleto,142,35,35
+3263,Secundaria completo,146,33,25
+1362,Secundaria completo,69,21,22
+3452,Secundaria completo,118,32,23
+2006,Primaria incompleto,84,27,20
+2363,Superior técnico incompleto,134,32,35
+1516,Secundaria completo,43,24,20
+2603,Secundaria incompleto,101,31,21
+3216,Superior universitario completo,127,31,28
+2519,Ninguno,82,28,21
+1108,Superior técnico incompleto,45,13,12
+2520,Secundaria completo,70,23,26
+1881,Secundaria completo,100,34,28
+394,Secundaria incompleto,60,22,20
+700,Superior técnico completo,136,33,35
+2271,Superior universitario completo,75,23,24
+3344,Secundaria completo,115,30,21
+86,Superior técnico incompleto,101,31,26
+259,Secundaria completo,96,25,29
+3128,Superior técnico completo,111,35,32
+2523,Primaria completo,84,34,28
+2264,Secundaria completo,63,21,22
+2144,Ninguno,60,20,17
+3174,Secundaria completo,55,18,22
+1522,Superior universitario completo,117,30,29
+2802,Secundaria completo,115,29,29
+996,Secundaria completo,57,16,16
+640,Secundaria completo,71,21,22
+623,Secundaria completo,65,23,21
+929,Secundaria completo,82,20,22
+1533,Secundaria incompleto,55,24,23
+707,Secundaria completo,126,32,34
+5,Secundaria completo,109,26,27
+3275,Secundaria completo,82,23,20
+2592,Superior técnico incompleto,87,28,25
+2348,Primaria completo,94,34,30
+76,Superior universitario completo,97,24,24
+1356,Secundaria completo,110,27,25
+3294,Secundaria completo,90,26,19
+1357,Secundaria completo,93,24,23
+221,Secundaria completo,81,26,27
+505,Primaria completo,110,34,26
+2522,Primaria incompleto,53,26,15
+2378,Superior universitario completo,129,32,35
+1349,Secundaria completo,113,27,25
+1864,Secundaria incompleto,105,34,27
+1526,Superior técnico completo,101,29,23
+361,Secundaria completo,79,20,19
+4,Superior universitario incompleto,115,27,26
+785,Superior técnico incompleto,84,22,24
+1511,Secundaria completo,86,34,27
+3309,Secundaria completo,79,27,22
+3265,Secundaria completo,95,27,27
+3113,Ninguno,136,28,28
+13,Primaria completo,97,25,26
+2619,Superior técnico completo,97,31,31
+397,Superior técnico completo,71,25,20
+1303,Secundaria completo,79,22,31
+3300,Ninguno,101,32,24
+787,Secundaria completo,95,24,24
+3291,Secundaria completo,94,28,23
+2269,Secundaria completo,101,31,28
+3270,Secundaria completo,131,29,27
+775,Secundaria completo,103,25,26
+2272,Superior universitario completo,105,31,29
+1482,Superior técnico completo,74,26,24
+3142,Secundaria incompleto,81,32,24
+3250,Secundaria completo,80,24,23
+469,Primaria completo,92,22,22
+1397,Secundaria completo,82,23,21
+2340,Primaria completo,67,31,23
+7,Primaria completo,102,24,26
+887,Secundaria completo,101,29,31
+482,Primaria incompleto,141,35,29
+1307,Primaria completo,58,19,26
+2262,Secundaria completo,60,21,24
+885,Secundaria completo,88,32,35
+1363,Secundaria incompleto,81,28,22
+2412,Primaria completo,108,25,27
+1111,Superior técnico incompleto,53,13,21
+2370,Superior técnico completo,115,32,35
+2382,Superior técnico incompleto,121,32,34
+3154,Secundaria incompleto,100,35,31
+2608,Secundaria completo,51,25,14
+1520,Secundaria incompleto,86,29,24
+1044,Primaria completo,63,24,27
+3114,Ninguno,140,32,31
+1521,Secundaria incompleto,41,21,17
+2364,Superior universitario completo,121,34,35
+2564,Secundaria completo,82,20,18
+624,Secundaria completo,70,20,22
+385,Secundaria completo,153,20,30
+769,Secundaria completo,92,29,23
+3384,Secundaria completo,65,19,15
+3345,Secundaria completo,117,27,24
+1027,Superior universitario incompleto,84,25,30
+1788,Primaria completo,59,28,24
+3107,Secundaria completo,95,28,21
+26,Superior universitario completo,101,25,27
+271,Secundaria completo,85,21,27
+2375,Superior técnico incompleto,123,32,34
+2270,Secundaria completo,128,36,35
+609,Secundaria incompleto,65,24,17
+3136,Secundaria completo,93,28,22
+3418,Superior técnico completo,109,29,20
+1245,Primaria completo,106,26,26
+2506,Primaria incompleto,99,26,27
+3256,Secundaria completo,144,32,30
+832,Secundaria incompleto,70,33,22
+399,Superior técnico incompleto,87,24,22
+1475,Primaria completo,70,23,24
+1222,Superior técnico completo,73,29,23
+2524,Primaria completo,81,33,25
+2411,Secundaria completo,83,27,26
+3365,Superior técnico completo,153,36,28
+1320,Secundaria incompleto,62,23,27
+2573,Primaria completo,114,29,30
+398,Secundaria completo,72,21,18
+1454,Secundaria completo,62,25,19
+284,Superior técnico completo,79,24,28
+280,Superior técnico completo,90,23,24
+2401,Secundaria completo,83,29,27
+1031,Superior técnico incompleto,87,24,23
+3157,Secundaria completo,102,32,31
+1119,Superior técnico completo,51,13,16
+948,Primaria completo,98,29,32
+3477,Ninguno,82,21,17
+258,Primaria completo,57,19,21
+928,Superior universitario completo,54,19,18
+359,Secundaria incompleto,78,17,19
+2404,Primaria completo,81,26,24
+1360,Secundaria completo,67,19,21
+1041,Primaria completo,92,31,27
+3271,Secundaria completo,100,21,22
+3158,Superior técnico incompleto,135,34,31
+819,Superior técnico completo,98,32,24
+1023,Superior técnico completo,69,24,23
+3305,Secundaria completo,77,23,24
+216,Superior universitario completo,79,23,25
+1107,Superior técnico incompleto,42,13,12
+3340,Ninguno,86,24,22
+298,Superior universitario completo,83,25,29
+2252,Superior universitario completo,83,24,27
+2350,Secundaria incompleto,59,25,18
+815,Secundaria completo,63,20,20
+393,Secundaria completo,61,24,23
+290,Secundaria completo,56,23,27
+291,Secundaria completo,48,20,22
+2392,Secundaria completo,110,32,27
+3188,Superior técnico completo,156,36,30
+3378,Secundaria completo,54,18,12
+2261,Secundaria completo,74,25,23
+292,Secundaria completo,66,22,25
+915,Secundaria completo,68,22,19
+916,Secundaria completo,74,19,18
+622,Secundaria completo,73,18,20
+773,Secundaria completo,92,25,25
+1302,Secundaria incompleto,70,21,30
+724,Secundaria completo,110,33,28
+1183,Primaria incompleto,73,20,17
+935,Secundaria completo,79,20,23
+3177,Secundaria incompleto,121,34,27
+924,Superior universitario completo,84,19,22
+618,Secundaria completo,69,22,20
+463,Primaria completo,96,24,22
+1235,Secundaria incompleto,67,19,18
+2560,Superior universitario incompleto,112,27,23
+1865,Secundaria completo,77,31,24
+380,Secundaria completo,154,26,28
+270,Secundaria completo,70,20,23
+1225,Secundaria incompleto,68,29,21
+3473,Secundaria completo,140,36,25
+1468,Primaria completo,76,22,24
+621,Secundaria completo,82,20,21
+3445,Secundaria completo,84,28,15
+219,Secundaria completo,73,23,25
+627,Secundaria completo,57,14,22
+1509,Secundaria completo,48,23,19
+3168,Superior técnico completo,76,22,21
+2342,Secundaria incompleto,60,23,26
+3411,Secundaria completo,73,26,16
+881,Primaria completo,71,32,28
+390,Secundaria completo,82,23,22
+2405,Secundaria completo,102,30,30
+1963,Superior técnico incompleto,87,18,26
+331,Secundaria completo,98,27,28
+2606,Superior técnico completo,74,31,21
+3255,Superior técnico incompleto,77,28,24
+1419,Secundaria completo,120,31,31
+1285,Secundaria completo,63,20,22
+388,Superior universitario completo,57,20,20
+2244,Superior universitario completo,95,26,21
+1329,Superior técnico incompleto,56,16,20
+1197,Primaria incompleto,97,31,24
+1401,Superior universitario completo,142,35,32
+3080,Secundaria completo,104,35,21
+2821,Secundaria completo,77,22,23
+2569,Primaria completo,136,30,29
+340,Secundaria completo,86,20,24
+1539,Secundaria completo,58,26,21
+1084,Primaria completo,91,36,23
+1603,Secundaria completo,87,26,23
+3122,Superior técnico completo,81,18,20
+2223,Primaria completo,107,30,22
+3215,Secundaria completo,113,33,29
+3068,Superior técnico completo,99,35,27
+323,Secundaria completo,68,20,19
+1811,Secundaria completo,96,25,25
+1408,Secundaria completo,83,27,28
+2085,Superior técnico completo,111,28,27
+2104,Secundaria incompleto,74,31,25
+778,Secundaria completo,85,22,22
+2287,Superior universitario completo,97,24,28
+873,Secundaria incompleto,61,31,27
+2279,Primaria completo,123,25,26
+2127,Superior universitario completo,92,25,27
+1706,Secundaria completo,90,18,21
+316,Superior universitario completo,122,34,31
+367,Secundaria completo,79,23,24
+9,Superior universitario incompleto,94,23,25
+2082,Secundaria completo,71,30,29
+2466,Secundaria incompleto,91,23,27
+3387,Superior técnico completo,92,28,27
+19,Superior técnico completo,64,21,20
+370,Secundaria completo,152,22,24
+405,Secundaria incompleto,60,23,23
+1601,Secundaria incompleto,142,30,30
+2816,Secundaria incompleto,57,13,22
+57,Primaria completo,39,20,18
+1776,Secundaria completo,65,29,20
+2501,Primaria completo,97,27,23
+951,Primaria completo,80,25,33
+683,Secundaria completo,85,28,28
+856,Secundaria completo,110,33,29
+2182,Superior universitario incompleto,93,25,23
+1242,Primaria completo,52,15,11
+407,Secundaria completo,57,23,21
+1804,Secundaria completo,73,25,23
+2078,Primaria completo,77,27,24
+1278,Secundaria incompleto,72,16,22
+3443,Secundaria incompleto,139,25,31
+2291,Superior técnico incompleto,113,28,31
+2571,Primaria completo,134,23,31
+3469,Secundaria completo,93,25,23
+746,Superior universitario completo,75,22,19
+1673,Primaria completo,56,22,25
+788,Superior universitario completo,74,20,23
+1557,Secundaria incompleto,81,24,24
+2442,Primaria completo,116,30,25
+60,Secundaria completo,55,23,26
+1616,Secundaria completo,74,18,19
+697,Superior técnico completo,72,30,25
+1602,Secundaria completo,113,29,30
+3198,Primaria completo,98,31,26
+1696,Primaria completo,93,17,17
+1859,Primaria completo,113,28,30
+554,Superior universitario incompleto,137,36,34
+1874,Superior técnico completo,47,13,17
+2820,Secundaria completo,83,19,25
+2532,Secundaria incompleto,88,32,25
+2071,Primaria completo,78,27,24
+2827,Secundaria incompleto,39,20,20
+676,Superior universitario completo,86,28,25
+1831,Superior universitario incompleto,79,26,18
+979,Secundaria completo,94,21,22
+1406,Secundaria incompleto,79,27,28
+718,Secundaria incompleto,74,30,23
+1201,Superior universitario completo,81,23,18
+55,Secundaria completo,51,23,24
+791,Superior universitario completo,90,23,25
+155,Secundaria completo,82,21,26
+2390,Superior universitario completo,104,35,30
+3412,Secundaria completo,128,32,32
+3466,Superior universitario completo,100,29,25
+319,Ninguno,53,22,18
+1767,Primaria completo,110,29,28
+165,Secundaria completo,81,21,26
+1887,Secundaria completo,119,34,28
+41,Superior universitario completo,96,28,29
+974,Superior universitario incompleto,108,26,27
+63,Secundaria completo,52,23,20
+1838,Secundaria completo,133,32,29
+877,Secundaria incompleto,68,31,26
+3175,Superior universitario incompleto,92,30,25
+2090,Secundaria incompleto,88,31,30
+1203,Superior universitario completo,133,29,25
+1966,Secundaria completo,79,20,21
+1321,Secundaria incompleto,63,20,22
+366,Secundaria completo,77,24,23
+2818,Secundaria completo,83,23,23
+680,Secundaria completo,69,27,24
+691,Superior técnico incompleto,82,30,28
+1612,Primaria completo,102,29,28
+38,Superior técnico completo,71,24,22
+1775,Secundaria completo,99,29,27
+688,Secundaria incompleto,95,30,29
+1843,Secundaria incompleto,148,34,31
+542,Secundaria completo,67,22,21
+795,Superior universitario completo,73,19,20
+742,Secundaria incompleto,40,14,20
+3070,Superior universitario incompleto,117,35,36
+2834,Secundaria completo,89,22,22
+2459,Secundaria incompleto,117,31,29
+1611,Superior universitario completo,131,31,27
+350,Secundaria completo,82,19,21
+159,Secundaria completo,82,20,26
+158,Secundaria completo,83,21,26
+1281,Secundaria completo,50,18,18
+2237,Primaria incompleto,65,27,24
+3203,Secundaria completo,113,33,26
+3071,Secundaria incompleto,91,33,35
+1689,Secundaria completo,75,22,28
+1055,Secundaria incompleto,72,25,23
+2194,Superior universitario completo,79,28,25
+2447,Primaria completo,121,26,29
+1745,Secundaria incompleto,68,16,13
+603,Secundaria incompleto,51,22,17
+16,Primaria incompleto,66,18,16
+2095,Secundaria completo,108,34,31
+40,Superior técnico completo,43,10,16
+1062,Secundaria completo,63,21,18
+21,Superior técnico incompleto,74,25,24
+1968,Secundaria incompleto,92,27,29
+1783,Secundaria incompleto,107,35,26
+1217,Secundaria completo,80,25,29
+693,Superior técnico incompleto,76,28,27
+797,Superior técnico completo,71,20,20
+3463,Superior técnico completo,116,26,26
+1215,Superior técnico completo,99,25,28
+3066,Superior técnico completo,108,35,34
+1677,Secundaria incompleto,47,17,19
+1625,Secundaria completo,98,23,25
+1535,Superior universitario completo,78,22,30
+2326,Superior universitario completo,75,18,21
+3088,Secundaria completo,97,35,35
+1773,Superior técnico completo,75,29,24
+3218,Superior universitario completo,120,30,27
+3213,Secundaria completo,64,16,19
+1546,Secundaria completo,83,25,33
+1649,Secundaria incompleto,94,25,25
+1756,Primaria incompleto,66,26,19
+799,Superior técnico completo,70,20,19
+615,Secundaria completo,44,18,18
+2185,Secundaria completo,62,27,18
+1629,Primaria completo,115,30,31
+753,Superior técnico completo,49,16,22
+2108,Secundaria incompleto,78,24,23
+970,Secundaria incompleto,101,25,27
+1744,Secundaria incompleto,92,18,25
+318,Secundaria completo,75,20,21
+2531,Secundaria incompleto,93,32,25
+3425,Secundaria incompleto,131,31,31
+1871,Superior universitario completo,87,22,28
+946,Secundaria completo,143,31,29
+341,Secundaria completo,84,20,23
+964,Primaria completo,79,21,21
+2462,Ninguno,89,31,25
+2277,Superior técnico completo,132,28,34
+3450,Secundaria completo,68,19,24
+2130,Secundaria incompleto,70,19,18
+346,Secundaria completo,83,21,22
+1702,Superior universitario incompleto,97,28,34
+3221,Secundaria completo,59,19,20
+1284,Primaria completo,63,20,23
+437,Superior técnico completo,75,23,19
+1765,Primaria completo,68,30,22
+1326,Superior universitario completo,56,17,19
+694,Secundaria completo,109,30,28
+527,Primaria completo,101,31,36
+1325,Superior técnico completo,49,16,19
+1772,Secundaria incompleto,75,27,22
+1400,Superior técnico incompleto,102,28,30
+616,Secundaria completo,62,20,21
+1127,Secundaria completo,102,22,28
+2235,Primaria completo,79,27,16
+2331,Secundaria completo,66,15,28
+3459,Superior universitario completo,113,25,26
+686,Superior técnico completo,97,29,26
+605,Secundaria incompleto,63,24,18
+848,Secundaria completo,112,32,31
+2828,Secundaria completo,115,27,28
+2211,Superior técnico completo,80,25,23
+342,Secundaria completo,83,21,22
+3419,Secundaria completo,76,22,22
+1698,Secundaria completo,87,25,32
+1244,Secundaria incompleto,67,18,22
+2386,Superior universitario completo,96,32,33
+2508,Secundaria completo,102,23,21
+1671,Secundaria incompleto,51,18,19
+844,Secundaria completo,109,31,25
+2131,Secundaria completo,42,13,14
+732,Superior universitario completo,79,22,21
+2147,Secundaria completo,116,26,30
+1664,Secundaria completo,76,20,31
+1771,Primaria completo,75,28,23
+3379,Secundaria completo,71,20,22
+3323,Secundaria completo,120,22,23
+1570,Secundaria completo,117,31,29
+853,Secundaria completo,110,31,31
+334,Secundaria completo,93,20,24
+2105,Secundaria incompleto,71,25,18
+330,Secundaria completo,76,19,23
+2441,Superior técnico completo,123,30,23
+1588,Inicial,141,30,30
+1173,Secundaria incompleto,73,22,18
+551,Secundaria completo,128,34,34
+3430,Superior técnico completo,88,24,26
+3200,Secundaria completo,116,35,26
+1692,Secundaria completo,90,25,33
+3464,Superior técnico completo,136,24,29
+2329,Ninguno,72,15,25
+2453,Secundaria incompleto,95,32,27
+3416,Superior técnico incompleto,69,14,18
+687,Secundaria completo,74,27,28
+757,Secundaria completo,67,17,20
+973,Primaria completo,89,24,23
+1323,Secundaria completo,64,18,21
+1777,Secundaria completo,78,24,28
+403,Secundaria completo,80,24,21
+2216,Superior universitario incompleto,83,31,22
+2813,Secundaria completo,87,25,21
+760,Secundaria completo,87,23,24
+1661,Primaria incompleto,78,29,26
+1214,Superior técnico completo,78,19,22
+369,Primaria completo,56,21,23
+1494,Secundaria completo,90,28,27
+1211,Superior técnico incompleto,93,22,25
+1493,Secundaria completo,104,29,26
+2087,Primaria completo,40,14,15
+2209,Secundaria completo,84,29,21
+1491,Secundaria incompleto,62,21,22
+1196,Secundaria incompleto,58,17,19
+160,Secundaria completo,85,20,26
+1328,Secundaria completo,78,20,21
+3470,Secundaria completo,110,26,26
+1766,Primaria completo,77,30,28
+2274,Secundaria completo,53,23,22
+1416,Secundaria completo,62,25,28
+882,Primaria incompleto,63,30,24
+430,Superior universitario completo,99,29,35
+2233,Superior universitario incompleto,58,26,21
+2069,Primaria incompleto,64,23,22
+246,Secundaria completo,66,19,21
+846,Secundaria completo,109,34,26
+2809,Secundaria completo,68,23,22
+429,Superior universitario completo,96,32,32
+602,Secundaria incompleto,58,22,18
+347,Secundaria completo,68,17,17
+1421,Superior universitario completo,131,33,25
+3302,Superior técnico completo,90,22,20
+3493,Secundaria completo,85,22,23
+1052,"Posgrado (maestría, doctorado)",80,25,29
+1763,Secundaria incompleto,39,23,21
+3488,Secundaria completo,108,25,24
+871,Secundaria completo,65,31,28
+62,Secundaria completo,59,25,24
+1624,Superior universitario incompleto,102,27,29
+1280,Secundaria completo,70,20,23
+1627,Secundaria completo,119,30,31
+3442,Superior técnico completo,110,28,25
+852,Secundaria completo,108,28,27
+536,Superior universitario completo,74,21,22
+2450,Secundaria incompleto,102,31,26
+792,Superior universitario completo,78,22,23
+1427,Superior técnico completo,122,28,30
+3065,Secundaria completo,104,33,29
+1216,Superior técnico incompleto,85,23,25
+1106,Secundaria completo,120,32,33
+2187,Superior universitario incompleto,80,27,27
+339,Primaria completo,80,23,25
+2179,Superior universitario incompleto,92,22,23
+904,Superior técnico completo,61,22,19
+1705,Superior universitario completo,86,19,22
+969,Secundaria completo,114,26,27
+2129,Primaria completo,38,10,12
+1134,Secundaria incompleto,43,26,16
+685,Primaria completo,70,29,27
+1279,Superior universitario completo,55,19,18
+2080,Primaria completo,63,20,20
+906,Secundaria completo,57,20,19
+2533,Secundaria completo,92,32,25
+3079,Superior técnico completo,116,36,36
+2208,Superior universitario completo,81,26,18
+2808,Superior técnico incompleto,87,21,28
+2458,Secundaria completo,108,32,28
+1077,Primaria completo,92,34,21
+1126,Secundaria incompleto,75,17,23
+3217,Superior técnico completo,99,30,24
+253,Superior universitario completo,66,23,19
+322,Secundaria incompleto,65,21,18
+879,Secundaria incompleto,62,28,24
+3381,Secundaria completo,110,33,30
+3429,Secundaria incompleto,90,25,26
+3008,Secundaria completo,144,32,30
+1615,Secundaria completo,86,25,23
+1753,Secundaria completo,89,31,25
+790,Primaria completo,74,20,21
+2504,Secundaria completo,82,24,20
+1747,Primaria completo,71,16,19
+737,Superior universitario incompleto,44,15,16
+2822,Secundaria completo,121,28,29
+3438,Secundaria completo,100,29,28
+756,Secundaria completo,70,23,23
+1704,Superior técnico completo,94,26,34
+501,Primaria completo,82,28,22
+1701,Secundaria completo,88,26,28
+3462,Secundaria completo,107,32,28
+2971,Secundaria completo,114,34,30
+1918,Secundaria incompleto,62,17,25
+1288,Primaria completo,49,18,17
+3520,Superior técnico completo,79,22,17
+156,Secundaria completo,82,21,26
+1261,Superior universitario incompleto,70,19,22
+345,Secundaria completo,78,19,21
+1061,Secundaria completo,85,22,19
+2328,Superior técnico incompleto,74,17,24
+431,Superior universitario completo,106,32,26
+2286,Primaria completo,94,20,27
+320,Superior universitario completo,80,23,23
+1703,Ninguno,72,21,25
+2281,Secundaria completo,93,22,28
+1758,Secundaria completo,92,24,25
+1760,Secundaria completo,61,29,23
+2534,Secundaria incompleto,92,32,27
+945,Secundaria completo,141,31,30
+2588,Primaria incompleto,89,24,23
+2186,Secundaria completo,44,15,18
+1423,Superior universitario incompleto,116,25,26
+2615,Primaria incompleto,65,14,20
+2238,Secundaria incompleto,49,25,25
+321,Superior técnico completo,69,21,21
+1413,Secundaria completo,59,28,28
+1079,Superior técnico incompleto,74,32,24
+2505,Secundaria completo,84,25,19
+2461,Ninguno,69,30,20
+2231,Superior universitario incompleto,61,23,24
+2278,Superior técnico completo,113,24,29
+1610,Secundaria completo,116,27,28
+1410,Primaria completo,62,28,28
+2327,Secundaria completo,89,20,25
+679,Secundaria completo,70,26,23
+682,Secundaria completo,62,27,28
+1195,Primaria incompleto,70,21,18
+745,Superior universitario completo,75,22,20
+1292,Secundaria completo,46,15,15
+3490,Secundaria completo,53,22,16
+2832,Secundaria completo,98,20,21
+555,Primaria incompleto,71,15,22
+3408,Primaria completo,110,31,24
+2332,Secundaria completo,63,24,21
+422,Secundaria completo,62,21,23
+1241,Secundaria incompleto,87,28,27
+2180,Superior universitario completo,76,23,24
+1813,Secundaria completo,90,25,25
+545,Secundaria incompleto,100,28,28
+3332,Secundaria incompleto,81,21,18
+1674,Secundaria completo,79,20,30
+608,Secundaria incompleto,64,25,20
+1291,Secundaria completo,67,22,23
+2207,Secundaria completo,89,28,25
+1803,Secundaria completo,88,30,27
+1618,Superior universitario completo,81,22,19
+1492,Secundaria completo,61,19,21
+1327,Superior técnico completo,39,16,15
+3434,Secundaria incompleto,98,29,31
+2530,Ninguno,63,30,23
+3074,Secundaria incompleto,90,35,35
+2189,Primaria completo,67,26,23
+740,Superior universitario incompleto,68,22,22
+599,Secundaria completo,62,23,21
+329,Secundaria completo,69,21,19
+2968,Secundaria incompleto,105,28,24
+1411,Superior técnico completo,54,22,29
+1258,Superior técnico incompleto,84,24,26
+1164,Secundaria incompleto,102,33,28
+2219,Secundaria completo,143,29,30
+59,Secundaria completo,47,13,18
+1287,Secundaria completo,46,20,19
+1190,Secundaria incompleto,51,22,17
+1827,Secundaria completo,78,21,22
+3476,Secundaria completo,102,25,23
+2509,Secundaria completo,87,22,22
+678,Secundaria completo,64,26,23
+1969,Secundaria incompleto,67,20,19
+3483,Secundaria completo,71,21,22
+880,Secundaria completo,64,33,26
+1124,Secundaria completo,92,21,25
+1919,Secundaria completo,71,21,25
+2510,Secundaria completo,88,21,21
+2444,Primaria completo,105,32,24
+2294,Secundaria completo,86,22,28
+3460,Secundaria completo,103,26,29
+2812,Secundaria completo,61,21,20
+2098,Secundaria incompleto,63,21,16
+2197,Superior universitario completo,111,29,33
+552,Superior técnico incompleto,124,36,34
+3087,Secundaria completo,74,30,30
+3386,Secundaria incompleto,134,31,33
+64,Secundaria completo,44,21,17
+2614,Primaria incompleto,93,25,25
+2323,Secundaria completo,80,21,27
+1277,Secundaria incompleto,74,21,23
+3073,Primaria completo,121,34,35
+1286,Superior técnico incompleto,61,19,22
+1056,Primaria incompleto,56,22,18
+1040,Secundaria incompleto,100,21,27
+2192,Superior universitario completo,89,29,21
+2336,Secundaria completo,38,15,13
+1212,Superior técnico completo,86,21,28
+1714,Superior técnico completo,70,23,25
+1839,Secundaria completo,130,32,31
+872,Secundaria incompleto,64,31,24
+692,Secundaria completo,80,28,26
+245,Secundaria completo,56,19,18
+965,Superior universitario completo,104,24,27
+876,Secundaria incompleto,66,29,24
+1207,Secundaria incompleto,53,18,15
+2284,Secundaria completo,122,26,30
+1414,Secundaria completo,62,27,28
+1054,Superior técnico completo,81,24,22
+3205,Secundaria completo,74,29,26
+1322,Superior técnico incompleto,62,20,20
+3456,Superior técnico completo,107,22,25
+56,Secundaria completo,55,23,26
+24,Secundaria completo,47,18,19
+1621,Superior universitario completo,129,28,29
+368,Secundaria incompleto,58,18,20
+65,Secundaria completo,39,16,16
+1534,Secundaria incompleto,60,16,22
+414,Secundaria completo,72,24,26
+22,Primaria incompleto,59,21,20
+1964,Secundaria completo,80,23,26
+2314,Superior universitario completo,121,34,34
+850,Secundaria completo,109,33,22
+977,Superior técnico completo,110,25,26
+549,Secundaria incompleto,124,33,34
+1761,Superior técnico completo,106,28,27
+3126,Superior técnico completo,101,35,28
+690,Superior técnico completo,94,30,29
+972,Superior técnico incompleto,100,24,24
+2191,Superior técnico completo,81,28,19
+734,Superior técnico incompleto,71,21,22
+604,Secundaria incompleto,49,21,17
+2234,Superior universitario completo,58,23,19
+1668,Secundaria incompleto,43,18,17
+1667,Secundaria incompleto,43,17,17
+1,Superior técnico incompleto,61,21,21
+1784,Primaria completo,74,22,19
+2335,"Posgrado (maestría, doctorado)",47,21,22
+2196,Superior universitario completo,86,26,25
+2195,Superior universitario completo,111,29,32
+327,Secundaria completo,68,21,19
+3295,Secundaria completo,88,29,25
+1713,Secundaria completo,61,23,26
+2503,Secundaria completo,81,19,18
+1529,Primaria incompleto,40,16,15
+1672,Superior técnico incompleto,70,21,28
+2448,Primaria incompleto,121,32,29
+845,Secundaria completo,109,26,22
+696,Secundaria completo,58,26,21
+1869,Secundaria completo,71,20,23
+736,Superior técnico completo,51,18,21
+252,Primaria completo,63,22,19
+1407,Superior universitario completo,71,26,29
+3283,Secundaria completo,145,27,31
+420,Secundaria completo,111,33,30
+2184,Secundaria completo,62,18,18
+1198,Primaria incompleto,89,31,24
+3085,Secundaria incompleto,95,34,30
+157,Secundaria completo,82,20,25
+3413,Secundaria completo,53,21,18
+3083,Secundaria completo,93,35,35
+419,Superior técnico completo,114,32,32
+3485,Secundaria completo,89,25,22
+2190,Superior universitario completo,70,24,24
+1294,Secundaria incompleto,54,13,19
+2193,Superior universitario completo,39,11,15
+2500,Secundaria completo,79,19,21
+750,Superior técnico completo,67,22,22
+1988,Superior universitario completo,81,13,16
+3479,Secundaria completo,65,22,19
+1188,Secundaria completo,67,20,24
+3372,Superior técnico completo,91,30,28
+1177,Primaria completo,77,19,19
+415,Superior técnico completo,96,33,31
+416,Superior técnico completo,98,34,31
+3420,Superior técnico completo,138,25,28
+1675,Secundaria incompleto,59,18,24
+1690,Superior técnico completo,95,28,32
+1608,Secundaria incompleto,107,30,27
+2086,Secundaria completo,94,24,22
+1174,Primaria completo,61,19,18
+1078,Primaria incompleto,64,27,18
+1830,Secundaria incompleto,84,29,26
+3377,Secundaria completo,59,18,22
+3324,Superior técnico completo,73,16,22
+1544,Secundaria completo,62,21,21
+2243,Primaria completo,46,20,27
+3277,Secundaria completo,90,28,22
+1870,Secundaria completo,64,16,21
+635,Primaria completo,46,16,18
+1075,Secundaria completo,147,31,31
+58,Secundaria completo,40,20,17
+2288,Superior universitario completo,86,23,25
+1846,Superior universitario completo,126,32,31
+1566,Secundaria incompleto,63,16,20
+2826,Secundaria completo,98,23,24
+1872,Secundaria completo,83,26,26
+171,Secundaria completo,80,21,26
+170,Secundaria completo,80,21,26
+3181,Secundaria completo,101,27,24
+1762,Secundaria incompleto,121,32,29
+2460,Secundaria incompleto,81,32,25
+2133,Secundaria completo,67,20,17
+2222,Secundaria completo,71,28,18
+1490,Ninguno,78,17,19
+675,Secundaria completo,62,22,24
+674,Secundaria completo,62,22,24
+1632,Secundaria completo,84,20,19
+2099,Secundaria incompleto,58,21,16
+2276,Superior universitario completo,61,24,22
+975,Primaria completo,80,17,18
+23,Secundaria completo,41,16,15
+744,Superior universitario completo,69,21,21
+1622,Superior técnico incompleto,97,23,26
+968,Secundaria incompleto,84,19,24
+3321,Superior técnico completo,148,25,35
+3326,Secundaria completo,142,29,31
+3489,Secundaria completo,92,30,28
+2246,Primaria completo,40,11,15
+337,Primaria completo,64,14,21
+508,Primaria completo,85,20,19
+1541,Secundaria incompleto,75,22,22
+1695,Superior técnico completo,83,17,17
+1540,Secundaria completo,59,18,22
+601,Secundaria completo,55,22,20
+506,Primaria completo,95,29,34
+976,Secundaria incompleto,99,23,25
+1082,"Posgrado (maestría, doctorado)",85,29,26
+417,Secundaria completo,119,34,33
+2245,Secundaria completo,71,24,22
+2570,Primaria incompleto,51,16,18
+432,Superior universitario completo,88,31,29
+535,Secundaria completo,73,20,22
+2507,Secundaria completo,81,18,22
+3397,Secundaria completo,129,29,33
+169,Secundaria completo,74,22,25
+789,Secundaria completo,76,20,23
+2275,Superior universitario completo,54,21,20
+2527,Primaria incompleto,48,15,22
+1619,Superior universitario completo,81,19,20
+2315,Superior universitario completo,101,33,33
+1585,Secundaria incompleto,80,22,24
+1626,Primaria incompleto,102,26,25
+435,Superior técnico completo,117,30,31
+636,Superior universitario incompleto,69,20,23
+1663,Secundaria incompleto,71,23,29
+695,Secundaria completo,66,27,25
+3444,Secundaria completo,86,34,17
+1676,Superior técnico completo,67,20,27
+3212,Superior técnico completo,112,33,27
+1743,Secundaria completo,92,19,26
+2833,Secundaria completo,57,20,20
+738,Superior técnico completo,44,19,22
+1917,Superior universitario completo,87,24,25
+2005,Primaria incompleto,62,25,21
+1774,Secundaria completo,83,29,22
+39,Secundaria completo,60,22,20
+1623,Superior técnico completo,113,25,31
+1488,Primaria incompleto,62,17,19
+436,Secundaria completo,84,22,24
+1768,Primaria completo,52,24,23
+1932,Secundaria incompleto,77,21,24
+1392,Primaria incompleto,77,22,19
+2083,Secundaria incompleto,61,25,29
+1194,Secundaria incompleto,87,21,29
+3307,Secundaria completo,98,22,25
+1420,Superior técnico completo,112,28,31
+1930,Secundaria completo,75,18,16
+2204,Superior universitario incompleto,99,27,25
+3077,Secundaria incompleto,116,36,36
+1845,Primaria completo,106,30,29
+1489,Superior técnico incompleto,79,29,23
+1759,Secundaria completo,42,24,21
+2446,Secundaria completo,74,31,26
+1275,Secundaria incompleto,100,24,27
+1202,Superior técnico incompleto,100,28,28
+1556,Secundaria completo,48,20,21
+2388,Secundaria completo,94,31,33
+1426,Secundaria completo,69,24,19
+1296,Secundaria completo,50,18,18
+1123,Secundaria completo,73,14,22
+1186,Primaria completo,77,24,18
+1239,Secundaria incompleto,68,20,22
+1693,Secundaria incompleto,94,18,19
+1757,Secundaria incompleto,59,27,21
+3448,Secundaria completo,76,25,13
+1688,Secundaria completo,86,19,26
+752,Secundaria completo,72,22,20
+3084,Superior técnico incompleto,85,30,33
+598,Superior universitario completo,67,22,17
+3009,Secundaria completo,101,30,27
+743,Secundaria completo,75,24,18
+3328,Superior técnico incompleto,91,19,20
+1715,Secundaria completo,74,24,26
+1634,Secundaria incompleto,68,19,18
+550,Secundaria completo,83,26,21
+2202,Superior universitario incompleto,75,19,21
+1700,Secundaria completo,75,23,23
+49,Secundaria completo,49,21,18
+2502,Secundaria completo,49,15,19
+1605,Primaria incompleto,97,29,25
+1129,Secundaria completo,101,23,27
+3432,Primaria completo,109,29,26
+2829,Secundaria completo,120,25,29
+2203,Superior universitario incompleto,121,33,34
+51,Secundaria incompleto,37,16,17
+2221,"Posgrado (maestría, doctorado)",73,22,20
+2226,Superior universitario completo,71,24,19
+3426,Primaria completo,137,32,30
+1571,Secundaria completo,120,33,28
+749,Superior técnico incompleto,64,20,21
+1769,Secundaria completo,40,22,19
+1770,Secundaria completo,36,22,17
+1403,Primaria incompleto,62,17,17
+1243,Secundaria completo,69,18,22
+1059,Superior técnico completo,86,23,21
+733,Superior técnico completo,56,18,20
+2293,Secundaria completo,90,22,27
+2817,Superior técnico completo,79,22,21
+2236,Primaria incompleto,54,23,26
+1755,Secundaria incompleto,37,17,16
+3195,Superior universitario completo,72,32,21
+971,Superior técnico incompleto,80,21,23
+1754,Secundaria completo,64,25,20
+1293,Primaria completo,52,20,21
+1785,Secundaria incompleto,69,23,17
+1927,Secundaria incompleto,84,22,23
+2830,Secundaria completo,60,23,21
+1707,Secundaria completo,75,18,14
+251,Primaria completo,60,21,19
+2077,Secundaria completo,73,24,24
+1694,Secundaria incompleto,90,21,18
+2224,Superior técnico completo,84,27,21
+3457,Secundaria completo,112,23,30
+3523,Secundaria completo,83,24,18
+2445,Superior técnico completo,134,32,27
+1965,Secundaria incompleto,83,25,27
+3392,Superior universitario completo,131,25,30
+537,Secundaria incompleto,60,16,19
+2616,Ninguno,59,16,22
+2,Secundaria completo,52,20,23
+1635,Secundaria incompleto,81,22,27
+3399,Secundaria completo,99,22,31
+2292,Superior técnico incompleto,64,17,24
+2537,Primaria completo,85,31,25
+1199,Primaria incompleto,67,20,21
+1208,Primaria incompleto,67,22,21
+2084,Superior universitario completo,98,20,29
+2810,Secundaria completo,105,20,26
+161,Secundaria completo,85,20,26
+794,Primaria incompleto,77,22,21
+61,Secundaria completo,41,20,18
+1210,Superior técnico completo,75,22,22
+2206,Superior técnico completo,79,24,23
+2528,Secundaria incompleto,76,28,25
+3178,Secundaria completo,87,31,24
+967,Primaria completo,103,25,27
+54,Secundaria completo,64,21,25
+249,Secundaria completo,67,20,21
+1711,Secundaria completo,70,25,24
+1218,Superior universitario completo,96,29,29
+747,Superior técnico incompleto,53,18,21
+2205,Superior universitario incompleto,109,22,22
+1283,Superior técnico incompleto,42,15,19
+798,Superior universitario incompleto,75,21,24
+1795,Secundaria incompleto,89,28,28
+633,Secundaria completo,50,19,21
+1418,Superior técnico completo,117,29,30
+793,Superior universitario incompleto,73,21,20
+2073,Secundaria completo,70,22,20
+1606,Primaria completo,112,30,29
+1607,Primaria completo,80,22,18
+344,Secundaria completo,71,15,21
+735,Superior técnico completo,70,19,22
+1633,Secundaria completo,77,21,17
+2811,Secundaria completo,50,19,20
+905,Superior técnico completo,77,25,22
+2587,Secundaria incompleto,45,17,17
+1746,Secundaria incompleto,80,18,18
+2225,Superior universitario completo,81,23,25
+1934,Primaria completo,79,21,23
+1289,Superior técnico incompleto,70,24,24
+684,Superior técnico incompleto,74,26,29
+3011,Superior universitario completo,98,22,21
+3006,Secundaria completo,101,22,23
+1175,Secundaria incompleto,51,16,15
+1060,Secundaria incompleto,54,18,18
+2585,Superior técnico incompleto,81,24,22
+907,Secundaria completo,37,19,15
+1425,Superior técnico completo,77,26,18
+3451,Superior técnico incompleto,85,23,22
+2831,Secundaria incompleto,81,18,21
+544,Secundaria completo,54,17,20
+3251,Superior técnico completo,72,21,18
+2814,Secundaria completo,74,22,22
+3390,Secundaria completo,52,15,18
+1081,Primaria completo,104,35,25
+1787,Secundaria completo,110,33,33
+2230,Superior universitario incompleto,46,16,19
+2232,Superior universitario completo,58,20,20
+2455,Superior universitario incompleto,106,28,28
+944,Secundaria completo,138,30,29
+677,Secundaria completo,88,28,26
+689,Superior técnico incompleto,72,27,24
+2823,Secundaria completo,81,23,23
+1276,Secundaria incompleto,84,20,23
+1617,Secundaria completo,126,23,27
+1412,Secundaria completo,55,25,28
+2280,Secundaria completo,92,23,31
+3404,Superior técnico completo,137,25,31
+1666,Primaria incompleto,51,19,21
+2325,Secundaria completo,66,15,26
+3465,Secundaria completo,94,31,27
+1650,Primaria incompleto,80,29,24
+2535,Primaria completo,86,33,27
+3211,Secundaria completo,75,32,24
+2295,Superior universitario completo,90,21,27
+3455,Secundaria completo,51,10,19
+35,Superior técnico incompleto,42,17,18
+3063,Superior universitario completo,116,34,35
+1778,Secundaria completo,86,24,22
+1393,Secundaria completo,70,17,19
+857,Secundaria completo,61,13,24
+1716,Secundaria completo,81,28,31
+1873,Secundaria completo,68,21,19
+1636,Secundaria incompleto,83,19,13
+3396,Superior universitario completo,78,21,21
+883,Secundaria incompleto,61,30,22
+2825,Primaria incompleto,56,21,19
+2181,Superior universitario completo,99,26,24
+1989,Secundaria incompleto,66,26,17
+1613,Primaria completo,86,23,23
+3496,Superior técnico completo,105,27,24
+1187,Secundaria completo,77,19,19
+943,Secundaria incompleto,139,31,28
+2970,Superior técnico incompleto,82,22,24
+332,Secundaria completo,87,19,23
+942,Secundaria completo,142,31,31
+1125,Superior universitario completo,76,18,23
+50,Secundaria completo,37,14,18
+2123,Primaria completo,60,25,18
+2815,Secundaria completo,68,23,20
+3276,Secundaria incompleto,91,14,26
+854,Secundaria completo,105,31,29
+324,Superior técnico completo,67,20,19
+849,Secundaria completo,107,33,31
+1764,Primaria completo,46,25,21
+913,Secundaria incompleto,50,19,20
+2454,Primaria incompleto,86,28,25
+2962,Inicial,101,25,29
+365,Secundaria completo,51,22,23
+2132,Secundaria incompleto,46,15,17
+2183,Secundaria completo,53,18,21
+1651,Superior técnico completo,79,28,25
+254,Primaria incompleto,55,17,19
+539,Secundaria completo,65,22,21
+3474,Superior universitario completo,106,25,24
+1213,Secundaria completo,80,20,24
+1295,Secundaria completo,60,19,23
+912,Secundaria completo,35,15,13
+3522,Secundaria completo,66,22,15
+1133,Secundaria completo,33,25,16
+2290,Secundaria completo,39,13,15
+3410,Secundaria completo,53,20,17
+941,Secundaria completo,143,30,30
+600,Secundaria incompleto,58,23,19
+802,Secundaria incompleto,68,22,18
+3494,Superior universitario completo,89,22,22
+411,Primaria completo,32,18,8
+1779,Secundaria completo,85,24,26
+2128,Secundaria completo,74,21,22
+842,Secundaria completo,117,34,31
+3007,Secundaria completo,80,30,29
+1379,Primaria completo,78,21,22
+3403,Secundaria completo,85,24,23
+1712,Secundaria completo,82,26,26
+1699,Superior técnico completo,95,25,32
+914,Secundaria completo,35,16,14
+1422,Superior universitario completo,116,28,31
+1847,Secundaria incompleto,77,21,28
+3471,Superior universitario completo,99,23,28
+250,Primaria incompleto,60,21,20
+1260,Superior técnico incompleto,76,19,22
+1812,Primaria completo,77,23,25
+1080,Secundaria completo,72,31,24
+1409,Secundaria incompleto,58,25,29
+348,Secundaria completo,71,15,20
+3422,Secundaria completo,72,20,22
+606,Superior técnico completo,53,22,17
+3521,Secundaria completo,102,28,19
+1614,Superior universitario completo,82,25,23
+2088,Superior universitario completo,59,18,17
+1652,Secundaria incompleto,57,25,17
+754,Superior universitario completo,63,18,19
+1547,Secundaria completo,80,21,30
+509,Primaria completo,81,21,20
+1324,Secundaria completo,58,18,21
+1191,Secundaria completo,58,23,20
+255,"Posgrado (maestría, doctorado)",64,19,20
+938,Secundaria incompleto,140,32,30
+875,Superior técnico incompleto,62,29,22
+412,Superior universitario incompleto,47,17,21
+1165,Secundaria incompleto,65,19,19
+1402,Superior técnico completo,119,31,32
+42,Secundaria completo,65,23,20
+2240,Primaria incompleto,74,27,25
+2819,Secundaria completo,74,16,23
+681,Superior técnico incompleto,90,29,29
+909,Secundaria completo,41,14,18
+796,Superior técnico completo,70,20,21
+1128,Secundaria incompleto,75,21,24
+2536,Secundaria incompleto,78,26,25
+758,Superior universitario completo,66,21,20
+3484,Superior universitario completo,69,23,20
+3491,Secundaria completo,79,21,23
+1669,Secundaria incompleto,52,19,23
+3186,Superior técnico completo,46,27,20
+336,Secundaria completo,67,16,18
+874,Secundaria incompleto,71,28,24
+2529,Primaria incompleto,73,30,23
+328,Superior técnico completo,67,21,19
+878,Secundaria incompleto,66,31,26
+1709,Secundaria completo,73,18,19
+617,Ninguno,42,16,20
+1665,Superior técnico incompleto,55,17,24
+37,Superior técnico incompleto,36,13,14
+1938,Secundaria completo,96,24,27
+1076,Secundaria completo,139,33,35
+2220,Superior universitario completo,65,21,20
+333,Secundaria completo,67,14,20
+164,Secundaria completo,80,21,22
+52,Secundaria incompleto,42,19,20
+1262,Primaria completo,67,19,23
+748,Secundaria completo,48,17,20
+1053,Primaria incompleto,59,14,17
+614,Secundaria completo,47,17,19
+3089,Secundaria completo,95,33,33
+2452,Primaria incompleto,68,26,22
+1166,Secundaria incompleto,67,20,16
+533,Primaria completo,94,25,35
+3487,Superior técnico completo,107,25,24
+2289,Secundaria completo,36,14,15
+1925,Secundaria completo,57,18,17
+739,Secundaria completo,43,14,24
+2330,Secundaria completo,74,18,29
+1604,Secundaria completo,81,20,22
+1708,Secundaria incompleto,78,18,20
+759,Secundaria completo,35,12,19
+3382,Secundaria completo,59,19,16
+243,Primaria incompleto,63,21,20
+1231,Secundaria completo,62,16,23
+1398,Secundaria incompleto,79,24,20
+531,Primaria completo,71,19,17
+1200,Superior técnico completo,87,28,30
+937,Primaria incompleto,137,32,30
+338,Primaria completo,64,15,19
+2200,Superior universitario incompleto,82,30,25
+1710,Secundaria incompleto,57,18,23
+2389,Superior universitario incompleto,96,31,31
+741,Superior universitario completo,66,20,21
+1829,Secundaria completo,37,11,13
+1828,Secundaria completo,37,15,12
+1232,Secundaria completo,63,19,21
+966,Secundaria incompleto,82,19,22
+163,Secundaria completo,36,18,14
+908,Secundaria incompleto,41,16,16
+987,Secundaria completo,70,24,23
+335,Secundaria completo,80,18,21
+2103,Secundaria incompleto,75,25,22
+2214,Secundaria completo,65,19,18
+343,Superior universitario completo,84,15,20
+1399,Superior técnico completo,92,25,27
+162,Secundaria incompleto,41,15,18
+1691,Secundaria completo,60,18,24
+166,Secundaria completo,87,22,26
+410,Secundaria completo,50,18,22
+2100,Secundaria incompleto,70,26,17
+2451,Secundaria incompleto,71,21,21
+20,Secundaria completo,34,15,17
+2201,Superior universitario completo,93,27,27
+2449,Secundaria incompleto,74,25,18
+1939,Superior universitario completo,107,27,27
+2443,Superior técnico completo,82,19,20
+36,Superior técnico incompleto,69,22,24
+1936,Secundaria completo,84,19,24
+2247,Primaria completo,69,17,20
+843,Secundaria completo,105,28,25
+326,Secundaria completo,68,20,18
+607,Secundaria incompleto,52,21,17
+2109,Secundaria incompleto,89,34,30
+2102,Secundaria incompleto,70,24,18
+1656,Primaria incompleto,69,25,18
+325,Secundaria completo,42,11,15
+1967,Superior técnico incompleto,62,13,19
+851,Secundaria completo,108,35,28
+1670,Secundaria completo,51,21,24
+364,Superior técnico completo,56,22,22
+2586,Primaria incompleto,86,26,24
+2854,Superior universitario completo,119,28,28
+2860,Superior universitario completo,118,30,27
+2847,Superior universitario completo,115,27,30
+2852,Superior universitario completo,85,21,21
+2135,Secundaria incompleto,45,12,17
+2218,Superior universitario completo,74,27,22
+1417,Secundaria incompleto,59,20,20
+634,Secundaria completo,69,19,22
+2862,Superior universitario completo,107,20,27
+751,Superior técnico completo,63,22,19
+2875,Superior universitario completo,110,27,28
+2334,Superior universitario incompleto,35,14,19
+2333,Superior universitario incompleto,48,17,18
+2239,Primaria completo,85,26,11
+2387,Superior universitario completo,106,33,30
+154,Secundaria completo,74,20,25
+2456,Primaria incompleto,74,25,18
+1074,Secundaria completo,146,33,31
+886,Secundaria completo,85,31,33
+1940,Secundaria completo,49,10,20
+3189,Superior técnico completo,70,27,21
+2120,Secundaria incompleto,77,24,22
+2285,Secundaria completo,81,23,25
+3279,Secundaria incompleto,109,23,27
+2097,Secundaria incompleto,61,21,18
+3010,Secundaria completo,58,14,17
+2604,Inicial,136,35,34
+3075,Superior técnico completo,112,35,35
+3492,Secundaria completo,80,25,21
+2145,Superior técnico incompleto,86,26,21
+479,Primaria incompleto,144,35,29
+492,Secundaria completo,106,25,24
+3435,Secundaria incompleto,74,19,20
+2565,Secundaria completo,86,26,25
+3140,Primaria completo,108,35,29
+2400,Secundaria completo,130,35,34
+3475,Secundaria incompleto,146,36,27
+2886,Secundaria completo,102,31,26
+698,Secundaria completo,138,32,34
+404,Primaria completo,78,23,23
+1157,Primaria incompleto,70,24,27
+418,Superior universitario completo,63,26,24

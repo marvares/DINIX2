@@ -1,0 +1,1023 @@
+Código,Departamento,Escala_Cog.,Escala_Mot.,Escala_Dis.
+123,Cusco,65,22,22
+476,Loreto,51,17,16
+625,Piura,50,13,15
+809,Loreto,74,29,25
+1171,Loreto,43,24,18
+1722,Piura,94,29,24
+1818,Loreto,57,26,26
+1826,Loreto,73,28,31
+1889,Piura,91,36,24
+1916,Cusco,67,30,29
+2046,Piura,93,37,24
+2499,Piura,56,21,21
+2638,Lima Metropolitana,90,32,26
+2644,Lima Metropolitana,73,30,26
+2647,Lima Metropolitana,110,36,35
+2656,Lima Metropolitana,90,34,23
+2659,Lima Metropolitana,106,29,34
+2662,Lima Metropolitana,99,19,24
+2665,Lima Metropolitana,111,32,35
+2666,Lima Metropolitana,111,30,29
+2667,Lima Metropolitana,99,30,33
+2668,Lima Metropolitana,102,32,36
+2678,Lima Metropolitana,104,29,33
+2680,Lima Metropolitana,95,32,33
+2681,Lima Metropolitana,88,25,33
+2698,Lima Metropolitana,110,36,35
+2710,Lima Metropolitana,119,35,36
+2717,Lima Metropolitana,122,33,35
+2726,Lima Metropolitana,129,36,36
+2732,Lima Metropolitana,110,31,36
+2737,Lima Metropolitana,117,33,36
+2768,Lima Metropolitana,68,26,25
+2776,Lima Metropolitana,102,19,32
+2779,Lima Metropolitana,96,33,35
+2781,Lima Metropolitana,101,31,30
+2782,Lima Metropolitana,112,34,34
+2931,Lima Metropolitana,118,31,36
+2932,Lima Metropolitana,113,29,30
+2936,Lima Metropolitana,101,24,32
+2937,Lima Metropolitana,117,33,36
+2939,Lima Metropolitana,127,38,36
+2941,Lima Metropolitana,128,39,34
+2944,Lima Metropolitana,111,29,36
+2949,Lima Metropolitana,129,37,36
+2953,Lima Metropolitana,120,33,36
+3016,Lima Metropolitana,92,39,29
+3019,Lima Metropolitana,83,37,32
+3021,Lima Metropolitana,114,38,32
+3023,Lima Metropolitana,74,31,25
+3024,Lima Metropolitana,110,40,31
+3032,Lima Metropolitana,69,23,20
+3033,Lima Metropolitana,73,26,25
+3034,Lima Metropolitana,92,34,30
+3037,Lima Metropolitana,59,22,20
+3040,Lima Metropolitana,72,33,17
+3041,Lima Metropolitana,63,23,19
+3042,Lima Metropolitana,128,43,29
+3043,Lima Metropolitana,66,32,19
+3047,Lima Metropolitana,124,35,34
+3048,Lima Metropolitana,120,36,31
+3051,Lima Metropolitana,121,36,35
+3052,Lima Metropolitana,121,33,36
+3055,Lima Metropolitana,116,37,34
+3058,Lima Metropolitana,137,42,31
+3092,Lima Metropolitana,78,31,24
+3116,Lima Metropolitana,105,40,33
+3197,Lima Metropolitana,122,35,35
+3228,Lima Metropolitana,113,44,31
+3242,Lima Metropolitana,65,26,23
+3247,Lima Metropolitana,66,26,25
+3260,Lima Metropolitana,82,24,26
+3273,Lima Metropolitana,92,30,24
+3312,Lima Metropolitana,75,21,25
+3313,Lima Metropolitana,69,28,24
+3315,Lima Metropolitana,85,22,25
+3316,Lima Metropolitana,81,27,24
+3317,Lima Metropolitana,123,39,34
+3318,Lima Metropolitana,92,26,31
+3319,Lima Metropolitana,91,21,31
+3320,Lima Metropolitana,116,38,36
+3346,Lima Metropolitana,111,22,36
+3347,Lima Metropolitana,131,38,36
+3348,Lima Metropolitana,129,29,36
+3349,Lima Metropolitana,118,25,31
+3354,Lima Metropolitana,87,30,24
+3355,Lima Metropolitana,73,18,26
+3356,Lima Metropolitana,74,23,25
+3357,Lima Metropolitana,84,29,25
+3360,Lima Metropolitana,72,26,25
+3363,Lima Metropolitana,77,31,25
+2621,Lima Metropolitana,114,39,34
+2626,Lima Metropolitana,119,38,34
+2631,Lima Metropolitana,91,37,34
+2639,Lima Metropolitana,118,35,33
+2646,Lima Metropolitana,123,38,35
+2653,Lima Metropolitana,122,37,34
+2679,Lima Metropolitana,119,36,35
+2682,Lima Metropolitana,81,22,29
+2683,Lima Metropolitana,120,37,35
+2684,Lima Metropolitana,127,37,34
+2716,Lima Metropolitana,116,36,30
+2723,Lima Metropolitana,112,27,24
+2731,Lima Metropolitana,115,35,33
+2739,Lima Metropolitana,120,40,33
+2743,Lima Metropolitana,102,33,25
+2751,Lima Metropolitana,94,41,33
+2758,Lima Metropolitana,126,42,36
+2791,Lima Metropolitana,96,37,26
+2792,Lima Metropolitana,131,44,36
+2793,Lima Metropolitana,132,36,35
+2040,Loreto,58,21,20
+2041,Loreto,90,31,24
+2155,Loreto,109,34,28
+2156,Loreto,112,36,30
+71,Piura,34,11,20
+72,Piura,37,16,22
+858,Cusco,87,35,31
+862,Cusco,71,30,27
+2488,Piura,79,32,27
+2489,Piura,55,25,21
+311,Cusco,81,33,29
+305,Cusco,62,27,28
+304,Cusco,64,29,27
+670,Loreto,84,29,31
+671,Loreto,69,26,30
+1257,Cusco,77,36,25
+3243,Lima Metropolitana,93,39,30
+3244,Lima Metropolitana,109,41,31
+310,Cusco,79,34,28
+865,Cusco,79,34,27
+309,Cusco,57,25,25
+866,Cusco,57,26,25
+2066,Loreto,101,31,29
+2068,Loreto,99,27,27
+495,Piura,40,15,29
+1568,Piura,57,18,18
+1504,Cusco,66,29,18
+1505,Cusco,69,25,18
+3248,Lima Metropolitana,88,38,30
+3257,Lima Metropolitana,78,31,29
+307,Cusco,61,27,27
+863,Cusco,59,27,27
+303,Cusco,69,29,28
+859,Cusco,69,29,28
+196,Cusco,50,11,20
+197,Cusco,100,36,32
+2468,Piura,43,17,19
+2469,Piura,43,17,23
+308,Cusco,61,27,26
+864,Cusco,61,27,26
+3267,Lima Metropolitana,119,36,36
+3278,Lima Metropolitana,83,27,33
+2227,Piura,103,40,32
+3424,Lima Metropolitana,82,24,34
+2045,Piura,25,8,6
+1378,Loreto,68,25,22
+2067,Cusco,87,27,26
+3000,Lima Metropolitana,136,48,35
+3402,Lima Metropolitana,52,25,23
+2864,Lima Metropolitana,98,29,27
+731,Cusco,92,35,24
+1982,Cusco,67,29,28
+433,Loreto,110,40,33
+992,Loreto,92,32,31
+1050,Loreto,70,29,29
+993,Loreto,80,31,26
+1047,Loreto,71,27,27
+3097,Lima Metropolitana,108,44,33
+2568,Loreto,103,30,31
+956,Loreto,88,33,29
+2567,Loreto,110,30,36
+3062,Lima Metropolitana,126,47,34
+2850,Lima Metropolitana,88,27,25
+178,Cusco,41,12,16
+182,Cusco,52,23,20
+2870,Lima Metropolitana,95,22,27
+3201,Lima Metropolitana,84,22,29
+2938,Lima Metropolitana,103,23,25
+472,Loreto,54,18,15
+591,Cusco,52,18,19
+584,Cusco,51,24,18
+597,Cusco,61,25,22
+583,Cusco,57,24,22
+585,Cusco,40,19,15
+1589,Loreto,85,33,27
+580,Cusco,37,16,19
+589,Cusco,38,18,19
+596,Cusco,58,28,20
+581,Cusco,49,20,22
+2033,Loreto,64,23,21
+2042,Loreto,65,24,22
+2036,Loreto,48,21,14
+2072,Loreto,45,19,15
+1978,Loreto,54,25,23
+3253,Lima Metropolitana,113,39,29
+3156,Lima Metropolitana,87,26,31
+1575,Loreto,61,22,20
+1890,Piura,58,27,25
+1068,Loreto,131,48,35
+1067,Loreto,118,48,36
+3067,Lima Metropolitana,135,44,33
+3044,Lima Metropolitana,74,26,22
+2165,Loreto,103,38,26
+2154,Loreto,77,28,19
+3057,Lima Metropolitana,68,30,16
+2163,Loreto,105,41,26
+3064,Lima Metropolitana,136,47,36
+3056,Lima Metropolitana,128,44,35
+3050,Lima Metropolitana,74,27,16
+3059,Lima Metropolitana,127,34,29
+2162,Loreto,90,26,26
+2153,Loreto,107,36,30
+3090,Lima Metropolitana,69,31,22
+1723,Piura,53,25,22
+3054,Lima Metropolitana,91,34,21
+2168,Loreto,110,40,30
+3076,Lima Metropolitana,81,35,26
+3045,Lima Metropolitana,59,27,21
+3094,Lima Metropolitana,74,31,20
+2157,Loreto,83,32,29
+2166,Loreto,99,35,30
+2167,Loreto,96,30,29
+3091,Lima Metropolitana,85,31,26
+3049,Lima Metropolitana,93,34,25
+3281,Lima Metropolitana,80,32,24
+2136,Cusco,43,20,18
+2161,Loreto,61,20,18
+3082,Lima Metropolitana,68,30,20
+3053,Lima Metropolitana,90,34,25
+2158,Loreto,73,30,21
+1620,Piura,64,33,24
+3060,Lima Metropolitana,97,34,28
+3093,Lima Metropolitana,74,30,22
+2160,Loreto,68,28,20
+3046,Lima Metropolitana,104,37,25
+2164,Loreto,101,36,29
+3061,Lima Metropolitana,100,32,29
+3072,Lima Metropolitana,95,28,24
+3206,Lima Metropolitana,101,33,36
+3120,Lima Metropolitana,86,26,33
+1430,Cusco,77,26,24
+805,Loreto,48,24,26
+2865,Lima Metropolitana,75,29,26
+511,Cusco,54,18,27
+1896,Piura,65,31,24
+2485,Piura,76,33,25
+1648,Piura,88,30,35
+1581,Loreto,76,28,21
+2217,Piura,117,42,36
+1909,Cusco,60,30,23
+1954,Loreto,102,36,32
+1659,Cusco,88,39,36
+1497,Cusco,60,26,25
+1344,Loreto,36,14,20
+1343,Loreto,29,13,20
+1937,Loreto,74,27,33
+3233,Lima Metropolitana,113,44,31
+2021,Loreto,65,33,28
+1820,Loreto,54,23,25
+647,Cusco,52,21,22
+1591,Loreto,80,33,27
+2541,Piura,82,30,23
+187,Cusco,73,31,33
+898,Cusco,71,21,20
+3141,Lima Metropolitana,111,37,35
+1794,Piura,77,34,30
+2065,Loreto,91,27,24
+2074,Loreto,36,14,6
+1737,Piura,71,29,24
+2435,Piura,53,22,20
+122,Cusco,60,20,21
+1168,Loreto,39,18,26
+3385,Lima Metropolitana,80,28,34
+139,Cusco,74,24,35
+1902,Cusco,67,30,23
+3506,Lima Metropolitana,90,28,31
+1147,Piura,60,24,15
+131,Cusco,83,29,24
+1943,Loreto,64,26,23
+74,Piura,42,25,21
+1641,Piura,50,18,27
+1600,Loreto,66,26,24
+1330,Loreto,47,19,22
+1499,Cusco,92,39,27
+3196,Lima Metropolitana,121,33,36
+1583,Loreto,67,27,23
+3405,Lima Metropolitana,122,42,36
+3191,Lima Metropolitana,76,24,33
+1580,Loreto,55,18,23
+3115,Lima Metropolitana,56,27,33
+128,Cusco,63,29,21
+899,Cusco,63,23,22
+3095,Lima Metropolitana,111,45,30
+440,Piura,45,24,20
+1797,Cusco,55,29,23
+2312,Piura,116,43,34
+1923,Piura,68,32,27
+2545,Piura,88,31,23
+1742,Piura,62,25,23
+2583,Cusco,97,28,25
+490,Piura,102,30,30
+3099,Lima Metropolitana,105,41,29
+456,Piura,72,27,25
+1503,Cusco,64,22,19
+2580,Cusco,68,27,22
+1825,Loreto,63,29,33
+498,Piura,100,40,30
+1496,Cusco,61,23,18
+1594,Loreto,108,39,30
+3125,Lima Metropolitana,79,32,29
+455,Piura,82,25,26
+2302,Piura,122,42,36
+315,Piura,48,17,23
+667,Loreto,89,33,28
+3230,Lima Metropolitana,108,42,31
+3502,Lima Metropolitana,93,29,34
+1335,Loreto,46,15,26
+646,Cusco,60,24,29
+523,Cusco,57,22,26
+1915,Cusco,64,29,32
+3031,Lima Metropolitana,70,33,23
+2548,Piura,75,31,24
+2124,Piura,48,21,21
+2037,Loreto,67,23,21
+2014,Loreto,106,39,29
+3039,Lima Metropolitana,116,43,30
+1338,Loreto,35,12,24
+1587,Loreto,51,27,17
+191,Cusco,95,46,33
+1802,Cusco,59,35,29
+458,Piura,65,23,18
+1341,Loreto,50,22,26
+2017,Loreto,83,30,28
+2016,Loreto,76,31,27
+142,Cusco,81,23,34
+1832,Piura,59,29,23
+3026,Lima Metropolitana,66,26,27
+47,Piura,45,27,24
+438,Piura,84,25,28
+2026,Loreto,89,39,27
+2062,Piura,84,36,29
+1631,Piura,48,20,24
+1901,Cusco,93,33,32
+2929,Lima Metropolitana,102,35,33
+2229,Piura,103,35,33
+189,Cusco,104,39,33
+190,Cusco,50,15,21
+2871,Lima Metropolitana,79,33,26
+1148,Piura,60,21,15
+3366,Lima Metropolitana,115,37,36
+3020,Lima Metropolitana,81,28,26
+1738,Piura,63,28,23
+70,Piura,41,18,21
+181,Cusco,45,20,20
+3098,Lima Metropolitana,113,43,31
+1584,Loreto,82,30,24
+892,Cusco,53,12,18
+2319,Piura,88,34,34
+188,Cusco,102,37,33
+136,Cusco,94,23,36
+141,Cusco,81,27,35
+1642,Piura,87,32,31
+1170,Loreto,33,13,21
+3100,Lima Metropolitana,82,37,28
+1599,Loreto,54,24,25
+1730,Piura,64,28,23
+3155,Lima Metropolitana,119,42,35
+203,Cusco,111,44,34
+2383,Piura,72,29,26
+3503,Lima Metropolitana,111,39,28
+3287,Lima Metropolitana,85,39,27
+2440,Piura,103,32,34
+1953,Loreto,64,25,24
+3262,Lima Metropolitana,82,35,30
+2307,Piura,65,37,29
+3121,Lima Metropolitana,102,33,33
+2150,Piura,50,24,21
+125,Cusco,69,24,17
+126,Cusco,47,19,17
+1686,Cusco,81,32,33
+1639,Piura,94,33,34
+198,Cusco,92,40,32
+173,Cusco,44,23,23
+2474,Piura,82,33,26
+140,Cusco,89,29,36
+2898,Lima Metropolitana,89,29,26
+442,Piura,66,29,22
+1643,Piura,102,37,32
+1255,Cusco,88,28,26
+3193,Lima Metropolitana,84,38,29
+806,Loreto,41,23,24
+2486,Piura,74,33,25
+673,Loreto,74,32,32
+1270,Cusco,67,23,22
+2543,Piura,82,30,23
+1206,Cusco,52,19,26
+2994,Lima Metropolitana,97,36,29
+1741,Piura,64,26,23
+439,Piura,56,23,18
+2004,Cusco,85,32,25
+119,Cusco,78,32,21
+206,Cusco,125,40,35
+45,Piura,37,25,24
+1680,Cusco,66,23,35
+124,Cusco,77,33,26
+1653,Cusco,117,42,33
+194,Cusco,54,16,19
+1508,Cusco,72,25,18
+2297,Piura,96,35,33
+2177,Piura,50,24,22
+1647,Piura,107,28,36
+494,Piura,80,24,29
+890,Cusco,59,25,22
+644,Cusco,59,21,25
+313,Piura,59,21,19
+1721,Piura,76,30,27
+808,Loreto,59,27,25
+514,Cusco,55,17,25
+804,Loreto,46,31,29
+130,Cusco,74,30,28
+2029,Loreto,75,34,27
+1834,Piura,58,28,21
+1729,Piura,70,32,23
+2044,Loreto,76,26,24
+1994,Cusco,73,25,26
+2311,Piura,87,37,30
+659,Loreto,79,32,30
+212,Loreto,82,26,24
+517,Cusco,57,22,28
+2496,Piura,85,29,24
+632,Piura,69,27,30
+1046,Loreto,86,35,28
+459,Piura,83,28,27
+2002,Cusco,89,29,28
+1717,Piura,71,29,23
+2439,Piura,113,41,29
+1920,Piura,52,26,20
+3017,Lima Metropolitana,101,32,26
+2134,Cusco,38,14,13
+211,Loreto,64,24,19
+44,Piura,30,24,23
+2428,Piura,89,26,28
+2426,Piura,74,23,29
+2022,Loreto,83,37,29
+1500,Cusco,75,25,29
+1272,Cusco,72,26,25
+137,Cusco,61,19,27
+1142,Piura,60,24,23
+127,Cusco,58,25,22
+2493,Piura,48,21,18
+1340,Loreto,42,18,23
+1910,Cusco,69,30,32
+2417,Piura,53,18,13
+1339,Loreto,47,16,24
+3134,Lima Metropolitana,108,31,36
+1893,Piura,35,19,17
+1903,Cusco,68,32,25
+1592,Loreto,95,35,26
+2012,Loreto,75,32,31
+174,Cusco,51,16,22
+3433,Lima Metropolitana,105,42,36
+3137,Lima Metropolitana,113,35,35
+1145,Piura,61,24,14
+1998,Cusco,84,28,26
+2582,Cusco,64,28,25
+2497,Piura,83,27,24
+3028,Lima Metropolitana,84,28,28
+1266,Piura,71,31,27
+2999,Lima Metropolitana,48,25,20
+2872,Lima Metropolitana,42,22,20
+2470,Piura,57,26,22
+120,Cusco,51,18,18
+453,Piura,50,25,20
+185,Cusco,128,47,25
+1609,Loreto,67,27,26
+46,Piura,41,25,22
+3029,Lima Metropolitana,95,38,26
+445,Piura,56,24,20
+3117,Lima Metropolitana,122,40,36
+491,Piura,120,37,31
+2575,Cusco,86,22,21
+2013,Loreto,72,36,27
+488,Piura,46,24,29
+2064,Loreto,78,28,24
+582,Cusco,44,23,18
+656,Loreto,63,24,31
+1346,Loreto,41,16,20
+1146,Piura,55,24,13
+132,Cusco,46,19,17
+1590,Loreto,87,37,28
+628,Piura,54,15,25
+2546,Piura,89,32,23
+2058,Piura,94,41,33
+510,Cusco,47,17,26
+2228,Piura,65,21,26
+660,Loreto,76,31,29
+666,Loreto,86,32,28
+1833,Piura,61,29,25
+2995,Lima Metropolitana,112,33,30
+1564,Piura,64,24,18
+2215,Piura,95,23,23
+1595,Loreto,88,37,30
+2492,Piura,59,27,22
+1065,Piura,73,31,26
+1799,Cusco,68,31,24
+461,Piura,62,24,21
+1732,Piura,54,17,22
+497,Piura,108,37,31
+1654,Cusco,51,19,27
+75,Piura,43,30,22
+664,Loreto,77,29,31
+186,Cusco,98,42,33
+1596,Loreto,84,36,29
+1162,Piura,63,24,18
+113,Piura,29,17,20
+1150,Piura,66,24,17
+1332,Loreto,58,21,24
+2296,Piura,90,40,33
+1823,Loreto,51,26,27
+767,Cusco,57,17,24
+1597,Loreto,70,31,29
+2549,Piura,73,27,21
+2063,Loreto,74,28,22
+3237,Lima Metropolitana,91,39,27
+2491,Piura,74,32,23
+3132,Lima Metropolitana,78,33,30
+3119,Lima Metropolitana,91,26,33
+2465,Piura,88,18,24
+1942,Loreto,57,27,23
+1563,Piura,53,24,17
+3027,Lima Metropolitana,81,35,26
+1577,Loreto,62,21,22
+1506,Cusco,66,22,18
+1999,Cusco,84,30,26
+3118,Lima Metropolitana,99,32,36
+48,Piura,38,14,24
+2149,Piura,51,24,23
+1582,Loreto,70,25,25
+3146,Lima Metropolitana,83,26,32
+460,Piura,83,29,27
+1725,Piura,52,19,20
+1726,Piura,52,18,20
+1573,Loreto,56,17,22
+516,Cusco,49,22,27
+2566,Loreto,94,27,33
+620,Piura,55,17,17
+2020,Loreto,65,36,28
+2869,Lima Metropolitana,104,33,27
+2845,Lima Metropolitana,113,37,31
+1895,Piura,67,28,21
+2487,Piura,59,27,23
+447,Piura,70,24,25
+1153,Piura,54,24,18
+1724,Piura,60,22,22
+199,Cusco,47,14,18
+2874,Lima Metropolitana,85,24,24
+2310,Piura,75,36,31
+1908,Cusco,67,30,25
+2429,Piura,88,29,28
+1662,Cusco,92,35,36
+1958,Loreto,126,48,36
+645,Cusco,63,22,23
+3069,Lima Metropolitana,89,23,28
+2432,Piura,67,24,21
+1598,Loreto,88,35,30
+1727,Piura,67,29,22
+2427,Piura,110,35,34
+1160,Piura,43,14,12
+1347,Loreto,45,20,22
+2126,Piura,45,20,20
+2490,Piura,59,28,24
+486,Piura,36,11,29
+1941,Loreto,57,17,24
+2024,Loreto,81,38,29
+2056,Piura,78,31,27
+2313,Piura,69,32,27
+1950,Loreto,35,19,19
+3096,Lima Metropolitana,85,41,27
+2298,Piura,113,35,36
+1897,Piura,43,21,21
+2473,Piura,66,29,22
+1265,Piura,58,26,22
+1922,Piura,42,21,18
+765,Cusco,62,20,28
+484,Piura,76,26,29
+3219,Lima Metropolitana,112,40,36
+247,Loreto,69,18,24
+1143,Piura,65,24,18
+2544,Piura,71,27,20
+428,Loreto,55,14,24
+1562,Loreto,63,24,24
+213,Loreto,58,19,21
+277,Cusco,52,22,25
+1798,Cusco,64,28,23
+665,Loreto,78,27,31
+449,Piura,66,27,26
+631,Piura,54,23,25
+485,Piura,74,31,27
+662,Loreto,90,34,30
+201,Cusco,123,36,29
+525,Cusco,59,24,20
+586,Cusco,56,30,20
+1679,Cusco,57,25,26
+655,Loreto,67,31,29
+763,Cusco,56,20,22
+1739,Piura,61,26,24
+897,Cusco,47,16,11
+1735,Piura,55,27,22
+242,Loreto,76,28,24
+146,Cusco,61,21,32
+3025,Lima Metropolitana,64,27,25
+3139,Lima Metropolitana,100,33,34
+1957,Loreto,102,36,32
+1578,Loreto,68,18,21
+807,Loreto,40,25,23
+452,Piura,60,24,22
+896,Cusco,46,16,12
+147,Cusco,79,23,34
+177,Cusco,47,26,20
+2478,Piura,47,15,21
+192,Cusco,61,18,25
+2384,Piura,60,26,24
+1645,Piura,70,29,36
+1273,Cusco,68,23,19
+1274,Cusco,65,22,21
+448,Piura,34,23,14
+2467,Piura,80,29,24
+1574,Loreto,57,20,23
+2049,Piura,77,28,23
+111,Piura,27,21,21
+1658,Cusco,72,28,36
+2125,Piura,48,20,20
+1646,Piura,82,22,35
+2851,Lima Metropolitana,116,31,31
+3014,Lima Metropolitana,66,14,24
+2048,Piura,82,35,30
+3179,Lima Metropolitana,107,33,36
+1821,Loreto,74,28,32
+2061,Piura,99,37,36
+1254,Cusco,90,24,25
+1429,Cusco,63,23,21
+248,Loreto,84,26,24
+1336,Loreto,45,16,26
+2423,Piura,71,22,21
+133,Cusco,52,19,23
+3038,Lima Metropolitana,66,29,22
+3214,Lima Metropolitana,108,33,34
+2212,Piura,89,33,28
+3001,Lima Metropolitana,74,23,24
+1141,Piura,42,19,20
+275,Cusco,64,28,25
+2853,Lima Metropolitana,116,38,32
+115,Cusco,56,18,24
+1155,Piura,63,24,18
+895,Cusco,40,9,14
+1271,Cusco,55,18,18
+2019,Loreto,92,37,28
+1952,Loreto,54,25,24
+2476,Piura,50,28,23
+282,Cusco,65,26,22
+893,Cusco,34,8,6
+2309,Piura,93,37,32
+204,Cusco,85,31,30
+1815,Cusco,74,28,28
+1926,Piura,48,24,20
+1997,Cusco,85,34,28
+1267,Cusco,53,19,18
+2213,Piura,73,31,24
+3018,Lima Metropolitana,64,27,29
+3143,Lima Metropolitana,97,37,31
+888,Cusco,67,26,25
+1431,Cusco,64,16,19
+1331,Loreto,61,20,24
+1256,Cusco,68,30,23
+1063,Piura,53,27,22
+2321,Piura,87,37,35
+180,Cusco,45,26,20
+434,Loreto,101,39,29
+902,Cusco,58,22,14
+302,Piura,23,10,6
+1801,Cusco,64,31,30
+3304,Lima Metropolitana,97,36,33
+145,Cusco,58,24,30
+2422,Piura,71,18,17
+138,Cusco,45,22,30
+652,Loreto,96,33,29
+3149,Lima Metropolitana,86,33,33
+2317,Piura,44,31,24
+2494,Piura,79,25,23
+110,Piura,34,24,22
+2018,Loreto,92,38,27
+2498,Piura,67,22,22
+901,Cusco,74,27,24
+183,Cusco,85,31,25
+661,Loreto,70,25,26
+1814,Cusco,72,30,28
+1790,Piura,107,38,31
+2483,Piura,63,28,20
+1819,Loreto,50,28,27
+2322,Piura,70,26,30
+2152,Piura,44,23,22
+1728,Piura,57,27,21
+205,Cusco,59,27,23
+121,Cusco,59,21,21
+1051,Loreto,73,31,29
+2210,Piura,85,35,28
+1736,Piura,65,28,21
+513,Cusco,48,17,20
+2047,Piura,73,38,23
+2855,Lima Metropolitana,129,40,36
+200,Cusco,97,38,30
+1980,Loreto,52,25,24
+2032,Loreto,85,28,27
+444,Piura,38,13,14
+520,Cusco,32,16,18
+1432,Cusco,56,23,20
+1433,Cusco,55,19,22
+2305,Piura,101,31,34
+2577,Cusco,38,19,12
+2324,Piura,44,32,24
+2320,Piura,111,38,35
+278,Cusco,41,20,15
+2542,Piura,84,31,22
+483,Piura,45,17,30
+2613,Piura,60,21,29
+1740,Piura,56,20,22
+2858,Lima Metropolitana,118,31,33
+2076,Loreto,25,14,6
+3151,Lima Metropolitana,84,31,31
+1977,Loreto,46,28,23
+2031,Loreto,75,27,22
+493,Piura,72,16,31
+1192,Cusco,56,24,21
+3447,Lima Metropolitana,119,40,36
+1921,Piura,51,23,21
+2997,Lima Metropolitana,67,28,26
+1984,Cusco,67,28,21
+1685,Cusco,67,32,36
+894,Cusco,63,24,24
+2481,Piura,53,23,23
+1683,Cusco,84,34,36
+1924,Piura,46,20,19
+3240,Lima Metropolitana,95,42,30
+1269,Cusco,67,29,23
+193,Cusco,82,44,25
+2480,Piura,39,17,13
+1561,Loreto,65,23,22
+1172,Loreto,48,29,28
+1333,Loreto,37,15,22
+592,Cusco,50,18,18
+2425,Piura,76,28,22
+116,Cusco,58,18,24
+1161,Piura,62,24,18
+3153,Lima Metropolitana,110,27,36
+3501,Lima Metropolitana,83,25,30
+487,Piura,47,30,29
+2011,Loreto,78,32,28
+1579,Loreto,60,19,21
+3103,Lima Metropolitana,76,32,25
+1130,Cusco,36,24,17
+1681,Cusco,74,30,36
+1428,Cusco,68,21,23
+1502,Cusco,85,25,23
+175,Cusco,32,13,15
+210,Loreto,71,27,22
+3500,Lima Metropolitana,88,23,36
+2553,Piura,81,29,24
+2421,Piura,43,19,17
+441,Piura,33,13,16
+209,Loreto,71,23,22
+1569,Loreto,58,21,22
+663,Loreto,73,27,34
+2482,Piura,53,19,23
+1824,Loreto,58,27,31
+144,Cusco,62,18,31
+1718,Piura,52,20,16
+3393,Lima Metropolitana,72,21,27
+276,Cusco,60,26,22
+1268,Cusco,87,34,26
+1132,Cusco,40,27,28
+2552,Piura,80,31,23
+1905,Cusco,70,31,31
+1687,Cusco,66,34,36
+2023,Loreto,48,21,29
+2299,Piura,117,45,36
+202,Cusco,70,16,23
+2034,Loreto,52,21,19
+2996,Lima Metropolitana,61,31,24
+1501,Cusco,61,24,23
+889,Cusco,44,19,15
+2437,Piura,38,21,16
+1894,Piura,57,21,21
+1567,Piura,58,24,18
+176,Cusco,38,20,20
+1337,Loreto,33,13,24
+630,Piura,66,28,26
+2484,Piura,58,28,24
+515,Cusco,55,22,32
+1898,Cusco,57,29,22
+118,Cusco,72,23,21
+519,Cusco,32,16,17
+1048,Loreto,86,31,26
+1731,Piura,48,16,23
+73,Piura,25,14,19
+2418,Piura,44,14,16
+2861,Lima Metropolitana,94,35,33
+2039,Loreto,49,21,17
+1348,Loreto,45,13,21
+2879,Lima Metropolitana,121,36,33
+496,Piura,44,19,31
+1985,Cusco,39,22,15
+653,Loreto,72,27,29
+1995,Cusco,82,30,25
+2433,Piura,73,20,26
+2876,Lima Metropolitana,108,35,33
+112,Piura,29,16,21
+443,Piura,42,17,17
+43,Piura,25,15,20
+2043,Loreto,77,30,20
+2877,Lima Metropolitana,118,37,35
+594,Cusco,33,18,16
+593,Cusco,36,16,14
+1981,Loreto,46,25,24
+1565,Loreto,61,21,22
+3144,Lima Metropolitana,41,10,22
+2300,Piura,66,36,30
+2001,Cusco,54,20,21
+241,Loreto,61,21,21
+1169,Loreto,34,26,21
+3269,Lima Metropolitana,96,35,30
+1576,Loreto,65,14,22
+1149,Piura,53,24,14
+2052,Piura,65,24,26
+810,Loreto,59,23,23
+1822,Loreto,40,18,26
+2479,Piura,64,26,22
+179,Cusco,39,16,17
+1906,Cusco,62,24,25
+244,Loreto,77,28,24
+3127,Lima Metropolitana,113,34,36
+2930,Lima Metropolitana,67,26,21
+1835,Piura,59,29,24
+1733,Piura,47,25,21
+629,Piura,52,18,23
+2471,Piura,61,27,20
+117,Cusco,52,17,24
+2420,Piura,61,24,21
+995,Loreto,88,32,29
+1948,Loreto,60,26,23
+716,Cusco,28,15,18
+2477,Piura,47,14,23
+143,Cusco,87,21,36
+1800,Cusco,60,27,21
+3440,Lima Metropolitana,86,24,35
+1719,Piura,49,20,21
+1796,Cusco,64,29,28
+595,Cusco,51,22,15
+2868,Lima Metropolitana,110,33,30
+1682,Cusco,63,32,36
+2060,Piura,61,27,28
+1655,Cusco,58,22,22
+2430,Piura,41,16,14
+2431,Piura,41,17,16
+109,Piura,28,14,21
+2538,Piura,70,15,11
+669,Loreto,82,29,29
+1045,Loreto,55,28,27
+208,Cusco,47,21,22
+2055,Piura,72,30,22
+657,Loreto,85,32,30
+803,Loreto,50,29,28
+2151,Piura,40,14,17
+314,Piura,71,28,26
+2003,Cusco,67,22,24
+1638,Piura,111,22,35
+2050,Piura,85,37,30
+1156,Piura,58,24,18
+2878,Lima Metropolitana,114,34,32
+207,Cusco,94,35,29
+1151,Piura,60,24,18
+1205,Cusco,44,17,21
+2054,Piura,78,30,20
+2316,Piura,70,37,31
+524,Cusco,54,23,23
+1912,Cusco,66,30,31
+2438,Piura,31,15,16
+518,Cusco,45,17,26
+2416,Piura,61,21,15
+1159,Piura,46,22,17
+457,Piura,29,13,11
+648,Cusco,81,30,24
+2178,Piura,43,20,20
+446,Piura,35,15,15
+1660,Cusco,78,32,35
+3352,Lima Metropolitana,80,13,28
+1131,Cusco,29,8,12
+2475,Piura,61,25,25
+1891,Piura,78,29,29
+3486,Lima Metropolitana,59,36,27
+2015,Loreto,66,28,25
+1720,Piura,62,26,24
+619,Piura,52,16,18
+135,Cusco,50,15,23
+1630,Piura,42,23,26
+3135,Lima Metropolitana,112,39,36
+283,Cusco,65,25,25
+3022,Lima Metropolitana,65,26,23
+2434,Piura,48,15,12
+2038,Loreto,55,21,23
+3292,Lima Metropolitana,78,28,26
+1911,Cusco,70,32,29
+1593,Loreto,59,23,25
+2318,Piura,45,32,24
+2059,Piura,67,32,24
+1951,Loreto,55,25,24
+134,Cusco,67,15,31
+172,Cusco,29,13,9
+3376,Lima Metropolitana,111,39,34
+1904,Cusco,60,23,25
+129,Cusco,55,20,17
+3123,Lima Metropolitana,70,23,33
+1979,Loreto,39,22,22
+2053,Piura,58,20,20
+1907,Cusco,43,23,23
+2000,Cusco,70,23,22
+1996,Cusco,58,21,23
+2027,Loreto,47,24,23
+2472,Piura,48,19,21
+114,Piura,28,21,22
+2547,Piura,80,32,22
+2385,Piura,70,28,23
+1955,Loreto,109,37,34
+1204,Cusco,40,20,19
+1345,Loreto,40,16,22
+2051,Piura,79,32,32
+2436,Piura,53,19,14
+1163,Piura,36,19,13
+450,Piura,59,17,23
+184,Cusco,110,38,33
+2028,Loreto,64,36,28
+1644,Piura,80,21,33
+2301,Piura,53,32,28
+3036,Lima Metropolitana,69,30,24
+2998,Lima Metropolitana,40,16,13
+1144,Piura,59,22,16
+2303,Piura,88,36,27
+454,Piura,61,21,23
+1152,Piura,44,22,16
+1498,Cusco,68,24,25
+668,Loreto,88,30,31
+1334,Loreto,46,13,26
+1264,Piura,48,17,17
+728,Cusco,60,23,22
+3035,Lima Metropolitana,59,21,22
+1586,Loreto,48,20,23
+2306,Piura,90,33,27
+1734,Piura,26,15,12
+1154,Piura,51,23,17
+2495,Piura,64,21,21
+672,Loreto,84,29,28
+2304,Piura,115,40,36
+1949,Loreto,33,15,15
+1507,Cusco,66,21,18
+3299,Lima Metropolitana,102,30,35
+195,Cusco,63,27,19
+1263,Piura,50,19,17
+2550,Piura,73,27,22
+1947,Loreto,53,25,22
+764,Cusco,57,21,23
+1793,Piura,60,15,25
+658,Loreto,66,29,28
+1684,Cusco,47,23,34
+499,Piura,37,14,31
+2837,Lima Metropolitana,108,33,32
+2954,Lima Metropolitana,117,31,26
+1900,Cusco,63,32,30
+1899,Cusco,62,29,24
+2956,Lima Metropolitana,95,23,26
+2959,Lima Metropolitana,113,26,32
+2057,Piura,84,36,30
+2866,Lima Metropolitana,103,30,30
+3004,Lima Metropolitana,88,25,30
+2856,Lima Metropolitana,112,33,30
+2308,Piura,55,28,25
+3003,Lima Metropolitana,84,27,33
+2859,Lima Metropolitana,107,30,26
+3002,Lima Metropolitana,96,28,29
+2942,Lima Metropolitana,89,22,28
+2873,Lima Metropolitana,112,35,33
+2867,Lima Metropolitana,79,33,27
+2945,Lima Metropolitana,79,19,24
+2934,Lima Metropolitana,91,19,22
+1637,Piura,51,24,24
+2909,Lima Metropolitana,83,24,29
+2424,Piura,98,35,31
+3005,Lima Metropolitana,84,29,29
+2947,Lima Metropolitana,81,16,28
+470,Loreto,57,19,18
+2951,Lima Metropolitana,92,23,24
+1817,Loreto,57,24,27
+1983,Cusco,47,21,20
+2419,Piura,61,22,22
+3030,Lima Metropolitana,88,34,21
+1956,Loreto,125,48,36
+1572,Loreto,67,31,24
+477,Loreto,59,20,18
+473,Loreto,60,20,18
+1342,Loreto,33,12,16
+3504,Lima Metropolitana,46,22,21
+3513,Lima Metropolitana,93,38,22
+3515,Lima Metropolitana,82,30,23
+3510,Lima Metropolitana,98,37,21
+3505,Lima Metropolitana,65,26,22
+3507,Lima Metropolitana,78,32,21
+3514,Lima Metropolitana,84,32,23
+3508,Lima Metropolitana,77,30,21
+3511,Lima Metropolitana,71,30,20
+3509,Lima Metropolitana,65,28,18
+3516,Lima Metropolitana,81,33,18
+3518,Lima Metropolitana,51,23,17
+3517,Lima Metropolitana,76,28,22
+3512,Lima Metropolitana,69,28,24
