@@ -1,0 +1,317 @@
+---
+title: "Prompts_4"
+author: "ChatGPT"
+date: "2025-01-31"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Corrección 01
+
+
+Tengo la función siguiente:
+
+regmulti <- function(df, var_dep, var_ind) {
+  library(knitr) # Para la salida en kable
+  library(dplyr) # Para manipulación de datos
+  
+  # Convertir la variable dependiente a nombre
+  var_dep_name <- deparse(substitute(var_dep))
+  
+  # Obtener nombres de las variables independientes
+  nombres_ind <- names(df)[var_ind]
+  
+  # Construcción de la fórmula de regresión
+  formula_reg <- as.formula(paste(var_dep_name, "~", paste(nombres_ind, collapse = " + ")))
+  
+  # Ajustar el modelo de regresión
+  modelo <- lm(formula_reg, data = df)
+  
+  # Obtener coeficientes y p-valores
+  resultados <- summary(modelo)$coefficients
+  coeficientes <- resultados[, 1]
+  p_valores <- resultados[, 4]
+  
+  # Asignar notación de significancia
+  significancia <- ifelse(p_valores < 0.001, "***",
+                   ifelse(p_valores < 0.01, "**",
+                   ifelse(p_valores < 0.05, "*", "NS")))
+  
+  # Crear la tabla en formato Markdown para knitr::kable
+  tabla_resultados <- tibble::tibble(
+    Variable = names(coeficientes),
+    Coeficiente = round(coeficientes, 3),
+    `p-valor` = round(p_valores, 4),
+    Significancia = significancia
+  )
+  
+  # Construcción de la ecuación de regresión
+  terminos <- paste0(
+    ifelse(coeficientes[-1] >= 0, "+ ", "- "), abs(round(coeficientes[-1], 3)), " * ", names(coeficientes)[-1]
+  )
+  
+  ecuacion <- paste0(
+    var_dep_name, " = ", round(coeficientes[1], 3), " ",
+    paste(terminos, collapse = " ")
+  )
+  
+  # Obtener el R cuadrado ajustado
+  r_cuadrado_ajustado <- round(summary(modelo)$adj.r.squared, 4)
+  
+  # Imprimir resultados
+  cat("\n### Regresión entre", var_dep_name, "y", paste(nombres_ind, collapse = ", "), "\n")
+  print(kable(tabla_resultados, format = "markdown", align = "c"))
+  cat("\n**La ecuación de regresión obtenida es:**\n\n", ecuacion, "\n")
+  cat("\n**R Cuadrado Ajustado:**", r_cuadrado_ajustado, "\n")
+}
+
+Edítala de modo que:
+
+1. Se añada un argumento adicional, el cual me permita definir los nombres de las variables 
+2. En el título de la tabla se use los nombres de las variables según se defina en el nuevo argumento de la función 
+
+Siéntete libre de hacerme las preguntas que consideres necesarias, a fin de darme tu mejor resultado posible.  
+
+
+
+## Corrección 02
+
+Edita la función siguiente:
+
+regmulti <- function(df, var_dep, var_ind, nombres_vars = NULL) {
+  library(knitr)  # Para kable
+  library(dplyr)  # Para manipulación de datos
+  
+  # Convertir la variable dependiente a nombre
+  var_dep_name <- deparse(substitute(var_dep))
+  
+  # Extraer nombres originales de las variables independientes
+  nombres_ind <- names(df)[var_ind]
+  
+  # Construcción de la fórmula de regresión
+  formula_reg <- as.formula(paste(var_dep_name, "~", paste(nombres_ind, collapse = " + ")))
+  
+  # Ajustar el modelo de regresión
+  modelo <- lm(formula_reg, data = df)
+  
+  # Obtener coeficientes y p-valores
+  resultados <- summary(modelo)$coefficients
+  coeficientes <- resultados[, 1]
+  p_valores <- resultados[, 4]
+  
+  # Obtener nombres de los coeficientes generados (incluye dummies)
+  nombres_coeficientes <- rownames(resultados)
+  
+  # Construcción automática de nombres personalizados si hay variables categóricas
+  if (!is.null(nombres_vars)) {
+    if (length(nombres_vars) != length(nombres_ind)) {
+      stop("El número de nombres en 'nombres_vars' debe coincidir con el número de variables independientes proporcionadas.")
+    }
+    
+    # Crear un mapeo entre nombres originales y personalizados
+    nombres_dict <- setNames(nombres_vars, nombres_ind)
+    
+    # Reemplazar nombres en coeficientes, conservando variables dummy
+    nombres_coeficientes <- sapply(nombres_coeficientes, function(var) {
+      for (orig in nombres_ind) {
+        if (grepl(orig, var)) {
+          return(gsub(orig, nombres_dict[[orig]], var))
+        }
+      }
+      return(var)  # Si no se encuentra en el diccionario, mantener el nombre original
+    })
+  }
+  
+  # Asignar notación de significancia
+  significancia <- ifelse(p_valores < 0.001, "***",
+                          ifelse(p_valores < 0.01, "**",
+                                 ifelse(p_valores < 0.05, "*", "NS")))
+  
+  # Crear la tabla de resultados
+  tabla_resultados <- tibble::tibble(
+    Variable = nombres_coeficientes,
+    Coeficiente = round(coeficientes, 3),
+    `p-valor` = round(p_valores, 4),
+    Significancia = significancia
+  )
+  
+  # Construcción de la ecuación de regresión
+  terminos <- paste0(
+    ifelse(coeficientes[-1] >= 0, "+ ", "- "), abs(round(coeficientes[-1], 3)), " * ", nombres_coeficientes[-1]
+  )
+  
+  ecuacion <- paste0(
+    var_dep_name, " = ", round(coeficientes[1], 3), " ",
+    paste(terminos, collapse = " "), " + ε"
+  )
+  
+  # Obtener el R² ajustado
+  r_cuadrado_ajustado <- round(summary(modelo)$adj.r.squared, 4)
+  
+  # Imprimir resultados
+  cat("\n### Regresión entre", var_dep_name, "y", paste(nombres_coeficientes[-1], collapse = ", "), "\n")
+  print(kable(tabla_resultados, format = "markdown", align = "c"))
+  cat("\n**La ecuación de regresión obtenida es:**\n\n", ecuacion, "\n")
+  cat("\n**R Cuadrado Ajustado:**", r_cuadrado_ajustado, "\n")
+}
+
+Introduce las modificaciones siguientes:
+
+1. Para el caso del título de la tabla, solo usa los nombres de las variables tal cual se definen en el argumento correspondiente.
+2. Para el caso del interior de la tabla, sí puedes usar los ajustes necesarios para tomar en cuenta las variables dummy.
+3. Para mostrar la ecuación después de la tabla, por favor emite de la ecuación todos los coeficientes que no son estadísticamente significativos.
+
+
+## Corrección 03
+
+Tengo un dataframe, llamado PULCRO, donde he aplicado esta función:
+
+regmulti <- function(df, var_dep, var_ind, nombres_vars = NULL, nombre_dep = NULL) {
+  library(knitr)  # Para kable
+  library(dplyr)  # Para manipulación de datos
+  
+  # Obtener el nombre original de la variable dependiente
+  var_dep_name <- deparse(substitute(var_dep))
+  
+  # Si el usuario proporciona un nombre para la variable dependiente, usarlo
+  if (is.null(nombre_dep)) {
+    nombre_dep <- var_dep_name
+  }
+  
+  # Extraer nombres originales de las variables independientes
+  nombres_ind <- names(df)[var_ind]
+  
+  # Si el usuario proporciona nombres personalizados, validamos que sean del mismo tamaño
+  if (!is.null(nombres_vars)) {
+    if (length(nombres_vars) != length(nombres_ind)) {
+      stop("El número de nombres en 'nombres_vars' debe coincidir con el número de variables independientes proporcionadas.")
+    }
+  } else {
+    nombres_vars <- nombres_ind  # Usar los nombres originales si no se proporcionan personalizados
+  }
+  
+  # Construcción de la fórmula de regresión
+  formula_reg <- as.formula(paste(var_dep_name, "~", paste(nombres_ind, collapse = " + ")))
+  
+  # Ajustar el modelo de regresión
+  modelo <- lm(formula_reg, data = df)
+  
+  # Obtener coeficientes y p-valores
+  resultados <- summary(modelo)$coefficients
+  coeficientes <- resultados[, 1]
+  p_valores <- resultados[, 4]
+  
+  # Obtener nombres de los coeficientes generados (incluye dummies)
+  nombres_coeficientes <- rownames(resultados)
+  
+  # Construcción automática de nombres personalizados si hay variables categóricas
+  if (!is.null(nombres_vars)) {
+    # Crear un mapeo entre nombres originales y personalizados
+    nombres_dict <- setNames(nombres_vars, nombres_ind)
+    
+    # Reemplazar nombres en coeficientes, conservando variables dummy
+    nombres_coeficientes <- sapply(nombres_coeficientes, function(var) {
+      for (orig in nombres_ind) {
+        if (grepl(orig, var)) {
+          return(gsub(orig, nombres_dict[[orig]], var))
+        }
+      }
+      return(var)  # Si no se encuentra en el diccionario, mantener el nombre original
+    })
+  }
+  
+  # Asignar notación de significancia
+  significancia <- ifelse(p_valores < 0.001, "***",
+                          ifelse(p_valores < 0.01, "**",
+                                 ifelse(p_valores < 0.05, "*", "NS")))
+  
+  # Crear la tabla de resultados
+  tabla_resultados <- tibble::tibble(
+    Variable = nombres_coeficientes,
+    Coeficiente = round(coeficientes, 3),
+    `p-valor` = round(p_valores, 4),
+    Significancia = significancia
+  )
+  
+  # ---- Construcción de la ecuación de regresión con términos significativos ----
+  # Seleccionamos solo coeficientes con p-valor < 0.05 (significativos)
+  indices_significativos <- which(p_valores < 0.05)
+  
+  # Si solo el intercepto es significativo, ecuación será solo ese valor
+  if (length(indices_significativos) == 1 && indices_significativos == 1) {
+    ecuacion <- paste0(nombre_dep, " = ", round(coeficientes[1], 3), " + ε")
+  } else {
+    coef_significativos <- coeficientes[indices_significativos]
+    nombres_significativos <- nombres_coeficientes[indices_significativos]
+    
+    terminos <- paste0(
+      ifelse(coef_significativos[-1] >= 0, "+ ", "- "), abs(round(coef_significativos[-1], 3)), " * ", nombres_significativos[-1]
+    )
+    
+    ecuacion <- paste0(
+      nombre_dep, " = ", round(coef_significativos[1], 3), " ",
+      paste(terminos, collapse = " ")
+    )
+  }
+  
+  # Obtener el R² ajustado
+  r_cuadrado_ajustado <- round(summary(modelo)$adj.r.squared, 4)
+  
+  # ---- Imprimir resultados ----
+  cat("\n### Regresión entre", nombre_dep, "y", paste(nombres_vars, collapse = ", "), "\n")
+  print(kable(tabla_resultados, format = "markdown", align = "c"))
+  cat("\n**La ecuación de regresión obtenida es (solo coeficientes significativos):**\n\n", ecuacion, "\n")
+  cat("\n**R Cuadrado Ajustado:**", r_cuadrado_ajustado, "\n")
+}
+
+Al aplicarla con los argumentos siguientes:
+
+regmulti(PULCRO, PULCRO$Escala_Cog., c(5:14), nombres_vars = c("Edad en Meses", "Mes de Evaluación", "Región", "Área", "Modalidad", "Departamento", "Quintil", "Educac. Materna", "Educac. Paterna", "Instrucción Previa"), nombre_dep = "Escala Cognitiva").
+
+La tabla me muestra estos resultados:
+
+### Regresión entre Escala Cognitiva y Edad en Meses, Mes de Evaluación, Región, Área, Modalidad, Departamento, Quintil, Educac. Materna, Educac. Paterna, Instrucción Previa 
+
+
+|                     Variable                     | Coeficiente | p-valor | Significancia |
+|:------------------------------------------------:|:-----------:|:-------:|:-------------:|
+|                   (Intercept)                    |   21.587    | 0.0142  |       *       |
+|                  Edad en Meses                   |    1.021    | 0.0000  |      ***      |
+|              Mes de EvaluaciónMay.               |   13.234    | 0.0000  |      ***      |
+|              Mes de EvaluaciónJun.               |    4.956    | 0.1844  |      NS       |
+|              Mes de EvaluaciónAgo.               |   25.203    | 0.0000  |      ***      |
+|                   RegiónSierra                   |    2.578    | 0.4590  |      NS       |
+|                   RegiónSelva                    |   -0.966    | 0.8152  |      NS       |
+|                    ÁreaRural                     |    0.479    | 0.7395  |      NS       |
+|                 ModalidadJardín                  |   -0.160    | 0.9270  |      NS       |
+|                     Quintil2                     |   -22.932   | 0.0000  |      ***      |
+|                     Quintil3                     |   -5.152    | 0.0816  |      NS       |
+|                     Quintil4                     |   -14.430   | 0.0000  |      ***      |
+|                     Quintil5                     |   -5.742    | 0.0654  |      NS       |
+|              Educac. MaternaInicial              |   25.550    | 0.0240  |       *       |
+|        Educac. MaternaPrimaria incompleto        |    0.442    | 0.9392  |      NS       |
+|         Educac. MaternaPrimaria completo         |    2.676    | 0.6343  |      NS       |
+|       Educac. MaternaSecundaria incompleto       |   -4.450    | 0.4189  |      NS       |
+|        Educac. MaternaSecundaria completo        |   -0.002    | 0.9997  |      NS       |
+|    Educac. MaternaSuperior técnico incompleto    |   -2.907    | 0.6240  |      NS       |
+|     Educac. MaternaSuperior técnico completo     |    3.970    | 0.4806  |      NS       |
+| Educac. MaternaSuperior universitario incompleto |    1.492    | 0.8102  |      NS       |
+|  Educac. MaternaSuperior universitario completo  |    3.555    | 0.5392  |      NS       |
+|  Educac. MaternaPosgrado (maestría, doctorado)   |   11.156    | 0.1616  |      NS       |
+|              Educac. PaternaInicial              |    5.600    | 0.8213  |      NS       |
+|        Educac. PaternaPrimaria incompleto        |   -5.562    | 0.2855  |      NS       |
+|         Educac. PaternaPrimaria completo         |   -0.082    | 0.9862  |      NS       |
+|       Educac. PaternaSecundaria incompleto       |   -1.491    | 0.7385  |      NS       |
+|        Educac. PaternaSecundaria completo        |    0.998    | 0.8172  |      NS       |
+|    Educac. PaternaSuperior técnico incompleto    |    0.264    | 0.9581  |      NS       |
+|     Educac. PaternaSuperior técnico completo     |    5.186    | 0.2512  |      NS       |
+| Educac. PaternaSuperior universitario incompleto |    2.518    | 0.6357  |      NS       |
+|  Educac. PaternaSuperior universitario completo  |    8.578    | 0.0718  |      NS       |
+|  Educac. PaternaPosgrado (maestría, doctorado)   |   -1.913    | 0.7894  |      NS       |
+|               Instrucción PreviaSí               |    1.858    | 0.1400  |      NS       |
+|             Instrucción PreviaNS/NR              |   -1.349    | 0.3229  |      NS       |
+
+La tabla me muestra los coeficientes y resultados para todas las variables independientes, salvo para la variable "Departamento". Puedes explicarme ¿por qué no figura ningún resultado para esa variable en la tabla final?
