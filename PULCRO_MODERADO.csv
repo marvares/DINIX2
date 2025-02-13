@@ -1,0 +1,2241 @@
+Código,Escala_Cog.,Escala_Mot.,Escala_Dis.,Edad_Mes,Región,Modalidad,Departamento,Quintil,Inst_Mat.,Inst_Mat_N
+231,93,25,21,70,Costa,Jardín,Piura,5,Secundaria completo,6
+464,94,25,23,69,Selva,No_Esc,Loreto,2,Primaria incompleto,3
+466,91,19,21,64,Selva,No_Esc,Loreto,2,Primaria incompleto,3
+480,83,26,28,50,Selva,No_Esc,Loreto,2,Primaria completo,4
+500,116,32,25,69,Selva,No_Esc,Loreto,2,Primaria incompleto,3
+504,92,24,22,52,Selva,No_Esc,Loreto,2,Primaria completo,4
+532,73,18,16,58,Selva,No_Esc,Loreto,2,Primaria completo,4
+957,90,29,34,67,Costa,Jardín,Piura,4,Secundaria incompleto,5
+978,78,19,20,53,Selva,Jardín,Loreto,3,Primaria completo,4
+1039,85,28,31,69,Costa,Jardín,Piura,4,Secundaria incompleto,5
+1158,53,11,17,55,Costa,Jardín,Piura,4,Ninguno,1
+1180,76,24,16,68,Selva,Jardín,Loreto,5,Primaria incompleto,3
+1385,62,17,17,53,Costa,Jardín,Piura,4,Primaria incompleto,3
+1415,66,29,27,59,Selva,Jardín,Loreto,4,Secundaria completo,6
+1457,62,23,15,64,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+1458,57,20,22,73,Selva,Jardín,Loreto,4,Primaria completo,4
+2110,71,21,25,59,Costa,Cuna-Jardín,Piura,4,Superior universitario incompleto,9
+2347,50,26,19,73,Costa,Jardín,Piura,3,Secundaria completo,6
+2511,83,22,20,55,Costa,Jardín,Piura,1,Secundaria completo,6
+2705,102,22,23,64,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2835,121,29,36,50,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2836,133,31,36,51,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2839,134,32,26,61,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2840,132,24,19,60,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2841,100,27,20,53,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2842,117,30,24,62,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2843,99,30,23,54,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2844,112,29,24,56,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2846,131,24,23,54,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2848,125,33,25,61,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2849,143,35,28,64,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2880,127,35,24,59,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2881,109,22,25,65,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2882,124,20,20,61,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2883,107,24,19,56,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2884,125,35,23,64,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2885,119,33,23,62,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2889,105,29,24,78,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2890,92,28,22,56,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2891,138,34,30,60,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2892,132,27,29,53,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2893,107,28,29,59,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2894,103,27,30,53,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2895,146,34,31,61,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2896,108,20,28,62,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2897,124,32,32,57,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2900,114,30,28,64,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2901,82,28,29,61,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2902,133,34,32,58,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2903,135,31,31,56,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2904,99,18,27,59,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2905,144,33,31,62,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2906,119,31,30,63,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2907,119,30,31,54,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2908,129,31,31,58,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2910,121,32,24,69,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2911,152,33,28,67,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2912,90,31,21,71,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2913,128,27,25,65,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2914,134,34,23,67,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2915,100,29,25,65,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2916,149,32,27,75,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2918,130,31,28,65,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2919,117,29,18,72,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2920,143,32,28,72,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2921,132,28,27,74,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2922,110,21,22,70,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2923,133,28,20,73,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2924,141,32,20,68,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2925,144,31,27,74,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2926,108,28,17,71,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2927,147,30,24,73,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2928,121,31,29,68,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2935,128,30,36,48,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2940,155,33,30,75,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2943,136,28,22,74,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2946,137,33,21,76,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2948,79,26,17,70,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2950,135,29,20,69,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2952,118,30,18,69,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2955,115,26,15,66,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2957,93,23,17,69,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2958,128,23,19,66,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2960,129,26,29,65,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2961,104,30,17,68,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2963,58,17,20,66,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2964,126,30,28,66,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2965,85,28,24,56,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2966,110,15,23,63,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2967,134,32,19,71,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2969,130,32,26,64,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2972,143,33,24,70,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2973,145,31,30,67,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2974,142,33,29,76,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2975,99,27,23,72,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2976,145,32,31,70,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2977,121,31,26,67,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2978,125,27,20,77,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2979,154,35,30,71,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2980,88,32,23,63,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2981,115,30,25,72,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2982,144,32,21,67,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2983,116,32,25,54,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2984,112,29,19,70,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2985,109,28,20,71,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2986,125,30,23,62,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2987,93,34,30,74,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2988,85,19,18,55,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2989,85,20,17,76,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2990,155,36,31,71,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+2991,152,36,31,76,Costa,Jardín,Lima Met.,5,Superior universitario completo,10
+3185,129,28,36,50,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+3208,93,30,24,58,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3209,120,31,25,64,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+3241,103,30,26,76,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3298,145,31,28,66,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3306,96,24,24,66,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3308,132,29,34,76,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3336,156,35,30,75,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3343,79,15,22,66,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3388,102,32,33,57,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3409,109,30,24,74,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3436,125,32,29,62,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+3454,92,30,24,52,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3461,73,29,24,61,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3519,143,32,30,60,Costa,Jardín,Lima Met.,5,Secundaria completo,6
+2620,87,24,24,66,Costa,Cuna-Jardín,Lima Met.,4,"Posgrado (maestría, doctorado)",11
+2627,134,33,33,59,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2630,126,30,33,61,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2633,130,32,31,58,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2637,113,28,26,54,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2640,129,30,34,58,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2645,129,28,30,55,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2651,112,27,25,58,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2652,107,30,26,61,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2655,121,27,31,60,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2669,120,29,31,64,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2670,105,26,29,56,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2673,149,35,32,76,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2685,101,29,26,63,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2686,117,29,31,58,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2687,113,23,28,54,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2688,108,31,32,55,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2689,121,28,29,62,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2690,139,25,33,62,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2691,121,28,30,63,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2692,131,34,35,64,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2693,96,22,28,58,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2694,112,28,27,58,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2695,117,30,30,62,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2696,139,23,32,62,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2697,88,26,23,54,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2700,130,28,35,64,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2702,116,26,27,71,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2703,105,33,31,61,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2706,107,29,32,53,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2708,128,32,34,63,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2711,123,25,31,54,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2712,122,32,33,61,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2714,136,29,33,70,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2715,103,24,24,56,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2718,114,31,25,63,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2720,125,33,33,59,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2721,83,22,19,61,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2724,120,29,25,53,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2725,110,31,28,61,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2730,121,29,27,64,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2734,114,28,29,54,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2735,140,31,34,62,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2740,101,21,23,54,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2741,136,35,33,58,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2742,111,30,27,55,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2744,142,34,32,59,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2745,131,28,33,58,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2747,98,24,27,47,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2750,132,33,36,57,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2752,111,31,28,59,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2755,95,23,27,55,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2757,86,20,18,55,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2759,76,20,18,54,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2764,117,30,30,55,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2765,120,32,30,59,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2767,143,32,29,71,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2774,115,27,32,63,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2775,78,28,27,58,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2777,114,29,28,62,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2778,97,25,28,58,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2780,120,27,30,60,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2783,110,28,31,56,Costa,Cuna-Jardín,Lima Met.,5,"Posgrado (maestría, doctorado)",11
+2785,125,25,31,64,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+3252,107,33,25,69,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3258,87,30,22,71,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3284,93,28,23,68,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3290,73,24,19,65,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1072,146,36,34,70,Selva,Jardín,Loreto,5,Secundaria completo,6
+939,143,30,30,58,Sierra,Jardín,Cusco,1,Secundaria completo,6
+940,145,31,30,57,Sierra,Jardín,Cusco,1,Secundaria completo,6
+3330,98,31,22,64,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+3446,86,27,19,64,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2115,50,22,13,65,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+2117,59,23,24,64,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+534,49,14,19,57,Sierra,Jardín,Cusco,3,Superior universitario completo,10
+540,71,23,23,57,Sierra,Jardín,Cusco,3,Secundaria completo,6
+287,66,23,28,73,Selva,Jardín,Cusco,4,Superior técnico incompleto,7
+288,83,25,28,66,Selva,Jardín,Cusco,4,Superior técnico incompleto,7
+1095,57,20,15,72,Sierra,Cuna-Jardín,Cusco,2,Superior universitario completo,10
+217,91,27,26,62,Costa,Jardín,Piura,5,Secundaria completo,6
+218,69,21,17,71,Costa,Jardín,Piura,5,Superior universitario completo,10
+1094,55,18,13,72,Sierra,Cuna-Jardín,Cusco,2,Superior universitario completo,10
+1101,55,18,19,71,Sierra,Cuna-Jardín,Cusco,2,Superior técnico incompleto,7
+1104,51,18,16,71,Sierra,Cuna-Jardín,Cusco,2,Secundaria completo,6
+1098,55,18,13,70,Sierra,Cuna-Jardín,Cusco,2,Secundaria completo,6
+1096,71,19,18,69,Sierra,Cuna-Jardín,Cusco,2,Superior técnico incompleto,7
+1092,65,21,15,69,Sierra,Cuna-Jardín,Cusco,2,Superior técnico incompleto,7
+103,48,16,16,68,Sierra,Cuna-Jardín,Cusco,2,Secundaria completo,6
+3367,145,36,31,72,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+3369,130,33,32,72,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1099,52,18,15,68,Sierra,Cuna-Jardín,Cusco,2,Secundaria completo,6
+108,40,14,13,69,Sierra,Cuna-Jardín,Cusco,2,Superior universitario completo,10
+1103,48,18,11,69,Sierra,Cuna-Jardín,Cusco,2,Superior universitario completo,10
+104,60,13,15,66,Sierra,Cuna-Jardín,Cusco,2,Superior universitario completo,10
+1093,56,15,16,66,Sierra,Cuna-Jardín,Cusco,2,Secundaria completo,6
+106,45,13,13,67,Sierra,Cuna-Jardín,Cusco,2,Superior universitario incompleto,9
+1380,98,27,25,61,Selva,Jardín,Cusco,3,Superior universitario incompleto,9
+1381,98,26,25,63,Selva,Jardín,Cusco,3,Superior técnico completo,8
+3171,94,28,21,71,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+3173,111,31,24,65,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1091,52,17,13,63,Sierra,Cuna-Jardín,Cusco,2,Superior técnico incompleto,7
+3423,123,32,28,66,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3427,87,27,25,66,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1396,78,19,21,61,Selva,Jardín,Cusco,3,Primaria incompleto,3
+1447,67,17,19,66,Selva,Jardín,Cusco,3,Secundaria completo,6
+837,56,25,26,63,Costa,Jardín,Piura,4,Primaria completo,4
+2242,88,24,16,61,Costa,Jardín,Piura,3,Primaria incompleto,3
+910,42,14,15,48,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+911,39,17,19,46,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+800,70,21,21,57,Sierra,Cuna-Jardín,Cusco,2,Secundaria completo,6
+801,75,22,21,55,Sierra,Cuna-Jardín,Cusco,2,Secundaria incompleto,5
+2198,117,35,34,59,Costa,Jardín,Piura,5,Superior universitario completo,10
+2199,87,30,34,58,Costa,Jardín,Piura,5,Superior universitario completo,10
+3374,75,24,21,60,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2282,97,22,28,58,Costa,Jardín,Piura,5,Superior técnico completo,8
+2283,116,27,30,61,Costa,Jardín,Piura,5,Superior técnico completo,8
+17,53,21,23,56,Sierra,Jardín,Piura,1,Secundaria completo,6
+167,80,19,20,56,Costa,Jardín,Piura,3,Secundaria completo,6
+168,79,21,26,60,Costa,Jardín,Piura,3,Secundaria completo,6
+1057,90,22,23,54,Selva,Jardín,Cusco,4,Superior universitario completo,10
+1058,70,21,20,54,Selva,Jardín,Cusco,4,Superior universitario completo,10
+1842,117,32,28,55,Selva,Jardín,Loreto,3,Primaria completo,4
+1066,58,16,22,54,Costa,Jardín,Piura,4,Secundaria completo,6
+1841,116,31,28,52,Selva,Jardín,Loreto,3,Secundaria completo,6
+1837,104,32,29,50,Selva,Jardín,Loreto,3,Primaria completo,4
+2188,63,21,23,54,Costa,Jardín,Piura,5,Secundaria completo,6
+150,83,22,23,63,Costa,Jardín,Piura,3,Secundaria completo,6
+153,82,21,26,60,Costa,Jardín,Piura,3,Secundaria completo,6
+152,80,21,21,58,Costa,Jardín,Piura,3,Secundaria completo,6
+148,61,20,20,51,Costa,Jardín,Piura,3,Secundaria completo,6
+151,71,17,18,51,Costa,Jardín,Piura,3,Secundaria completo,6
+3162,119,34,32,74,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+149,95,29,26,52,Costa,Jardín,Piura,3,Secundaria completo,6
+847,103,33,31,62,Selva,Jardín,Loreto,4,Secundaria completo,6
+3458,116,34,31,64,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+1282,67,22,23,60,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+3204,75,33,23,56,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1436,62,21,19,67,Selva,Jardín,Cusco,3,Secundaria completo,6
+2572,124,29,28,60,Selva,Jardín,Loreto,4,Primaria completo,4
+3401,68,26,17,57,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+891,78,27,24,70,Sierra,Jardín,Cusco,2,Primaria incompleto,3
+2353,98,35,31,71,Costa,Jardín,Piura,3,Primaria completo,4
+1435,67,24,23,68,Selva,Jardín,Cusco,3,Secundaria completo,6
+1437,71,14,22,65,Selva,Jardín,Cusco,3,Secundaria completo,6
+1697,90,18,19,54,Selva,Jardín,Cusco,3,Superior técnico completo,8
+1438,67,25,19,61,Selva,Jardín,Cusco,3,Secundaria completo,6
+1991,83,22,21,72,Sierra,Jardín,Cusco,2,Inicial,2
+1992,96,24,24,72,Sierra,Jardín,Cusco,2,Secundaria completo,6
+1993,92,22,21,61,Sierra,Jardín,Cusco,2,Primaria incompleto,3
+1987,71,26,26,57,Sierra,Jardín,Cusco,2,Secundaria completo,6
+1986,69,23,23,57,Sierra,Jardín,Cusco,2,Primaria incompleto,3
+2121,74,24,23,63,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+1974,133,36,23,66,Selva,Jardín,Loreto,1,Primaria incompleto,3
+2119,77,27,26,65,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+1972,129,36,27,63,Selva,Jardín,Loreto,1,Primaria incompleto,3
+2122,59,22,19,63,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+2111,55,22,23,62,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+2113,69,23,24,63,Selva,Jardín,Loreto,1,Secundaria completo,6
+2092,92,32,30,57,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+2112,72,25,23,64,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+1929,86,22,21,50,Sierra,Jardín,Cusco,2,Primaria incompleto,3
+1970,78,27,25,60,Selva,Jardín,Loreto,1,Primaria incompleto,3
+1009,62,19,17,72,Sierra,Jardín,Cusco,2,Primaria completo,4
+1003,59,19,17,71,Sierra,Jardín,Cusco,2,Primaria incompleto,3
+1006,51,17,18,69,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+999,65,19,21,68,Sierra,Jardín,Cusco,2,Primaria completo,4
+1004,68,18,18,70,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+1005,68,22,19,67,Sierra,Jardín,Cusco,2,Primaria completo,4
+1010,69,22,21,66,Sierra,Jardín,Cusco,2,Secundaria completo,6
+1000,54,17,14,65,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+1012,59,18,18,61,Sierra,Jardín,Cusco,2,Primaria completo,4
+1928,84,18,21,60,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+1931,97,28,28,57,Sierra,Jardín,Cusco,2,Secundaria completo,6
+1933,88,26,16,56,Sierra,Jardín,Cusco,2,Secundaria completo,6
+2079,65,21,20,56,Sierra,Jardín,Cusco,2,Primaria completo,4
+1935,92,22,25,54,Sierra,Jardín,Cusco,2,Secundaria completo,6
+2075,72,23,22,50,Sierra,Jardín,Cusco,2,Secundaria completo,6
+884,106,31,32,70,Costa,Jardín,Piura,4,Secundaria completo,6
+1290,49,22,19,55,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1088,132,36,28,72,Sierra,Jardín,Piura,1,Secundaria completo,6
+781,92,22,24,69,Selva,Jardín,Loreto,3,Secundaria completo,6
+2142,76,27,21,63,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+1849,134,36,32,73,Selva,Jardín,Loreto,3,Primaria completo,4
+1524,65,27,20,58,Selva,Jardín,Loreto,4,Secundaria completo,6
+560,67,24,21,70,Sierra,Jardín,Cusco,3,Secundaria completo,6
+578,74,21,23,68,Sierra,Jardín,Cusco,3,Secundaria incompleto,5
+564,103,28,28,69,Sierra,Jardín,Cusco,3,Superior universitario completo,10
+577,72,21,23,67,Sierra,Jardín,Cusco,3,Secundaria completo,6
+575,61,21,18,66,Sierra,Jardín,Cusco,3,Secundaria completo,6
+558,53,21,16,62,Sierra,Jardín,Cusco,3,Secundaria completo,6
+574,76,21,21,62,Sierra,Jardín,Cusco,3,Secundaria incompleto,5
+565,96,24,27,61,Sierra,Jardín,Cusco,3,Secundaria incompleto,5
+1391,96,31,24,64,Selva,Jardín,Cusco,3,Secundaria completo,6
+3441,80,28,17,72,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3165,81,30,25,66,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+3499,105,36,24,64,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3170,69,22,22,62,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1975,134,35,30,70,Selva,Jardín,Loreto,1,Primaria incompleto,3
+1973,122,33,26,68,Selva,Jardín,Loreto,1,Primaria incompleto,3
+1071,150,35,34,69,Selva,Jardín,Loreto,5,Primaria completo,4
+2009,81,27,21,66,Selva,Jardín,Loreto,1,Primaria incompleto,3
+3431,113,30,26,62,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3226,109,30,19,62,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1176,64,22,21,58,Selva,Jardín,Loreto,5,Secundaria completo,6
+3207,100,32,25,61,Costa,Jardín,Lima Met.,4,Superior universitario incompleto,9
+3234,81,25,22,61,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3472,108,25,24,59,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3495,76,22,21,58,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3286,65,15,17,58,Costa,Jardín,Lima Met.,4,Superior universitario incompleto,9
+3395,143,24,31,58,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+2008,78,27,21,63,Selva,Jardín,Loreto,1,Primaria incompleto,3
+2091,85,34,29,61,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+2107,73,30,24,61,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+2093,105,34,30,61,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+2101,69,29,18,60,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+2089,89,31,29,47,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+2094,79,29,29,59,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+2096,93,34,31,59,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+2106,58,22,18,58,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+1990,79,25,21,60,Selva,Jardín,Loreto,1,Primaria incompleto,3
+349,68,15,20,54,Costa,Jardín,Piura,3,Secundaria completo,6
+1167,69,20,23,59,Costa,Jardín,Piura,3,Ninguno,1
+285,62,23,23,63,Selva,Jardín,Cusco,4,Secundaria completo,6
+541,69,22,20,48,Sierra,Jardín,Cusco,3,Secundaria incompleto,5
+553,129,36,34,60,Sierra,Jardín,Cusco,3,Secundaria completo,6
+546,97,30,31,53,Sierra,Jardín,Cusco,3,Secundaria completo,6
+543,70,22,21,53,Sierra,Jardín,Cusco,3,Secundaria completo,6
+548,106,32,31,53,Sierra,Jardín,Cusco,3,Secundaria completo,6
+538,57,19,19,51,Sierra,Jardín,Cusco,3,Secundaria incompleto,5
+547,44,10,16,61,Sierra,Jardín,Cusco,3,Primaria completo,4
+709,111,30,32,68,Selva,Jardín,Loreto,4,Secundaria completo,6
+1404,58,25,27,55,Selva,Jardín,Loreto,4,Secundaria completo,6
+53,61,23,26,56,Selva,Jardín,Cusco,4,Secundaria completo,6
+1971,82,27,25,53,Selva,Jardín,Loreto,1,Inicial,2
+2081,100,27,29,63,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+1440,63,23,19,71,Selva,Jardín,Cusco,3,Secundaria completo,6
+990,78,27,29,66,Costa,Jardín,Piura,4,Secundaria completo,6
+2617,106,34,31,72,Sierra,Jardín,Piura,1,Superior técnico completo,8
+2360,125,32,34,77,Costa,Jardín,Piura,5,Superior técnico completo,8
+1805,103,25,25,73,Selva,Jardín,Cusco,3,Primaria incompleto,3
+1354,73,21,19,73,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+2398,124,34,33,75,Costa,Jardín,Piura,3,Secundaria completo,6
+1394,92,29,24,73,Selva,Jardín,Cusco,3,Secundaria completo,6
+3081,122,33,30,65,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1002,56,17,18,73,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+81,112,36,25,73,Sierra,Jardín,Cusco,5,Secundaria completo,6
+1209,99,25,25,73,Selva,Jardín,Cusco,3,Secundaria completo,6
+1113,46,15,18,73,Sierra,Cuna-Jardín,Cusco,2,Secundaria completo,6
+356,79,20,21,74,Selva,Jardín,Cusco,4,Secundaria incompleto,5
+2805,126,32,29,65,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2594,41,23,12,75,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1389,110,27,28,73,Selva,Jardín,Cusco,3,Superior universitario incompleto,9
+2356,71,26,23,75,Costa,Jardín,Piura,3,Secundaria completo,6
+771,93,19,22,74,Selva,Jardín,Loreto,3,Superior técnico incompleto,7
+264,101,26,29,75,Costa,Jardín,Piura,3,Secundaria completo,6
+826,80,26,21,73,Sierra,Jardín,Cusco,5,Superior técnico incompleto,7
+954,86,27,30,75,Costa,Jardín,Piura,4,Secundaria incompleto,5
+784,82,23,24,74,Selva,Jardín,Loreto,3,Secundaria incompleto,5
+1117,65,17,21,73,Sierra,Cuna-Jardín,Cusco,2,Superior técnico completo,8
+1135,151,33,35,73,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+2010,74,25,20,73,Selva,Jardín,Loreto,1,Primaria completo,4
+2337,101,34,27,74,Costa,Jardín,Piura,3,Secundaria completo,6
+289,72,24,27,73,Selva,Jardín,Cusco,4,Secundaria completo,6
+32,116,27,28,73,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+704,141,33,32,73,Selva,Jardín,Loreto,4,Secundaria completo,6
+1867,106,34,29,74,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1309,124,29,33,73,Selva,Jardín,Loreto,4,Primaria completo,4
+214,88,26,23,74,Costa,Jardín,Piura,5,Superior universitario completo,10
+1313,61,20,29,74,Selva,Jardín,Loreto,4,Superior técnico incompleto,7
+772,95,23,24,73,Selva,Jardín,Loreto,3,Superior técnico incompleto,7
+1185,92,29,25,61,Selva,Jardín,Loreto,5,Superior técnico incompleto,7
+1531,121,35,23,73,Selva,Jardín,Loreto,4,Superior técnico completo,8
+927,92,19,24,73,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+1138,124,33,29,73,Selva,Jardín,Cusco,3,Primaria incompleto,3
+2512,144,33,24,74,Costa,Jardín,Piura,1,Secundaria completo,6
+1018,55,18,20,73,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+960,102,31,28,74,Costa,Jardín,Piura,4,Secundaria incompleto,5
+226,74,23,22,74,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+2563,63,20,19,74,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+571,92,27,23,73,Sierra,Jardín,Cusco,3,Superior universitario completo,10
+3406,78,29,17,76,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2514,108,30,24,74,Costa,Jardín,Piura,1,Primaria incompleto,3
+228,79,21,20,74,Costa,Jardín,Piura,5,Secundaria incompleto,5
+413,108,28,21,74,Selva,No_Esc,Loreto,2,Primaria completo,4
+3468,95,24,26,76,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+836,83,31,23,73,Sierra,Jardín,Cusco,5,Ninguno,1
+1139,51,28,21,72,Selva,Jardín,Cusco,3,Primaria incompleto,3
+936,83,22,24,72,Sierra,Jardín,Cusco,5,Secundaria completo,6
+567,87,25,27,73,Sierra,Jardín,Cusco,3,Superior universitario completo,10
+989,96,30,29,74,Costa,Jardín,Piura,4,Secundaria incompleto,5
+2554,117,30,28,75,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+2562,136,34,33,74,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+92,147,36,30,73,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+1850,143,36,28,73,Selva,Jardín,Loreto,3,Secundaria incompleto,5
+1382,84,23,21,72,Selva,Jardín,Cusco,3,Superior técnico incompleto,7
+3274,108,32,23,76,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2253,109,31,35,74,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+281,78,25,24,74,Costa,Jardín,Piura,3,Secundaria completo,6
+2414,122,35,33,74,Costa,Jardín,Piura,3,Ninguno,1
+257,119,26,30,74,Costa,Jardín,Piura,3,Primaria completo,4
+2372,126,34,35,74,Costa,Jardín,Piura,5,Superior técnico completo,8
+363,78,18,19,72,Selva,Jardín,Cusco,4,Secundaria completo,6
+3150,86,35,31,76,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+983,69,25,23,74,Costa,Jardín,Piura,4,Primaria incompleto,3
+2268,99,31,29,74,Costa,Jardín,Piura,5,Secundaria completo,6
+982,72,26,24,74,Costa,Jardín,Piura,4,Primaria completo,4
+2339,150,36,30,74,Costa,Jardín,Piura,3,Secundaria completo,6
+2526,71,27,23,75,Sierra,Jardín,Piura,1,Secundaria incompleto,5
+721,115,33,28,73,Selva,Jardín,Loreto,4,Secundaria completo,6
+2605,105,21,31,74,Costa,Cuna-Jardín,Piura,4,Superior técnico completo,8
+3428,93,24,21,76,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1351,72,17,19,72,Selva,Jardín,Cusco,3,Secundaria completo,6
+3359,123,27,25,76,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2267,110,31,30,74,Costa,Jardín,Piura,5,Secundaria completo,6
+2254,122,36,36,74,Costa,Jardín,Piura,5,Superior universitario completo,10
+1015,101,26,30,72,Sierra,Jardín,Cusco,5,Superior universitario incompleto,9
+705,128,32,32,73,Selva,Jardín,Loreto,4,Secundaria completo,6
+1306,108,29,33,73,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+1350,97,26,27,72,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+820,114,32,24,72,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+2596,63,29,18,74,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+14,113,24,27,74,Sierra,Jardín,Piura,1,Secundaria completo,6
+1030,92,24,23,72,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+921,114,25,25,73,Sierra,Jardín,Cusco,5,Superior técnico incompleto,7
+3259,136,35,28,76,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1184,69,22,20,73,Selva,Jardín,Loreto,5,Primaria completo,4
+2399,110,32,32,74,Costa,Jardín,Piura,3,Secundaria completo,6
+1310,79,29,32,73,Selva,Jardín,Loreto,4,Secundaria completo,6
+1960,112,33,29,73,Selva,Jardín,Loreto,3,Primaria completo,4
+1806,118,28,25,72,Selva,Jardín,Cusco,3,Primaria incompleto,3
+1856,115,31,26,73,Selva,Jardín,Loreto,3,Primaria completo,4
+3163,112,34,32,76,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3013,140,36,32,76,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+626,72,20,23,74,Costa,Jardín,Piura,3,Secundaria completo,6
+2518,109,30,21,74,Costa,Jardín,Piura,1,Secundaria completo,6
+1476,81,28,26,73,Selva,Jardín,Loreto,4,Secundaria completo,6
+3184,86,30,26,75,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1371,123,33,31,74,Costa,Jardín,Piura,3,Secundaria completo,6
+3437,109,32,25,75,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1179,87,18,23,73,Selva,Jardín,Loreto,5,Secundaria completo,6
+1038,79,22,28,74,Costa,Jardín,Piura,4,Secundaria incompleto,5
+2377,121,32,34,74,Costa,Jardín,Piura,5,Superior técnico incompleto,7
+3133,112,35,30,75,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3167,78,32,21,76,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+831,94,26,21,72,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+391,96,22,23,74,Costa,Jardín,Piura,3,Secundaria completo,6
+1359,112,32,30,74,Costa,Jardín,Piura,3,Secundaria completo,6
+2391,133,33,32,74,Costa,Jardín,Piura,3,Primaria completo,4
+1220,72,30,21,72,Sierra,Jardín,Cusco,2,Primaria incompleto,3
+1365,94,29,29,74,Costa,Jardín,Piura,3,Secundaria completo,6
+2259,81,24,24,73,Costa,Jardín,Piura,5,Primaria completo,4
+576,76,21,23,72,Sierra,Jardín,Cusco,3,Secundaria completo,6
+2358,118,32,35,74,Costa,Jardín,Piura,5,Superior técnico completo,8
+997,63,22,17,71,Sierra,Jardín,Cusco,2,Primaria incompleto,3
+1789,111,27,27,73,Selva,Jardín,Loreto,5,Secundaria completo,6
+1021,79,25,23,72,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1086,98,35,21,73,Sierra,Jardín,Piura,1,Secundaria completo,6
+1480,87,28,26,74,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+1750,131,36,31,73,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+2602,98,31,24,74,Costa,Cuna-Jardín,Piura,4,"Posgrado (maestría, doctorado)",11
+1854,122,30,29,73,Selva,Jardín,Loreto,3,Secundaria completo,6
+2413,102,31,28,73,Costa,Jardín,Piura,3,Secundaria completo,6
+834,105,32,26,72,Sierra,Jardín,Cusco,5,Secundaria completo,6
+1013,95,30,28,72,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1866,133,36,31,73,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1782,93,32,26,72,Selva,Jardín,Loreto,5,Secundaria completo,6
+1300,148,35,33,71,Selva,Jardín,Loreto,4,Secundaria completo,6
+3285,108,30,22,75,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2371,110,32,35,74,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+814,107,32,25,72,Sierra,Jardín,Cusco,5,Secundaria completo,6
+1033,84,25,23,72,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+222,98,28,30,73,Costa,Jardín,Piura,5,Superior universitario completo,10
+573,108,28,25,72,Sierra,Jardín,Cusco,3,Secundaria incompleto,5
+1875,153,36,31,74,Costa,Cuna-Jardín,Piura,4,Superior técnico completo,8
+1043,100,28,30,74,Costa,Jardín,Piura,4,Secundaria completo,6
+2609,40,26,11,73,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+3254,91,27,22,68,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2266,127,36,35,73,Costa,Jardín,Piura,5,Superior universitario completo,10
+3311,99,22,23,75,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2249,104,31,32,73,Costa,Jardín,Piura,5,Secundaria completo,6
+1848,147,36,30,72,Selva,Jardín,Loreto,3,Primaria completo,4
+3342,155,36,35,75,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+1885,116,34,27,73,Costa,Cuna-Jardín,Piura,4,Primaria completo,4
+2397,146,35,30,73,Costa,Jardín,Piura,3,Secundaria completo,6
+2116,58,23,24,72,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+529,139,36,29,72,Selva,No_Esc,Loreto,2,Primaria completo,4
+1483,86,28,26,72,Selva,Jardín,Loreto,4,Superior universitario completo,10
+3110,91,31,21,75,Costa,Jardín,Lima Met.,4,Ninguno,1
+229,100,30,31,73,Costa,Jardín,Piura,5,Superior universitario completo,10
+266,65,20,22,73,Costa,Jardín,Piura,3,Secundaria completo,6
+91,86,29,22,71,Sierra,Jardín,Cusco,5,Secundaria completo,6
+223,106,28,31,73,Costa,Jardín,Piura,5,Superior técnico completo,8
+66,103,26,25,71,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1751,106,35,29,73,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+3101,114,30,29,76,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+263,70,20,27,73,Costa,Jardín,Piura,3,Secundaria incompleto,5
+236,68,20,24,73,Costa,Jardín,Piura,5,Superior técnico incompleto,7
+3449,99,27,16,75,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+267,108,28,31,74,Costa,Jardín,Piura,3,Secundaria completo,6
+396,67,24,22,73,Costa,Jardín,Piura,3,Secundaria completo,6
+2381,118,31,35,73,Costa,Jardín,Piura,5,Superior técnico incompleto,7
+3280,102,32,22,75,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+774,85,28,26,72,Selva,Jardín,Loreto,3,Secundaria completo,6
+3138,82,35,25,75,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1022,83,25,23,71,Sierra,Jardín,Cusco,5,Superior técnico incompleto,7
+1781,82,29,22,72,Selva,Jardín,Loreto,5,Secundaria incompleto,5
+3339,156,36,33,74,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+3224,85,26,22,75,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3192,112,31,26,69,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+2595,104,30,29,73,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+2146,83,26,23,71,Sierra,Jardín,Cusco,2,Secundaria completo,6
+269,105,29,30,73,Costa,Jardín,Piura,3,Secundaria completo,6
+2343,71,33,29,73,Costa,Jardín,Piura,3,Secundaria completo,6
+3361,116,31,27,76,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+1246,111,29,31,72,Selva,Jardín,Loreto,4,Primaria completo,4
+3288,140,33,27,76,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+357,80,23,19,72,Selva,Jardín,Cusco,4,Secundaria completo,6
+3301,67,16,23,74,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+827,93,30,24,71,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1249,125,34,34,72,Selva,Jardín,Loreto,4,Primaria completo,4
+1450,69,23,18,71,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+297,65,24,24,71,Selva,Jardín,Cusco,4,Superior técnico incompleto,7
+3015,99,31,25,68,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+268,110,28,31,72,Costa,Jardín,Piura,3,Secundaria completo,6
+94,142,33,26,71,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+1248,128,34,27,72,Selva,Jardín,Loreto,4,Primaria completo,4
+1879,110,34,27,73,Costa,Cuna-Jardín,Piura,4,Superior universitario completo,10
+1314,142,35,34,72,Selva,Jardín,Loreto,4,Superior universitario completo,10
+2393,128,31,32,72,Costa,Jardín,Piura,3,Secundaria completo,6
+569,68,22,20,71,Sierra,Jardín,Cusco,3,Primaria incompleto,3
+3338,156,36,29,74,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+3373,88,29,21,75,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3239,155,36,34,74,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2395,118,35,30,72,Costa,Jardín,Piura,3,Secundaria completo,6
+503,96,19,24,71,Selva,No_Esc,Loreto,2,Primaria incompleto,3
+643,67,24,25,73,Costa,Jardín,Piura,3,Secundaria completo,6
+934,76,23,23,70,Sierra,Jardín,Cusco,5,Secundaria completo,6
+2402,121,33,32,72,Costa,Jardín,Piura,3,Primaria completo,4
+1247,75,22,19,71,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+273,111,24,24,72,Costa,Jardín,Piura,3,Secundaria completo,6
+2600,72,28,13,72,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+2403,125,34,33,72,Costa,Jardín,Piura,3,Primaria completo,4
+1851,139,36,31,72,Selva,Jardín,Loreto,3,Primaria completo,4
+923,60,19,17,72,Sierra,Jardín,Cusco,5,Primaria completo,4
+1434,74,24,20,71,Selva,Jardín,Cusco,3,Secundaria completo,6
+1115,54,16,20,70,Sierra,Cuna-Jardín,Cusco,2,Superior técnico completo,8
+1443,65,18,20,70,Selva,Jardín,Cusco,3,Superior técnico incompleto,7
+2396,141,34,32,72,Costa,Jardín,Piura,3,Primaria completo,4
+611,79,28,23,70,Sierra,Jardín,Cusco,4,Secundaria incompleto,5
+1387,77,20,19,70,Selva,Jardín,Cusco,3,Secundaria completo,6
+84,118,32,24,70,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+395,92,23,26,72,Costa,Jardín,Piura,3,Secundaria completo,6
+1311,79,25,32,71,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+1299,84,30,28,71,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+274,67,20,23,74,Costa,Jardín,Piura,3,Primaria completo,4
+1035,91,24,23,70,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+840,84,26,24,70,Sierra,Jardín,Cusco,2,Secundaria completo,6
+1368,88,29,23,72,Costa,Jardín,Piura,3,Superior universitario incompleto,9
+3231,105,30,25,74,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+959,98,30,35,72,Costa,Jardín,Piura,4,Primaria completo,4
+1016,77,24,28,70,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+225,73,24,22,72,Costa,Jardín,Piura,5,Superior técnico completo,8
+3371,144,36,31,76,Costa,Jardín,Lima Met.,4,Superior universitario incompleto,9
+2366,98,32,34,72,Costa,Jardín,Piura,5,Superior técnico incompleto,7
+3161,116,32,28,74,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+980,98,27,29,73,Costa,Jardín,Piura,4,Secundaria incompleto,5
+3249,135,29,27,73,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2394,154,36,33,72,Costa,Jardín,Piura,3,Secundaria completo,6
+1876,117,34,27,72,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+3310,94,23,24,73,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3130,118,35,32,73,Costa,Jardín,Lima Met.,4,Superior técnico incompleto,7
+835,118,34,28,70,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+641,69,19,20,72,Costa,Jardín,Piura,3,Secundaria completo,6
+713,131,32,32,71,Selva,Jardín,Loreto,4,Secundaria completo,6
+1441,66,26,22,70,Selva,Jardín,Cusco,3,Secundaria completo,6
+1485,77,26,25,71,Selva,Jardín,Loreto,4,Secundaria completo,6
+2007,74,23,20,71,Selva,Jardín,Loreto,1,Primaria incompleto,3
+1888,109,34,27,72,Costa,Cuna-Jardín,Piura,4,Superior técnico completo,8
+3202,130,25,31,74,Costa,Jardín,Lima Met.,4,Superior técnico incompleto,7
+3106,79,26,20,73,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3380,140,35,32,74,Costa,Jardín,Lima Met.,4,Ninguno,1
+2352,100,34,29,72,Costa,Jardín,Piura,3,Secundaria completo,6
+1007,64,17,16,70,Sierra,Jardín,Cusco,2,Secundaria completo,6
+637,65,18,19,72,Costa,Jardín,Piura,3,Secundaria completo,6
+783,71,19,22,71,Selva,Jardín,Loreto,3,Secundaria completo,6
+949,103,30,35,71,Costa,Jardín,Piura,4,Superior técnico completo,8
+950,99,28,30,71,Costa,Jardín,Piura,4,Superior técnico completo,8
+958,88,31,29,71,Costa,Jardín,Piura,4,Secundaria incompleto,5
+730,76,26,21,71,Costa,Jardín,Piura,4,Primaria incompleto,3
+2368,112,32,35,72,Costa,Jardín,Piura,5,Superior técnico incompleto,7
+3327,88,24,24,73,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1527,121,35,29,71,Selva,Jardín,Loreto,4,Secundaria completo,6
+383,153,26,28,72,Sierra,Jardín,Piura,1,Secundaria completo,6
+3164,113,36,32,70,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2255,99,31,31,71,Costa,Jardín,Piura,5,Secundaria completo,6
+28,99,23,25,71,Sierra,Jardín,Piura,1,Secundaria completo,6
+1858,118,31,28,70,Selva,Jardín,Loreto,3,Primaria completo,4
+1388,86,23,20,70,Selva,Jardín,Cusco,3,Secundaria completo,6
+2887,90,30,24,73,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+358,79,20,19,70,Selva,Jardín,Cusco,4,Secundaria completo,6
+1361,122,29,33,72,Costa,Jardín,Piura,3,Superior técnico completo,8
+770,98,24,23,70,Selva,Jardín,Loreto,3,Superior universitario completo,10
+1034,83,24,23,70,Sierra,Jardín,Cusco,5,Superior universitario incompleto,9
+1221,92,27,24,70,Sierra,Jardín,Cusco,2,Secundaria completo,6
+1230,95,25,25,71,Sierra,Jardín,Cusco,2,Secundaria completo,6
+3272,121,31,26,73,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1961,153,36,32,70,Selva,Jardín,Loreto,3,Secundaria completo,6
+3238,89,24,27,73,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1878,114,34,28,71,Costa,Cuna-Jardín,Piura,4,Primaria completo,4
+93,113,32,26,69,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+2341,135,35,31,71,Costa,Jardín,Piura,3,Superior técnico completo,8
+12,108,27,27,71,Sierra,Jardín,Piura,1,Secundaria completo,6
+3235,108,32,23,73,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1446,70,22,22,69,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+3353,138,29,31,73,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1308,89,26,30,70,Selva,Jardín,Loreto,4,Secundaria completo,6
+3421,94,28,21,73,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+15,111,26,27,71,Sierra,Jardín,Piura,1,Superior universitario completo,10
+421,89,31,25,71,Costa,Jardín,Piura,3,Primaria completo,4
+930,98,22,22,69,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+1517,118,34,29,70,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+262,121,30,31,71,Costa,Jardín,Piura,3,Secundaria completo,6
+2374,131,33,35,71,Costa,Jardín,Piura,5,Superior técnico completo,8
+6,114,27,27,71,Sierra,Jardín,Piura,1,Secundaria completo,6
+1373,97,28,32,71,Costa,Jardín,Piura,3,Secundaria incompleto,5
+1014,63,17,20,69,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+1353,99,24,24,69,Selva,Jardín,Cusco,3,Secundaria completo,6
+507,115,29,26,70,Selva,No_Esc,Loreto,2,Primaria completo,4
+828,105,31,24,69,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+235,79,22,24,71,Costa,Jardín,Piura,5,Secundaria completo,6
+3145,80,28,21,72,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+839,78,25,23,70,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+922,55,21,17,69,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1011,57,18,18,69,Sierra,Jardín,Cusco,2,Secundaria completo,6
+372,156,25,34,71,Sierra,Jardín,Piura,1,Secundaria completo,6
+1085,124,35,26,72,Sierra,Jardín,Piura,1,Primaria completo,4
+2590,58,29,16,71,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+279,45,22,21,71,Costa,Jardín,Piura,3,Primaria completo,4
+1008,80,22,22,69,Sierra,Jardín,Cusco,2,Secundaria completo,6
+426,95,34,20,71,Costa,Jardín,Piura,3,Primaria completo,4
+2355,104,30,30,71,Costa,Jardín,Piura,3,Secundaria incompleto,5
+260,95,26,31,71,Costa,Jardín,Piura,3,Secundaria completo,6
+2139,75,20,18,69,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+286,63,25,25,69,Selva,Jardín,Cusco,4,Secundaria incompleto,5
+1514,120,34,29,70,Selva,Jardín,Loreto,4,Superior técnico completo,8
+3225,108,30,23,71,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+723,102,32,26,70,Selva,Jardín,Loreto,4,Superior universitario incompleto,9
+1883,112,34,28,71,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+3104,59,20,19,73,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+2345,102,35,31,71,Costa,Jardín,Piura,3,Secundaria incompleto,5
+717,99,35,28,70,Selva,Jardín,Loreto,4,Secundaria completo,6
+2361,143,32,35,71,Costa,Jardín,Piura,5,Superior universitario completo,10
+378,147,26,28,71,Sierra,Jardín,Piura,1,Secundaria completo,6
+2525,67,27,21,71,Sierra,Jardín,Piura,1,Primaria completo,4
+3131,82,30,25,60,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+1305,65,20,31,70,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+261,102,30,31,71,Costa,Jardín,Piura,3,Primaria incompleto,3
+710,129,33,34,70,Selva,Jardín,Loreto,4,Secundaria completo,6
+1377,112,26,30,71,Costa,Jardín,Piura,3,Primaria incompleto,3
+816,106,31,24,69,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1372,87,27,28,70,Costa,Jardín,Piura,3,Secundaria incompleto,5
+3368,80,27,25,73,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+612,78,25,21,69,Sierra,Jardín,Cusco,4,Secundaria completo,6
+1752,136,36,31,71,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+2118,77,26,23,70,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+1451,52,23,21,69,Selva,Jardín,Cusco,3,Secundaria completo,6
+981,98,27,29,70,Costa,Jardín,Piura,4,Superior técnico completo,8
+3264,65,21,21,73,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1229,72,27,25,69,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+11,100,24,26,70,Sierra,Jardín,Piura,1,Secundaria incompleto,5
+1523,57,25,20,70,Selva,Jardín,Loreto,4,Superior técnico completo,8
+3370,141,36,31,72,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+714,121,31,33,69,Selva,Jardín,Loreto,4,Secundaria completo,6
+715,126,34,35,69,Selva,Jardín,Loreto,4,Secundaria completo,6
+869,85,30,30,70,Costa,Jardín,Piura,4,Secundaria completo,6
+566,88,26,24,68,Sierra,Jardín,Cusco,3,Superior universitario completo,10
+1913,111,30,25,69,Selva,Jardín,Loreto,3,Primaria completo,4
+373,153,25,34,71,Sierra,Jardín,Piura,1,Secundaria completo,6
+638,81,22,22,70,Costa,Jardín,Piura,3,Secundaria completo,6
+2338,67,34,28,70,Costa,Jardín,Piura,3,Primaria completo,4
+408,88,31,21,71,Costa,Jardín,Piura,3,Primaria completo,4
+1886,101,33,27,71,Costa,Cuna-Jardín,Piura,4,Superior técnico completo,8
+294,69,24,27,68,Selva,Jardín,Cusco,4,Secundaria completo,6
+1959,154,35,28,70,Selva,Jardín,Loreto,3,Secundaria completo,6
+3109,72,18,19,72,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+708,122,32,34,69,Selva,Jardín,Loreto,4,Secundaria completo,6
+1962,130,34,32,69,Selva,Jardín,Loreto,3,Secundaria incompleto,5
+2344,107,35,31,69,Costa,Jardín,Piura,3,Secundaria completo,6
+812,97,31,26,68,Sierra,Jardín,Cusco,5,Secundaria completo,6
+1456,65,23,17,68,Selva,Jardín,Cusco,3,Secundaria completo,6
+2597,34,26,8,71,Costa,Cuna-Jardín,Piura,4,Superior técnico completo,8
+1304,85,25,32,69,Selva,Jardín,Loreto,4,Ninguno,1
+296,81,24,28,68,Selva,Jardín,Cusco,4,Secundaria completo,6
+829,62,30,24,69,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+387,107,25,26,70,Costa,Jardín,Piura,3,Secundaria completo,6
+362,78,18,19,68,Selva,Jardín,Cusco,4,Secundaria completo,6
+1862,112,29,31,69,Selva,Jardín,Loreto,3,Secundaria completo,6
+1519,67,29,21,69,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+1376,85,23,30,74,Costa,Jardín,Piura,3,Primaria completo,4
+2409,111,29,29,70,Costa,Jardín,Piura,3,Primaria completo,4
+991,71,26,24,70,Costa,Jardín,Piura,4,Secundaria incompleto,5
+3375,104,26,27,72,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+79,112,33,29,68,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1809,106,23,25,68,Selva,Jardín,Cusco,3,Superior técnico completo,8
+272,44,17,16,70,Costa,Jardín,Piura,3,Secundaria incompleto,5
+3498,97,26,23,72,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1857,116,33,29,69,Selva,Jardín,Loreto,3,Primaria completo,4
+3358,59,18,20,72,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+1882,114,34,27,70,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+2362,106,32,34,70,Costa,Jardín,Piura,5,Secundaria completo,6
+3190,124,31,31,71,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+3112,140,35,34,71,Costa,Jardín,Lima Met.,4,Ninguno,1
+1510,105,30,27,75,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+811,82,28,23,68,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+3220,92,25,23,71,Costa,Jardín,Lima Met.,4,Ninguno,1
+1455,69,25,19,69,Selva,Jardín,Cusco,3,Secundaria completo,6
+382,153,25,28,70,Sierra,Jardín,Piura,1,Superior universitario completo,10
+1530,73,30,27,69,Selva,Jardín,Loreto,4,Secundaria completo,6
+1366,82,26,21,70,Costa,Jardín,Piura,3,Secundaria completo,6
+3341,137,35,26,71,Costa,Jardín,Lima Met.,4,Ninguno,1
+830,111,21,23,68,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+3222,112,30,30,59,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1250,110,31,28,69,Selva,Jardín,Loreto,4,Primaria incompleto,3
+1853,156,36,33,69,Selva,Jardín,Loreto,3,Superior técnico completo,8
+1223,71,26,22,68,Sierra,Jardín,Cusco,2,Superior universitario incompleto,9
+2516,81,34,24,70,Costa,Jardín,Piura,1,Secundaria incompleto,5
+2607,38,24,9,70,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+1121,41,11,14,68,Sierra,Cuna-Jardín,Cusco,2,Secundaria completo,6
+1395,85,27,24,68,Selva,Jardín,Cusco,3,Secundaria completo,6
+3350,104,28,25,72,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+424,94,33,27,70,Costa,Jardín,Piura,3,Primaria completo,4
+926,96,25,29,68,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1453,60,24,19,68,Selva,Jardín,Cusco,3,Secundaria completo,6
+2799,103,29,27,76,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1042,83,26,22,70,Costa,Jardín,Piura,4,Secundaria completo,6
+3478,106,30,23,69,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1226,62,26,21,56,Sierra,Jardín,Cusco,2,Superior técnico completo,8
+988,94,27,30,69,Costa,Jardín,Piura,4,Primaria completo,4
+3169,105,29,22,71,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2248,59,21,17,70,Costa,Jardín,Piura,5,Superior universitario completo,10
+1528,47,32,20,68,Selva,Jardín,Loreto,4,Secundaria completo,6
+2612,68,22,17,69,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+3183,148,35,31,65,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+3335,129,33,27,71,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+402,56,23,21,70,Costa,Jardín,Piura,3,Secundaria completo,6
+374,153,26,30,69,Sierra,Jardín,Piura,1,Secundaria completo,6
+2515,115,36,24,69,Costa,Jardín,Piura,1,Secundaria completo,6
+2251,97,31,31,69,Costa,Jardín,Piura,5,Superior universitario completo,10
+3180,156,36,30,71,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2258,106,31,30,57,Costa,Jardín,Piura,5,Primaria completo,4
+1374,123,33,32,70,Costa,Jardín,Piura,3,Secundaria completo,6
+1748,134,35,30,69,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1219,104,29,26,68,Sierra,Jardín,Cusco,2,Inicial,2
+1868,136,36,30,69,Costa,Cuna-Jardín,Piura,4,Primaria incompleto,3
+3325,127,36,27,67,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1252,96,30,21,68,Selva,Jardín,Loreto,4,Primaria completo,4
+237,58,15,18,69,Costa,Jardín,Piura,5,Superior técnico incompleto,7
+2558,86,30,22,69,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+3415,118,31,26,72,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1029,89,25,23,67,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+3293,101,27,23,71,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1025,83,25,25,67,Sierra,Jardín,Cusco,5,Superior técnico incompleto,7
+1877,97,34,26,69,Costa,Cuna-Jardín,Piura,4,Superior técnico completo,8
+557,72,17,17,67,Sierra,Jardín,Cusco,3,Secundaria incompleto,5
+1189,89,30,17,67,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+1114,44,14,12,67,Sierra,Cuna-Jardín,Cusco,2,Secundaria completo,6
+1808,98,25,25,67,Selva,Jardín,Cusco,3,Primaria incompleto,3
+1112,46,10,18,68,Sierra,Cuna-Jardín,Cusco,2,Secundaria completo,6
+68,80,29,22,67,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+813,80,28,26,67,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+3159,89,30,30,71,Costa,Jardín,Lima Met.,4,Primaria incompleto,3
+559,77,25,29,67,Sierra,Jardín,Cusco,3,Superior técnico completo,8
+89,130,32,26,67,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+868,81,32,32,58,Costa,Jardín,Piura,4,Secundaria completo,6
+3362,101,29,26,72,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+1028,90,25,20,67,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+425,86,31,22,69,Costa,Jardín,Piura,3,Secundaria completo,6
+1036,94,24,23,67,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1319,64,20,24,68,Selva,Jardín,Loreto,4,Superior técnico incompleto,7
+2598,76,29,28,69,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+2803,131,32,30,71,Costa,Jardín,Lima Met.,4,Superior universitario incompleto,9
+2610,52,29,14,69,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1118,48,17,16,67,Sierra,Cuna-Jardín,Cusco,2,Secundaria completo,6
+998,75,20,21,67,Sierra,Jardín,Cusco,2,Secundaria completo,6
+2807,101,31,24,70,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+301,65,21,27,68,Selva,Jardín,Cusco,4,Secundaria completo,6
+1087,131,36,28,69,Sierra,Jardín,Piura,1,Primaria completo,4
+1358,74,19,21,69,Selva,Jardín,Cusco,3,Secundaria completo,6
+726,114,32,27,68,Selva,Jardín,Loreto,4,Primaria completo,4
+80,76,22,18,67,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+699,93,30,24,68,Selva,Jardín,Loreto,4,Secundaria completo,6
+561,90,25,22,67,Sierra,Jardín,Cusco,3,Secundaria completo,6
+31,105,27,27,69,Sierra,Jardín,Piura,1,Primaria completo,4
+392,96,27,23,69,Costa,Jardín,Piura,3,Secundaria completo,6
+25,110,28,27,69,Sierra,Jardín,Piura,1,Superior universitario incompleto,9
+1442,61,18,21,67,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+1369,102,33,28,69,Costa,Jardín,Piura,3,Secundaria completo,6
+703,142,34,36,68,Selva,Jardín,Loreto,4,Superior universitario incompleto,9
+3229,63,13,19,75,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3417,107,28,27,75,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1791,137,36,29,68,Selva,Jardín,Loreto,5,Secundaria incompleto,5
+568,85,25,21,67,Sierra,Jardín,Cusco,3,Superior técnico completo,8
+903,108,26,23,67,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+1370,109,32,30,69,Costa,Jardín,Piura,3,Secundaria completo,6
+3223,108,30,23,70,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+610,77,27,22,67,Sierra,Jardín,Cusco,4,Secundaria incompleto,5
+1884,119,34,28,68,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+833,55,23,18,67,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+639,73,20,21,68,Costa,Jardín,Piura,3,Secundaria completo,6
+3012,120,33,28,70,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+2260,113,29,28,64,Costa,Jardín,Piura,5,Primaria completo,4
+917,76,22,23,67,Sierra,Jardín,Cusco,5,Secundaria completo,6
+386,73,22,26,68,Costa,Jardín,Piura,3,Secundaria completo,6
+3147,102,34,30,70,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3148,102,34,30,70,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3351,99,24,18,71,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+293,72,24,27,67,Selva,Jardín,Cusco,4,Secundaria completo,6
+1020,77,24,23,67,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1515,83,31,23,67,Selva,Jardín,Loreto,4,Secundaria completo,6
+377,145,26,34,69,Sierra,Jardín,Piura,1,Secundaria completo,6
+2357,68,27,21,63,Costa,Jardín,Piura,3,Secundaria incompleto,5
+3453,90,27,18,75,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+220,73,24,15,68,Costa,Jardín,Piura,5,Secundaria completo,6
+3182,85,30,27,71,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+925,107,27,29,67,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+952,97,29,32,68,Costa,Jardín,Piura,4,Superior técnico completo,8
+562,62,25,19,66,Sierra,Jardín,Cusco,3,Primaria completo,4
+1236,45,18,15,68,Selva,Jardín,Loreto,4,Primaria completo,4
+1227,73,27,19,67,Sierra,Jardín,Cusco,2,Secundaria completo,6
+1525,126,34,29,67,Selva,Jardín,Loreto,4,Superior técnico completo,8
+2593,57,27,16,68,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+3303,99,29,23,70,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+712,135,33,32,67,Selva,Jardín,Loreto,4,Secundaria completo,6
+3176,114,35,33,70,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+823,65,29,20,66,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+3194,85,26,25,71,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2408,112,29,31,68,Costa,Jardín,Piura,3,Primaria completo,4
+1316,101,29,28,67,Selva,Jardín,Loreto,4,Superior universitario completo,10
+841,97,26,24,67,Sierra,Jardín,Cusco,2,Secundaria completo,6
+1315,101,27,31,67,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+1449,61,23,18,72,Selva,Jardín,Cusco,3,Secundaria completo,6
+2349,101,35,31,68,Costa,Jardín,Piura,3,Secundaria completo,6
+1465,85,26,26,67,Selva,Jardín,Loreto,4,Secundaria completo,6
+3414,95,28,29,70,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+933,85,23,24,66,Sierra,Jardín,Cusco,5,Secundaria completo,6
+3105,94,26,21,71,Costa,Jardín,Lima Met.,4,Superior técnico incompleto,7
+371,156,26,31,68,Sierra,Jardín,Piura,1,Secundaria completo,6
+401,57,24,19,68,Costa,Jardín,Piura,3,Secundaria completo,6
+722,129,35,29,67,Selva,Jardín,Loreto,4,Secundaria completo,6
+1178,84,26,19,67,Selva,Jardín,Loreto,5,Secundaria completo,6
+1301,63,19,24,67,Selva,Jardín,Loreto,4,Secundaria completo,6
+2574,117,29,25,67,Selva,Jardín,Loreto,4,Primaria completo,4
+918,65,13,16,65,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+920,66,18,23,66,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+2800,126,32,30,69,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+2517,104,32,23,67,Costa,Jardín,Piura,1,Primaria incompleto,3
+3152,88,35,31,69,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3282,71,16,30,69,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1089,114,36,26,68,Sierra,Jardín,Piura,1,Primaria completo,4
+2380,123,32,34,68,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+381,154,26,28,68,Sierra,Jardín,Piura,1,Secundaria completo,6
+384,153,20,30,56,Sierra,Jardín,Piura,1,Secundaria completo,6
+1352,100,28,25,66,Selva,Jardín,Cusco,3,Superior técnico completo,8
+1807,44,15,24,66,Selva,Jardín,Cusco,3,Primaria incompleto,3
+2407,98,29,30,68,Costa,Jardín,Piura,3,Primaria incompleto,3
+1518,36,20,18,67,Selva,Jardín,Loreto,4,Superior universitario completo,10
+1298,70,24,29,67,Selva,Jardín,Loreto,4,Secundaria completo,6
+3245,109,29,30,69,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+530,101,25,24,67,Selva,No_Esc,Loreto,2,Primaria incompleto,3
+232,85,26,28,68,Costa,Jardín,Piura,5,Superior técnico completo,8
+2346,113,36,30,68,Costa,Jardín,Piura,3,Superior técnico completo,8
+818,73,29,20,66,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+3199,105,30,26,76,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+3227,109,26,24,69,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+87,60,17,17,66,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+2611,43,24,16,68,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1880,101,34,28,68,Costa,Cuna-Jardín,Piura,4,Primaria completo,4
+360,77,18,19,65,Selva,Jardín,Cusco,4,Secundaria completo,6
+1181,76,25,20,67,Selva,Jardín,Loreto,5,Primaria completo,4
+8,104,25,27,67,Sierra,Jardín,Piura,1,Superior técnico completo,8
+1318,67,22,28,67,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+2273,80,24,18,68,Costa,Jardín,Piura,5,Primaria completo,4
+3297,81,21,22,69,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+822,116,32,26,66,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1861,113,28,30,67,Selva,Jardín,Loreto,3,Secundaria completo,6
+1512,64,29,19,66,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+90,144,36,32,66,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+1860,104,29,25,66,Selva,Jardín,Loreto,3,Secundaria incompleto,5
+1312,87,25,32,66,Selva,Jardín,Loreto,4,Superior universitario completo,10
+2561,95,27,25,55,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+1792,63,22,20,66,Selva,Jardín,Loreto,5,Primaria incompleto,3
+1532,46,32,24,66,Selva,Jardín,Loreto,4,Superior técnico completo,8
+400,105,26,23,68,Costa,Jardín,Piura,3,Superior técnico completo,8
+1024,84,25,24,66,Sierra,Jardín,Cusco,5,Superior técnico incompleto,7
+1137,124,32,26,66,Selva,Jardín,Cusco,3,Secundaria completo,6
+613,70,25,20,66,Sierra,Jardín,Cusco,4,Secundaria incompleto,5
+932,94,21,26,66,Sierra,Jardín,Cusco,5,Secundaria completo,6
+572,83,23,27,66,Sierra,Jardín,Cusco,3,Superior técnico incompleto,7
+1120,48,13,14,66,Sierra,Cuna-Jardín,Cusco,2,Superior técnico completo,8
+78,132,35,23,66,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1749,69,31,19,67,Costa,Cuna-Jardín,Piura,4,Primaria incompleto,3
+1140,51,28,21,65,Selva,Jardín,Cusco,3,Primaria incompleto,3
+3389,73,26,15,69,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+821,124,30,27,66,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+1019,90,28,27,66,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+239,89,24,30,67,Costa,Jardín,Piura,5,Secundaria completo,6
+3187,88,23,24,70,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2556,73,24,18,67,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+2599,73,28,22,67,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+1032,81,24,23,66,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+265,81,22,27,67,Costa,Jardín,Piura,3,Secundaria completo,6
+1367,98,27,29,67,Costa,Jardín,Piura,3,Superior técnico completo,8
+570,89,23,33,65,Sierra,Jardín,Cusco,3,Superior universitario completo,10
+1182,73,21,18,66,Selva,Jardín,Loreto,5,Secundaria incompleto,5
+2591,45,24,10,67,Costa,Cuna-Jardín,Piura,4,Primaria completo,4
+67,139,36,31,65,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+2143,65,25,16,66,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+351,94,23,21,65,Selva,Jardín,Cusco,4,Secundaria completo,6
+2555,55,17,17,67,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+838,92,29,20,65,Sierra,Jardín,Cusco,2,Secundaria completo,6
+1914,106,31,24,66,Selva,Jardín,Loreto,3,Primaria incompleto,3
+299,67,19,27,65,Selva,Jardín,Cusco,4,Secundaria completo,6
+779,89,23,24,66,Selva,Jardín,Loreto,3,Secundaria incompleto,5
+406,95,27,24,70,Costa,Jardín,Piura,3,Secundaria incompleto,5
+3497,136,33,33,69,Costa,Cuna-Jardín,Lima Met.,4,Secundaria completo,6
+2351,93,34,31,67,Costa,Jardín,Piura,3,Secundaria completo,6
+786,94,25,24,66,Selva,Jardín,Loreto,3,Superior universitario completo,10
+2559,117,31,24,67,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+30,111,25,27,67,Sierra,Jardín,Piura,1,Superior técnico completo,8
+1461,72,20,23,66,Selva,Jardín,Loreto,4,Primaria completo,4
+1863,117,33,27,67,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+3383,75,24,18,72,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+409,82,31,24,67,Costa,Jardín,Piura,3,Primaria completo,4
+3111,78,25,20,69,Costa,Jardín,Lima Met.,4,Primaria incompleto,3
+776,68,17,21,66,Selva,Jardín,Loreto,3,Secundaria incompleto,5
+2379,125,27,35,67,Costa,Jardín,Piura,5,Superior universitario completo,10
+2369,125,32,35,67,Costa,Jardín,Piura,5,Superior universitario completo,10
+1513,35,21,16,66,Selva,Jardín,Loreto,4,Secundaria completo,6
+1467,75,25,24,66,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+3322,86,26,23,71,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+389,71,21,23,67,Costa,Jardín,Piura,3,Secundaria completo,6
+953,78,28,30,67,Costa,Jardín,Piura,4,Secundaria incompleto,5
+961,82,24,31,67,Costa,Jardín,Piura,4,Primaria completo,4
+1001,55,17,18,65,Sierra,Jardín,Cusco,2,Secundaria completo,6
+465,131,28,24,66,Selva,No_Esc,Loreto,2,Secundaria completo,6
+29,109,27,27,67,Sierra,Jardín,Piura,1,Superior universitario completo,10
+1852,131,33,35,66,Selva,Jardín,Loreto,3,Primaria completo,4
+1109,49,14,17,65,Sierra,Cuna-Jardín,Cusco,2,Secundaria completo,6
+2557,114,32,29,67,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+3482,125,36,31,79,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+1390,82,21,21,65,Selva,Jardín,Cusco,3,Superior técnico completo,8
+817,109,31,27,65,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+3078,115,34,27,76,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+2140,77,25,23,65,Sierra,Jardín,Cusco,2,Secundaria completo,6
+353,77,21,19,65,Selva,Jardín,Cusco,4,Secundaria incompleto,5
+1478,82,26,26,66,Selva,Jardín,Loreto,4,Primaria completo,4
+10,83,22,24,65,Sierra,Jardín,Cusco,5,Secundaria completo,6
+1780,100,34,29,66,Selva,Jardín,Loreto,5,Secundaria incompleto,5
+2806,90,29,26,78,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1976,137,36,30,66,Selva,Jardín,Loreto,1,Primaria incompleto,3
+1364,84,22,20,67,Costa,Jardín,Piura,3,Superior técnico completo,8
+3,108,26,27,67,Sierra,Jardín,Piura,1,Superior universitario completo,10
+1464,79,26,26,65,Selva,Jardín,Loreto,4,Secundaria completo,6
+1238,77,21,14,66,Selva,Jardín,Loreto,4,Primaria incompleto,3
+3160,112,34,31,68,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2365,95,34,34,66,Costa,Jardín,Piura,5,Superior universitario completo,10
+3166,73,23,16,68,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+33,104,24,24,65,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+556,73,24,23,65,Sierra,Jardín,Cusco,3,Superior técnico completo,8
+2804,126,32,28,68,Costa,Jardín,Lima Met.,4,Superior técnico incompleto,7
+2138,101,28,26,65,Sierra,Jardín,Cusco,2,Secundaria completo,6
+2137,75,25,18,65,Sierra,Jardín,Cusco,2,Superior técnico incompleto,7
+355,81,19,19,65,Selva,Jardín,Cusco,4,Secundaria incompleto,5
+1386,72,20,20,65,Selva,Jardín,Cusco,3,Secundaria completo,6
+375,153,26,34,66,Sierra,Jardín,Piura,1,Secundaria completo,6
+706,123,31,31,65,Selva,Jardín,Loreto,4,Secundaria completo,6
+427,97,33,22,66,Costa,Jardín,Piura,3,Secundaria completo,6
+3337,103,28,28,68,Costa,Jardín,Lima Met.,4,Ninguno,1
+3172,110,26,30,68,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+3364,136,33,31,69,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+1037,68,25,24,66,Costa,Jardín,Piura,4,Primaria completo,4
+3266,92,26,20,68,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3108,99,28,22,68,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+782,86,22,23,65,Selva,Jardín,Loreto,3,Secundaria incompleto,5
+1460,35,16,21,75,Selva,Jardín,Loreto,4,Secundaria completo,6
+2601,36,25,11,66,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+642,63,14,20,66,Costa,Jardín,Piura,3,Superior universitario completo,10
+1136,111,32,26,64,Selva,Jardín,Cusco,3,Secundaria completo,6
+985,73,24,24,66,Costa,Jardín,Piura,4,Secundaria incompleto,5
+227,84,24,23,66,Costa,Jardín,Piura,5,Superior técnico completo,8
+1383,65,16,20,64,Selva,Jardín,Cusco,3,Secundaria completo,6
+711,105,31,31,65,Selva,Jardín,Loreto,4,Secundaria completo,6
+88,102,31,24,64,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+1228,73,28,25,65,Sierra,Jardín,Cusco,2,Primaria incompleto,3
+777,87,23,24,65,Selva,Jardín,Loreto,3,Secundaria completo,6
+931,87,22,25,64,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+824,108,31,24,64,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+2257,80,21,23,66,Costa,Jardín,Piura,5,Superior universitario completo,10
+27,111,24,27,66,Sierra,Jardín,Piura,1,Superior universitario completo,10
+2263,78,31,21,76,Costa,Jardín,Piura,5,Secundaria completo,6
+82,103,35,22,64,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+825,73,29,21,52,Sierra,Jardín,Cusco,5,Secundaria completo,6
+1445,77,24,22,64,Selva,Jardín,Cusco,3,Secundaria completo,6
+1855,116,30,29,65,Selva,Jardín,Loreto,3,Primaria completo,4
+354,80,21,19,64,Selva,Jardín,Cusco,4,Secundaria incompleto,5
+1017,85,27,24,64,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+3246,84,15,23,67,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+2114,61,23,24,65,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+467,105,28,26,65,Selva,No_Esc,Loreto,2,Primaria incompleto,3
+919,79,23,24,64,Sierra,Jardín,Cusco,5,Secundaria completo,6
+1375,100,30,32,66,Costa,Jardín,Piura,3,Secundaria completo,6
+69,106,31,22,64,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+2354,63,28,22,66,Costa,Jardín,Piura,3,Secundaria incompleto,5
+1452,54,23,22,64,Selva,Jardín,Cusco,3,Secundaria completo,6
+240,92,26,30,66,Costa,Jardín,Piura,5,Superior universitario completo,10
+3400,75,21,14,68,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+780,96,19,24,65,Selva,Jardín,Loreto,3,Superior universitario completo,10
+1240,70,22,14,65,Selva,Jardín,Loreto,4,Primaria completo,4
+2256,80,24,23,66,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+2376,121,32,34,66,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+3480,156,36,23,71,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+947,110,27,28,64,Sierra,Jardín,Cusco,2,Secundaria completo,6
+962,81,31,23,66,Costa,Jardín,Piura,4,Secundaria incompleto,5
+2367,117,32,35,66,Costa,Jardín,Piura,5,Superior técnico completo,8
+1110,57,15,20,64,Sierra,Cuna-Jardín,Cusco,2,Superior técnico completo,8
+1083,97,35,21,65,Sierra,Jardín,Piura,1,Primaria completo,4
+579,73,21,19,64,Sierra,Jardín,Cusco,3,Secundaria completo,6
+2373,119,32,35,66,Costa,Jardín,Piura,5,Superior técnico incompleto,7
+423,93,33,27,65,Costa,Jardín,Piura,3,Primaria completo,4
+230,76,20,22,65,Costa,Jardín,Piura,5,Secundaria completo,6
+300,48,20,20,65,Selva,Jardín,Cusco,4,Secundaria completo,6
+3261,130,30,26,67,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+1116,55,12,18,64,Sierra,Cuna-Jardín,Cusco,2,Superior técnico completo,8
+2265,108,31,31,65,Costa,Jardín,Piura,5,Secundaria completo,6
+955,100,28,35,65,Costa,Jardín,Piura,4,Secundaria completo,6
+3334,130,33,27,67,Costa,Jardín,Lima Met.,4,Primaria completo,4
+2410,74,26,24,65,Costa,Jardín,Piura,3,Primaria completo,4
+1448,72,23,18,64,Selva,Jardín,Cusco,3,Secundaria completo,6
+85,49,14,14,64,Sierra,Jardín,Cusco,5,Superior universitario incompleto,9
+1233,64,23,19,64,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+2513,91,29,23,65,Costa,Jardín,Piura,1,Primaria incompleto,3
+1444,76,22,21,63,Selva,Jardín,Cusco,3,Secundaria completo,6
+1355,76,19,21,63,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+563,66,21,17,63,Sierra,Jardín,Cusco,3,Superior técnico completo,8
+83,46,17,14,64,Sierra,Jardín,Cusco,5,Superior universitario incompleto,9
+295,60,22,26,65,Selva,Jardín,Cusco,4,Secundaria completo,6
+2618,92,27,33,66,Sierra,Jardín,Piura,1,Superior técnico incompleto,7
+2521,91,31,25,65,Sierra,Jardín,Piura,1,Primaria incompleto,3
+2359,96,31,25,65,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+1439,67,25,19,63,Selva,Jardín,Cusco,3,Secundaria completo,6
+224,46,22,19,65,Costa,Jardín,Piura,5,Secundaria completo,6
+2406,124,34,33,65,Costa,Jardín,Piura,3,Secundaria completo,6
+352,75,15,19,63,Selva,Jardín,Cusco,4,Secundaria completo,6
+77,144,36,30,64,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+3124,101,30,27,67,Costa,Jardín,Lima Met.,4,Primaria completo,4
+3329,151,35,31,67,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2250,83,24,30,65,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+3236,105,32,25,67,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3232,80,18,21,67,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3394,51,22,8,68,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+2141,88,27,23,63,Sierra,Jardín,Cusco,2,Superior técnico completo,8
+719,104,33,27,64,Selva,Jardín,Loreto,4,Superior universitario incompleto,9
+702,142,35,35,64,Selva,Jardín,Loreto,4,Superior técnico incompleto,7
+3263,146,33,25,67,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1362,69,21,22,65,Costa,Jardín,Piura,3,Secundaria completo,6
+3452,118,32,23,67,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2006,84,27,20,64,Selva,Jardín,Loreto,1,Primaria incompleto,3
+2363,134,32,35,65,Costa,Jardín,Piura,5,Superior técnico incompleto,7
+1516,43,24,20,64,Selva,Jardín,Loreto,4,Secundaria completo,6
+2603,101,31,21,74,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+3216,127,31,28,67,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+2519,82,28,21,65,Sierra,Jardín,Piura,1,Ninguno,1
+1108,45,13,12,75,Sierra,Cuna-Jardín,Cusco,2,Superior técnico incompleto,7
+2520,70,23,26,65,Sierra,Jardín,Piura,1,Secundaria completo,6
+1881,100,34,28,65,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+394,60,22,20,65,Costa,Jardín,Piura,3,Secundaria incompleto,5
+700,136,33,35,64,Selva,Jardín,Loreto,4,Superior técnico completo,8
+2271,75,23,24,65,Costa,Jardín,Piura,5,Superior universitario completo,10
+3344,115,30,21,67,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+86,101,31,26,63,Sierra,Jardín,Cusco,5,Superior técnico incompleto,7
+259,96,25,29,65,Costa,Jardín,Piura,3,Secundaria completo,6
+3128,111,35,32,66,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+2523,84,34,28,65,Sierra,Jardín,Piura,1,Primaria completo,4
+2264,63,21,22,65,Costa,Jardín,Piura,5,Secundaria completo,6
+2144,60,20,17,63,Sierra,Jardín,Cusco,2,Ninguno,1
+3174,55,18,22,67,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1522,117,30,29,64,Selva,Jardín,Loreto,4,Superior universitario completo,10
+2802,115,29,29,66,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+996,57,16,16,63,Sierra,Jardín,Cusco,2,Secundaria completo,6
+640,71,21,22,65,Costa,Jardín,Piura,3,Secundaria completo,6
+623,65,23,21,65,Costa,Jardín,Piura,3,Secundaria completo,6
+929,82,20,22,69,Sierra,Jardín,Cusco,5,Secundaria completo,6
+1533,55,24,23,64,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+707,126,32,34,64,Selva,Jardín,Loreto,4,Secundaria completo,6
+5,109,26,27,65,Sierra,Jardín,Piura,1,Secundaria completo,6
+3275,82,23,20,66,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2592,87,28,25,65,Costa,Cuna-Jardín,Piura,4,Superior técnico incompleto,7
+2348,94,34,30,63,Costa,Jardín,Piura,3,Primaria completo,4
+76,97,24,24,63,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+1356,110,27,25,58,Selva,Jardín,Cusco,3,Secundaria completo,6
+3294,90,26,19,67,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1357,93,24,23,63,Selva,Jardín,Cusco,3,Secundaria completo,6
+221,81,26,27,65,Costa,Jardín,Piura,5,Secundaria completo,6
+505,110,34,26,64,Selva,No_Esc,Loreto,2,Primaria completo,4
+2522,53,26,15,65,Sierra,Jardín,Piura,1,Primaria incompleto,3
+2378,129,32,35,65,Costa,Jardín,Piura,5,Superior universitario completo,10
+1349,113,27,25,63,Selva,Jardín,Cusco,3,Secundaria completo,6
+1864,105,34,27,64,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+1526,101,29,23,63,Selva,Jardín,Loreto,4,Superior técnico completo,8
+361,79,20,19,68,Selva,Jardín,Cusco,4,Secundaria completo,6
+4,115,27,26,73,Sierra,Jardín,Piura,1,Superior universitario incompleto,9
+785,84,22,24,63,Selva,Jardín,Loreto,3,Superior técnico incompleto,7
+1511,86,34,27,72,Selva,Jardín,Loreto,4,Secundaria completo,6
+3309,79,27,22,66,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3265,95,27,27,66,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3113,136,28,28,66,Costa,Jardín,Lima Met.,4,Ninguno,1
+13,97,25,26,64,Sierra,Jardín,Piura,1,Primaria completo,4
+2619,97,31,31,64,Sierra,Jardín,Piura,1,Superior técnico completo,8
+397,71,25,20,64,Costa,Jardín,Piura,3,Superior técnico completo,8
+1303,79,22,31,75,Selva,Jardín,Loreto,4,Secundaria completo,6
+3300,101,32,24,66,Costa,Jardín,Lima Met.,4,Ninguno,1
+787,95,24,24,63,Selva,Jardín,Loreto,3,Secundaria completo,6
+3291,94,28,23,67,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2269,101,31,28,65,Costa,Jardín,Piura,5,Secundaria completo,6
+3270,131,29,27,67,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+775,103,25,26,63,Selva,Jardín,Loreto,3,Secundaria completo,6
+2272,105,31,29,64,Costa,Jardín,Piura,5,Superior universitario completo,10
+1482,74,26,24,63,Selva,Jardín,Loreto,4,Superior técnico completo,8
+3142,81,32,24,68,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+3250,80,24,23,66,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+469,92,22,22,64,Selva,No_Esc,Loreto,2,Primaria completo,4
+1397,82,23,21,62,Selva,Jardín,Cusco,3,Secundaria completo,6
+2340,67,31,23,64,Costa,Jardín,Piura,3,Primaria completo,4
+7,102,24,26,64,Sierra,Jardín,Piura,1,Primaria completo,4
+887,101,29,31,64,Costa,Jardín,Piura,4,Secundaria completo,6
+482,141,35,29,71,Selva,No_Esc,Loreto,2,Primaria incompleto,3
+1307,58,19,26,64,Selva,Jardín,Loreto,4,Primaria completo,4
+2262,60,21,24,64,Costa,Jardín,Piura,5,Secundaria completo,6
+885,88,32,35,64,Costa,Jardín,Piura,4,Secundaria completo,6
+1363,81,28,22,64,Costa,Jardín,Piura,3,Secundaria incompleto,5
+2412,108,25,27,64,Costa,Jardín,Piura,3,Primaria completo,4
+1111,53,13,21,62,Sierra,Cuna-Jardín,Cusco,2,Superior técnico incompleto,7
+2370,115,32,35,66,Costa,Jardín,Piura,5,Superior técnico completo,8
+2382,121,32,34,64,Costa,Jardín,Piura,5,Superior técnico incompleto,7
+3154,100,35,31,66,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+2608,51,25,14,64,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1520,86,29,24,63,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+1044,63,24,27,64,Costa,Jardín,Piura,4,Primaria completo,4
+3114,140,32,31,66,Costa,Jardín,Lima Met.,4,Ninguno,1
+1521,41,21,17,63,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+2364,121,34,35,64,Costa,Jardín,Piura,5,Superior universitario completo,10
+2564,82,20,18,64,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+624,70,20,22,64,Costa,Jardín,Piura,3,Secundaria completo,6
+385,153,20,30,64,Sierra,Jardín,Piura,1,Secundaria completo,6
+769,92,29,23,63,Selva,Jardín,Loreto,3,Secundaria completo,6
+3384,65,19,15,66,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3345,117,27,24,66,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1027,84,25,30,62,Sierra,Jardín,Cusco,5,Superior universitario incompleto,9
+1788,59,28,24,75,Selva,Jardín,Loreto,5,Primaria completo,4
+3107,95,28,21,65,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+26,101,25,27,64,Sierra,Jardín,Piura,1,Superior universitario completo,10
+271,85,21,27,64,Costa,Jardín,Piura,3,Secundaria completo,6
+2375,123,32,34,64,Costa,Jardín,Piura,5,Superior técnico incompleto,7
+2270,128,36,35,64,Costa,Jardín,Piura,5,Secundaria completo,6
+609,65,24,17,62,Sierra,Jardín,Cusco,4,Secundaria incompleto,5
+3136,93,28,22,65,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3418,109,29,20,66,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1245,106,26,26,63,Selva,Jardín,Loreto,4,Primaria completo,4
+2506,99,26,27,64,Costa,Jardín,Piura,1,Primaria incompleto,3
+3256,144,32,30,74,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+832,70,33,22,74,Sierra,Jardín,Cusco,5,Secundaria incompleto,5
+399,87,24,22,64,Costa,Jardín,Piura,3,Superior técnico incompleto,7
+1475,70,23,24,63,Selva,Jardín,Loreto,4,Primaria completo,4
+1222,73,29,23,62,Sierra,Jardín,Cusco,2,Superior técnico completo,8
+2524,81,33,25,64,Sierra,Jardín,Piura,1,Primaria completo,4
+2411,83,27,26,64,Costa,Jardín,Piura,3,Secundaria completo,6
+3365,153,36,28,66,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1320,62,23,27,75,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+2573,114,29,30,63,Selva,Jardín,Loreto,4,Primaria completo,4
+398,72,21,18,64,Costa,Jardín,Piura,3,Secundaria completo,6
+1454,62,25,19,62,Selva,Jardín,Cusco,3,Secundaria completo,6
+284,79,24,28,62,Selva,Jardín,Cusco,4,Superior técnico completo,8
+280,90,23,24,64,Costa,Jardín,Piura,3,Superior técnico completo,8
+2401,83,29,27,64,Costa,Jardín,Piura,3,Secundaria completo,6
+1031,87,24,23,62,Sierra,Jardín,Cusco,5,Superior técnico incompleto,7
+3157,102,32,31,72,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1119,51,13,16,62,Sierra,Cuna-Jardín,Cusco,2,Superior técnico completo,8
+948,98,29,32,64,Costa,Jardín,Piura,4,Primaria completo,4
+3477,82,21,17,66,Costa,Jardín,Lima Met.,4,Ninguno,1
+258,57,19,21,63,Costa,Jardín,Piura,3,Primaria completo,4
+928,54,19,18,62,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+359,78,17,19,62,Selva,Jardín,Cusco,4,Secundaria incompleto,5
+2404,81,26,24,63,Costa,Jardín,Piura,3,Primaria completo,4
+1360,67,19,21,64,Costa,Jardín,Piura,3,Secundaria completo,6
+1041,92,31,27,63,Costa,Jardín,Piura,4,Primaria completo,4
+3271,100,21,22,65,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3158,135,34,31,73,Costa,Jardín,Lima Met.,4,Superior técnico incompleto,7
+819,98,32,24,62,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1023,69,24,23,62,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+3305,77,23,24,65,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+216,79,23,25,63,Costa,Jardín,Piura,5,Superior universitario completo,10
+1107,42,13,12,62,Sierra,Cuna-Jardín,Cusco,2,Superior técnico incompleto,7
+3340,86,24,22,65,Costa,Jardín,Lima Met.,4,Ninguno,1
+298,83,25,29,61,Selva,Jardín,Cusco,4,Superior universitario completo,10
+2252,83,24,27,64,Costa,Jardín,Piura,5,Superior universitario completo,10
+2350,59,25,18,64,Costa,Jardín,Piura,3,Secundaria incompleto,5
+815,63,20,20,62,Sierra,Jardín,Cusco,5,Secundaria completo,6
+393,61,24,23,63,Costa,Jardín,Piura,3,Secundaria completo,6
+290,56,23,27,62,Selva,Jardín,Cusco,4,Secundaria completo,6
+291,48,20,22,62,Selva,Jardín,Cusco,4,Secundaria completo,6
+2392,110,32,27,64,Costa,Jardín,Piura,3,Secundaria completo,6
+3188,156,36,30,75,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+3378,54,18,12,66,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2261,74,25,23,64,Costa,Jardín,Piura,5,Secundaria completo,6
+292,66,22,25,61,Selva,Jardín,Cusco,4,Secundaria completo,6
+915,68,22,19,61,Sierra,Jardín,Cusco,5,Secundaria completo,6
+916,74,19,18,61,Sierra,Jardín,Cusco,5,Secundaria completo,6
+622,73,18,20,64,Costa,Jardín,Piura,3,Secundaria completo,6
+773,92,25,25,62,Selva,Jardín,Loreto,3,Secundaria completo,6
+1302,70,21,30,63,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+724,110,33,28,62,Selva,Jardín,Loreto,4,Secundaria completo,6
+1183,73,20,17,63,Selva,Jardín,Loreto,5,Primaria incompleto,3
+935,79,20,23,73,Sierra,Jardín,Cusco,5,Secundaria completo,6
+3177,121,34,27,71,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+924,84,19,22,62,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+618,69,22,20,63,Costa,Jardín,Piura,3,Secundaria completo,6
+463,96,24,22,62,Selva,No_Esc,Loreto,2,Primaria completo,4
+1235,67,19,18,62,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+2560,112,27,23,63,Costa,Cuna-Jardín,Piura,4,Superior universitario incompleto,9
+1865,77,31,24,63,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+380,154,26,28,63,Sierra,Jardín,Piura,1,Secundaria completo,6
+270,70,20,23,63,Costa,Jardín,Piura,3,Secundaria completo,6
+1225,68,29,21,61,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+3473,140,36,25,65,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1468,76,22,24,62,Selva,Jardín,Loreto,4,Primaria completo,4
+621,82,20,21,63,Costa,Jardín,Piura,3,Secundaria completo,6
+3445,84,28,15,66,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+219,73,23,25,63,Costa,Jardín,Piura,5,Secundaria completo,6
+627,57,14,22,63,Costa,Jardín,Piura,3,Secundaria completo,6
+1509,48,23,19,62,Selva,Jardín,Loreto,4,Secundaria completo,6
+3168,76,22,21,65,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+2342,60,23,26,63,Costa,Jardín,Piura,3,Secundaria incompleto,5
+3411,73,26,16,65,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+881,71,32,28,62,Selva,Jardín,Loreto,4,Primaria completo,4
+390,82,23,22,63,Costa,Jardín,Piura,3,Secundaria completo,6
+2405,102,30,30,63,Costa,Jardín,Piura,3,Secundaria completo,6
+1963,87,18,26,63,Costa,Cuna-Jardín,Piura,4,Superior técnico incompleto,7
+331,98,27,28,63,Costa,Jardín,Piura,3,Secundaria completo,6
+2606,74,31,21,63,Costa,Cuna-Jardín,Piura,4,Superior técnico completo,8
+3255,77,28,24,66,Costa,Jardín,Lima Met.,4,Superior técnico incompleto,7
+1419,120,31,31,61,Sierra,Jardín,Cusco,5,Secundaria completo,6
+1285,63,20,22,62,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+388,57,20,20,63,Costa,Jardín,Piura,3,Superior universitario completo,10
+2244,95,26,21,63,Sierra,Jardín,Piura,1,Superior universitario completo,10
+1329,56,16,20,63,Costa,Cuna-Jardín,Piura,4,Superior técnico incompleto,7
+1197,97,31,24,63,Costa,Jardín,Piura,4,Primaria incompleto,3
+1401,142,35,32,61,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+3080,104,35,21,64,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2821,77,22,23,64,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2569,136,30,29,62,Selva,Jardín,Loreto,4,Primaria completo,4
+340,86,20,24,63,Costa,Jardín,Piura,3,Secundaria completo,6
+1539,58,26,21,62,Selva,Jardín,Loreto,4,Secundaria completo,6
+1084,91,36,23,64,Sierra,Jardín,Piura,1,Primaria completo,4
+1603,87,26,23,62,Selva,Jardín,Loreto,5,Secundaria completo,6
+3122,81,18,20,65,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+2223,107,30,22,62,Sierra,Jardín,Piura,1,Primaria completo,4
+3215,113,33,29,64,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3068,99,35,27,64,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+323,68,20,19,61,Sierra,Jardín,Cusco,2,Secundaria completo,6
+1811,96,25,25,61,Selva,Jardín,Cusco,3,Secundaria completo,6
+1408,83,27,28,61,Selva,Jardín,Loreto,4,Secundaria completo,6
+2085,111,28,27,62,Sierra,Jardín,Piura,1,Superior técnico completo,8
+2104,74,31,25,61,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+778,85,22,22,62,Selva,Jardín,Loreto,3,Secundaria completo,6
+2287,97,24,28,62,Costa,Jardín,Piura,5,Superior universitario completo,10
+873,61,31,27,61,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+2279,123,25,26,62,Costa,Jardín,Piura,5,Primaria completo,4
+2127,92,25,27,62,Costa,Cuna-Jardín,Piura,4,Superior universitario completo,10
+1706,90,18,21,60,Selva,Jardín,Cusco,3,Secundaria completo,6
+316,122,34,31,61,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+367,79,23,24,62,Costa,Jardín,Piura,3,Secundaria completo,6
+9,94,23,25,63,Sierra,Jardín,Piura,1,Superior universitario incompleto,9
+2082,71,30,29,61,Selva,Jardín,Loreto,1,Secundaria completo,6
+2466,91,23,27,62,Sierra,Jardín,Piura,1,Secundaria incompleto,5
+3387,92,28,27,64,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+19,64,21,20,62,Sierra,Jardín,Piura,1,Superior técnico completo,8
+370,152,22,24,63,Sierra,Jardín,Piura,1,Secundaria completo,6
+405,60,23,23,62,Costa,Jardín,Piura,3,Secundaria incompleto,5
+1601,142,30,30,61,Selva,Jardín,Loreto,5,Secundaria incompleto,5
+2816,57,13,22,64,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+57,39,20,18,60,Selva,Jardín,Cusco,4,Primaria completo,4
+1776,65,29,20,62,Costa,Jardín,Piura,3,Secundaria completo,6
+2501,97,27,23,62,Costa,Jardín,Piura,1,Primaria completo,4
+951,80,25,33,64,Costa,Jardín,Piura,4,Primaria completo,4
+683,85,28,28,61,Selva,Jardín,Loreto,4,Secundaria completo,6
+856,110,33,29,61,Selva,Jardín,Loreto,4,Secundaria completo,6
+2182,93,25,23,62,Sierra,Jardín,Piura,1,Superior universitario incompleto,9
+1242,52,15,11,65,Selva,Jardín,Loreto,4,Primaria completo,4
+407,57,23,21,62,Costa,Jardín,Piura,3,Secundaria completo,6
+1804,73,25,23,52,Selva,Jardín,Cusco,3,Secundaria completo,6
+2078,77,27,24,60,Sierra,Jardín,Cusco,2,Primaria completo,4
+1278,72,16,22,62,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+3443,139,25,31,64,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+2291,113,28,31,62,Costa,Jardín,Piura,5,Superior técnico incompleto,7
+2571,134,23,31,61,Selva,Jardín,Loreto,4,Primaria completo,4
+3469,93,25,23,64,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+746,75,22,19,60,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+1673,56,22,25,61,Selva,Jardín,Loreto,4,Primaria completo,4
+788,74,20,23,60,Sierra,Cuna-Jardín,Cusco,2,Superior universitario completo,10
+1557,81,24,24,61,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+2442,116,30,25,62,Costa,Jardín,Piura,3,Primaria completo,4
+60,55,23,26,49,Selva,Jardín,Cusco,4,Secundaria completo,6
+1616,74,18,19,62,Sierra,Jardín,Piura,1,Secundaria completo,6
+697,72,30,25,61,Selva,Jardín,Loreto,4,Superior técnico completo,8
+1602,113,29,30,62,Selva,Jardín,Loreto,5,Secundaria completo,6
+3198,98,31,26,63,Costa,Jardín,Lima Met.,4,Primaria completo,4
+1696,93,17,17,60,Selva,Jardín,Cusco,3,Primaria completo,4
+1859,113,28,30,64,Selva,Jardín,Loreto,3,Primaria completo,4
+554,137,36,34,60,Sierra,Jardín,Cusco,3,Superior universitario incompleto,9
+1874,47,13,17,62,Costa,Cuna-Jardín,Piura,4,Superior técnico completo,8
+2820,83,19,25,63,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2532,88,32,25,62,Sierra,Jardín,Piura,1,Secundaria incompleto,5
+2071,78,27,24,60,Sierra,Jardín,Cusco,2,Primaria completo,4
+2827,39,20,20,63,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+676,86,28,25,61,Selva,Jardín,Loreto,4,Superior universitario completo,10
+1831,79,26,18,61,Costa,Cuna-Jardín,Piura,4,Superior universitario incompleto,9
+979,94,21,22,61,Selva,Jardín,Loreto,3,Secundaria completo,6
+1406,79,27,28,61,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+718,74,30,23,60,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+1201,81,23,18,60,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+55,51,23,24,60,Selva,Jardín,Cusco,4,Secundaria completo,6
+791,90,23,25,60,Sierra,Cuna-Jardín,Cusco,2,Superior universitario completo,10
+155,82,21,26,62,Costa,Jardín,Piura,3,Secundaria completo,6
+2390,104,35,30,61,Costa,Jardín,Piura,5,Superior universitario completo,10
+3412,128,32,32,63,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3466,100,29,25,63,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+319,53,22,18,60,Sierra,Jardín,Cusco,2,Ninguno,1
+1767,110,29,28,62,Costa,Jardín,Piura,3,Primaria completo,4
+165,81,21,26,61,Costa,Jardín,Piura,3,Secundaria completo,6
+1887,119,34,28,67,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+41,96,28,29,61,Sierra,Jardín,Piura,1,Superior universitario completo,10
+974,108,26,27,61,Selva,Jardín,Loreto,3,Superior universitario incompleto,9
+63,52,23,20,61,Selva,Jardín,Cusco,4,Secundaria completo,6
+1838,133,32,29,60,Selva,Jardín,Loreto,3,Secundaria completo,6
+877,68,31,26,60,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+3175,92,30,25,58,Costa,Jardín,Lima Met.,4,Superior universitario incompleto,9
+2090,88,31,30,60,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+1203,133,29,25,60,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+1966,79,20,21,63,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1321,63,20,22,61,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+366,77,24,23,61,Costa,Jardín,Piura,3,Secundaria completo,6
+2818,83,23,23,64,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+680,69,27,24,60,Selva,Jardín,Loreto,4,Secundaria completo,6
+691,82,30,28,60,Selva,Jardín,Loreto,4,Superior técnico incompleto,7
+1612,102,29,28,61,Sierra,Jardín,Piura,1,Primaria completo,4
+38,71,24,22,61,Sierra,Jardín,Piura,1,Superior técnico completo,8
+1775,99,29,27,61,Costa,Jardín,Piura,3,Secundaria completo,6
+688,95,30,29,60,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+1843,148,34,31,60,Selva,Jardín,Loreto,3,Secundaria incompleto,5
+542,67,22,21,60,Sierra,Jardín,Cusco,3,Secundaria completo,6
+795,73,19,20,60,Sierra,Cuna-Jardín,Cusco,2,Superior universitario completo,10
+742,40,14,20,59,Sierra,Jardín,Cusco,5,Secundaria incompleto,5
+3070,117,35,36,63,Costa,Jardín,Lima Met.,4,Superior universitario incompleto,9
+2834,89,22,22,63,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2459,117,31,29,61,Costa,Jardín,Piura,3,Secundaria incompleto,5
+1611,131,31,27,61,Sierra,Jardín,Piura,1,Superior universitario completo,10
+350,82,19,21,61,Costa,Jardín,Piura,3,Secundaria completo,6
+159,82,20,26,61,Costa,Jardín,Piura,3,Secundaria completo,6
+158,83,21,26,61,Costa,Jardín,Piura,3,Secundaria completo,6
+1281,50,18,18,61,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+2237,65,27,24,61,Costa,Jardín,Piura,3,Primaria incompleto,3
+3203,113,33,26,63,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3071,91,33,35,63,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+1689,75,22,28,59,Selva,Jardín,Cusco,3,Secundaria completo,6
+1055,72,25,23,59,Selva,Jardín,Cusco,4,Secundaria incompleto,5
+2194,79,28,25,61,Costa,Jardín,Piura,5,Superior universitario completo,10
+2447,121,26,29,62,Costa,Jardín,Piura,3,Primaria completo,4
+1745,68,16,13,59,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+603,51,22,17,59,Sierra,Jardín,Cusco,4,Secundaria incompleto,5
+16,66,18,16,61,Sierra,Jardín,Piura,1,Primaria incompleto,3
+2095,108,34,31,60,Selva,Jardín,Loreto,1,Secundaria completo,6
+40,43,10,16,61,Sierra,Jardín,Piura,1,Superior técnico completo,8
+1062,63,21,18,60,Selva,Jardín,Cusco,4,Secundaria completo,6
+21,74,25,24,61,Sierra,Jardín,Piura,1,Superior técnico incompleto,7
+1968,92,27,29,62,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+1783,107,35,26,62,Costa,Jardín,Piura,4,Secundaria incompleto,5
+1217,80,25,29,61,Costa,Jardín,Piura,3,Secundaria completo,6
+693,76,28,27,60,Selva,Jardín,Loreto,4,Superior técnico incompleto,7
+797,71,20,20,59,Sierra,Cuna-Jardín,Cusco,2,Superior técnico completo,8
+3463,116,26,26,63,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1215,99,25,28,61,Costa,Cuna-Jardín,Piura,4,Superior técnico completo,8
+3066,108,35,34,63,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1677,47,17,19,60,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+1625,98,23,25,61,Sierra,Jardín,Piura,1,Secundaria completo,6
+1535,78,22,30,60,Selva,Jardín,Loreto,4,Superior universitario completo,10
+2326,75,18,21,61,Costa,Jardín,Piura,5,Superior universitario completo,10
+3088,97,35,35,61,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1773,75,29,24,61,Costa,Jardín,Piura,3,Superior técnico completo,8
+3218,120,30,27,64,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+3213,64,16,19,63,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1546,83,25,33,60,Selva,Jardín,Loreto,4,Secundaria completo,6
+1649,94,25,25,60,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+1756,66,26,19,61,Costa,Jardín,Piura,3,Primaria incompleto,3
+799,70,20,19,59,Sierra,Cuna-Jardín,Cusco,2,Superior técnico completo,8
+615,44,18,18,61,Costa,Jardín,Piura,3,Secundaria completo,6
+2185,62,27,18,61,Costa,Jardín,Piura,5,Secundaria completo,6
+1629,115,30,31,61,Sierra,Jardín,Piura,1,Primaria completo,4
+753,49,16,22,59,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+2108,78,24,23,61,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+970,101,25,27,59,Selva,Jardín,Loreto,3,Secundaria incompleto,5
+1744,92,18,25,59,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+318,75,20,21,59,Sierra,Jardín,Cusco,2,Secundaria completo,6
+2531,93,32,25,60,Sierra,Jardín,Piura,1,Secundaria incompleto,5
+3425,131,31,31,62,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+1871,87,22,28,61,Costa,Cuna-Jardín,Piura,4,Superior universitario completo,10
+946,143,31,29,59,Sierra,Jardín,Cusco,1,Secundaria completo,6
+341,84,20,23,60,Costa,Jardín,Piura,3,Secundaria completo,6
+964,79,21,21,58,Selva,Jardín,Loreto,3,Primaria completo,4
+2462,89,31,25,61,Costa,Jardín,Piura,3,Ninguno,1
+2277,132,28,34,60,Costa,Jardín,Piura,5,Superior técnico completo,8
+3450,68,19,24,62,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2130,70,19,18,59,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+346,83,21,22,61,Costa,Jardín,Piura,3,Secundaria completo,6
+1702,97,28,34,59,Selva,Jardín,Cusco,3,Superior universitario incompleto,9
+3221,59,19,20,66,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1284,63,20,23,60,Costa,Cuna-Jardín,Piura,4,Primaria completo,4
+437,75,23,19,59,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1765,68,30,22,60,Costa,Jardín,Piura,3,Primaria completo,4
+1326,56,17,19,73,Costa,Cuna-Jardín,Piura,4,Superior universitario completo,10
+694,109,30,28,59,Selva,Jardín,Loreto,4,Secundaria completo,6
+527,101,31,36,59,Selva,No_Esc,Loreto,2,Primaria completo,4
+1325,49,16,19,60,Costa,Cuna-Jardín,Piura,4,Superior técnico completo,8
+1772,75,27,22,60,Costa,Jardín,Piura,3,Secundaria incompleto,5
+1400,102,28,30,58,Sierra,Jardín,Cusco,5,Superior técnico incompleto,7
+616,62,20,21,60,Costa,Jardín,Piura,3,Secundaria completo,6
+1127,102,22,28,60,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+2235,79,27,16,60,Costa,Jardín,Piura,3,Primaria completo,4
+2331,66,15,28,60,Costa,Jardín,Piura,5,Secundaria completo,6
+3459,113,25,26,63,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+686,97,29,26,59,Selva,Jardín,Loreto,4,Superior técnico completo,8
+605,63,24,18,58,Sierra,Jardín,Cusco,4,Secundaria incompleto,5
+848,112,32,31,59,Selva,Jardín,Loreto,4,Secundaria completo,6
+2828,115,27,28,62,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2211,80,25,23,60,Sierra,Jardín,Piura,1,Superior técnico completo,8
+342,83,21,22,60,Costa,Jardín,Piura,3,Secundaria completo,6
+3419,76,22,22,64,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1698,87,25,32,58,Selva,Jardín,Cusco,3,Secundaria completo,6
+1244,67,18,22,60,Costa,Jardín,Piura,3,Secundaria incompleto,5
+2386,96,32,33,60,Costa,Jardín,Piura,5,Superior universitario completo,10
+2508,102,23,21,61,Costa,Jardín,Piura,1,Secundaria completo,6
+1671,51,18,19,59,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+844,109,31,25,59,Selva,Jardín,Loreto,4,Secundaria completo,6
+2131,42,13,14,58,Sierra,Jardín,Cusco,2,Secundaria completo,6
+732,79,22,21,58,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+2147,116,26,30,60,Sierra,Jardín,Piura,1,Secundaria completo,6
+1664,76,20,31,59,Selva,Jardín,Loreto,4,Secundaria completo,6
+1771,75,28,23,60,Costa,Jardín,Piura,3,Primaria completo,4
+3379,71,20,22,62,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3323,120,22,23,61,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1570,117,31,29,60,Costa,Jardín,Piura,3,Secundaria completo,6
+853,110,31,31,59,Selva,Jardín,Loreto,4,Secundaria completo,6
+334,93,20,24,60,Costa,Jardín,Piura,3,Secundaria completo,6
+2105,71,25,18,59,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+330,76,19,23,60,Costa,Jardín,Piura,3,Secundaria completo,6
+2441,123,30,23,60,Costa,Jardín,Piura,3,Superior técnico completo,8
+1588,141,30,30,59,Selva,Jardín,Loreto,5,Inicial,2
+1173,73,22,18,59,Selva,Jardín,Loreto,5,Secundaria incompleto,5
+551,128,34,34,58,Sierra,Jardín,Cusco,3,Secundaria completo,6
+3430,88,24,26,61,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+3200,116,35,26,61,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1692,90,25,33,58,Selva,Jardín,Cusco,3,Secundaria completo,6
+3464,136,24,29,61,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+2329,72,15,25,60,Costa,Jardín,Piura,5,Ninguno,1
+2453,95,32,27,60,Costa,Jardín,Piura,3,Secundaria incompleto,5
+3416,69,14,18,61,Costa,Jardín,Lima Met.,4,Superior técnico incompleto,7
+687,74,27,28,59,Selva,Jardín,Loreto,4,Secundaria completo,6
+757,67,17,20,58,Sierra,Jardín,Cusco,5,Secundaria completo,6
+973,89,24,23,59,Selva,Jardín,Loreto,3,Primaria completo,4
+1323,64,18,21,60,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1777,78,24,28,58,Selva,Jardín,Cusco,3,Secundaria completo,6
+403,80,24,21,66,Costa,Jardín,Piura,3,Secundaria completo,6
+2216,83,31,22,60,Sierra,Jardín,Piura,1,Superior universitario incompleto,9
+2813,87,25,21,61,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+760,87,23,24,58,Sierra,Jardín,Cusco,2,Secundaria completo,6
+1661,78,29,26,60,Selva,Jardín,Loreto,4,Primaria incompleto,3
+1214,78,19,22,60,Costa,Cuna-Jardín,Piura,4,Superior técnico completo,8
+369,56,21,23,59,Costa,Jardín,Piura,3,Primaria completo,4
+1494,90,28,27,59,Costa,Jardín,Piura,3,Secundaria completo,6
+1211,93,22,25,59,Costa,Cuna-Jardín,Piura,4,Superior técnico incompleto,7
+1493,104,29,26,59,Costa,Jardín,Piura,3,Secundaria completo,6
+2087,40,14,15,59,Costa,Cuna-Jardín,Piura,4,Primaria completo,4
+2209,84,29,21,61,Sierra,Jardín,Piura,1,Secundaria completo,6
+1491,62,21,22,59,Costa,Jardín,Piura,3,Secundaria incompleto,5
+1196,58,17,19,60,Costa,Jardín,Piura,3,Secundaria incompleto,5
+160,85,20,26,59,Costa,Jardín,Piura,3,Secundaria completo,6
+1328,78,20,21,59,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+3470,110,26,26,61,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1766,77,30,28,60,Costa,Jardín,Piura,3,Primaria completo,4
+2274,53,23,22,60,Costa,Jardín,Piura,5,Secundaria completo,6
+1416,62,25,28,58,Selva,Jardín,Loreto,4,Secundaria completo,6
+882,63,30,24,59,Selva,Jardín,Loreto,4,Primaria incompleto,3
+430,99,29,35,58,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+2233,58,26,21,59,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+2069,64,23,22,58,Sierra,Jardín,Cusco,2,Primaria incompleto,3
+246,66,19,21,58,Sierra,Cuna-Jardín,Cusco,2,Secundaria completo,6
+846,109,34,26,58,Selva,Jardín,Loreto,4,Secundaria completo,6
+2809,68,23,22,61,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+429,96,32,32,58,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+602,58,22,18,57,Sierra,Jardín,Cusco,4,Secundaria incompleto,5
+347,68,17,17,58,Costa,Jardín,Piura,3,Secundaria completo,6
+1421,131,33,25,57,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+3302,90,22,20,61,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+3493,85,22,23,61,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1052,80,25,29,57,Selva,Jardín,Cusco,4,"Posgrado (maestría, doctorado)",11
+1763,39,23,21,59,Costa,Jardín,Piura,3,Secundaria incompleto,5
+3488,108,25,24,62,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+871,65,31,28,60,Selva,Jardín,Loreto,4,Secundaria completo,6
+62,59,25,24,59,Selva,Jardín,Cusco,4,Secundaria completo,6
+1624,102,27,29,60,Sierra,Jardín,Piura,1,Superior universitario incompleto,9
+1280,70,20,23,59,Costa,Jardín,Piura,4,Secundaria completo,6
+1627,119,30,31,59,Sierra,Jardín,Piura,1,Secundaria completo,6
+3442,110,28,25,61,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+852,108,28,27,58,Selva,Jardín,Loreto,4,Secundaria completo,6
+536,74,21,22,57,Sierra,Jardín,Cusco,3,Superior universitario completo,10
+2450,102,31,26,59,Costa,Jardín,Piura,3,Secundaria incompleto,5
+792,78,22,23,57,Sierra,Cuna-Jardín,Cusco,2,Superior universitario completo,10
+1427,122,28,30,57,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+3065,104,33,29,61,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1216,85,23,25,59,Costa,Cuna-Jardín,Piura,4,Superior técnico incompleto,7
+1106,120,32,33,59,Costa,Jardín,Piura,4,Secundaria completo,6
+2187,80,27,27,59,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+339,80,23,25,59,Costa,Jardín,Piura,3,Primaria completo,4
+2179,92,22,23,60,Sierra,Jardín,Piura,1,Superior universitario incompleto,9
+904,61,22,19,57,Sierra,Cuna-Jardín,Cusco,2,Superior técnico completo,8
+1705,86,19,22,57,Selva,Jardín,Cusco,3,Superior universitario completo,10
+969,114,26,27,58,Selva,Jardín,Loreto,3,Secundaria completo,6
+2129,38,10,12,57,Sierra,Jardín,Cusco,2,Primaria completo,4
+1134,43,26,16,57,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+685,70,29,27,58,Selva,Jardín,Loreto,4,Primaria completo,4
+1279,55,19,18,59,Costa,Cuna-Jardín,Piura,4,Superior universitario completo,10
+2080,63,20,20,57,Sierra,Jardín,Cusco,2,Primaria completo,4
+906,57,20,19,57,Sierra,Cuna-Jardín,Cusco,2,Secundaria completo,6
+2533,92,32,25,59,Sierra,Jardín,Piura,1,Secundaria completo,6
+3079,116,36,36,60,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+2208,81,26,18,59,Sierra,Jardín,Piura,1,Superior universitario completo,10
+2808,87,21,28,60,Costa,Jardín,Lima Met.,4,Superior técnico incompleto,7
+2458,108,32,28,59,Costa,Jardín,Piura,3,Secundaria completo,6
+1077,92,34,21,61,Sierra,Jardín,Piura,1,Primaria completo,4
+1126,75,17,23,59,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+3217,99,30,24,60,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+253,66,23,19,57,Sierra,Cuna-Jardín,Cusco,2,Superior universitario completo,10
+322,65,21,18,57,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+879,62,28,24,58,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+3381,110,33,30,60,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3429,90,25,26,65,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+3008,144,32,30,60,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1615,86,25,23,58,Sierra,Jardín,Piura,1,Secundaria completo,6
+1753,89,31,25,60,Costa,Jardín,Piura,3,Secundaria completo,6
+790,74,20,21,57,Sierra,Cuna-Jardín,Cusco,2,Primaria completo,4
+2504,82,24,20,59,Costa,Jardín,Piura,1,Secundaria completo,6
+1747,71,16,19,57,Selva,Jardín,Cusco,3,Primaria completo,4
+737,44,15,16,57,Sierra,Jardín,Cusco,5,Superior universitario incompleto,9
+2822,121,28,29,60,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3438,100,29,28,60,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+756,70,23,23,57,Sierra,Jardín,Cusco,2,Secundaria completo,6
+1704,94,26,34,57,Selva,Jardín,Cusco,3,Superior técnico completo,8
+501,82,28,22,57,Selva,No_Esc,Loreto,2,Primaria completo,4
+1701,88,26,28,57,Selva,Jardín,Cusco,3,Secundaria completo,6
+3462,107,32,28,61,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2971,114,34,30,60,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1918,62,17,25,58,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+1288,49,18,17,46,Costa,Cuna-Jardín,Piura,4,Primaria completo,4
+3520,79,22,17,60,Costa,Jardín,Lima Met.,5,Superior técnico completo,8
+156,82,21,26,58,Costa,Jardín,Piura,3,Secundaria completo,6
+1261,70,19,22,59,Costa,Cuna-Jardín,Piura,4,Superior universitario incompleto,9
+345,78,19,21,59,Costa,Jardín,Piura,3,Secundaria completo,6
+1061,85,22,19,57,Selva,Jardín,Cusco,4,Secundaria completo,6
+2328,74,17,24,59,Costa,Jardín,Piura,5,Superior técnico incompleto,7
+431,106,32,26,57,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+2286,94,20,27,58,Costa,Jardín,Piura,5,Primaria completo,4
+320,80,23,23,56,Sierra,Jardín,Cusco,2,Superior universitario completo,10
+1703,72,21,25,57,Selva,Jardín,Cusco,3,Ninguno,1
+2281,93,22,28,60,Costa,Jardín,Piura,5,Secundaria completo,6
+1758,92,24,25,58,Costa,Jardín,Piura,3,Secundaria completo,6
+1760,61,29,23,58,Costa,Jardín,Piura,3,Secundaria completo,6
+2534,92,32,27,58,Sierra,Jardín,Piura,1,Secundaria incompleto,5
+945,141,31,30,56,Sierra,Jardín,Cusco,1,Secundaria completo,6
+2588,89,24,23,57,Selva,Jardín,Cusco,4,Primaria incompleto,3
+2186,44,15,18,58,Costa,Jardín,Piura,5,Secundaria completo,6
+1423,116,25,26,57,Sierra,Jardín,Cusco,5,Superior universitario incompleto,9
+2615,65,14,20,58,Sierra,Jardín,Piura,1,Primaria incompleto,3
+2238,49,25,25,58,Costa,Jardín,Piura,3,Secundaria incompleto,5
+321,69,21,21,56,Sierra,Jardín,Cusco,2,Superior técnico completo,8
+1413,59,28,28,58,Selva,Jardín,Loreto,4,Secundaria completo,6
+1079,74,32,24,52,Sierra,Jardín,Piura,1,Superior técnico incompleto,7
+2505,84,25,19,58,Costa,Jardín,Piura,1,Secundaria completo,6
+2461,69,30,20,58,Costa,Jardín,Piura,3,Ninguno,1
+2231,61,23,24,57,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+2278,113,24,29,58,Costa,Jardín,Piura,5,Superior técnico completo,8
+1610,116,27,28,58,Sierra,Jardín,Piura,1,Secundaria completo,6
+1410,62,28,28,57,Selva,Jardín,Loreto,4,Primaria completo,4
+2327,89,20,25,58,Costa,Jardín,Piura,5,Secundaria completo,6
+679,70,26,23,58,Selva,Jardín,Loreto,4,Secundaria completo,6
+682,62,27,28,60,Selva,Jardín,Loreto,4,Secundaria completo,6
+1195,70,21,18,58,Costa,Jardín,Piura,4,Primaria incompleto,3
+745,75,22,20,55,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+1292,46,15,15,58,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+3490,53,22,16,60,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2832,98,20,21,60,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+555,71,15,22,56,Sierra,Jardín,Cusco,3,Primaria incompleto,3
+3408,110,31,24,60,Costa,Jardín,Lima Met.,4,Primaria completo,4
+2332,63,24,21,58,Costa,Jardín,Piura,5,Secundaria completo,6
+422,62,21,23,58,Costa,Jardín,Piura,3,Secundaria completo,6
+1241,87,28,27,59,Costa,Jardín,Piura,3,Secundaria incompleto,5
+2180,76,23,24,58,Sierra,Jardín,Piura,1,Superior universitario completo,10
+1813,90,25,25,56,Selva,Jardín,Cusco,3,Secundaria completo,6
+545,100,28,28,56,Sierra,Jardín,Cusco,3,Secundaria incompleto,5
+3332,81,21,18,60,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+1674,79,20,30,57,Selva,Jardín,Loreto,4,Secundaria completo,6
+608,64,25,20,56,Sierra,Jardín,Cusco,4,Secundaria incompleto,5
+1291,67,22,23,58,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+2207,89,28,25,58,Sierra,Jardín,Piura,1,Secundaria completo,6
+1803,88,30,27,56,Selva,Jardín,Cusco,3,Secundaria completo,6
+1618,81,22,19,58,Sierra,Jardín,Piura,1,Superior universitario completo,10
+1492,61,19,21,58,Costa,Jardín,Piura,3,Secundaria completo,6
+1327,39,16,15,58,Costa,Cuna-Jardín,Piura,4,Superior técnico completo,8
+3434,98,29,31,61,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+2530,63,30,23,58,Sierra,Jardín,Piura,1,Ninguno,1
+3074,90,35,35,60,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+2189,67,26,23,58,Costa,Jardín,Piura,5,Primaria completo,4
+740,68,22,22,56,Sierra,Jardín,Cusco,5,Superior universitario incompleto,9
+599,62,23,21,56,Sierra,Jardín,Cusco,4,Secundaria completo,6
+329,69,21,19,58,Sierra,Jardín,Cusco,2,Secundaria completo,6
+2968,105,28,24,60,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+1411,54,22,29,57,Selva,Jardín,Loreto,4,Superior técnico completo,8
+1258,84,24,26,58,Costa,Cuna-Jardín,Piura,4,Superior técnico incompleto,7
+1164,102,33,28,58,Costa,Jardín,Piura,4,Secundaria incompleto,5
+2219,143,29,30,58,Costa,Jardín,Piura,5,Secundaria completo,6
+59,47,13,18,57,Selva,Jardín,Cusco,4,Secundaria completo,6
+1287,46,20,19,58,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1190,51,22,17,56,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+1827,78,21,22,51,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+3476,102,25,23,59,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2509,87,22,22,58,Costa,Jardín,Piura,1,Secundaria completo,6
+678,64,26,23,57,Selva,Jardín,Loreto,4,Secundaria completo,6
+1969,67,20,19,57,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+3483,71,21,22,59,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+880,64,33,26,57,Selva,Jardín,Loreto,4,Secundaria completo,6
+1124,92,21,25,57,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1919,71,21,25,58,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+2510,88,21,21,59,Costa,Jardín,Piura,1,Secundaria completo,6
+2444,105,32,24,57,Costa,Jardín,Piura,3,Primaria completo,4
+2294,86,22,28,56,Costa,Jardín,Piura,5,Secundaria completo,6
+3460,103,26,29,59,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2812,61,21,20,60,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2098,63,21,16,56,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+2197,111,29,33,58,Costa,Jardín,Piura,5,Superior universitario completo,10
+552,124,36,34,56,Sierra,Jardín,Cusco,3,Superior técnico incompleto,7
+3087,74,30,30,59,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3386,134,31,33,59,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+64,44,21,17,56,Selva,Jardín,Cusco,4,Secundaria completo,6
+2614,93,25,25,57,Sierra,Jardín,Piura,1,Primaria incompleto,3
+2323,80,21,27,58,Costa,Jardín,Piura,5,Secundaria completo,6
+1277,74,21,23,58,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+3073,121,34,35,59,Costa,Jardín,Lima Met.,4,Primaria completo,4
+1286,61,19,22,57,Costa,Cuna-Jardín,Piura,4,Superior técnico incompleto,7
+1056,56,22,18,56,Selva,Jardín,Cusco,4,Primaria incompleto,3
+1040,100,21,27,58,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+2192,89,29,21,57,Sierra,Jardín,Piura,1,Superior universitario completo,10
+2336,38,15,13,57,Costa,Jardín,Piura,5,Secundaria completo,6
+1212,86,21,28,57,Costa,Cuna-Jardín,Piura,4,Superior técnico completo,8
+1714,70,23,25,55,Selva,Jardín,Cusco,3,Superior técnico completo,8
+1839,130,32,31,56,Selva,Jardín,Loreto,3,Secundaria completo,6
+872,64,31,24,58,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+692,80,28,26,56,Selva,Jardín,Loreto,4,Secundaria completo,6
+245,56,19,18,53,Sierra,Cuna-Jardín,Cusco,2,Secundaria completo,6
+965,104,24,27,57,Selva,Jardín,Loreto,3,Superior universitario completo,10
+876,66,29,24,57,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+1207,53,18,15,55,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+2284,122,26,30,57,Costa,Jardín,Piura,5,Secundaria completo,6
+1414,62,27,28,56,Selva,Jardín,Loreto,4,Secundaria completo,6
+1054,81,24,22,55,Selva,Jardín,Cusco,4,Superior técnico completo,8
+3205,74,29,26,59,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1322,62,20,20,58,Costa,Cuna-Jardín,Piura,4,Superior técnico incompleto,7
+3456,107,22,25,59,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+56,55,23,26,55,Selva,Jardín,Cusco,4,Secundaria completo,6
+24,47,18,19,45,Sierra,Jardín,Piura,1,Secundaria completo,6
+1621,129,28,29,57,Sierra,Jardín,Piura,1,Superior universitario completo,10
+368,58,18,20,58,Costa,Jardín,Piura,3,Secundaria incompleto,5
+65,39,16,16,55,Selva,Jardín,Cusco,4,Secundaria completo,6
+1534,60,16,22,56,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+414,72,24,26,57,Costa,Jardín,Piura,5,Secundaria completo,6
+22,59,21,20,57,Sierra,Jardín,Piura,1,Primaria incompleto,3
+1964,80,23,26,57,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+2314,121,34,34,57,Costa,Jardín,Piura,5,Superior universitario completo,10
+850,109,33,22,52,Selva,Jardín,Loreto,4,Secundaria completo,6
+977,110,25,26,56,Selva,Jardín,Loreto,3,Superior técnico completo,8
+549,124,33,34,55,Sierra,Jardín,Cusco,3,Secundaria incompleto,5
+1761,106,28,27,57,Costa,Jardín,Piura,3,Superior técnico completo,8
+3126,101,35,28,68,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+690,94,30,29,56,Selva,Jardín,Loreto,4,Superior técnico completo,8
+972,100,24,24,56,Selva,Jardín,Loreto,3,Superior técnico incompleto,7
+2191,81,28,19,57,Sierra,Jardín,Piura,1,Superior técnico completo,8
+734,71,21,22,55,Sierra,Jardín,Cusco,5,Superior técnico incompleto,7
+604,49,21,17,55,Sierra,Jardín,Cusco,4,Secundaria incompleto,5
+2234,58,23,19,57,Costa,Jardín,Piura,5,Superior universitario completo,10
+1668,43,18,17,56,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+1667,43,17,17,57,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+1,61,21,21,57,Sierra,Jardín,Piura,1,Superior técnico incompleto,7
+1784,74,22,19,57,Costa,Jardín,Piura,4,Primaria completo,4
+2335,47,21,22,57,Costa,Jardín,Piura,5,"Posgrado (maestría, doctorado)",11
+2196,86,26,25,58,Costa,Jardín,Piura,5,Superior universitario completo,10
+2195,111,29,32,58,Costa,Jardín,Piura,5,Superior universitario completo,10
+327,68,21,19,55,Sierra,Jardín,Cusco,2,Secundaria completo,6
+3295,88,29,25,59,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1713,61,23,26,55,Selva,Jardín,Cusco,3,Secundaria completo,6
+2503,81,19,18,56,Costa,Jardín,Piura,1,Secundaria completo,6
+1529,40,16,15,68,Selva,Jardín,Loreto,4,Primaria incompleto,3
+1672,70,21,28,55,Selva,Jardín,Loreto,4,Superior técnico incompleto,7
+2448,121,32,29,57,Costa,Jardín,Piura,3,Primaria incompleto,3
+845,109,26,22,56,Selva,Jardín,Loreto,4,Secundaria completo,6
+696,58,26,21,55,Selva,Jardín,Loreto,4,Secundaria completo,6
+1869,71,20,23,56,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+736,51,18,21,55,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+252,63,22,19,55,Sierra,Cuna-Jardín,Cusco,2,Primaria completo,4
+1407,71,26,29,56,Selva,Jardín,Loreto,4,Superior universitario completo,10
+3283,145,27,31,59,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+420,111,33,30,56,Costa,Jardín,Piura,5,Secundaria completo,6
+2184,62,18,18,57,Costa,Jardín,Piura,5,Secundaria completo,6
+1198,89,31,24,57,Costa,Jardín,Piura,4,Primaria incompleto,3
+3085,95,34,30,58,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+157,82,20,25,57,Costa,Jardín,Piura,3,Secundaria completo,6
+3413,53,21,18,61,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3083,93,35,35,58,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+419,114,32,32,56,Costa,Jardín,Piura,5,Superior técnico completo,8
+3485,89,25,22,59,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2190,70,24,24,56,Costa,Jardín,Piura,5,Superior universitario completo,10
+1294,54,13,19,56,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+2193,39,11,15,56,Costa,Jardín,Piura,5,Superior universitario completo,10
+2500,79,19,21,56,Costa,Jardín,Piura,1,Secundaria completo,6
+750,67,22,22,55,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1988,81,13,16,55,Sierra,Jardín,Cusco,2,Superior universitario completo,10
+3479,65,22,19,58,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1188,67,20,24,56,Costa,Jardín,Piura,3,Secundaria completo,6
+3372,91,30,28,58,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1177,77,19,19,57,Selva,Jardín,Loreto,5,Primaria completo,4
+415,96,33,31,56,Costa,Jardín,Piura,5,Superior técnico completo,8
+416,98,34,31,57,Costa,Jardín,Piura,5,Superior técnico completo,8
+3420,138,25,28,58,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1675,59,18,24,55,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+1690,95,28,32,54,Selva,Jardín,Cusco,3,Superior técnico completo,8
+1608,107,30,27,56,Selva,Jardín,Loreto,5,Secundaria incompleto,5
+2086,94,24,22,60,Sierra,Jardín,Piura,1,Secundaria completo,6
+1174,61,19,18,56,Selva,Jardín,Loreto,5,Primaria completo,4
+1078,64,27,18,44,Sierra,Jardín,Piura,1,Primaria incompleto,3
+1830,84,29,26,56,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+3377,59,18,22,58,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3324,73,16,22,58,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1544,62,21,21,55,Selva,Jardín,Loreto,4,Secundaria completo,6
+2243,46,20,27,56,Costa,Jardín,Piura,3,Primaria completo,4
+3277,90,28,22,56,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1870,64,16,21,56,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+635,46,16,18,56,Costa,Jardín,Piura,3,Primaria completo,4
+1075,147,31,31,55,Selva,Jardín,Loreto,5,Secundaria completo,6
+58,40,20,17,54,Selva,Jardín,Cusco,4,Secundaria completo,6
+2288,86,23,25,56,Costa,Jardín,Piura,5,Superior universitario completo,10
+1846,126,32,31,55,Selva,Jardín,Loreto,3,Superior universitario completo,10
+1566,63,16,20,56,Costa,Jardín,Piura,3,Secundaria incompleto,5
+2826,98,23,24,58,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1872,83,26,26,56,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+171,80,21,26,56,Costa,Jardín,Piura,3,Secundaria completo,6
+170,80,21,26,56,Costa,Jardín,Piura,3,Secundaria completo,6
+3181,101,27,24,57,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1762,121,32,29,56,Costa,Jardín,Piura,3,Secundaria incompleto,5
+2460,81,32,25,56,Costa,Jardín,Piura,3,Secundaria incompleto,5
+2133,67,20,17,54,Sierra,Jardín,Cusco,2,Secundaria completo,6
+2222,71,28,18,56,Sierra,Jardín,Piura,1,Secundaria completo,6
+1490,78,17,19,56,Costa,Jardín,Piura,4,Ninguno,1
+675,62,22,24,55,Selva,Jardín,Loreto,4,Secundaria completo,6
+674,62,22,24,55,Selva,Jardín,Loreto,4,Secundaria completo,6
+1632,84,20,19,54,Selva,Jardín,Cusco,3,Secundaria completo,6
+2099,58,21,16,54,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+2276,61,24,22,56,Costa,Jardín,Piura,5,Superior universitario completo,10
+975,80,17,18,55,Selva,Jardín,Loreto,3,Primaria completo,4
+23,41,16,15,56,Sierra,Jardín,Piura,1,Secundaria completo,6
+744,69,21,21,54,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+1622,97,23,26,65,Sierra,Jardín,Piura,1,Superior técnico incompleto,7
+968,84,19,24,55,Selva,Jardín,Loreto,3,Secundaria incompleto,5
+3321,148,25,35,57,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+3326,142,29,31,59,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3489,92,30,28,57,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2246,40,11,15,48,Costa,Cuna-Jardín,Piura,4,Primaria completo,4
+337,64,14,21,56,Costa,Jardín,Piura,3,Primaria completo,4
+508,85,20,19,55,Selva,No_Esc,Loreto,2,Primaria completo,4
+1541,75,22,22,55,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+1695,83,17,17,54,Selva,Jardín,Cusco,3,Superior técnico completo,8
+1540,59,18,22,55,Selva,Jardín,Loreto,4,Secundaria completo,6
+601,55,22,20,54,Sierra,Jardín,Cusco,4,Secundaria completo,6
+506,95,29,34,60,Selva,No_Esc,Loreto,2,Primaria completo,4
+976,99,23,25,55,Selva,Jardín,Loreto,3,Secundaria incompleto,5
+1082,85,29,26,56,Sierra,Jardín,Piura,1,"Posgrado (maestría, doctorado)",11
+417,119,34,33,56,Costa,Jardín,Piura,5,Secundaria completo,6
+2245,71,24,22,56,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+2570,51,16,18,55,Selva,Jardín,Loreto,4,Primaria incompleto,3
+432,88,31,29,54,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+535,73,20,22,54,Sierra,Jardín,Cusco,3,Secundaria completo,6
+2507,81,18,22,55,Costa,Jardín,Piura,1,Secundaria completo,6
+3397,129,29,33,57,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+169,74,22,25,55,Costa,Jardín,Piura,3,Secundaria completo,6
+789,76,20,23,54,Sierra,Cuna-Jardín,Cusco,2,Secundaria completo,6
+2275,54,21,20,55,Costa,Jardín,Piura,5,Superior universitario completo,10
+2527,48,15,22,56,Sierra,Jardín,Piura,1,Primaria incompleto,3
+1619,81,19,20,55,Sierra,Jardín,Piura,1,Superior universitario completo,10
+2315,101,33,33,56,Costa,Jardín,Piura,5,Superior universitario completo,10
+1585,80,22,24,54,Selva,Jardín,Loreto,5,Secundaria incompleto,5
+1626,102,26,25,55,Sierra,Jardín,Piura,1,Primaria incompleto,3
+435,117,30,31,54,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+636,69,20,23,44,Costa,Jardín,Piura,3,Superior universitario incompleto,9
+1663,71,23,29,54,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+695,66,27,25,54,Selva,Jardín,Loreto,4,Secundaria completo,6
+3444,86,34,17,57,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1676,67,20,27,54,Selva,Jardín,Loreto,4,Superior técnico completo,8
+3212,112,33,27,57,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1743,92,19,26,54,Selva,Jardín,Cusco,3,Secundaria completo,6
+2833,57,20,20,57,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+738,44,19,22,54,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1917,87,24,25,55,Costa,Cuna-Jardín,Piura,4,Superior universitario completo,10
+2005,62,25,21,55,Selva,Jardín,Loreto,1,Primaria incompleto,3
+1774,83,29,22,56,Costa,Jardín,Piura,3,Secundaria completo,6
+39,60,22,20,55,Sierra,Jardín,Piura,1,Secundaria completo,6
+1623,113,25,31,55,Sierra,Jardín,Piura,1,Superior técnico completo,8
+1488,62,17,19,57,Costa,Jardín,Piura,4,Primaria incompleto,3
+436,84,22,24,53,Sierra,Jardín,Cusco,5,Secundaria completo,6
+1768,52,24,23,55,Costa,Jardín,Piura,3,Primaria completo,4
+1932,77,21,24,53,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+1392,77,22,19,55,Costa,Jardín,Piura,4,Primaria incompleto,3
+2083,61,25,29,54,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+1194,87,21,29,55,Costa,Jardín,Piura,3,Secundaria incompleto,5
+3307,98,22,25,57,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1420,112,28,31,53,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1930,75,18,16,53,Sierra,Jardín,Cusco,2,Secundaria completo,6
+2204,99,27,25,55,Sierra,Jardín,Piura,1,Superior universitario incompleto,9
+3077,116,36,36,63,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+1845,106,30,29,54,Selva,Jardín,Loreto,3,Primaria completo,4
+1489,79,29,23,55,Costa,Jardín,Piura,4,Superior técnico incompleto,7
+1759,42,24,21,55,Costa,Jardín,Piura,3,Secundaria completo,6
+2446,74,31,26,55,Costa,Jardín,Piura,3,Secundaria completo,6
+1275,100,24,27,55,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+1202,100,28,28,53,Sierra,Jardín,Cusco,5,Superior técnico incompleto,7
+1556,48,20,21,54,Selva,Jardín,Loreto,4,Secundaria completo,6
+2388,94,31,33,55,Costa,Jardín,Piura,5,Secundaria completo,6
+1426,69,24,19,53,Sierra,Jardín,Cusco,5,Secundaria completo,6
+1296,50,18,18,55,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1123,73,14,22,55,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1186,77,24,18,66,Selva,Jardín,Loreto,5,Primaria completo,4
+1239,68,20,22,55,Costa,Jardín,Piura,3,Secundaria incompleto,5
+1693,94,18,19,53,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+1757,59,27,21,56,Costa,Jardín,Piura,3,Secundaria incompleto,5
+3448,76,25,13,66,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1688,86,19,26,53,Selva,Jardín,Cusco,3,Secundaria completo,6
+752,72,22,20,53,Sierra,Jardín,Cusco,5,Secundaria completo,6
+3084,85,30,33,57,Costa,Jardín,Lima Met.,4,Superior técnico incompleto,7
+598,67,22,17,53,Sierra,Jardín,Cusco,4,Superior universitario completo,10
+3009,101,30,27,56,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+743,75,24,18,53,Sierra,Jardín,Cusco,5,Secundaria completo,6
+3328,91,19,20,57,Costa,Jardín,Lima Met.,4,Superior técnico incompleto,7
+1715,74,24,26,53,Selva,Jardín,Cusco,3,Secundaria completo,6
+1634,68,19,18,53,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+550,83,26,21,53,Sierra,Jardín,Cusco,3,Secundaria completo,6
+2202,75,19,21,55,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+1700,75,23,23,53,Selva,Jardín,Cusco,3,Secundaria completo,6
+49,49,21,18,54,Selva,Jardín,Cusco,4,Secundaria completo,6
+2502,49,15,19,55,Costa,Jardín,Piura,1,Secundaria completo,6
+1605,97,29,25,54,Selva,Jardín,Loreto,5,Primaria incompleto,3
+1129,101,23,27,55,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+3432,109,29,26,56,Costa,Jardín,Lima Met.,4,Primaria completo,4
+2829,120,25,29,56,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2203,121,33,34,55,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+51,37,16,17,53,Selva,Jardín,Cusco,4,Secundaria incompleto,5
+2221,73,22,20,55,Sierra,Jardín,Piura,1,"Posgrado (maestría, doctorado)",11
+2226,71,24,19,55,Sierra,Jardín,Piura,1,Superior universitario completo,10
+3426,137,32,30,59,Costa,Jardín,Lima Met.,4,Primaria completo,4
+1571,120,33,28,55,Costa,Jardín,Piura,3,Secundaria completo,6
+749,64,20,21,53,Sierra,Jardín,Cusco,5,Superior técnico incompleto,7
+1769,40,22,19,55,Costa,Jardín,Piura,3,Secundaria completo,6
+1770,36,22,17,55,Costa,Jardín,Piura,3,Secundaria completo,6
+1403,62,17,17,55,Costa,Jardín,Piura,4,Primaria incompleto,3
+1243,69,18,22,55,Costa,Jardín,Piura,3,Secundaria completo,6
+1059,86,23,21,53,Selva,Jardín,Cusco,4,Superior técnico completo,8
+733,56,18,20,53,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+2293,90,22,27,55,Costa,Jardín,Piura,5,Secundaria completo,6
+2817,79,22,21,56,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+2236,54,23,26,55,Costa,Jardín,Piura,3,Primaria incompleto,3
+1755,37,17,16,54,Costa,Jardín,Piura,3,Secundaria incompleto,5
+3195,72,32,21,56,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+971,80,21,23,54,Selva,Jardín,Loreto,3,Superior técnico incompleto,7
+1754,64,25,20,54,Costa,Jardín,Piura,3,Secundaria completo,6
+1293,52,20,21,57,Costa,Cuna-Jardín,Piura,4,Primaria completo,4
+1785,69,23,17,54,Costa,Jardín,Piura,4,Secundaria incompleto,5
+1927,84,22,23,53,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+2830,60,23,21,56,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1707,75,18,14,53,Selva,Jardín,Cusco,3,Secundaria completo,6
+251,60,21,19,53,Sierra,Cuna-Jardín,Cusco,2,Primaria completo,4
+2077,73,24,24,53,Sierra,Jardín,Cusco,2,Secundaria completo,6
+1694,90,21,18,53,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+2224,84,27,21,54,Sierra,Jardín,Piura,1,Superior técnico completo,8
+3457,112,23,30,56,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3523,83,24,18,56,Costa,Jardín,Lima Met.,5,Secundaria completo,6
+2445,134,32,27,54,Costa,Jardín,Piura,3,Superior técnico completo,8
+1965,83,25,27,54,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+3392,131,25,30,56,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+537,60,16,19,53,Sierra,Jardín,Cusco,3,Secundaria incompleto,5
+2616,59,16,22,54,Sierra,Jardín,Piura,1,Ninguno,1
+2,52,20,23,54,Sierra,Jardín,Piura,1,Secundaria completo,6
+1635,81,22,27,53,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+3399,99,22,31,56,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2292,64,17,24,54,Costa,Jardín,Piura,5,Superior técnico incompleto,7
+2537,85,31,25,54,Sierra,Jardín,Piura,1,Primaria completo,4
+1199,67,20,21,54,Costa,Jardín,Piura,4,Primaria incompleto,3
+1208,67,22,21,52,Selva,Jardín,Cusco,3,Primaria incompleto,3
+2084,98,20,29,54,Sierra,Jardín,Piura,1,Superior universitario completo,10
+2810,105,20,26,56,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+161,85,20,26,54,Costa,Jardín,Piura,3,Secundaria completo,6
+794,77,22,21,53,Sierra,Cuna-Jardín,Cusco,2,Primaria incompleto,3
+61,41,20,18,52,Selva,Jardín,Cusco,4,Secundaria completo,6
+1210,75,22,22,54,Costa,Cuna-Jardín,Piura,4,Superior técnico completo,8
+2206,79,24,23,42,Sierra,Jardín,Piura,1,Superior técnico completo,8
+2528,76,28,25,54,Sierra,Jardín,Piura,1,Secundaria incompleto,5
+3178,87,31,24,56,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+967,103,25,27,53,Selva,Jardín,Loreto,3,Primaria completo,4
+54,64,21,25,52,Selva,Jardín,Cusco,4,Secundaria completo,6
+249,67,20,21,53,Sierra,Cuna-Jardín,Cusco,2,Secundaria completo,6
+1711,70,25,24,52,Selva,Jardín,Cusco,3,Secundaria completo,6
+1218,96,29,29,54,Costa,Jardín,Piura,3,Superior universitario completo,10
+747,53,18,21,52,Sierra,Jardín,Cusco,5,Superior técnico incompleto,7
+2205,109,22,22,54,Sierra,Jardín,Piura,1,Superior universitario incompleto,9
+1283,42,15,19,54,Costa,Cuna-Jardín,Piura,4,Superior técnico incompleto,7
+798,75,21,24,53,Sierra,Cuna-Jardín,Cusco,2,Superior universitario incompleto,9
+1795,89,28,28,53,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+633,50,19,21,54,Costa,Jardín,Piura,3,Secundaria completo,6
+1418,117,29,30,52,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+793,73,21,20,55,Sierra,Cuna-Jardín,Cusco,2,Superior universitario incompleto,9
+2073,70,22,20,52,Sierra,Jardín,Cusco,2,Secundaria completo,6
+1606,112,30,29,53,Selva,Jardín,Loreto,5,Primaria completo,4
+1607,80,22,18,53,Selva,Jardín,Loreto,5,Primaria completo,4
+344,71,15,21,54,Costa,Jardín,Piura,3,Secundaria completo,6
+735,70,19,22,52,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+1633,77,21,17,52,Selva,Jardín,Cusco,3,Secundaria completo,6
+2811,50,19,20,55,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+905,77,25,22,52,Sierra,Cuna-Jardín,Cusco,2,Superior técnico completo,8
+2587,45,17,17,52,Selva,Jardín,Cusco,4,Secundaria incompleto,5
+1746,80,18,18,52,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+2225,81,23,25,54,Sierra,Jardín,Piura,1,Superior universitario completo,10
+1934,79,21,23,52,Sierra,Jardín,Cusco,2,Primaria completo,4
+1289,70,24,24,54,Costa,Cuna-Jardín,Piura,4,Superior técnico incompleto,7
+684,74,26,29,53,Selva,Jardín,Loreto,4,Superior técnico incompleto,7
+3011,98,22,21,55,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+3006,101,22,23,55,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1175,51,16,15,53,Selva,Jardín,Loreto,5,Secundaria incompleto,5
+1060,54,18,18,52,Selva,Jardín,Cusco,4,Secundaria incompleto,5
+2585,81,24,22,52,Selva,Jardín,Cusco,4,Superior técnico incompleto,7
+907,37,19,15,52,Sierra,Jardín,Cusco,2,Secundaria completo,6
+1425,77,26,18,52,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+3451,85,23,22,55,Costa,Jardín,Lima Met.,4,Superior técnico incompleto,7
+2831,81,18,21,55,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+544,54,17,20,52,Sierra,Jardín,Cusco,3,Secundaria completo,6
+3251,72,21,18,67,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+2814,74,22,22,55,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3390,52,15,18,55,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1081,104,35,25,54,Sierra,Jardín,Piura,1,Primaria completo,4
+1787,110,33,33,53,Costa,Jardín,Piura,4,Secundaria completo,6
+2230,46,16,19,53,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+2232,58,20,20,53,Costa,Jardín,Piura,5,Superior universitario completo,10
+2455,106,28,28,53,Costa,Jardín,Piura,3,Superior universitario incompleto,9
+944,138,30,29,52,Sierra,Jardín,Cusco,1,Secundaria completo,6
+677,88,28,26,52,Selva,Jardín,Loreto,4,Secundaria completo,6
+689,72,27,24,52,Selva,Jardín,Loreto,4,Superior técnico incompleto,7
+2823,81,23,23,55,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1276,84,20,23,53,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+1617,126,23,27,54,Sierra,Jardín,Piura,1,Secundaria completo,6
+1412,55,25,28,52,Selva,Jardín,Loreto,4,Secundaria completo,6
+2280,92,23,31,54,Costa,Jardín,Piura,5,Secundaria completo,6
+3404,137,25,31,55,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1666,51,19,21,52,Selva,Jardín,Loreto,4,Primaria incompleto,3
+2325,66,15,26,53,Costa,Jardín,Piura,5,Secundaria completo,6
+3465,94,31,27,55,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1650,80,29,24,52,Selva,Jardín,Loreto,4,Primaria incompleto,3
+2535,86,33,27,53,Sierra,Jardín,Piura,1,Primaria completo,4
+3211,75,32,24,55,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2295,90,21,27,53,Costa,Jardín,Piura,5,Superior universitario completo,10
+3455,51,10,19,55,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+35,42,17,18,53,Sierra,Jardín,Piura,1,Superior técnico incompleto,7
+3063,116,34,35,55,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+1778,86,24,22,52,Selva,Jardín,Cusco,3,Secundaria completo,6
+1393,70,17,19,53,Costa,Jardín,Piura,4,Secundaria completo,6
+857,61,13,24,52,Selva,Jardín,Loreto,4,Secundaria completo,6
+1716,81,28,31,51,Selva,Jardín,Cusco,3,Secundaria completo,6
+1873,68,21,19,54,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1636,83,19,13,51,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+3396,78,21,21,55,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+883,61,30,22,52,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+2825,56,21,19,55,Costa,Jardín,Lima Met.,4,Primaria incompleto,3
+2181,99,26,24,53,Sierra,Jardín,Piura,1,Superior universitario completo,10
+1989,66,26,17,51,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+1613,86,23,23,53,Sierra,Jardín,Piura,1,Primaria completo,4
+3496,105,27,24,55,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+1187,77,19,19,52,Selva,Jardín,Loreto,5,Secundaria completo,6
+943,139,31,28,51,Sierra,Jardín,Cusco,1,Secundaria incompleto,5
+2970,82,22,24,55,Costa,Jardín,Lima Met.,4,Superior técnico incompleto,7
+332,87,19,23,65,Costa,Jardín,Piura,3,Secundaria completo,6
+942,142,31,31,51,Sierra,Jardín,Cusco,1,Secundaria completo,6
+1125,76,18,23,53,Costa,Cuna-Jardín,Piura,4,Superior universitario completo,10
+50,37,14,18,51,Selva,Jardín,Cusco,4,Secundaria completo,6
+2123,60,25,18,52,Selva,Jardín,Loreto,1,Primaria completo,4
+2815,68,23,20,55,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+3276,91,14,26,54,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+854,105,31,29,52,Selva,Jardín,Loreto,4,Secundaria completo,6
+324,67,20,19,51,Sierra,Jardín,Cusco,2,Superior técnico completo,8
+849,107,33,31,52,Selva,Jardín,Loreto,4,Secundaria completo,6
+1764,46,25,21,66,Costa,Jardín,Piura,3,Primaria completo,4
+913,50,19,20,51,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+2454,86,28,25,53,Costa,Jardín,Piura,3,Primaria incompleto,3
+2962,101,25,29,54,Costa,Jardín,Lima Met.,4,Inicial,2
+365,51,22,23,53,Costa,Jardín,Piura,3,Secundaria completo,6
+2132,46,15,17,51,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+2183,53,18,21,53,Costa,Jardín,Piura,5,Secundaria completo,6
+1651,79,28,25,52,Selva,Jardín,Loreto,4,Superior técnico completo,8
+254,55,17,19,51,Sierra,Cuna-Jardín,Cusco,2,Primaria incompleto,3
+539,65,22,21,51,Sierra,Jardín,Cusco,3,Secundaria completo,6
+3474,106,25,24,54,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+1213,80,20,24,53,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1295,60,19,23,53,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+912,35,15,13,51,Sierra,Jardín,Cusco,2,Secundaria completo,6
+3522,66,22,15,54,Costa,Jardín,Lima Met.,5,Secundaria completo,6
+1133,33,25,16,51,Selva,Jardín,Cusco,3,Secundaria completo,6
+2290,39,13,15,53,Costa,Jardín,Piura,5,Secundaria completo,6
+3410,53,20,17,54,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+941,143,30,30,49,Sierra,Jardín,Cusco,1,Secundaria completo,6
+600,58,23,19,51,Sierra,Jardín,Cusco,4,Secundaria incompleto,5
+802,68,22,18,51,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+3494,89,22,22,54,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+411,32,18,8,51,Sierra,Jardín,Cusco,2,Primaria completo,4
+1779,85,24,26,51,Selva,Jardín,Cusco,3,Secundaria completo,6
+2128,74,21,22,65,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+842,117,34,31,51,Selva,Jardín,Loreto,4,Secundaria completo,6
+3007,80,30,29,54,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1379,78,21,22,52,Selva,Jardín,Loreto,4,Primaria completo,4
+3403,85,24,23,54,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1712,82,26,26,51,Selva,Jardín,Cusco,3,Secundaria completo,6
+1699,95,25,32,51,Selva,Jardín,Cusco,3,Superior técnico completo,8
+914,35,16,14,51,Sierra,Jardín,Cusco,2,Secundaria completo,6
+1422,116,28,31,50,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+1847,77,21,28,52,Selva,Jardín,Loreto,3,Secundaria incompleto,5
+3471,99,23,28,54,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+250,60,21,20,51,Sierra,Cuna-Jardín,Cusco,2,Primaria incompleto,3
+1260,76,19,22,53,Costa,Cuna-Jardín,Piura,4,Superior técnico incompleto,7
+1812,77,23,25,51,Selva,Jardín,Cusco,3,Primaria completo,4
+1080,72,31,24,52,Sierra,Jardín,Piura,1,Secundaria completo,6
+1409,58,25,29,51,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+348,71,15,20,52,Costa,Jardín,Piura,3,Secundaria completo,6
+3422,72,20,22,54,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+606,53,22,17,51,Sierra,Jardín,Cusco,4,Superior técnico completo,8
+3521,102,28,19,54,Costa,Jardín,Lima Met.,5,Secundaria completo,6
+1614,82,25,23,52,Sierra,Jardín,Piura,1,Superior universitario completo,10
+2088,59,18,17,52,Costa,Cuna-Jardín,Piura,4,Superior universitario completo,10
+1652,57,25,17,51,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+754,63,18,19,51,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+1547,80,21,30,41,Selva,Jardín,Loreto,4,Secundaria completo,6
+509,81,21,20,52,Selva,No_Esc,Loreto,2,Primaria completo,4
+1324,58,18,21,52,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1191,58,23,20,51,Selva,Jardín,Cusco,3,Secundaria completo,6
+255,64,19,20,51,Sierra,Cuna-Jardín,Cusco,2,"Posgrado (maestría, doctorado)",11
+938,140,32,30,46,Sierra,Jardín,Cusco,1,Secundaria incompleto,5
+875,62,29,22,51,Selva,Jardín,Loreto,4,Superior técnico incompleto,7
+412,47,17,21,50,Sierra,Jardín,Cusco,2,Superior universitario incompleto,9
+1165,65,19,19,57,Costa,Jardín,Piura,4,Secundaria incompleto,5
+1402,119,31,32,50,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+42,65,23,20,52,Sierra,Jardín,Piura,1,Secundaria completo,6
+2240,74,27,25,52,Costa,Jardín,Piura,3,Primaria incompleto,3
+2819,74,16,23,54,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+681,90,29,29,51,Selva,Jardín,Loreto,4,Superior técnico incompleto,7
+909,41,14,18,50,Sierra,Jardín,Cusco,2,Secundaria completo,6
+796,70,20,21,50,Sierra,Cuna-Jardín,Cusco,2,Superior técnico completo,8
+1128,75,21,24,61,Costa,Cuna-Jardín,Piura,4,Secundaria incompleto,5
+2536,78,26,25,52,Sierra,Jardín,Piura,1,Secundaria incompleto,5
+758,66,21,20,50,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+3484,69,23,20,54,Costa,Jardín,Lima Met.,4,Superior universitario completo,10
+3491,79,21,23,54,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+1669,52,19,23,51,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+3186,46,27,20,54,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+336,67,16,18,52,Costa,Jardín,Piura,3,Secundaria completo,6
+874,71,28,24,51,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+2529,73,30,23,52,Sierra,Jardín,Piura,1,Primaria incompleto,3
+328,67,21,19,50,Sierra,Jardín,Cusco,2,Superior técnico completo,8
+878,66,31,26,51,Selva,Jardín,Loreto,4,Secundaria incompleto,5
+1709,73,18,19,50,Selva,Jardín,Cusco,3,Secundaria completo,6
+617,42,16,20,53,Costa,Jardín,Piura,3,Ninguno,1
+1665,55,17,24,51,Selva,Jardín,Loreto,4,Superior técnico incompleto,7
+37,36,13,14,52,Sierra,Jardín,Piura,1,Superior técnico incompleto,7
+1938,96,24,27,52,Sierra,Jardín,Piura,1,Secundaria completo,6
+1076,139,33,35,51,Selva,Jardín,Loreto,5,Secundaria completo,6
+2220,65,21,20,52,Sierra,Jardín,Piura,1,Superior universitario completo,10
+333,67,14,20,52,Costa,Jardín,Piura,3,Secundaria completo,6
+164,80,21,22,52,Costa,Jardín,Piura,3,Secundaria completo,6
+52,42,19,20,50,Selva,Jardín,Cusco,4,Secundaria incompleto,5
+1262,67,19,23,52,Costa,Cuna-Jardín,Piura,4,Primaria completo,4
+748,48,17,20,50,Sierra,Jardín,Cusco,5,Secundaria completo,6
+1053,59,14,17,51,Selva,Jardín,Cusco,4,Primaria incompleto,3
+614,47,17,19,42,Costa,Jardín,Piura,3,Secundaria completo,6
+3089,95,33,33,53,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2452,68,26,22,52,Costa,Jardín,Piura,3,Primaria incompleto,3
+1166,67,20,16,52,Costa,Jardín,Piura,4,Secundaria incompleto,5
+533,94,25,35,53,Selva,No_Esc,Loreto,2,Primaria completo,4
+3487,107,25,24,53,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+2289,36,14,15,52,Costa,Jardín,Piura,5,Secundaria completo,6
+1925,57,18,17,52,Sierra,Jardín,Piura,1,Secundaria completo,6
+739,43,14,24,50,Sierra,Jardín,Cusco,5,Secundaria completo,6
+2330,74,18,29,52,Costa,Jardín,Piura,5,Secundaria completo,6
+1604,81,20,22,51,Selva,Jardín,Loreto,5,Secundaria completo,6
+1708,78,18,20,50,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+759,35,12,19,50,Sierra,Jardín,Cusco,5,Secundaria completo,6
+3382,59,19,16,53,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+243,63,21,20,50,Sierra,Cuna-Jardín,Cusco,2,Primaria incompleto,3
+1231,62,16,23,51,Costa,Jardín,Piura,3,Secundaria completo,6
+1398,79,24,20,51,Costa,Jardín,Piura,4,Secundaria incompleto,5
+531,71,19,17,51,Selva,No_Esc,Loreto,2,Primaria completo,4
+1200,87,28,30,50,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+937,137,32,30,50,Sierra,Jardín,Cusco,1,Primaria incompleto,3
+338,64,15,19,51,Costa,Jardín,Piura,3,Primaria completo,4
+2200,82,30,25,51,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+1710,57,18,23,50,Selva,Jardín,Cusco,3,Secundaria incompleto,5
+2389,96,31,31,52,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+741,66,20,21,50,Sierra,Jardín,Cusco,5,Superior universitario completo,10
+1829,37,11,13,51,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1828,37,15,12,51,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+1232,63,19,21,51,Costa,Jardín,Piura,3,Secundaria completo,6
+966,82,19,22,50,Selva,Jardín,Loreto,3,Secundaria incompleto,5
+163,36,18,14,50,Sierra,Jardín,Cusco,2,Secundaria completo,6
+908,41,16,16,50,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+987,70,24,23,51,Costa,Jardín,Piura,4,Secundaria completo,6
+335,80,18,21,51,Costa,Jardín,Piura,3,Secundaria completo,6
+2103,75,25,22,62,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+2214,65,19,18,51,Sierra,Jardín,Piura,1,Secundaria completo,6
+343,84,15,20,51,Costa,Jardín,Piura,3,Superior universitario completo,10
+1399,92,25,27,50,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+162,41,15,18,50,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+1691,60,18,24,50,Selva,Jardín,Cusco,3,Secundaria completo,6
+166,87,22,26,51,Costa,Jardín,Piura,3,Secundaria completo,6
+410,50,18,22,49,Sierra,Jardín,Cusco,2,Secundaria completo,6
+2100,70,26,17,51,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+2451,71,21,21,51,Costa,Jardín,Piura,3,Secundaria incompleto,5
+20,34,15,17,51,Sierra,Jardín,Piura,1,Secundaria completo,6
+2201,93,27,27,51,Costa,Jardín,Piura,5,Superior universitario completo,10
+2449,74,25,18,51,Costa,Jardín,Piura,3,Secundaria incompleto,5
+1939,107,27,27,51,Sierra,Jardín,Piura,1,Superior universitario completo,10
+2443,82,19,20,51,Costa,Jardín,Piura,3,Superior técnico completo,8
+36,69,22,24,51,Sierra,Jardín,Piura,1,Superior técnico incompleto,7
+1936,84,19,24,49,Sierra,Jardín,Cusco,2,Secundaria completo,6
+2247,69,17,20,51,Costa,Cuna-Jardín,Piura,4,Primaria completo,4
+843,105,28,25,50,Selva,Jardín,Loreto,4,Secundaria completo,6
+326,68,20,18,49,Sierra,Jardín,Cusco,2,Secundaria completo,6
+607,52,21,17,49,Sierra,Jardín,Cusco,4,Secundaria incompleto,5
+2109,89,34,30,50,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+2102,70,24,18,50,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+1656,69,25,18,50,Selva,Jardín,Loreto,4,Primaria incompleto,3
+325,42,11,15,49,Sierra,Jardín,Cusco,2,Secundaria completo,6
+1967,62,13,19,51,Costa,Cuna-Jardín,Piura,4,Superior técnico incompleto,7
+851,108,35,28,50,Selva,Jardín,Loreto,4,Secundaria completo,6
+1670,51,21,24,50,Selva,Jardín,Loreto,4,Secundaria completo,6
+364,56,22,22,51,Costa,Jardín,Piura,3,Superior técnico completo,8
+2586,86,26,24,49,Selva,Jardín,Cusco,4,Primaria incompleto,3
+2854,119,28,28,51,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2860,118,30,27,51,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2847,115,27,30,51,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2852,85,21,21,49,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2135,45,12,17,49,Sierra,Jardín,Cusco,2,Secundaria incompleto,5
+2218,74,27,22,51,Sierra,Jardín,Piura,1,Superior universitario completo,10
+1417,59,20,20,51,Costa,Jardín,Piura,3,Secundaria incompleto,5
+634,69,19,22,52,Costa,Jardín,Piura,3,Secundaria completo,6
+2862,107,20,27,49,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+751,63,22,19,50,Sierra,Jardín,Cusco,5,Superior técnico completo,8
+2875,110,27,28,48,Costa,Cuna-Jardín,Lima Met.,5,Superior universitario completo,10
+2334,35,14,19,52,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+2333,48,17,18,52,Costa,Jardín,Piura,5,Superior universitario incompleto,9
+2239,85,26,11,51,Costa,Jardín,Piura,3,Primaria completo,4
+2387,106,33,30,51,Costa,Jardín,Piura,5,Superior universitario completo,10
+154,74,20,25,54,Costa,Jardín,Piura,3,Secundaria completo,6
+2456,74,25,18,51,Costa,Jardín,Piura,3,Primaria incompleto,3
+1074,146,33,31,40,Selva,Jardín,Loreto,5,Secundaria completo,6
+886,85,31,33,63,Costa,Jardín,Piura,4,Secundaria completo,6
+1940,49,10,20,38,Selva,Jardín,Loreto,4,Secundaria completo,6
+3189,70,27,21,58,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+2120,77,24,22,65,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+2285,81,23,25,51,Costa,Jardín,Piura,5,Secundaria completo,6
+3279,109,23,27,60,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+2097,61,21,18,57,Selva,Jardín,Loreto,1,Secundaria incompleto,5
+3010,58,14,17,57,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2604,136,35,34,70,Costa,Cuna-Jardín,Piura,4,Inicial,2
+3075,112,35,35,61,Costa,Jardín,Lima Met.,4,Superior técnico completo,8
+3492,80,25,21,63,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+2145,86,26,21,67,Sierra,Jardín,Cusco,2,Superior técnico incompleto,7
+479,144,35,29,69,Selva,No_Esc,Loreto,2,Primaria incompleto,3
+492,106,25,24,63,Selva,No_Esc,Loreto,2,Secundaria completo,6
+3435,74,19,20,58,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+2565,86,26,25,71,Costa,Cuna-Jardín,Piura,4,Secundaria completo,6
+3140,108,35,29,72,Costa,Jardín,Lima Met.,4,Primaria completo,4
+2400,130,35,34,72,Costa,Jardín,Piura,3,Secundaria completo,6
+3475,146,36,27,74,Costa,Jardín,Lima Met.,4,Secundaria incompleto,5
+2886,102,31,26,69,Costa,Jardín,Lima Met.,4,Secundaria completo,6
+698,138,32,34,62,Selva,Jardín,Loreto,4,Secundaria completo,6
+404,78,23,23,60,Costa,Jardín,Piura,3,Primaria completo,4
+1157,70,24,27,60,Costa,Jardín,Piura,4,Primaria incompleto,3
+418,63,26,24,54,Costa,Jardín,Piura,5,Superior universitario completo,10

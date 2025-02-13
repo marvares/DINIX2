@@ -1,0 +1,407 @@
+---
+title: "Informe Estandarización Perú Escala INDI, Parte 6: Análisis de Conglomerados"
+subtitle: "Muestra Nivel 3"
+author: "Martín Vargas Estrada"
+date: "`r Sys.time()`"
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 4
+  word_document:
+    toc: true
+    toc_depth: '4'
+  html_document:
+    toc: true
+    toc_depth: '4'
+    df_print: paged
+header-includes: \renewcommand{\contentsname}{Índice} \renewcommand{\tablename}{Tabla} \renewcommand{\figurename}{Figura}
+---
+\newpage
+
+# Introducción
+
+
+En este caso, procederemos a realizar un análisis de conglomerados de los datos, también llamado Cluster Analysis. 
+
+# Marco Conceptual
+
+## Finalidad 
+
+Antes de pasar a los resultados de los análisis en sí, es necesario tener claro en qué consiste el Análisis de Conglomerados.
+
+En general, hasta el momento nos hemos centrado en las variables (de modo principal en las Escalas del INDI, es decir, en sus respectivos puntajes), así como en las relaciones que hemos podido descubrir entre ellas. En esta última sección del Informe, vamos a enfocarnos más bien en los participantes, e intentaremos descubrir si es posible establecer agrupaciones entre tales participantes basándonos en las características cuya información hemos recolectado durante el proceso de evaluación.
+
+Por poner un ejemplo, mediante el análisis de conglomerados podríamos llegar a establecer la existencia de un grupo de participantes que tienen en común su origen (por ejemplo, Lima), el nivel educativo materno (por ejemplo, Postgraduado), un mayor puntaje en la Escala C del INDI, etc., mientras que un segundo conglomerado podría estar formado por participantes cuyo origen es Cusco, tienen madres de nivel educativo Secundario completo, y un puntaje alto en la escala Socioemocional del INDI.
+
+## Estrategias
+
+Para llegar a cumplir nuestra meta de establecer agrupamientos de participantes afines tenemos varias estrategias. No entraremos en el detalle técnico aquí, bastará mencionar que se ha escogido un método o modalidad de Análisis que nos permite incluir tanto variables numéricas (como Edad y los ya mencionados puntajes del INDI) como variables categóricas. Para determinar exactamente cuáles de estas últimas, hemos decidido usar como criterio los resultados del análisis de regresión. Ello nos permite estar seguros de que las variables consideradas tienen de antemano un impacto demostrado en las escalas INDI, evitando modelos con demasiados elementos, lo cual probablemente generaría modelos inútilmente complejos que no añadirían poder explicativo. 
+
+## Parámetros de Análisis
+
+La metodología elegida requiere que definamos de antemano la cantidad de conglomerados para generar nuestro modelo, dándonos la posibilidad de generar múltiple soluciones. 
+
+Por lo tanto, vamos a requerir algún criterio para establecer, si bien no necesariamente una solución "correcta" —ya que en estos casos no podemos establecer ese tipo de certidumbre, por la índole misma del análisis—, sí una solución más eficiente que las otras, tomando como criterio de "eficiencia" el mayor poder explicativo posible con el mínimo número posible de variables. En otras palabras, trataremos de encontrar el modelo más parsimonioso, que nos permita obtener los conglomerados más interpretables, a fin de no complejizar inútilmente el modelo, como ya se mencionó líneas arriba.
+
+Para nuestro caso, ese parámetro de evaluación será el llamado "Coeficiente de Silueta". El coeficiente de silueta es una medida utilizada en análisis de conglomerado para evaluar la calidad de la agrupación de los datos. Se basa en la comparación de la cohesión dentro de un conglomerado con la separación respecto a los otros conglomerados.
+
+- Un clustering o conjunto de conglomerados con un coeficiente de silueta promedio alto (cercano a 1) indica que los clusters están bien definidos.
+
+- Valores cercanos a 0 sugieren clusters solapados.
+
+- Valores negativos indican una mala asignación de puntos a clusters.
+
+En este documento, para mayor legibilidad, hemos incluido solamente la solución que combina los coeficientes de silueta más altos, manteniendo a la vez la simplicidad necesaria para interpretar los clusters resultantes. Consideramos que una solución con muchos clusters, aun si se obtienen coeficientes ligeramente superiores, resultará mucho más difícil de interpretar, y por lo tanto menos útil, que soluciones con coeficiente solo ligeramente inferior pero de un número más manejable de clusters.
+
+Asimismo, los resultados incluyen un gráfico que muestra la proporción de casos que "rebasan" respectivamente el cluster encontrado, así como otro que muestra la representación espacial de los clusters. 
+Con esta información en mente, podemos pasar a revisar los resultados obtenidos.
+
+
+
+```{r 30_P6_DATA, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+library(tidyverse)
+library(haven)
+rm(list = ls()) 
+# Carga el archivo .sav
+INDI30 <- read_sav("INDI3.sav")
+library(tidyverse)
+
+invertir_y_sumar <- function(df, indices_inversos, nombre_variable_sumatoria, posicion_variable) {
+  
+  # 1. Convertir columnas 75:88 a numéricas
+  df <- df %>%
+    mutate(across(all_of(names(df)[74:86]), as.numeric))
+  
+  # 2. Invertir los ítems indicados
+  df <- df %>%
+    mutate(across(all_of(names(df)[indices_inversos]), ~ 7 - .x))
+  
+  # 3. Crear la variable sumatoria
+  df <- df %>%
+    mutate(!!nombre_variable_sumatoria := rowSums(across(all_of(names(df)[74:86]))))
+  
+  # 4. Reubicar la variable sumatoria en la posición deseada
+  col_order <- names(df)  # Obtener nombres de columnas
+  
+  if (posicion_variable <= length(col_order)) {
+    nueva_posicion <- append(col_order, nombre_variable_sumatoria, after = posicion_variable - 1)
+    df <- df %>% select(all_of(nueva_posicion))
+  }
+  
+  return(df)
+}
+
+# Ejemplo
+# Aplicar la función con los valores indicados
+INDI30_i <- invertir_y_sumar(
+  df = INDI30,
+  indices_inversos = c(76:79, 83:86),  # Ítems inversos
+  nombre_variable_sumatoria = "S_sum",  # Nombre de la variable sumatoria
+  posicion_variable = 102  # Ubicación deseada
+)
+
+```
+
+
+
+```{r 30_6_Dataframing, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+ayudin <- function(dataframe, columnas) {
+  # Verificar que las columnas seleccionadas sean numéricas
+  if (!all(sapply(columnas, function(col) is.numeric(dataframe[[col]])))) {
+    stop("Todas las columnas seleccionadas deben ser numéricas.")
+  }
+  
+  # Filtrar el dataframe eliminando filas con NA en las columnas seleccionadas
+  dataframe_limpio <- dataframe[complete.cases(dataframe[, columnas]), columnas]
+  
+  # Devolver el dataframe limpio
+  return(dataframe_limpio)
+}
+INDI30_i$Codigo <- as.numeric(INDI30_i$Codigo)
+# Llamar a la función y mostrar los resultados
+LIMPIO <- ayudin(dataframe = INDI30_i, columnas = c(1, 100:103))
+# DF Categorial
+# Función para convertir variables a factor
+convert_to_factor <- function(df, indices) {
+  df[indices] <- lapply(df[indices], as.factor)
+  return(df)
+}
+# Convierto a factor
+
+INDI30_Factor<- convert_to_factor(INDI30_i, c(7:8,11,13,41))
+# Me quedo solo con las variables factor que han demostrado tener relación estadísticamente significativa 
+library(dplyr)
+INDI30_Factor <- INDI30_Factor %>% 
+  dplyr::select(Codigo, EDADMES, Regnat, Reg, Quintil, Insant3a, Area)
+# Fusiono con el df numérico sin NA's
+PULCRO <- left_join(LIMPIO, INDI30_Factor,  by = "Codigo") # Este df solo tiene casos sin NA's y con las variables factor
+
+# recodificando Niveles
+PULCRO$Regnat<- fct_recode(PULCRO$Regnat,
+                        "Costa" = "1",
+                        "Sierra" = "2",
+                        "Selva" = "3")
+
+PULCRO$Reg <- fct_recode(PULCRO$Reg,
+                        "Lima Met." = "Lima Metropolitana",
+                        "Piura" = "Piura",
+                        "Cusco" = "Cusco",
+                        "Loreto" = "Loreto"
+                        )
+
+PULCRO$Area <- fct_recode(PULCRO$Area,
+                        "Urbana" = "1",
+                        "Rural" = "2")
+PULCRO$Insant3a  <- fct_recode(PULCRO$Insant3a,
+                        "No" = "0",
+                        "Sí" = "1",
+                        "NS/NR" = "2"
+                        )
+
+colnames(PULCRO) <- c("Código", "Escala_Cog.", "Escala_Mot.", "Escala_Soc.", "Escala_Dis.","Edad_Mes", "Región", "Departamento", "Quintil", "Inst_Prev.", "Area")
+
+# PULCRO$Quintil_N <- as.numeric(PULCRO$Quintil)
+# library(dplyr)
+# 
+PULCRO <- PULCRO %>%
+  select(-c(Código))
+```
+
+
+\newpage
+
+# Análisis de Conglomerados 
+
+A continuación, pasaremos a realizar el análisis de conglomerados, usando las variables siguientes:
+
+1. Escala Cognitiva
+1. Escala Motora
+1. Escala Socioemocional
+1. Escala Disposicional
+1. Edad en Meses
+1. Región
+1. Departamento
+1. Quintil
+1. Área
+
+
+
+```{r 30_P6_CLUSTERING, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+# library(cluster)  
+# library(factoextra)
+# # Calcular la matriz de distancia de Gower
+# dist_matrix <- daisy(PULCRO, metric = "gower")
+# kmed <- pam(dist_matrix, k = 6)
+# library(factoextra)
+# 
+# # Convertir las variables categóricas a números antes de graficar
+# PULCRO_numeric <- PULCRO %>%
+#   mutate(across(where(is.factor), as.numeric))
+# 
+# # Visualizar los clusters
+# fviz_cluster(list(data = PULCRO_numeric, cluster = kmed$clustering))
+# 
+# print(kmed)  # Resumen del modelo
+# summary(kmed)  # Estadísticas del clustering
+# table(kmed$clustering)  # Número de casos en cada cluster
+# PULCRO$Cluster <- kmed$clustering # Asigno la identificación de a qué cluster pertenece cada caso dentro del dataframe 
+# # Resumen de cómo son los casos en cuanto a lo numérico
+# PULCRO %>%
+#   group_by(Cluster) %>%
+#   summarise(across(where(is.numeric), mean, na.rm = TRUE))
+# # Resumen de cómo son los casos en cuanto a lo categórico
+# PULCRO %>%
+#   group_by(Cluster) %>%
+#   summarise(across(where(is.factor), ~ names(which.max(table(.x)))))
+# # Para ver qué tan bien están agrupadas las observaciones 
+# silhouette_score <- silhouette(kmed$clustering, dist_matrix)
+# fviz_silhouette(silhouette_score)
+# 
+# # Calcular la silueta
+# silhouette_score <- silhouette(kmed$clustering, dist_matrix)
+# 
+# # Mostrar el coeficiente promedio de silueta
+# cat("Coeficiente de Silueta Promedio:", mean(silhouette_score[, 3]), "\n")
+# 
+# # Graficar la silueta
+# fviz_silhouette(silhouette_score)
+
+
+```
+
+He aquí los resultados y su interpretación.
+
+## Resultados
+
+```{r 30_P6_CLUSTER_Func, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+# Cargar las librerías necesarias
+library(cluster)       # Para el algoritmo PAM
+library(factoextra)    # Para visualización y evaluación
+library(dplyr)         # Para manipulación de datos
+library(knitr)         # Para generar tablas en formato Markdown
+
+# Función para realizar K-Medoids y generar los resultados
+kmedoids_analysis <- function(df, num_clusters) {
+  
+  # 1. Aplicar el algoritmo PAM
+  pam_result <- pam(df, k = num_clusters)
+  
+  # 2. Calcular el coeficiente de silueta
+  silhouette_score <- silhouette(pam_result)
+  
+  # 3. Calcular el coeficiente de silueta promedio
+  avg_sil_width <- mean(silhouette_score[, "sil_width"])
+  
+  # Imprimir el coeficiente de silueta promedio con tres decimales y el número de clústeres
+  cat("Coeficiente de Silueta Promedio:", round(avg_sil_width, 3), "\n")
+  cat("Número de Conglomerados:", num_clusters, "\n\n")
+  
+  # 4. Resumen de coeficientes de silueta por clúster
+  fviz_sil <- fviz_silhouette(silhouette_score, print.summary = FALSE) # Suprimir la impresión
+  silhouette_data <- fviz_sil$data
+  silhouette_summary <- silhouette_data %>%
+    group_by(cluster) %>%
+    summarise(
+      n = n(),
+      mean_sil_width = round(mean(sil_width, na.rm = TRUE), 2)  # Redondear a dos dígitos
+    )
+  
+  cat("Tabla de Coeficientes de Silueta por Clúster:\n")
+  print(knitr::kable(silhouette_summary, format = "markdown"))
+  cat("\n")
+  
+  # 5. Resumen de las características numéricas de cada clúster
+  cat("Resumen de Variables Numéricas por Clúster:\n")
+  
+  # Añadir la asignación de clústeres al dataframe original
+  df$Cluster <- pam_result$clustering
+  
+  # numeric_summary <- df %>%
+  #   group_by(Cluster) %>%
+  #   summarise(across(where(is.numeric), mean, na.rm = TRUE))
+  numeric_summary <- df %>%
+  group_by(Cluster) %>%
+  summarise(across(where(is.numeric), ~ round(mean(.x, na.rm = TRUE), 2)))
+  
+  print(knitr::kable(numeric_summary, format = "markdown"))
+  cat("\n")
+  
+  # 6. Resumen de las características categóricas de cada clúster
+  cat("Resumen de Variables Categóricas por Clúster:\n")
+  
+  categorical_summary <- df %>%
+    group_by(Cluster) %>%
+    summarise(across(where(is.factor), ~ names(which.max(table(.x)))[1]))
+  
+  print(knitr::kable(categorical_summary, format = "markdown"))
+  cat("\n")
+  
+  # 7. Gráfico de silueta con título en castellano
+  # cat("Gráfico de Silueta:\n")
+  plot(fviz_sil)
+  
+  # Gráfico del clustering (Cluster Plot)
+  # cat("Gráfico de Clústeres:\n")
+  cluster_plot <- fviz_cluster(pam_result, data = df[, -ncol(df)], geom = "point") +
+    ggtitle("Gráfico de Clústeres") +
+    theme_gray()
+  
+  print(cluster_plot)
+  
+  # Eliminar la columna "Cluster" del dataframe (opcional)
+  df$Cluster <- NULL
+  
+  # Devolver los resultados
+  return(list(
+    silhouette_avg = avg_sil_width,
+    silhouette_table = silhouette_summary,
+    numeric_summary = numeric_summary,
+    categorical_summary = categorical_summary,
+    silhouette_plot = fviz_sil,
+    cluster_plot = cluster_plot
+  ))
+}
+
+
+
+# Puedes ejecutar la función así:
+results <- kmedoids_analysis(PULCRO, 2)
+
+# Para acceder a los resultados individuales:
+# results$silhouette_avg
+# results$silhouette_table
+# results$numeric_summary
+# results$categorical_summary
+# results$silhouette_plot
+
+
+
+
+```
+
+## Interpretación 
+
+
+### Análisis General
+
+El algoritmo ha creado dos clusters a partir de los datos, diferenciando a los individuos según sus características.  
+
+- Número de observaciones por cluster:
+  - Cluster 1: 635 individuos
+  - Cluster 2: 386 individuos  
+  → El Cluster 1 es más grande que el Cluster 2.
+
+- Coeficiente de Silueta Promedio: 0.474
+  - Cluster 1: 0.50
+  - Cluster 2: 0.44
+  - En general:
+    - Un coeficiente entre 0.25 y 0.50 indica que la estructura de los clusters es moderadamente fuerte.
+    - El Cluster 1 tiene una mejor cohesión interna (0.50), mientras que el Cluster 2 tiene más variabilidad (0.44).
+
+### Análisis de Variables Numéricas
+
+Este análisis nos dice cómo se diferencian los dos grupos en las variables numéricas. 
+
+Cluster 2 tiene puntajes significativamente más altos en todas las escalas cognitivas, motivacionales, sociales y de discapacidad.
+- Cluster 1 tiene puntajes más bajos en todas las dimensiones, lo que indica que los niños en este grupo tienen un desempeño inferior en la prueba.
+- Edad en meses:  
+  - Cluster 1: 44.62 meses (~3 años y 8 meses)  
+  - Cluster 2: 46.83 meses (~3 años y 10 meses)  
+  - Diferencia: los participantes agrupados en el Cluster 2 son, en promedio, 2 meses mayores.  
+  - Aunque la diferencia de edad es pequeña, podría indicar que la maduración influye en el rendimiento.
+  
+### Análisis de Variables Categóricas
+
+Este análisis nos ayuda a ver dónde viven estos participantes, su nivel socioeconómico y el área e instrucción previa. 
+
+- La mayoría de participantes agrupados en ambos clusters están en la región Costa y en áreas urbanas, por lo que la variable "Área" no parece ser un factor diferenciador.
+- El Cluster 1 tiene mayoría de niños de Piura, mientras que Cluster 2 tiene mayoría de niños de Lima Metropolitana.
+- Ambos clusters tienen un nivel socioeconómico similar (Quintil 4).
+- "Inst_Prev." (institución previa) indica que la mayoría de los niños en ambos clusters no asistieron a una institución previa.
+
+## Conclusiones Generales
+
+1. Diferencia en desempeño del INDI:  
+
+- Los participantes asignados al Cluster 2 tienen un desempeño significativamente superior en todas las escalas.
+
+- Los participantes asignados al Cluster 1 tienen un rendimiento inferior, lo que puede estar asociado a factores como edad, acceso a recursos educativos o calidad educativa en su región.
+
+2. Ubicación geográfica:
+
+- Típicamente se trata de  participantes de Piura (Cluster 1) vs. de Lima Metropolitana (Cluster 2).
+
+- Puede haber diferencias en la calidad de la educación o en los recursos educativos disponibles en cada región.
+
+3. Edad como factor de influencia:
+
+- Los participantes asignados al Cluster 2 son en promedio un poco mayores (~2 meses de diferencia en promedio).
+
+- Aunque no es una gran diferencia, a esta edad cada mes puede representar una ventaja en términos de desarrollo cognitivo y habilidades sociales.
+
+4. Calidad educativa como posible explicación:
+
+- Podría ser interesante analizar otras variables (tipo de institución, materiales disponibles, formación de los docentes, etc.) para ver qué más puede estar influyendo en las diferencias.

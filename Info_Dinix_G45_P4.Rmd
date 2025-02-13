@@ -365,6 +365,10 @@ A continuación determinaremos qué tan útil es un análisis de regresión para
 
 ```{r 45_P4_REG_DSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
 regmulti(PULCRO, PULCRO$Escala_Dis., c(5:13), nombres_vars = c("Edad en Meses", "Región", "Área", "Modalidad", "Departamento", "Quintil", "Educac. Materna", "Educac. Paterna", "Instrucción Previa"), nombre_dep = "Escala Disposicional")
+
+# Exportar sin incluir nombres de fila
+write.csv(PULCRO, "PULCRO_MEDMOD.csv", row.names = FALSE)
+
 ```
 
 La información anterior nos indica que:
