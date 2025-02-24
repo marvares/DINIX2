@@ -69,7 +69,7 @@ ojeada <- function(df) {
 }
 
 
-variable_info <- ojeada(PULCRO)
+variable_info <- ojeada(INDI45_i)
 # print(variable_info)
 library(knitr) # Para usar kable
 

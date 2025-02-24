@@ -1,0 +1,452 @@
+---
+title: "Informe Estandarización Perú Escala INDI, Parte 4: Análisis de Regresión"
+subtitle: "Muestra Nivel 3"
+author: "Martín Vargas Estrada"
+date: "`r Sys.time()`"
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 4
+  word_document:
+    toc: true
+    toc_depth: '4'
+  html_document:
+    toc: true
+    toc_depth: '4'
+    df_print: paged
+header-includes: \renewcommand{\contentsname}{Índice} \renewcommand{\tablename}{Tabla}
+---
+\newpage
+
+# Introducción
+
+
+Informe de Exploración Psicométrica de los ítems de la prueba INDI obtenidas con muestra de Perú, Nivel 3. 
+
+```{r 30_P4_DATAFRAME, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+library(tidyverse)
+library(haven)
+rm(list = ls()) 
+# Carga el archivo .sav
+INDI30 <- read_sav("INDI3.sav")
+# Invertir los ítems
+invertir_y_sumar <- function(df, indices_inversos, nombre_variable_sumatoria, posicion_variable) {
+  
+  # Asegurar que df sea un tibble para evitar problemas con select()
+  df <- as_tibble(df)
+  
+  # 1. Convertir columnas 75:88 a numéricas
+  df <- df %>%
+    mutate(across(74:86, as.numeric))
+  
+  # 2. Invertir los ítems indicados
+  df <- df %>%
+    mutate(across(indices_inversos, ~ 7 - .x))
+  
+  # 3. Crear la variable sumatoria
+  df <- df %>%
+    mutate(!!nombre_variable_sumatoria := rowSums(across(74:86)))
+  
+  # 4. Reubicar la variable sumatoria en la posición deseada
+  col_order <- names(df)  # Obtener nombres de columnas
+  col_order <- setdiff(col_order, nombre_variable_sumatoria)  # Remover sumatoria si ya está
+  col_order <- append(col_order, nombre_variable_sumatoria, after = posicion_variable - 1)  # Insertar en posición
+  
+  # 📌 Reordenar usando índice de columnas en lugar de dplyr::select()
+  df <- df[, col_order]  # ⬅️ Esto funciona siempre
+
+  return(df)
+}
+
+# Aplicar la función con los valores indicados
+INDI30_i <- invertir_y_sumar(
+  df = INDI30,
+  indices_inversos = c(76:79, 83:86),  # Ítems inversos
+  nombre_variable_sumatoria = "S_sum",  # Nombre de la variable sumatoria
+  posicion_variable = 102  # Ubicación deseada
+)
+```
+
+
+# Análisis de Regresión entre el valor de las Escalas  y las Variables Demográficas
+
+## Introducción 
+
+El objetivo de esta sección realizar un análisis de regresión entre el valor de las escalas y las diferentes variables demográficas cuya información fue recabada durante la investigación. 
+
+Cabe especificar el sentido del análisis de regresión, ya que, a diferencia de los anteriores, es fácil malentenderlo y su significado no es evidente a primera vista.
+
+El objetivo del análisis de regresión es encontrar una relación de causalidad entre una o más variables independientes, y una variable dependiente. Esta última es la "estrella" de nuestro análisis; en contra de lo que pudiera parecer, la variable dependiente es en realidad la principal, la que motiva toda la pesquisa estadística. Estamos interesados determinar si ciertas variables pueden ayudarnos a explicar y/o predecir a nuestra variable dependiente. 
+
+Una variable es "independiente" en el sentido de que, dentro de nuestra teoría y/o nuestro sentido común, ciertas variables podrían causar o predecir a nuestra variable dependiente, y esta relación, teóricamente, debería ser unidireccional. Por ejemplo, cuando decimos que la *variable independiente* es la Edad del participante y nuestra *variable dependiente* es el puntaje en la escala Cognitiva del INDI, estamos planteando la posibilidad de que la edad nos ayude a explicar y/o predecir el desempeño en el INDI, y plantearnos una relación inversa (¿el puntaje influenciando a la Edad?) o incluso recíproca (¿Edad y desempeño en el INDI influenciándose mutuamente?) no tendría sentido. 
+
+A veces, la lógica la define nuestro sentido común (claramente la edad, por definición, no es influenciada por ningún tipo de acción del participante); a veces es determinada por la teoría que nos guía para plantear toda la investigación en primer lugar. 
+
+## Interpretación General de los Resultados de la Regresión
+
+1. **Qué es la ecuación de regresión**. En primer lugar, es importante entender cuál es el sentido de la regresión. Recordemos que nuestro propósito es explicar/predecir los valores de una variable dependiente a partir de variables independientes. Explicar significa en este caso definir una ecuación que describa el comportamiento de la variable dependiente. En esa ecuación la variable dependiente será el resultado (es decir, irá antes del signo "=") y las variables independientes serán los sumandos que al agregarse resultan en el valor que la variable dependiente tomará según el caso.
+
+En términos matemáticos:
+
+$$ Y=\beta_0+\beta_1X_1+\beta_2X_2+\ldots+\beta_nX_n $$
+Cada valor $X$ representa una variable (numérica o categórica), y cada valor $\beta$ un coeficiente que pondera el valor que cada variable asume para poder así determinar un valor dado que asumirá la variable dependiente $Y$. El subíndice se usa para especificar que el coeficiente será distinto para cada variable independiente.
+
+El coeficiente $\beta_0$ es lo que se llama *intercepto*; es el valor que asume la variable dependiente cuando todas las variables independientes asumen un valor cero. 
+
+2. **Qué significan las variables *dummy* en el contexto del tratamiento estadístico de la regresión**. Cada vez que incluimos una variable categórica (es decir, una variable cuyos valores no son numéricos, sino más bien categorías; ejemplo: Región, cuyos valores serían las categorías "Costa", "Sierra", y "Selva"), nos vemos obligados a utilizar un algoritmo que nos permita incluir esas variables en el cálculo. Ese algoritmo o método consiste en asumir como referencia la primera categoría de la variable, y luego pasar a incluir las demás categorías como si se tratase de variables distintas, convirtiéndolas en variable dicotómicas.
+
+En el caso de nuestro ejemplo, si nuestra variable es "Región", y las categorías son Costa, Sierra y Selva, entonces podemos asumir la categoría "Costa" como valor de referencia; cuando un participante pertenezca a la Región "Sierra", lo traduciremos en términos de variables *dummy* como un "1" en la variable *RegiónSierra*. Si el participante no pertenece a la la Región Sierra, tendrá un "0" en la variable *RegiónSierra*. Igual haremos con todos los demás casos de variables categóricas. 
+
+Esto tiene una enorme ventaja: nos permite tratar a las variables categóricas como si fueran variables dicotómicas numéricas, haciendo posible incluirlas en la ecuación de regresión. Pero tiene una gran desventaja: nos obliga a tener mucho cuidado al momento de interpretar la ecuación. 
+
+Pongamos un ejemplo para clarificar: imaginemos que estamos tratando de explicar la variable Escala Cognitiva a partir de la variable Edad y la variable Región. Es decir, 
+
+$$ Y=EscalaCognitiva, X_1=Edad, X_2=Región $$
+Con la variable Edad no tendremos problema porque se trata de una variable numérica. No es el caso con la variable Región. Tomaremos la categoría "Costa" como referencia; por lo tanto, cuando tengamos un participante de la Costa sencillamente tomaremos el valor del intercepto ($\beta_0$) como el aporte de la variable *RegiónCosta*. Si el participante proviene, por el contrario, de la Sierra, entonces tendremos que la variable RegiónSierra=1, y la variable RegiónSelva=0. Todas las variables independientes con valor cero serán eliminadas de la ecuación porque tendrán valor nulo, y solo quedarán las variables independientes con valor distinto de cero. Para fines de nuestro ejemplo, asumamos que:
+
+$$ 
+\beta_0=1.2; \beta_1=0.9; X_1=Edad; \beta_2=2.7; X_2=RegionSierra; \beta_3=4.1; X_3=RegionSelva
+$$
+
+
+Por lo tanto, nuestra ecuación de regresión quedará como sigue:
+
+$$ EscalaCognitiva = 1.2 + 0.9*Edad + 2.7*RegionSierra + 4.1*RegionSelva $$
+Si un participante pertenece a la Región Costa y tiene una edad de 40 meses, entonces nuestro modelo predice que:
+
+$$ EscalaCognitiva = 1.2 + 0.9*40 + 2.7*0 + 4.1*0 $$
+Es decir, 
+
+$$ EscalaCognitiva = 37.2 $$
+
+### Regresión y Correlación 
+
+La diferencia clave entre la regresión y la correlación es que, mientras la correlación solo mide asociación entre variables, la regresión trata de determinar la *causalidad* de una o más variables (llamadas independientes) sobre otra (llamada dependiente).
+
+Otra diferencia importante es que mientras la correlación solo describe la asociación o co-ocurrencia entre dos variables, *la regresión está diseñada de tal modo que nos ayuda a determinar en qué medida una variable independiente explica el comportamiento de la dependiente*. Como luego veremos, es completamente posible, como resultado de un análisis de regresión, establecer en qué porcentaje una variable independiente X nos ayuda a explicar el comportamiento o variabilidad de los datos de una variable dependiente.
+
+Finalmente, una tercera distinción fundamental es que mientras que la correlación se limita *describir* la co-ocurrencia de dos conjuntos de datos ya existentes, el análisis de regresión nos permite *predecir* valores de la variable dependiente a partir de valores de las variables independientes, *incluso si tales valores no se dan en nuestra muestra*. 
+
+### Regresión como descriptor de una relación lineal
+
+Antes de pasar a ver los resultados, debemos tener en cuenta que el tipo de análisis de regresión que pasaremos a ejecutar se basa en el supuesto de que existe una relación lineal entre el conjunto de variables independientes y los puntajes en las escalas INDI. Es decir, que el efecto de las variables independientes es constante, va en una sola dirección y no cambia de sentido. Por ejemplo,  si asumimos una relación lineal entre Edad en Meses y Puntaje en el INDI, estaremos asumiendo que el aumento de un mes en la Edad mejorará el desempeño en el INDI, y esto no cambiará y además es constante (el incremento de un mes en la edad debería tener el mismo efecto en el puntaje, sin importar la edad del participante).
+
+Es posible que la relación entre una variable dependiente y una o más variables independientes sea no lineal; en ese caso, el resultado de una regresión lineal será nulo, sin que esto necesariamente implique falta de relación en general. Tan solo estaríamos hablando de falta de relación *lineal*. 
+
+Habiendo dicho esto, por lo general la regresión lineal es la que se analiza, ya que se trata del modelo más frecuente y sencillo de entender y de evaluar. Salvo que nuestra teoría establezca lo contrario, será el tipo de regresión que usaremos. 
+
+
+## Variables Demográficas Consideradas (Variables Independientes)
+
+Consideraremos las siguientes variables:
+
+1. Edad en Meses
+1. Fecha de Eval
+1. Región
+1. Área
+1. Modalidad
+1. Gestión
+1. Departamento
+1. Quintil
+1. Inst. Previa al Nivel 3
+
+```{r 30_P4_DATAFRAMING, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+
+
+# Función para extraer la data numérica sin NA's de un df
+ayudin <- function(dataframe, columnas) {
+  # Verificar que las columnas seleccionadas sean numéricas
+  if (!all(sapply(columnas, function(col) is.numeric(dataframe[[col]])))) {
+    stop("Todas las columnas seleccionadas deben ser numéricas.")
+  }
+  
+  # Filtrar el dataframe eliminando filas con NA en las columnas seleccionadas
+  dataframe_limpio <- dataframe[complete.cases(dataframe[, columnas]), columnas]
+  
+  # Devolver el dataframe limpio
+  return(dataframe_limpio)
+}
+
+# Llamar a la función y mostrar los resultados
+INDI30_i$Codigo <- as.numeric(INDI30_i$Codigo)
+LIMPIO <- ayudin(dataframe = INDI30_i, columnas = c(1, 100:103))
+
+# DF Categorial
+# Función para convertir variables a factor
+convert_to_factor <- function(df, indices) {
+  df[indices] <- lapply(df[indices], as.factor)
+  return(df)
+}
+# Convierto a factor
+
+INDI30_Factor<- convert_to_factor(INDI30_i, c(5,7:9,11,13,41))
+# Me quedo solo con las variables factor
+library(dplyr)
+INDI30_Factor <- INDI30_Factor %>% 
+  dplyr::select(Codigo, EDADMES, Regnat, Area, Nivmod, Reg, Quintil, Insant3a)
+# Fusiono con el df numérico sin NA's
+PULCRO <- left_join(LIMPIO, INDI30_Factor,  by = "Codigo") # Este df solo tiene casos sin NA's y con las variables factor
+
+# Ahora voy a reetiquetar los niveles de los factores y, de ser caso, rebautizarlos.
+
+library(forcats)
+# Recodificar niveles
+# PULCRO$Fechin <- fct_recode(PULCRO$Fechin,
+#                         "Abr." = "2024-04-29",
+#                         "May." = "2024-05-20",
+#                         "Jun." = "2024-06-17",
+#                         "Ago." = "2024-08-12")
+PULCRO$Regnat<- fct_recode(PULCRO$Regnat,
+                        "Costa" = "1",
+                        "Sierra" = "2",
+                        "Selva" = "3")
+
+PULCRO$Area <- fct_recode(PULCRO$Area,
+                        "Urbana" = "1",
+                        "Rural" = "2")
+
+PULCRO$Nivmod <- fct_recode(PULCRO$Nivmod,
+                        "Jardín" = "Inicial - Jardín",
+                        "No_Esc" = "Inicial - Programa no escolarizado",
+                        "Cuna-Jardín" = "Inicial - Cuna-jardín"
+                        )
+# PULCRO$Gest <- fct_recode(PULCRO$Gest,
+#                         "Pública" = "1",
+#                         "Privada" = "2")
+PULCRO$Reg <- fct_recode(PULCRO$Reg,
+                        "Lima Met." = "Lima Metropolitana",
+                        "Piura" = "Piura",
+                        "Cusco" = "Cusco",
+                        "Loreto" = "Loreto"
+                        )
+
+colnames(PULCRO) <- c("Código", "Escala_Cog.", "Escala_Mot.", "Escala_Soc", "Escala_Dis.","Edad_Mes", "Región", "Área", "Modalidad", "Departamento", "Quintil", "Inst_Pre_N3")
+
+# PULCRO$Inst_Mat. <- fct_relevel(PULCRO$Inst_Mat., "Ninguno", "Inicial", "Primaria incompleto", "Primaria completo", "Secundaria incompleto", "Secundaria completo","Superior técnico incompleto", "Superior técnico completo","Superior universitario incompleto","Superior universitario completo","Posgrado (maestría, doctorado)")
+# 
+# PULCRO$Inst_Pat. <- fct_relevel(PULCRO$Inst_Pat., "Ninguno", "Inicial", "Primaria incompleto", "Primaria completo", "Secundaria incompleto", "Secundaria completo","Superior técnico incompleto", "Superior técnico completo","Superior universitario incompleto","Superior universitario completo","Posgrado (maestría, doctorado)")
+
+PULCRO$Inst_Pre_N3  <- fct_recode(PULCRO$Inst_Pre_N3,
+                        "No" = "0",
+                        "Sí" = "1",
+                        "NS/NR" = "2"
+                        )
+
+# Filtro los casos de Modalidad No escolarizada, al ser un grupo demasiado pequeño
+PULCRO <- PULCRO %>% 
+  filter(Modalidad != "No_Esc")
+# Como hay colinearidad Perfecta entre Fecha_Eval y Dpto, elimino Fecha Eval
+# PULCRO <- PULCRO %>% select(-Fecha_Eval)
+
+```
+
+Las variables dicotómicas de Incidencia (codificadas como VSS y similares) y Tratamiento (RSS y similares) no fueron consideradas para este análisis, ya que definen subgrupos extremadamente pequeños (menos del 5%,; en la mayoría de casos, menos del 3%) y tomarlas en cuenta distorsionaría los resultados, al obligar a tomar medidas de ajuste que a su vez introducirían nuevos sesgos. Lo mismo sucede con los casos de la variable Gestión, y el pequeño grupo perteneciente a la categoría "No escolarizado" dentro de la variable "Modalidad".
+
+\newpage
+
+## Análisis 1: Escala Cognitiva como Variable Dependiente
+
+A continuación determinaremos qué tan útil es un análisis de regresión para intentar explicar/predecir los puntajes en la escala Cognitiva del INDI a partir de las variables independientes ya mencionadas.  
+
+
+
+
+```{r 30_P4_REG_CSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+# Defino súper función que me bota los resultados de la regresión múltiple en formato PTM
+regmulti <- function(df, var_dep, var_ind, nombres_vars = NULL, nombre_dep = NULL) {
+  library(knitr)  # Para kable
+  library(dplyr)  # Para manipulación de datos
+  
+  # Obtener el nombre original de la variable dependiente
+  var_dep_name <- deparse(substitute(var_dep))
+  
+  # Si el usuario proporciona un nombre para la variable dependiente, usarlo
+  if (is.null(nombre_dep)) {
+    nombre_dep <- var_dep_name
+  }
+  
+  # Extraer nombres originales de las variables independientes
+  nombres_ind <- names(df)[var_ind]
+  
+  # Si el usuario proporciona nombres personalizados, validamos que sean del mismo tamaño
+  if (!is.null(nombres_vars)) {
+    if (length(nombres_vars) != length(nombres_ind)) {
+      stop("El número de nombres en 'nombres_vars' debe coincidir con el número de variables independientes proporcionadas.")
+    }
+  } else {
+    nombres_vars <- nombres_ind  # Usar los nombres originales si no se proporcionan personalizados
+  }
+  
+  # Construcción de la fórmula de regresión
+  formula_reg <- as.formula(paste(var_dep_name, "~", paste(nombres_ind, collapse = " + ")))
+  
+  # Ajustar el modelo de regresión
+  modelo <- lm(formula_reg, data = df)
+  
+  # Obtener coeficientes y p-valores
+  resultados <- summary(modelo)$coefficients
+  coeficientes <- resultados[, 1]
+  p_valores <- resultados[, 4]
+  
+  # Obtener nombres de los coeficientes generados (incluye dummies)
+  nombres_coeficientes <- rownames(resultados)
+  
+  # Construcción automática de nombres personalizados si hay variables categóricas
+  if (!is.null(nombres_vars)) {
+    # Crear un mapeo entre nombres originales y personalizados
+    nombres_dict <- setNames(nombres_vars, nombres_ind)
+    
+    # Reemplazar nombres en coeficientes, conservando variables dummy
+    nombres_coeficientes <- sapply(nombres_coeficientes, function(var) {
+      for (orig in nombres_ind) {
+        if (grepl(orig, var)) {
+          return(gsub(orig, nombres_dict[[orig]], var))
+        }
+      }
+      return(var)  # Si no se encuentra en el diccionario, mantener el nombre original
+    })
+  }
+  
+  # Asignar notación de significancia
+  significancia <- ifelse(p_valores < 0.001, "***",
+                          ifelse(p_valores < 0.01, "**",
+                                 ifelse(p_valores < 0.05, "*", "NS")))
+  
+  # Crear la tabla de resultados
+  tabla_resultados <- tibble::tibble(
+    Variable = nombres_coeficientes,
+    Coeficiente = round(coeficientes, 3),
+    `p-valor` = round(p_valores, 4),
+    Significancia = significancia
+  )
+  
+  # ---- Construcción de la ecuación de regresión con términos significativos ----
+  # Seleccionamos solo coeficientes con p-valor < 0.05 (significativos)
+  indices_significativos <- which(p_valores < 0.05)
+  
+  # Si solo el intercepto es significativo, ecuación será solo ese valor
+  if (length(indices_significativos) == 1 && indices_significativos == 1) {
+    ecuacion <- paste0(nombre_dep, " = ", round(coeficientes[1], 3), " + ε")
+  } else {
+    coef_significativos <- coeficientes[indices_significativos]
+    nombres_significativos <- nombres_coeficientes[indices_significativos]
+    
+    terminos <- paste0(
+      ifelse(coef_significativos[-1] >= 0, "+ ", "- "), abs(round(coef_significativos[-1], 3)), " * ", nombres_significativos[-1]
+    )
+    
+    ecuacion <- paste0(
+      nombre_dep, " = ", round(coef_significativos[1], 3), " ",
+      paste(terminos, collapse = " ")
+    )
+  }
+  
+  # Obtener el R² ajustado
+  r_cuadrado_ajustado <- round(summary(modelo)$adj.r.squared, 4)
+  
+  # ---- Imprimir resultados ----
+  cat("\n### Regresión entre", nombre_dep, "y", paste(nombres_vars, collapse = ", "), "\n")
+  print(kable(tabla_resultados, format = "markdown", align = "c"))
+  cat("\n**La ecuación de regresión obtenida es (solo coeficientes significativos):**\n\n", ecuacion, "\n")
+  cat("\n**R Cuadrado Ajustado:**", r_cuadrado_ajustado, "\n")
+}
+PULCRO$Edad_Mes <- as.numeric(PULCRO$Edad_Mes)
+# La uso, muy quitado de la pena:
+regmulti(PULCRO, PULCRO$Escala_Cog., c(6:12), nombres_vars = c("Edad en Meses", "Región", "Área", "Modalidad", "Departamento", "Quintil", "Instrucción Previa"), nombre_dep = "Escala Cognitiva")
+
+```
+
+La información anterior nos indica que:
+
+1. Usar todas las variables que hemos recolectado para predecir el puntaje en la Escala Cognitiva del INDI nos genera un modelo que puede explicar casi el 40% de la variabilidad de los datos. 
+1. Las únicas variables que realmente aportan a la explicación del puntaje en la Escala Cognitiva INDI son: 
+  
+  a. Edad
+  a. Departamento (Lima)
+  a. Región Selva
+  a. Que el participante haya tenido Instrucción previa la Nivel 3
+  a. Que el participante no pueda determinar si tuvo Instrucción previa la Nivel 3
+  
+
+\newpage
+
+## Análisis 2: Escala Motora como Variable Dependiente
+
+A continuación determinaremos qué tan útil es un análisis de regresión para intentar explicar/predecir los puntajes en la escala Motora del INDI a partir de las variables independientes ya mencionadas.  
+
+```{r 30_P4_REG_MSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+regmulti(PULCRO, PULCRO$Escala_Mot., c(6:12), nombres_vars = c("Edad en Meses", "Región", "Área", "Modalidad", "Departamento", "Quintil", "Instrucción Previa"), nombre_dep = "Escala Motora")
+```
+
+La información anterior nos indica que:
+
+1. Usar todas las variables que hemos recolectado para predecir el puntaje en la Escala Motora del INDI nos genera un modelo que solo puede explicar menos del 24% de la variabilidad de los datos. Esto significa que más del 76% del comportamiento de la Escala Motora del INDI se debe a factores no considerados dentro de este estudio. 
+1. Las únicas variables que realmente aportan a la explicación del puntaje en la Escala Motora INDI son: 
+  
+  a. Edad
+  a. Departamento (Lima)
+  a. Que el participante provenga del Quintil 5
+  a. Que el participante haya tenido Instrucción previa la Nivel 3
+
+
+\newpage
+
+
+## Análisis 3: Escala Socioemocional como Variable Dependiente
+
+A continuación determinaremos qué tan útil es un análisis de regresión para intentar explicar/predecir los puntajes en la escala Socioemocional del INDI a partir de las variables independientes ya mencionadas.  
+
+```{r 30_P4_REG_SSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+regmulti(PULCRO, PULCRO$Escala_Soc, c(6:12), nombres_vars = c("Edad en Meses", "Región", "Área", "Modalidad", "Departamento", "Quintil", "Instrucción Previa"), nombre_dep = "Escala Socioemocional")
+```
+
+La información anterior nos indica que:
+
+1. El R² ajustado = 0.1132 sugiere que el modelo explica aproximadamente el 11.3% de la variabilidad en la escala socioemocional. Esto indica que hay otros factores no incluidos en el modelo que también influyen en los puntajes.
+
+1. Se encontraron algunas variables significativas, lo que sugiere que ciertos factores como el tipo de área (rural/urbana), la modalidad educativa, el departamento de residencia y el nivel socioeconómico (quintil) tienen impacto en el desarrollo socioemocional.
+
+1. Los niños de zonas rurales tienen un menor desarrollo socioemocional en comparación con los de zonas urbanas, lo que sugiere desigualdades en el acceso a estímulos y oportunidades de socialización.
+
+1. Asistir a un jardín de infancia mejora significativamente el desarrollo socioemocional, destacando la importancia de la educación preescolar estructurada.
+
+1. Lima Metropolitana y Loreto tienen puntajes más altos en la Escala Socioemocional, posiblemente debido a diferencias en acceso a servicios educativos y sociales.
+
+1. Los niños del segundo quintil socioeconómico tienen un mejor desarrollo socioemocional que los del primer quintil, lo que sugiere que la pobreza extrema puede ser un factor limitante.
+
+1. La categoría NS/NR en instrucción previa muestra un efecto positivo, lo que podría indicar que existen características en este grupo que favorecen el desarrollo socioemocional.
+
+
+\newpage
+
+
+## Análisis 4: Escala Disposicional como Variable Dependiente
+
+A continuación determinaremos qué tan útil es un análisis de regresión para intentar explicar/predecir los puntajes en la escala Motora del INDI a partir de las variables independientes ya mencionadas.  
+
+```{r 30_P4_REG_DSUM, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+regmulti(PULCRO, PULCRO$Escala_Dis., c(6:12), nombres_vars = c("Edad en Meses", "Región", "Área", "Modalidad", "Departamento", "Quintil", "Instrucción Previa"), nombre_dep = "Escala Disposicional")
+```
+
+La información anterior nos indica que:
+
+1. Usar todas las variables que hemos recolectado para predecir el puntaje en la Escala Disposicional del INDI nos genera un modelo que solo puede explicar algo más del 20% de la variabilidad de los datos. Esto significa que casi el 80% del comportamiento de la Escala Disposicional del INDI se debe a factores no considerados dentro de este estudio. 
+1. Las únicas variables medidas que realmente aportan a la explicación del puntaje en la Escala Cognitiva INDI son: 
+  
+  a. Edad
+  a. Región Selva
+  a. Que el participante provenga de la Región Rural (en detrimento)
+  a. Que el participante provenga de Lima
+  a. Quintil (todos)
+  a. Que el participante haya tenido Instrucción previa la Nivel 3
+  a. Que el participante no pueda determinar si tuvo Instrucción previa la Nivel 3
+  
+
+
+
+
+
+  

@@ -1,0 +1,1115 @@
+---
+title: "Informe Estandarización Perú Escala INDI, Parte 2: Análisis de Ítems"
+subtitle: "Muestra Nivel 4-5"
+author: "Martín Vargas Estrada"
+date: "`r Sys.time()`"
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 4
+  word_document:
+    toc: true
+    toc_depth: '4'
+  html_document:
+    toc: true
+    toc_depth: '4'
+    df_print: paged
+header-includes: \renewcommand{\contentsname}{Índice} \renewcommand{\tablename}{Tabla}
+---
+\newpage
+
+# Introducción
+
+
+Informe de Exploración Psicométrica de los ìtems de la prueba INDI obtenidas con muestra de Perú, Niveles 4-5. 
+
+# Profundización Análisis Factorial Confirmatorio (AFC)
+
+Como se detalla en secciones previas, el FC del modelo resultó con bajo ajuste en la mayoría de índices; por lo tanto de pasará a profundizar en el análisis a fin de obtener el detalle de los ítems cuya modificación (o incluso supresión) podría generar una mejora en el ajuste del modelo.
+
+```{r 45_P2_AFC_Indepth, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+library(tidyverse)
+library(haven)
+rm(list = ls()) 
+# Carga el archivo .sav
+INDI45 <- read_sav("INDI45.sav")
+invertir_y_sumar <- function(df, indices_inversos, nombre_variable_sumatoria, posicion_variable) {
+  
+  # 1. Convertir columnas 75:88 a numéricas
+  df <- df %>%
+    mutate(across(all_of(names(df)[74:86]), as.numeric))
+  
+  # 2. Invertir los ítems indicados
+  df <- df %>%
+    mutate(across(all_of(names(df)[indices_inversos]), ~ 7 - .x))
+  
+  # 3. Crear la variable sumatoria
+  df <- df %>%
+    mutate(!!nombre_variable_sumatoria := rowSums(across(all_of(names(df)[74:86]))))
+  
+  # 4. Reubicar la variable sumatoria en la posición deseada
+  col_order <- names(df)  # Obtener nombres de columnas
+  
+  if (posicion_variable <= length(col_order)) {
+    nueva_posicion <- append(col_order, nombre_variable_sumatoria, after = posicion_variable - 1)
+    df <- df %>% select(all_of(nueva_posicion))
+  }
+  
+  return(df)
+}
+
+# Ejemplo
+# Aplicar la función con los valores indicados
+INDI45_i <- invertir_y_sumar(
+  df = INDI45,
+  indices_inversos = c(77:80, 84:88),  # Ítems inversos
+  nombre_variable_sumatoria = "SSUM",  # Nombre de la variable sumatoria
+  posicion_variable = 104  # Ubicación deseada
+)
+# Generar el DF solo con los valores de las subescalas
+
+ayudin <- function(dataframe, columnas) {
+  # Verificar que las columnas seleccionadas sean numéricas
+  if (!all(sapply(columnas, function(col) is.numeric(dataframe[[col]])))) {
+    stop("Todas las columnas seleccionadas deben ser numéricas.")
+  }
+  
+  # Filtrar el dataframe eliminando filas con NA en las columnas seleccionadas
+  dataframe_limpio <- dataframe[complete.cases(dataframe[, columnas]), columnas]
+  
+  # Devolver el dataframe limpio
+  return(dataframe_limpio)
+}
+
+
+
+# Convertir columnas de la 3 a la 6 en un dataframe a numéricas
+INDI45_i[ , 43:94] <- lapply(INDI45_i[ , 43:94], as.numeric)
+
+# Llamar a la función y mostrar los resultados
+LIMPION <- ayudin(dataframe = INDI45_i, columnas = c(43:105))
+
+# Definir función que permitirá ejecutar AFC vía lavaan
+
+library(lavaan)
+library(knitr)
+
+AFC <- function(data, factors, indicators, result_object_name, scale_name) {
+  # Verificar que la longitud de `factors` coincida con la longitud de `indicators`
+  if (length(factors) != length(indicators)) {
+    stop("El número de factores debe coincidir con el número de listas de indicadores.")
+  }
+
+  # Generar la sintaxis del modelo automáticamente
+  modelo <- ""
+  for (i in seq_along(factors)) {
+    factor_name <- factors[i]
+    column_indices <- indicators[[i]]
+
+    # Convertir los índices a nombres de las columnas
+    variable_names <- colnames(data)[column_indices]
+    variables <- paste(variable_names, collapse = " + ")
+    modelo <- paste0(modelo, factor_name, " =~ ", variables, "\n")
+  }
+
+  # Ajustar el modelo usando lavaan::cfa()
+  ajuste <- cfa(modelo, data = data)
+
+  # Obtener índices de ajuste relevantes
+  fit_indices <- fitmeasures(ajuste, c("rmsea", "cfi", "tli", "srmr", "gfi"))
+
+  # Función auxiliar para evaluar el nivel obtenido
+  evaluar_indice <- function(indice, valor) {
+    case_when(
+      indice == "rmsea" & valor <= 0.05 ~ "Excelente",
+      indice == "rmsea" & valor <= 0.08 ~ "Aceptable",
+      indice == "cfi" & valor >= 0.95 ~ "Excelente",
+      indice == "cfi" & valor >= 0.90 ~ "Aceptable",
+      indice == "tli" & valor >= 0.95 ~ "Excelente",
+      indice == "tli" & valor >= 0.90 ~ "Aceptable",
+      indice == "srmr" & valor <= 0.08 ~ "Excelente",
+      indice == "srmr" & valor <= 0.10 ~ "Aceptable",
+      indice == "gfi" & valor >= 0.95 ~ "Excelente",
+      indice == "gfi" & valor >= 0.90 ~ "Aceptable",
+      TRUE ~ "Deficiente"
+    )
+  }
+
+  # Crear tabla con resultados (sin la columna con nombres de índices)
+  resultados_tabla <- data.frame(
+    "Índice Obtenido" = c(fit_indices["rmsea"], 
+                          fit_indices["cfi"], 
+                          fit_indices["tli"], 
+                          fit_indices["srmr"], 
+                          fit_indices["gfi"]),
+    "Nivel Obtenido" = c(
+      evaluar_indice("rmsea", fit_indices["rmsea"]),
+      evaluar_indice("cfi", fit_indices["cfi"]),
+      evaluar_indice("tli", fit_indices["tli"]),
+      evaluar_indice("srmr", fit_indices["srmr"]),
+      evaluar_indice("gfi", fit_indices["gfi"])
+    )
+  )
+
+  # Cambiar nombres de las filas para usar como identificadores
+  rownames(resultados_tabla) <- c("RMSEA", "CFI", "TLI/NNFI", "SRMR", "GFI")
+
+  # Guardar el objeto con los resultados en el entorno global
+  assign(result_object_name, ajuste, envir = .GlobalEnv)
+
+  # Mostrar título y tabla formateada
+  cat("\n### Resumen de Índices de Bondad de Ajuste para el AFC de la", scale_name, "\n\n")
+  print(kable(resultados_tabla, align = "c", 
+              caption = paste("Resumen de Índices de Bondad de Ajuste para el AFC de la", scale_name)))
+}
+
+
+
+
+
+# Ejecuto función
+
+# Definición de argumentos
+
+
+factores <- c("Cognitivo", "Motor", "Socioemocional", "Disposicional")
+items <- list(c(1:26), c(27:32), c(33:46), c(47:52))
+result_object_name <- "afc30_01"
+escala <- "Escala INDI"
+
+
+# Llamar a la función
+resultado <- AFC (
+  data = LIMPION, 
+  factors = factores, 
+  indicators = items, 
+  result_object_name = "afc30_01",
+  scale_name = escala
+  )
+# 
+# summary(afc30_01, standardized = TRUE)
+
+# Paquete necesario
+library(knitr)
+
+# Extraer las cargas factoriales estandarizadas del modelo
+cargas <- inspect(afc30_01, what = "std")$lambda
+
+# Convertir la matriz a un data.frame
+cargas_df <- as.data.frame(cargas)
+cargas_df <- cbind(Item = rownames(cargas_df), cargas_df)
+
+# Identificar columnas con al menos una carga distinta de NA o 0
+col_validas <- colSums(!is.na(cargas)) > 0  # Identifica factores con cargas
+col_validas <- which(col_validas)           # Obtiene los índices de las columnas válidas
+
+# Filtrar solo las columnas relevantes (ítems y factores con cargas válidas)
+cargas_df <- cargas_df[, c(1, col_validas + 1)]  # "+1" porque "Item" está en la columna 1
+
+# Renombrar columnas para mayor claridad
+colnames(cargas_df)[-1] <- paste0("Factor", seq_len(ncol(cargas_df) - 1))
+
+# Generar la tabla en formato Markdown con kable sin la columna extra
+kable(cargas_df, caption = "Cargas Factoriales Estandarizadas", digits = 3, row.names = FALSE)
+
+
+
+```
+
+Para entender lo que las tablas anteriores nos indican es básico tomar en consideración lo siguiente:
+
+1. Aplicando los criterios generalmente aceptados para la interpretación de AFC, consideraremos que todas las cargas factoriales estandarizadas inferiores a 0.4 en valor absoluto indicarían "red flags", es decir ítems que podrían considerarse para su eliminación o modificación. 
+1. Es importante tomar en cuenta que los resultados estadísticos son solo parte del proceso de decisión en relación a la gestión de los ítems. La otra parte es el contenido de los ítems. Un ítem puede tener carga factorial negativa pero el signo podría estar totalmente justificado si, al analizar el contenido, comprobamos que en efecto la idea original al redactar el ítem era precisamente evaluar aspectos opuestos al factor o variable latente que se pretende medir. Por ejemplo una escala para medir depresión podría contener un ítem como "A menudo me siento entusiasta al pensar en mi futuro"; sería perfectamente lógico y coherente esperar que tal ítem tuviera una carga factorial negativa, al tratarse de un ítem inverso.
+1. La meta al redactar un ítem es describir la variabilidad en la variable a medir. En ese sentido, estadísticamente hablando, la carga factorial no es más que la correlación entre el ítem y la variable o factor latente que se pretende medir. Una consecuencia de plantearse las cargas factoriales de esa forma es que es posible establecer qué proporción de la variabilidad de los datos es explicada por el factor o variable latente que queremos medir. En términos matemáticos, es posible cuantificar esa proporción elevando al cuadrado la carga factorial del caso. Por ejemplo, si un ítem tiene una carga factorial de 0.62, entonces matemáticamente un 38.44 % de su variabilidad (0.62 al cuadrado) estaría siendo explicada por la variable a medir. Es por esto que queremos excluir ítems con carga factorial menores a 0.4; por ejemplo, un ítem con carga factorial de 0.25 solo sería explicado en un 6.25% por la variable a medir. En otras palabras, el 93.75% de los datos de tal ítem se deberían a alguna otra variable (o combinación de variables), distinta a la variable que queremos medir. 
+
+Ahora bien, sabedores de lo anterior, pasemos a señalar los conclusiones más saltantes:
+
+1. Los ítems que componen la subescala "C" muestran cargas factoriales altas, lo cual indica que son estadísticamente válidos.
+1. Los ítems de la subescala "M" también muestran cargas factoriales altas, lo cual indica que son estadísticamente válidos.
+1. Los ítems de la subescala "S" tienen resultados variopintos. Para empezar, los ítems S1, S2, S7, S8 y S9 se comportan como ítems directos (a mayor puntaje en el ítem, mayor valor o presencia de la variable a medir), mientras que los ítems S3, S4, S5, S6, S10, S11, S12, S13 y S14 se comportan originalmente como ítems inversos y por ello se realizó una conversión. Todos los ítems directos muestran cargas factoriales aceptables, pero entre los ítems inversos S3, S4, S10, S11 parecen buenos candidatos para la supresión o, en todo caso, la modificación con vistas a su mejoramiento. 
+1. Entre los ítems de la subescala "D", casi todos ostentan buenas cargas factoriales (siendo todos ítems directos). La excepción la constituye el ítem D3, el cual no solo es inverso (lo cual, como tenemos dicho, no es necesariamente un problema), sino que exhive una carga factorial muy baja de -.128; esto significa que apenas el 1.6% de su variabilidad es explicada por el factor que estamos mdiendo. 
+
+
+Ya desde el punto de vista concpetual, podemos pasar a analizar el *contenido* de los ítems en cuestión. En especial, nos centraremos en los ítems "problemáticos". 
+
+```{r 45_P2_Escalas_Descritas, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+
+
+library(readxl)
+infovar <- read_excel("infovar.xlsx")
+
+colnames(infovar) <- c("Contenido")
+
+# Extraer las cargas factoriales estandarizadas del modelo
+cargas <- inspect(afc30_01, what = "std")$lambda
+
+# Convertir la matriz a un data.frame
+cargas_df <- as.data.frame(cargas)
+cargas_df <- cbind(Item = rownames(cargas_df), cargas_df)
+
+# Identificar columnas con al menos una carga distinta de NA o 0
+col_validas <- colSums(!is.na(cargas)) > 0  # Identifica factores con cargas
+col_validas <- which(col_validas)           # Obtiene los índices de las columnas válidas
+
+# Filtrar solo las columnas relevantes (ítems y factores con cargas válidas)
+cargas_df <- cargas_df[, c(1, col_validas + 1)]  # "+1" porque "Item" está en la columna 1
+
+# Renombrar columnas para mayor claridad
+colnames(cargas_df)[-1] <- paste0("Factor", seq_len(ncol(cargas_df) - 1))
+
+# Validar que el número de filas de infovar y cargas_df coincidan
+if (nrow(cargas_df) != nrow(infovar)) {
+  stop("Error: El número de filas en cargas_df no coincide con el número de filas en infovar.")
+}
+
+# Reemplazar la columna "Item" con los valores de "infovar$Contenido"
+cargas_df$Item <- infovar$Contenido
+
+# Generar la tabla en formato Markdown con kable
+library(knitr)
+kable(cargas_df, caption = "Cargas Factoriales Estandarizadas con Contenido", digits = 3, row.names = FALSE)
+
+```
+
+Podemos apreciar ahora que:
+
+* Los ítems de la subescala "C" tienen validez aparente: su contenido parece relacionado con el factor a medir.
+* Los ítems de la subescala "M" tienen validez aparente: su contenido parece relacionado con el factor a medir.
+* Los ítems inversos de la subescala "S" parecen efectivamente medir la variable latente en sentido opuesto, por lo que es plenamente justificado que tengan cargas factoriales negativas. Dicho esto, la mayoría de ítems inversos muestran también cargas factoriales relativamente bajas. En especial, S3 ("Evita relacionarse con otros en diferentes situaciones"); S4 ("Muestra aprensión y/o excesiva preocupación ante sucesos futuros"); S10 ("Se muestra tímido y/o no comparte sus experiencias con el grupo"); y S11 ("Tiene un aspecto triste, cansado y/o preocupado"). El resto de ítems inversos, si bien se ubican en valores iguales o ligeramente por encima de 0.4 en valor absoluto, ciertamente  evidencian una carga factorial menor a las sus contrapartes directas. Las razones de esta relativa ineficiencia de los ítems inversos de la subescala "S" puede deberse o bien a aspectos de contenido (los ítems no son adecuadamente interpretados o quizás haya un efecto cultural/lingüístico), o a aspectos metodológicos (puede que haya existido un efecto debido a la secuencia de administración).
+* Los ítems de la subescala "D" parecen reflejar apropiadamente la dimensión a evaluar. Aun así, el ítem D3 ("Necesita que lo motiven para la realización de las actividades") también evidencia una carga factorial bastante débil. Si se recuerda, también en los resultados de la confiabilidad encontramos que la confiabilidad aumentaría con su supresión. 
+
+
+# Análisis de Ítems: Outliers y Transformaciones de Escala
+
+## Análisis de Outliers
+
+```{r 45_P2_Outliers, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+	)
+knitr::opts_current$get('Tabla')
+
+
+library(dplyr)
+INDI45_CATEGO <- INDI45_i %>% 
+  dplyr::select(Codigo, Regnat, Reg)
+
+# Extraigo los campos categóricos que me interesan del df original
+# Transformo los valores correspondientes a factor
+# Cambiar la variable "Regnat" a factor y reetiquetar sus valores
+INDI45_CATEGO$Regnat <- factor(INDI45_CATEGO$Regnat, 
+                            levels = c("1", "2", "3"),  # Valores originales
+                            labels = c("Costa", "Sierra", "Selva"))  # Nuevas etiquetas
+# Cambiar la variable "Regnat" a factor y reetiquetar sus valores
+INDI45_CATEGO$Reg <- factor(INDI45_CATEGO$Reg)  # Nuevas etiquetas
+  
+PRELIMPIO <- ayudin(dataframe = INDI45_i, columnas = c(1, 43:105)) # Extraigo solo valores no NA y numéricos del df original
+# Realizar el left join
+LIMPIO <- left_join(PRELIMPIO, INDI45_CATEGO, by = "Codigo")
+
+
+# Función para identificar casos con valores atípicos (outliers) en columnas específicas
+items_intensos <- function(data, rango_columnas, columna_contexto, multiplicador_IQR = 1.5) {
+  # Verificar que las columnas estén en el rango
+  columnas_seleccionadas <- names(data)[rango_columnas]
+  
+  # Identificar columnas no numéricas
+  columnas_no_numericas <- columnas_seleccionadas[!sapply(data[, rango_columnas, drop = FALSE], is.numeric)]
+  
+  # Excluir las columnas no numéricas y avisar
+  columnas_a_evaluar <- setdiff(columnas_seleccionadas, columnas_no_numericas)
+  if (length(columnas_no_numericas) > 0) {
+    cat("Las siguientes columnas no son numéricas y serán excluidas del análisis:\n")
+    print(columnas_no_numericas)
+  }
+  
+  # Inicializar una tabla consolidada
+  resultados_outliers <- data.frame(
+    Ítem = character(),
+    Caso = integer(),
+    Valor_Outlier = numeric(),
+    Región = character()
+  )
+  
+  # Aplicar la detección de outliers para cada columna numérica
+  for (columna in columnas_a_evaluar) {
+    # Obtener los datos de la columna
+    valores <- data[[columna]]
+    
+    # Calcular los cuartiles y los límites del IQR
+    Q1 <- quantile(valores, 0.25, na.rm = TRUE)
+    Q3 <- quantile(valores, 0.75, na.rm = TRUE)
+    IQR <- Q3 - Q1
+    limite_inferior <- Q1 - multiplicador_IQR * IQR
+    limite_superior <- Q3 + multiplicador_IQR * IQR
+    
+    # Identificar las filas con outliers
+    filas_outliers <- which(valores < limite_inferior | valores > limite_superior)
+    
+    # Crear un data frame con los resultados para esta columna
+    if (length(filas_outliers) > 0) {
+      resultados <- data.frame(
+        Columna = columna,
+        Fila = filas_outliers,
+        Valor_Outlier = valores[filas_outliers],
+        Contexto = data[[columna_contexto]][filas_outliers]
+      )
+      
+      # Consolidar los resultados
+      resultados_outliers <- rbind(resultados_outliers, resultados)
+    }
+  }
+  
+  # Generar una tabla en Markdown
+  if (nrow(resultados_outliers) > 0) {
+    cat("Tabla consolidada de casos con valores atípicos\n")
+    kable(resultados_outliers, format = "markdown", row.names = FALSE)
+  } else {
+    cat("No se detectaron valores atípicos en las columnas evaluadas.\n")
+  }
+}
+
+
+# EJEMPLO
+# Ejecutar la función para encontrar casos con valores atípicos
+items_intensos(
+  data = LIMPIO,           # Data frame con los datos
+  rango_columnas = 2:53,     # Rango de columnas numéricas a evaluar (columnas 2 a 4)
+  columna_contexto = "Regnat",  # Columna adicional para incluir en la salida (contexto)
+  multiplicador_IQR = 3   # Multiplicador del IQR (por defecto 1.5)
+)
+
+
+```
+Para resumir, podemos ofrecer las tablas siguientes, que resumen qué items muestran valores atípicos y cuántos casos hay, así como la frecuencia de valores atípicos según las categorías de Región (Costa, Sierra o Selva), y Departamento:
+
+```{r 45_Outliers_Resumen, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+# Función para resumir outliers
+library(dplyr)
+library(knitr)
+
+items_intensos_resumen <- function(data, rango_columnas, columna_contexto, multiplicador_IQR = 1.5) {
+  library(dplyr)
+  library(knitr)
+  
+  # Verificar las columnas numéricas dentro del rango
+  columnas_seleccionadas <- names(data)[rango_columnas]
+  columnas_no_numericas <- columnas_seleccionadas[!sapply(data[, rango_columnas, drop = FALSE], is.numeric)]
+  columnas_a_evaluar <- setdiff(columnas_seleccionadas, columnas_no_numericas)
+  
+  if (length(columnas_no_numericas) > 0) {
+    cat("Las siguientes columnas no son numéricas y serán excluidas del análisis:\n")
+    print(columnas_no_numericas)
+  }
+  
+  # Crear un data frame vacío para registrar los outliers
+  registros_outliers <- data.frame(
+    Columna = character(),
+    Valor_Outlier = numeric(),
+    Contexto = character()
+  )
+  
+  # Identificar los outliers en cada columna numérica
+  for (columna in columnas_a_evaluar) {
+    valores <- data[[columna]]
+    Q1 <- quantile(valores, 0.25, na.rm = TRUE)
+    Q3 <- quantile(valores, 0.75, na.rm = TRUE)
+    IQR <- Q3 - Q1
+    limite_inferior <- Q1 - multiplicador_IQR * IQR
+    limite_superior <- Q3 + multiplicador_IQR * IQR
+    filas_outliers <- which(valores < limite_inferior | valores > limite_superior)
+    
+    if (length(filas_outliers) > 0) {
+      registros <- data.frame(
+        Columna = columna,
+        Valor_Outlier = valores[filas_outliers],
+        Contexto = data[[columna_contexto]][filas_outliers]
+      )
+      registros_outliers <- bind_rows(registros_outliers, registros)
+    }
+  }
+  
+  if (nrow(registros_outliers) > 0) {
+    # Matriz de doble entrada: sumar frecuencia por ítem y valor atípico
+    matriz_doble_entrada <- registros_outliers %>%
+      group_by(Columna, Valor_Outlier) %>%
+      summarise(Frecuencia = n(), .groups = "drop") %>%
+      arrange(desc(Frecuencia))  # Ordenar por frecuencia descendente
+    
+    # Tabla de frecuencias descendentes del contexto
+    tabla_frecuencias <- registros_outliers %>%
+      count(Contexto, sort = TRUE, name = "Frecuencia")
+    
+    # Imprimir tablas usando kable
+    cat("\n### Resumen de Outliers por ítem\n")
+    print(kable(matriz_doble_entrada, format = "markdown", row.names = FALSE))
+    
+    cat("\n### Tabla de Outliers según Categoría\n")
+    print(kable(tabla_frecuencias, format = "markdown", row.names = FALSE))
+  } else {
+    cat("No se detectaron valores atípicos en las columnas evaluadas.\n")
+  }
+}
+
+
+# Llamando a la función:
+
+items_intensos_resumen(
+  data = LIMPIO,           # Data frame con los datos
+  rango_columnas = 2:53,     # Rango de columnas numéricas a evaluar (columnas 2 a 4)
+  columna_contexto = "Regnat",  # Columna adicional para incluir en la salida (contexto)
+  multiplicador_IQR = 3   # Multiplicador del IQR (por defecto 1.5)
+)
+
+# Como soy un capo, genero función solo para que se muestre la segunda tabla de categorías:
+
+items_intensos_catego <- function(data, rango_columnas, columna_contexto, multiplicador_IQR = 1.5) {
+  library(dplyr)
+  library(knitr)
+  
+  # Verificar las columnas numéricas dentro del rango
+  columnas_seleccionadas <- names(data)[rango_columnas]
+  columnas_no_numericas <- columnas_seleccionadas[!sapply(data[, rango_columnas, drop = FALSE], is.numeric)]
+  columnas_a_evaluar <- setdiff(columnas_seleccionadas, columnas_no_numericas)
+  
+  if (length(columnas_no_numericas) > 0) {
+    cat("Las siguientes columnas no son numéricas y serán excluidas del análisis:\n")
+    print(columnas_no_numericas)
+  }
+  
+  # Crear un data frame vacío para registrar los outliers
+  registros_outliers <- data.frame(
+    Columna = character(),
+    Valor_Outlier = numeric(),
+    Contexto = character()
+  )
+  
+  # Identificar los outliers en cada columna numérica
+  for (columna in columnas_a_evaluar) {
+    valores <- data[[columna]]
+    Q1 <- quantile(valores, 0.25, na.rm = TRUE)
+    Q3 <- quantile(valores, 0.75, na.rm = TRUE)
+    IQR <- Q3 - Q1
+    limite_inferior <- Q1 - multiplicador_IQR * IQR
+    limite_superior <- Q3 + multiplicador_IQR * IQR
+    filas_outliers <- which(valores < limite_inferior | valores > limite_superior)
+    
+    if (length(filas_outliers) > 0) {
+      registros <- data.frame(
+        Columna = columna,
+        Valor_Outlier = valores[filas_outliers],
+        Contexto = data[[columna_contexto]][filas_outliers]
+      )
+      registros_outliers <- bind_rows(registros_outliers, registros)
+    }
+  }
+  
+  if (nrow(registros_outliers) > 0) {
+    # Tabla de frecuencias descendentes del contexto
+    tabla_frecuencias <- registros_outliers %>%
+      count(Contexto, sort = TRUE, name = "Frecuencia")
+    
+    # Imprimir tabla usando kable
+    cat("\n### Tabla de Outliers según Categoría\n")
+    print(kable(tabla_frecuencias, format = "markdown", row.names = FALSE))
+  } else {
+    cat("No se detectaron valores atípicos en las columnas evaluadas.\n")
+  }
+}
+
+# Ahora la aplico, muy frescamente
+
+items_intensos_catego (
+  data = LIMPIO,           # Data frame con los datos
+  rango_columnas = 2:53,     # Rango de columnas numéricas a evaluar (columnas 2 a 4)
+  columna_contexto = "Reg",  # Columna adicional para incluir en la salida (contexto)
+  multiplicador_IQR = 3   # Multiplicador del IQR (por defecto 1.5)
+)
+
+```
+
+Las conclusiones apuntan a que la única escala que contiene valores extremos en la escala S, en especial los ítems S6, S12 y S14. Hay que señalar que los parámetros elegidos para definir "valor extremo" (tres veces el rango intercuartílico, en lugar del nivel usual de rango y medio) son extremos en verdad; la distribución de los puntajes es bastante dispersa.
+
+Una vez más, esto apunta en una dirección bastante clara: los subgrupos son tan distintos entre sí que incluirlos todos dentro de la misma "muestra general" hace que la variabilidad se eleve bastante y la aparición de outliers se haga más probable.
+
+
+
+```{r 45_P2_Resumen_Binarios, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE, results='asis'}
+
+# Cargar librerías necesarias
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(kableExtra)
+library(RColorBrewer)
+
+# Función ajustada
+anal_di <- function(data, 
+                    rango_indices, 
+                    titulo_tabla = "Tabla de porcentajes de 'Sí' (1)", 
+                    titulo_grafico = "Porcentajes de 'Sí' (1) por variable", 
+                    color_contorno = "black", 
+                    paleta_colores = "Dark2") {
+  # Seleccionar las variables según el rango
+  sub_data <- data[, rango_indices]
+  
+  # Verificar que las columnas sean dicotómicas
+  if (!all(apply(sub_data, 2, function(x) all(x %in% c(0, 1))))) {
+    stop("Todas las columnas seleccionadas deben ser dicotómicas (valores 0 y 1).")
+  }
+  
+  # Calcular los porcentajes de "1" para cada variable
+  tabla_porcentajes <- sub_data %>%
+    summarise(across(everything(), ~ mean(.x) * 100)) %>%
+    pivot_longer(cols = everything(), names_to = "Variable", values_to = "Porcentaje") %>%
+    arrange(desc(Porcentaje)) %>%
+    mutate(Porcentaje = round(Porcentaje, 2)) # Redondear a 2 decimales
+  
+  # Mostrar la tabla en formato Markdown usando kable
+  tabla_md <- tabla_porcentajes %>%
+    kable("markdown", col.names = c("Variable", "Porcentaje (%)"), caption = titulo_tabla) 
+  # %>%
+  #   kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover"))
+  
+  print(tabla_md)
+  
+  # Crear el gráfico de barras
+  grafico <- ggplot(tabla_porcentajes, aes(x = reorder(Variable, -Porcentaje), y = Porcentaje, fill = Variable)) +
+    geom_col(width = 0.75, color = color_contorno) +  # Agregar línea de contorno
+    geom_text(aes(label = paste0(round(Porcentaje, 1), "%")), vjust = -0.5) +
+    scale_fill_brewer(palette = paleta_colores) +  # Paleta definida por el usuario
+    labs(
+      title = titulo_grafico,
+      x = "Variables",
+      y = "Porcentaje",
+      caption = "Fuente: Data Niveles 4-5"
+    ) +
+    theme_gray() +  # Cambiar tema a theme_gray
+    theme(legend.position = "none")
+  
+  print(grafico)
+}
+
+
+# Ejemplo de uso
+
+
+
+anal_di(data = INDI45_i, 
+        rango_indices = c(22:30), 
+        titulo_tabla = "Resumen de Incidencias", 
+        titulo_grafico = "Porcentajes de Incidencia", 
+        color_contorno = "black", 
+        paleta_colores = "Greens")
+
+
+anal_di(data = INDI45, 
+        rango_indices = c(33:39), 
+        titulo_tabla = "Resumen de Tratamientos", 
+        titulo_grafico = "Porcentajes de Tratamiento", 
+        color_contorno = "black", 
+        paleta_colores = "Blues")
+
+# resumen_binario(INDI45, columnas = c(22:30), equivalencias = c("1","0"),
+#                             titulo_grafico = "Distribución de Respuestas 'Sí'",
+#                             etiqueta_x = "Respuestas Sí",
+#                             etiqueta_y = "Porcentaje",
+#                             pie_de_pagina = "Fuente: Nivel 4-5",
+#                             paleta_colores = "Oranges",
+#                             color_borde = "black")
+# 
+# resumen_binario(INDI45, columnas = c(33:39), equivalencias = c("1","0"),
+#                             titulo_grafico = "Distribución de Respuestas 'Sí'",
+#                             etiqueta_x = "Respuestas Sí",
+#                             etiqueta_y = "Porcentaje",
+#                             pie_de_pagina = "Fuente: Nivel 4-5",
+#                             paleta_colores = "Oranges",
+#                             color_borde = "black")
+
+```
+
+Finalmente, el total de los casos con valores extremos (72 casos) no llega a sobrepasar el 5% del total de la muestra, por lo que se considera que no valdría la pena tomar otras medidas de gestión de valores extremos, lo cual llevaría necesariamente al recálculo de todos los índices.
+
+# Transformaciones de las Escalas
+
+Pasaremos a ejecutar dos transformaciones de la data. Las transformaciones son algoritmos que aplican modificaciones sistemáticas a  cada uno de los datos a fin de obtener data transformada cuya distribución, potencialmente, podría acercarse a una distribución normal. 
+
+Ejecutaremos dos transformaciones: logarítmica y Box-Cox. Se eligió esas dos porque son las que usualmente generan los mejores resultados.
+
+## Transformación Logarítmica
+
+```{r 45_P2_Transformaciones_Log, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+library(nortest) # Para el test de Lilliefors
+library(car)     # Para la transformación Box-Cox
+library(knitr)   # Para salida tabular bonitamente
+library(dplyr)
+
+# Función para calcular y evaluar normalidad con transformaciones
+library(nortest) # Para el test de Lilliefors (Kolmogorov-Smirnov corregido)
+library(knitr)   # Para la salida tabular
+
+# Función para transformar logarítmicamente y evaluar normalidad
+log_transform_norma <- function(data) {
+  # Verificar que las columnas sean numéricas
+  data <- data[, sapply(data, is.numeric)]
+  
+  # Aplicar la transformación logarítmica (con manejo de valores <= 0)
+  log_transformada <- as.data.frame(lapply(data, function(x) {
+    if (any(x <= 0)) return(rep(NA, length(x))) else return(log(x))
+  }))
+  
+  # Evaluar normalidad con Shapiro-Wilk y Lilliefors
+  evaluar_normalidad <- function(variable) {
+    if (length(variable[!is.na(variable)]) > 2) {
+      shapiro_p <- tryCatch(shapiro.test(variable)$p.value, error = function(e) NA)
+      ks_p <- tryCatch(nortest::lillie.test(variable)$p.value, error = function(e) NA)
+    } else {
+      shapiro_p <- ks_p <- NA
+    }
+    list(Shapiro_Wilk = shapiro_p, Lilliefors_KS = ks_p)
+  }
+  
+  # Crear un dataframe para almacenar los resultados
+  resultados <- data.frame(
+    Escala = character(),
+    Índice = character(),
+    `p-valor` = character(),
+    Interpretación = character(),
+    stringsAsFactors = FALSE
+  )
+  
+  interpretar_resultado <- function(p) {
+    if (is.na(p)) return(c("NA", "Valor insuficiente"))
+    nivel_significancia <- ifelse(p <= 0.001, "***",
+                                  ifelse(p <= 0.01, "**",
+                                         ifelse(p <= 0.05, "*", "NS")))
+    interpretacion <- ifelse(p > 0.05, "Normalidad", "No Normalidad")
+    c(sprintf("%.2f, %s", p, nivel_significancia), interpretacion)
+  }
+  
+  # Iterar sobre cada columna
+  for (var in colnames(log_transformada)) {
+    variable <- log_transformada[[var]]
+    resultados_test <- evaluar_normalidad(variable)
+    
+    # Agregar resultados de Shapiro-Wilk
+    sw_resultado <- interpretar_resultado(resultados_test$Shapiro_Wilk)
+    resultados <- rbind(resultados, data.frame(
+      Escala = var,
+      Índice = "S-W",
+      `p-valor` = sw_resultado[1],
+      Interpretación = sw_resultado[2],
+      stringsAsFactors = FALSE
+    ))
+    
+    # Agregar resultados de Lilliefors
+    ks_resultado <- interpretar_resultado(resultados_test$Lilliefors_KS)
+    resultados <- rbind(resultados, data.frame(
+      Escala = var,
+      Índice = "K-S, L",
+      `p-valor` = ks_resultado[1],
+      Interpretación = ks_resultado[2],
+      stringsAsFactors = FALSE
+    ))
+  }
+  
+  # Mostrar resultados como tabla
+  kable(resultados, format = "markdown", caption = "Transformación Logarítmica de las Escalas")
+}
+
+# Preparo data
+
+# PULCRO <- LIMPIO %>% 
+#   select(CSUM:DSUM)
+PULCRO <- LIMPIO[, c(61:64)]
+# Ejecutar la función
+log_transform_norma(PULCRO)
+
+```
+
+
+Los resultados indican que, aun después de la transformación logarítmica, la distribución de los datos sigue sin satisfacer los criterios de normalidad.
+
+
+Pasemos ahora a verificar los resultados de la transformación Box-Cox.
+
+
+## Transformación Box-Cox
+
+A continuación, mostramos los resultados de la transformación Box-Cox. 
+
+
+```{r 45_P2_Transformaciones_BoxCox, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+# Función para aplicar la transformación Box-Cox y evaluar normalidad
+# Cargar librerías necesarias
+library(MASS)       # Para la transformación Box-Cox
+library(nortest)    # Para el test de Lilliefors (K-S corregido)
+library(knitr)      # Para mostrar tablas en formato markdown
+
+# Función para aplicar la transformación Box-Cox y evaluar normalidad
+box_norma <- function(data) {
+  # Cargar la librería MASS si no está ya cargada
+  if (!requireNamespace("MASS", quietly = TRUE)) {
+    install.packages("MASS")
+  }
+  library(MASS)
+  
+  # Verificar que las columnas sean numéricas
+  data <- data[, sapply(data, is.numeric)]
+  
+  # Aplicar la transformación Box-Cox
+  box_transformada <- as.data.frame(lapply(data, function(x) {
+    if (any(x <= 0)) return(rep(NA, length(x))) 
+    else {
+      bc <- MASS::boxcox(x ~ 1, plotit = FALSE)
+      lambda <- bc$x[which.max(bc$y)]
+      if (lambda == 0) return(log(x))
+      else return((x^lambda - 1) / lambda)
+    }
+  }))
+  
+  # Evaluar normalidad con Shapiro-Wilk y Lilliefors
+  evaluar_normalidad <- function(variable) {
+    if (length(variable[!is.na(variable)]) > 2) {
+      shapiro_p <- tryCatch(shapiro.test(variable)$p.value, error = function(e) NA)
+      ks_p <- tryCatch(nortest::lillie.test(variable)$p.value, error = function(e) NA)
+    } else {
+      shapiro_p <- ks_p <- NA
+    }
+    list(Shapiro_Wilk = shapiro_p, Lilliefors_KS = ks_p)
+  }
+  
+  # Crear un dataframe para almacenar los resultados
+  resultados <- data.frame(
+    Escala = character(),
+    Índice = character(),
+    `p-valor` = character(),
+    Interpretación = character(),
+    stringsAsFactors = FALSE
+  )
+  
+  interpretar_resultado <- function(p) {
+    if (is.na(p)) return(c("NA", "Valor insuficiente"))
+    nivel_significancia <- ifelse(p <= 0.001, "***",
+                                  ifelse(p <= 0.01, "**",
+                                         ifelse(p <= 0.05, "*", "NS")))
+    interpretacion <- ifelse(p > 0.05, "Normalidad", "No Normalidad")
+    c(sprintf("%.2f, %s", p, nivel_significancia), interpretacion)
+  }
+  
+  # Iterar sobre cada columna
+  for (var in colnames(box_transformada)) {
+    variable <- box_transformada[[var]]
+    resultados_test <- evaluar_normalidad(variable)
+    
+    # Agregar resultados de Shapiro-Wilk
+    sw_resultado <- interpretar_resultado(resultados_test$Shapiro_Wilk)
+    resultados <- rbind(resultados, data.frame(
+      Escala = var,
+      Índice = "S-W",
+      `p-valor` = sw_resultado[1],
+      Interpretación = sw_resultado[2],
+      stringsAsFactors = FALSE
+    ))
+    
+    # Agregar resultados de Lilliefors
+    ks_resultado <- interpretar_resultado(resultados_test$Lilliefors_KS)
+    resultados <- rbind(resultados, data.frame(
+      Escala = var,
+      Índice = "K-S, L",
+      `p-valor` = ks_resultado[1],
+      Interpretación = ks_resultado[2],
+      stringsAsFactors = FALSE
+    ))
+  }
+  
+  # Mostrar resultados como tabla
+  kable(resultados, format = "markdown", caption = "Transformación Box-Cox de las Escalas")
+}
+
+
+PULCRO <- LIMPIO[, c(61:64)]
+# Ejecutar la función
+# Aplicar la transformación Box-Cox
+box_norma(PULCRO)
+
+```
+
+Los resultados de la transformación Box-Cox tampoco logran que los datos transformados se acerquen significativamente a una distribución normal. 
+
+
+### Conclusiones
+
+* En general, se verifica que estas dos transformaciones sistemáticas de la data no logran acercarla significativamente a la normalidad. 
+* Si bien es posible seguir intentando con otros algoritmos (raíz cuadrada, inversa, etc.), es nuestra recomendación pasar al análisis ulterior, ya que en estos casos el tamaño muestral justifica matemáticamente el uso de herramientas paramétricas. 
+* Más allá de lo metodológico, y viendo la distribución gráfica los datos (Ver Parte 1), se recomienda verificar las razones por las que una muestra tan grande evidencia una distribución no normal. 
+* El presente análisis se planteará en lo subsiguiente enfocarse en esta cuestión, la cual se convierte en relevante desde el punto de vista conceptual. 
+
+
+# Análisis de Ítems
+
+En esta sección pasaremos a analizar la calidad de los ítems de la escala INDI, en su aplicación a la muestra peruana que nos ocupa.
+
+Cabe mencionar que se recalculó los puntajes sumatorios en vista de que existen ítems inversos.
+
+```{r 45_P2_Inversión_Items, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE, results='asis'}
+# LIMPIO es nuestro df de punto de partida para este propósito.  
+
+# Recreamos las variables sumatorias:
+
+LIMPIO$B_CSUM <- rowSums(LIMPIO[, 2:27])
+LIMPIO$B_MSUM <- rowSums(LIMPIO[, 28:33])
+
+# Crear nuevas columnas para los ítems invertidos
+# unique(LIMPIO$S3)
+LIMPIO$D3_i <- 6 + 1 - LIMPIO$D3
+
+# Mover la columna `item_final` a la posición 3
+# Items inversos en S: S3, S4, S5, S6, S10, S11, S12, S13, S14
+LIMPIO$S3_i <- 6 + 1 - LIMPIO$S3
+LIMPIO$S4_i <- 6 + 1 - LIMPIO$S4
+LIMPIO$S5_i <- 6 + 1 - LIMPIO$S5
+LIMPIO$S6_i <- 6 + 1 - LIMPIO$S6
+LIMPIO$S10_i <- 6 + 1 - LIMPIO$S10
+LIMPIO$S11_i <- 6 + 1 - LIMPIO$S11
+LIMPIO$S12_i <- 6 + 1 - LIMPIO$S12
+LIMPIO$S13_i <- 6 + 1 - LIMPIO$S13
+LIMPIO$S14_i <- 6 + 1 - LIMPIO$S14
+
+# LIMPIO <- LIMPIO %>%
+#   relocate(D3_i, .before = D4)
+LIMPIO$B_DSUM <- rowSums(LIMPIO[, c(48:49, 51:53, 69)])
+# LIMPIO <- LIMPIO %>%
+#   relocate(S3_i, .before = S4)
+# LIMPIO <- LIMPIO %>%
+#   relocate(S4_i, .before = S5)
+LIMPIO$SSUM <- rowSums(LIMPIO[, c(34:47)]) # Escala S Sumatoria, tal cual
+LIMPIO$B_SSUM <- rowSums(LIMPIO[, c(34:35, 40:42, 70:78)]) # Escala S Sumatoria, con los ítems inversos
+
+
+# Comparar si las dos columnas son idénticas
+identical(LIMPIO$CSUM, LIMPIO$B_CSUM) # Deberían ser iguales, y lo son
+identical(LIMPIO$MSUM, LIMPIO$B_MSUM) # Deberían ser iguales, y lo son
+identical(LIMPIO$DSUM, LIMPIO$B_DSUM) # Deberían ser iguales, y lo son. Esto significa que al hacer el cálculo parece que sí tomaron en cuenta el ítem inverso D3
+identical(LIMPIO$SSUM, LIMPIO$B_SSUM) # No son iguales, deberían serlo. Esto significa que al hacer el cálculo parece que no generaron una escala sumatoria porque estaban conscientes de que había muchos ítems inversos?
+
+# Detectar filas donde col1 y col2 son diferentes
+# diferencias <- LIMPIO$CSUM != LIMPIO$B_CSUM
+
+# # Mostrar las filas donde hay diferencias
+# LIMPIO[diferencias, ]
+# # Contar cuántas filas tienen diferencias
+# sum(diferencias)
+
+```
+
+Luego se calculó el Índice de Discriminación de los ítems. 
+
+
+
+```{r 45_P2_Discriminante, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+
+# Vamos a generar un DF con la data necesaria
+# Excluir columnas por índice
+# DISCRI <- LIMPIO [, -c(36:39,43:47,50, 54:60, 64:68, 79:80)]  # Excluir las columnas que corresponden a los ítems inversos.
+# 
+# # Reordenamos las columnas
+# DISCRI <- DISCRI %>%
+#   relocate(D3_i, .before = D4)
+# DISCRI <- DISCRI %>%
+#   relocate(DSUM, .after = last_col())
+# DISCRI <- DISCRI %>%
+#   relocate(MSUM, .before = B_SSUM)
+# DISCRI <- DISCRI %>%
+#   relocate(CSUM, .before = MSUM)
+# DISCRI <- DISCRI %>%
+#   relocate(c(45:48), .before = c(36))
+# DISCRI <- DISCRI %>%
+#   relocate(c(49:53), .before = c(43))
+# Generamos función para calcular Discriminante
+
+Trump <- function(nombre_escala, df_final, df_inicial, prefijo, rango_columnas) {
+  library(knitr)
+  library(dplyr)
+  
+  # Ordenar los datos según el puntaje total
+  df_final <- df_inicial[order(df_inicial$CSUM, decreasing = TRUE), ]
+  
+  # Definir el tamaño de los grupos (27% superior e inferior)
+  n <- nrow(df_final)
+  grupo <- round(0.27 * n)
+  
+  # Identificar las columnas de los ítems (según el rango especificado)
+  items <- names(df_final)[rango_columnas]
+  
+  # Transformar las respuestas en dicotómicas (1 = alta, 0 = baja)
+  df_final[items] <- lapply(df_final[items], function(x) ifelse(x >= 4, 1, 0))
+  
+  # Dividir los grupos después de la transformación
+  grupo_alto <- df_final[1:grupo, ]
+  grupo_bajo <- df_final[(n - grupo + 1):n, ]
+  
+  # Calcular el índice de discriminación para cada ítem
+  indices_discriminacion <- sapply(items, function(item) {
+    # Proporción de respuestas altas en el grupo alto
+    p_alto <- mean(grupo_alto[[item]])
+    # Proporción de respuestas altas en el grupo bajo
+    p_bajo <- mean(grupo_bajo[[item]])
+    # Índice de discriminación
+    p_alto - p_bajo
+  })
+  
+  # Redondear los índices a 2 dígitos
+  indices_discriminacion <- round(indices_discriminacion, 2)
+  
+  # Crear una tabla con la interpretación
+  interpretacion <- sapply(indices_discriminacion, function(d) {
+    if (d >= 0.40) {
+      "Excelente discriminación"
+    } else if (d >= 0.30) {
+      "Buena discriminación"
+    } else if (d >= 0.20) {
+      "Discriminación aceptable"
+    } else if (d >= 0) {
+      "Mala discriminación"
+    } else {
+      "Discriminación inversa"
+    }
+  })
+  
+  # Crear el data frame final
+  tabla_discriminacion <- data.frame(
+    Ítem = items,
+    Índice.D = indices_discriminacion,
+    Interpretación = interpretacion
+  )
+  
+  # Generar la tabla en Markdown
+  cat("Table 1: Índices de Discriminación ", nombre_escala, "\n\n", sep = "")
+  print(
+    kable(tabla_discriminacion, format = "markdown", align = c("l", "r", "l"), row.names = FALSE)
+  )
+  
+  # Retornar la tabla (opcional, para que el usuario pueda manipularla)
+  return(tabla_discriminacion)
+}
+
+
+
+
+# Selecciono los nombres para la tabla:
+infovar_C <- infovar[1:26, ]
+infovar_M <- infovar[27:32, ]
+infovar_S <- infovar[33:46, ]
+infovar_D <- infovar[47:52, ]
+# # Llamar a la función
+# Tab_Discri_M <- Trump(
+#   nombre_escala = "Escala M",
+#   df_final = DISCRIM,
+#   df_inicial = DISCRI,
+#   prefijo = "M",
+#   rango_columnas = 28:33  # Especificar el rango de columnas para los ítems
+# )
+# 
+# # Llamar a la función
+# Tab_Discri_S <- Trump(
+#   nombre_escala = "Escala S",
+#   df_final = DISCRIS,
+#   df_inicial = DISCRI,
+#   prefijo = "S",
+#   rango_columnas = 34:47  # Especificar el rango de columnas para los ítems
+# )
+# 
+# # Llamar a la función
+# Tab_Discri_D <- Trump(
+#   nombre_escala = "Escala D",
+#   df_final = DISCRID,
+#   df_inicial = DISCRI,
+#   prefijo = "D",
+#   rango_columnas = 48:53  # Especificar el rango de columnas para los ítems
+# )
+```
+## Conclusiones Escala C
+
+```{r 45_P2_Discriminante_C, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+# Llamar a la función
+# Llamar a la función
+tabla <- Trump(
+  nombre_escala = "Escala C",
+  df_final = DISCRIC, 
+  df_inicial = LIMPIO, 
+  prefijo = "C",
+  rango_columnas = 2:27  # Columnas de los ítems
+)
+```
+
+* Pese a estar constituida por la mayor cantidad de ítems en el INDI, la Escala C es la que ostenta los ítems con mayores niveles de discriminación.
+* Los resultados, al igual que los demás análisis, apuntan a que hay muy poca distinción posible entre los ítems de esta escala. 
+
+## Conclusiones Escala M
+
+```{r 45_P2_Discriminante_M, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+# Llamar a la función
+Tab_Discri_M <- Trump(
+  nombre_escala = "Escala M",
+  df_final = DISCRIM,
+  df_inicial = LIMPIO,
+  prefijo = "M",
+  rango_columnas = 28:33  # Especificar el rango de columnas para los ítems
+)
+```
+
+* En general, la Escala M contiene ítems con buenos niveles de discriminación.
+* Tan solo los ítems M3 y M4 tienen un nivel menor de discriminación, de todos modos está dentro de un rango más que aceptable.
+
+
+## Conclusiones Escala S
+
+```{r 45_P2_Discriminante_S, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+# Llamar a la función
+Tab_Discri_S <- Trump(
+  nombre_escala = "Escala S",
+  df_final = DISCRIS,
+  df_inicial = LIMPIO,
+  prefijo = "S",
+  rango_columnas = 34:47  # Especificar el rango de columnas para los ítems
+)
+```
+
+* En general, tan solo los ítems S1, S2, S7, S8 y S9 tienen un buen nivel discriminación. El resto de ítems (todos ellos inversos) ofrecen un nivel discriminante bastante bajo, llegando al extremo de ser negativo en el caso de los ítems S3 y S4. 
+
+
+
+
+
+
+
+
+## Conclusiones Escala D
+
+```{r 45_P2_Discriminante_D, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+# Llamar a la función
+Tab_Discri_D <- Trump(
+  nombre_escala = "Escala D",
+  df_final = DISCRID,
+  df_inicial = LIMPIO,
+  prefijo = "D",
+  rango_columnas = 48:53  # Especificar el rango de columnas para los ítems
+)
+```
+
+* En general, tan solo el ítem D3 (ítem inverso) tiene un nivel de discriminación comparativamente bajo, pero aun así se encuentra dentro de niveles aceptables. El resto de ítems ofrecen un nivel discriminante entre bueno y excelente.
+
+
+
+
+
+
+
+

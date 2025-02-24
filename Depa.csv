@@ -1,2241 +1,2225 @@
-"Código","Departamento","Escala_Cog.","Escala_Mot.","Escala_Dis."
-231,"Piura",93,25,21
-464,"Loreto",94,25,23
-466,"Loreto",91,19,21
-480,"Loreto",83,26,28
-500,"Loreto",116,32,25
-504,"Loreto",92,24,22
-532,"Loreto",73,18,16
-957,"Piura",90,29,34
-978,"Loreto",78,19,20
-1039,"Piura",85,28,31
-1158,"Piura",53,11,17
-1180,"Loreto",76,24,16
-1385,"Piura",62,17,17
-1415,"Loreto",66,29,27
-1457,"Cusco",62,23,15
-1458,"Loreto",57,20,22
-2110,"Piura",71,21,25
-2347,"Piura",50,26,19
-2511,"Piura",83,22,20
-2705,"Lima Metropolitana",102,22,23
-2835,"Lima Metropolitana",121,29,36
-2836,"Lima Metropolitana",133,31,36
-2839,"Lima Metropolitana",134,32,26
-2840,"Lima Metropolitana",132,24,19
-2841,"Lima Metropolitana",100,27,20
-2842,"Lima Metropolitana",117,30,24
-2843,"Lima Metropolitana",99,30,23
-2844,"Lima Metropolitana",112,29,24
-2846,"Lima Metropolitana",131,24,23
-2848,"Lima Metropolitana",125,33,25
-2849,"Lima Metropolitana",143,35,28
-2880,"Lima Metropolitana",127,35,24
-2881,"Lima Metropolitana",109,22,25
-2882,"Lima Metropolitana",124,20,20
-2883,"Lima Metropolitana",107,24,19
-2884,"Lima Metropolitana",125,35,23
-2885,"Lima Metropolitana",119,33,23
-2889,"Lima Metropolitana",105,29,24
-2890,"Lima Metropolitana",92,28,22
-2891,"Lima Metropolitana",138,34,30
-2892,"Lima Metropolitana",132,27,29
-2893,"Lima Metropolitana",107,28,29
-2894,"Lima Metropolitana",103,27,30
-2895,"Lima Metropolitana",146,34,31
-2896,"Lima Metropolitana",108,20,28
-2897,"Lima Metropolitana",124,32,32
-2900,"Lima Metropolitana",114,30,28
-2901,"Lima Metropolitana",82,28,29
-2902,"Lima Metropolitana",133,34,32
-2903,"Lima Metropolitana",135,31,31
-2904,"Lima Metropolitana",99,18,27
-2905,"Lima Metropolitana",144,33,31
-2906,"Lima Metropolitana",119,31,30
-2907,"Lima Metropolitana",119,30,31
-2908,"Lima Metropolitana",129,31,31
-2910,"Lima Metropolitana",121,32,24
-2911,"Lima Metropolitana",152,33,28
-2912,"Lima Metropolitana",90,31,21
-2913,"Lima Metropolitana",128,27,25
-2914,"Lima Metropolitana",134,34,23
-2915,"Lima Metropolitana",100,29,25
-2916,"Lima Metropolitana",149,32,27
-2918,"Lima Metropolitana",130,31,28
-2919,"Lima Metropolitana",117,29,18
-2920,"Lima Metropolitana",143,32,28
-2921,"Lima Metropolitana",132,28,27
-2922,"Lima Metropolitana",110,21,22
-2923,"Lima Metropolitana",133,28,20
-2924,"Lima Metropolitana",141,32,20
-2925,"Lima Metropolitana",144,31,27
-2926,"Lima Metropolitana",108,28,17
-2927,"Lima Metropolitana",147,30,24
-2928,"Lima Metropolitana",121,31,29
-2935,"Lima Metropolitana",128,30,36
-2940,"Lima Metropolitana",155,33,30
-2943,"Lima Metropolitana",136,28,22
-2946,"Lima Metropolitana",137,33,21
-2948,"Lima Metropolitana",79,26,17
-2950,"Lima Metropolitana",135,29,20
-2952,"Lima Metropolitana",118,30,18
-2955,"Lima Metropolitana",115,26,15
-2957,"Lima Metropolitana",93,23,17
-2958,"Lima Metropolitana",128,23,19
-2960,"Lima Metropolitana",129,26,29
-2961,"Lima Metropolitana",104,30,17
-2963,"Lima Metropolitana",58,17,20
-2964,"Lima Metropolitana",126,30,28
-2965,"Lima Metropolitana",85,28,24
-2966,"Lima Metropolitana",110,15,23
-2967,"Lima Metropolitana",134,32,19
-2969,"Lima Metropolitana",130,32,26
-2972,"Lima Metropolitana",143,33,24
-2973,"Lima Metropolitana",145,31,30
-2974,"Lima Metropolitana",142,33,29
-2975,"Lima Metropolitana",99,27,23
-2976,"Lima Metropolitana",145,32,31
-2977,"Lima Metropolitana",121,31,26
-2978,"Lima Metropolitana",125,27,20
-2979,"Lima Metropolitana",154,35,30
-2980,"Lima Metropolitana",88,32,23
-2981,"Lima Metropolitana",115,30,25
-2982,"Lima Metropolitana",144,32,21
-2983,"Lima Metropolitana",116,32,25
-2984,"Lima Metropolitana",112,29,19
-2985,"Lima Metropolitana",109,28,20
-2986,"Lima Metropolitana",125,30,23
-2987,"Lima Metropolitana",93,34,30
-2988,"Lima Metropolitana",85,19,18
-2989,"Lima Metropolitana",85,20,17
-2990,"Lima Metropolitana",155,36,31
-2991,"Lima Metropolitana",152,36,31
-3185,"Lima Metropolitana",129,28,36
-3208,"Lima Metropolitana",93,30,24
-3209,"Lima Metropolitana",120,31,25
-3241,"Lima Metropolitana",103,30,26
-3298,"Lima Metropolitana",145,31,28
-3306,"Lima Metropolitana",96,24,24
-3308,"Lima Metropolitana",132,29,34
-3336,"Lima Metropolitana",156,35,30
-3343,"Lima Metropolitana",79,15,22
-3388,"Lima Metropolitana",102,32,33
-3409,"Lima Metropolitana",109,30,24
-3436,"Lima Metropolitana",125,32,29
-3454,"Lima Metropolitana",92,30,24
-3461,"Lima Metropolitana",73,29,24
-3519,"Lima Metropolitana",143,32,30
-2620,"Lima Metropolitana",87,24,24
-2627,"Lima Metropolitana",134,33,33
-2630,"Lima Metropolitana",126,30,33
-2633,"Lima Metropolitana",130,32,31
-2637,"Lima Metropolitana",113,28,26
-2640,"Lima Metropolitana",129,30,34
-2645,"Lima Metropolitana",129,28,30
-2651,"Lima Metropolitana",112,27,25
-2652,"Lima Metropolitana",107,30,26
-2655,"Lima Metropolitana",121,27,31
-2669,"Lima Metropolitana",120,29,31
-2670,"Lima Metropolitana",105,26,29
-2673,"Lima Metropolitana",149,35,32
-2685,"Lima Metropolitana",101,29,26
-2686,"Lima Metropolitana",117,29,31
-2687,"Lima Metropolitana",113,23,28
-2688,"Lima Metropolitana",108,31,32
-2689,"Lima Metropolitana",121,28,29
-2690,"Lima Metropolitana",139,25,33
-2691,"Lima Metropolitana",121,28,30
-2692,"Lima Metropolitana",131,34,35
-2693,"Lima Metropolitana",96,22,28
-2694,"Lima Metropolitana",112,28,27
-2695,"Lima Metropolitana",117,30,30
-2696,"Lima Metropolitana",139,23,32
-2697,"Lima Metropolitana",88,26,23
-2700,"Lima Metropolitana",130,28,35
-2702,"Lima Metropolitana",116,26,27
-2703,"Lima Metropolitana",105,33,31
-2706,"Lima Metropolitana",107,29,32
-2708,"Lima Metropolitana",128,32,34
-2711,"Lima Metropolitana",123,25,31
-2712,"Lima Metropolitana",122,32,33
-2714,"Lima Metropolitana",136,29,33
-2715,"Lima Metropolitana",103,24,24
-2718,"Lima Metropolitana",114,31,25
-2720,"Lima Metropolitana",125,33,33
-2721,"Lima Metropolitana",83,22,19
-2724,"Lima Metropolitana",120,29,25
-2725,"Lima Metropolitana",110,31,28
-2730,"Lima Metropolitana",121,29,27
-2734,"Lima Metropolitana",114,28,29
-2735,"Lima Metropolitana",140,31,34
-2740,"Lima Metropolitana",101,21,23
-2741,"Lima Metropolitana",136,35,33
-2742,"Lima Metropolitana",111,30,27
-2744,"Lima Metropolitana",142,34,32
-2745,"Lima Metropolitana",131,28,33
-2747,"Lima Metropolitana",98,24,27
-2750,"Lima Metropolitana",132,33,36
-2752,"Lima Metropolitana",111,31,28
-2755,"Lima Metropolitana",95,23,27
-2757,"Lima Metropolitana",86,20,18
-2759,"Lima Metropolitana",76,20,18
-2764,"Lima Metropolitana",117,30,30
-2765,"Lima Metropolitana",120,32,30
-2767,"Lima Metropolitana",143,32,29
-2774,"Lima Metropolitana",115,27,32
-2775,"Lima Metropolitana",78,28,27
-2777,"Lima Metropolitana",114,29,28
-2778,"Lima Metropolitana",97,25,28
-2780,"Lima Metropolitana",120,27,30
-2783,"Lima Metropolitana",110,28,31
-2785,"Lima Metropolitana",125,25,31
-3252,"Lima Metropolitana",107,33,25
-3258,"Lima Metropolitana",87,30,22
-3284,"Lima Metropolitana",93,28,23
-3290,"Lima Metropolitana",73,24,19
-1072,"Loreto",146,36,34
-939,"Cusco",143,30,30
-940,"Cusco",145,31,30
-3330,"Lima Metropolitana",98,31,22
-3446,"Lima Metropolitana",86,27,19
-2115,"Loreto",50,22,13
-2117,"Loreto",59,23,24
-534,"Cusco",49,14,19
-540,"Cusco",71,23,23
-287,"Cusco",66,23,28
-288,"Cusco",83,25,28
-1095,"Cusco",57,20,15
-217,"Piura",91,27,26
-218,"Piura",69,21,17
-1094,"Cusco",55,18,13
-1101,"Cusco",55,18,19
-1104,"Cusco",51,18,16
-1098,"Cusco",55,18,13
-1096,"Cusco",71,19,18
-1092,"Cusco",65,21,15
-103,"Cusco",48,16,16
-3367,"Lima Metropolitana",145,36,31
-3369,"Lima Metropolitana",130,33,32
-1099,"Cusco",52,18,15
-108,"Cusco",40,14,13
-1103,"Cusco",48,18,11
-104,"Cusco",60,13,15
-1093,"Cusco",56,15,16
-106,"Cusco",45,13,13
-1380,"Cusco",98,27,25
-1381,"Cusco",98,26,25
-3171,"Lima Metropolitana",94,28,21
-3173,"Lima Metropolitana",111,31,24
-1091,"Cusco",52,17,13
-3423,"Lima Metropolitana",123,32,28
-3427,"Lima Metropolitana",87,27,25
-1396,"Cusco",78,19,21
-1447,"Cusco",67,17,19
-837,"Piura",56,25,26
-2242,"Piura",88,24,16
-910,"Cusco",42,14,15
-911,"Cusco",39,17,19
-800,"Cusco",70,21,21
-801,"Cusco",75,22,21
-2198,"Piura",117,35,34
-2199,"Piura",87,30,34
-3374,"Lima Metropolitana",75,24,21
-2282,"Piura",97,22,28
-2283,"Piura",116,27,30
-17,"Piura",53,21,23
-167,"Piura",80,19,20
-168,"Piura",79,21,26
-1057,"Cusco",90,22,23
-1058,"Cusco",70,21,20
-1842,"Loreto",117,32,28
-1066,"Piura",58,16,22
-1841,"Loreto",116,31,28
-1837,"Loreto",104,32,29
-2188,"Piura",63,21,23
-150,"Piura",83,22,23
-153,"Piura",82,21,26
-152,"Piura",80,21,21
-148,"Piura",61,20,20
-151,"Piura",71,17,18
-3162,"Lima Metropolitana",119,34,32
-149,"Piura",95,29,26
-847,"Loreto",103,33,31
-3458,"Lima Metropolitana",116,34,31
-1282,"Piura",67,22,23
-3204,"Lima Metropolitana",75,33,23
-1436,"Cusco",62,21,19
-2572,"Loreto",124,29,28
-3401,"Lima Metropolitana",68,26,17
-891,"Cusco",78,27,24
-2353,"Piura",98,35,31
-1435,"Cusco",67,24,23
-1437,"Cusco",71,14,22
-1697,"Cusco",90,18,19
-1438,"Cusco",67,25,19
-1991,"Cusco",83,22,21
-1992,"Cusco",96,24,24
-1993,"Cusco",92,22,21
-1987,"Cusco",71,26,26
-1986,"Cusco",69,23,23
-2121,"Loreto",74,24,23
-1974,"Loreto",133,36,23
-2119,"Loreto",77,27,26
-1972,"Loreto",129,36,27
-2122,"Loreto",59,22,19
-2111,"Loreto",55,22,23
-2113,"Loreto",69,23,24
-2092,"Loreto",92,32,30
-2112,"Loreto",72,25,23
-1929,"Cusco",86,22,21
-1970,"Loreto",78,27,25
-1009,"Cusco",62,19,17
-1003,"Cusco",59,19,17
-1006,"Cusco",51,17,18
-999,"Cusco",65,19,21
-1004,"Cusco",68,18,18
-1005,"Cusco",68,22,19
-1010,"Cusco",69,22,21
-1000,"Cusco",54,17,14
-1012,"Cusco",59,18,18
-1928,"Cusco",84,18,21
-1931,"Cusco",97,28,28
-1933,"Cusco",88,26,16
-2079,"Cusco",65,21,20
-1935,"Cusco",92,22,25
-2075,"Cusco",72,23,22
-884,"Piura",106,31,32
-1290,"Piura",49,22,19
-1088,"Piura",132,36,28
-781,"Loreto",92,22,24
-2142,"Cusco",76,27,21
-1849,"Loreto",134,36,32
-1524,"Loreto",65,27,20
-560,"Cusco",67,24,21
-578,"Cusco",74,21,23
-564,"Cusco",103,28,28
-577,"Cusco",72,21,23
-575,"Cusco",61,21,18
-558,"Cusco",53,21,16
-574,"Cusco",76,21,21
-565,"Cusco",96,24,27
-1391,"Cusco",96,31,24
-3441,"Lima Metropolitana",80,28,17
-3165,"Lima Metropolitana",81,30,25
-3499,"Lima Metropolitana",105,36,24
-3170,"Lima Metropolitana",69,22,22
-1975,"Loreto",134,35,30
-1973,"Loreto",122,33,26
-1071,"Loreto",150,35,34
-2009,"Loreto",81,27,21
-3431,"Lima Metropolitana",113,30,26
-3226,"Lima Metropolitana",109,30,19
-1176,"Loreto",64,22,21
-3207,"Lima Metropolitana",100,32,25
-3234,"Lima Metropolitana",81,25,22
-3472,"Lima Metropolitana",108,25,24
-3495,"Lima Metropolitana",76,22,21
-3286,"Lima Metropolitana",65,15,17
-3395,"Lima Metropolitana",143,24,31
-2008,"Loreto",78,27,21
-2091,"Loreto",85,34,29
-2107,"Loreto",73,30,24
-2093,"Loreto",105,34,30
-2101,"Loreto",69,29,18
-2089,"Loreto",89,31,29
-2094,"Loreto",79,29,29
-2096,"Loreto",93,34,31
-2106,"Loreto",58,22,18
-1990,"Loreto",79,25,21
-349,"Piura",68,15,20
-1167,"Piura",69,20,23
-285,"Cusco",62,23,23
-541,"Cusco",69,22,20
-553,"Cusco",129,36,34
-546,"Cusco",97,30,31
-543,"Cusco",70,22,21
-548,"Cusco",106,32,31
-538,"Cusco",57,19,19
-547,"Cusco",44,10,16
-709,"Loreto",111,30,32
-1404,"Loreto",58,25,27
-53,"Cusco",61,23,26
-1971,"Loreto",82,27,25
-2081,"Loreto",100,27,29
-1440,"Cusco",63,23,19
-990,"Piura",78,27,29
-2617,"Piura",106,34,31
-2360,"Piura",125,32,34
-1805,"Cusco",103,25,25
-1354,"Cusco",73,21,19
-2398,"Piura",124,34,33
-1394,"Cusco",92,29,24
-3081,"Lima Metropolitana",122,33,30
-1002,"Cusco",56,17,18
-81,"Cusco",112,36,25
-1209,"Cusco",99,25,25
-1113,"Cusco",46,15,18
-356,"Cusco",79,20,21
-2805,"Lima Metropolitana",126,32,29
-2594,"Piura",41,23,12
-1389,"Cusco",110,27,28
-2356,"Piura",71,26,23
-771,"Loreto",93,19,22
-264,"Piura",101,26,29
-826,"Cusco",80,26,21
-954,"Piura",86,27,30
-784,"Loreto",82,23,24
-1117,"Cusco",65,17,21
-1135,"Cusco",151,33,35
-2010,"Loreto",74,25,20
-2337,"Piura",101,34,27
-289,"Cusco",72,24,27
-32,"Cusco",116,27,28
-704,"Loreto",141,33,32
-1867,"Piura",106,34,29
-1309,"Loreto",124,29,33
-214,"Piura",88,26,23
-1313,"Loreto",61,20,29
-772,"Loreto",95,23,24
-1185,"Loreto",92,29,25
-1531,"Loreto",121,35,23
-927,"Cusco",92,19,24
-1138,"Cusco",124,33,29
-2512,"Piura",144,33,24
-1018,"Cusco",55,18,20
-960,"Piura",102,31,28
-226,"Piura",74,23,22
-2563,"Piura",63,20,19
-571,"Cusco",92,27,23
-3406,"Lima Metropolitana",78,29,17
-2514,"Piura",108,30,24
-228,"Piura",79,21,20
-413,"Loreto",108,28,21
-3468,"Lima Metropolitana",95,24,26
-836,"Cusco",83,31,23
-1139,"Cusco",51,28,21
-936,"Cusco",83,22,24
-567,"Cusco",87,25,27
-989,"Piura",96,30,29
-2554,"Piura",117,30,28
-2562,"Piura",136,34,33
-92,"Cusco",147,36,30
-1850,"Loreto",143,36,28
-1382,"Cusco",84,23,21
-3274,"Lima Metropolitana",108,32,23
-2253,"Piura",109,31,35
-281,"Piura",78,25,24
-2414,"Piura",122,35,33
-257,"Piura",119,26,30
-2372,"Piura",126,34,35
-363,"Cusco",78,18,19
-3150,"Lima Metropolitana",86,35,31
-983,"Piura",69,25,23
-2268,"Piura",99,31,29
-982,"Piura",72,26,24
-2339,"Piura",150,36,30
-2526,"Piura",71,27,23
-721,"Loreto",115,33,28
-2605,"Piura",105,21,31
-3428,"Lima Metropolitana",93,24,21
-1351,"Cusco",72,17,19
-3359,"Lima Metropolitana",123,27,25
-2267,"Piura",110,31,30
-2254,"Piura",122,36,36
-1015,"Cusco",101,26,30
-705,"Loreto",128,32,32
-1306,"Loreto",108,29,33
-1350,"Cusco",97,26,27
-820,"Cusco",114,32,24
-2596,"Piura",63,29,18
-14,"Piura",113,24,27
-1030,"Cusco",92,24,23
-921,"Cusco",114,25,25
-3259,"Lima Metropolitana",136,35,28
-1184,"Loreto",69,22,20
-2399,"Piura",110,32,32
-1310,"Loreto",79,29,32
-1960,"Loreto",112,33,29
-1806,"Cusco",118,28,25
-1856,"Loreto",115,31,26
-3163,"Lima Metropolitana",112,34,32
-3013,"Lima Metropolitana",140,36,32
-626,"Piura",72,20,23
-2518,"Piura",109,30,21
-1476,"Loreto",81,28,26
-3184,"Lima Metropolitana",86,30,26
-1371,"Piura",123,33,31
-3437,"Lima Metropolitana",109,32,25
-1179,"Loreto",87,18,23
-1038,"Piura",79,22,28
-2377,"Piura",121,32,34
-3133,"Lima Metropolitana",112,35,30
-3167,"Lima Metropolitana",78,32,21
-831,"Cusco",94,26,21
-391,"Piura",96,22,23
-1359,"Piura",112,32,30
-2391,"Piura",133,33,32
-1220,"Cusco",72,30,21
-1365,"Piura",94,29,29
-2259,"Piura",81,24,24
-576,"Cusco",76,21,23
-2358,"Piura",118,32,35
-997,"Cusco",63,22,17
-1789,"Loreto",111,27,27
-1021,"Cusco",79,25,23
-1086,"Piura",98,35,21
-1480,"Loreto",87,28,26
-1750,"Piura",131,36,31
-2602,"Piura",98,31,24
-1854,"Loreto",122,30,29
-2413,"Piura",102,31,28
-834,"Cusco",105,32,26
-1013,"Cusco",95,30,28
-1866,"Piura",133,36,31
-1782,"Loreto",93,32,26
-1300,"Loreto",148,35,33
-3285,"Lima Metropolitana",108,30,22
-2371,"Piura",110,32,35
-814,"Cusco",107,32,25
-1033,"Cusco",84,25,23
-222,"Piura",98,28,30
-573,"Cusco",108,28,25
-1875,"Piura",153,36,31
-1043,"Piura",100,28,30
-2609,"Piura",40,26,11
-3254,"Lima Metropolitana",91,27,22
-2266,"Piura",127,36,35
-3311,"Lima Metropolitana",99,22,23
-2249,"Piura",104,31,32
-1848,"Loreto",147,36,30
-3342,"Lima Metropolitana",155,36,35
-1885,"Piura",116,34,27
-2397,"Piura",146,35,30
-2116,"Loreto",58,23,24
-529,"Loreto",139,36,29
-1483,"Loreto",86,28,26
-3110,"Lima Metropolitana",91,31,21
-229,"Piura",100,30,31
-266,"Piura",65,20,22
-91,"Cusco",86,29,22
-223,"Piura",106,28,31
-66,"Cusco",103,26,25
-1751,"Piura",106,35,29
-3101,"Lima Metropolitana",114,30,29
-263,"Piura",70,20,27
-236,"Piura",68,20,24
-3449,"Lima Metropolitana",99,27,16
-267,"Piura",108,28,31
-396,"Piura",67,24,22
-2381,"Piura",118,31,35
-3280,"Lima Metropolitana",102,32,22
-774,"Loreto",85,28,26
-3138,"Lima Metropolitana",82,35,25
-1022,"Cusco",83,25,23
-1781,"Loreto",82,29,22
-3339,"Lima Metropolitana",156,36,33
-3224,"Lima Metropolitana",85,26,22
-3192,"Lima Metropolitana",112,31,26
-2595,"Piura",104,30,29
-2146,"Cusco",83,26,23
-269,"Piura",105,29,30
-2343,"Piura",71,33,29
-3361,"Lima Metropolitana",116,31,27
-1246,"Loreto",111,29,31
-3288,"Lima Metropolitana",140,33,27
-357,"Cusco",80,23,19
-3301,"Lima Metropolitana",67,16,23
-827,"Cusco",93,30,24
-1249,"Loreto",125,34,34
-1450,"Cusco",69,23,18
-297,"Cusco",65,24,24
-3015,"Lima Metropolitana",99,31,25
-268,"Piura",110,28,31
-94,"Cusco",142,33,26
-1248,"Loreto",128,34,27
-1879,"Piura",110,34,27
-1314,"Loreto",142,35,34
-2393,"Piura",128,31,32
-569,"Cusco",68,22,20
-3338,"Lima Metropolitana",156,36,29
-3373,"Lima Metropolitana",88,29,21
-3239,"Lima Metropolitana",155,36,34
-2395,"Piura",118,35,30
-503,"Loreto",96,19,24
-643,"Piura",67,24,25
-934,"Cusco",76,23,23
-2402,"Piura",121,33,32
-1247,"Loreto",75,22,19
-273,"Piura",111,24,24
-2600,"Piura",72,28,13
-2403,"Piura",125,34,33
-1851,"Loreto",139,36,31
-923,"Cusco",60,19,17
-1434,"Cusco",74,24,20
-1115,"Cusco",54,16,20
-1443,"Cusco",65,18,20
-2396,"Piura",141,34,32
-611,"Cusco",79,28,23
-1387,"Cusco",77,20,19
-84,"Cusco",118,32,24
-395,"Piura",92,23,26
-1311,"Loreto",79,25,32
-1299,"Loreto",84,30,28
-274,"Piura",67,20,23
-1035,"Cusco",91,24,23
-840,"Cusco",84,26,24
-1368,"Piura",88,29,23
-3231,"Lima Metropolitana",105,30,25
-959,"Piura",98,30,35
-1016,"Cusco",77,24,28
-225,"Piura",73,24,22
-3371,"Lima Metropolitana",144,36,31
-2366,"Piura",98,32,34
-3161,"Lima Metropolitana",116,32,28
-980,"Piura",98,27,29
-3249,"Lima Metropolitana",135,29,27
-2394,"Piura",154,36,33
-1876,"Piura",117,34,27
-3310,"Lima Metropolitana",94,23,24
-3130,"Lima Metropolitana",118,35,32
-835,"Cusco",118,34,28
-641,"Piura",69,19,20
-713,"Loreto",131,32,32
-1441,"Cusco",66,26,22
-1485,"Loreto",77,26,25
-2007,"Loreto",74,23,20
-1888,"Piura",109,34,27
-3202,"Lima Metropolitana",130,25,31
-3106,"Lima Metropolitana",79,26,20
-3380,"Lima Metropolitana",140,35,32
-2352,"Piura",100,34,29
-1007,"Cusco",64,17,16
-637,"Piura",65,18,19
-783,"Loreto",71,19,22
-949,"Piura",103,30,35
-950,"Piura",99,28,30
-958,"Piura",88,31,29
-730,"Piura",76,26,21
-2368,"Piura",112,32,35
-3327,"Lima Metropolitana",88,24,24
-1527,"Loreto",121,35,29
-383,"Piura",153,26,28
-3164,"Lima Metropolitana",113,36,32
-2255,"Piura",99,31,31
-28,"Piura",99,23,25
-1858,"Loreto",118,31,28
-1388,"Cusco",86,23,20
-2887,"Lima Metropolitana",90,30,24
-358,"Cusco",79,20,19
-1361,"Piura",122,29,33
-770,"Loreto",98,24,23
-1034,"Cusco",83,24,23
-1221,"Cusco",92,27,24
-1230,"Cusco",95,25,25
-3272,"Lima Metropolitana",121,31,26
-1961,"Loreto",153,36,32
-3238,"Lima Metropolitana",89,24,27
-1878,"Piura",114,34,28
-93,"Cusco",113,32,26
-2341,"Piura",135,35,31
-12,"Piura",108,27,27
-3235,"Lima Metropolitana",108,32,23
-1446,"Cusco",70,22,22
-3353,"Lima Metropolitana",138,29,31
-1308,"Loreto",89,26,30
-3421,"Lima Metropolitana",94,28,21
-15,"Piura",111,26,27
-421,"Piura",89,31,25
-930,"Cusco",98,22,22
-1517,"Loreto",118,34,29
-262,"Piura",121,30,31
-2374,"Piura",131,33,35
-6,"Piura",114,27,27
-1373,"Piura",97,28,32
-1014,"Cusco",63,17,20
-1353,"Cusco",99,24,24
-507,"Loreto",115,29,26
-828,"Cusco",105,31,24
-235,"Piura",79,22,24
-3145,"Lima Metropolitana",80,28,21
-839,"Cusco",78,25,23
-922,"Cusco",55,21,17
-1011,"Cusco",57,18,18
-372,"Piura",156,25,34
-1085,"Piura",124,35,26
-2590,"Piura",58,29,16
-279,"Piura",45,22,21
-1008,"Cusco",80,22,22
-426,"Piura",95,34,20
-2355,"Piura",104,30,30
-260,"Piura",95,26,31
-2139,"Cusco",75,20,18
-286,"Cusco",63,25,25
-1514,"Loreto",120,34,29
-3225,"Lima Metropolitana",108,30,23
-723,"Loreto",102,32,26
-1883,"Piura",112,34,28
-3104,"Lima Metropolitana",59,20,19
-2345,"Piura",102,35,31
-717,"Loreto",99,35,28
-2361,"Piura",143,32,35
-378,"Piura",147,26,28
-2525,"Piura",67,27,21
-3131,"Lima Metropolitana",82,30,25
-1305,"Loreto",65,20,31
-261,"Piura",102,30,31
-710,"Loreto",129,33,34
-1377,"Piura",112,26,30
-816,"Cusco",106,31,24
-1372,"Piura",87,27,28
-3368,"Lima Metropolitana",80,27,25
-612,"Cusco",78,25,21
-1752,"Piura",136,36,31
-2118,"Loreto",77,26,23
-1451,"Cusco",52,23,21
-981,"Piura",98,27,29
-3264,"Lima Metropolitana",65,21,21
-1229,"Cusco",72,27,25
-11,"Piura",100,24,26
-1523,"Loreto",57,25,20
-3370,"Lima Metropolitana",141,36,31
-714,"Loreto",121,31,33
-715,"Loreto",126,34,35
-869,"Piura",85,30,30
-566,"Cusco",88,26,24
-1913,"Loreto",111,30,25
-373,"Piura",153,25,34
-638,"Piura",81,22,22
-2338,"Piura",67,34,28
-408,"Piura",88,31,21
-1886,"Piura",101,33,27
-294,"Cusco",69,24,27
-1959,"Loreto",154,35,28
-3109,"Lima Metropolitana",72,18,19
-708,"Loreto",122,32,34
-1962,"Loreto",130,34,32
-2344,"Piura",107,35,31
-812,"Cusco",97,31,26
-1456,"Cusco",65,23,17
-2597,"Piura",34,26,8
-1304,"Loreto",85,25,32
-296,"Cusco",81,24,28
-829,"Cusco",62,30,24
-387,"Piura",107,25,26
-362,"Cusco",78,18,19
-1862,"Loreto",112,29,31
-1519,"Loreto",67,29,21
-1376,"Piura",85,23,30
-2409,"Piura",111,29,29
-991,"Piura",71,26,24
-3375,"Lima Metropolitana",104,26,27
-79,"Cusco",112,33,29
-1809,"Cusco",106,23,25
-272,"Piura",44,17,16
-3498,"Lima Metropolitana",97,26,23
-1857,"Loreto",116,33,29
-3358,"Lima Metropolitana",59,18,20
-1882,"Piura",114,34,27
-2362,"Piura",106,32,34
-3190,"Lima Metropolitana",124,31,31
-3112,"Lima Metropolitana",140,35,34
-1510,"Loreto",105,30,27
-811,"Cusco",82,28,23
-3220,"Lima Metropolitana",92,25,23
-1455,"Cusco",69,25,19
-382,"Piura",153,25,28
-1530,"Loreto",73,30,27
-1366,"Piura",82,26,21
-3341,"Lima Metropolitana",137,35,26
-830,"Cusco",111,21,23
-3222,"Lima Metropolitana",112,30,30
-1250,"Loreto",110,31,28
-1853,"Loreto",156,36,33
-1223,"Cusco",71,26,22
-2516,"Piura",81,34,24
-2607,"Piura",38,24,9
-1121,"Cusco",41,11,14
-1395,"Cusco",85,27,24
-3350,"Lima Metropolitana",104,28,25
-424,"Piura",94,33,27
-926,"Cusco",96,25,29
-1453,"Cusco",60,24,19
-2799,"Lima Metropolitana",103,29,27
-1042,"Piura",83,26,22
-3478,"Lima Metropolitana",106,30,23
-1226,"Cusco",62,26,21
-988,"Piura",94,27,30
-3169,"Lima Metropolitana",105,29,22
-2248,"Piura",59,21,17
-1528,"Loreto",47,32,20
-2612,"Piura",68,22,17
-3183,"Lima Metropolitana",148,35,31
-3335,"Lima Metropolitana",129,33,27
-402,"Piura",56,23,21
-374,"Piura",153,26,30
-2515,"Piura",115,36,24
-2251,"Piura",97,31,31
-3180,"Lima Metropolitana",156,36,30
-2258,"Piura",106,31,30
-1374,"Piura",123,33,32
-1748,"Piura",134,35,30
-1219,"Cusco",104,29,26
-1868,"Piura",136,36,30
-3325,"Lima Metropolitana",127,36,27
-1252,"Loreto",96,30,21
-237,"Piura",58,15,18
-2558,"Piura",86,30,22
-3415,"Lima Metropolitana",118,31,26
-1029,"Cusco",89,25,23
-3293,"Lima Metropolitana",101,27,23
-1025,"Cusco",83,25,25
-1877,"Piura",97,34,26
-557,"Cusco",72,17,17
-1189,"Cusco",89,30,17
-1114,"Cusco",44,14,12
-1808,"Cusco",98,25,25
-1112,"Cusco",46,10,18
-68,"Cusco",80,29,22
-813,"Cusco",80,28,26
-3159,"Lima Metropolitana",89,30,30
-559,"Cusco",77,25,29
-89,"Cusco",130,32,26
-868,"Piura",81,32,32
-3362,"Lima Metropolitana",101,29,26
-1028,"Cusco",90,25,20
-425,"Piura",86,31,22
-1036,"Cusco",94,24,23
-1319,"Loreto",64,20,24
-2598,"Piura",76,29,28
-2803,"Lima Metropolitana",131,32,30
-2610,"Piura",52,29,14
-1118,"Cusco",48,17,16
-998,"Cusco",75,20,21
-2807,"Lima Metropolitana",101,31,24
-301,"Cusco",65,21,27
-1087,"Piura",131,36,28
-1358,"Cusco",74,19,21
-726,"Loreto",114,32,27
-80,"Cusco",76,22,18
-699,"Loreto",93,30,24
-561,"Cusco",90,25,22
-31,"Piura",105,27,27
-392,"Piura",96,27,23
-25,"Piura",110,28,27
-1442,"Cusco",61,18,21
-1369,"Piura",102,33,28
-703,"Loreto",142,34,36
-3229,"Lima Metropolitana",63,13,19
-3417,"Lima Metropolitana",107,28,27
-1791,"Loreto",137,36,29
-568,"Cusco",85,25,21
-903,"Cusco",108,26,23
-1370,"Piura",109,32,30
-3223,"Lima Metropolitana",108,30,23
-610,"Cusco",77,27,22
-1884,"Piura",119,34,28
-833,"Cusco",55,23,18
-639,"Piura",73,20,21
-3012,"Lima Metropolitana",120,33,28
-2260,"Piura",113,29,28
-917,"Cusco",76,22,23
-386,"Piura",73,22,26
-3147,"Lima Metropolitana",102,34,30
-3148,"Lima Metropolitana",102,34,30
-3351,"Lima Metropolitana",99,24,18
-293,"Cusco",72,24,27
-1020,"Cusco",77,24,23
-1515,"Loreto",83,31,23
-377,"Piura",145,26,34
-2357,"Piura",68,27,21
-3453,"Lima Metropolitana",90,27,18
-220,"Piura",73,24,15
-3182,"Lima Metropolitana",85,30,27
-925,"Cusco",107,27,29
-952,"Piura",97,29,32
-562,"Cusco",62,25,19
-1236,"Loreto",45,18,15
-1227,"Cusco",73,27,19
-1525,"Loreto",126,34,29
-2593,"Piura",57,27,16
-3303,"Lima Metropolitana",99,29,23
-712,"Loreto",135,33,32
-3176,"Lima Metropolitana",114,35,33
-823,"Cusco",65,29,20
-3194,"Lima Metropolitana",85,26,25
-2408,"Piura",112,29,31
-1316,"Loreto",101,29,28
-841,"Cusco",97,26,24
-1315,"Loreto",101,27,31
-1449,"Cusco",61,23,18
-2349,"Piura",101,35,31
-1465,"Loreto",85,26,26
-3414,"Lima Metropolitana",95,28,29
-933,"Cusco",85,23,24
-3105,"Lima Metropolitana",94,26,21
-371,"Piura",156,26,31
-401,"Piura",57,24,19
-722,"Loreto",129,35,29
-1178,"Loreto",84,26,19
-1301,"Loreto",63,19,24
-2574,"Loreto",117,29,25
-918,"Cusco",65,13,16
-920,"Cusco",66,18,23
-2800,"Lima Metropolitana",126,32,30
-2517,"Piura",104,32,23
-3152,"Lima Metropolitana",88,35,31
-3282,"Lima Metropolitana",71,16,30
-1089,"Piura",114,36,26
-2380,"Piura",123,32,34
-381,"Piura",154,26,28
-384,"Piura",153,20,30
-1352,"Cusco",100,28,25
-1807,"Cusco",44,15,24
-2407,"Piura",98,29,30
-1518,"Loreto",36,20,18
-1298,"Loreto",70,24,29
-3245,"Lima Metropolitana",109,29,30
-530,"Loreto",101,25,24
-232,"Piura",85,26,28
-2346,"Piura",113,36,30
-818,"Cusco",73,29,20
-3199,"Lima Metropolitana",105,30,26
-3227,"Lima Metropolitana",109,26,24
-87,"Cusco",60,17,17
-2611,"Piura",43,24,16
-1880,"Piura",101,34,28
-360,"Cusco",77,18,19
-1181,"Loreto",76,25,20
-8,"Piura",104,25,27
-1318,"Loreto",67,22,28
-2273,"Piura",80,24,18
-3297,"Lima Metropolitana",81,21,22
-822,"Cusco",116,32,26
-1861,"Loreto",113,28,30
-1512,"Loreto",64,29,19
-90,"Cusco",144,36,32
-1860,"Loreto",104,29,25
-1312,"Loreto",87,25,32
-2561,"Piura",95,27,25
-1792,"Loreto",63,22,20
-1532,"Loreto",46,32,24
-400,"Piura",105,26,23
-1024,"Cusco",84,25,24
-1137,"Cusco",124,32,26
-613,"Cusco",70,25,20
-932,"Cusco",94,21,26
-572,"Cusco",83,23,27
-1120,"Cusco",48,13,14
-78,"Cusco",132,35,23
-1749,"Piura",69,31,19
-1140,"Cusco",51,28,21
-3389,"Lima Metropolitana",73,26,15
-821,"Cusco",124,30,27
-1019,"Cusco",90,28,27
-239,"Piura",89,24,30
-3187,"Lima Metropolitana",88,23,24
-2556,"Piura",73,24,18
-2599,"Piura",73,28,22
-1032,"Cusco",81,24,23
-265,"Piura",81,22,27
-1367,"Piura",98,27,29
-570,"Cusco",89,23,33
-1182,"Loreto",73,21,18
-2591,"Piura",45,24,10
-67,"Cusco",139,36,31
-2143,"Cusco",65,25,16
-351,"Cusco",94,23,21
-2555,"Piura",55,17,17
-838,"Cusco",92,29,20
-1914,"Loreto",106,31,24
-299,"Cusco",67,19,27
-779,"Loreto",89,23,24
-406,"Piura",95,27,24
-3497,"Lima Metropolitana",136,33,33
-2351,"Piura",93,34,31
-786,"Loreto",94,25,24
-2559,"Piura",117,31,24
-30,"Piura",111,25,27
-1461,"Loreto",72,20,23
-1863,"Piura",117,33,27
-3383,"Lima Metropolitana",75,24,18
-409,"Piura",82,31,24
-3111,"Lima Metropolitana",78,25,20
-776,"Loreto",68,17,21
-2379,"Piura",125,27,35
-2369,"Piura",125,32,35
-1513,"Loreto",35,21,16
-1467,"Loreto",75,25,24
-3322,"Lima Metropolitana",86,26,23
-389,"Piura",71,21,23
-953,"Piura",78,28,30
-961,"Piura",82,24,31
-1001,"Cusco",55,17,18
-465,"Loreto",131,28,24
-29,"Piura",109,27,27
-1852,"Loreto",131,33,35
-1109,"Cusco",49,14,17
-2557,"Piura",114,32,29
-3482,"Lima Metropolitana",125,36,31
-1390,"Cusco",82,21,21
-817,"Cusco",109,31,27
-3078,"Lima Metropolitana",115,34,27
-2140,"Cusco",77,25,23
-353,"Cusco",77,21,19
-1478,"Loreto",82,26,26
-10,"Cusco",83,22,24
-1780,"Loreto",100,34,29
-2806,"Lima Metropolitana",90,29,26
-1976,"Loreto",137,36,30
-1364,"Piura",84,22,20
-3,"Piura",108,26,27
-1464,"Loreto",79,26,26
-1238,"Loreto",77,21,14
-3160,"Lima Metropolitana",112,34,31
-2365,"Piura",95,34,34
-3166,"Lima Metropolitana",73,23,16
-33,"Cusco",104,24,24
-556,"Cusco",73,24,23
-2804,"Lima Metropolitana",126,32,28
-2138,"Cusco",101,28,26
-2137,"Cusco",75,25,18
-355,"Cusco",81,19,19
-1386,"Cusco",72,20,20
-375,"Piura",153,26,34
-706,"Loreto",123,31,31
-427,"Piura",97,33,22
-3337,"Lima Metropolitana",103,28,28
-3172,"Lima Metropolitana",110,26,30
-3364,"Lima Metropolitana",136,33,31
-1037,"Piura",68,25,24
-3266,"Lima Metropolitana",92,26,20
-3108,"Lima Metropolitana",99,28,22
-782,"Loreto",86,22,23
-1460,"Loreto",35,16,21
-2601,"Piura",36,25,11
-642,"Piura",63,14,20
-1136,"Cusco",111,32,26
-985,"Piura",73,24,24
-227,"Piura",84,24,23
-1383,"Cusco",65,16,20
-711,"Loreto",105,31,31
-88,"Cusco",102,31,24
-1228,"Cusco",73,28,25
-777,"Loreto",87,23,24
-931,"Cusco",87,22,25
-824,"Cusco",108,31,24
-2257,"Piura",80,21,23
-27,"Piura",111,24,27
-2263,"Piura",78,31,21
-82,"Cusco",103,35,22
-825,"Cusco",73,29,21
-1445,"Cusco",77,24,22
-1855,"Loreto",116,30,29
-354,"Cusco",80,21,19
-1017,"Cusco",85,27,24
-3246,"Lima Metropolitana",84,15,23
-2114,"Loreto",61,23,24
-467,"Loreto",105,28,26
-919,"Cusco",79,23,24
-1375,"Piura",100,30,32
-69,"Cusco",106,31,22
-2354,"Piura",63,28,22
-1452,"Cusco",54,23,22
-240,"Piura",92,26,30
-3400,"Lima Metropolitana",75,21,14
-780,"Loreto",96,19,24
-1240,"Loreto",70,22,14
-2256,"Piura",80,24,23
-2376,"Piura",121,32,34
-3480,"Lima Metropolitana",156,36,23
-947,"Cusco",110,27,28
-962,"Piura",81,31,23
-2367,"Piura",117,32,35
-1110,"Cusco",57,15,20
-1083,"Piura",97,35,21
-579,"Cusco",73,21,19
-2373,"Piura",119,32,35
-423,"Piura",93,33,27
-230,"Piura",76,20,22
-300,"Cusco",48,20,20
-3261,"Lima Metropolitana",130,30,26
-1116,"Cusco",55,12,18
-2265,"Piura",108,31,31
-955,"Piura",100,28,35
-3334,"Lima Metropolitana",130,33,27
-2410,"Piura",74,26,24
-1448,"Cusco",72,23,18
-85,"Cusco",49,14,14
-1233,"Loreto",64,23,19
-2513,"Piura",91,29,23
-1444,"Cusco",76,22,21
-1355,"Cusco",76,19,21
-563,"Cusco",66,21,17
-83,"Cusco",46,17,14
-295,"Cusco",60,22,26
-2618,"Piura",92,27,33
-2521,"Piura",91,31,25
-2359,"Piura",96,31,25
-1439,"Cusco",67,25,19
-224,"Piura",46,22,19
-2406,"Piura",124,34,33
-352,"Cusco",75,15,19
-77,"Cusco",144,36,30
-3124,"Lima Metropolitana",101,30,27
-3329,"Lima Metropolitana",151,35,31
-2250,"Piura",83,24,30
-3236,"Lima Metropolitana",105,32,25
-3232,"Lima Metropolitana",80,18,21
-3394,"Lima Metropolitana",51,22,8
-2141,"Cusco",88,27,23
-719,"Loreto",104,33,27
-702,"Loreto",142,35,35
-3263,"Lima Metropolitana",146,33,25
-1362,"Piura",69,21,22
-3452,"Lima Metropolitana",118,32,23
-2006,"Loreto",84,27,20
-2363,"Piura",134,32,35
-1516,"Loreto",43,24,20
-2603,"Piura",101,31,21
-3216,"Lima Metropolitana",127,31,28
-2519,"Piura",82,28,21
-1108,"Cusco",45,13,12
-2520,"Piura",70,23,26
-1881,"Piura",100,34,28
-394,"Piura",60,22,20
-700,"Loreto",136,33,35
-2271,"Piura",75,23,24
-3344,"Lima Metropolitana",115,30,21
-86,"Cusco",101,31,26
-259,"Piura",96,25,29
-3128,"Lima Metropolitana",111,35,32
-2523,"Piura",84,34,28
-2264,"Piura",63,21,22
-2144,"Cusco",60,20,17
-3174,"Lima Metropolitana",55,18,22
-1522,"Loreto",117,30,29
-2802,"Lima Metropolitana",115,29,29
-996,"Cusco",57,16,16
-640,"Piura",71,21,22
-623,"Piura",65,23,21
-929,"Cusco",82,20,22
-1533,"Loreto",55,24,23
-707,"Loreto",126,32,34
-5,"Piura",109,26,27
-3275,"Lima Metropolitana",82,23,20
-2592,"Piura",87,28,25
-2348,"Piura",94,34,30
-76,"Cusco",97,24,24
-1356,"Cusco",110,27,25
-3294,"Lima Metropolitana",90,26,19
-1357,"Cusco",93,24,23
-221,"Piura",81,26,27
-505,"Loreto",110,34,26
-2522,"Piura",53,26,15
-2378,"Piura",129,32,35
-1349,"Cusco",113,27,25
-1864,"Piura",105,34,27
-1526,"Loreto",101,29,23
-361,"Cusco",79,20,19
-4,"Piura",115,27,26
-785,"Loreto",84,22,24
-1511,"Loreto",86,34,27
-3309,"Lima Metropolitana",79,27,22
-3265,"Lima Metropolitana",95,27,27
-3113,"Lima Metropolitana",136,28,28
-13,"Piura",97,25,26
-2619,"Piura",97,31,31
-397,"Piura",71,25,20
-1303,"Loreto",79,22,31
-3300,"Lima Metropolitana",101,32,24
-787,"Loreto",95,24,24
-3291,"Lima Metropolitana",94,28,23
-2269,"Piura",101,31,28
-3270,"Lima Metropolitana",131,29,27
-775,"Loreto",103,25,26
-2272,"Piura",105,31,29
-1482,"Loreto",74,26,24
-3142,"Lima Metropolitana",81,32,24
-3250,"Lima Metropolitana",80,24,23
-469,"Loreto",92,22,22
-1397,"Cusco",82,23,21
-2340,"Piura",67,31,23
-7,"Piura",102,24,26
-887,"Piura",101,29,31
-482,"Loreto",141,35,29
-1307,"Loreto",58,19,26
-2262,"Piura",60,21,24
-885,"Piura",88,32,35
-1363,"Piura",81,28,22
-2412,"Piura",108,25,27
-1111,"Cusco",53,13,21
-2370,"Piura",115,32,35
-2382,"Piura",121,32,34
-3154,"Lima Metropolitana",100,35,31
-2608,"Piura",51,25,14
-1520,"Loreto",86,29,24
-1044,"Piura",63,24,27
-3114,"Lima Metropolitana",140,32,31
-1521,"Loreto",41,21,17
-2364,"Piura",121,34,35
-2564,"Piura",82,20,18
-624,"Piura",70,20,22
-385,"Piura",153,20,30
-769,"Loreto",92,29,23
-3384,"Lima Metropolitana",65,19,15
-3345,"Lima Metropolitana",117,27,24
-1027,"Cusco",84,25,30
-1788,"Loreto",59,28,24
-3107,"Lima Metropolitana",95,28,21
-26,"Piura",101,25,27
-271,"Piura",85,21,27
-2375,"Piura",123,32,34
-2270,"Piura",128,36,35
-609,"Cusco",65,24,17
-3136,"Lima Metropolitana",93,28,22
-3418,"Lima Metropolitana",109,29,20
-1245,"Loreto",106,26,26
-2506,"Piura",99,26,27
-3256,"Lima Metropolitana",144,32,30
-832,"Cusco",70,33,22
-399,"Piura",87,24,22
-1475,"Loreto",70,23,24
-1222,"Cusco",73,29,23
-2524,"Piura",81,33,25
-2411,"Piura",83,27,26
-3365,"Lima Metropolitana",153,36,28
-1320,"Loreto",62,23,27
-2573,"Loreto",114,29,30
-398,"Piura",72,21,18
-1454,"Cusco",62,25,19
-284,"Cusco",79,24,28
-280,"Piura",90,23,24
-2401,"Piura",83,29,27
-1031,"Cusco",87,24,23
-3157,"Lima Metropolitana",102,32,31
-1119,"Cusco",51,13,16
-948,"Piura",98,29,32
-3477,"Lima Metropolitana",82,21,17
-258,"Piura",57,19,21
-928,"Cusco",54,19,18
-359,"Cusco",78,17,19
-2404,"Piura",81,26,24
-1360,"Piura",67,19,21
-1041,"Piura",92,31,27
-3271,"Lima Metropolitana",100,21,22
-3158,"Lima Metropolitana",135,34,31
-819,"Cusco",98,32,24
-1023,"Cusco",69,24,23
-3305,"Lima Metropolitana",77,23,24
-216,"Piura",79,23,25
-1107,"Cusco",42,13,12
-3340,"Lima Metropolitana",86,24,22
-298,"Cusco",83,25,29
-2252,"Piura",83,24,27
-2350,"Piura",59,25,18
-815,"Cusco",63,20,20
-393,"Piura",61,24,23
-290,"Cusco",56,23,27
-291,"Cusco",48,20,22
-2392,"Piura",110,32,27
-3188,"Lima Metropolitana",156,36,30
-3378,"Lima Metropolitana",54,18,12
-2261,"Piura",74,25,23
-292,"Cusco",66,22,25
-915,"Cusco",68,22,19
-916,"Cusco",74,19,18
-622,"Piura",73,18,20
-773,"Loreto",92,25,25
-1302,"Loreto",70,21,30
-724,"Loreto",110,33,28
-1183,"Loreto",73,20,17
-935,"Cusco",79,20,23
-3177,"Lima Metropolitana",121,34,27
-924,"Cusco",84,19,22
-618,"Piura",69,22,20
-463,"Loreto",96,24,22
-1235,"Loreto",67,19,18
-2560,"Piura",112,27,23
-1865,"Piura",77,31,24
-380,"Piura",154,26,28
-270,"Piura",70,20,23
-1225,"Cusco",68,29,21
-3473,"Lima Metropolitana",140,36,25
-1468,"Loreto",76,22,24
-621,"Piura",82,20,21
-3445,"Lima Metropolitana",84,28,15
-219,"Piura",73,23,25
-627,"Piura",57,14,22
-1509,"Loreto",48,23,19
-3168,"Lima Metropolitana",76,22,21
-2342,"Piura",60,23,26
-3411,"Lima Metropolitana",73,26,16
-881,"Loreto",71,32,28
-390,"Piura",82,23,22
-2405,"Piura",102,30,30
-1963,"Piura",87,18,26
-331,"Piura",98,27,28
-2606,"Piura",74,31,21
-3255,"Lima Metropolitana",77,28,24
-1419,"Cusco",120,31,31
-1285,"Piura",63,20,22
-388,"Piura",57,20,20
-2244,"Piura",95,26,21
-1329,"Piura",56,16,20
-1197,"Piura",97,31,24
-1401,"Cusco",142,35,32
-3080,"Lima Metropolitana",104,35,21
-2821,"Lima Metropolitana",77,22,23
-2569,"Loreto",136,30,29
-340,"Piura",86,20,24
-1539,"Loreto",58,26,21
-1084,"Piura",91,36,23
-1603,"Loreto",87,26,23
-3122,"Lima Metropolitana",81,18,20
-2223,"Piura",107,30,22
-3215,"Lima Metropolitana",113,33,29
-3068,"Lima Metropolitana",99,35,27
-323,"Cusco",68,20,19
-1811,"Cusco",96,25,25
-1408,"Loreto",83,27,28
-2085,"Piura",111,28,27
-2104,"Loreto",74,31,25
-778,"Loreto",85,22,22
-2287,"Piura",97,24,28
-873,"Loreto",61,31,27
-2279,"Piura",123,25,26
-2127,"Piura",92,25,27
-1706,"Cusco",90,18,21
-316,"Cusco",122,34,31
-367,"Piura",79,23,24
-9,"Piura",94,23,25
-2082,"Loreto",71,30,29
-2466,"Piura",91,23,27
-3387,"Lima Metropolitana",92,28,27
-19,"Piura",64,21,20
-370,"Piura",152,22,24
-405,"Piura",60,23,23
-1601,"Loreto",142,30,30
-2816,"Lima Metropolitana",57,13,22
-57,"Cusco",39,20,18
-1776,"Piura",65,29,20
-2501,"Piura",97,27,23
-951,"Piura",80,25,33
-683,"Loreto",85,28,28
-856,"Loreto",110,33,29
-2182,"Piura",93,25,23
-1242,"Loreto",52,15,11
-407,"Piura",57,23,21
-1804,"Cusco",73,25,23
-2078,"Cusco",77,27,24
-1278,"Piura",72,16,22
-3443,"Lima Metropolitana",139,25,31
-2291,"Piura",113,28,31
-2571,"Loreto",134,23,31
-3469,"Lima Metropolitana",93,25,23
-746,"Cusco",75,22,19
-1673,"Loreto",56,22,25
-788,"Cusco",74,20,23
-1557,"Loreto",81,24,24
-2442,"Piura",116,30,25
-60,"Cusco",55,23,26
-1616,"Piura",74,18,19
-697,"Loreto",72,30,25
-1602,"Loreto",113,29,30
-3198,"Lima Metropolitana",98,31,26
-1696,"Cusco",93,17,17
-1859,"Loreto",113,28,30
-554,"Cusco",137,36,34
-1874,"Piura",47,13,17
-2820,"Lima Metropolitana",83,19,25
-2532,"Piura",88,32,25
-2071,"Cusco",78,27,24
-2827,"Lima Metropolitana",39,20,20
-676,"Loreto",86,28,25
-1831,"Piura",79,26,18
-979,"Loreto",94,21,22
-1406,"Loreto",79,27,28
-718,"Loreto",74,30,23
-1201,"Cusco",81,23,18
-55,"Cusco",51,23,24
-791,"Cusco",90,23,25
-155,"Piura",82,21,26
-2390,"Piura",104,35,30
-3412,"Lima Metropolitana",128,32,32
-3466,"Lima Metropolitana",100,29,25
-319,"Cusco",53,22,18
-1767,"Piura",110,29,28
-165,"Piura",81,21,26
-1887,"Piura",119,34,28
-41,"Piura",96,28,29
-974,"Loreto",108,26,27
-63,"Cusco",52,23,20
-1838,"Loreto",133,32,29
-877,"Loreto",68,31,26
-3175,"Lima Metropolitana",92,30,25
-2090,"Loreto",88,31,30
-1203,"Cusco",133,29,25
-1966,"Piura",79,20,21
-1321,"Piura",63,20,22
-366,"Piura",77,24,23
-2818,"Lima Metropolitana",83,23,23
-680,"Loreto",69,27,24
-691,"Loreto",82,30,28
-1612,"Piura",102,29,28
-38,"Piura",71,24,22
-1775,"Piura",99,29,27
-688,"Loreto",95,30,29
-1843,"Loreto",148,34,31
-542,"Cusco",67,22,21
-795,"Cusco",73,19,20
-742,"Cusco",40,14,20
-3070,"Lima Metropolitana",117,35,36
-2834,"Lima Metropolitana",89,22,22
-2459,"Piura",117,31,29
-1611,"Piura",131,31,27
-350,"Piura",82,19,21
-159,"Piura",82,20,26
-158,"Piura",83,21,26
-1281,"Piura",50,18,18
-2237,"Piura",65,27,24
-3203,"Lima Metropolitana",113,33,26
-3071,"Lima Metropolitana",91,33,35
-1689,"Cusco",75,22,28
-1055,"Cusco",72,25,23
-2194,"Piura",79,28,25
-2447,"Piura",121,26,29
-1745,"Cusco",68,16,13
-603,"Cusco",51,22,17
-16,"Piura",66,18,16
-2095,"Loreto",108,34,31
-40,"Piura",43,10,16
-1062,"Cusco",63,21,18
-21,"Piura",74,25,24
-1968,"Piura",92,27,29
-1783,"Piura",107,35,26
-1217,"Piura",80,25,29
-693,"Loreto",76,28,27
-797,"Cusco",71,20,20
-3463,"Lima Metropolitana",116,26,26
-1215,"Piura",99,25,28
-3066,"Lima Metropolitana",108,35,34
-1677,"Loreto",47,17,19
-1625,"Piura",98,23,25
-1535,"Loreto",78,22,30
-2326,"Piura",75,18,21
-3088,"Lima Metropolitana",97,35,35
-1773,"Piura",75,29,24
-3218,"Lima Metropolitana",120,30,27
-3213,"Lima Metropolitana",64,16,19
-1546,"Loreto",83,25,33
-1649,"Loreto",94,25,25
-1756,"Piura",66,26,19
-799,"Cusco",70,20,19
-615,"Piura",44,18,18
-2185,"Piura",62,27,18
-1629,"Piura",115,30,31
-753,"Cusco",49,16,22
-2108,"Loreto",78,24,23
-970,"Loreto",101,25,27
-1744,"Cusco",92,18,25
-318,"Cusco",75,20,21
-2531,"Piura",93,32,25
-3425,"Lima Metropolitana",131,31,31
-1871,"Piura",87,22,28
-946,"Cusco",143,31,29
-341,"Piura",84,20,23
-964,"Loreto",79,21,21
-2462,"Piura",89,31,25
-2277,"Piura",132,28,34
-3450,"Lima Metropolitana",68,19,24
-2130,"Cusco",70,19,18
-346,"Piura",83,21,22
-1702,"Cusco",97,28,34
-3221,"Lima Metropolitana",59,19,20
-1284,"Piura",63,20,23
-437,"Cusco",75,23,19
-1765,"Piura",68,30,22
-1326,"Piura",56,17,19
-694,"Loreto",109,30,28
-527,"Loreto",101,31,36
-1325,"Piura",49,16,19
-1772,"Piura",75,27,22
-1400,"Cusco",102,28,30
-616,"Piura",62,20,21
-1127,"Piura",102,22,28
-2235,"Piura",79,27,16
-2331,"Piura",66,15,28
-3459,"Lima Metropolitana",113,25,26
-686,"Loreto",97,29,26
-605,"Cusco",63,24,18
-848,"Loreto",112,32,31
-2828,"Lima Metropolitana",115,27,28
-2211,"Piura",80,25,23
-342,"Piura",83,21,22
-3419,"Lima Metropolitana",76,22,22
-1698,"Cusco",87,25,32
-1244,"Piura",67,18,22
-2386,"Piura",96,32,33
-2508,"Piura",102,23,21
-1671,"Loreto",51,18,19
-844,"Loreto",109,31,25
-2131,"Cusco",42,13,14
-732,"Cusco",79,22,21
-2147,"Piura",116,26,30
-1664,"Loreto",76,20,31
-1771,"Piura",75,28,23
-3379,"Lima Metropolitana",71,20,22
-3323,"Lima Metropolitana",120,22,23
-1570,"Piura",117,31,29
-853,"Loreto",110,31,31
-334,"Piura",93,20,24
-2105,"Loreto",71,25,18
-330,"Piura",76,19,23
-2441,"Piura",123,30,23
-1588,"Loreto",141,30,30
-1173,"Loreto",73,22,18
-551,"Cusco",128,34,34
-3430,"Lima Metropolitana",88,24,26
-3200,"Lima Metropolitana",116,35,26
-1692,"Cusco",90,25,33
-3464,"Lima Metropolitana",136,24,29
-2329,"Piura",72,15,25
-2453,"Piura",95,32,27
-3416,"Lima Metropolitana",69,14,18
-687,"Loreto",74,27,28
-757,"Cusco",67,17,20
-973,"Loreto",89,24,23
-1323,"Piura",64,18,21
-1777,"Cusco",78,24,28
-403,"Piura",80,24,21
-2216,"Piura",83,31,22
-2813,"Lima Metropolitana",87,25,21
-760,"Cusco",87,23,24
-1661,"Loreto",78,29,26
-1214,"Piura",78,19,22
-369,"Piura",56,21,23
-1494,"Piura",90,28,27
-1211,"Piura",93,22,25
-1493,"Piura",104,29,26
-2087,"Piura",40,14,15
-2209,"Piura",84,29,21
-1491,"Piura",62,21,22
-1196,"Piura",58,17,19
-160,"Piura",85,20,26
-1328,"Piura",78,20,21
-3470,"Lima Metropolitana",110,26,26
-1766,"Piura",77,30,28
-2274,"Piura",53,23,22
-1416,"Loreto",62,25,28
-882,"Loreto",63,30,24
-430,"Cusco",99,29,35
-2233,"Piura",58,26,21
-2069,"Cusco",64,23,22
-246,"Cusco",66,19,21
-846,"Loreto",109,34,26
-2809,"Lima Metropolitana",68,23,22
-429,"Cusco",96,32,32
-602,"Cusco",58,22,18
-347,"Piura",68,17,17
-1421,"Cusco",131,33,25
-3302,"Lima Metropolitana",90,22,20
-3493,"Lima Metropolitana",85,22,23
-1052,"Cusco",80,25,29
-1763,"Piura",39,23,21
-3488,"Lima Metropolitana",108,25,24
-871,"Loreto",65,31,28
-62,"Cusco",59,25,24
-1624,"Piura",102,27,29
-1280,"Piura",70,20,23
-1627,"Piura",119,30,31
-3442,"Lima Metropolitana",110,28,25
-852,"Loreto",108,28,27
-536,"Cusco",74,21,22
-2450,"Piura",102,31,26
-792,"Cusco",78,22,23
-1427,"Cusco",122,28,30
-3065,"Lima Metropolitana",104,33,29
-1216,"Piura",85,23,25
-1106,"Piura",120,32,33
-2187,"Piura",80,27,27
-339,"Piura",80,23,25
-2179,"Piura",92,22,23
-904,"Cusco",61,22,19
-1705,"Cusco",86,19,22
-969,"Loreto",114,26,27
-2129,"Cusco",38,10,12
-1134,"Cusco",43,26,16
-685,"Loreto",70,29,27
-1279,"Piura",55,19,18
-2080,"Cusco",63,20,20
-906,"Cusco",57,20,19
-2533,"Piura",92,32,25
-3079,"Lima Metropolitana",116,36,36
-2208,"Piura",81,26,18
-2808,"Lima Metropolitana",87,21,28
-2458,"Piura",108,32,28
-1077,"Piura",92,34,21
-1126,"Piura",75,17,23
-3217,"Lima Metropolitana",99,30,24
-253,"Cusco",66,23,19
-322,"Cusco",65,21,18
-879,"Loreto",62,28,24
-3381,"Lima Metropolitana",110,33,30
-3429,"Lima Metropolitana",90,25,26
-3008,"Lima Metropolitana",144,32,30
-1615,"Piura",86,25,23
-1753,"Piura",89,31,25
-790,"Cusco",74,20,21
-2504,"Piura",82,24,20
-1747,"Cusco",71,16,19
-737,"Cusco",44,15,16
-2822,"Lima Metropolitana",121,28,29
-3438,"Lima Metropolitana",100,29,28
-756,"Cusco",70,23,23
-1704,"Cusco",94,26,34
-501,"Loreto",82,28,22
-1701,"Cusco",88,26,28
-3462,"Lima Metropolitana",107,32,28
-2971,"Lima Metropolitana",114,34,30
-1918,"Piura",62,17,25
-1288,"Piura",49,18,17
-3520,"Lima Metropolitana",79,22,17
-156,"Piura",82,21,26
-1261,"Piura",70,19,22
-345,"Piura",78,19,21
-1061,"Cusco",85,22,19
-2328,"Piura",74,17,24
-431,"Cusco",106,32,26
-2286,"Piura",94,20,27
-320,"Cusco",80,23,23
-1703,"Cusco",72,21,25
-2281,"Piura",93,22,28
-1758,"Piura",92,24,25
-1760,"Piura",61,29,23
-2534,"Piura",92,32,27
-945,"Cusco",141,31,30
-2588,"Cusco",89,24,23
-2186,"Piura",44,15,18
-1423,"Cusco",116,25,26
-2615,"Piura",65,14,20
-2238,"Piura",49,25,25
-321,"Cusco",69,21,21
-1413,"Loreto",59,28,28
-1079,"Piura",74,32,24
-2505,"Piura",84,25,19
-2461,"Piura",69,30,20
-2231,"Piura",61,23,24
-2278,"Piura",113,24,29
-1610,"Piura",116,27,28
-1410,"Loreto",62,28,28
-2327,"Piura",89,20,25
-679,"Loreto",70,26,23
-682,"Loreto",62,27,28
-1195,"Piura",70,21,18
-745,"Cusco",75,22,20
-1292,"Piura",46,15,15
-3490,"Lima Metropolitana",53,22,16
-2832,"Lima Metropolitana",98,20,21
-555,"Cusco",71,15,22
-3408,"Lima Metropolitana",110,31,24
-2332,"Piura",63,24,21
-422,"Piura",62,21,23
-1241,"Piura",87,28,27
-2180,"Piura",76,23,24
-1813,"Cusco",90,25,25
-545,"Cusco",100,28,28
-3332,"Lima Metropolitana",81,21,18
-1674,"Loreto",79,20,30
-608,"Cusco",64,25,20
-1291,"Piura",67,22,23
-2207,"Piura",89,28,25
-1803,"Cusco",88,30,27
-1618,"Piura",81,22,19
-1492,"Piura",61,19,21
-1327,"Piura",39,16,15
-3434,"Lima Metropolitana",98,29,31
-2530,"Piura",63,30,23
-3074,"Lima Metropolitana",90,35,35
-2189,"Piura",67,26,23
-740,"Cusco",68,22,22
-599,"Cusco",62,23,21
-329,"Cusco",69,21,19
-2968,"Lima Metropolitana",105,28,24
-1411,"Loreto",54,22,29
-1258,"Piura",84,24,26
-1164,"Piura",102,33,28
-2219,"Piura",143,29,30
-59,"Cusco",47,13,18
-1287,"Piura",46,20,19
-1190,"Cusco",51,22,17
-1827,"Piura",78,21,22
-3476,"Lima Metropolitana",102,25,23
-2509,"Piura",87,22,22
-678,"Loreto",64,26,23
-1969,"Piura",67,20,19
-3483,"Lima Metropolitana",71,21,22
-880,"Loreto",64,33,26
-1124,"Piura",92,21,25
-1919,"Piura",71,21,25
-2510,"Piura",88,21,21
-2444,"Piura",105,32,24
-2294,"Piura",86,22,28
-3460,"Lima Metropolitana",103,26,29
-2812,"Lima Metropolitana",61,21,20
-2098,"Loreto",63,21,16
-2197,"Piura",111,29,33
-552,"Cusco",124,36,34
-3087,"Lima Metropolitana",74,30,30
-3386,"Lima Metropolitana",134,31,33
-64,"Cusco",44,21,17
-2614,"Piura",93,25,25
-2323,"Piura",80,21,27
-1277,"Piura",74,21,23
-3073,"Lima Metropolitana",121,34,35
-1286,"Piura",61,19,22
-1056,"Cusco",56,22,18
-1040,"Piura",100,21,27
-2192,"Piura",89,29,21
-2336,"Piura",38,15,13
-1212,"Piura",86,21,28
-1714,"Cusco",70,23,25
-1839,"Loreto",130,32,31
-872,"Loreto",64,31,24
-692,"Loreto",80,28,26
-245,"Cusco",56,19,18
-965,"Loreto",104,24,27
-876,"Loreto",66,29,24
-1207,"Cusco",53,18,15
-2284,"Piura",122,26,30
-1414,"Loreto",62,27,28
-1054,"Cusco",81,24,22
-3205,"Lima Metropolitana",74,29,26
-1322,"Piura",62,20,20
-3456,"Lima Metropolitana",107,22,25
-56,"Cusco",55,23,26
-24,"Piura",47,18,19
-1621,"Piura",129,28,29
-368,"Piura",58,18,20
-65,"Cusco",39,16,16
-1534,"Loreto",60,16,22
-414,"Piura",72,24,26
-22,"Piura",59,21,20
-1964,"Piura",80,23,26
-2314,"Piura",121,34,34
-850,"Loreto",109,33,22
-977,"Loreto",110,25,26
-549,"Cusco",124,33,34
-1761,"Piura",106,28,27
-3126,"Lima Metropolitana",101,35,28
-690,"Loreto",94,30,29
-972,"Loreto",100,24,24
-2191,"Piura",81,28,19
-734,"Cusco",71,21,22
-604,"Cusco",49,21,17
-2234,"Piura",58,23,19
-1668,"Loreto",43,18,17
-1667,"Loreto",43,17,17
-1,"Piura",61,21,21
-1784,"Piura",74,22,19
-2335,"Piura",47,21,22
-2196,"Piura",86,26,25
-2195,"Piura",111,29,32
-327,"Cusco",68,21,19
-3295,"Lima Metropolitana",88,29,25
-1713,"Cusco",61,23,26
-2503,"Piura",81,19,18
-1529,"Loreto",40,16,15
-1672,"Loreto",70,21,28
-2448,"Piura",121,32,29
-845,"Loreto",109,26,22
-696,"Loreto",58,26,21
-1869,"Piura",71,20,23
-736,"Cusco",51,18,21
-252,"Cusco",63,22,19
-1407,"Loreto",71,26,29
-3283,"Lima Metropolitana",145,27,31
-420,"Piura",111,33,30
-2184,"Piura",62,18,18
-1198,"Piura",89,31,24
-3085,"Lima Metropolitana",95,34,30
-157,"Piura",82,20,25
-3413,"Lima Metropolitana",53,21,18
-3083,"Lima Metropolitana",93,35,35
-419,"Piura",114,32,32
-3485,"Lima Metropolitana",89,25,22
-2190,"Piura",70,24,24
-1294,"Piura",54,13,19
-2193,"Piura",39,11,15
-2500,"Piura",79,19,21
-750,"Cusco",67,22,22
-1988,"Cusco",81,13,16
-3479,"Lima Metropolitana",65,22,19
-1188,"Piura",67,20,24
-3372,"Lima Metropolitana",91,30,28
-1177,"Loreto",77,19,19
-415,"Piura",96,33,31
-416,"Piura",98,34,31
-3420,"Lima Metropolitana",138,25,28
-1675,"Loreto",59,18,24
-1690,"Cusco",95,28,32
-1608,"Loreto",107,30,27
-2086,"Piura",94,24,22
-1174,"Loreto",61,19,18
-1078,"Piura",64,27,18
-1830,"Piura",84,29,26
-3377,"Lima Metropolitana",59,18,22
-3324,"Lima Metropolitana",73,16,22
-1544,"Loreto",62,21,21
-2243,"Piura",46,20,27
-3277,"Lima Metropolitana",90,28,22
-1870,"Piura",64,16,21
-635,"Piura",46,16,18
-1075,"Loreto",147,31,31
-58,"Cusco",40,20,17
-2288,"Piura",86,23,25
-1846,"Loreto",126,32,31
-1566,"Piura",63,16,20
-2826,"Lima Metropolitana",98,23,24
-1872,"Piura",83,26,26
-171,"Piura",80,21,26
-170,"Piura",80,21,26
-3181,"Lima Metropolitana",101,27,24
-1762,"Piura",121,32,29
-2460,"Piura",81,32,25
-2133,"Cusco",67,20,17
-2222,"Piura",71,28,18
-1490,"Piura",78,17,19
-675,"Loreto",62,22,24
-674,"Loreto",62,22,24
-1632,"Cusco",84,20,19
-2099,"Loreto",58,21,16
-2276,"Piura",61,24,22
-975,"Loreto",80,17,18
-23,"Piura",41,16,15
-744,"Cusco",69,21,21
-1622,"Piura",97,23,26
-968,"Loreto",84,19,24
-3321,"Lima Metropolitana",148,25,35
-3326,"Lima Metropolitana",142,29,31
-3489,"Lima Metropolitana",92,30,28
-2246,"Piura",40,11,15
-337,"Piura",64,14,21
-508,"Loreto",85,20,19
-1541,"Loreto",75,22,22
-1695,"Cusco",83,17,17
-1540,"Loreto",59,18,22
-601,"Cusco",55,22,20
-506,"Loreto",95,29,34
-976,"Loreto",99,23,25
-1082,"Piura",85,29,26
-417,"Piura",119,34,33
-2245,"Piura",71,24,22
-2570,"Loreto",51,16,18
-432,"Cusco",88,31,29
-535,"Cusco",73,20,22
-2507,"Piura",81,18,22
-3397,"Lima Metropolitana",129,29,33
-169,"Piura",74,22,25
-789,"Cusco",76,20,23
-2275,"Piura",54,21,20
-2527,"Piura",48,15,22
-1619,"Piura",81,19,20
-2315,"Piura",101,33,33
-1585,"Loreto",80,22,24
-1626,"Piura",102,26,25
-435,"Cusco",117,30,31
-636,"Piura",69,20,23
-1663,"Loreto",71,23,29
-695,"Loreto",66,27,25
-3444,"Lima Metropolitana",86,34,17
-1676,"Loreto",67,20,27
-3212,"Lima Metropolitana",112,33,27
-1743,"Cusco",92,19,26
-2833,"Lima Metropolitana",57,20,20
-738,"Cusco",44,19,22
-1917,"Piura",87,24,25
-2005,"Loreto",62,25,21
-1774,"Piura",83,29,22
-39,"Piura",60,22,20
-1623,"Piura",113,25,31
-1488,"Piura",62,17,19
-436,"Cusco",84,22,24
-1768,"Piura",52,24,23
-1932,"Cusco",77,21,24
-1392,"Piura",77,22,19
-2083,"Loreto",61,25,29
-1194,"Piura",87,21,29
-3307,"Lima Metropolitana",98,22,25
-1420,"Cusco",112,28,31
-1930,"Cusco",75,18,16
-2204,"Piura",99,27,25
-3077,"Lima Metropolitana",116,36,36
-1845,"Loreto",106,30,29
-1489,"Piura",79,29,23
-1759,"Piura",42,24,21
-2446,"Piura",74,31,26
-1275,"Piura",100,24,27
-1202,"Cusco",100,28,28
-1556,"Loreto",48,20,21
-2388,"Piura",94,31,33
-1426,"Cusco",69,24,19
-1296,"Piura",50,18,18
-1123,"Piura",73,14,22
-1186,"Loreto",77,24,18
-1239,"Piura",68,20,22
-1693,"Cusco",94,18,19
-1757,"Piura",59,27,21
-3448,"Lima Metropolitana",76,25,13
-1688,"Cusco",86,19,26
-752,"Cusco",72,22,20
-3084,"Lima Metropolitana",85,30,33
-598,"Cusco",67,22,17
-3009,"Lima Metropolitana",101,30,27
-743,"Cusco",75,24,18
-3328,"Lima Metropolitana",91,19,20
-1715,"Cusco",74,24,26
-1634,"Cusco",68,19,18
-550,"Cusco",83,26,21
-2202,"Piura",75,19,21
-1700,"Cusco",75,23,23
-49,"Cusco",49,21,18
-2502,"Piura",49,15,19
-1605,"Loreto",97,29,25
-1129,"Piura",101,23,27
-3432,"Lima Metropolitana",109,29,26
-2829,"Lima Metropolitana",120,25,29
-2203,"Piura",121,33,34
-51,"Cusco",37,16,17
-2221,"Piura",73,22,20
-2226,"Piura",71,24,19
-3426,"Lima Metropolitana",137,32,30
-1571,"Piura",120,33,28
-749,"Cusco",64,20,21
-1769,"Piura",40,22,19
-1770,"Piura",36,22,17
-1403,"Piura",62,17,17
-1243,"Piura",69,18,22
-1059,"Cusco",86,23,21
-733,"Cusco",56,18,20
-2293,"Piura",90,22,27
-2817,"Lima Metropolitana",79,22,21
-2236,"Piura",54,23,26
-1755,"Piura",37,17,16
-3195,"Lima Metropolitana",72,32,21
-971,"Loreto",80,21,23
-1754,"Piura",64,25,20
-1293,"Piura",52,20,21
-1785,"Piura",69,23,17
-1927,"Cusco",84,22,23
-2830,"Lima Metropolitana",60,23,21
-1707,"Cusco",75,18,14
-251,"Cusco",60,21,19
-2077,"Cusco",73,24,24
-1694,"Cusco",90,21,18
-2224,"Piura",84,27,21
-3457,"Lima Metropolitana",112,23,30
-3523,"Lima Metropolitana",83,24,18
-2445,"Piura",134,32,27
-1965,"Piura",83,25,27
-3392,"Lima Metropolitana",131,25,30
-537,"Cusco",60,16,19
-2616,"Piura",59,16,22
-2,"Piura",52,20,23
-1635,"Cusco",81,22,27
-3399,"Lima Metropolitana",99,22,31
-2292,"Piura",64,17,24
-2537,"Piura",85,31,25
-1199,"Piura",67,20,21
-1208,"Cusco",67,22,21
-2084,"Piura",98,20,29
-2810,"Lima Metropolitana",105,20,26
-161,"Piura",85,20,26
-794,"Cusco",77,22,21
-61,"Cusco",41,20,18
-1210,"Piura",75,22,22
-2206,"Piura",79,24,23
-2528,"Piura",76,28,25
-3178,"Lima Metropolitana",87,31,24
-967,"Loreto",103,25,27
-54,"Cusco",64,21,25
-249,"Cusco",67,20,21
-1711,"Cusco",70,25,24
-1218,"Piura",96,29,29
-747,"Cusco",53,18,21
-2205,"Piura",109,22,22
-1283,"Piura",42,15,19
-798,"Cusco",75,21,24
-1795,"Loreto",89,28,28
-633,"Piura",50,19,21
-1418,"Cusco",117,29,30
-793,"Cusco",73,21,20
-2073,"Cusco",70,22,20
-1606,"Loreto",112,30,29
-1607,"Loreto",80,22,18
-344,"Piura",71,15,21
-735,"Cusco",70,19,22
-1633,"Cusco",77,21,17
-2811,"Lima Metropolitana",50,19,20
-905,"Cusco",77,25,22
-2587,"Cusco",45,17,17
-1746,"Cusco",80,18,18
-2225,"Piura",81,23,25
-1934,"Cusco",79,21,23
-1289,"Piura",70,24,24
-684,"Loreto",74,26,29
-3011,"Lima Metropolitana",98,22,21
-3006,"Lima Metropolitana",101,22,23
-1175,"Loreto",51,16,15
-1060,"Cusco",54,18,18
-2585,"Cusco",81,24,22
-907,"Cusco",37,19,15
-1425,"Cusco",77,26,18
-3451,"Lima Metropolitana",85,23,22
-2831,"Lima Metropolitana",81,18,21
-544,"Cusco",54,17,20
-3251,"Lima Metropolitana",72,21,18
-2814,"Lima Metropolitana",74,22,22
-3390,"Lima Metropolitana",52,15,18
-1081,"Piura",104,35,25
-1787,"Piura",110,33,33
-2230,"Piura",46,16,19
-2232,"Piura",58,20,20
-2455,"Piura",106,28,28
-944,"Cusco",138,30,29
-677,"Loreto",88,28,26
-689,"Loreto",72,27,24
-2823,"Lima Metropolitana",81,23,23
-1276,"Piura",84,20,23
-1617,"Piura",126,23,27
-1412,"Loreto",55,25,28
-2280,"Piura",92,23,31
-3404,"Lima Metropolitana",137,25,31
-1666,"Loreto",51,19,21
-2325,"Piura",66,15,26
-3465,"Lima Metropolitana",94,31,27
-1650,"Loreto",80,29,24
-2535,"Piura",86,33,27
-3211,"Lima Metropolitana",75,32,24
-2295,"Piura",90,21,27
-3455,"Lima Metropolitana",51,10,19
-35,"Piura",42,17,18
-3063,"Lima Metropolitana",116,34,35
-1778,"Cusco",86,24,22
-1393,"Piura",70,17,19
-857,"Loreto",61,13,24
-1716,"Cusco",81,28,31
-1873,"Piura",68,21,19
-1636,"Cusco",83,19,13
-3396,"Lima Metropolitana",78,21,21
-883,"Loreto",61,30,22
-2825,"Lima Metropolitana",56,21,19
-2181,"Piura",99,26,24
-1989,"Cusco",66,26,17
-1613,"Piura",86,23,23
-3496,"Lima Metropolitana",105,27,24
-1187,"Loreto",77,19,19
-943,"Cusco",139,31,28
-2970,"Lima Metropolitana",82,22,24
-332,"Piura",87,19,23
-942,"Cusco",142,31,31
-1125,"Piura",76,18,23
-50,"Cusco",37,14,18
-2123,"Loreto",60,25,18
-2815,"Lima Metropolitana",68,23,20
-3276,"Lima Metropolitana",91,14,26
-854,"Loreto",105,31,29
-324,"Cusco",67,20,19
-849,"Loreto",107,33,31
-1764,"Piura",46,25,21
-913,"Cusco",50,19,20
-2454,"Piura",86,28,25
-2962,"Lima Metropolitana",101,25,29
-365,"Piura",51,22,23
-2132,"Cusco",46,15,17
-2183,"Piura",53,18,21
-1651,"Loreto",79,28,25
-254,"Cusco",55,17,19
-539,"Cusco",65,22,21
-3474,"Lima Metropolitana",106,25,24
-1213,"Piura",80,20,24
-1295,"Piura",60,19,23
-912,"Cusco",35,15,13
-3522,"Lima Metropolitana",66,22,15
-1133,"Cusco",33,25,16
-2290,"Piura",39,13,15
-3410,"Lima Metropolitana",53,20,17
-941,"Cusco",143,30,30
-600,"Cusco",58,23,19
-802,"Cusco",68,22,18
-3494,"Lima Metropolitana",89,22,22
-411,"Cusco",32,18,8
-1779,"Cusco",85,24,26
-2128,"Piura",74,21,22
-842,"Loreto",117,34,31
-3007,"Lima Metropolitana",80,30,29
-1379,"Loreto",78,21,22
-3403,"Lima Metropolitana",85,24,23
-1712,"Cusco",82,26,26
-1699,"Cusco",95,25,32
-914,"Cusco",35,16,14
-1422,"Cusco",116,28,31
-1847,"Loreto",77,21,28
-3471,"Lima Metropolitana",99,23,28
-250,"Cusco",60,21,20
-1260,"Piura",76,19,22
-1812,"Cusco",77,23,25
-1080,"Piura",72,31,24
-1409,"Loreto",58,25,29
-348,"Piura",71,15,20
-3422,"Lima Metropolitana",72,20,22
-606,"Cusco",53,22,17
-3521,"Lima Metropolitana",102,28,19
-1614,"Piura",82,25,23
-2088,"Piura",59,18,17
-1652,"Loreto",57,25,17
-754,"Cusco",63,18,19
-1547,"Loreto",80,21,30
-509,"Loreto",81,21,20
-1324,"Piura",58,18,21
-1191,"Cusco",58,23,20
-255,"Cusco",64,19,20
-938,"Cusco",140,32,30
-875,"Loreto",62,29,22
-412,"Cusco",47,17,21
-1165,"Piura",65,19,19
-1402,"Cusco",119,31,32
-42,"Piura",65,23,20
-2240,"Piura",74,27,25
-2819,"Lima Metropolitana",74,16,23
-681,"Loreto",90,29,29
-909,"Cusco",41,14,18
-796,"Cusco",70,20,21
-1128,"Piura",75,21,24
-2536,"Piura",78,26,25
-758,"Cusco",66,21,20
-3484,"Lima Metropolitana",69,23,20
-3491,"Lima Metropolitana",79,21,23
-1669,"Loreto",52,19,23
-3186,"Lima Metropolitana",46,27,20
-336,"Piura",67,16,18
-874,"Loreto",71,28,24
-2529,"Piura",73,30,23
-328,"Cusco",67,21,19
-878,"Loreto",66,31,26
-1709,"Cusco",73,18,19
-617,"Piura",42,16,20
-1665,"Loreto",55,17,24
-37,"Piura",36,13,14
-1938,"Piura",96,24,27
-1076,"Loreto",139,33,35
-2220,"Piura",65,21,20
-333,"Piura",67,14,20
-164,"Piura",80,21,22
-52,"Cusco",42,19,20
-1262,"Piura",67,19,23
-748,"Cusco",48,17,20
-1053,"Cusco",59,14,17
-614,"Piura",47,17,19
-3089,"Lima Metropolitana",95,33,33
-2452,"Piura",68,26,22
-1166,"Piura",67,20,16
-533,"Loreto",94,25,35
-3487,"Lima Metropolitana",107,25,24
-2289,"Piura",36,14,15
-1925,"Piura",57,18,17
-739,"Cusco",43,14,24
-2330,"Piura",74,18,29
-1604,"Loreto",81,20,22
-1708,"Cusco",78,18,20
-759,"Cusco",35,12,19
-3382,"Lima Metropolitana",59,19,16
-243,"Cusco",63,21,20
-1231,"Piura",62,16,23
-1398,"Piura",79,24,20
-531,"Loreto",71,19,17
-1200,"Cusco",87,28,30
-937,"Cusco",137,32,30
-338,"Piura",64,15,19
-2200,"Piura",82,30,25
-1710,"Cusco",57,18,23
-2389,"Piura",96,31,31
-741,"Cusco",66,20,21
-1829,"Piura",37,11,13
-1828,"Piura",37,15,12
-1232,"Piura",63,19,21
-966,"Loreto",82,19,22
-163,"Cusco",36,18,14
-908,"Cusco",41,16,16
-987,"Piura",70,24,23
-335,"Piura",80,18,21
-2103,"Loreto",75,25,22
-2214,"Piura",65,19,18
-343,"Piura",84,15,20
-1399,"Cusco",92,25,27
-162,"Cusco",41,15,18
-1691,"Cusco",60,18,24
-166,"Piura",87,22,26
-410,"Cusco",50,18,22
-2100,"Loreto",70,26,17
-2451,"Piura",71,21,21
-20,"Piura",34,15,17
-2201,"Piura",93,27,27
-2449,"Piura",74,25,18
-1939,"Piura",107,27,27
-2443,"Piura",82,19,20
-36,"Piura",69,22,24
-1936,"Cusco",84,19,24
-2247,"Piura",69,17,20
-843,"Loreto",105,28,25
-326,"Cusco",68,20,18
-607,"Cusco",52,21,17
-2109,"Loreto",89,34,30
-2102,"Loreto",70,24,18
-1656,"Loreto",69,25,18
-325,"Cusco",42,11,15
-1967,"Piura",62,13,19
-851,"Loreto",108,35,28
-1670,"Loreto",51,21,24
-364,"Piura",56,22,22
-2586,"Cusco",86,26,24
-2854,"Lima Metropolitana",119,28,28
-2860,"Lima Metropolitana",118,30,27
-2847,"Lima Metropolitana",115,27,30
-2852,"Lima Metropolitana",85,21,21
-2135,"Cusco",45,12,17
-2218,"Piura",74,27,22
-1417,"Piura",59,20,20
-634,"Piura",69,19,22
-2862,"Lima Metropolitana",107,20,27
-751,"Cusco",63,22,19
-2875,"Lima Metropolitana",110,27,28
-2334,"Piura",35,14,19
-2333,"Piura",48,17,18
-2239,"Piura",85,26,11
-2387,"Piura",106,33,30
-154,"Piura",74,20,25
-2456,"Piura",74,25,18
-1074,"Loreto",146,33,31
-886,"Piura",85,31,33
-1940,"Loreto",49,10,20
-3189,"Lima Metropolitana",70,27,21
-2120,"Loreto",77,24,22
-2285,"Piura",81,23,25
-3279,"Lima Metropolitana",109,23,27
-2097,"Loreto",61,21,18
-3010,"Lima Metropolitana",58,14,17
-2604,"Piura",136,35,34
-3075,"Lima Metropolitana",112,35,35
-3492,"Lima Metropolitana",80,25,21
-2145,"Cusco",86,26,21
-479,"Loreto",144,35,29
-492,"Loreto",106,25,24
-3435,"Lima Metropolitana",74,19,20
-2565,"Piura",86,26,25
-3140,"Lima Metropolitana",108,35,29
-2400,"Piura",130,35,34
-3475,"Lima Metropolitana",146,36,27
-2886,"Lima Metropolitana",102,31,26
-698,"Loreto",138,32,34
-404,"Piura",78,23,23
-1157,"Piura",70,24,27
-418,"Piura",63,26,24
+"Código","Departamento","Escala_Cog.","Escala_Mot.","Escala_Soc","Escala_Dis."
+231,"Piura",93,25,35,21
+464,"Loreto",94,25,53,23
+466,"Loreto",91,19,53,21
+480,"Loreto",83,26,54,28
+500,"Loreto",116,32,57,25
+504,"Loreto",92,24,55,22
+532,"Loreto",73,18,54,16
+957,"Piura",90,29,67,34
+978,"Loreto",78,19,51,20
+1039,"Piura",85,28,72,31
+1158,"Piura",53,11,45,17
+1180,"Loreto",76,24,50,16
+1385,"Piura",62,17,52,17
+1415,"Loreto",66,29,53,27
+1457,"Cusco",62,23,52,15
+2110,"Piura",71,21,41,25
+2347,"Piura",50,26,68,19
+2511,"Piura",83,22,46,20
+2705,"Lima Metropolitana",102,22,63,23
+2835,"Lima Metropolitana",121,29,64,36
+2836,"Lima Metropolitana",133,31,73,36
+2839,"Lima Metropolitana",134,32,65,26
+2840,"Lima Metropolitana",132,24,50,19
+2841,"Lima Metropolitana",100,27,57,20
+2842,"Lima Metropolitana",117,30,61,24
+2843,"Lima Metropolitana",99,30,61,23
+2844,"Lima Metropolitana",112,29,64,24
+2846,"Lima Metropolitana",131,24,60,23
+2848,"Lima Metropolitana",125,33,51,25
+2849,"Lima Metropolitana",143,35,75,28
+2880,"Lima Metropolitana",127,35,56,24
+2881,"Lima Metropolitana",109,22,62,25
+2882,"Lima Metropolitana",124,20,47,20
+2883,"Lima Metropolitana",107,24,55,19
+2884,"Lima Metropolitana",125,35,62,23
+2885,"Lima Metropolitana",119,33,62,23
+2889,"Lima Metropolitana",105,29,58,24
+2890,"Lima Metropolitana",92,28,58,22
+2891,"Lima Metropolitana",138,34,59,30
+2892,"Lima Metropolitana",132,27,70,29
+2893,"Lima Metropolitana",107,28,74,29
+2894,"Lima Metropolitana",103,27,72,30
+2895,"Lima Metropolitana",146,34,74,31
+2896,"Lima Metropolitana",108,20,62,28
+2897,"Lima Metropolitana",124,32,64,32
+2900,"Lima Metropolitana",114,30,66,28
+2901,"Lima Metropolitana",82,28,53,29
+2902,"Lima Metropolitana",133,34,76,32
+2903,"Lima Metropolitana",135,31,68,31
+2904,"Lima Metropolitana",99,18,62,27
+2905,"Lima Metropolitana",144,33,73,31
+2906,"Lima Metropolitana",119,31,65,30
+2907,"Lima Metropolitana",119,30,66,31
+2908,"Lima Metropolitana",129,31,75,31
+2910,"Lima Metropolitana",121,32,73,24
+2911,"Lima Metropolitana",152,33,76,28
+2912,"Lima Metropolitana",90,31,72,21
+2913,"Lima Metropolitana",128,27,76,25
+2914,"Lima Metropolitana",134,34,43,23
+2915,"Lima Metropolitana",100,29,70,25
+2916,"Lima Metropolitana",149,32,71,27
+2918,"Lima Metropolitana",130,31,64,28
+2919,"Lima Metropolitana",117,29,58,18
+2920,"Lima Metropolitana",143,32,63,28
+2921,"Lima Metropolitana",132,28,46,27
+2922,"Lima Metropolitana",110,21,51,22
+2923,"Lima Metropolitana",133,28,46,20
+2924,"Lima Metropolitana",141,32,54,20
+2925,"Lima Metropolitana",144,31,67,27
+2926,"Lima Metropolitana",108,28,57,17
+2927,"Lima Metropolitana",147,30,51,24
+2928,"Lima Metropolitana",121,31,65,29
+2935,"Lima Metropolitana",128,30,74,36
+2940,"Lima Metropolitana",155,33,77,30
+2943,"Lima Metropolitana",136,28,57,22
+2946,"Lima Metropolitana",137,33,57,21
+2948,"Lima Metropolitana",79,26,44,17
+2950,"Lima Metropolitana",135,29,48,20
+2952,"Lima Metropolitana",118,30,40,18
+2955,"Lima Metropolitana",115,26,40,15
+2957,"Lima Metropolitana",93,23,46,17
+2958,"Lima Metropolitana",128,23,46,19
+2960,"Lima Metropolitana",129,26,68,29
+2961,"Lima Metropolitana",104,30,55,17
+2963,"Lima Metropolitana",58,17,50,20
+2964,"Lima Metropolitana",126,30,59,28
+2965,"Lima Metropolitana",85,28,49,24
+2966,"Lima Metropolitana",110,15,46,23
+2967,"Lima Metropolitana",134,32,53,19
+2969,"Lima Metropolitana",130,32,66,26
+2972,"Lima Metropolitana",143,33,57,24
+2973,"Lima Metropolitana",145,31,66,30
+2974,"Lima Metropolitana",142,33,68,29
+2975,"Lima Metropolitana",99,27,57,23
+2976,"Lima Metropolitana",145,32,75,31
+2977,"Lima Metropolitana",121,31,62,26
+2978,"Lima Metropolitana",125,27,54,20
+2979,"Lima Metropolitana",154,35,76,30
+2980,"Lima Metropolitana",88,32,70,23
+2981,"Lima Metropolitana",115,30,69,25
+2982,"Lima Metropolitana",144,32,60,21
+2983,"Lima Metropolitana",116,32,58,25
+2984,"Lima Metropolitana",112,29,38,19
+2985,"Lima Metropolitana",109,28,36,20
+2986,"Lima Metropolitana",125,30,54,23
+2987,"Lima Metropolitana",93,34,76,30
+2988,"Lima Metropolitana",85,19,51,18
+2989,"Lima Metropolitana",85,20,34,17
+2990,"Lima Metropolitana",155,36,73,31
+2991,"Lima Metropolitana",152,36,72,31
+3185,"Lima Metropolitana",129,28,72,36
+3208,"Lima Metropolitana",93,30,68,24
+3209,"Lima Metropolitana",120,31,61,25
+3241,"Lima Metropolitana",103,30,62,26
+3298,"Lima Metropolitana",145,31,57,28
+3306,"Lima Metropolitana",96,24,46,24
+3308,"Lima Metropolitana",132,29,69,34
+3336,"Lima Metropolitana",156,35,72,30
+3343,"Lima Metropolitana",79,15,45,22
+3388,"Lima Metropolitana",102,32,70,33
+3409,"Lima Metropolitana",109,30,59,24
+3436,"Lima Metropolitana",125,32,69,29
+3454,"Lima Metropolitana",92,30,66,24
+3461,"Lima Metropolitana",73,29,66,24
+3519,"Lima Metropolitana",143,32,77,30
+2620,"Lima Metropolitana",87,24,53,24
+2627,"Lima Metropolitana",134,33,71,33
+2630,"Lima Metropolitana",126,30,69,33
+2633,"Lima Metropolitana",130,32,66,31
+2637,"Lima Metropolitana",113,28,63,26
+2640,"Lima Metropolitana",129,30,77,34
+2645,"Lima Metropolitana",129,28,64,30
+2651,"Lima Metropolitana",112,27,62,25
+2652,"Lima Metropolitana",107,30,60,26
+2655,"Lima Metropolitana",121,27,68,31
+2669,"Lima Metropolitana",120,29,76,31
+2670,"Lima Metropolitana",105,26,63,29
+2673,"Lima Metropolitana",149,35,70,32
+2685,"Lima Metropolitana",101,29,58,26
+2686,"Lima Metropolitana",117,29,62,31
+2687,"Lima Metropolitana",113,23,58,28
+2688,"Lima Metropolitana",108,31,67,32
+2689,"Lima Metropolitana",121,28,54,29
+2690,"Lima Metropolitana",139,25,71,33
+2691,"Lima Metropolitana",121,28,64,30
+2692,"Lima Metropolitana",131,34,68,35
+2693,"Lima Metropolitana",96,22,58,28
+2694,"Lima Metropolitana",112,28,62,27
+2695,"Lima Metropolitana",117,30,66,30
+2696,"Lima Metropolitana",139,23,69,32
+2697,"Lima Metropolitana",88,26,63,23
+2700,"Lima Metropolitana",130,28,70,35
+2702,"Lima Metropolitana",116,26,66,27
+2703,"Lima Metropolitana",105,33,71,31
+2706,"Lima Metropolitana",107,29,66,32
+2708,"Lima Metropolitana",128,32,71,34
+2711,"Lima Metropolitana",123,25,66,31
+2712,"Lima Metropolitana",122,32,72,33
+2714,"Lima Metropolitana",136,29,64,33
+2715,"Lima Metropolitana",103,24,61,24
+2718,"Lima Metropolitana",114,31,62,25
+2720,"Lima Metropolitana",125,33,67,33
+2721,"Lima Metropolitana",83,22,57,19
+2724,"Lima Metropolitana",120,29,73,25
+2725,"Lima Metropolitana",110,31,70,28
+2730,"Lima Metropolitana",121,29,66,27
+2734,"Lima Metropolitana",114,28,65,29
+2735,"Lima Metropolitana",140,31,77,34
+2740,"Lima Metropolitana",101,21,55,23
+2741,"Lima Metropolitana",136,35,77,33
+2742,"Lima Metropolitana",111,30,72,27
+2744,"Lima Metropolitana",142,34,72,32
+2745,"Lima Metropolitana",131,28,68,33
+2747,"Lima Metropolitana",98,24,64,27
+2750,"Lima Metropolitana",132,33,74,36
+2752,"Lima Metropolitana",111,31,65,28
+2755,"Lima Metropolitana",95,23,62,27
+2757,"Lima Metropolitana",86,20,59,18
+2759,"Lima Metropolitana",76,20,61,18
+2764,"Lima Metropolitana",117,30,71,30
+2765,"Lima Metropolitana",120,32,75,30
+2767,"Lima Metropolitana",143,32,67,29
+2774,"Lima Metropolitana",115,27,70,32
+2775,"Lima Metropolitana",78,28,62,27
+2777,"Lima Metropolitana",114,29,68,28
+2778,"Lima Metropolitana",97,25,69,28
+2780,"Lima Metropolitana",120,27,71,30
+2783,"Lima Metropolitana",110,28,70,31
+2785,"Lima Metropolitana",125,25,75,31
+3252,"Lima Metropolitana",107,33,65,25
+3258,"Lima Metropolitana",87,30,59,22
+3284,"Lima Metropolitana",93,28,56,23
+3290,"Lima Metropolitana",73,24,55,19
+1072,"Loreto",146,36,67,34
+939,"Cusco",143,30,43,30
+940,"Cusco",145,31,44,30
+3330,"Lima Metropolitana",98,31,54,22
+3446,"Lima Metropolitana",86,27,59,19
+2115,"Loreto",50,22,54,13
+2117,"Loreto",59,23,53,24
+534,"Cusco",49,14,49,19
+540,"Cusco",71,23,56,23
+287,"Cusco",66,23,51,28
+288,"Cusco",83,25,53,28
+1095,"Cusco",57,20,52,15
+217,"Piura",91,27,56,26
+218,"Piura",69,21,32,17
+1094,"Cusco",55,18,45,13
+1101,"Cusco",55,18,58,19
+1104,"Cusco",51,18,46,16
+1098,"Cusco",55,18,51,13
+1096,"Cusco",71,19,56,18
+1092,"Cusco",65,21,44,15
+103,"Cusco",48,16,47,16
+3367,"Lima Metropolitana",145,36,43,31
+3369,"Lima Metropolitana",130,33,66,32
+1099,"Cusco",52,18,55,15
+108,"Cusco",40,14,38,13
+1103,"Cusco",48,18,41,11
+104,"Cusco",60,13,58,15
+1093,"Cusco",56,15,52,16
+106,"Cusco",45,13,51,13
+1380,"Cusco",98,27,62,25
+1381,"Cusco",98,26,60,25
+3171,"Lima Metropolitana",94,28,53,21
+3173,"Lima Metropolitana",111,31,56,24
+1091,"Cusco",52,17,42,13
+3423,"Lima Metropolitana",123,32,57,28
+3427,"Lima Metropolitana",87,27,54,25
+1396,"Cusco",78,19,55,21
+1447,"Cusco",67,17,50,19
+837,"Piura",56,25,61,26
+2242,"Piura",88,24,67,16
+910,"Cusco",42,14,57,15
+911,"Cusco",39,17,52,19
+800,"Cusco",70,21,57,21
+801,"Cusco",75,22,58,21
+2198,"Piura",117,35,75,34
+2199,"Piura",87,30,72,34
+3374,"Lima Metropolitana",75,24,53,21
+2282,"Piura",97,22,62,28
+2283,"Piura",116,27,58,30
+17,"Piura",53,21,49,23
+167,"Piura",80,19,48,20
+168,"Piura",79,21,53,26
+1057,"Cusco",90,22,53,23
+1058,"Cusco",70,21,49,20
+1842,"Loreto",117,32,73,28
+1066,"Piura",58,16,53,22
+1841,"Loreto",116,31,71,28
+1837,"Loreto",104,32,70,29
+2188,"Piura",63,21,55,23
+150,"Piura",83,22,53,23
+153,"Piura",82,21,54,26
+152,"Piura",80,21,52,21
+148,"Piura",61,20,55,20
+151,"Piura",71,17,51,18
+3162,"Lima Metropolitana",119,34,65,32
+149,"Piura",95,29,56,26
+847,"Loreto",103,33,78,31
+3458,"Lima Metropolitana",116,34,69,31
+1282,"Piura",67,22,62,23
+3204,"Lima Metropolitana",75,33,71,23
+1436,"Cusco",62,21,49,19
+2572,"Loreto",124,29,57,28
+3401,"Lima Metropolitana",68,26,54,17
+891,"Cusco",78,27,57,24
+2353,"Piura",98,35,76,31
+1435,"Cusco",67,24,51,23
+1437,"Cusco",71,14,50,22
+1697,"Cusco",90,18,47,19
+1438,"Cusco",67,25,41,19
+1991,"Cusco",83,22,48,21
+1992,"Cusco",96,24,53,24
+1993,"Cusco",92,22,54,21
+1987,"Cusco",71,26,57,26
+1986,"Cusco",69,23,53,23
+2121,"Loreto",74,24,50,23
+1974,"Loreto",133,36,72,23
+2119,"Loreto",77,27,54,26
+1972,"Loreto",129,36,63,27
+2122,"Loreto",59,22,49,19
+2111,"Loreto",55,22,52,23
+2113,"Loreto",69,23,55,24
+2092,"Loreto",92,32,62,30
+2112,"Loreto",72,25,58,23
+1929,"Cusco",86,22,57,21
+1970,"Loreto",78,27,63,25
+1009,"Cusco",62,19,48,17
+1003,"Cusco",59,19,48,17
+1006,"Cusco",51,17,46,18
+999,"Cusco",65,19,46,21
+1004,"Cusco",68,18,46,18
+1005,"Cusco",68,22,49,19
+1010,"Cusco",69,22,52,21
+1000,"Cusco",54,17,43,14
+1012,"Cusco",59,18,48,18
+1928,"Cusco",84,18,57,21
+1931,"Cusco",97,28,54,28
+1933,"Cusco",88,26,65,16
+2079,"Cusco",65,21,55,20
+1935,"Cusco",92,22,63,25
+2075,"Cusco",72,23,59,22
+884,"Piura",106,31,68,32
+1290,"Piura",49,22,58,19
+1088,"Piura",132,36,72,28
+781,"Loreto",92,22,51,24
+2142,"Cusco",76,27,57,21
+1849,"Loreto",134,36,76,32
+1524,"Loreto",65,27,62,20
+560,"Cusco",67,24,48,21
+578,"Cusco",74,21,42,23
+564,"Cusco",103,28,69,28
+577,"Cusco",72,21,49,23
+575,"Cusco",61,21,35,18
+558,"Cusco",53,21,47,16
+574,"Cusco",76,21,51,21
+565,"Cusco",96,24,58,27
+1391,"Cusco",96,31,51,24
+3441,"Lima Metropolitana",80,28,60,17
+3165,"Lima Metropolitana",81,30,64,25
+3499,"Lima Metropolitana",105,36,44,24
+3170,"Lima Metropolitana",69,22,57,22
+1975,"Loreto",134,35,60,30
+1973,"Loreto",122,33,64,26
+1071,"Loreto",150,35,68,34
+2009,"Loreto",81,27,61,21
+3431,"Lima Metropolitana",113,30,63,26
+3226,"Lima Metropolitana",109,30,45,19
+1176,"Loreto",64,22,53,21
+3207,"Lima Metropolitana",100,32,65,25
+3234,"Lima Metropolitana",81,25,55,22
+3472,"Lima Metropolitana",108,25,59,24
+3495,"Lima Metropolitana",76,22,53,21
+3286,"Lima Metropolitana",65,15,39,17
+3395,"Lima Metropolitana",143,24,72,31
+2008,"Loreto",78,27,59,21
+2091,"Loreto",85,34,61,29
+2107,"Loreto",73,30,71,24
+2093,"Loreto",105,34,65,30
+2101,"Loreto",69,29,41,18
+2089,"Loreto",89,31,63,29
+2094,"Loreto",79,29,58,29
+2096,"Loreto",93,34,61,31
+2106,"Loreto",58,22,57,18
+1990,"Loreto",79,25,61,21
+349,"Piura",68,15,53,20
+1167,"Piura",69,20,57,23
+285,"Cusco",62,23,54,23
+541,"Cusco",69,22,56,20
+553,"Cusco",129,36,67,34
+546,"Cusco",97,30,58,31
+543,"Cusco",70,22,57,21
+548,"Cusco",106,32,58,31
+538,"Cusco",57,19,53,19
+547,"Cusco",44,10,32,16
+709,"Loreto",111,30,77,32
+1404,"Loreto",58,25,61,27
+53,"Cusco",61,23,54,26
+1971,"Loreto",82,27,66,25
+2081,"Loreto",100,27,62,29
+1440,"Cusco",63,23,50,19
+990,"Piura",78,27,71,29
+2617,"Piura",106,34,73,31
+2360,"Piura",125,32,77,34
+1805,"Cusco",103,25,63,25
+1354,"Cusco",73,21,55,19
+2398,"Piura",124,34,66,33
+1394,"Cusco",92,29,60,24
+3081,"Lima Metropolitana",122,33,62,30
+1002,"Cusco",56,17,48,18
+81,"Cusco",112,36,71,25
+1209,"Cusco",99,25,62,25
+1113,"Cusco",46,15,46,18
+356,"Cusco",79,20,49,21
+2805,"Lima Metropolitana",126,32,66,29
+2594,"Piura",41,23,41,12
+1389,"Cusco",110,27,61,28
+2356,"Piura",71,26,55,23
+771,"Loreto",93,19,56,22
+264,"Piura",101,26,62,29
+826,"Cusco",80,26,56,21
+954,"Piura",86,27,64,30
+784,"Loreto",82,23,47,24
+1117,"Cusco",65,17,50,21
+1135,"Cusco",151,33,77,35
+2010,"Loreto",74,25,54,20
+2337,"Piura",101,34,75,27
+289,"Cusco",72,24,54,27
+32,"Cusco",116,27,61,28
+704,"Loreto",141,33,58,32
+1867,"Piura",106,34,72,29
+1309,"Loreto",124,29,67,33
+214,"Piura",88,26,41,23
+1313,"Loreto",61,20,59,29
+772,"Loreto",95,23,56,24
+1185,"Loreto",92,29,57,25
+1531,"Loreto",121,35,69,23
+927,"Cusco",92,19,64,24
+1138,"Cusco",124,33,76,29
+2512,"Piura",144,33,67,24
+1018,"Cusco",55,18,49,20
+960,"Piura",102,31,71,28
+226,"Piura",74,23,39,22
+2563,"Piura",63,20,42,19
+571,"Cusco",92,27,62,23
+3406,"Lima Metropolitana",78,29,58,17
+2514,"Piura",108,30,68,24
+228,"Piura",79,21,44,20
+413,"Loreto",108,28,57,21
+3468,"Lima Metropolitana",95,24,60,26
+836,"Cusco",83,31,65,23
+1139,"Cusco",51,28,49,21
+936,"Cusco",83,22,64,24
+567,"Cusco",87,25,57,27
+989,"Piura",96,30,72,29
+2554,"Piura",117,30,66,28
+2562,"Piura",136,34,69,33
+92,"Cusco",147,36,67,30
+1850,"Loreto",143,36,76,28
+1382,"Cusco",84,23,55,21
+3274,"Lima Metropolitana",108,32,55,23
+2253,"Piura",109,31,63,35
+281,"Piura",78,25,60,24
+2414,"Piura",122,35,67,33
+257,"Piura",119,26,61,30
+2372,"Piura",126,34,77,35
+363,"Cusco",78,18,46,19
+3150,"Lima Metropolitana",86,35,64,31
+983,"Piura",69,25,50,23
+2268,"Piura",99,31,61,29
+982,"Piura",72,26,49,24
+2339,"Piura",150,36,72,30
+2526,"Piura",71,27,58,23
+721,"Loreto",115,33,68,28
+2605,"Piura",105,21,58,31
+3428,"Lima Metropolitana",93,24,56,21
+1351,"Cusco",72,17,52,19
+3359,"Lima Metropolitana",123,27,47,25
+2267,"Piura",110,31,63,30
+2254,"Piura",122,36,64,36
+1015,"Cusco",101,26,66,30
+705,"Loreto",128,32,70,32
+1306,"Loreto",108,29,62,33
+1350,"Cusco",97,26,59,27
+820,"Cusco",114,32,68,24
+2596,"Piura",63,29,50,18
+14,"Piura",113,24,58,27
+1030,"Cusco",92,24,63,23
+921,"Cusco",114,25,76,25
+3259,"Lima Metropolitana",136,35,66,28
+1184,"Loreto",69,22,45,20
+2399,"Piura",110,32,66,32
+1310,"Loreto",79,29,65,32
+1960,"Loreto",112,33,72,29
+1806,"Cusco",118,28,61,25
+1856,"Loreto",115,31,73,26
+3163,"Lima Metropolitana",112,34,64,32
+3013,"Lima Metropolitana",140,36,67,32
+626,"Piura",72,20,55,23
+2518,"Piura",109,30,64,21
+3184,"Lima Metropolitana",86,30,54,26
+1371,"Piura",123,33,65,31
+3437,"Lima Metropolitana",109,32,62,25
+1179,"Loreto",87,18,51,23
+1038,"Piura",79,22,69,28
+2377,"Piura",121,32,70,34
+3133,"Lima Metropolitana",112,35,66,30
+3167,"Lima Metropolitana",78,32,61,21
+831,"Cusco",94,26,49,21
+391,"Piura",96,22,60,23
+1359,"Piura",112,32,62,30
+2391,"Piura",133,33,67,32
+1220,"Cusco",72,30,54,21
+1365,"Piura",94,29,66,29
+2259,"Piura",81,24,59,24
+576,"Cusco",76,21,50,23
+2358,"Piura",118,32,77,35
+997,"Cusco",63,22,49,17
+1789,"Loreto",111,27,73,27
+1021,"Cusco",79,25,62,23
+1086,"Piura",98,35,67,21
+1750,"Piura",131,36,75,31
+2602,"Piura",98,31,66,24
+1854,"Loreto",122,30,73,29
+2413,"Piura",102,31,69,28
+834,"Cusco",105,32,64,26
+1013,"Cusco",95,30,69,28
+1866,"Piura",133,36,77,31
+1782,"Loreto",93,32,70,26
+1300,"Loreto",148,35,68,33
+3285,"Lima Metropolitana",108,30,59,22
+2371,"Piura",110,32,75,35
+814,"Cusco",107,32,73,25
+1033,"Cusco",84,25,63,23
+222,"Piura",98,28,60,30
+573,"Cusco",108,28,52,25
+1875,"Piura",153,36,73,31
+1043,"Piura",100,28,72,30
+2609,"Piura",40,26,33,11
+3254,"Lima Metropolitana",91,27,57,22
+2266,"Piura",127,36,66,35
+3311,"Lima Metropolitana",99,22,55,23
+2249,"Piura",104,31,61,32
+1848,"Loreto",147,36,66,30
+3342,"Lima Metropolitana",155,36,71,35
+1885,"Piura",116,34,76,27
+2397,"Piura",146,35,68,30
+2116,"Loreto",58,23,55,24
+529,"Loreto",139,36,60,29
+3110,"Lima Metropolitana",91,31,42,21
+229,"Piura",100,30,56,31
+266,"Piura",65,20,58,22
+91,"Cusco",86,29,54,22
+223,"Piura",106,28,63,31
+66,"Cusco",103,26,63,25
+1751,"Piura",106,35,75,29
+3101,"Lima Metropolitana",114,30,58,29
+263,"Piura",70,20,61,27
+236,"Piura",68,20,42,24
+3449,"Lima Metropolitana",99,27,55,16
+267,"Piura",108,28,67,31
+396,"Piura",67,24,56,22
+2381,"Piura",118,31,73,35
+3280,"Lima Metropolitana",102,32,57,22
+774,"Loreto",85,28,56,26
+3138,"Lima Metropolitana",82,35,65,25
+1022,"Cusco",83,25,63,23
+1781,"Loreto",82,29,65,22
+3339,"Lima Metropolitana",156,36,74,33
+3224,"Lima Metropolitana",85,26,55,22
+3192,"Lima Metropolitana",112,31,59,26
+2595,"Piura",104,30,63,29
+2146,"Cusco",83,26,48,23
+269,"Piura",105,29,60,30
+2343,"Piura",71,33,73,29
+3361,"Lima Metropolitana",116,31,57,27
+1246,"Loreto",111,29,61,31
+3288,"Lima Metropolitana",140,33,62,27
+357,"Cusco",80,23,47,19
+3301,"Lima Metropolitana",67,16,45,23
+827,"Cusco",93,30,64,24
+1249,"Loreto",125,34,55,34
+1450,"Cusco",69,23,52,18
+297,"Cusco",65,24,50,24
+3015,"Lima Metropolitana",99,31,55,25
+268,"Piura",110,28,68,31
+94,"Cusco",142,33,58,26
+1248,"Loreto",128,34,58,27
+1879,"Piura",110,34,75,27
+1314,"Loreto",142,35,69,34
+2393,"Piura",128,31,70,32
+569,"Cusco",68,22,47,20
+3338,"Lima Metropolitana",156,36,64,29
+3373,"Lima Metropolitana",88,29,57,21
+3239,"Lima Metropolitana",155,36,52,34
+2395,"Piura",118,35,64,30
+503,"Loreto",96,19,51,24
+643,"Piura",67,24,58,25
+934,"Cusco",76,23,53,23
+2402,"Piura",121,33,69,32
+1247,"Loreto",75,22,51,19
+273,"Piura",111,24,58,24
+2600,"Piura",72,28,33,13
+2403,"Piura",125,34,70,33
+1851,"Loreto",139,36,75,31
+923,"Cusco",60,19,37,17
+1434,"Cusco",74,24,44,20
+1115,"Cusco",54,16,54,20
+1443,"Cusco",65,18,54,20
+2396,"Piura",141,34,73,32
+611,"Cusco",79,28,58,23
+1387,"Cusco",77,20,51,19
+84,"Cusco",118,32,42,24
+395,"Piura",92,23,56,26
+1311,"Loreto",79,25,62,32
+1299,"Loreto",84,30,67,28
+274,"Piura",67,20,57,23
+1035,"Cusco",91,24,63,23
+840,"Cusco",84,26,55,24
+1368,"Piura",88,29,50,23
+3231,"Lima Metropolitana",105,30,62,25
+959,"Piura",98,30,67,35
+1016,"Cusco",77,24,60,28
+225,"Piura",73,24,42,22
+3371,"Lima Metropolitana",144,36,53,31
+2366,"Piura",98,32,70,34
+3161,"Lima Metropolitana",116,32,57,28
+980,"Piura",98,27,56,29
+3249,"Lima Metropolitana",135,29,67,27
+2394,"Piura",154,36,71,33
+1876,"Piura",117,34,73,27
+3310,"Lima Metropolitana",94,23,51,24
+3130,"Lima Metropolitana",118,35,65,32
+835,"Cusco",118,34,75,28
+641,"Piura",69,19,51,20
+713,"Loreto",131,32,70,32
+1441,"Cusco",66,26,53,22
+2007,"Loreto",74,23,59,20
+1888,"Piura",109,34,76,27
+3202,"Lima Metropolitana",130,25,59,31
+3106,"Lima Metropolitana",79,26,46,20
+3380,"Lima Metropolitana",140,35,56,32
+2352,"Piura",100,34,76,29
+1007,"Cusco",64,17,48,16
+637,"Piura",65,18,48,19
+783,"Loreto",71,19,49,22
+949,"Piura",103,30,66,35
+950,"Piura",99,28,64,30
+958,"Piura",88,31,53,29
+730,"Piura",76,26,48,21
+2368,"Piura",112,32,69,35
+3327,"Lima Metropolitana",88,24,57,24
+1527,"Loreto",121,35,72,29
+383,"Piura",153,26,67,28
+3164,"Lima Metropolitana",113,36,69,32
+2255,"Piura",99,31,63,31
+28,"Piura",99,23,57,25
+1858,"Loreto",118,31,73,28
+1388,"Cusco",86,23,56,20
+2887,"Lima Metropolitana",90,30,61,24
+358,"Cusco",79,20,46,19
+1361,"Piura",122,29,66,33
+770,"Loreto",98,24,59,23
+1034,"Cusco",83,24,51,23
+1221,"Cusco",92,27,56,24
+1230,"Cusco",95,25,64,25
+3272,"Lima Metropolitana",121,31,58,26
+1961,"Loreto",153,36,78,32
+3238,"Lima Metropolitana",89,24,56,27
+1878,"Piura",114,34,75,28
+93,"Cusco",113,32,62,26
+2341,"Piura",135,35,76,31
+12,"Piura",108,27,60,27
+3235,"Lima Metropolitana",108,32,62,23
+1446,"Cusco",70,22,48,22
+3353,"Lima Metropolitana",138,29,58,31
+1308,"Loreto",89,26,65,30
+3421,"Lima Metropolitana",94,28,60,21
+15,"Piura",111,26,55,27
+421,"Piura",89,31,61,25
+930,"Cusco",98,22,59,22
+1517,"Loreto",118,34,64,29
+262,"Piura",121,30,70,31
+2374,"Piura",131,33,77,35
+6,"Piura",114,27,47,27
+1373,"Piura",97,28,68,32
+1014,"Cusco",63,17,63,20
+1353,"Cusco",99,24,56,24
+507,"Loreto",115,29,53,26
+828,"Cusco",105,31,69,24
+235,"Piura",79,22,36,24
+3145,"Lima Metropolitana",80,28,61,21
+839,"Cusco",78,25,54,23
+922,"Cusco",55,21,51,17
+1011,"Cusco",57,18,46,18
+372,"Piura",156,25,72,34
+1085,"Piura",124,35,52,26
+2590,"Piura",58,29,37,16
+279,"Piura",45,22,46,21
+1008,"Cusco",80,22,53,22
+426,"Piura",95,34,61,20
+2355,"Piura",104,30,76,30
+260,"Piura",95,26,68,31
+2139,"Cusco",75,20,54,18
+286,"Cusco",63,25,54,25
+1514,"Loreto",120,34,69,29
+3225,"Lima Metropolitana",108,30,62,23
+723,"Loreto",102,32,65,26
+1883,"Piura",112,34,60,28
+3104,"Lima Metropolitana",59,20,50,19
+2345,"Piura",102,35,77,31
+717,"Loreto",99,35,69,28
+2361,"Piura",143,32,76,35
+378,"Piura",147,26,78,28
+2525,"Piura",67,27,58,21
+3131,"Lima Metropolitana",82,30,55,25
+1305,"Loreto",65,20,61,31
+261,"Piura",102,30,65,31
+710,"Loreto",129,33,74,34
+1377,"Piura",112,26,61,30
+816,"Cusco",106,31,61,24
+1372,"Piura",87,27,64,28
+3368,"Lima Metropolitana",80,27,60,25
+612,"Cusco",78,25,60,21
+1752,"Piura",136,36,78,31
+2118,"Loreto",77,26,51,23
+1451,"Cusco",52,23,55,21
+981,"Piura",98,27,60,29
+3264,"Lima Metropolitana",65,21,52,21
+1229,"Cusco",72,27,50,25
+11,"Piura",100,24,56,26
+1523,"Loreto",57,25,55,20
+3370,"Lima Metropolitana",141,36,68,31
+714,"Loreto",121,31,71,33
+715,"Loreto",126,34,73,35
+869,"Piura",85,30,65,30
+566,"Cusco",88,26,57,24
+1913,"Loreto",111,30,68,25
+373,"Piura",153,25,71,34
+638,"Piura",81,22,58,22
+2338,"Piura",67,34,70,28
+408,"Piura",88,31,54,21
+1886,"Piura",101,33,73,27
+294,"Cusco",69,24,55,27
+1959,"Loreto",154,35,77,28
+3109,"Lima Metropolitana",72,18,52,19
+708,"Loreto",122,32,72,34
+1962,"Loreto",130,34,75,32
+2344,"Piura",107,35,77,31
+812,"Cusco",97,31,68,26
+1456,"Cusco",65,23,51,17
+2597,"Piura",34,26,33,8
+1304,"Loreto",85,25,63,32
+296,"Cusco",81,24,53,28
+829,"Cusco",62,30,58,24
+387,"Piura",107,25,57,26
+362,"Cusco",78,18,46,19
+1862,"Loreto",112,29,73,31
+1519,"Loreto",67,29,62,21
+1376,"Piura",85,23,61,30
+2409,"Piura",111,29,67,29
+991,"Piura",71,26,67,24
+3375,"Lima Metropolitana",104,26,61,27
+79,"Cusco",112,33,61,29
+1809,"Cusco",106,23,63,25
+272,"Piura",44,17,45,16
+3498,"Lima Metropolitana",97,26,55,23
+1857,"Loreto",116,33,73,29
+3358,"Lima Metropolitana",59,18,51,20
+1882,"Piura",114,34,76,27
+2362,"Piura",106,32,73,34
+3190,"Lima Metropolitana",124,31,65,31
+3112,"Lima Metropolitana",140,35,68,34
+1510,"Loreto",105,30,61,27
+811,"Cusco",82,28,65,23
+3220,"Lima Metropolitana",92,25,53,23
+1455,"Cusco",69,25,51,19
+382,"Piura",153,25,67,28
+1530,"Loreto",73,30,60,27
+1366,"Piura",82,26,53,21
+3341,"Lima Metropolitana",137,35,58,26
+830,"Cusco",111,21,61,23
+3222,"Lima Metropolitana",112,30,58,30
+1250,"Loreto",110,31,54,28
+1853,"Loreto",156,36,78,33
+1223,"Cusco",71,26,64,22
+2516,"Piura",81,34,68,24
+2607,"Piura",38,24,39,9
+1121,"Cusco",41,11,38,14
+1395,"Cusco",85,27,57,24
+3350,"Lima Metropolitana",104,28,53,25
+424,"Piura",94,33,63,27
+926,"Cusco",96,25,70,29
+1453,"Cusco",60,24,51,19
+2799,"Lima Metropolitana",103,29,64,27
+1042,"Piura",83,26,70,22
+3478,"Lima Metropolitana",106,30,52,23
+1226,"Cusco",62,26,55,21
+988,"Piura",94,27,71,30
+3169,"Lima Metropolitana",105,29,53,22
+2248,"Piura",59,21,53,17
+1528,"Loreto",47,32,56,20
+2612,"Piura",68,22,50,17
+3183,"Lima Metropolitana",148,35,65,31
+3335,"Lima Metropolitana",129,33,62,27
+402,"Piura",56,23,57,21
+374,"Piura",153,26,77,30
+2515,"Piura",115,36,61,24
+2251,"Piura",97,31,63,31
+3180,"Lima Metropolitana",156,36,61,30
+2258,"Piura",106,31,60,30
+1374,"Piura",123,33,70,32
+1748,"Piura",134,35,78,30
+1219,"Cusco",104,29,49,26
+1868,"Piura",136,36,71,30
+3325,"Lima Metropolitana",127,36,52,27
+1252,"Loreto",96,30,58,21
+237,"Piura",58,15,38,18
+2558,"Piura",86,30,49,22
+3415,"Lima Metropolitana",118,31,62,26
+1029,"Cusco",89,25,56,23
+3293,"Lima Metropolitana",101,27,55,23
+1025,"Cusco",83,25,62,25
+1877,"Piura",97,34,73,26
+557,"Cusco",72,17,59,17
+1189,"Cusco",89,30,56,17
+1114,"Cusco",44,14,37,12
+1808,"Cusco",98,25,62,25
+1112,"Cusco",46,10,45,18
+68,"Cusco",80,29,57,22
+813,"Cusco",80,28,73,26
+3159,"Lima Metropolitana",89,30,64,30
+559,"Cusco",77,25,67,29
+89,"Cusco",130,32,54,26
+868,"Piura",81,32,53,32
+3362,"Lima Metropolitana",101,29,57,26
+1028,"Cusco",90,25,48,20
+425,"Piura",86,31,60,22
+1036,"Cusco",94,24,64,23
+1319,"Loreto",64,20,55,24
+2598,"Piura",76,29,72,28
+2803,"Lima Metropolitana",131,32,73,30
+2610,"Piura",52,29,47,14
+1118,"Cusco",48,17,41,16
+998,"Cusco",75,20,52,21
+2807,"Lima Metropolitana",101,31,61,24
+301,"Cusco",65,21,51,27
+1087,"Piura",131,36,74,28
+1358,"Cusco",74,19,50,21
+726,"Loreto",114,32,65,27
+80,"Cusco",76,22,50,18
+699,"Loreto",93,30,65,24
+561,"Cusco",90,25,62,22
+31,"Piura",105,27,58,27
+392,"Piura",96,27,59,23
+25,"Piura",110,28,60,27
+1442,"Cusco",61,18,52,21
+1369,"Piura",102,33,68,28
+703,"Loreto",142,34,76,36
+3229,"Lima Metropolitana",63,13,46,19
+3417,"Lima Metropolitana",107,28,52,27
+1791,"Loreto",137,36,71,29
+568,"Cusco",85,25,45,21
+903,"Cusco",108,26,59,23
+1370,"Piura",109,32,69,30
+3223,"Lima Metropolitana",108,30,61,23
+610,"Cusco",77,27,56,22
+1884,"Piura",119,34,73,28
+833,"Cusco",55,23,35,18
+639,"Piura",73,20,57,21
+3012,"Lima Metropolitana",120,33,64,28
+2260,"Piura",113,29,57,28
+917,"Cusco",76,22,69,23
+386,"Piura",73,22,58,26
+3147,"Lima Metropolitana",102,34,64,30
+3148,"Lima Metropolitana",102,34,64,30
+3351,"Lima Metropolitana",99,24,56,18
+293,"Cusco",72,24,55,27
+1020,"Cusco",77,24,60,23
+1515,"Loreto",83,31,63,23
+377,"Piura",145,26,78,34
+2357,"Piura",68,27,69,21
+3453,"Lima Metropolitana",90,27,63,18
+220,"Piura",73,24,30,15
+3182,"Lima Metropolitana",85,30,57,27
+925,"Cusco",107,27,70,29
+952,"Piura",97,29,50,32
+562,"Cusco",62,25,46,19
+1236,"Loreto",45,18,45,15
+1227,"Cusco",73,27,51,19
+1525,"Loreto",126,34,73,29
+2593,"Piura",57,27,42,16
+3303,"Lima Metropolitana",99,29,58,23
+712,"Loreto",135,33,68,32
+3176,"Lima Metropolitana",114,35,63,33
+823,"Cusco",65,29,60,20
+3194,"Lima Metropolitana",85,26,57,25
+2408,"Piura",112,29,65,31
+1316,"Loreto",101,29,62,28
+841,"Cusco",97,26,56,24
+1315,"Loreto",101,27,63,31
+1449,"Cusco",61,23,45,18
+2349,"Piura",101,35,76,31
+3414,"Lima Metropolitana",95,28,56,29
+933,"Cusco",85,23,59,24
+3105,"Lima Metropolitana",94,26,55,21
+371,"Piura",156,26,72,31
+401,"Piura",57,24,53,19
+722,"Loreto",129,35,66,29
+1178,"Loreto",84,26,46,19
+1301,"Loreto",63,19,59,24
+2574,"Loreto",117,29,65,25
+918,"Cusco",65,13,46,16
+920,"Cusco",66,18,56,23
+2800,"Lima Metropolitana",126,32,65,30
+2517,"Piura",104,32,68,23
+3152,"Lima Metropolitana",88,35,65,31
+3282,"Lima Metropolitana",71,16,52,30
+1089,"Piura",114,36,74,26
+2380,"Piura",123,32,76,34
+381,"Piura",154,26,76,28
+384,"Piura",153,20,68,30
+1352,"Cusco",100,28,57,25
+1807,"Cusco",44,15,43,24
+2407,"Piura",98,29,62,30
+1518,"Loreto",36,20,53,18
+1298,"Loreto",70,24,61,29
+3245,"Lima Metropolitana",109,29,60,30
+530,"Loreto",101,25,56,24
+232,"Piura",85,26,52,28
+2346,"Piura",113,36,75,30
+818,"Cusco",73,29,69,20
+3199,"Lima Metropolitana",105,30,53,26
+3227,"Lima Metropolitana",109,26,61,24
+87,"Cusco",60,17,46,17
+2611,"Piura",43,24,43,16
+1880,"Piura",101,34,76,28
+360,"Cusco",77,18,46,19
+1181,"Loreto",76,25,47,20
+8,"Piura",104,25,54,27
+1318,"Loreto",67,22,58,28
+2273,"Piura",80,24,53,18
+3297,"Lima Metropolitana",81,21,59,22
+822,"Cusco",116,32,74,26
+1861,"Loreto",113,28,62,30
+1512,"Loreto",64,29,59,19
+90,"Cusco",144,36,52,32
+1860,"Loreto",104,29,56,25
+1312,"Loreto",87,25,63,32
+2561,"Piura",95,27,54,25
+1792,"Loreto",63,22,68,20
+1532,"Loreto",46,32,49,24
+400,"Piura",105,26,61,23
+1024,"Cusco",84,25,63,24
+1137,"Cusco",124,32,77,26
+613,"Cusco",70,25,57,20
+932,"Cusco",94,21,65,26
+572,"Cusco",83,23,63,27
+1120,"Cusco",48,13,45,14
+78,"Cusco",132,35,54,23
+1749,"Piura",69,31,71,19
+1140,"Cusco",51,28,43,21
+3389,"Lima Metropolitana",73,26,53,15
+821,"Cusco",124,30,71,27
+1019,"Cusco",90,28,61,27
+239,"Piura",89,24,56,30
+3187,"Lima Metropolitana",88,23,57,24
+2556,"Piura",73,24,49,18
+2599,"Piura",73,28,52,22
+1032,"Cusco",81,24,51,23
+265,"Piura",81,22,62,27
+1367,"Piura",98,27,58,29
+570,"Cusco",89,23,68,33
+1182,"Loreto",73,21,52,18
+2591,"Piura",45,24,40,10
+67,"Cusco",139,36,59,31
+2143,"Cusco",65,25,47,16
+351,"Cusco",94,23,47,21
+2555,"Piura",55,17,57,17
+838,"Cusco",92,29,58,20
+1914,"Loreto",106,31,61,24
+299,"Cusco",67,19,55,27
+779,"Loreto",89,23,55,24
+406,"Piura",95,27,51,24
+3497,"Lima Metropolitana",136,33,70,33
+2351,"Piura",93,34,71,31
+786,"Loreto",94,25,52,24
+2559,"Piura",117,31,61,24
+30,"Piura",111,25,58,27
+1863,"Piura",117,33,74,27
+3383,"Lima Metropolitana",75,24,58,18
+409,"Piura",82,31,56,24
+3111,"Lima Metropolitana",78,25,43,20
+776,"Loreto",68,17,48,21
+2379,"Piura",125,27,77,35
+2369,"Piura",125,32,75,35
+1513,"Loreto",35,21,45,16
+3322,"Lima Metropolitana",86,26,51,23
+389,"Piura",71,21,53,23
+953,"Piura",78,28,67,30
+961,"Piura",82,24,71,31
+1001,"Cusco",55,17,48,18
+465,"Loreto",131,28,51,24
+29,"Piura",109,27,59,27
+1852,"Loreto",131,33,74,35
+1109,"Cusco",49,14,37,17
+2557,"Piura",114,32,62,29
+3482,"Lima Metropolitana",125,36,65,31
+1390,"Cusco",82,21,52,21
+817,"Cusco",109,31,76,27
+2140,"Cusco",77,25,43,23
+353,"Cusco",77,21,45,19
+10,"Cusco",83,22,48,24
+1780,"Loreto",100,34,66,29
+2806,"Lima Metropolitana",90,29,63,26
+1976,"Loreto",137,36,67,30
+1364,"Piura",84,22,61,20
+3,"Piura",108,26,57,27
+1238,"Loreto",77,21,43,14
+3160,"Lima Metropolitana",112,34,65,31
+2365,"Piura",95,34,65,34
+3166,"Lima Metropolitana",73,23,41,16
+33,"Cusco",104,24,46,24
+556,"Cusco",73,24,59,23
+2804,"Lima Metropolitana",126,32,57,28
+2138,"Cusco",101,28,53,26
+2137,"Cusco",75,25,49,18
+355,"Cusco",81,19,46,19
+1386,"Cusco",72,20,56,20
+375,"Piura",153,26,78,34
+706,"Loreto",123,31,69,31
+427,"Piura",97,33,63,22
+3337,"Lima Metropolitana",103,28,61,28
+3172,"Lima Metropolitana",110,26,59,30
+3364,"Lima Metropolitana",136,33,67,31
+1037,"Piura",68,25,44,24
+3266,"Lima Metropolitana",92,26,59,20
+3108,"Lima Metropolitana",99,28,61,22
+782,"Loreto",86,22,53,23
+2601,"Piura",36,25,32,11
+642,"Piura",63,14,57,20
+1136,"Cusco",111,32,75,26
+985,"Piura",73,24,51,24
+227,"Piura",84,24,48,23
+1383,"Cusco",65,16,52,20
+711,"Loreto",105,31,73,31
+88,"Cusco",102,31,48,24
+1228,"Cusco",73,28,67,25
+777,"Loreto",87,23,52,24
+931,"Cusco",87,22,58,25
+824,"Cusco",108,31,70,24
+2257,"Piura",80,21,55,23
+27,"Piura",111,24,58,27
+2263,"Piura",78,31,52,21
+82,"Cusco",103,35,58,22
+825,"Cusco",73,29,47,21
+1445,"Cusco",77,24,49,22
+1855,"Loreto",116,30,76,29
+354,"Cusco",80,21,49,19
+1017,"Cusco",85,27,63,24
+3246,"Lima Metropolitana",84,15,48,23
+2114,"Loreto",61,23,56,24
+467,"Loreto",105,28,55,26
+919,"Cusco",79,23,64,24
+1375,"Piura",100,30,71,32
+69,"Cusco",106,31,49,22
+2354,"Piura",63,28,61,22
+1452,"Cusco",54,23,50,22
+240,"Piura",92,26,61,30
+3400,"Lima Metropolitana",75,21,59,14
+780,"Loreto",96,19,54,24
+1240,"Loreto",70,22,50,14
+2256,"Piura",80,24,58,23
+2376,"Piura",121,32,76,34
+3480,"Lima Metropolitana",156,36,65,23
+947,"Cusco",110,27,55,28
+962,"Piura",81,31,43,23
+2367,"Piura",117,32,71,35
+1110,"Cusco",57,15,49,20
+1083,"Piura",97,35,67,21
+579,"Cusco",73,21,40,19
+2373,"Piura",119,32,77,35
+423,"Piura",93,33,61,27
+230,"Piura",76,20,55,22
+300,"Cusco",48,20,51,20
+3261,"Lima Metropolitana",130,30,60,26
+1116,"Cusco",55,12,51,18
+2265,"Piura",108,31,61,31
+955,"Piura",100,28,67,35
+3334,"Lima Metropolitana",130,33,68,27
+2410,"Piura",74,26,52,24
+1448,"Cusco",72,23,47,18
+85,"Cusco",49,14,44,14
+1233,"Loreto",64,23,47,19
+2513,"Piura",91,29,67,23
+1444,"Cusco",76,22,50,21
+1355,"Cusco",76,19,53,21
+563,"Cusco",66,21,52,17
+83,"Cusco",46,17,38,14
+295,"Cusco",60,22,55,26
+2618,"Piura",92,27,72,33
+2521,"Piura",91,31,66,25
+2359,"Piura",96,31,72,25
+1439,"Cusco",67,25,48,19
+224,"Piura",46,22,47,19
+2406,"Piura",124,34,70,33
+352,"Cusco",75,15,45,19
+77,"Cusco",144,36,65,30
+3124,"Lima Metropolitana",101,30,64,27
+3329,"Lima Metropolitana",151,35,74,31
+2250,"Piura",83,24,56,30
+3236,"Lima Metropolitana",105,32,57,25
+3232,"Lima Metropolitana",80,18,43,21
+3394,"Lima Metropolitana",51,22,44,8
+2141,"Cusco",88,27,53,23
+719,"Loreto",104,33,68,27
+702,"Loreto",142,35,76,35
+3263,"Lima Metropolitana",146,33,66,25
+1362,"Piura",69,21,55,22
+3452,"Lima Metropolitana",118,32,61,23
+2006,"Loreto",84,27,61,20
+2363,"Piura",134,32,76,35
+1516,"Loreto",43,24,56,20
+2603,"Piura",101,31,53,21
+3216,"Lima Metropolitana",127,31,53,28
+2519,"Piura",82,28,69,21
+1108,"Cusco",45,13,37,12
+2520,"Piura",70,23,59,26
+1881,"Piura",100,34,76,28
+394,"Piura",60,22,49,20
+700,"Loreto",136,33,75,35
+2271,"Piura",75,23,57,24
+3344,"Lima Metropolitana",115,30,59,21
+86,"Cusco",101,31,48,26
+259,"Piura",96,25,63,29
+3128,"Lima Metropolitana",111,35,66,32
+2523,"Piura",84,34,73,28
+2264,"Piura",63,21,52,22
+2144,"Cusco",60,20,44,17
+3174,"Lima Metropolitana",55,18,46,22
+1522,"Loreto",117,30,69,29
+2802,"Lima Metropolitana",115,29,58,29
+996,"Cusco",57,16,47,16
+640,"Piura",71,21,54,22
+623,"Piura",65,23,49,21
+929,"Cusco",82,20,60,22
+1533,"Loreto",55,24,43,23
+707,"Loreto",126,32,75,34
+5,"Piura",109,26,56,27
+3275,"Lima Metropolitana",82,23,50,20
+2592,"Piura",87,28,64,25
+2348,"Piura",94,34,76,30
+76,"Cusco",97,24,54,24
+1356,"Cusco",110,27,61,25
+3294,"Lima Metropolitana",90,26,54,19
+1357,"Cusco",93,24,59,23
+221,"Piura",81,26,48,27
+505,"Loreto",110,34,60,26
+2522,"Piura",53,26,58,15
+2378,"Piura",129,32,77,35
+1349,"Cusco",113,27,50,25
+1864,"Piura",105,34,75,27
+1526,"Loreto",101,29,69,23
+361,"Cusco",79,20,49,19
+4,"Piura",115,27,57,26
+785,"Loreto",84,22,52,24
+1511,"Loreto",86,34,60,27
+3309,"Lima Metropolitana",79,27,49,22
+3265,"Lima Metropolitana",95,27,58,27
+3113,"Lima Metropolitana",136,28,62,28
+13,"Piura",97,25,55,26
+2619,"Piura",97,31,75,31
+397,"Piura",71,25,57,20
+1303,"Loreto",79,22,63,31
+3300,"Lima Metropolitana",101,32,61,24
+787,"Loreto",95,24,53,24
+3291,"Lima Metropolitana",94,28,58,23
+2269,"Piura",101,31,61,28
+3270,"Lima Metropolitana",131,29,54,27
+775,"Loreto",103,25,54,26
+2272,"Piura",105,31,62,29
+3142,"Lima Metropolitana",81,32,62,24
+3250,"Lima Metropolitana",80,24,57,23
+469,"Loreto",92,22,52,22
+1397,"Cusco",82,23,56,21
+2340,"Piura",67,31,66,23
+7,"Piura",102,24,46,26
+887,"Piura",101,29,70,31
+482,"Loreto",141,35,62,29
+1307,"Loreto",58,19,57,26
+2262,"Piura",60,21,52,24
+885,"Piura",88,32,44,35
+1363,"Piura",81,28,58,22
+2412,"Piura",108,25,66,27
+1111,"Cusco",53,13,56,21
+2370,"Piura",115,32,75,35
+2382,"Piura",121,32,65,34
+3154,"Lima Metropolitana",100,35,66,31
+2608,"Piura",51,25,37,14
+1520,"Loreto",86,29,59,24
+1044,"Piura",63,24,58,27
+3114,"Lima Metropolitana",140,32,56,31
+1521,"Loreto",41,21,52,17
+2364,"Piura",121,34,77,35
+2564,"Piura",82,20,43,18
+624,"Piura",70,20,57,22
+385,"Piura",153,20,73,30
+769,"Loreto",92,29,60,23
+3384,"Lima Metropolitana",65,19,57,15
+3345,"Lima Metropolitana",117,27,59,24
+1027,"Cusco",84,25,63,30
+1788,"Loreto",59,28,70,24
+3107,"Lima Metropolitana",95,28,52,21
+26,"Piura",101,25,57,27
+271,"Piura",85,21,62,27
+2375,"Piura",123,32,77,34
+2270,"Piura",128,36,61,35
+609,"Cusco",65,24,54,17
+3136,"Lima Metropolitana",93,28,55,22
+3418,"Lima Metropolitana",109,29,57,20
+1245,"Loreto",106,26,58,26
+2506,"Piura",99,26,62,27
+3256,"Lima Metropolitana",144,32,59,30
+832,"Cusco",70,33,63,22
+399,"Piura",87,24,60,22
+1222,"Cusco",73,29,56,23
+2524,"Piura",81,33,62,25
+2411,"Piura",83,27,57,26
+3365,"Lima Metropolitana",153,36,56,28
+1320,"Loreto",62,23,61,27
+2573,"Loreto",114,29,57,30
+398,"Piura",72,21,52,18
+1454,"Cusco",62,25,53,19
+284,"Cusco",79,24,55,28
+280,"Piura",90,23,57,24
+2401,"Piura",83,29,70,27
+1031,"Cusco",87,24,64,23
+3157,"Lima Metropolitana",102,32,64,31
+1119,"Cusco",51,13,46,16
+948,"Piura",98,29,66,32
+3477,"Lima Metropolitana",82,21,46,17
+258,"Piura",57,19,57,21
+928,"Cusco",54,19,56,18
+359,"Cusco",78,17,46,19
+2404,"Piura",81,26,60,24
+1360,"Piura",67,19,56,21
+1041,"Piura",92,31,49,27
+3271,"Lima Metropolitana",100,21,52,22
+3158,"Lima Metropolitana",135,34,72,31
+819,"Cusco",98,32,72,24
+1023,"Cusco",69,24,59,23
+3305,"Lima Metropolitana",77,23,43,24
+216,"Piura",79,23,53,25
+1107,"Cusco",42,13,37,12
+3340,"Lima Metropolitana",86,24,52,22
+298,"Cusco",83,25,55,29
+2252,"Piura",83,24,58,27
+2350,"Piura",59,25,68,18
+815,"Cusco",63,20,39,20
+393,"Piura",61,24,55,23
+290,"Cusco",56,23,55,27
+291,"Cusco",48,20,55,22
+2392,"Piura",110,32,59,27
+3188,"Lima Metropolitana",156,36,63,30
+3378,"Lima Metropolitana",54,18,51,12
+2261,"Piura",74,25,54,23
+292,"Cusco",66,22,55,25
+915,"Cusco",68,22,59,19
+916,"Cusco",74,19,57,18
+622,"Piura",73,18,50,20
+773,"Loreto",92,25,58,25
+1302,"Loreto",70,21,59,30
+724,"Loreto",110,33,69,28
+1183,"Loreto",73,20,47,17
+935,"Cusco",79,20,69,23
+3177,"Lima Metropolitana",121,34,48,27
+924,"Cusco",84,19,59,22
+618,"Piura",69,22,51,20
+463,"Loreto",96,24,47,22
+1235,"Loreto",67,19,54,18
+2560,"Piura",112,27,54,23
+1865,"Piura",77,31,70,24
+380,"Piura",154,26,77,28
+270,"Piura",70,20,59,23
+1225,"Cusco",68,29,52,21
+3473,"Lima Metropolitana",140,36,56,25
+621,"Piura",82,20,57,21
+3445,"Lima Metropolitana",84,28,55,15
+219,"Piura",73,23,51,25
+627,"Piura",57,14,56,22
+1509,"Loreto",48,23,50,19
+3168,"Lima Metropolitana",76,22,55,21
+2342,"Piura",60,23,63,26
+3411,"Lima Metropolitana",73,26,58,16
+881,"Loreto",71,32,57,28
+390,"Piura",82,23,56,22
+2405,"Piura",102,30,69,30
+1963,"Piura",87,18,60,26
+331,"Piura",98,27,61,28
+2606,"Piura",74,31,59,21
+3255,"Lima Metropolitana",77,28,56,24
+1419,"Cusco",120,31,70,31
+1285,"Piura",63,20,63,22
+388,"Piura",57,20,52,20
+2244,"Piura",95,26,62,21
+1329,"Piura",56,16,63,20
+1197,"Piura",97,31,60,24
+1401,"Cusco",142,35,74,32
+3080,"Lima Metropolitana",104,35,77,21
+2821,"Lima Metropolitana",77,22,52,23
+2569,"Loreto",136,30,57,29
+340,"Piura",86,20,56,24
+1539,"Loreto",58,26,59,21
+1084,"Piura",91,36,64,23
+1603,"Loreto",87,26,62,23
+3122,"Lima Metropolitana",81,18,54,20
+2223,"Piura",107,30,59,22
+3215,"Lima Metropolitana",113,33,76,29
+3068,"Lima Metropolitana",99,35,51,27
+323,"Cusco",68,20,58,19
+1811,"Cusco",96,25,61,25
+1408,"Loreto",83,27,76,28
+2085,"Piura",111,28,66,27
+2104,"Loreto",74,31,63,25
+778,"Loreto",85,22,54,22
+2287,"Piura",97,24,52,28
+873,"Loreto",61,31,57,27
+2279,"Piura",123,25,61,26
+2127,"Piura",92,25,65,27
+1706,"Cusco",90,18,50,21
+316,"Cusco",122,34,76,31
+367,"Piura",79,23,59,24
+9,"Piura",94,23,57,25
+2082,"Loreto",71,30,60,29
+2466,"Piura",91,23,69,27
+3387,"Lima Metropolitana",92,28,58,27
+19,"Piura",64,21,49,20
+370,"Piura",152,22,51,24
+405,"Piura",60,23,56,23
+1601,"Loreto",142,30,65,30
+2816,"Lima Metropolitana",57,13,49,22
+57,"Cusco",39,20,50,18
+1776,"Piura",65,29,64,20
+2501,"Piura",97,27,51,23
+951,"Piura",80,25,67,33
+683,"Loreto",85,28,67,28
+856,"Loreto",110,33,68,29
+2182,"Piura",93,25,51,23
+1242,"Loreto",52,15,41,11
+407,"Piura",57,23,55,21
+1804,"Cusco",73,25,59,23
+2078,"Cusco",77,27,59,24
+1278,"Piura",72,16,56,22
+3443,"Lima Metropolitana",139,25,68,31
+2291,"Piura",113,28,54,31
+2571,"Loreto",134,23,56,31
+3469,"Lima Metropolitana",93,25,47,23
+746,"Cusco",75,22,57,19
+1673,"Loreto",56,22,50,25
+788,"Cusco",74,20,55,23
+1557,"Loreto",81,24,66,24
+2442,"Piura",116,30,60,25
+60,"Cusco",55,23,57,26
+1616,"Piura",74,18,47,19
+697,"Loreto",72,30,68,25
+1602,"Loreto",113,29,64,30
+3198,"Lima Metropolitana",98,31,69,26
+1696,"Cusco",93,17,51,17
+1859,"Loreto",113,28,73,30
+554,"Cusco",137,36,64,34
+1874,"Piura",47,13,42,17
+2820,"Lima Metropolitana",83,19,59,25
+2532,"Piura",88,32,67,25
+2071,"Cusco",78,27,61,24
+2827,"Lima Metropolitana",39,20,45,20
+676,"Loreto",86,28,67,25
+1831,"Piura",79,26,46,18
+979,"Loreto",94,21,52,22
+1406,"Loreto",79,27,62,28
+718,"Loreto",74,30,62,23
+1201,"Cusco",81,23,40,18
+55,"Cusco",51,23,57,24
+791,"Cusco",90,23,55,25
+155,"Piura",82,21,52,26
+2390,"Piura",104,35,76,30
+3412,"Lima Metropolitana",128,32,67,32
+3466,"Lima Metropolitana",100,29,66,25
+319,"Cusco",53,22,49,18
+1767,"Piura",110,29,77,28
+165,"Piura",81,21,56,26
+1887,"Piura",119,34,77,28
+41,"Piura",96,28,63,29
+974,"Loreto",108,26,63,27
+63,"Cusco",52,23,48,20
+1838,"Loreto",133,32,73,29
+877,"Loreto",68,31,55,26
+3175,"Lima Metropolitana",92,30,69,25
+2090,"Loreto",88,31,65,30
+1203,"Cusco",133,29,60,25
+1966,"Piura",79,20,50,21
+1321,"Piura",63,20,63,22
+366,"Piura",77,24,56,23
+2818,"Lima Metropolitana",83,23,53,23
+680,"Loreto",69,27,66,24
+691,"Loreto",82,30,67,28
+1612,"Piura",102,29,65,28
+38,"Piura",71,24,51,22
+1775,"Piura",99,29,77,27
+688,"Loreto",95,30,64,29
+1843,"Loreto",148,34,76,31
+542,"Cusco",67,22,56,21
+795,"Cusco",73,19,53,20
+742,"Cusco",40,14,49,20
+3070,"Lima Metropolitana",117,35,70,36
+2834,"Lima Metropolitana",89,22,50,22
+2459,"Piura",117,31,63,29
+1611,"Piura",131,31,69,27
+350,"Piura",82,19,55,21
+159,"Piura",82,20,55,26
+158,"Piura",83,21,55,26
+1281,"Piura",50,18,52,18
+2237,"Piura",65,27,66,24
+3203,"Lima Metropolitana",113,33,72,26
+3071,"Lima Metropolitana",91,33,73,35
+1689,"Cusco",75,22,68,28
+1055,"Cusco",72,25,57,23
+2194,"Piura",79,28,60,25
+2447,"Piura",121,26,69,29
+1745,"Cusco",68,16,48,13
+603,"Cusco",51,22,54,17
+16,"Piura",66,18,45,16
+2095,"Loreto",108,34,66,31
+40,"Piura",43,10,42,16
+1062,"Cusco",63,21,50,18
+21,"Piura",74,25,55,24
+1968,"Piura",92,27,59,29
+1783,"Piura",107,35,59,26
+1217,"Piura",80,25,69,29
+693,"Loreto",76,28,66,27
+797,"Cusco",71,20,51,20
+3463,"Lima Metropolitana",116,26,51,26
+1215,"Piura",99,25,64,28
+3066,"Lima Metropolitana",108,35,73,34
+1677,"Loreto",47,17,53,19
+1625,"Piura",98,23,55,25
+1535,"Loreto",78,22,64,30
+2326,"Piura",75,18,47,21
+3088,"Lima Metropolitana",97,35,73,35
+1773,"Piura",75,29,68,24
+3218,"Lima Metropolitana",120,30,74,27
+3213,"Lima Metropolitana",64,16,62,19
+1546,"Loreto",83,25,65,33
+1649,"Loreto",94,25,65,25
+1756,"Piura",66,26,73,19
+799,"Cusco",70,20,56,19
+615,"Piura",44,18,44,18
+2185,"Piura",62,27,49,18
+1629,"Piura",115,30,56,31
+753,"Cusco",49,16,52,22
+2108,"Loreto",78,24,57,23
+970,"Loreto",101,25,55,27
+1744,"Cusco",92,18,63,25
+318,"Cusco",75,20,59,21
+2531,"Piura",93,32,69,25
+3425,"Lima Metropolitana",131,31,76,31
+1871,"Piura",87,22,56,28
+946,"Cusco",143,31,43,29
+341,"Piura",84,20,52,23
+964,"Loreto",79,21,51,21
+2462,"Piura",89,31,66,25
+2277,"Piura",132,28,68,34
+3450,"Lima Metropolitana",68,19,50,24
+2130,"Cusco",70,19,50,18
+346,"Piura",83,21,52,22
+1702,"Cusco",97,28,73,34
+3221,"Lima Metropolitana",59,19,51,20
+1284,"Piura",63,20,65,23
+437,"Cusco",75,23,47,19
+1765,"Piura",68,30,70,22
+1326,"Piura",56,17,62,19
+694,"Loreto",109,30,67,28
+527,"Loreto",101,31,64,36
+1325,"Piura",49,16,63,19
+1772,"Piura",75,27,72,22
+1400,"Cusco",102,28,66,30
+616,"Piura",62,20,53,21
+1127,"Piura",102,22,63,28
+2235,"Piura",79,27,52,16
+2331,"Piura",66,15,49,28
+3459,"Lima Metropolitana",113,25,53,26
+686,"Loreto",97,29,67,26
+605,"Cusco",63,24,48,18
+848,"Loreto",112,32,73,31
+2828,"Lima Metropolitana",115,27,62,28
+2211,"Piura",80,25,55,23
+342,"Piura",83,21,59,22
+3419,"Lima Metropolitana",76,22,50,22
+1698,"Cusco",87,25,69,32
+1244,"Piura",67,18,59,22
+2386,"Piura",96,32,75,33
+2508,"Piura",102,23,53,21
+1671,"Loreto",51,18,45,19
+844,"Loreto",109,31,73,25
+2131,"Cusco",42,13,51,14
+732,"Cusco",79,22,54,21
+2147,"Piura",116,26,63,30
+1664,"Loreto",76,20,55,31
+1771,"Piura",75,28,67,23
+3379,"Lima Metropolitana",71,20,57,22
+3323,"Lima Metropolitana",120,22,52,23
+1570,"Piura",117,31,67,29
+853,"Loreto",110,31,78,31
+334,"Piura",93,20,54,24
+2105,"Loreto",71,25,57,18
+330,"Piura",76,19,52,23
+2441,"Piura",123,30,59,23
+1588,"Loreto",141,30,65,30
+551,"Cusco",128,34,59,34
+3430,"Lima Metropolitana",88,24,59,26
+3200,"Lima Metropolitana",116,35,67,26
+1692,"Cusco",90,25,67,33
+3464,"Lima Metropolitana",136,24,66,29
+2329,"Piura",72,15,49,25
+2453,"Piura",95,32,63,27
+3416,"Lima Metropolitana",69,14,46,18
+687,"Loreto",74,27,67,28
+757,"Cusco",67,17,58,20
+973,"Loreto",89,24,58,23
+1323,"Piura",64,18,65,21
+1777,"Cusco",78,24,49,28
+403,"Piura",80,24,55,21
+2216,"Piura",83,31,65,22
+2813,"Lima Metropolitana",87,25,56,21
+760,"Cusco",87,23,56,24
+1661,"Loreto",78,29,59,26
+1214,"Piura",78,19,56,22
+369,"Piura",56,21,54,23
+1494,"Piura",90,28,70,27
+1211,"Piura",93,22,63,25
+1493,"Piura",104,29,66,26
+2087,"Piura",40,14,50,15
+2209,"Piura",84,29,60,21
+1491,"Piura",62,21,61,22
+1196,"Piura",58,17,61,19
+160,"Piura",85,20,53,26
+1328,"Piura",78,20,64,21
+3470,"Lima Metropolitana",110,26,49,26
+1766,"Piura",77,30,75,28
+2274,"Piura",53,23,57,22
+1416,"Loreto",62,25,63,28
+882,"Loreto",63,30,55,24
+430,"Cusco",99,29,69,35
+2233,"Piura",58,26,50,21
+2069,"Cusco",64,23,59,22
+246,"Cusco",66,19,49,21
+846,"Loreto",109,34,53,26
+2809,"Lima Metropolitana",68,23,48,22
+429,"Cusco",96,32,63,32
+602,"Cusco",58,22,53,18
+347,"Piura",68,17,45,17
+1421,"Cusco",131,33,61,25
+3302,"Lima Metropolitana",90,22,47,20
+3493,"Lima Metropolitana",85,22,60,23
+1052,"Cusco",80,25,58,29
+1763,"Piura",39,23,56,21
+3488,"Lima Metropolitana",108,25,58,24
+871,"Loreto",65,31,51,28
+62,"Cusco",59,25,54,24
+1624,"Piura",102,27,53,29
+1280,"Piura",70,20,62,23
+1627,"Piura",119,30,62,31
+3442,"Lima Metropolitana",110,28,59,25
+852,"Loreto",108,28,78,27
+536,"Cusco",74,21,55,22
+2450,"Piura",102,31,63,26
+792,"Cusco",78,22,58,23
+1427,"Cusco",122,28,62,30
+3065,"Lima Metropolitana",104,33,52,29
+1216,"Piura",85,23,62,25
+1106,"Piura",120,32,67,33
+2187,"Piura",80,27,61,27
+339,"Piura",80,23,50,25
+2179,"Piura",92,22,48,23
+904,"Cusco",61,22,45,19
+1705,"Cusco",86,19,60,22
+969,"Loreto",114,26,53,27
+2129,"Cusco",38,10,49,12
+1134,"Cusco",43,26,50,16
+685,"Loreto",70,29,65,27
+1279,"Piura",55,19,57,18
+2080,"Cusco",63,20,57,20
+906,"Cusco",57,20,48,19
+2533,"Piura",92,32,72,25
+3079,"Lima Metropolitana",116,36,78,36
+2208,"Piura",81,26,53,18
+2808,"Lima Metropolitana",87,21,56,28
+2458,"Piura",108,32,64,28
+1077,"Piura",92,34,63,21
+1126,"Piura",75,17,58,23
+3217,"Lima Metropolitana",99,30,68,24
+253,"Cusco",66,23,49,19
+322,"Cusco",65,21,59,18
+879,"Loreto",62,28,56,24
+3381,"Lima Metropolitana",110,33,64,30
+3429,"Lima Metropolitana",90,25,69,26
+3008,"Lima Metropolitana",144,32,75,30
+1615,"Piura",86,25,56,23
+1753,"Piura",89,31,77,25
+790,"Cusco",74,20,57,21
+2504,"Piura",82,24,48,20
+1747,"Cusco",71,16,50,19
+737,"Cusco",44,15,51,16
+2822,"Lima Metropolitana",121,28,69,29
+3438,"Lima Metropolitana",100,29,71,28
+756,"Cusco",70,23,54,23
+1704,"Cusco",94,26,66,34
+501,"Loreto",82,28,51,22
+1701,"Cusco",88,26,70,28
+3462,"Lima Metropolitana",107,32,60,28
+2971,"Lima Metropolitana",114,34,60,30
+1918,"Piura",62,17,54,25
+1288,"Piura",49,18,60,17
+3520,"Lima Metropolitana",79,22,33,17
+156,"Piura",82,21,53,26
+1261,"Piura",70,19,58,22
+345,"Piura",78,19,55,21
+1061,"Cusco",85,22,53,19
+2328,"Piura",74,17,52,24
+431,"Cusco",106,32,57,26
+2286,"Piura",94,20,58,27
+320,"Cusco",80,23,61,23
+1703,"Cusco",72,21,66,25
+2281,"Piura",93,22,55,28
+1758,"Piura",92,24,75,25
+1760,"Piura",61,29,63,23
+2534,"Piura",92,32,70,27
+945,"Cusco",141,31,46,30
+2588,"Cusco",89,24,51,23
+2186,"Piura",44,15,40,18
+1423,"Cusco",116,25,57,26
+2615,"Piura",65,14,56,20
+2238,"Piura",49,25,55,25
+321,"Cusco",69,21,61,21
+1413,"Loreto",59,28,58,28
+1079,"Piura",74,32,67,24
+2505,"Piura",84,25,55,19
+2461,"Piura",69,30,47,20
+2231,"Piura",61,23,54,24
+2278,"Piura",113,24,65,29
+1610,"Piura",116,27,55,28
+1410,"Loreto",62,28,57,28
+2327,"Piura",89,20,50,25
+679,"Loreto",70,26,62,23
+682,"Loreto",62,27,63,28
+1195,"Piura",70,21,54,18
+745,"Cusco",75,22,56,20
+1292,"Piura",46,15,51,15
+3490,"Lima Metropolitana",53,22,51,16
+2832,"Lima Metropolitana",98,20,56,21
+555,"Cusco",71,15,64,22
+3408,"Lima Metropolitana",110,31,68,24
+2332,"Piura",63,24,53,21
+422,"Piura",62,21,55,23
+1241,"Piura",87,28,69,27
+2180,"Piura",76,23,54,24
+1813,"Cusco",90,25,63,25
+545,"Cusco",100,28,54,28
+3332,"Lima Metropolitana",81,21,36,18
+1674,"Loreto",79,20,59,30
+608,"Cusco",64,25,57,20
+1291,"Piura",67,22,65,23
+2207,"Piura",89,28,65,25
+1803,"Cusco",88,30,64,27
+1618,"Piura",81,22,51,19
+1492,"Piura",61,19,58,21
+1327,"Piura",39,16,42,15
+3434,"Lima Metropolitana",98,29,71,31
+2530,"Piura",63,30,66,23
+3074,"Lima Metropolitana",90,35,77,35
+2189,"Piura",67,26,53,23
+740,"Cusco",68,22,59,22
+599,"Cusco",62,23,53,21
+329,"Cusco",69,21,60,19
+2968,"Lima Metropolitana",105,28,68,24
+1411,"Loreto",54,22,59,29
+1258,"Piura",84,24,54,26
+1164,"Piura",102,33,55,28
+2219,"Piura",143,29,66,30
+59,"Cusco",47,13,49,18
+1287,"Piura",46,20,59,19
+1190,"Cusco",51,22,54,17
+1827,"Piura",78,21,60,22
+3476,"Lima Metropolitana",102,25,58,23
+2509,"Piura",87,22,54,22
+678,"Loreto",64,26,62,23
+1969,"Piura",67,20,49,19
+3483,"Lima Metropolitana",71,21,47,22
+880,"Loreto",64,33,54,26
+1124,"Piura",92,21,60,25
+1919,"Piura",71,21,56,25
+2510,"Piura",88,21,48,21
+2444,"Piura",105,32,62,24
+2294,"Piura",86,22,55,28
+3460,"Lima Metropolitana",103,26,67,29
+2812,"Lima Metropolitana",61,21,45,20
+2098,"Loreto",63,21,58,16
+2197,"Piura",111,29,75,33
+552,"Cusco",124,36,64,34
+3087,"Lima Metropolitana",74,30,75,30
+3386,"Lima Metropolitana",134,31,76,33
+64,"Cusco",44,21,53,17
+2614,"Piura",93,25,63,25
+2323,"Piura",80,21,54,27
+1277,"Piura",74,21,57,23
+3073,"Lima Metropolitana",121,34,71,35
+1286,"Piura",61,19,58,22
+1056,"Cusco",56,22,50,18
+1040,"Piura",100,21,60,27
+2192,"Piura",89,29,41,21
+2336,"Piura",38,15,29,13
+1212,"Piura",86,21,63,28
+1714,"Cusco",70,23,62,25
+1839,"Loreto",130,32,70,31
+872,"Loreto",64,31,53,24
+692,"Loreto",80,28,62,26
+245,"Cusco",56,19,44,18
+965,"Loreto",104,24,54,27
+876,"Loreto",66,29,49,24
+1207,"Cusco",53,18,45,15
+2284,"Piura",122,26,63,30
+1414,"Loreto",62,27,69,28
+1054,"Cusco",81,24,52,22
+3205,"Lima Metropolitana",74,29,67,26
+1322,"Piura",62,20,65,20
+3456,"Lima Metropolitana",107,22,54,25
+56,"Cusco",55,23,59,26
+24,"Piura",47,18,38,19
+1621,"Piura",129,28,65,29
+368,"Piura",58,18,52,20
+65,"Cusco",39,16,45,16
+1534,"Loreto",60,16,58,22
+414,"Piura",72,24,55,26
+22,"Piura",59,21,49,20
+1964,"Piura",80,23,56,26
+2314,"Piura",121,34,76,34
+850,"Loreto",109,33,61,22
+977,"Loreto",110,25,56,26
+549,"Cusco",124,33,56,34
+1761,"Piura",106,28,77,27
+3126,"Lima Metropolitana",101,35,65,28
+690,"Loreto",94,30,67,29
+972,"Loreto",100,24,54,24
+2191,"Piura",81,28,62,19
+734,"Cusco",71,21,58,22
+604,"Cusco",49,21,53,17
+2234,"Piura",58,23,55,19
+1668,"Loreto",43,18,42,17
+1667,"Loreto",43,17,47,17
+1,"Piura",61,21,51,21
+1784,"Piura",74,22,53,19
+2335,"Piura",47,21,53,22
+2196,"Piura",86,26,54,25
+2195,"Piura",111,29,76,32
+327,"Cusco",68,21,61,19
+3295,"Lima Metropolitana",88,29,57,25
+1713,"Cusco",61,23,66,26
+2503,"Piura",81,19,49,18
+1529,"Loreto",40,16,47,15
+1672,"Loreto",70,21,58,28
+2448,"Piura",121,32,65,29
+845,"Loreto",109,26,68,22
+696,"Loreto",58,26,62,21
+1869,"Piura",71,20,57,23
+736,"Cusco",51,18,52,21
+252,"Cusco",63,22,47,19
+1407,"Loreto",71,26,65,29
+3283,"Lima Metropolitana",145,27,65,31
+420,"Piura",111,33,64,30
+2184,"Piura",62,18,51,18
+1198,"Piura",89,31,55,24
+3085,"Lima Metropolitana",95,34,76,30
+157,"Piura",82,20,54,25
+3413,"Lima Metropolitana",53,21,54,18
+3083,"Lima Metropolitana",93,35,77,35
+419,"Piura",114,32,67,32
+3485,"Lima Metropolitana",89,25,57,22
+2190,"Piura",70,24,57,24
+1294,"Piura",54,13,54,19
+2193,"Piura",39,11,42,15
+2500,"Piura",79,19,50,21
+750,"Cusco",67,22,59,22
+1988,"Cusco",81,13,50,16
+3479,"Lima Metropolitana",65,22,52,19
+1188,"Piura",67,20,62,24
+3372,"Lima Metropolitana",91,30,60,28
+1177,"Loreto",77,19,50,19
+415,"Piura",96,33,65,31
+416,"Piura",98,34,69,31
+3420,"Lima Metropolitana",138,25,60,28
+1675,"Loreto",59,18,51,24
+1690,"Cusco",95,28,65,32
+1608,"Loreto",107,30,65,27
+2086,"Piura",94,24,49,22
+1174,"Loreto",61,19,41,18
+1078,"Piura",64,27,60,18
+1830,"Piura",84,29,58,26
+3377,"Lima Metropolitana",59,18,59,22
+3324,"Lima Metropolitana",73,16,46,22
+1544,"Loreto",62,21,55,21
+2243,"Piura",46,20,62,27
+3277,"Lima Metropolitana",90,28,57,22
+1870,"Piura",64,16,55,21
+635,"Piura",46,16,48,18
+1075,"Loreto",147,31,66,31
+58,"Cusco",40,20,52,17
+2288,"Piura",86,23,53,25
+1846,"Loreto",126,32,75,31
+1566,"Piura",63,16,57,20
+2826,"Lima Metropolitana",98,23,59,24
+1872,"Piura",83,26,65,26
+171,"Piura",80,21,55,26
+170,"Piura",80,21,55,26
+3181,"Lima Metropolitana",101,27,68,24
+1762,"Piura",121,32,77,29
+2460,"Piura",81,32,62,25
+2133,"Cusco",67,20,52,17
+2222,"Piura",71,28,52,18
+1490,"Piura",78,17,47,19
+675,"Loreto",62,22,66,24
+674,"Loreto",62,22,66,24
+1632,"Cusco",84,20,62,19
+2099,"Loreto",58,21,44,16
+2276,"Piura",61,24,55,22
+975,"Loreto",80,17,50,18
+23,"Piura",41,16,42,15
+744,"Cusco",69,21,60,21
+1622,"Piura",97,23,55,26
+968,"Loreto",84,19,55,24
+3321,"Lima Metropolitana",148,25,71,35
+3326,"Lima Metropolitana",142,29,55,31
+3489,"Lima Metropolitana",92,30,60,28
+2246,"Piura",40,11,48,15
+337,"Piura",64,14,54,21
+508,"Loreto",85,20,56,19
+1541,"Loreto",75,22,57,22
+1695,"Cusco",83,17,45,17
+1540,"Loreto",59,18,58,22
+601,"Cusco",55,22,40,20
+506,"Loreto",95,29,60,34
+976,"Loreto",99,23,54,25
+1082,"Piura",85,29,70,26
+417,"Piura",119,34,67,33
+2245,"Piura",71,24,61,22
+2570,"Loreto",51,16,53,18
+432,"Cusco",88,31,63,29
+535,"Cusco",73,20,50,22
+2507,"Piura",81,18,52,22
+3397,"Lima Metropolitana",129,29,75,33
+169,"Piura",74,22,49,25
+789,"Cusco",76,20,56,23
+2275,"Piura",54,21,57,20
+2527,"Piura",48,15,53,22
+1619,"Piura",81,19,56,20
+2315,"Piura",101,33,75,33
+1585,"Loreto",80,22,58,24
+1626,"Piura",102,26,53,25
+435,"Cusco",117,30,69,31
+636,"Piura",69,20,55,23
+1663,"Loreto",71,23,53,29
+695,"Loreto",66,27,64,25
+3444,"Lima Metropolitana",86,34,61,17
+1676,"Loreto",67,20,47,27
+3212,"Lima Metropolitana",112,33,75,27
+1743,"Cusco",92,19,62,26
+2833,"Lima Metropolitana",57,20,54,20
+738,"Cusco",44,19,50,22
+1917,"Piura",87,24,62,25
+2005,"Loreto",62,25,61,21
+1774,"Piura",83,29,77,22
+39,"Piura",60,22,52,20
+1623,"Piura",113,25,62,31
+1488,"Piura",62,17,47,19
+436,"Cusco",84,22,43,24
+1768,"Piura",52,24,60,23
+1932,"Cusco",77,21,58,24
+1392,"Piura",77,22,44,19
+2083,"Loreto",61,25,56,29
+1194,"Piura",87,21,70,29
+3307,"Lima Metropolitana",98,22,47,25
+1420,"Cusco",112,28,62,31
+1930,"Cusco",75,18,50,16
+2204,"Piura",99,27,66,25
+3077,"Lima Metropolitana",116,36,76,36
+1845,"Loreto",106,30,71,29
+1489,"Piura",79,29,48,23
+1759,"Piura",42,24,70,21
+2446,"Piura",74,31,54,26
+1275,"Piura",100,24,65,27
+1202,"Cusco",100,28,65,28
+1556,"Loreto",48,20,57,21
+2388,"Piura",94,31,69,33
+1426,"Cusco",69,24,47,19
+1296,"Piura",50,18,64,18
+1123,"Piura",73,14,60,22
+1186,"Loreto",77,24,42,18
+1239,"Piura",68,20,62,22
+1693,"Cusco",94,18,60,19
+1757,"Piura",59,27,71,21
+3448,"Lima Metropolitana",76,25,51,13
+1688,"Cusco",86,19,69,26
+752,"Cusco",72,22,56,20
+3084,"Lima Metropolitana",85,30,68,33
+598,"Cusco",67,22,45,17
+3009,"Lima Metropolitana",101,30,70,27
+743,"Cusco",75,24,61,18
+3328,"Lima Metropolitana",91,19,47,20
+1715,"Cusco",74,24,70,26
+1634,"Cusco",68,19,50,18
+550,"Cusco",83,26,51,21
+2202,"Piura",75,19,57,21
+1700,"Cusco",75,23,67,23
+49,"Cusco",49,21,50,18
+2502,"Piura",49,15,46,19
+1605,"Loreto",97,29,62,25
+1129,"Piura",101,23,64,27
+3432,"Lima Metropolitana",109,29,71,26
+2829,"Lima Metropolitana",120,25,67,29
+2203,"Piura",121,33,76,34
+51,"Cusco",37,16,50,17
+2221,"Piura",73,22,58,20
+2226,"Piura",71,24,60,19
+3426,"Lima Metropolitana",137,32,77,30
+1571,"Piura",120,33,69,28
+749,"Cusco",64,20,56,21
+1769,"Piura",40,22,70,19
+1770,"Piura",36,22,59,17
+1403,"Piura",62,17,48,17
+1243,"Piura",69,18,62,22
+1059,"Cusco",86,23,50,21
+733,"Cusco",56,18,56,20
+2293,"Piura",90,22,59,27
+2817,"Lima Metropolitana",79,22,47,21
+2236,"Piura",54,23,55,26
+1755,"Piura",37,17,56,16
+3195,"Lima Metropolitana",72,32,62,21
+971,"Loreto",80,21,51,23
+1754,"Piura",64,25,65,20
+1293,"Piura",52,20,60,21
+1785,"Piura",69,23,50,17
+1927,"Cusco",84,22,56,23
+2830,"Lima Metropolitana",60,23,56,21
+1707,"Cusco",75,18,56,14
+251,"Cusco",60,21,49,19
+2077,"Cusco",73,24,61,24
+1694,"Cusco",90,21,57,18
+2224,"Piura",84,27,68,21
+3457,"Lima Metropolitana",112,23,57,30
+3523,"Lima Metropolitana",83,24,59,18
+2445,"Piura",134,32,70,27
+1965,"Piura",83,25,62,27
+3392,"Lima Metropolitana",131,25,70,30
+537,"Cusco",60,16,50,19
+2616,"Piura",59,16,60,22
+2,"Piura",52,20,44,23
+1635,"Cusco",81,22,59,27
+3399,"Lima Metropolitana",99,22,65,31
+2292,"Piura",64,17,54,24
+2537,"Piura",85,31,65,25
+1199,"Piura",67,20,49,21
+1208,"Cusco",67,22,47,21
+2084,"Piura",98,20,63,29
+2810,"Lima Metropolitana",105,20,59,26
+161,"Piura",85,20,55,26
+794,"Cusco",77,22,56,21
+61,"Cusco",41,20,52,18
+1210,"Piura",75,22,56,22
+2206,"Piura",79,24,48,23
+2528,"Piura",76,28,68,25
+3178,"Lima Metropolitana",87,31,71,24
+967,"Loreto",103,25,53,27
+54,"Cusco",64,21,57,25
+249,"Cusco",67,20,50,21
+1711,"Cusco",70,25,65,24
+1218,"Piura",96,29,68,29
+747,"Cusco",53,18,58,21
+2205,"Piura",109,22,60,22
+1283,"Piura",42,15,59,19
+798,"Cusco",75,21,54,24
+1795,"Loreto",89,28,60,28
+633,"Piura",50,19,50,21
+1418,"Cusco",117,29,66,30
+793,"Cusco",73,21,54,20
+2073,"Cusco",70,22,57,20
+1606,"Loreto",112,30,65,29
+1607,"Loreto",80,22,58,18
+344,"Piura",71,15,54,21
+735,"Cusco",70,19,57,22
+1633,"Cusco",77,21,47,17
+2811,"Lima Metropolitana",50,19,48,20
+905,"Cusco",77,25,50,22
+2587,"Cusco",45,17,47,17
+1746,"Cusco",80,18,58,18
+2225,"Piura",81,23,56,25
+1934,"Cusco",79,21,56,23
+1289,"Piura",70,24,63,24
+684,"Loreto",74,26,65,29
+3011,"Lima Metropolitana",98,22,48,21
+3006,"Lima Metropolitana",101,22,62,23
+1175,"Loreto",51,16,33,15
+1060,"Cusco",54,18,50,18
+2585,"Cusco",81,24,51,22
+907,"Cusco",37,19,48,15
+1425,"Cusco",77,26,41,18
+3451,"Lima Metropolitana",85,23,61,22
+2831,"Lima Metropolitana",81,18,57,21
+544,"Cusco",54,17,45,20
+3251,"Lima Metropolitana",72,21,43,18
+2814,"Lima Metropolitana",74,22,59,22
+3390,"Lima Metropolitana",52,15,43,18
+1081,"Piura",104,35,71,25
+1787,"Piura",110,33,64,33
+2230,"Piura",46,16,48,19
+2232,"Piura",58,20,45,20
+2455,"Piura",106,28,61,28
+944,"Cusco",138,30,47,29
+677,"Loreto",88,28,63,26
+689,"Loreto",72,27,63,24
+2823,"Lima Metropolitana",81,23,58,23
+1276,"Piura",84,20,62,23
+1617,"Piura",126,23,56,27
+1412,"Loreto",55,25,56,28
+2280,"Piura",92,23,63,31
+3404,"Lima Metropolitana",137,25,67,31
+1666,"Loreto",51,19,48,21
+2325,"Piura",66,15,48,26
+3465,"Lima Metropolitana",94,31,56,27
+1650,"Loreto",80,29,56,24
+2535,"Piura",86,33,66,27
+3211,"Lima Metropolitana",75,32,73,24
+2295,"Piura",90,21,53,27
+3455,"Lima Metropolitana",51,10,53,19
+35,"Piura",42,17,48,18
+3063,"Lima Metropolitana",116,34,64,35
+1778,"Cusco",86,24,52,22
+1393,"Piura",70,17,49,19
+857,"Loreto",61,13,43,24
+1716,"Cusco",81,28,69,31
+1873,"Piura",68,21,40,19
+1636,"Cusco",83,19,49,13
+3396,"Lima Metropolitana",78,21,52,21
+883,"Loreto",61,30,53,22
+2825,"Lima Metropolitana",56,21,46,19
+2181,"Piura",99,26,49,24
+1989,"Cusco",66,26,41,17
+1613,"Piura",86,23,49,23
+3496,"Lima Metropolitana",105,27,59,24
+1187,"Loreto",77,19,50,19
+943,"Cusco",139,31,44,28
+2970,"Lima Metropolitana",82,22,62,24
+332,"Piura",87,19,55,23
+942,"Cusco",142,31,45,31
+1125,"Piura",76,18,61,23
+50,"Cusco",37,14,48,18
+2123,"Loreto",60,25,61,18
+2815,"Lima Metropolitana",68,23,49,20
+3276,"Lima Metropolitana",91,14,59,26
+854,"Loreto",105,31,78,29
+324,"Cusco",67,20,61,19
+849,"Loreto",107,33,68,31
+1764,"Piura",46,25,62,21
+913,"Cusco",50,19,53,20
+2454,"Piura",86,28,61,25
+2962,"Lima Metropolitana",101,25,62,29
+365,"Piura",51,22,54,23
+2132,"Cusco",46,15,45,17
+2183,"Piura",53,18,54,21
+1651,"Loreto",79,28,57,25
+254,"Cusco",55,17,49,19
+539,"Cusco",65,22,54,21
+3474,"Lima Metropolitana",106,25,59,24
+1213,"Piura",80,20,61,24
+1295,"Piura",60,19,65,23
+912,"Cusco",35,15,48,13
+3522,"Lima Metropolitana",66,22,35,15
+1133,"Cusco",33,25,41,16
+2290,"Piura",39,13,41,15
+3410,"Lima Metropolitana",53,20,42,17
+941,"Cusco",143,30,45,30
+600,"Cusco",58,23,54,19
+802,"Cusco",68,22,56,18
+3494,"Lima Metropolitana",89,22,59,22
+411,"Cusco",32,18,51,8
+1779,"Cusco",85,24,55,26
+2128,"Piura",74,21,60,22
+842,"Loreto",117,34,73,31
+3007,"Lima Metropolitana",80,30,67,29
+1379,"Loreto",78,21,49,22
+3403,"Lima Metropolitana",85,24,57,23
+1712,"Cusco",82,26,69,26
+1699,"Cusco",95,25,69,32
+914,"Cusco",35,16,50,14
+1422,"Cusco",116,28,61,31
+1847,"Loreto",77,21,70,28
+3471,"Lima Metropolitana",99,23,59,28
+250,"Cusco",60,21,49,20
+1260,"Piura",76,19,54,22
+1812,"Cusco",77,23,63,25
+1080,"Piura",72,31,68,24
+1409,"Loreto",58,25,61,29
+348,"Piura",71,15,53,20
+3422,"Lima Metropolitana",72,20,61,22
+606,"Cusco",53,22,55,17
+3521,"Lima Metropolitana",102,28,54,19
+1614,"Piura",82,25,63,23
+2088,"Piura",59,18,53,17
+1652,"Loreto",57,25,59,17
+754,"Cusco",63,18,56,19
+1547,"Loreto",80,21,59,30
+509,"Loreto",81,21,55,20
+1324,"Piura",58,18,61,21
+1191,"Cusco",58,23,52,20
+255,"Cusco",64,19,48,20
+938,"Cusco",140,32,45,30
+875,"Loreto",62,29,49,22
+412,"Cusco",47,17,61,21
+1165,"Piura",65,19,51,19
+1402,"Cusco",119,31,64,32
+42,"Piura",65,23,49,20
+2240,"Piura",74,27,65,25
+2819,"Lima Metropolitana",74,16,56,23
+681,"Loreto",90,29,64,29
+909,"Cusco",41,14,55,18
+796,"Cusco",70,20,55,21
+1128,"Piura",75,21,62,24
+2536,"Piura",78,26,67,25
+758,"Cusco",66,21,49,20
+3484,"Lima Metropolitana",69,23,56,20
+3491,"Lima Metropolitana",79,21,55,23
+1669,"Loreto",52,19,54,23
+3186,"Lima Metropolitana",46,27,41,20
+336,"Piura",67,16,53,18
+874,"Loreto",71,28,50,24
+2529,"Piura",73,30,69,23
+328,"Cusco",67,21,60,19
+878,"Loreto",66,31,57,26
+1709,"Cusco",73,18,59,19
+617,"Piura",42,16,50,20
+1665,"Loreto",55,17,39,24
+37,"Piura",36,13,39,14
+1938,"Piura",96,24,66,27
+1076,"Loreto",139,33,65,35
+2220,"Piura",65,21,57,20
+333,"Piura",67,14,53,20
+164,"Piura",80,21,54,22
+52,"Cusco",42,19,50,20
+1262,"Piura",67,19,54,23
+748,"Cusco",48,17,54,20
+1053,"Cusco",59,14,44,17
+614,"Piura",47,17,50,19
+3089,"Lima Metropolitana",95,33,76,33
+2452,"Piura",68,26,55,22
+1166,"Piura",67,20,51,16
+533,"Loreto",94,25,58,35
+3487,"Lima Metropolitana",107,25,60,24
+2289,"Piura",36,14,40,15
+1925,"Piura",57,18,47,17
+739,"Cusco",43,14,53,24
+2330,"Piura",74,18,52,29
+1604,"Loreto",81,20,64,22
+1708,"Cusco",78,18,57,20
+759,"Cusco",35,12,46,19
+3382,"Lima Metropolitana",59,19,50,16
+243,"Cusco",63,21,48,20
+1231,"Piura",62,16,58,23
+1398,"Piura",79,24,53,20
+531,"Loreto",71,19,47,17
+1200,"Cusco",87,28,61,30
+937,"Cusco",137,32,44,30
+338,"Piura",64,15,50,19
+2200,"Piura",82,30,46,25
+1710,"Cusco",57,18,64,23
+2389,"Piura",96,31,76,31
+741,"Cusco",66,20,60,21
+1829,"Piura",37,11,51,13
+1828,"Piura",37,15,50,12
+1232,"Piura",63,19,59,21
+966,"Loreto",82,19,49,22
+163,"Cusco",36,18,54,14
+908,"Cusco",41,16,59,16
+987,"Piura",70,24,53,23
+335,"Piura",80,18,56,21
+2103,"Loreto",75,25,62,22
+2214,"Piura",65,19,45,18
+343,"Piura",84,15,59,20
+1399,"Cusco",92,25,61,27
+162,"Cusco",41,15,55,18
+1691,"Cusco",60,18,69,24
+166,"Piura",87,22,54,26
+410,"Cusco",50,18,59,22
+2100,"Loreto",70,26,62,17
+2451,"Piura",71,21,54,21
+20,"Piura",34,15,39,17
+2201,"Piura",93,27,59,27
+2449,"Piura",74,25,51,18
+1939,"Piura",107,27,64,27
+2443,"Piura",82,19,44,20
+36,"Piura",69,22,52,24
+1936,"Cusco",84,19,56,24
+2247,"Piura",69,17,59,20
+843,"Loreto",105,28,58,25
+326,"Cusco",68,20,63,18
+607,"Cusco",52,21,42,17
+2109,"Loreto",89,34,63,30
+2102,"Loreto",70,24,59,18
+1656,"Loreto",69,25,54,18
+325,"Cusco",42,11,59,15
+1967,"Piura",62,13,52,19
+851,"Loreto",108,35,60,28
+1670,"Loreto",51,21,38,24
+364,"Piura",56,22,57,22
+2586,"Cusco",86,26,52,24
+2854,"Lima Metropolitana",119,28,60,28
+2860,"Lima Metropolitana",118,30,61,27
+2847,"Lima Metropolitana",115,27,69,30
+2852,"Lima Metropolitana",85,21,37,21
+2135,"Cusco",45,12,50,17
+2218,"Piura",74,27,59,22
+1417,"Piura",59,20,56,20
+634,"Piura",69,19,52,22
+2862,"Lima Metropolitana",107,20,60,27
+751,"Cusco",63,22,53,19
+2875,"Lima Metropolitana",110,27,58,28
+2334,"Piura",35,14,45,19
+2333,"Piura",48,17,51,18
+2239,"Piura",85,26,67,11
+2387,"Piura",106,33,75,30
+154,"Piura",74,20,48,25
+2456,"Piura",74,25,51,18
+1074,"Loreto",146,33,72,31
+886,"Piura",85,31,63,33
+1940,"Loreto",49,10,47,20
+3189,"Lima Metropolitana",70,27,42,21
+2120,"Loreto",77,24,51,22
+2285,"Piura",81,23,55,25
+3279,"Lima Metropolitana",109,23,59,27
+2097,"Loreto",61,21,55,18
+3010,"Lima Metropolitana",58,14,50,17
+2604,"Piura",136,35,54,34
+3075,"Lima Metropolitana",112,35,78,35
+3492,"Lima Metropolitana",80,25,59,21
+2145,"Cusco",86,26,55,21
+479,"Loreto",144,35,63,29
+492,"Loreto",106,25,54,24
+3435,"Lima Metropolitana",74,19,60,20
+2565,"Piura",86,26,55,25
+3140,"Lima Metropolitana",108,35,64,29
+2400,"Piura",130,35,75,34
+3475,"Lima Metropolitana",146,36,51,27
+2886,"Lima Metropolitana",102,31,65,26
+698,"Loreto",138,32,75,34
+404,"Piura",78,23,55,23
+1157,"Piura",70,24,56,27
+418,"Piura",63,26,49,24

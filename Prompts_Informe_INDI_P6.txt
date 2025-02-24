@@ -1,0 +1,555 @@
+Al aplicar la función con los siguientes argumentos (cambié el nombre de la función):
+
+suma_invertidos(INDI45, c(3:6, 10:14), puntaje_max = 6)
+
+Se genera el siguiente error:
+
+
+***
+
+Ok, dentro del contexto de data analysis y el lenguaje de programación estadística R, tengo una serie de ítems dentro de una dataframe, el cual además contiene muchas otras variables. Cada ítem es una columna. 
+Los ítems son de tipo Lickert, con un puntaje máximo de 6.
+Algunos de esos ítems son inversos, es decir que cada respuesta "1" es realidad es un "6",  cada respuesta "2" en realidad es un "5", etc. El resto de ítems son directos, es decir, no hay necesidad de tocarlos.
+Necesito que me generes el código que me permita:
+1. Invertir el puntaje de los ítems
+2. Crear una variable sumatoria de todos esos ítems después de haber "corregido" los ítems inversos
+3. Añadir esa nueva variable como una columna más dentro del dataframe 
+
+La función debe tener como argumentos:
+
+1. El nombre del dataframe 
+2. Los ítems inversos (en formato índice, por ejemplo c(3:6, 10:14)
+3. El nombre de la variable sumatoria que necesito crear
+4. Después de cuál variable ya existente en dataframe quiero que se R ubique la nueva variable sumatoria
+
+***
+
+Tengo este problema:
+
+Este código:
+
+INDI45_i <- INDI45 %>%
+  mutate(across(77:80, ~ -.x + 7)) 
+Hace lo que yo quiero que es coger el número 7 y restar el valor de cada ítem o columna dentro de los índices indicados. Pero el problema es que no funciona con
+
+
+***
+
+Necesito que cojas todas las cosas que hacen estas líneas de código:
+
+# Convierto los ítems S a numérico
+INDI45 <- INDI45 %>%
+  mutate(across(all_of(names(INDI45)[75:88]), as.numeric))
+# Creo un dataframe alternativo e Invierto ítems inversos
+INDI45_i <- INDI45 %>%
+  mutate(across(c(77:80, 84:88), ~ -.x + 7))  # Restamos 7 a las columnas de la posición 77 a 80 y 84 a 88
+# Ahora creo la variable sumatoria
+INDI45_i <- INDI45 %>%
+  mutate(SSUM = rowSums(across(all_of(names(INDI45_i)[75:88]))))
+# Ahora reubico la variable sumatoria donde la necesito
+INDI45_i <- INDI45_i %>% 
+  relocate(SSUM, .before = DSUM)
+
+Y que con ellas crees una función llamada "invertir y sumar", con los siguientes argumentos:
+
+invertir_y_sumar(
+  df = INDI45,
+  indices_inversos = c(77:80, 84:88),
+  nombre_variable_sumatoria = "SSUM",
+  posicion_variable = 104
+)
+
+¿Crees poder hacerlo, cariño?
+
+|SSUM         |     104|SSUM         |numeric                            |49, 38, 38                                                                                                  |
+|DSUM         |     105|DSUM         |numeric                            |21, 20, 23   
+
+***
+Al intentar excluir de mi dataframe ciertos casos, mediante el código:
+PULCRO <- PULCRO %>% 
+  filter(Modalidad != "No_Esc")
+Me salta este error:
+Error in `filter()`:
+! Can't transform a data frame with `NA` or `""` names.
+Backtrace:
+ 1. PULCRO %>% filter(Modalidad != "No_Esc")
+ 3. dplyr:::filter.data.frame(., Modalidad != "No_Esc")
+Error in filter(., Modalidad != "No_Esc") :
+
+Pero se supone que mi dataframe no contiene casos NA
+
+***
+
+Al intentar ejecutar este código (cluster analysis):
+
+library(cluster)  
+library(factoextra)
+df <- PULCRO  # Asumiendo que dataset tiene variables Likert y puntajes sumatorios
+
+# Calcular distancia de Gower
+dist_matrix <- daisy(df, metric = "gower")
+
+# Aplicar K-Medoids (PAM)
+kmed <- pam(dist_matrix, k = 4)  # Probar con 4 clusters
+
+# Visualizar resultados
+fviz_cluster(list(data = df, cluster = kmed$clustering))
+
+Obtengo el siguiente error:
+Error in colMeans(x, na.rm = TRUE) : 'x' must be numeric
+4.
+colMeans(x, na.rm = TRUE)
+3.
+scale.default(data)
+2.
+scale(data)
+1.
+fviz_cluster(list(data = df, cluster = kmed$clustering))
+
+
+***
+Ok, ahora necesito que crees una función que me permita realizar un cluster analysis con K-Medoids (PAM) con los paquetes cluster y factoextra, la cual deberá tener como output las tablas siguientes:
+
+1. Coeficiente de Silueta Promedio a tres decimales, conteniendo tanto el valor como el número de conglomerados del modelo
+1. Una tabla con el resultado de fviz_silhouette(silhouette_score)
+1. Una tabla con el resumen de las características de cada conglomerado en cuanto a lo numérico: por ejemplo con el código:
+df %>%
+  group_by(Cluster) %>%
+  summarise(across(where(is.numeric), mean, na.rm = TRUE))
+1. Una tabla con el resumen de las características de cada conglomerado en cuanto a las variables categóricas, por ejemplo:
+PULCRO %>%
+  group_by(Cluster) %>%
+  summarise(across(where(is.factor), ~ names(which.max(table(.x)))))
+
+Y un gráfico, por ejemplo con este código: 
+fviz_silhouette(silhouette_score)
+
+Los argumentos serán:
+
+a. El nombre del dataframe 
+b. El número de conglomerados
+
+
+***
+Necesito que ajustes la función según lo siguiente:
+
+1. Las tablas deben salir en formato markdown editables con knitr kable
+
+1. Incluye el Cluster Plot con título en castellano
+Siéntete libre de hacerme las preguntas que consideres necesarias para darme tu mejor resultado. 
+
+***
+Al tratar de ejecutar la función siguiente:
+cluster_kmedoids <- function(df, num_clusters) {
+  
+  # 1️⃣ Calcular la matriz de distancia de Gower
+  dist_matrix <- daisy(df, metric = "gower")
+  
+  # 2️⃣ Aplicar K-Medoids (PAM)
+  kmed <- pam(dist_matrix, k = num_clusters)
+  
+  # 3️⃣ Agregar los clusters al dataframe original
+  df$Cluster <- as.factor(kmed$clustering)  # Convertir a factor para evitar errores
+  
+  # 4️⃣ Calcular la silueta
+  silhouette_score <- silhouette(kmed$clustering, dist_matrix)
+  
+  # 5️⃣ Calcular el coeficiente de silueta promedio
+  sil_avg <- round(mean(silhouette_score[, 3]), 3)  # Redondear a 3 decimales
+  
+  # 6️⃣ Crear tablas de resumen en formato Markdown
+  
+  # ✅ Tabla de características numéricas por cluster (solo si hay columnas numéricas)
+  if (any(sapply(df, is.numeric))) {
+    resumen_numerico <- df %>%
+      group_by(Cluster) %>%
+      summarise(across(where(is.numeric), mean, na.rm = TRUE)) %>%
+      kable(format = "markdown", caption = "Resumen Numérico por Cluster")
+  } else {
+    resumen_numerico <- "No hay variables numéricas para resumir."
+  }
+  
+  # ✅ Tabla de características categóricas por cluster (solo si hay factores)
+  if (any(sapply(df, is.factor))) {
+    resumen_categorico <- df %>%
+      group_by(Cluster) %>%
+      summarise(across(where(is.factor), ~ names(which.max(table(.x))))) %>%
+      kable(format = "markdown", caption = "Resumen Categórico por Cluster")
+  } else {
+    resumen_categorico <- "No hay variables categóricas para resumir."
+  }
+  
+  # 7️⃣ Imprimir el coeficiente de silueta promedio
+  cat("\n## Coeficiente de Silueta Promedio\n")
+  cat("Silhouette Score:", sil_avg, "para", num_clusters, "conglomerados.\n\n")
+  
+  # 8️⃣ Mostrar las tablas en formato Markdown
+  cat("\n### Resumen Numérico por Cluster\n")
+  print(resumen_numerico)
+  
+  cat("\n### Resumen Categórico por Cluster\n")
+  print(resumen_categorico)
+  
+  # 9️⃣ Mostrar el gráfico de la silueta
+  print(fviz_silhouette(silhouette_score))
+  
+  # 🔟 Mostrar el Cluster Plot con título en español
+  print(fviz_cluster(kmed, data = df, ggtheme = theme_minimal()) + ggtitle("Gráfico de Clusters"))
+}
+
+Mediante los argumentos siguientes:
+
+cluster_kmedoids(df = PULCRO, num_clusters = 6)
+
+Se genera el error siguiente:
+
+Error in array(x, c(length(x), 1L), if (!is.null(names(x))) list(names(x),  : 
+  'data' must be of a vector type, was 'NULL'
+
+Por favor indícame cómo resolverlo
+
+
+***
+Tengo los resultados siguientes:
+
+> anyNA(PULCRO)  # Verifica si hay NA
+[1] FALSE
+> is.null(dist_matrix)
+[1] FALSE
+> class(dist_matrix)
+[1] "dissimilarity" "dist"         
+> is.null(kmed$clustering)
+Error: object 'kmed' not found
+
+Al parecer, kmed se ejecutó correctamente:
+library(cluster)
+kmed <- pam(dist_matrix, k = 6)  # Intenta correrlo manualmente
+Genera una lista con length 9
+
+
+***
+Obtengo los resultados siguientes:
+> str(kmed)  # Revisa la estructura del objeto
+List of 9
+ $ medoids   : int [1:6] 1173 1116 1595 256 289 40
+ $ id.med    : int [1:6] 1173 1116 1595 256 289 40
+ $ clustering: int [1:2196] 1 2 3 2 4 3 4 3 5 4 ...
+ $ objective : Named num [1:2] 0.19 0.187
+  ..- attr(*, "names")= chr [1:2] "build" "swap"
+ $ isolation : Factor w/ 3 levels "no","L","L*": 1 1 1 1 1 1
+  ..- attr(*, "names")= chr [1:6] "1" "2" "3" "4" ...
+ $ clusinfo  : num [1:6, 1:5] 492 386 431 157 448 ...
+  ..- attr(*, "dimnames")=List of 2
+  .. ..$ : NULL
+  .. ..$ : chr [1:5] "size" "max_diss" "av_diss" "diameter" ...
+ $ silinfo   :List of 3
+  ..$ widths         : num [1:2196, 1:3] 1 1 1 1 1 1 1 1 1 1 ...
+  .. ..- attr(*, "dimnames")=List of 2
+  .. .. ..$ : chr [1:2196] "1276" "1346" "1334" "1439" ...
+  .. .. ..$ : chr [1:3] "cluster" "neighbor" "sil_width"
+  ..$ clus.avg.widths: num [1:6] 0.223 0.485 0.3 0.416 0.245 ...
+  ..$ avg.width      : num 0.303
+ $ diss      : NULL
+ $ call      : language pam(x = dist_matrix, k = 6)
+ - attr(*, "class")= chr [1:2] "pam" "partition"
+> length(kmed$clustering)  # Verifica si tiene datos
+[1] 2196
+> head(kmed$clustering)  # Inspecciona los primeros valores
+[1] 1 2 3 2 4 3
+> PULCRO$Cluster <- as.factor(kmed$clustering) # me genera la columna adicional correctamente 
+> PULCRO$Cluster <- as.factor(kmed$clustering)
+> str(PULCRO)  # Verifica si Cluster está en el dataframe
+tibble [2,196 × 11] (S3: tbl_df/tbl/data.frame)
+ $ Escala_Cog. : num [1:2196] 93 90 78 85 53 76 62 66 62 71 ...
+  ..- attr(*, "label")= chr "Total dimensiones Desarrollo Cognitivo"
+  ..- attr(*, "format.spss")= chr "F5.0"
+  ..- attr(*, "display_width")= int 5
+ $ Escala_Mot. : num [1:2196] 25 29 19 28 11 24 17 29 23 21 ...
+  ..- attr(*, "label")= chr "Total dimensión Motor"
+  ..- attr(*, "format.spss")= chr "F5.0"
+  ..- attr(*, "display_width")= int 5
+ $ Escala_Soc  : num [1:2196] 34 74 56 79 50 55 58 57 58 44 ...
+ $ Escala_Dis. : num [1:2196] 21 34 20 31 17 16 17 27 15 25 ...
+  ..- attr(*, "label")= chr "Total dimensión Disposición para el aprendizaje"
+  ..- attr(*, "format.spss")= chr "F5.0"
+  ..- attr(*, "display_width")= int 5
+ $ Edad_Mes    : num [1:2196] 70 67 53 69 55 68 53 59 64 59 ...
+  ..- attr(*, "label")= chr "Edad en meses"
+  ..- attr(*, "format.spss")= chr "F8.2"
+  ..- attr(*, "display_width")= int 10
+ $ Región      : Factor w/ 3 levels "Costa","Sierra",..: 1 1 3 1 1 3 1 3 3 1 ...
+ $ Modalidad   : Factor w/ 3 levels "Cuna-Jardín",..: 2 2 2 2 2 2 2 2 2 1 ...
+ $ Departamento: Factor w/ 4 levels "Cusco","Lima Met.",..: 4 4 3 4 4 3 4 3 1 4 ...
+ $ Quintil     : Factor w/ 5 levels "1","2","3","4",..: 5 4 3 4 4 5 4 4 3 4 ...
+ $ Inst_Mat.   : Factor w/ 11 levels "Ninguno","Inicial",..: 6 5 4 5 1 3 3 6 5 9 ...
+ $ Cluster     : Factor w/ 6 levels "1","2","3","4",..: 1 2 3 2 4 3 4 3 5 4 ...
+> table(PULCRO$Cluster)  # Verifica la distribución de clusters
+
+  1   2   3   4   5   6 
+492 386 431 157 448 282 
+> silhouette_score <- silhouette(kmed$clustering, dist_matrix)
+> summary(silhouette_score)
+Silhouette of 2196 units in 6 clusters from silhouette.default(x = kmed$clustering, dist = dist_matrix) :
+ Cluster sizes and average silhouette widths:
+      492       386       431       157       448       282 
+0.2226328 0.4847533 0.2997729 0.4155771 0.2447456 0.2301577 
+Individual silhouette widths:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+-0.3294  0.2077  0.3244  0.3031  0.4065  0.6383 
+
+
+***
+La siguiente información:
+
+**Tabla de Coeficientes de Silueta por Clúster:**
+  cluster size ave.sil.width
+1       1  837          0.30
+2       2  761          0.35
+3       3  598          0.35
+
+
+|cluster |   n| mean_sil_width|
+|:-------|---:|--------------:|
+|1       | 837|      0.3032650|
+|2       | 761|      0.3486243|
+|3       | 598|      0.3495193|
+
+Se muestra duplicada. Solo necesito la segunda instancia, pero con el mean_sil_width redondeado a dos dígitos
+
+***
+
+La información sigue saliendo duplicada:
+  cluster size ave.sil.width
+1       1  837          0.30
+2       2  761          0.35
+3       3  598          0.35
+**Tabla de Coeficientes de Silueta por Clúster:**
+
+
+|cluster |   n| mean_sil_width|
+|:-------|---:|--------------:|
+|1       | 837|           0.30|
+|2       | 761|           0.35|
+|3       | 598|           0.35|
+
+
+***
+
+OK, ejecuté la función siguiente cuya finalidad es realizar un análisis de conglomerados o clusters para un dataframe compuesto de variables numéricas (puntajes en escalas de una pueba) y categóricas (información acerca de departamento de residencia, área, etc.):
+
+kmedoids_analysis <- function(df, num_clusters) {
+  
+  # 1. Aplicar el algoritmo PAM
+  pam_result <- pam(df, k = num_clusters)
+  
+  # 2. Calcular el coeficiente de silueta
+  silhouette_score <- silhouette(pam_result)
+  
+  # 3. Calcular el coeficiente de silueta promedio
+  avg_sil_width <- mean(silhouette_score[, "sil_width"])
+  
+  # Imprimir el coeficiente de silueta promedio con tres decimales y el número de clústeres
+  cat("**Coeficiente de Silueta Promedio:**", round(avg_sil_width, 3), "\n")
+  cat("**Número de Conglomerados:**", num_clusters, "\n\n")
+  
+  # 4. Resumen de coeficientes de silueta por clúster
+  fviz_sil <- fviz_silhouette(silhouette_score, print.summary = FALSE) # Suprimir la impresión
+  silhouette_data <- fviz_sil$data
+  silhouette_summary <- silhouette_data %>%
+    group_by(cluster) %>%
+    summarise(
+      n = n(),
+      mean_sil_width = round(mean(sil_width, na.rm = TRUE), 2)  # Redondear a dos dígitos
+    )
+  
+  cat("**Tabla de Coeficientes de Silueta por Clúster:**\n")
+  print(knitr::kable(silhouette_summary, format = "markdown"))
+  cat("\n")
+  
+  # 5. Resumen de las características numéricas de cada clúster
+  cat("**Resumen de Variables Numéricas por Clúster:**\n")
+  
+  # Añadir la asignación de clústeres al dataframe original
+  df$Cluster <- pam_result$clustering
+  
+  # numeric_summary <- df %>%
+  #   group_by(Cluster) %>%
+  #   summarise(across(where(is.numeric), mean, na.rm = TRUE))
+  numeric_summary <- df %>%
+  group_by(Cluster) %>%
+  summarise(across(where(is.numeric), ~ round(mean(.x, na.rm = TRUE), 2)))
+  
+  print(knitr::kable(numeric_summary, format = "markdown"))
+  cat("\n")
+  
+  # 6. Resumen de las características categóricas de cada clúster
+  cat("**Resumen de Variables Categóricas por Clúster:**\n")
+  
+  categorical_summary <- df %>%
+    group_by(Cluster) %>%
+    summarise(across(where(is.factor), ~ names(which.max(table(.x)))[1]))
+  
+  print(knitr::kable(categorical_summary, format = "markdown"))
+  cat("\n")
+  
+  # 7. Gráfico de silueta con título en castellano
+  # cat("**Gráfico de Silueta:**\n")
+  plot(fviz_sil)
+  
+  # Gráfico del clustering (Cluster Plot)
+  # cat("**Gráfico de Clústeres:**\n")
+  cluster_plot <- fviz_cluster(pam_result, data = df[, -ncol(df)], geom = "point") +
+    ggtitle("Gráfico de Clústeres") +
+    theme_gray()
+  
+  print(cluster_plot)
+  
+  # Eliminar la columna "Cluster" del dataframe (opcional)
+  df$Cluster <- NULL
+  
+  # Devolver los resultados
+  return(list(
+    silhouette_avg = avg_sil_width,
+    silhouette_table = silhouette_summary,
+    numeric_summary = numeric_summary,
+    categorical_summary = categorical_summary,
+    silhouette_plot = fviz_sil,
+    cluster_plot = cluster_plot
+  ))
+}
+
+Los argumentos fueron los siguientes:
+
+results <- kmedoids_analysis(PULCRO, 2)
+
+Y las tablas resultantes fueron las siguientes:
+
+Coeficiente de Silueta Promedio: 0.474 
+Número de Conglomerados: 2 
+
+Tabla de Coeficientes de Silueta por Clúster:
+
+
+|cluster |   n| mean_sil_width|
+|:-------|---:|--------------:|
+|1       | 635|           0.50|
+|2       | 386|           0.44|
+
+Resumen de Variables Numéricas por Clúster:
+
+
+| Cluster| Escala_Cog.| Escala_Mot.| Escala_Soc.| Escala_Dis.| Edad_Mes|
+|-------:|-----------:|-----------:|-----------:|-----------:|--------:|
+|       1|       57.87|       23.49|       53.98|       22.62|    44.62|
+|       2|       99.11|       33.62|       62.98|       30.39|    46.83|
+
+Resumen de Variables Categóricas por Clúster:
+
+
+| Cluster|Región |Departamento |Quintil |Inst_Prev. |Area   |
+|-------:|:------|:------------|:-------|:----------|:------|
+|       1|Costa  |Piura        |4       |No         |Urbana |
+|       2|Costa  |Lima Met.    |4       |No         |Urbana |
+
+¿me puedes brindar tu mejor interpretación de estos resultados?
+
+Siéntete libre de hacerme las preguntas que consideres necesarias para darme tu mejor resultado. 
+
+***
+Gracias por compartir tu análisis. Te brindaré una interpretación detallada basada en los resultados obtenidos.  
+
+---
+
+## **1️⃣ Análisis General del Clustering**
+El algoritmo **PAM (Partitioning Around Medoids)** ha generado **dos clusters**, diferenciando a los individuos según sus características.  
+
+- **Número de observaciones por cluster**:
+  - **Cluster 1:** **635** individuos
+  - **Cluster 2:** **386** individuos  
+  → El **Cluster 1 es más grande** que el **Cluster 2**.
+
+- **Coeficiente de Silueta Promedio:** **0.474**
+  - **Cluster 1:** **0.50**
+  - **Cluster 2:** **0.44**
+  - En general:
+    - Un coeficiente entre **0.25 y 0.50** indica que la estructura de los clusters es **moderadamente fuerte**.
+    - El **Cluster 1 tiene una mejor cohesión interna** (0.50), mientras que el **Cluster 2 tiene más variabilidad** (0.44).
+
+---
+
+## **2️⃣ Análisis de Variables Numéricas**
+Este análisis nos permite ver las diferencias entre los grupos en términos de desempeño en la prueba y edad.
+
+| Cluster | Escala_Cog. | Escala_Mot. | Escala_Soc. | Escala_Dis. | Edad_Mes |
+|---------|------------|------------|------------|------------|---------|
+| **1**   | **57.87**  | **23.49**  | **53.98**  | **22.62**  | **44.62** |
+| **2**   | **99.11**  | **33.62**  | **62.98**  | **30.39**  | **46.83** |
+
+📌 **Interpretación**:  
+- **Cluster 2 tiene puntajes significativamente más altos** en **todas las escalas cognitivas, motivacionales, sociales y de discapacidad**.
+- **Cluster 1 tiene puntajes más bajos en todas las dimensiones**, lo que indica que los niños en este grupo tienen un desempeño inferior en la prueba.
+- **Edad en meses:**  
+  - **Cluster 1:** **44.62 meses (~3 años y 8 meses)**  
+  - **Cluster 2:** **46.83 meses (~3 años y 10 meses)**  
+  - **Diferencia:** **Cluster 2 es, en promedio, 2 meses mayor**.  
+  - Aunque la diferencia de edad es pequeña, podría indicar que la maduración influye en el rendimiento.
+
+---
+
+## **3️⃣ Análisis de Variables Categóricas**
+Aquí observamos cómo se distribuyen los clusters en términos de región, área y nivel socioeconómico.
+
+| Cluster | Región | Departamento | Quintil | Inst_Prev. | Área |
+|---------|--------|--------------|--------|------------|------|
+| **1**   | Costa  | Piura        | 4      | No         | Urbana |
+| **2**   | Costa  | Lima Met.    | 4      | No         | Urbana |
+
+📌 **Interpretación**:  
+- **Ambos clusters están en la región Costa y en áreas urbanas**, por lo que la variable "Área" no parece ser un factor diferenciador.
+- **Cluster 1 tiene mayoría de niños de Piura, mientras que Cluster 2 tiene mayoría de niños de Lima Metropolitana.**
+- **Ambos clusters tienen un nivel socioeconómico similar (Quintil 4).**
+- **"Inst_Prev." (institución previa) indica que la mayoría de los niños en ambos clusters no asistieron a una institución previa.**
+
+---
+
+## **4️⃣ Posibles Interpretaciones Generales**
+1. **Diferencias en desempeño académico**:  
+   - **Cluster 2 tiene un desempeño significativamente superior en todas las escalas**.
+   - **Cluster 1 tiene un rendimiento inferior**, lo que puede estar asociado a factores como edad, acceso a recursos educativos o calidad educativa en su región.
+
+2. **Ubicación geográfica**:  
+   - **Piura (Cluster 1) vs. Lima Metropolitana (Cluster 2)**.  
+   - Puede haber diferencias en la **calidad de la educación** o en los **recursos educativos disponibles** en cada región.
+
+3. **Edad como factor de influencia**:  
+   - **El Cluster 2 es un poco mayor (~2 meses de diferencia en promedio)**.  
+   - Aunque no es una gran diferencia, a esta edad cada mes puede representar una ventaja en términos de desarrollo cognitivo y habilidades sociales.
+
+4. **Calidad educativa como posible explicación**:  
+   - Podría ser interesante analizar **otras variables** (tipo de institución, materiales disponibles, formación de los docentes, etc.) para ver qué más puede estar influyendo en las diferencias.
+
+---
+
+## **5️⃣ Posibles Siguientes Pasos**
+1. **Explorar otras variables explicativas**  
+   - Puede haber otras diferencias no incluidas en el clustering que ayuden a entender mejor los resultados (por ejemplo, nivel educativo de los padres, acceso a tecnología, tiempo de exposición a educación formal, etc.).
+
+2. **Realizar pruebas estadísticas**  
+   - Un **t-test o ANOVA** podría ayudar a confirmar si las diferencias en puntajes son **estadísticamente significativas**.
+
+3. **Probar con más clusters**  
+   - **¿Qué pasa si pruebas con 3 o más clusters?**  
+   - Esto podría ayudar a descubrir **subgrupos con características más específicas**.
+
+---
+
+## **📌 Conclusión Final**
+1. **El clustering ha identificado dos grupos diferenciados en términos de desempeño en la prueba**.
+2. **El Cluster 2 tiene mejores puntajes en todas las escalas y es ligeramente mayor en edad**.
+3. **El Cluster 1 está compuesto mayormente por niños de Piura, mientras que el Cluster 2 tiene más niños de Lima Metropolitana**.
+4. **El nivel socioeconómico y la asistencia previa a instituciones no parecen ser factores diferenciadores importantes.**
+5. **Podría ser útil analizar más variables para entender mejor las diferencias entre los grupos.**
+
+---
+
+🔎 **¿Te gustaría que profundizáramos en alguna variable en particular?** 🚀
